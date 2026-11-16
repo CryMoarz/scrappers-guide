@@ -1,0 +1,47 @@
+{
+  "id": "build_solar_12v_system",
+  "kind": "build",
+  "title": "12V solar power system",
+  "keywords": ["solar","solar power","solar panel","off grid","off-grid","12v system","charge controller","pwm","mppt","battery bank","solar kit"],
+  "summary": "Wire a panel, a charge controller and a deep-cycle battery into a 12V system that runs lights, radios, phone chargers and small tools. Size it from your daily watt-hours, fuse it at the battery and connect in the right order.",
+  "difficulty": 2,
+  "mins": 240,
+  "tools": ["screwdriver","cutters","crimper","multimeter","drill","wrench","pliers","knife","tape","ladder"],
+  "hazards": ["acid","burn","fall","glass","hv"],
+  "materials": [
+    {"item":"Solar panel 50–200W: a 36-cell \"12V\" panel for a PWM controller, or a larger panel with an MPPT controller","qty":"1 or more","fn":"solar_panel","only":["50–300w","30–200w","roof solar","250–450w"]},
+    {"item":"Charge controller rated at least 1.25× the panels' short-circuit current","qty":"1","fn":"charge_controller"},
+    {"item":"Deep-cycle 12V battery, 35–200Ah","qty":"1 or a bank","fn":"battery_pb","only":["deep-cycle","vrla","agm"]},
+    {"item":"Fuses: a main fuse within 30 cm of battery + rated to the cable, plus one per load circuit","qty":"1 + 1 per circuit","fn":"fuse","only":["fuse box","dc breaker"]},
+    {"item":"Wire: 12–10 AWG (4–6 mm²) from panel to controller; 10 AWG or heavier, kept short, from controller to battery","qty":"panel run + 1 short pair","fn":"wire_copper","only":["extension","feed cable"]},
+    {"item":"Ring terminals, lugs and connectors","qty":"10–20","fn":"connector","only":["anderson"]},
+    {"item":"Disconnect switch or DC breaker","qty":"1","fn":"breaker","optional":true},
+    {"item":"Panel frame: timber, steel tube or angle","qty":"1","fn":"lumber","optional":true},
+    {"item":"Bolts and screws","qty":"20","fn":"fasteners","optional":true},
+    {"item":"Inverter for small mains loads","qty":"1","fn":"inverter","optional":true},
+    {"item":"12V LED lights and USB chargers","qty":"as needed","fn":"led_light","optional":true}
+  ],
+  "steps": [
+    {"text":"List every load: watts × hours per day = watt-hours (Wh). Add them up and add 20% for losses. This number sizes everything (see notes)."},
+    {"text":"Test the panel in full sun: open-circuit volts and short-circuit amps on the multimeter. A \"12V\" panel reads about 20–22V open. Test the battery and charge it fully before use (test_solar_panel, test_lead_acid)."},
+    {"text":"Pick a spot for the battery, controller and fuses: dry, shaded, ventilated, within 1–2 m of each other. Flooded batteries must be out of living space and away from sparks.","warn":"Charging lead-acid batteries give off hydrogen, which explodes. Ventilate."},
+    {"text":"Mount the panel facing the equator (south in the northern hemisphere), tilted at about your latitude, with no shade from 9 am to 3 pm. Bolt it down; wind lifts panels like sails.","warn":"Use a ladder with a second person and stay off steep or wet roofs. Panel glass breaks into sharp pieces."},
+    {"text":"Fit the main fuse holder within 30 cm of battery positive. Leave the fuse out for now.","warn":"Remove rings and watches. A tool across battery terminals arcs, welds and burns."},
+    {"text":"Connect the controller's battery terminals to the battery (positive through the fuse holder). Battery first, always.","warn":"Connecting the panel before the battery can damage the controller or set it to the wrong system voltage."},
+    {"text":"Cover the panel or turn it face down. Measure the panel leads for polarity, then connect them to the controller's PV terminals.","warn":"Panels are live whenever light hits them. Two or more house-size panels in series can pass 60V DC or more, enough to shock you."},
+    {"text":"Wire small loads to the controller's load terminals so it can cut them off when the battery is low. Wire an inverter or other big load straight to the battery through its own fuse."},
+    {"text":"Insert the main fuse. Uncover the panel. The controller should show charging and the battery voltage should rise."},
+    {"text":"Set the controller to your battery type (flooded, AGM, gel or lithium). Check the absorption and float voltages against the table in the notes."},
+    {"text":"Label every wire, add strain relief and drip loops, and cover bare terminals."},
+    {"text":"Each morning before using power, read the battery voltage. Keep a lead-acid battery above 12.2V (about half full) and it will last years; drain it flat and it will last months."}
+  ],
+  "notes": "## Sizing\n- **Panel watts** ≈ daily Wh ÷ (sun hours × 0.7). Winter sun hours are 1–3 at high latitudes, 4–6 in sunny places.\n- **Battery Ah** ≈ daily Wh × days of reserve ÷ (12 × 0.5). The 0.5 keeps lead-acid above half charge.\n- **Controller amps** ≥ 1.25 × total panel short-circuit current.\n\nExample: LED lights 10W × 5 h = 50Wh, radio 5W × 4 h = 20Wh, phones 20Wh. Total 90Wh, plus 20% ≈ 110Wh. At 3 sun hours: 110 ÷ 2.1 ≈ 50W of panel; use 80–100W for cloudy days. Two days of reserve: 110 × 2 ÷ 6 ≈ 37Ah; use 50Ah or more.\n\n## PWM or MPPT\n- **PWM** connects the panel straight to the battery. It only suits 36-cell panels (about 18V at full power). With a 60-cell house panel it wastes nearly half.\n- **MPPT** converts high panel voltage into extra current. It suits any panel within its input limit. Panel open-circuit voltage rises 10–20% in frost, so leave that margin under the controller's maximum input.\n\n## Charge voltages (12V battery, 25 °C)\n| Battery | Absorb | Float |\n|---|---|---|\n| Flooded | 14.4–14.8V | 13.4–13.6V |\n| AGM | 14.4–14.6V | 13.5–13.7V |\n| Gel | 14.0–14.2V | 13.6–13.8V |\n| LiFePO4 (4 cells) | 14.2–14.4V | 13.4–13.6V or off |\n\nLead-acid needs a bit more voltage in cold and less in heat (about 0.02–0.03V per °C). Never charge lithium below 0 °C.\n\n## Wire size at 12V (3% drop)\nLongest one-way run for a given current:\n\n| Current | 14 AWG / 2.5 mm² | 12 AWG / 4 mm² | 10 AWG / 6 mm² | 8 AWG / 10 mm² | 6 AWG / 16 mm² |\n|---|---|---|---|---|---|\n| 5A | 4 m | 7 m | 11 m | 17 m | 28 m |\n| 10A | 2 m | 3.5 m | 5.5 m | 8.5 m | 14 m |\n| 20A | – | 1.7 m | 2.7 m | 4.3 m | 7 m |\n\nFormula: drop (V) = amps × 2 × length (m) × ohms per metre. Copper: 14 AWG 8.3 mΩ/m, 12 AWG 5.2, 10 AWG 3.3, 8 AWG 2.1, 6 AWG 1.3.\n\n## Fusing\n- Main fuse within 30 cm of battery +: above the largest expected current, at or below the cable's rating.\n- A fuse protects the wire, not the device. Every wire leaving the battery needs one.\n- Panel fuses are only needed with three or more panels in parallel.\n\n## Troubleshooting\n- Controller dark: battery fuse blown or battery below the controller's start voltage. Charge the battery another way first.\n- Panel volts fine but no charging: reversed polarity, or the controller thinks the battery is full.\n- Battery never reaches absorb: panel too small, shaded, dirty, or cable too thin.\n\n## If you lack a part\n- No controller: a 36-cell panel of no more than about 1.5W per 10Ah of battery (a trickle of about 1% of capacity) can charge lead-acid directly through a diode. Check voltage daily and disconnect above 14.4V. Bigger panels need a controller.\n- No deep-cycle battery: a car battery works but wears out fast if drained below 70% full.\n- Mixed panels: parallel panels with similar voltage; series panels with similar current.\n",
+  "tree": {"era":4,"branch":"power","requires":["build_battery_bank_lead_acid","test_solar_panel","reference_power_budget"]},
+  "devices": ["solar_sign","solar_home","rv","boat","telecom_site","power_station","ups","golf_cart","floor_scrubber","streetlight","garden_solar"],
+  "parts": ["solar_panel","charge_controller","battery_pb","fuse","wire_copper","breaker"],
+  "license": "CC-BY-SA-4.0",
+  "refs": [
+    {"lib":"energypedia","q":"solar home system"},
+    {"lib":"electronics","q":"solar charge controller"}
+  ]
+}

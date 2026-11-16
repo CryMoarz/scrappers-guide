@@ -1,0 +1,46 @@
+{
+  "id": "two_way_radio",
+  "name": "Two-way radios (walkie-talkies)",
+  "group": "Communications",
+  "aliases": ["walkie talkie","walkie-talkie","handheld radio","frs radio","gmrs radio","business radio","ham handheld","ham radio"],
+  "brands": ["Motorola","Baofeng","Midland","Uniden","Retevis","Cobra","Kenwood","Icom","Yaesu"],
+  "prev": 4,
+  "tools": ["hands","screwdriver"],
+  "mins": 5,
+  "kg": 0.3,
+  "hazards": ["li_fire"],
+  "comps": [
+    {"key":"radio_rf","fn":"radio_rf","spec":"Handheld VHF/UHF transceiver, about 0.5–5W — 1–5 km ground to ground, much further from high ground","w":[0.5,5],"qty":1,"ext":1,"obs":4,"loc":"The whole radio"},
+    {"key":"battery_li","fn":"battery_li","spec":"Lithium-ion pack, about 3.7–7.4V 1,500–2,500 mAh (business and ham radios)","v":[3.7,7.4],"ah":[1.5,2.5],"qty":1,"ext":1,"obs":4,"loc":"Clip-on pack on the back"},
+    {"key":"battery_nimh","fn":"battery_nimh","spec":"3–4 AA or AAA NiMH cells or a NiMH pack (consumer sets)","v":[3.6,4.8],"ah":[0.7,2.5],"qty":3,"ext":1,"obs":4,"loc":"Battery compartment"},
+    {"key":"antenna_coax","fn":"antenna_coax","spec":"Flexible rubber-duck antenna on SMA or BNC","qty":1,"ext":1,"obs":4,"loc":"Top"},
+    {"key":"charger","fn":"charger","spec":"Drop-in desktop chargers and multi-unit gang chargers","v":[3.6,8.4],"a":[0.3,1],"qty":1,"ext":1,"obs":4,"loc":"Charging rack in an office or closet"},
+    {"key":"speaker","fn":"speaker","spec":"Speaker, plus speaker-mics and earpieces","w":[0.5,2],"qty":1,"ext":2,"obs":5,"loc":"Front; accessories in a drawer"}
+  ],
+  "boards": [
+    {"id":"radio_transceiver_board","qty":1,"loc":"Main board","p":1}
+  ],
+  "buildings": [
+    {"b":"hotel","l":5},
+    {"b":"school","l":5},
+    {"b":"stadium","l":5},
+    {"b":"police","l":4},
+    {"b":"fire_station","l":4},
+    {"b":"mall","l":4},
+    {"b":"warehouse","l":4},
+    {"b":"construction","l":4},
+    {"b":"factory","l":4},
+    {"b":"hospital","l":4},
+    {"b":"airport","l":4},
+    {"b":"electronics","l":4},
+    {"b":"golf","l":3},
+    {"b":"campground","l":3},
+    {"b":"church","l":3},
+    {"b":"house","l":3},
+    {"b":"nursing_home","l":3},
+    {"b":"cinema","l":3},
+    {"b":"department","l":3},
+    {"b":"supermarket","l":3}
+  ],
+  "notes": "Charging racks in hotels, schools and warehouses hold whole fleets of matching radios on the same channels."
+}

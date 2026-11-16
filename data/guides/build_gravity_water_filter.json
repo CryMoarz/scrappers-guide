@@ -1,0 +1,47 @@
+{
+  "id": "build_gravity_water_filter",
+  "kind": "build",
+  "title": "Two-bucket gravity water filter",
+  "keywords": ["water filter","gravity filter","bucket filter","two bucket filter","drinking water","clean water","filter cartridge","ceramic filter","sand filter","charcoal filter"],
+  "summary": "Make a two-bucket gravity filter from food-grade buckets and a salvaged filter cartridge (ceramic or hollow-fibre is best, a fridge or under-sink carbon block is second best). It clears mud and improves taste, but most salvaged filters do not reliably remove germs. Always boil or disinfect the filtered water before drinking.",
+  "difficulty": 1,
+  "mins": 60,
+  "tools": ["drill","knife","file","pliers"],
+  "hazards": ["biohazard","chemical"],
+  "materials": [
+    {"item":"Two food-grade buckets with lids, 10–20 L","qty":"2","fn":"tank","only":["food","19-litre","jug"]},
+    {"item":"Filter element: ceramic candle or hollow-fibre filter best; fridge, pitcher or under-sink carbon cartridge second best","qty":"1–2","fn":"filter_water","only":["micron","hollow","ceramic"]},
+    {"item":"Rubber, silicone or foam gaskets and washers to seal the filter through the bucket, food-safe where they touch filtered water","qty":"2–4","fn":"foam_rubber","only":["inner tube","gasket","seal"]},
+    {"item":"Food-safe tap or valve for the lower (clean-water) bucket","qty":"1","fn":"valve_solenoid","only":["bypass"]},
+    {"item":"Food-grade tubing and fittings to adapt a fridge or under-sink cartridge","qty":"as needed","fn":"hose_tubing","optional":true},
+    {"item":"Clean cloth for a pre-filter (cotton sheet, T-shirt), washed and boiled first","qty":"1","fn":"fabric_tarp","only":["fleece","cotton"]},
+    {"item":"Activated carbon, if using a layered filter","qty":"1–2 L","fn":"carbon","optional":true},
+    {"item":"Plain unscented household bleach (5–6%) for disinfecting the output","qty":"small bottle","fn":"chlorine"},
+    {"item":"Washed sand and gravel, for the layered variant","qty":"10–15 L","optional":true}
+  ],
+  "steps": [
+    {"text":"Get two food-grade buckets (marked HDPE, #2 or food-safe). Wash them with soap, then rinse with water holding a capful of bleach per bucket. Mark one DIRTY and one CLEAN.","warn":"Never use buckets that held paint, solvent, oil, pesticide or pool chemicals. Traces stay in the plastic."},
+    {"text":"Pick the filter. Ceramic candles and hollow-fibre filters (0.1–0.2 micron) stop bacteria and parasites. Carbon blocks from fridges and under-sink units improve taste and some chemicals but cannot be trusted against germs. Prefer sealed spares; used cartridges may be growing bacteria."},
+    {"text":"Drill a hole in the bottom centre of the DIRTY bucket to fit the filter's outlet stem, and a matching hole in the CLEAN bucket's lid. For a fridge or under-sink cartridge, fit a short tube from its outlet through the hole."},
+    {"text":"Fit the filter with a gasket on each side of the bucket wall and tighten. Pour in water and check for drips around the seal.","warn":"Any leak around the filter lets dirty water bypass it. Fix every drip before you trust the output."},
+    {"text":"Drill a hole about 5 cm above the bottom of the CLEAN bucket and fit the tap with gaskets on both sides."},
+    {"text":"New carbon cartridges shed black dust: run 10–20 L through and throw it away. Soak ceramic candles in clean water for 15 minutes first."},
+    {"text":"Let muddy water settle in another container for 1–12 hours, pour off the clear part through the cloth, then pour it into the DIRTY bucket. Mud clogs filters fast."},
+    {"text":"Disinfect what comes out: bring to a rolling boil for 1 minute (3 minutes above 2,000 m), or add 2 drops of plain 5–6% bleach per litre (4 if still cloudy), stir and wait 30 minutes. It should smell faintly of chlorine.","warn":"Filtered water is NOT safe yet. Viruses pass every filter here, and carbon cartridges let bacteria through."},
+    {"text":"Keep the CLEAN side clean: never dip cups into it, never let dirty water or hands touch the tap or the lower bucket."},
+    {"text":"When flow slows, scrub ceramic candles with a clean pad under clean water; backflush hollow-fibre filters as their maker intended. Replace carbon cartridges after about 750–1,500 L, or sooner if water tastes off."}
+  ],
+  "notes": "## What it removes\n| Problem | Ceramic / hollow-fibre | Carbon block cartridge | Sand + charcoal layers |\n|---|---|---|---|\n| Mud, cloudiness | Yes | Yes | Mostly |\n| Parasites (Giardia, Cryptosporidium) | Yes | Some blocks, not reliably | Partly |\n| Bacteria | Mostly | No | Partly |\n| Viruses | No | No | No |\n| Taste, smell, chlorine, some pesticides | No (unless it has carbon) | Yes, until used up | Some |\n| Salt, nitrate, fluoride, most dissolved metals | No | No | No |\n| Fuel or industrial chemicals | No | Partly; don't trust it | No |\n\n**Nothing here makes water safe on its own. Always boil or disinfect afterwards.** Filtering first makes boiling and bleach work better, because germs hide in mud.\n\n## Flow you can expect (bucket height about 0.4 m)\n- Ceramic candle: about 0.5–2 L per hour each. Use two for a family.\n- Hollow-fibre gravity filter: 1–4 L per minute when clean.\n- Fridge or under-sink carbon block: 0.1–0.5 L per minute; these are built for mains pressure.\n- Reverse-osmosis membranes need 2.5–4 bar of pressure. Gravity from a bucket gives about 0.04 bar. They won't work here.\n\n## Layered sand and charcoal variant\nFrom the top of the DIRTY bucket down: cloth, 30–40 cm of fine washed sand, 10 cm of activated carbon (or crushed charcoal from a wood fire, which is weaker) wrapped in cloth, 5 cm of fine gravel, 5 cm of coarse gravel, then the outlet. Keep the sand wet all the time; a thin living layer forms on top after 2–3 weeks and improves removal of germs. Flow 5–15 L per hour. Still boil or disinfect.\n\n## Bleach dose\nPlain bleach only: no scent, no \"splash-less\" or cleaning additives. 5–6% bleach: 2 drops per litre, 8 drops per 4 L. 8.25% bleach: about 1.5 drops per litre, 6 drops per 4 L. Wait 30 minutes. Bleach loses strength with age; use more from old bottles and check for a faint chlorine smell.\n\n## Other ways to disinfect\n- Boiling: a rolling boil for 1 minute, 3 minutes above 2,000 m.\n- Sunlight (SODIS): clear plastic bottles, 6 hours of sun or 2 days of cloud. See skill_solar_disinfection.\n\n## Where to find cartridges\nFridges with water dispensers, under-sink and reverse-osmosis units, water coolers, ice machines, pitchers, coffee machines, and well systems (sediment cartridges). Camping shops and outdoor gear stores stock ceramic and hollow-fibre filters.\n\n**Don't use carbon from air purifiers or cooker hoods.** It isn't food-grade and may be treated with chemicals.\n\n## If you lack a part\n- No tap: siphon from the CLEAN bucket with clean tubing.\n- No cartridge: use the layered sand and charcoal variant, and boil.\n- No food-grade bucket: stainless steel pots or clean drinks containers work.\n",
+  "tree": {"era":1,"branch":"water","requires":["skill_solar_disinfection"]},
+  "devices": ["fridge","ro_system","water_cooler","ice_machine","well_pump","coffee_maker","camping_gear","aquarium"],
+  "parts": ["filter_water","carbon","tank","chlorine"],
+  "license": "CC-BY-SA-4.0",
+  "refs": [
+    {"lib":"water_lib","q":"filter"},
+    {"lib":"appropedia","q":"biosand filter"}
+  ],
+  "sources": [
+    {"title":"Public-health guidance on boiling and household bleach disinfection of drinking water","note":"Doses summarised; check local guidance if any exists."},
+    {"title":"Biosand filter practice","note":"General principle of the layered sand variant."}
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "id": "ceiling_fan_hampton_bay_lynwood_52lwd",
+  "device": "ceiling_fan",
+  "brand": "Hampton Bay",
+  "model": "Lynwood 52 in (UL model 52-LWD)",
+  "notes": "A 52-inch pull-chain Lynwood on a 120 V supply, with a three-speed pull chain, a separate light pull chain, a reversing switch in the switch cup, two candelabra light sockets and five blades. The manual does not give the motor type or a capacitor, so look at the motor housing when you open it.",
+  "research": {"checked":"2026-11-12","gaps":["The manual does not say whether the motor is AC or capacitor-run; the motor_ac key follows the device template and the spec states no type, so the ac flag is not set.","The speed table gives volts, amps, watts, rpm and CFM per speed for the fan with the light kit excluded; a and w are the lowest and highest of those running figures.","The manual gives 60 W as the maximum per bulb and no kit total, so no light wattage is set.","No capacitor is named, so none is claimed.","There is no material list: the blades are called wood only in the balancing text (natural woods vary in density) and the care text (polish for the wood).","No year or production date is printed."],"method":["Hampton Bay Lynwood 52 in Ceiling Fan Owner's Manual (UL model 52-LWD, SKU 848 729, Home Depot PDF, 14 pages), read with research.js pdf; the speed table page was also rendered and read.","PDF page 2: UL model number. Page 4: loose-parts list. Page 7: wiring to the 120 V supply. Page 8: blade attachment and balancing. Page 9: light kit bulbs. Page 11: pull-chain and reversing-switch operation. Page 12: care and bearings. Page 13: speed table.","No sites refused. Third-party copies of this manual were not used."]},
+  "comps": [
+    {"key":"motor_ac","conf":"documented","spec":"Fan motor wired to the 120 V supply; per-speed running figures from the manual's table (it calls them approximate and excludes the light kit): low 0.21 A, 10 W, 65 rpm, 1811 CFM; medium 0.35 A, 27 W, 115 rpm, 3271 CFM; high 0.52 A, 62 W, 185 rpm, 5016 CFM","v":120,"a":[0.21,0.52],"w":[10,62],"source":"https://images.homedepot-static.com/catalog/pdfImages/1f/1f46adb3-d093-47dc-96a0-ac0e3bb7b2ad.pdf"},
+    {"key":"switch","conf":"documented","spec":"Pull-chain speed switch (one pull high, two medium, three low, four off), plus a second pull chain that switches the light","source":"https://images.homedepot-static.com/catalog/pdfImages/1f/1f46adb3-d093-47dc-96a0-ac0e3bb7b2ad.pdf"},
+    {"key":"switch_reverse","fn":"switch","spec":"Slide reversing switch in the switch cup: down is forward (warm weather), up is reverse (cool weather); the fan must be stopped before it is moved","qty":1,"ext":1,"obs":4,"conf":"documented","source":"https://images.homedepot-static.com/catalog/pdfImages/1f/1f46adb3-d093-47dc-96a0-ac0e3bb7b2ad.pdf"},
+    {"key":"led_light","conf":"documented","spec":"Light kit with two candelabra-base bulbs included, 60 W maximum each, in the fitter sockets; glass bowl","source":"https://images.homedepot-static.com/catalog/pdfImages/1f/1f46adb3-d093-47dc-96a0-ac0e3bb7b2ad.pdf"},
+    {"key":"bearing","conf":"documented","spec":"Permanently lubricated sealed ball bearings in the motor","source":"https://images.homedepot-static.com/catalog/pdfImages/1f/1f46adb3-d093-47dc-96a0-ac0e3bb7b2ad.pdf"},
+    {"key":"lumber_blades","fn":"lumber","spec":"Five reversible blades with five blade brackets; the manual's blade-balancing text says natural woods vary in density","qty":5,"ext":1,"obs":3,"conf":"documented","source":"https://images.homedepot-static.com/catalog/pdfImages/1f/1f46adb3-d093-47dc-96a0-ac0e3bb7b2ad.pdf"}
+  ],
+  "sources": [
+    {"title":"Hampton Bay Lynwood 52 in Ceiling Fan Owner's Manual, UL model 52-LWD (Home Depot PDF, undated)","url":"https://images.homedepot-static.com/catalog/pdfImages/1f/1f46adb3-d093-47dc-96a0-ac0e3bb7b2ad.pdf"}
+  ]
+}

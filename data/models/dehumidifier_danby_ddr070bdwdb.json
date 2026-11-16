@@ -1,0 +1,23 @@
+{
+  "id": "dehumidifier_danby_ddr070bdwdb",
+  "device": "dehumidifier",
+  "brand": "Danby",
+  "model": "DDR070BDWDB",
+  "notes": "Updated part numbers are dated Feb. 2018.",
+  "research": {"checked":"2026-11-12","gaps":["The sheet does not name the factory's company, so no maker is claimed here.","The model page gives no ratings, and lists the display box assembly as 17220100000601, where the sheet has 17120100000401.","No electrical figures are given on the product spec sheet.","Production years are not stated."],"method":["Main source is Danby's own parts spreadsheet for DDR070BDWDB (an .xlsx file on Danby's CDN, linked as 'Schematic / Part List' from the DDR070BDWDB model page of the Danby Appliance Parts store).","It is a spreadsheet, not a web page: open it in a spreadsheet program.","Read on 2026-11-12.","The sheet gives Factory Model MDUDP-70AEN1-BB0 and an effective date of 22/12/2016.","Both numbers are given below where the sheet has them.","The Danby Appliance Parts model page lists the same part numbers (compressor, both capacitors, fan motor, humidity sensor, pipe temperature sensor, micro switch, dobber case, main control board).","Danby's product spec sheet gives 70 pints, 2-speed fan and R410A refrigerant.","Locations below come from the sheet's assembly numbering (for example 18.4 and 18.5 sit under 18, the electronic control box assembly)."]},
+  "comps": [
+    {"key":"compressor","conf":"documented","spec":"Fixed-speed rotary compressor, model ASK68E11VZZX; Danby part 11103010010810 (updated part 11103010000188)","ac":true,"qty":1,"source":"https://cdnns.danby.com/4973611/DDR070BDWDB.xlsx"},
+    {"key":"capacitor_large_comp","fn":"capacitor_large","spec":"Round compressor capacitor 45 uF / 250 V, Danby part 17400103000052 (updated part 17400103000060)","v":250,"ac":true,"qty":1,"ext":2,"obs":3,"conf":"documented","source":"https://cdnns.danby.com/4973611/DDR070BDWDB.xlsx"},
+    {"key":"fan","conf":"documented","spec":"Single-phase asynchronous fan motor YKT-18-4-29L, Danby part 11002012024502; centrifugal fan LX-180*85*8-60C, part 12100103000075","ac":true,"qty":1,"source":"https://cdnns.danby.com/4973611/DDR070BDWDB.xlsx"},
+    {"key":"capacitor_large_fan","fn":"capacitor_large","spec":"Capacitor, minimum rating 6 uF / 250 V, Danby part 17400101000071, in the electronic control box assembly; Danby's parts page names this part 'Capacitor of fan motor'","v":250,"ac":true,"qty":1,"loc":"Electronic control box","ext":2,"obs":3,"conf":"documented","source":"https://cdnns.danby.com/4973611/DDR070BDWDB.xlsx"},
+    {"key":"switch","conf":"documented","spec":"Micro switch MS-18, Danby part 17400512000009, on the partition board assembly; the water tank assembly lists a 'dobber case', part 12120100002228","qty":1,"loc":"Partition board","source":"https://cdnns.danby.com/4973611/DDR070BDWDB.xlsx"},
+    {"key":"sensor_misc","conf":"documented","spec":"Humidity sensor board subassembly CE-CFZ0.8BD-F1A..D.31.SCG.12, Danby part 17120100000344","qty":1,"loc":"Electronic control box","source":"https://cdnns.danby.com/4973611/DDR070BDWDB.xlsx"},
+    {"key":"sensor_misc_pipe","fn":"sensor_misc","spec":"Pipe temperature sensor assembly CGQ-WD/GW4100-L1000-XAP2-P950, Danby part 11201007000245","qty":1,"ext":2,"obs":4,"conf":"documented","source":"https://cdnns.danby.com/4973611/DDR070BDWDB.xlsx"},
+    {"key":"controller_board_main","fn":"controller_board","spec":"Main control board assembly US-CFZ1.4BD/N1-DP.JD.CS.NK.NK5.7, Danby part 17120100A01794; display box assembly US-CFZ1.4BD/N1-K6.D.05.XK1.4, part 17120100000401","qty":1,"loc":"Electronic control box","ext":2,"obs":3,"conf":"documented","source":"https://cdnns.danby.com/4973611/DDR070BDWDB.xlsx"}
+  ],
+  "sources": [
+    {"title":"Danby DDR070BDWDB Schematic / Part List spreadsheet (factory model MDUDP-70AEN1-BB0, effective 22/12/2016, part updates Feb. 2018), Danby CDN","url":"https://cdnns.danby.com/4973611/DDR070BDWDB.xlsx"},
+    {"title":"Danby Appliance Parts, DDR070BDWDB model parts page","url":"https://www.danbyapplianceparts.com/product-category/dehumidifiers/ddr070bdwdb"},
+    {"title":"Danby DDR070BDWDB product specifications sheet (danby.com PDF)","url":"https://www.danby.com/en-us/shop/ddr070bdwdb/?o=pdf"}
+  ]
+}

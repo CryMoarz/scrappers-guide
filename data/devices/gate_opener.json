@@ -1,0 +1,44 @@
+{
+  "id": "gate_opener",
+  "name": "Automatic gate opener",
+  "group": "Building systems",
+  "aliases": ["gate motor","gate opener","driveway gate opener","sliding gate motor","swing gate opener","gate operator","gate actuator"],
+  "brands": ["FAAC","LiftMaster","Chamberlain","MightyMule"],
+  "prev": 3,
+  "tools": ["screwdriver","socket","cutters"],
+  "mins": 30,
+  "kg": 20,
+  "hazards": ["crush","mains"],
+  "comps": [
+    {"key":"linear_actuator","fn":"linear_actuator","spec":"24V DC screw-drive arms, about 300–500 mm stroke (swing gates)","v":24,"qty":2,"ext":2,"obs":5,"loc":"Between the post and each gate leaf","kg":8},
+    {"key":"motor_dc_small","fn":"motor_dc_small","spec":"24V DC gear motor with rack pinion (sliding gates; some are mains AC)","v":24,"qty":1,"ext":2,"obs":5,"loc":"Base unit beside the gate"},
+    {"key":"gearbox","fn":"gearbox","spec":"Worm reduction gearbox","qty":1,"ext":3,"obs":5,"loc":"Base unit or actuator body"},
+    {"key":"hall_reed","fn":"hall_reed","spec":"Magnetic limit switches (reed or Hall) with magnets on the rack or arm","qty":2,"ext":1,"obs":5,"loc":"Base unit and gate rack"},
+    {"key":"battery_pb","fn":"battery_pb","spec":"Backup batteries, 2× 12V 7Ah sealed lead-acid","v":12,"ah":7,"qty":2,"ext":1,"obs":5,"loc":"Control box"},
+    {"key":"solar_panel","fn":"solar_panel","spec":"10–40W panel (solar-powered gates)","w":[10,40],"qty":1,"ext":2,"obs":4,"loc":"Gate post or pole"},
+    {"key":"radio_rf","fn":"radio_rf","spec":"Remote receiver (receive only)","qty":1,"ext":1,"obs":5,"loc":"Control box"},
+    {"key":"sensor_motion","fn":"sensor_motion","spec":"Infrared safety beam pair","qty":2,"ext":1,"obs":5,"loc":"Posts either side of the opening"},
+    {"key":"transformer_lv","fn":"transformer_lv","spec":"24V transformer","v":24,"qty":1,"ext":2,"obs":5,"loc":"Control box"},
+    {"key":"solenoid_actuator","fn":"solenoid_actuator","spec":"12/24V electromagnetic gate lock (some gates)","v":24,"qty":1,"ext":2,"obs":5,"loc":"Gate post","p":0.5}
+  ],
+  "boards": [
+    {"id":"mcu_board","qty":1,"loc":"Control box","p":1}
+  ],
+  "buildings": [
+    {"b":"self_storage","l":5},
+    {"b":"warehouse","l":4},
+    {"b":"factory","l":4},
+    {"b":"water_works","l":4},
+    {"b":"datacenter","l":4},
+    {"b":"farm","l":3},
+    {"b":"apartment","l":3},
+    {"b":"car_dealer","l":3},
+    {"b":"police","l":3},
+    {"b":"substation","l":3},
+    {"b":"solar_farm","l":3},
+    {"b":"house","l":2},
+    {"b":"fire_station","l":2},
+    {"b":"construction","l":2}
+  ],
+  "notes": "Most units have a manual release key or lever so the gate can be pushed by hand when the power is off."
+}

@@ -1,0 +1,19 @@
+{
+  "id": "ebike_giant_explore_e_plus_1",
+  "device": "ebike",
+  "brand": "Giant",
+  "model": "Explore E+ 1",
+  "years": "2021",
+  "notes": "The details are for the 2021 Explore E+ 1 only and may not carry over to other Explore E+ models or years.",
+  "research": {"checked":"2026-11-11","gaps":["No exact model code was found.","It does not say the motor is brushless, gives no battery management system, and does not state the display size or location."],"method":["Giant's 2021 Explore E+ 1 product page gives the motor, 500Wh battery, 6A charger, display and lights recorded here.","The page calls the motor a mid-drive motor.","Ext and obs ratings are research judgment, not source facts."]},
+  "comps": [
+    {"key":"battery_li","conf":"documented","spec":"Giant EnergyPak Smart 500, 36V integrated Lithium-Ion battery (Battery line). The feature text calls it a 500Wh EnergyPak Smart Battery. Explore E+ 1, 2021 page.","v":36,"source":"https://www.giant-bicycles.com/ie/explore-eplus-1-electric-bike-2021"},
+    {"key":"motor_bldc","conf":"documented","spec":"Giant SyncDrive Sport motor, 70Nm torque (Motor line). The page text calls it a small mid-drive motor with a maximum 70Nm of torque; it does not say brushless.","source":"https://www.giant-bicycles.com/ie/explore-eplus-1-electric-bike-2021"},
+    {"key":"charger","conf":"documented","spec":"Giant EnergyPak Smart 6A charger (Extras line). The same line says the bike is compatible with the Giant EnergyPak Plus range extender. Explore E+ 1, 2021 page.","a":6,"source":"https://www.giant-bicycles.com/ie/explore-eplus-1-electric-bike-2021"},
+    {"key":"led_light","conf":"documented","spec":"Axa BlueLine 50Lux Steady E6 front light and Axa BlueLine Steady E6 rear light (Lighting line). Explore E+ 1, 2021 page.","source":"https://www.giant-bicycles.com/ie/explore-eplus-1-electric-bike-2021"},
+    {"key":"display_ridedash","fn":"display","spec":"Giant RideDash EVO display (Display line). Explore E+ 1, 2021 page. Size and location are not stated on the page.","qty":1,"ext":2,"obs":2,"conf":"documented","source":"https://www.giant-bicycles.com/ie/explore-eplus-1-electric-bike-2021"}
+  ],
+  "sources": [
+    {"title":"Giant Explore E+ 1 Electric Bike, 2021 (Giant product page, Ireland site)","url":"https://www.giant-bicycles.com/ie/explore-eplus-1-electric-bike-2021","note":"Gives the motor, battery, charger, display, control unit and lights used in the parts above."}
+  ]
+}

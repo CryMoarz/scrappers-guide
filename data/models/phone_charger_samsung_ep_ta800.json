@@ -1,0 +1,32 @@
+{
+  "id": "phone_charger_samsung_ep_ta800",
+  "device": "phone_charger",
+  "brand": "Samsung",
+  "model": "EP-TA800 (25W USB-C PD charger)",
+  "years": "2019",
+  "notes": "The 25 W USB-C PD charger bundled with the Korean Galaxy S10 5G, label model EP-TA800, 100-240 V input. The teardown is of a single unit with an April 2019 production date, so other production runs may use different chips.",
+  "research": {"checked":"2026-11-12","gaps":["The article's label reading gives the second PPS range as 3.3-11 V 2.25 A, while its protocol test gives 2.75 A; the label figure is used and 2.75 A is not claimed.","Renesas describes the iW1791 as a 27 W controller; this charger is labelled 25 W, so the chip's figure is only noted in its spec and no w is set on it.","The article gives no part number or rating for the transformer, input bridge, secondary synchronous MOSFET, VBUS switch MOSFET or Y capacitor.","The fusible resistor is marked 2 W 1.1 ohm; the article gives no voltage rating for it.","No datasheets were found for the iW676, iW656P or WMO14N70C2; only the iW1791 product page is linked.","Only one teardown article was opened, so the record covers one 2019 unit, not later or regional revisions."],"method":["充电头网 (chongdiantou.com) teardown of the Samsung S10 5G original 25W USB-C charger (EP-TA800), 2019-06-23, read in Chinese through WebFetch's translation; the passages for each part were read twice. Photos not read.","Renesas iW1791 product page: opens, no bot check; used for the chip's description (27 W AC/DC controller, primary-side regulation). The datasheet behind its link was not opened.","Other EP-TA800 teardown articles that search turned up were not opened (one article per model).","Samsung's own product pages had no specification text for this model and are not cited. No marketplace listings were used."]},
+  "comps": [
+    {"key":"psu","conf":"documented","spec":"Model EP-TA800. Label: input 100-240 V~ 50/60 Hz 0.7 A; USB PD 5 V/3 A and 9 V/2.77 A; PPS 3.3-5.9 V/3 A and 3.3-11 V/2.25 A; maximum output 25 W.","v":5,"a":3,"w":25,"source":"https://www.chongdiantou.com/archives/35990.html"},
+    {"key":"b:smps_small:ic_pwm","conf":"documented","spec":"Dialog iW1791 PWM controller, exposed by removing the white glue on the back of the board. Renesas' product page describes the chip as a 27 W AC/DC controller with primary-side regulation; that is the chip's rating, not this charger's.","source":"https://www.chongdiantou.com/archives/35990.html"},
+    {"key":"b:smps_small:cap_elec","conf":"documented","spec":"CapXon 22 uF 400 V electrolytic, the longer of the two primary filter capacitors, which lie flat on the board","v":400,"qty":1,"source":"https://www.chongdiantou.com/archives/35990.html"},
+    {"key":"cap_elec_primary_chang","fn":"cap_elec","spec":"Chang 15 uF 400 V electrolytic, the other primary filter capacitor","v":400,"qty":1,"ext":2,"obs":3,"conf":"documented","source":"https://www.chongdiantou.com/archives/35990.html"},
+    {"key":"b:smps_small:ferrite_xfmr","conf":"documented","spec":"Flat (planar) transformer with printed markings on it","source":"https://www.chongdiantou.com/archives/35990.html"},
+    {"key":"b:smps_small:diode_rect","conf":"documented","spec":"Input rectifier bridge next to the main controller IC","source":"https://www.chongdiantou.com/archives/35990.html"},
+    {"key":"b:smps_small:fuse","conf":"documented","spec":"Input fusible resistor, silk-marked 2W 1.1 ohm","w":2,"source":"https://www.chongdiantou.com/archives/35990.html"},
+    {"key":"mosfet_primary_switch","fn":"mosfet","spec":"WMO14N70C2 primary main switch MOSFET, 700 V, 0.45 ohm, DPAK (TO-252) super-junction part, from Shanghai Changyuan Weian","v":700,"qty":1,"ext":2,"obs":3,"conf":"documented","source":"https://www.chongdiantou.com/archives/35990.html"},
+    {"key":"mosfet_sync_rect","fn":"mosfet","spec":"Infineon secondary synchronous-rectifier MOSFET, next to the USB-C VBUS switch MOSFET","qty":1,"ext":2,"obs":3,"conf":"documented","source":"https://www.chongdiantou.com/archives/35990.html"},
+    {"key":"mosfet_vbus_switch","fn":"mosfet","spec":"USB-C VBUS switch MOSFET, next to the synchronous-rectifier MOSFET","qty":1,"ext":2,"obs":3,"conf":"documented","source":"https://www.chongdiantou.com/archives/35990.html"},
+    {"key":"b:smps_small:optocoupler","conf":"documented","spec":"Everlight (EL) 1018 optocoupler bridging the primary and secondary sides; the PCB beneath it is cut away for a 6 mm safety gap","source":"https://www.chongdiantou.com/archives/35990.html"},
+    {"key":"ic_pwm_sync_rect","fn":"ic_pwm","spec":"Dialog iW676 synchronous rectifier controller","qty":1,"ext":3,"obs":4,"conf":"documented","source":"https://www.chongdiantou.com/archives/35990.html"},
+    {"key":"ic_mcu_usb_pd","fn":"ic_mcu","spec":"Dialog iW656P USB PD protocol chip, on the front of the board near the USB-C output","qty":1,"ext":3,"obs":4,"conf":"documented","source":"https://www.chongdiantou.com/archives/35990.html"},
+    {"key":"b:smps_small:connector","conf":"documented","spec":"USB-C output socket with a dust cover","source":"https://www.chongdiantou.com/archives/35990.html"},
+    {"key":"cap_film_y","fn":"cap_film","spec":"Y capacitor on the left of the USB-C output socket, for suppressing output interference","ac":true,"qty":1,"ext":1,"obs":4,"conf":"documented","source":"https://www.chongdiantou.com/archives/35990.html"},
+    {"key":"cap_elec_pwm_supply","fn":"cap_elec","spec":"CapXon 4.7 uF 50 V, supply capacitor for the PWM controller","v":50,"qty":1,"ext":2,"obs":3,"conf":"documented","source":"https://www.chongdiantou.com/archives/35990.html"},
+    {"key":"cap_elec_output_solid","fn":"cap_elec","spec":"Solid-state output filter capacitor, 600 uF 14 V, on the right of the USB-C output socket","v":14,"qty":1,"ext":2,"obs":3,"conf":"documented","source":"https://www.chongdiantou.com/archives/35990.html"}
+  ],
+  "sources": [
+    {"title":"充电头网 teardown report: Samsung S10 5G original 25W USB-C charger (EP-TA800), dated 2019-06-23","url":"https://www.chongdiantou.com/archives/35990.html"},
+    {"title":"Renesas iW1791 product page (27 W AC/DC controller; datasheet link on the page, PDF not opened)","url":"https://www.renesas.com/en/products/iw1791"}
+  ]
+}

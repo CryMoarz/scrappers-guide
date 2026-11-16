@@ -1,0 +1,14 @@
+{
+  "id": "ups_apc_be850m2",
+  "device": "ups",
+  "brand": "APC",
+  "model": "BE850M2",
+  "notes": "The BE850M2-LM variant is not BE850M2.",
+  "research": {"checked":"2026-11-11","gaps":["The APC/Schneider RBC17 page shows 12 V 9 Ah but does not name BE850M2 in its visible text.","Its output and charger figures were not used.","No board-level parts documented."],"method":["The only readable source naming BE850M2 is a retailer listing for the APC RBC17 cartridge, which lists BE850M2 as a suitable model (12 V, 9.0 Ah).","The distributor-hosted data sheet PDF (read as text on 2026-11-11).","It is titled APC Back-UPS 850VA, 120V, LAM, with certification listed as NOM."]},
+  "comps": [
+    {"key":"battery_pb","conf":"documented","spec":"Replacement battery cartridge RBC17, listed by a retailer as suitable for BE850M2: 12 V, 9.0 Ah sealed lead-acid (VRLA), 2-year warranty","v":12,"ah":9,"source":"https://www.bosspacific.com.au/shop/731304206811-731304206811-apc-replacement-battery-cartridge-17-suitable-for-be650g1-be750g-br700g-be850m2-be850g2-bx850m-be650g-bn600-bn700mc-bn900m-14839"}
+  ],
+  "sources": [
+    {"title":"RBC17 cartridge retailer listing with 'Suitable for' model list including BE850M2","url":"https://www.bosspacific.com.au/shop/731304206811-731304206811-apc-replacement-battery-cartridge-17-suitable-for-be650g1-be750g-br700g-be850m2-be850g2-bx850m-be650g-bn600-bn700mc-bn900m-14839"}
+  ]
+}

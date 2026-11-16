@@ -1,0 +1,6 @@
+{
+  "id": "gym",
+  "name": "Gyms and sports centres",
+  "osm": ["leisure=fitness_centre","leisure=sports_centre","leisure=dance"],
+  "exposure": 2
+}

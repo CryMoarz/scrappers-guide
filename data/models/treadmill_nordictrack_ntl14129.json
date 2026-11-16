@@ -1,0 +1,22 @@
+{
+  "id": "treadmill_nordictrack_ntl14129",
+  "device": "treadmill",
+  "brand": "NordicTrack",
+  "model": "Commercial 1750 (NTL14129.10)",
+  "notes": "Covers NTL14129.10, the NordicTrack COMMERCIAL 1750. Other Commercial 1750 model numbers may use different parts, so this covers NTL14129.10 only.",
+  "research": {"checked":"2026-11-12","gaps":["No ICON part numbers or ratings are given, so motor type, horsepower and voltage, controller type and the power switch's trip current are not documented here.","The drive motor sits in the large-DC-motor slot because of the template's drive motor entry, not because the manual says DC."],"method":["Source: ICON Health & Fitness user's manual for model NTL14129.10, which it calls the NordicTrack COMMERCIAL 1750, part list revision R1119A (pp. 34-35, exploded drawings pp. 36-39), hosted on ICON's own CDN under nordictrack.com; read as text on 2026-11-12.","The ICON part list gives key numbers, quantities and descriptions only.","The manual asks for a nominal 120 V circuit that can carry 15 A or more.","NTL14119.0 is named as another 1750 model number in a Fitness Repair Parts listing.","Replacement-part listings for other 1750 model numbers were not used for parts; nordictrack.com product pages returned HTTP 429 to the researcher."]},
+  "comps": [
+    {"key":"motor_dc_large","conf":"documented","spec":"Drive Motor, part list key 54, qty 1; two 5/16 in. Motor Bolts (key 19) are listed","qty":1,"source":"https://res.cloudinary.com/iconcdn/image/upload/v1595538345/nordictrack.com/cdn/pdf/NTL14129.10-420715.pdf"},
+    {"key":"controller_board","conf":"documented","spec":"Controller, part list key 48, qty 1, listed with a Controller Bracket (key 50)","qty":1,"source":"https://res.cloudinary.com/iconcdn/image/upload/v1595538345/nordictrack.com/cdn/pdf/NTL14129.10-420715.pdf"},
+    {"key":"belt_pulley","conf":"documented","spec":"Motor Belt (key 55, qty 1); the drive roller is listed as Drive Roller/Pulley (key 51)","source":"https://res.cloudinary.com/iconcdn/image/upload/v1595538345/nordictrack.com/cdn/pdf/NTL14129.10-420715.pdf"},
+    {"key":"rod_shaft","conf":"documented","spec":"Drive Roller/Pulley (key 51, qty 1) and Idler Roller (key 59, qty 1); the walking belt is tensioned and centred with the idler roller screws","source":"https://res.cloudinary.com/iconcdn/image/upload/v1595538345/nordictrack.com/cdn/pdf/NTL14129.10-420715.pdf"},
+    {"key":"linear_actuator","conf":"documented","spec":"Incline Motor, part list key 66, qty 1, listed with two Incline Motor Spacers (key 67)","qty":1,"source":"https://res.cloudinary.com/iconcdn/image/upload/v1595538345/nordictrack.com/cdn/pdf/NTL14129.10-420715.pdf"},
+    {"key":"breaker_power_switch","fn":"breaker","spec":"Power Switch (key 71, qty 1) that trips like a breaker: it protrudes when tripped and is reset by pressing it back in after waiting five minutes","qty":1,"ext":2,"obs":4,"loc":"Treadmill frame near the power cord","conf":"documented","source":"https://res.cloudinary.com/iconcdn/image/upload/v1595538345/nordictrack.com/cdn/pdf/NTL14129.10-420715.pdf"},
+    {"key":"fan_console","fn":"fan","spec":"Fan, part list key 95, qty 2; the console's workout fan has several speed settings","qty":2,"ext":2,"obs":3,"conf":"documented","source":"https://res.cloudinary.com/iconcdn/image/upload/v1595538345/nordictrack.com/cdn/pdf/NTL14129.10-420715.pdf"},
+    {"key":"spring_cushion","fn":"spring","spec":"Cushion Spring, part list key 87, qty 4","qty":4,"ext":2,"obs":4,"conf":"documented","source":"https://res.cloudinary.com/iconcdn/image/upload/v1595538345/nordictrack.com/cdn/pdf/NTL14129.10-420715.pdf"}
+  ],
+  "sources": [
+    {"title":"NordicTrack NTL14129.10 (Commercial 1750) user's manual, ICON Health & Fitness, part list rev. R1119A (ICON CDN PDF)","url":"https://res.cloudinary.com/iconcdn/image/upload/v1595538345/nordictrack.com/cdn/pdf/NTL14129.10-420715.pdf"},
+    {"title":"Fitness Repair Parts, NordicTrack Commercial 1750 NTL14119.0 parts page, used only for the other-model note","url":"https://www.fitnessrepairparts.com/equipment/Select/32106/NordicTrack/COMMERCIAL-1750-NTL141190"}
+  ]
+}

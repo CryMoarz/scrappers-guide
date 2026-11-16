@@ -1,0 +1,31 @@
+{
+  "id": "chainsaw",
+  "name": "Chainsaw",
+  "abstract": true,
+  "group": "Tools and yard",
+  "aliases": ["chain saw","chainsaw","tree saw","bar and chain saw"],
+  "brands": ["Stihl","Husqvarna","Echo","Poulan","McCulloch","Oregon","Greenworks","Craftsman","Makita","Ryobi"],
+  "prev": 4,
+  "tools": ["screwdriver","socket"],
+  "mins": 15,
+  "kg": 6,
+  "hazards": ["sharp"],
+  "comps": [
+    {"key":"chain_sprocket","fn":"chain_sprocket","spec":"Saw chain, guide bar and drive sprocket; spare chains are often in a drawer nearby","qty":1,"ext":1,"obs":2,"loc":"Bar and clutch cover"},
+    {"key":"oil_lube","fn":"oil_lube","spec":"Bar and chain oil, about 0.2 L in the tank; often a jug nearby","qty":1,"ext":1,"obs":4,"loc":"Oil tank in the body"}
+  ],
+  "buildings": [
+    {"b":"garage_res","l":5},
+    {"b":"farm","l":5},
+    {"b":"hardware","l":4},
+    {"b":"farm_supply","l":4},
+    {"b":"tool_rental","l":4},
+    {"b":"fire_station","l":4},
+    {"b":"house","l":3},
+    {"b":"garden_centre","l":3},
+    {"b":"golf","l":3},
+    {"b":"self_storage","l":2},
+    {"b":"campground","l":2}
+  ],
+  "notes": "Pick a variant: petrol or electric. Whole working saws get taken; spare chains and bars are often left behind."
+}

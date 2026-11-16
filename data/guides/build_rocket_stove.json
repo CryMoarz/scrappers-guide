@@ -1,0 +1,43 @@
+{
+  "id": "build_rocket_stove",
+  "kind": "build",
+  "title": "Rocket stove from steel cans or sheet metal",
+  "keywords": ["rocket stove","wood stove","camp stove","cooking stove","efficient stove","tin can stove","biomass stove","twig stove"],
+  "summary": "A small insulated L-shaped burn chamber that cooks on handfuls of sticks with little smoke. Build it from steel cans, pipe or sheet metal packed with wood ash or other mineral insulation. Use it outdoors only, and never build the fire path from galvanised steel.",
+  "difficulty": 2,
+  "mins": 120,
+  "tools": ["grinder","saw","drill","pliers","hammer","file"],
+  "hazards": ["burn","co_gas","sharp","chemical"],
+  "materials": [
+    {"item":"Plain steel: a 10–20 L can, paint tin or bucket for the outer shell, plus a strip of plate or grate for the fuel shelf","qty":"1 can + 1 strip","fn":"sheet_metal"},
+    {"item":"Burn chamber: steel pipe or cans 10–15 cm across, forming an L (an elbow, or two cans joined)","qty":"about 60 cm total","fn":"tube_frame","only":["stainless pole"]},
+    {"item":"Mineral insulation: wood ash, perlite, vermiculite, or a sand-clay mix","qty":"5–10 L","fn":"insulation","only":["mineral","perlite","vermiculite","rock wool","ceramic"]},
+    {"item":"Pot supports: three steel bars or bolts","qty":"3","fn":"fasteners"},
+    {"item":"Pot skirt: a band of sheet steel round the pot","qty":"1","fn":"sheet_metal","optional":true},
+    {"item":"Bricks as an alternative shell","qty":"about 16","optional":true}
+  ],
+  "steps": [
+    {"text":"Collect plain or painted steel only. Test with a magnet (steel sticks). Reject galvanised steel (dull grey, crystal-pattern zinc coating) for any part that touches the fire or its gases.","warn":"Heated zinc gives off fumes that cause metal-fume fever. Burn paint and coatings off the cans in a hot fire outdoors first, standing upwind."},
+    {"text":"Make the L-shaped burn chamber: a horizontal fuel tube about 15–20 cm long joined to a vertical chimney 2–3 times its width tall (30–45 cm for a 12–15 cm pipe). Keep the same inside size all the way through."},
+    {"text":"Cut a hole in the side of the outer can near the bottom for the fuel tube to poke out. Cut the top of the outer can open.","warn":"Cut sheet metal edges are razor sharp. File them, fold them over, or wear gloves."},
+    {"text":"Stand the L inside the outer can, fuel tube sticking out the side hole, chimney top level with the can's rim."},
+    {"text":"Pack insulation round the chimney and under the fuel tube, filling the can. Cap the insulation at the top with a ring of sheet steel or a layer of clay so it stays put."},
+    {"text":"Fit the fuel shelf halfway up inside the fuel tube, so sticks lie on top and air flows in underneath."},
+    {"text":"Fix three pot supports across the top so the pot sits 2–4 cm above the chimney mouth."},
+    {"text":"Optional: wrap a sheet-metal skirt round the pot, leaving a gap of about 1–1.5 cm between pot and skirt. The hot gases scrub up the pot's sides."},
+    {"text":"First fire outdoors (safety_carbon_monoxide): burn it hot for 30 minutes to burn off any coatings. Stand upwind.","warn":"Use outdoors or in an open-sided shelter only. Any fire indoors makes carbon monoxide, which kills without warning."},
+    {"text":"Cook: feed dry sticks thumb-thick or thinner, tips into the fire. Push them in as they burn. A small hot fire with flames drawn into the chimney means it's working.","warn":"The outside gets hot enough to burn. Keep children and dry grass away, and let it cool before moving."}
+  ],
+  "notes": "## Why it works\nThe fire burns at the bottom of an insulated chimney. The chimney's draught pulls air in under the fuel, so it burns hot and clean. Insulation keeps the heat in the gases instead of soaking into metal or ground, and the pot sits right in the hot gas stream. Only the tips of the sticks burn, so fuel use stays low.\n\n## Proportions\n- Chamber width: 10–15 cm for a family cooking pot. Bigger needs more fuel; smaller chokes.\n- Chimney height above the fuel opening: 2–3 times the width.\n- Keep the cross-section the same through fuel tube, chimney and the gap round the pot.\n- Pot gap: the ring area between pot and skirt should be about equal to the chimney's area. Ring area ≈ pot circumference × gap. Example: 12 cm chimney (113 cm²) and 28 cm pot (88 cm round) → gap about 1.3 cm. Narrower transfers more heat but may choke the draught.\n\n## Insulation\nLight, mineral and fireproof: wood ash, perlite, vermiculite, pumice, or a mix of clay with sawdust or straw that burns out leaving air pockets. Not sand alone (it's heavy and soaks up heat). Not fibreglass (it can break down near the fire).\n\n## Fuel\nDry is everything. Damp wood smokes and barely burns. Sticks, split branches, pine cones, corn cobs, dry dung. Store fuel under cover.\n\n## Troubleshooting\n- Smokes out of the fuel opening: chimney too short, fuel too wet, or the fuel opening is blocked with too much wood.\n- Slow to boil: pot too high above the chimney, no skirt, or wind; add a windbreak.\n- Burns through cans: thin cans burn out within weeks. Use thicker steel pipe for the chamber, or line it with clay.\n\n## If you lack a part\n- No pipe or elbow: stack bricks in an L with mud mortar, or cut and bend cans and wire them together.\n- No insulation: use dry soil as a last resort; it works but takes longer to heat up.\n",
+  "tree": {"era":2,"branch":"fire","requires":["safety_carbon_monoxide"]},
+  "devices": ["bbq_grill","dryer","washer","patio_heater","commercial_kitchen","water_heater"],
+  "parts": ["sheet_metal","tube_frame","insulation"],
+  "license": "CC-BY-SA-4.0",
+  "refs": [
+    {"lib":"appropedia","q":"rocket stove"},
+    {"lib":"energypedia","q":"improved cookstove"}
+  ],
+  "sources": [
+    {"title":"Aprovecho Research Center, design principles for improved wood-burning cookstoves","note":"Principles summarised in our own words."}
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "id": "glass",
+  "label": "Glass",
+  "severity": 2,
+  "summary": "Panes, shelves, tubes, solar panel fronts and screens break into sharp fragments. Toughened glass can burst into small cubes with no warning, especially if its edge is chipped. Big panes are heavy and cut deep.",
+  "signs": ["Glass shelves, doors and oven windows","Large windows, display cases and mirrors","Fluorescent tubes, bulbs and CRT screens","Solar panel and scanner glass","Chips at the edges or corners of toughened glass"],
+  "do": ["Wear gloves and eye protection when handling glass","Carry panes upright on edge, with a firm grip on both sides","Tape a cross over a cracked pane before moving it","Sweep up fragments and wrap them before throwing them away","Check floors and seats for splinters before kneeling or sitting"],
+  "dont": ["Don't carry big panes flat, or in wind: they catch the air and flex","Don't try to catch a falling pane","Don't break glass with your hand or foot","Don't pick up fine splinters with bare fingers: use tape or a damp cloth"],
+  "ppe": ["Cut-resistant or thick leather gloves","Safety glasses","Long sleeves and sturdy shoes"],
+  "firstAid": ["Press firmly on a bleeding cut with a clean pad for at least 10 minutes","Rinse cuts with clean water and lift out loose surface splinters","Don't pull out a large or deep piece: pad around it and get medical help","Spurting blood, a gaping cut, or numbness or weakness below the cut needs real medical care","Glass in an eye: don't rub or press on it; rinse out loose specks with clean water; if a piece is stuck in the eye, leave it, cover the eye with a paper cup or shield without pressing, and get medical help","Heavy bleeding from an arm or leg that hard pressure can't stop: put a tourniquet (a wide strap tightened by twisting a stick) a hand's width above the wound, not on a joint, tighten until the bleeding stops, note the time, and get medical help"],
+  "refs": [
+    {"lib":"nomad_conditions","q":"wounds cuts","path":"wounds-cuts","note":"First aid and over-the-counter treatment on a NOMAD box"},
+    {"lib":"wikimed","q":"Wound"},
+    {"lib":"wikipedia","q":"Wound"}
+  ]
+}

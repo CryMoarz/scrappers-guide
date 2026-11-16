@@ -1,0 +1,14 @@
+{
+  "id": "sterilise",
+  "name": "Sterilise",
+  "keywords": ["sterilise","sterilize","disinfect","sanitise","sanitize","kill germs","sterilise tools","sterilize tools","disinfect surfaces"],
+  "summary": "Clean first, then kill what’s left: dirt shields germs from heat, chlorine and light. Boiling handles most needs, and a pressure cooker at full pressure reaches the temperature hospitals sterilise at. Diluted bleach or pool chlorine disinfects surfaces and tools. UV-C lamps hide in pond clarifiers, air purifiers and water treatment units, but they burn eyes and skin.",
+  "parts": [
+    {"fn":"chlorine","why":"Bleach and pool chlorine disinfect surfaces and tools","core":true},
+    {"fn":"uv_lamp","why":"UV-C lamps kill germs on surfaces and in water","core":true},
+    {"fn":"heating_element","why":"Electric boiling and steaming where power allows"},
+    {"fn":"propane","why":"Fuel for boiling and pressure cooking"}
+  ],
+  "guides": ["skill_solar_disinfection"],
+  "tips": ["Boil tools for 10 minutes. A pressure cooker at full pressure for 15–30 minutes sterilises.","Never mix bleach with ammonia, vinegar or other cleaners. It makes toxic gas.","Never look at a lit UV-C lamp, and keep skin out of its light.","Bleach loses strength over months. Old bottles need a stronger mix."]
+}

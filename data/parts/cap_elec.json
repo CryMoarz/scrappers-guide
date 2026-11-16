@@ -1,0 +1,14 @@
+{
+  "id": "cap_elec",
+  "name": "Electrolytic capacitors",
+  "group": "Electronic components",
+  "demand": 1,
+  "keywords": ["electrolytic","electrolytic capacitor","capacitor","capacitors","cap","caps","filter capacitor","bulk capacitor","smoothing capacitor","reservoir capacitor","snap-in capacitor","radial capacitor","flash capacitor","photoflash capacitor"],
+  "substitutes": ["capacitor_large","cap_film"],
+  "summary": "Aluminium electrolytic capacitors that store and smooth DC on nearly every power board.",
+  "uses": ["Smoothing a rectified supply","Repairing power supplies, TVs and routers (bad capacitors are the commonest fault)","Buffering a motor or LED driver"],
+  "identify": "Cylinders in a printed sleeve with a stripe marking the negative leg, and a value in µF and volts. Big snap-in ones (200–450V) sit by the mains input of power supplies and can hold a dangerous charge after unplugging; camera flashes hold a 330V one.",
+  "test": "A domed or leaking top means it’s dead. Discharge big ones through a resistor, then check with a capacitance meter: the reading should be close to the label.",
+  "decay": {"halfLifeMonths":120,"note":"They slowly dry out and lose capacity, faster when hot."},
+  "hazards": ["hv_cap"]
+}

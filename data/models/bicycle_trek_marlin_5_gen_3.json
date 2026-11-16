@@ -1,0 +1,19 @@
+{
+  "id": "bicycle_trek_marlin_5_gen_3",
+  "device": "bicycle",
+  "brand": "Trek",
+  "model": "Marlin 5 Gen 3",
+  "notes": "Covers the Marlin 5 Gen 3 as listed on one undated retailer spec page, so changes between model years are not covered. Tyres are 27.5 in on the XS and S frames and 29 in on M to XL, so check the size.",
+  "research": {"checked":"2026-11-12","gaps":["The spec page has no model year, so no years value is set; a BicycleBlueBook page lists a 2025 Marlin 5 Gen 3 but shows no components, and no page read ties the spec list to 2025.","Hydraulic disc brakes (Tektro HD-M275, HD-M276 on XS and S, 160 mm rotors) are not listed: the template has no brake part.","Formula hubs and Bontrager Connection rims are on the page but not listed as parts."],"method":["Specs are from the Pedal Power (pedalpowerct.com) product page \"Trek Marlin 5 Gen 3\", read as text.","The BicycleBlueBook value-guide page was read only for its \"2025 Trek Marlin 5 Gen 3\" heading.","The researcher reported HTTP 429 from Comorsports, BikeMart and Cahaba Cycles, HTTP 403 from tiso.com, and no spec text on Trek pages; none are cited.","At fact-check, 99spokes and tredz returned HTTP 403, Comorsports HTTP 429, and a Trek pre-owned 2025 page loaded no spec text."]},
+  "comps": [
+    {"key":"chain_sprocket","conf":"documented","spec":"Shimano LG500 chain for 9, 10 and 11 speed; Prowheel C10Y-NW crankset with a 30T steel narrow-wide chainring, 160 mm on XS and 170 mm on S to XL; Shimano LINKGLIDE LG300 cassette, 11-46, 9-speed","source":"https://www.pedalpowerct.com/product/trek-marlin-5-gen-3-709745-1.htm"},
+    {"key":"derailleur_rear","fn":"chain_sprocket","spec":"Shimano CUES U4000 rear derailleur, shifted by Shimano U4000 9-speed shifters","qty":1,"ext":2,"obs":3,"conf":"documented","source":"https://www.pedalpowerct.com/product/trek-marlin-5-gen-3-709745-1.htm"},
+    {"key":"spring_fork","fn":"spring","spec":"SR Suntour XCT 30 suspension fork with coil spring, preload, hydraulic lockout and 100 mm QR; travel 80 mm on the XS and 100 mm on S to XL","qty":1,"ext":2,"obs":3,"conf":"documented","source":"https://www.pedalpowerct.com/product/trek-marlin-5-gen-3-709745-1.htm"},
+    {"key":"foam_rubber","conf":"documented","spec":"Bontrager XT3 Comp tyres, wire bead: 27.5 x 2.40 in on XS and S, 29 x 2.40 in on M to XL","source":"https://www.pedalpowerct.com/product/trek-marlin-5-gen-3-709745-1.htm"},
+    {"key":"tube_frame","conf":"documented","spec":"Alpha Silver aluminium frame with a 135x5mm ThruSkew rear wheel system","source":"https://www.pedalpowerct.com/product/trek-marlin-5-gen-3-709745-1.htm"}
+  ],
+  "sources": [
+    {"title":"Trek Marlin 5 Gen 3 product page (Pedal Power, Connecticut retailer), spec list","url":"https://www.pedalpowerct.com/product/trek-marlin-5-gen-3-709745-1.htm"},
+    {"title":"2025 Trek Marlin 5 Gen 3 (BicycleBlueBook value guide), model year heading","url":"https://www.bicyclebluebook.com/value-guide/mountain/trek/marlin-5-gen-3/2025"}
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "id": "laptop_apple_macbook_pro_m1_a2338",
+  "device": "laptop",
+  "brand": "Apple",
+  "model": "MacBook Pro 13-inch M1 (A2338, EMC 3578)",
+  "years": "2020",
+  "notes": "Covers the M1 13-inch 2020 model (A2338 / EMC 3578). The M2 A2338 variant (mid 2022, EMC 8162) is not covered.",
+  "research": {"checked":"2026-11-11","gaps":["No logic-board or battery-board parts documented."],"method":["Apple's M1 13-inch 2020 spec page and iFixit's device page (A2338 / EMC 3578, released November 2020) identify the model; iFixit's battery listing ties A2338 (EMC 3578, Late 2020) to the M1 and also lists a different A2338 variant (M2, mid 2022, EMC 8162), which this record does not cover.","The Apple page gives battery, adapter, display, camera and speaker facts. iFixit's battery guide refers to a fan. iFixit's battery listing names replacement pack A2171 (5100 mAh, 58.2 Wh) and lists A2338 as compatible."]},
+  "comps": [
+    {"key":"battery_li","conf":"documented","spec":"Built-in 58.2-watt-hour lithium-polymer battery","source":"https://support.apple.com/kb/SP824"},
+    {"key":"psu","conf":"documented","spec":"61W USB-C Power Adapter listed with the laptop","w":61,"source":"https://support.apple.com/kb/SP824"},
+    {"key":"display","conf":"documented","spec":"13.3-inch (diagonal) IPS display, 2560 × 1600 native resolution","source":"https://support.apple.com/kb/SP824"},
+    {"key":"led_light","conf":"documented","spec":"Display is described as LED-backlit","source":"https://support.apple.com/kb/SP824"},
+    {"key":"fan","conf":"documented","spec":"A fan is present; the guide refers to the battery cell that lies nearest the fan (no fan type or part number given)","source":"https://www.ifixit.com/Guide/MacBook+Pro+13-Inch+Two+Thunderbolt+Ports+Late+2020+Battery+Replacement/143286"},
+    {"key":"camera","conf":"documented","spec":"720p FaceTime HD camera","source":"https://support.apple.com/kb/SP824"},
+    {"key":"speaker","conf":"documented","spec":"Stereo speakers with high dynamic range","source":"https://support.apple.com/kb/SP824"}
+  ],
+  "sources": [
+    {"title":"iFixit device page: MacBook Pro 13-inch Two Thunderbolt Ports Late 2020 (model A2338, EMC 3578, released November 2020)","url":"https://www.ifixit.com/Device/MacBook_Pro_13%22_Two_Thunderbolt_Ports_Late_2020"},
+    {"title":"Apple tech specs: MacBook Pro (13-inch, M1, 2020)","url":"https://support.apple.com/kb/SP824"},
+    {"title":"iFixit battery replacement guide for the Late 2020 13-inch model (A2338)","url":"https://www.ifixit.com/Guide/MacBook+Pro+13-Inch+Two+Thunderbolt+Ports+Late+2020+Battery+Replacement/143286"},
+    {"title":"iFixit replacement battery listing: pack A2171, 5100 mAh (58.2 Wh), compatibility list including A2338","url":"https://www.ifixit.com/en-ca/products/macbook-pro-13-retina-mid-2019-battery"}
+  ]
+}

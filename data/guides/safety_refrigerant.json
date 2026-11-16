@@ -1,0 +1,31 @@
+{
+  "id": "safety_refrigerant",
+  "kind": "safety",
+  "title": "Salvage fridges and air conditioners without opening the refrigerant",
+  "keywords": ["refrigerant","freon","fridge gas","r134a","r600a","r290","r410a","r22","cut fridge line","ac gas","recover refrigerant","sealed system","fridge teardown","air conditioner parts"],
+  "summary": "Fridges, freezers, air conditioners and dehumidifiers hold refrigerant in a sealed loop. Recovering it properly needs training and a recovery machine you almost certainly won't have. This guide shows how to take the useful parts without opening the loop, and what to do if the loop is already broken.",
+  "difficulty": 2,
+  "mins": 30,
+  "tools": ["screwdriver","socket","cutters","pliers","multimeter"],
+  "hazards": ["refrigerant","mains","hv_cap","sharp","heavy"],
+  "materials": [
+    {"item":"Resistor discharge tool for run capacitors","fn":"resistor","qty":"1"}
+  ],
+  "steps": [
+    {"text":"First decide whether the whole unit is worth more working. A fridge or air conditioner that still runs is worth moving whole on a hand truck."},
+    {"text":"Unplug it. Find the rating plate (inside the fridge door, on the back, or on the side of an AC unit) and read the refrigerant type. R-600a and R-290 burn. R-134a, R-410A, R-22 and R-12 don't burn but are under pressure.","warn":"Flammable refrigerants can ignite from a spark or flame if a line breaks. Treat them like propane."},
+    {"text":"Learn the sealed loop by sight: the black dome compressor, the condenser coil (a black grid on the back of a fridge, or a finned coil in an AC unit), the evaporator in the cold part, and the copper or aluminium tubes joining them, including a very thin capillary tube. Everything else you can take."},
+    {"text":"Before touching wiring, discharge the run or start capacitor near the compressor and the fan motors with the resistor tool, then check it with your meter.","warn":"Run capacitors can hold a mains-level charge after unplugging."},
+    {"text":"Take the parts outside the loop: fans and fan motors, wiring, relays, thermostats and timers, lights, door switches, glass shelves, magnetic door seals, control boards and sheet metal."},
+    {"text":"You can unclip the compressor's electrical cover and take the start relay and overload, but leave the compressor and its tubes alone."},
+    {"text":"Work around tubes, never through them. If a tube is in the way of a part, leave that part.","warn":"Don't bend, kink or lever against tubing. A nicked tube can split and spray."},
+    {"text":"If the loop is already broken (a snapped or cut tube, a smashed unit), the gas has already escaped. Air the area out for a few minutes and keep flames away. Then you can unbolt the compressor and coils.","warn":"The oil in a compressor still holds some refrigerant. No torches or grinders on the tubes."},
+    {"text":"If you need a compressor or coils, look for a unit whose loop is already broken. Never cut, drill, unbraze or heat tubes on an intact system."},
+    {"text":"A dead fridge or chest freezer with its loop left intact still makes an excellent insulated box for storage, or a cool store dug into the ground."}
+  ],
+  "notes": "## Why not just cut the line\n\n- **Frostbite.** Liquid refrigerant boils far below freezing as it escapes (R-134a at about −26 °C, R-410A at about −50 °C). The spray freezes skin and eyes instantly.\n- **No air.** In a small room a big leak pushes out the air. You won't smell it.\n- **Fire.** Many modern fridges and some AC units use isobutane (R-600a) or propane (R-290). The charge is small but can flash in a closed room.\n- **Toxic smoke.** Heat from a torch or fire can break most other refrigerants down into very toxic gases, including hydrogen fluoride.\n- **Damage beyond you.** Many refrigerants are strong greenhouse gases, and older ones (R-12, R-22) damage the ozone layer.\n\n## What proper recovery needs\n\nTraining, a refrigerant recovery machine, a rated recovery cylinder, gauges, valves or piercing tools, and scales. If you don't have every one of these, don't attempt it. Leave the sealed system alone.\n\n## What's worth taking\n\n| Part | Where | Good for |\n|---|---|---|\n| Fan motors | Behind the back panel, beside the compressor, in the freezer | Ventilation, small drives |\n| Thermostat, relays, timers | Control box or inside the cabinet | Controlling heaters, coolers and pumps |\n| Door seals | Around the door | Magnetic strips and seals |\n| Glass shelves | Inside | Toughened glass for solar ovens and dehydrators |\n| Sheet metal and wiring | Case and harness | Building material, wire |\n| The cabinet itself | Whole unit | Insulated storage box |\n\n## Common mistakes\n\n- Cutting the thin capillary tube \"just to let it out\".\n- Using a grinder near tubing to get a part out faster.\n- Opening an intact system in a basement or small kitchen.\n- Forgetting the run capacitor before grabbing the wiring.",
+  "tree": {"era":2,"branch":"salvage","requires":["safety_entering_buildings"]},
+  "devices": ["fridge","commercial_fridge","window_ac","dehumidifier","vending","mini_fridge","central_ac","mini_split","ice_machine","walk_in_cooler","rooftop_hvac","water_cooler"],
+  "parts": ["compressor","fan","thermostat","motor_ac","relay","wire_copper","insulation","cooler_box","glass_pane"],
+  "license": "CC-BY-SA-4.0"
+}

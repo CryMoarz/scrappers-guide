@@ -1,0 +1,8 @@
+{
+  "id": "salon",
+  "name": "Hair salons and spas",
+  "osm": ["shop=hairdresser","shop=beauty","shop=massage","shop=tattoo","shop=cosmetics","shop=perfumery","shop=hairdresser_supply","leisure=sauna","leisure=spa"],
+  "exposure": 3,
+  "notes": "Hair salons, barbers, beauty and nail salons, spas and tattoo parlours. Few looters think of them, but every chair has a hair dryer or clippers, and the back room usually holds a washer, a dryer and a large water heater.",
+  "access": "A glass shopfront; the back door often opens on an alley."
+}

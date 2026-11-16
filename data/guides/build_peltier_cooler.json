@@ -1,0 +1,43 @@
+{
+  "id": "build_peltier_cooler",
+  "kind": "build",
+  "title": "Peltier (thermoelectric) cooler box",
+  "keywords": ["peltier","thermoelectric","tec1-12706","tec","cooler box","12v fridge","mini fridge","cool box","medicine cooler","keep food cold"],
+  "summary": "Fit a salvaged Peltier module between two heatsinks in the wall of an insulated box to make a 12V cooler. It cools 10–20 °C below the air around it and draws 40–70W, so it is power-hungry: good for drinks, small amounts of food and medicine on a big battery or solar, not a full fridge.",
+  "difficulty": 2,
+  "mins": 120,
+  "tools": ["drill","saw","knife","screwdriver","multimeter","crimper","cutters","tape"],
+  "hazards": ["burn"],
+  "materials": [
+    {"item":"Peltier module, 12V 4–6A (TEC1-12706 type is common)","qty":"1–2","fn":"thermoelectric"},
+    {"item":"Heatsinks: a large hot-side one with a fan (a desktop CPU cooler is ideal) and a smaller cold-side one","qty":"2","fn":"heatsink"},
+    {"item":"12V fans: one for the hot side, a small one inside","qty":"2","fn":"fan","only":["heatsink","cooling fan"]},
+    {"item":"Insulated box or picnic cooler, food-safe inside (or keep food in sealed containers)","qty":"1","fn":"cooler_box"},
+    {"item":"Extra insulation for walls and lid","qty":"some","fn":"insulation","optional":true},
+    {"item":"Aluminium spacer block, if the wall is thicker than the module","qty":"1","fn":"heatsink","optional":true},
+    {"item":"Thermal paste","qty":"small tube"},
+    {"item":"Fuse and holder, 7.5–10A per module, within 30 cm of battery +","qty":"1","fn":"fuse"},
+    {"item":"Wire 14 AWG (2.5 mm²)","qty":"2–3 m","fn":"wire_copper","only":["extension","awg","cord"]},
+    {"item":"Thermostat or temperature switch","qty":"1","fn":"thermostat","optional":true},
+    {"item":"Buck converter to run the module at 7–9V for better efficiency","qty":"1","fn":"dcdc_buck","optional":true},
+    {"item":"12V battery or 12V power supply of 6A or more","qty":"1","fn":"battery_pb","only":["12v"]},
+    {"item":"Long screws with insulating washers, foam to seal gaps","qty":"4","fn":"fasteners","optional":true}
+  ],
+  "steps": [
+    {"text":"Find the cold side: put the module on the hot-side heatsink with a little paste, connect red to + and black to − on 12V for 2–3 seconds, and touch the top face. If it's cold, that face goes inside the box.","warn":"Without a heatsink the module overheats and burns out within seconds, and its hot face can burn you. Only test briefly."},
+    {"text":"Cut a hole in the box wall or lid just big enough for the module (or the spacer block if the wall is thick). Mount it high in the box: cold air sinks."},
+    {"text":"Build the sandwich: hot-side heatsink outside, module, spacer block if needed, cold-side heatsink inside. Spread a thin, even layer of paste on every contact face."},
+    {"text":"Clamp with screws through both heatsinks, tightening a little at a time in a cross pattern. Use plastic or fibre washers so the screws don't carry heat back in.","warn":"Over-tightening or uneven clamping cracks the ceramic module."},
+    {"text":"Seal every gap round the sandwich with foam. Any air leak wastes most of the cooling."},
+    {"text":"Fit the hot-side fan to blow onto the outside fins, and a small fan inside to stir air over the cold sink."},
+    {"text":"Wire the module and both fans in parallel to the 12V supply through a switch and the fuse. Put the fuse within 30 cm of battery positive.","warn":"Fuse at the battery. A shorted 14 AWG wire from a battery gets hot enough to burn."},
+    {"text":"Optional: wire a thermostat to switch the module (through a relay if its contacts are small) and set it to 4–8 °C."},
+    {"text":"Run it empty for 1–2 hours and measure the inside temperature. Touch the hot-side heatsink: it should stay below about 50 °C. If it's hotter, use a bigger heatsink or fan.","warn":"If the hot-side fan stops, the module overheats and can fail within a minute. Check the fan whenever you open the box."},
+    {"text":"Use it well: put in only food that's already cool, open it rarely, keep it in shade, and add frozen water bottles when you have them. Drain condensation regularly."}
+  ],
+  "notes": "## What to expect\n- A 12V 6A module draws about 50–70W and moves at most about 50W of heat, less as the temperature difference grows. Its efficiency (heat moved per watt in) is about 0.3–0.6. A compressor fridge is 3–5× better.\n- In a good picnic cooler it holds about 10–20 °C below room temperature. At 30 °C outside that's 10–20 °C inside, not 4 °C.\n- Two modules side by side cool faster but use double the power.\n\n## Power budget\n60W × 24 h = 1,440Wh a day, more than a 100Ah lead-acid battery can give. Run it on a thermostat and the duty falls to 30–60% in a well-insulated box. Solar: roughly 250–500W of panel to run one module, depending on duty and sun.\n\n## Run it at lower voltage\nAt 7–9V a 12V module moves less heat but uses far less power, so it's more efficient (often 1.5–2× better). With a buck converter, run it at reduced voltage all the time once the box is cold.\n\n## Insulation does half the job\nHeat leaking in = area × temperature difference ÷ insulation. Doubling wall thickness halves the leak. Add foam board or blankets around the outside of a thin cooler, and seal the lid.\n\n## Medicine\nMany medicines need 2–8 °C. A Peltier box may not reach that on hot days. Check with a thermometer before trusting it, and keep a cool-water or clay-pot evaporative backup.\n\n## Variations\n- Swap polarity and it becomes a warmer (useful for keeping food warm or for an egg incubator; set a thermostat).\n- Thermoelectric generators: a module between a stove and a cold sink gives a few watts. Use generator-rated modules where possible; cooling modules can be damaged by stove heat over about 130–150 °C.\n\n## Where to find modules\nThermoelectric mini fridges, wine coolers, 12V car cool boxes, some water coolers and small dehumidifiers. The module sits between two heatsinks, usually with a fan on each.\n\n## If you lack a part\n- No CPU cooler: any big aluminium heatsink with a fan, as long as the hot side stays under about 50 °C.\n- No cooler box: build one from foam board in a wooden box, with a tight lid and gasket.\n",
+  "tree": {"era":4,"branch":"fire","requires":["skill_dc_wiring"]},
+  "devices": ["mini_fridge","water_cooler","dehumidifier","camping_gear","desktop_pc","car","egg_incubator"],
+  "parts": ["thermoelectric","heatsink","fan","cooler_box","insulation"],
+  "license": "CC-BY-SA-4.0"
+}

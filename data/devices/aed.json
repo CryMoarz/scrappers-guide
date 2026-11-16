@@ -1,0 +1,42 @@
+{
+  "id": "aed",
+  "name": "AED (automated external defibrillator)",
+  "group": "Medical and mobility",
+  "aliases": ["defibrillator","defib","heart defibrillator","aed cabinet","heartstart"],
+  "brands": ["Philips","ZOLL","Physio-Control","Cardiac Science","HeartSine","Defibtech"],
+  "era": "2000s–present",
+  "prev": 3,
+  "tools": ["screwdriver","security_bits","multimeter"],
+  "mins": 25,
+  "kg": 2.5,
+  "hazards": ["hv_cap","li_fire"],
+  "comps": [
+    {"key":"battery_primary","fn":"battery_primary","spec":"Non-rechargeable lithium battery pack, about 9–15V, date-stamped; some models take loose CR123A-size cells","v":[9,15],"qty":1,"ext":1,"obs":4,"loc":"Slide-in pack on the back or side","p":0.5},
+    {"key":"capacitor_large","fn":"capacitor_large","spec":"Energy-storage capacitor, roughly 100–200 µF charged to about 1.5–2 kV — can hold a lethal charge; leave it to someone trained to discharge it","v":[1500,2000],"qty":1,"ext":4,"obs":5,"loc":"Inside the case, the largest part"},
+    {"key":"transformer_hv","fn":"transformer_hv","spec":"Small flyback transformer that charges the capacitor","v":[1500,2200],"qty":1,"ext":3,"obs":5,"loc":"Main board"},
+    {"key":"relay","fn":"relay","spec":"High-voltage relays or IGBTs that route the shock","qty":2,"ext":4,"obs":5,"loc":"Main board"},
+    {"key":"speaker","fn":"speaker","spec":"Loud voice-prompt speaker","w":[0.5,2],"qty":1,"ext":2,"obs":5,"loc":"Front of the case"},
+    {"key":"controller_board","fn":"controller_board","spec":"Main board with self-test circuits","qty":1,"ext":2,"obs":5,"loc":"Inside the case"}
+  ],
+  "boards": [],
+  "buildings": [
+    {"b":"gym","l":5},
+    {"b":"stadium","l":5},
+    {"b":"airport","l":5},
+    {"b":"school","l":4},
+    {"b":"office","l":4},
+    {"b":"mall","l":4},
+    {"b":"clinic","l":4},
+    {"b":"nursing_home","l":4},
+    {"b":"police","l":4},
+    {"b":"fire_station","l":4},
+    {"b":"train_station","l":4},
+    {"b":"hospital","l":4},
+    {"b":"golf","l":3},
+    {"b":"church","l":3},
+    {"b":"hotel","l":3},
+    {"b":"supermarket","l":3},
+    {"b":"cinema","l":3}
+  ],
+  "notes": "A working AED saves lives: leave it in its cabinet and check the battery and pad dates. Strip only broken or long-expired units. The spare battery pack is the easy prize."
+}

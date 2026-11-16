@@ -1,0 +1,1609 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://scrappers-guide.org/schema/sdg.schema.json",
+  "title": "Scrapper's Digital Guide records",
+  "description": "One schema per record type. `x-ref` names the collection an id must exist in; the validator, forms, API and MCP tools all read this file. Ratings are always 1-5. For `ext` lower is easier; for everything else higher is more.",
+  "x-collections": {
+    "parts": "part",
+    "boards": "board",
+    "devices": "device",
+    "models": "model",
+    "buildings": "building",
+    "jobs": "job",
+    "hazards": "hazard",
+    "guides": "guide"
+  },
+  "$defs": {
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z0-9][a-z0-9_]*$",
+      "maxLength": 64,
+      "description": "Lowercase letters, digits and underscores. Never changes once other records point at it."
+    },
+    "rating": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 5,
+      "x-widget": "rating"
+    },
+    "text": {
+      "type": "string",
+      "maxLength": 2000
+    },
+    "line": {
+      "type": "string",
+      "maxLength": 300
+    },
+    "lines": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/line"
+      },
+      "x-widget": "lines"
+    },
+    "source": {
+      "type": "object",
+      "required": [
+        "title"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "title": {
+          "$ref": "#/$defs/line",
+          "title": "Source"
+        },
+        "url": {
+          "type": "string",
+          "maxLength": 500,
+          "pattern": "^https?://",
+          "title": "Link"
+        },
+        "note": {
+          "$ref": "#/$defs/line",
+          "title": "Note"
+        }
+      }
+    },
+    "meta": {
+      "rev": {
+        "type": "integer",
+        "minimum": 0,
+        "title": "Revision",
+        "description": "Bumped by the hub on every accepted change.",
+        "x-readonly": true
+      },
+      "updated": {
+        "type": "string",
+        "maxLength": 40,
+        "title": "Last updated",
+        "x-readonly": true
+      },
+      "sources": {
+        "type": "array",
+        "items": {
+          "$ref": "#/$defs/source"
+        },
+        "title": "Sources",
+        "description": "Where this knowledge came from: teardowns, filings, manuals, your own hands."
+      },
+      "deprecated": {
+        "type": "boolean",
+        "title": "Deprecated",
+        "description": "Kept so old references still work, but hidden from search."
+      },
+      "replacedBy": {
+        "$ref": "#/$defs/id",
+        "title": "Replaced by"
+      }
+    },
+    "comp": {
+      "type": "object",
+      "title": "Part entry",
+      "required": [
+        "key"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "key": {
+          "$ref": "#/$defs/id",
+          "title": "Key",
+          "description": "Unique within this device or board. Usually the part type id."
+        },
+        "fn": {
+          "$ref": "#/$defs/id",
+          "x-ref": "parts",
+          "title": "Part type"
+        },
+        "spec": {
+          "$ref": "#/$defs/line",
+          "title": "Spec",
+          "description": "Plain language with values and units. Say so here if it can hurt you."
+        },
+        "v": {
+          "$ref": "#/$defs/amount",
+          "title": "Volts",
+          "description": "Rated voltage, e.g. 12, or 100-240 for a range."
+        },
+        "a": {
+          "$ref": "#/$defs/amount",
+          "title": "Amps",
+          "description": "Rated or output current. Fuses: the fuse rating."
+        },
+        "w": {
+          "$ref": "#/$defs/amount",
+          "title": "Watts",
+          "description": "Rated power, e.g. 100 for a 100 W panel."
+        },
+        "ah": {
+          "$ref": "#/$defs/amount",
+          "title": "Amp-hours",
+          "description": "Battery capacity. 5000 mAh is 5."
+        },
+        "ac": {
+          "type": "boolean",
+          "title": "AC",
+          "description": "Runs on or puts out alternating current (mains-type)."
+        },
+        "qty": {
+          "type": "number",
+          "exclusiveMinimum": 0,
+          "title": "Quantity"
+        },
+        "ext": {
+          "$ref": "#/$defs/rating",
+          "title": "Difficulty",
+          "description": "1 = pull it out by hand, 5 = specialist work."
+        },
+        "obs": {
+          "$ref": "#/$defs/rating",
+          "title": "Overlooked",
+          "description": "1 = everyone grabs it, 5 = nobody knows it's there."
+        },
+        "loc": {
+          "$ref": "#/$defs/line",
+          "title": "Where inside"
+        },
+        "kg": {
+          "type": "number",
+          "minimum": 0,
+          "title": "Weight (kg)",
+          "description": "Weight of one unit as you'd carry it away."
+        },
+        "p": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1,
+          "title": "Share of models",
+          "description": "0-1: how many units of this device have this part. Leave empty if nearly all do."
+        },
+        "notes": {
+          "$ref": "#/$defs/line",
+          "title": "Notes"
+        },
+        "absent": {
+          "type": "boolean",
+          "title": "Remove inherited part",
+          "description": "Removes a part this record would otherwise inherit."
+        }
+      },
+      "if": {
+        "properties": {
+          "absent": {
+            "const": true
+          }
+        },
+        "required": [
+          "absent"
+        ]
+      },
+      "else": {
+        "required": [
+          "key",
+          "fn",
+          "spec",
+          "qty",
+          "ext",
+          "obs"
+        ]
+      }
+    },
+    "boardRef": {
+      "type": "object",
+      "required": [
+        "id"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/id",
+          "x-ref": "boards",
+          "title": "Board"
+        },
+        "qty": {
+          "type": "number",
+          "exclusiveMinimum": 0,
+          "title": "Quantity"
+        },
+        "loc": {
+          "$ref": "#/$defs/line",
+          "title": "Where inside"
+        },
+        "p": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1,
+          "title": "Share of models",
+          "description": "0-1: how many models of this device have this board."
+        }
+      }
+    },
+    "buildingRef": {
+      "type": "object",
+      "required": [
+        "b",
+        "l"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "b": {
+          "$ref": "#/$defs/id",
+          "x-ref": "buildings",
+          "title": "Building type"
+        },
+        "l": {
+          "$ref": "#/$defs/rating",
+          "title": "Likelihood",
+          "description": "How likely this kind of building holds this device."
+        }
+      }
+    },
+    "part": {
+      "type": "object",
+      "title": "Part type",
+      "description": "Something people search for: a kind of part, defined by what it does.",
+      "required": [
+        "id",
+        "name",
+        "group",
+        "demand",
+        "keywords",
+        "substitutes"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/id"
+        },
+        "name": {
+          "$ref": "#/$defs/line",
+          "title": "Name"
+        },
+        "group": {
+          "$ref": "#/$defs/line",
+          "title": "Group",
+          "x-ref": "vocab.partGroups"
+        },
+        "demand": {
+          "$ref": "#/$defs/rating",
+          "title": "Demand",
+          "description": "How hard the public hoards it. Batteries and power gear are 5."
+        },
+        "keywords": {
+          "$ref": "#/$defs/lines",
+          "title": "Search words",
+          "description": "Words, phrases and common part numbers people will type."
+        },
+        "substitutes": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/id",
+            "x-ref": "parts"
+          },
+          "title": "Substitutes",
+          "description": "Other part types that can do the same job."
+        },
+        "summary": {
+          "$ref": "#/$defs/line",
+          "title": "What it is"
+        },
+        "uses": {
+          "$ref": "#/$defs/lines",
+          "title": "Good for"
+        },
+        "identify": {
+          "$ref": "#/$defs/text",
+          "title": "How to recognise it",
+          "x-widget": "textarea"
+        },
+        "test": {
+          "$ref": "#/$defs/text",
+          "title": "How to test it in the field",
+          "x-widget": "textarea"
+        },
+        "decay": {
+          "type": "object",
+          "title": "Shelf life",
+          "additionalProperties": false,
+          "properties": {
+            "halfLifeMonths": {
+              "type": [
+                "number",
+                "null"
+              ],
+              "exclusiveMinimum": 0,
+              "title": "Half-life (months)",
+              "description": "Months after the grid goes down until about half of what's left in the wild is no longer usable. Empty = lasts indefinitely."
+            },
+            "note": {
+              "$ref": "#/$defs/line",
+              "title": "Why"
+            }
+          }
+        },
+        "hazards": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/id",
+            "x-ref": "hazards"
+          },
+          "title": "Hazards"
+        },
+        "refs": {
+          "$ref": "#/$defs/refs"
+        },
+        "rev": {
+          "$ref": "#/$defs/meta/rev"
+        },
+        "updated": {
+          "$ref": "#/$defs/meta/updated"
+        },
+        "sources": {
+          "$ref": "#/$defs/meta/sources"
+        },
+        "deprecated": {
+          "$ref": "#/$defs/meta/deprecated"
+        },
+        "replacedBy": {
+          "$ref": "#/$defs/id",
+          "x-ref": "parts",
+          "title": "Replaced by"
+        }
+      }
+    },
+    "board": {
+      "type": "object",
+      "title": "Shared board",
+      "description": "A sub-assembly that looks the same across many devices. Described once, inherited by every device that lists it.",
+      "required": [
+        "id",
+        "name",
+        "comps"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/id"
+        },
+        "name": {
+          "$ref": "#/$defs/line",
+          "title": "Name"
+        },
+        "notes": {
+          "$ref": "#/$defs/text",
+          "title": "Notes",
+          "x-widget": "textarea"
+        },
+        "comps": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/comp"
+          },
+          "title": "Parts on this board"
+        },
+        "refs": {
+          "$ref": "#/$defs/refs"
+        },
+        "rev": {
+          "$ref": "#/$defs/meta/rev"
+        },
+        "updated": {
+          "$ref": "#/$defs/meta/updated"
+        },
+        "sources": {
+          "$ref": "#/$defs/meta/sources"
+        },
+        "deprecated": {
+          "$ref": "#/$defs/meta/deprecated"
+        }
+      }
+    },
+    "device": {
+      "type": "object",
+      "title": "Device template",
+      "description": "What a kind of device usually contains. Variants inherit from their parent and list only what differs.",
+      "required": [
+        "id",
+        "name"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/id"
+        },
+        "name": {
+          "$ref": "#/$defs/line",
+          "title": "Name"
+        },
+        "variantOf": {
+          "$ref": "#/$defs/id",
+          "x-ref": "devices",
+          "title": "Variant of"
+        },
+        "abstract": {
+          "type": "boolean",
+          "title": "Parent only",
+          "description": "Search skips it in favour of its variants."
+        },
+        "group": {
+          "$ref": "#/$defs/line",
+          "title": "Group",
+          "x-ref": "vocab.deviceGroups"
+        },
+        "aliases": {
+          "$ref": "#/$defs/lines",
+          "title": "Other names",
+          "description": "What people call it, so a search for the device finds it."
+        },
+        "brands": {
+          "$ref": "#/$defs/lines",
+          "title": "Brands",
+          "description": "Brands that commonly make it, so searching a brand finds the kinds of thing it makes."
+        },
+        "era": {
+          "$ref": "#/$defs/line",
+          "title": "Era"
+        },
+        "prev": {
+          "$ref": "#/$defs/rating",
+          "title": "How common"
+        },
+        "tools": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/id",
+            "x-ref": "vocab.tools"
+          },
+          "title": "Tools needed"
+        },
+        "mins": {
+          "type": "number",
+          "minimum": 0,
+          "title": "Teardown minutes"
+        },
+        "kg": {
+          "type": "number",
+          "minimum": 0,
+          "title": "Whole device weight (kg)"
+        },
+        "repairs": {
+          "type": "object",
+          "title": "In repair records",
+          "description": "From community repair events (Open Repair Alliance data): how many repairs were recorded, the share fixed and the share beyond repair, and, where they were coded, what had failed. Cite the dataset in sources.",
+          "additionalProperties": false,
+          "required": ["records"],
+          "properties": {
+            "records": { "type": "integer", "minimum": 1 },
+            "fixed": { "type": "number", "minimum": 0, "maximum": 1 },
+            "end_of_life": { "type": "number", "minimum": 0, "maximum": 1 },
+            "faults": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": ["what", "share"],
+                "properties": {
+                  "what": { "type": "string", "maxLength": 120 },
+                  "share": { "type": "number", "minimum": 0, "maximum": 1 }
+                }
+              }
+            }
+          }
+        },
+        "materials": {
+          "type": "object",
+          "title": "What it is made of (kg)",
+          "description": "Typical weight of each material in one unit, from measured teardowns: copper, aluminium, steel, other metals, plastic, glass, circuit boards, battery and the rest. Cite the study in sources.",
+          "additionalProperties": false,
+          "properties": {
+            "copper": { "type": "number", "minimum": 0 },
+            "aluminium": { "type": "number", "minimum": 0 },
+            "steel": { "type": "number", "minimum": 0 },
+            "other_metal": { "type": "number", "minimum": 0 },
+            "plastic": { "type": "number", "minimum": 0 },
+            "glass": { "type": "number", "minimum": 0 },
+            "boards": { "type": "number", "minimum": 0 },
+            "battery": { "type": "number", "minimum": 0 },
+            "other": { "type": "number", "minimum": 0 }
+          }
+        },
+        "hazards": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/id",
+            "x-ref": "hazards"
+          },
+          "title": "Hazards"
+        },
+        "comps": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/comp"
+          },
+          "title": "Parts"
+        },
+        "boards": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/boardRef"
+          },
+          "title": "Shared boards inside"
+        },
+        "buildings": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/buildingRef"
+          },
+          "title": "Where it's found"
+        },
+        "notes": {
+          "$ref": "#/$defs/text",
+          "title": "Notes",
+          "x-widget": "textarea"
+        },
+        "refs": {
+          "$ref": "#/$defs/refs"
+        },
+        "rev": {
+          "$ref": "#/$defs/meta/rev"
+        },
+        "updated": {
+          "$ref": "#/$defs/meta/updated"
+        },
+        "sources": {
+          "$ref": "#/$defs/meta/sources"
+        },
+        "deprecated": {
+          "$ref": "#/$defs/meta/deprecated"
+        }
+      },
+      "if": {
+        "required": [
+          "variantOf"
+        ]
+      },
+      "else": {
+        "required": [
+          "id",
+          "name",
+          "group",
+          "prev",
+          "tools",
+          "mins",
+          "comps",
+          "buildings"
+        ]
+      }
+    },
+    "compOverride": {
+      "type": "object",
+      "required": [
+        "key"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "key": {
+          "type": "string",
+          "maxLength": 140,
+          "title": "Part key",
+          "description": "The resolved key of the part in the device template, or a new key for an extra part."
+        },
+        "conf": {
+          "enum": [
+            "likely",
+            "documented",
+            "verified"
+          ],
+          "title": "Confidence",
+          "description": "verified: you saw it with your own eyes. documented: a cited public source shows it (FCC internal photos, service manual, parts list, teardown). likely: strong reason to think so."
+        },
+        "source": {
+          "type": "string",
+          "maxLength": 500,
+          "pattern": "^https?://",
+          "title": "Source link",
+          "description": "Where this is shown or stated. Required for documented."
+        },
+        "absent": {
+          "type": "boolean",
+          "title": "Not present in this model"
+        },
+        "fn": {
+          "$ref": "#/$defs/id",
+          "x-ref": "parts",
+          "title": "Part type"
+        },
+        "spec": {
+          "$ref": "#/$defs/line",
+          "title": "Spec"
+        },
+        "v": {
+          "$ref": "#/$defs/amount",
+          "title": "Volts",
+          "description": "Rated voltage, e.g. 12, or 100-240 for a range."
+        },
+        "a": {
+          "$ref": "#/$defs/amount",
+          "title": "Amps",
+          "description": "Rated or output current. Fuses: the fuse rating."
+        },
+        "w": {
+          "$ref": "#/$defs/amount",
+          "title": "Watts",
+          "description": "Rated power, e.g. 100 for a 100 W panel."
+        },
+        "ah": {
+          "$ref": "#/$defs/amount",
+          "title": "Amp-hours",
+          "description": "Battery capacity. 5000 mAh is 5."
+        },
+        "ac": {
+          "type": "boolean",
+          "title": "AC",
+          "description": "Runs on or puts out alternating current (mains-type)."
+        },
+        "qty": {
+          "type": "number",
+          "exclusiveMinimum": 0,
+          "title": "Quantity"
+        },
+        "ext": {
+          "$ref": "#/$defs/rating",
+          "title": "Difficulty"
+        },
+        "obs": {
+          "$ref": "#/$defs/rating",
+          "title": "Overlooked"
+        },
+        "loc": {
+          "$ref": "#/$defs/line",
+          "title": "Where inside"
+        },
+        "kg": {
+          "type": "number",
+          "minimum": 0,
+          "title": "Weight (kg)"
+        }
+      },
+      "if": {
+        "properties": {
+          "conf": {
+            "const": "documented"
+          }
+        },
+        "required": [
+          "conf"
+        ]
+      },
+      "then": {
+        "required": [
+          "key",
+          "source"
+        ]
+      }
+    },
+    "model": {
+      "type": "object",
+      "title": "Logged model",
+      "description": "A real unit someone opened. Each one moves its template from guess towards verified.",
+      "required": [
+        "id",
+        "device"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/id"
+        },
+        "device": {
+          "$ref": "#/$defs/id",
+          "x-ref": "devices",
+          "title": "Device template"
+        },
+        "brand": {
+          "$ref": "#/$defs/line",
+          "title": "Brand"
+        },
+        "model": {
+          "$ref": "#/$defs/line",
+          "title": "Model"
+        },
+        "years": {
+          "$ref": "#/$defs/line",
+          "title": "Years"
+        },
+        "fcc": {
+          "type": "string",
+          "maxLength": 40,
+          "title": "FCC or ISED id"
+        },
+        "notes": {
+          "$ref": "#/$defs/text",
+          "title": "Notes",
+          "description": "What someone salvaging it needs to know: which variants the parts cover, caveats. One or two sentences; how it was researched goes in research.",
+          "x-widget": "textarea"
+        },
+        "research": {
+          "type": "object",
+          "title": "How this was researched",
+          "additionalProperties": false,
+          "properties": {
+            "checked": {
+              "type": "string",
+              "pattern": "^\\d{4}-\\d{2}-\\d{2}$",
+              "title": "Fact-checked on",
+              "description": "Date (YYYY-MM-DD) the claims were last checked against their sources."
+            },
+            "gaps": {
+              "$ref": "#/$defs/lines",
+              "title": "Left out or unclear",
+              "description": "Conflicts between sources, unreadable markings, claims left out: one per line."
+            },
+            "method": {
+              "$ref": "#/$defs/lines",
+              "title": "How the sources were read",
+              "description": "Documents, filings and pages used, mirrors, sites that refused: one per line."
+            }
+          }
+        },
+        "comps": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/compOverride"
+          },
+          "title": "What you found"
+        },
+        "rev": {
+          "$ref": "#/$defs/meta/rev"
+        },
+        "updated": {
+          "$ref": "#/$defs/meta/updated"
+        },
+        "sources": {
+          "$ref": "#/$defs/meta/sources"
+        }
+      }
+    },
+    "building": {
+      "type": "object",
+      "title": "Building type",
+      "required": [
+        "id",
+        "name",
+        "osm",
+        "exposure"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/id"
+        },
+        "name": {
+          "$ref": "#/$defs/line",
+          "title": "Name"
+        },
+        "osm": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^[a-z_:]+=([a-z0-9_;:.-]+|\\*)$"
+          },
+          "minItems": 1,
+          "title": "OpenStreetMap tags",
+          "description": "key=value, or key=* for any value.",
+          "x-widget": "lines"
+        },
+        "exposure": {
+          "$ref": "#/$defs/rating",
+          "title": "Looting pressure",
+          "description": "How much public traffic and looting pressure it gets."
+        },
+        "notes": {
+          "$ref": "#/$defs/text",
+          "title": "Notes",
+          "x-widget": "textarea"
+        },
+        "access": {
+          "$ref": "#/$defs/line",
+          "title": "Getting in"
+        },
+        "hazards": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/id",
+            "x-ref": "hazards"
+          },
+          "title": "Hazards"
+        },
+        "refs": {
+          "$ref": "#/$defs/refs"
+        },
+        "rev": {
+          "$ref": "#/$defs/meta/rev"
+        },
+        "updated": {
+          "$ref": "#/$defs/meta/updated"
+        },
+        "sources": {
+          "$ref": "#/$defs/meta/sources"
+        },
+        "deprecated": {
+          "$ref": "#/$defs/meta/deprecated"
+        }
+      }
+    },
+    "job": {
+      "type": "object",
+      "title": "Job",
+      "description": "Something you need to get done, mapped to the part types and guides that do it.",
+      "required": [
+        "id",
+        "name",
+        "keywords",
+        "summary",
+        "parts"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/id"
+        },
+        "name": {
+          "$ref": "#/$defs/line",
+          "title": "Name"
+        },
+        "keywords": {
+          "$ref": "#/$defs/lines",
+          "title": "Search phrases",
+          "description": "How people say it: 'keep food cold', 'fridge', 'refrigeration'."
+        },
+        "summary": {
+          "$ref": "#/$defs/text",
+          "title": "Approach",
+          "x-widget": "textarea"
+        },
+        "parts": {
+          "type": "array",
+          "minItems": 1,
+          "title": "Part types that do it",
+          "items": {
+            "type": "object",
+            "required": [
+              "fn"
+            ],
+            "additionalProperties": false,
+            "properties": {
+              "fn": {
+                "$ref": "#/$defs/id",
+                "x-ref": "parts",
+                "title": "Part type"
+              },
+              "why": {
+                "$ref": "#/$defs/line",
+                "title": "Role"
+              },
+              "core": {
+                "type": "boolean",
+                "title": "Essential",
+                "description": "Switched on by default when the job is searched."
+              },
+              "only": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "maxLength": 40
+                },
+                "title": "Only entries mentioning",
+                "description": "Narrows a broad part type for this job: only count entries whose spec or device name contains one of these words (e.g. refrigeration compressors, not aquarium air pumps).",
+                "x-widget": "lines"
+              },
+              "need": {
+                "type": "object",
+                "additionalProperties": false,
+                "title": "Ratings needed",
+                "description": "What this job needs from the part: volts about this, amps, watts and amp-hours at least this.",
+                "properties": {
+                  "v": {
+                    "$ref": "#/$defs/amount",
+                    "title": "Volts (about)"
+                  },
+                  "a": {
+                    "type": "number",
+                    "minimum": 0,
+                    "title": "Amps (at least)"
+                  },
+                  "w": {
+                    "type": "number",
+                    "minimum": 0,
+                    "title": "Watts (at least)"
+                  },
+                  "ah": {
+                    "type": "number",
+                    "minimum": 0,
+                    "title": "Amp-hours (at least)"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "guides": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/id",
+            "x-ref": "guides"
+          },
+          "title": "Guides"
+        },
+        "tips": {
+          "$ref": "#/$defs/lines",
+          "title": "Tips"
+        },
+        "refs": {
+          "$ref": "#/$defs/refs"
+        },
+        "rev": {
+          "$ref": "#/$defs/meta/rev"
+        },
+        "updated": {
+          "$ref": "#/$defs/meta/updated"
+        },
+        "sources": {
+          "$ref": "#/$defs/meta/sources"
+        },
+        "deprecated": {
+          "$ref": "#/$defs/meta/deprecated"
+        }
+      }
+    },
+    "hazard": {
+      "type": "object",
+      "title": "Hazard",
+      "description": "Something that can hurt or kill you, with what to do about it.",
+      "required": [
+        "id",
+        "label",
+        "severity",
+        "summary"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/id"
+        },
+        "label": {
+          "type": "string",
+          "maxLength": 60,
+          "title": "Short label"
+        },
+        "severity": {
+          "$ref": "#/$defs/rating",
+          "title": "Severity",
+          "description": "5 = can kill."
+        },
+        "summary": {
+          "$ref": "#/$defs/text",
+          "title": "What it is",
+          "x-widget": "textarea"
+        },
+        "signs": {
+          "$ref": "#/$defs/lines",
+          "title": "How to spot it"
+        },
+        "do": {
+          "$ref": "#/$defs/lines",
+          "title": "Do"
+        },
+        "dont": {
+          "$ref": "#/$defs/lines",
+          "title": "Don't"
+        },
+        "ppe": {
+          "$ref": "#/$defs/lines",
+          "title": "Protection"
+        },
+        "firstAid": {
+          "$ref": "#/$defs/lines",
+          "title": "If it goes wrong"
+        },
+        "refs": {
+          "$ref": "#/$defs/refs"
+        },
+        "rev": {
+          "$ref": "#/$defs/meta/rev"
+        },
+        "updated": {
+          "$ref": "#/$defs/meta/updated"
+        },
+        "sources": {
+          "$ref": "#/$defs/meta/sources"
+        }
+      }
+    },
+    "guide": {
+      "type": "object",
+      "title": "Guide",
+      "description": "Instructions: teardowns, builds and blueprints, repairs, field tests, safety procedures and skills.",
+      "required": [
+        "id",
+        "kind",
+        "title",
+        "summary",
+        "difficulty",
+        "steps"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/id"
+        },
+        "kind": {
+          "enum": [
+            "teardown",
+            "build",
+            "repair",
+            "test",
+            "safety",
+            "skill",
+            "reference"
+          ],
+          "title": "Kind"
+        },
+        "title": {
+          "$ref": "#/$defs/line",
+          "title": "Title"
+        },
+        "keywords": {
+          "$ref": "#/$defs/lines",
+          "title": "Search words"
+        },
+        "summary": {
+          "$ref": "#/$defs/text",
+          "title": "Summary",
+          "x-widget": "textarea"
+        },
+        "difficulty": {
+          "$ref": "#/$defs/rating",
+          "title": "Difficulty"
+        },
+        "mins": {
+          "type": "number",
+          "minimum": 0,
+          "title": "Time (minutes)"
+        },
+        "tools": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/id",
+            "x-ref": "vocab.tools"
+          },
+          "title": "Tools"
+        },
+        "hazards": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/id",
+            "x-ref": "hazards"
+          },
+          "title": "Hazards"
+        },
+        "materials": {
+          "type": "array",
+          "title": "Materials",
+          "items": {
+            "type": "object",
+            "required": [
+              "item"
+            ],
+            "additionalProperties": false,
+            "properties": {
+              "item": {
+                "$ref": "#/$defs/line",
+                "title": "Item"
+              },
+              "fn": {
+                "$ref": "#/$defs/id",
+                "x-ref": "parts",
+                "title": "Part type"
+              },
+              "only": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "maxLength": 40
+                },
+                "title": "Only sources mentioning",
+                "description": "When suggesting where to scrap this, only count entries whose spec or device name contains one of these words (e.g. food-grade drums, not fire extinguishers).",
+                "x-widget": "lines"
+              },
+              "qty": {
+                "$ref": "#/$defs/line",
+                "title": "Amount"
+              },
+              "optional": {
+                "type": "boolean",
+                "title": "Optional"
+              }
+            }
+          }
+        },
+        "steps": {
+          "type": "array",
+          "minItems": 1,
+          "title": "Steps",
+          "items": {
+            "type": "object",
+            "required": [
+              "text"
+            ],
+            "additionalProperties": false,
+            "properties": {
+              "text": {
+                "$ref": "#/$defs/text",
+                "title": "Step",
+                "x-widget": "textarea"
+              },
+              "warn": {
+                "$ref": "#/$defs/line",
+                "title": "Warning"
+              }
+            }
+          }
+        },
+        "notes": {
+          "type": "string",
+          "maxLength": 20000,
+          "title": "More detail (Markdown)",
+          "x-widget": "textarea"
+        },
+        "tree": {
+          "type": "object",
+          "title": "Era, branch and what comes first",
+          "description": "Its era, its branch, and what you should know or have built first. Shown as Learn first and Leads to links, orders the printed guide, and picks the offline libraries it links to.",
+          "required": [
+            "era",
+            "branch"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "era": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 9,
+              "title": "Era",
+              "description": "1 Fire, 2 Salvage, 3 Low voltage, 4 Power, 5 Machines, 6 Industry (see vocab.eras)."
+            },
+            "branch": {
+              "type": "string",
+              "x-ref": "vocab.branches",
+              "title": "Branch"
+            },
+            "requires": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/id",
+                "x-ref": "guides"
+              },
+              "title": "Learn or build first"
+            }
+          }
+        },
+        "devices": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/id",
+            "x-ref": "devices"
+          },
+          "title": "Devices it applies to"
+        },
+        "parts": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/id",
+            "x-ref": "parts"
+          },
+          "title": "Part types it applies to"
+        },
+        "experienced": {
+          "type": "boolean",
+          "title": "Experienced only",
+          "description": "Only for people who have done this kind of work: it can kill or maim if done wrong. Guides of difficulty 4 or 5 are treated this way anyway."
+        },
+        "reviewed": {
+          "type": "object",
+          "title": "Reviewed by someone who does this work",
+          "description": "Who read the guide from hands-on experience and found it sound. Leave empty until someone has.",
+          "additionalProperties": false,
+          "required": ["by", "experience"],
+          "properties": {
+            "by": { "type": "string", "maxLength": 80, "title": "Who", "description": "A name or handle." },
+            "experience": { "type": "string", "maxLength": 200, "title": "Their experience", "description": "What work they have done that this draws on, e.g. \"20 years as an HVAC technician\"." },
+            "date": { "type": "string", "pattern": "^\\d{4}-\\d{2}-\\d{2}$", "title": "Date (YYYY-MM-DD)" }
+          }
+        },
+        "license": {
+          "type": "string",
+          "maxLength": 60,
+          "title": "License",
+          "description": "Defaults to CC-BY-SA-4.0 like the rest of the data."
+        },
+        "credits": {
+          "$ref": "#/$defs/lines",
+          "title": "Credits"
+        },
+        "refs": {
+          "$ref": "#/$defs/refs"
+        },
+        "rev": {
+          "$ref": "#/$defs/meta/rev"
+        },
+        "updated": {
+          "$ref": "#/$defs/meta/updated"
+        },
+        "sources": {
+          "$ref": "#/$defs/meta/sources"
+        },
+        "deprecated": {
+          "$ref": "#/$defs/meta/deprecated"
+        }
+      }
+    },
+    "comment": {
+      "type": "object",
+      "title": "Comment",
+      "required": [
+        "id",
+        "target",
+        "body",
+        "created"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "string",
+          "maxLength": 40,
+          "pattern": "^[A-Za-z0-9_-]{1,40}$"
+        },
+        "target": {
+          "type": "string",
+          "pattern": "^(parts|boards|devices|models|buildings|jobs|hazards|guides)/[a-z0-9_]+$",
+          "title": "About"
+        },
+        "parent": {
+          "type": "string",
+          "maxLength": 40,
+          "title": "Reply to",
+          "pattern": "^[A-Za-z0-9_-]{1,40}$"
+        },
+        "body": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 4000,
+          "title": "Comment",
+          "x-widget": "textarea"
+        },
+        "created": {
+          "type": "string",
+          "maxLength": 40,
+          "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(\\.\\d{1,9})?(Z|[+-]\\d{2}:\\d{2})$",
+          "description": "ISO 8601 time this was made"
+        },
+        "author": {
+          "$ref": "#/$defs/author"
+        },
+        "sig": {
+          "$ref": "#/$defs/sig"
+        },
+        "pow": {
+          "type": "string",
+          "maxLength": 40
+        }
+      }
+    },
+    "observation": {
+      "type": "object",
+      "title": "Field observation",
+      "required": [
+        "id",
+        "lat",
+        "lon",
+        "status",
+        "created"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "string",
+          "maxLength": 40,
+          "pattern": "^[A-Za-z0-9_-]{1,40}$"
+        },
+        "lat": {
+          "type": "number",
+          "minimum": -90,
+          "maximum": 90
+        },
+        "lon": {
+          "type": "number",
+          "minimum": -180,
+          "maximum": 180
+        },
+        "building": {
+          "$ref": "#/$defs/id",
+          "x-ref": "buildings",
+          "title": "Building type"
+        },
+        "osm": {
+          "type": "string",
+          "maxLength": 40,
+          "title": "OpenStreetMap id"
+        },
+        "label": {
+          "$ref": "#/$defs/line",
+          "title": "Name or description"
+        },
+        "status": {
+          "enum": [
+            "untouched",
+            "partial",
+            "cleared",
+            "dangerous",
+            "occupied"
+          ],
+          "title": "Status"
+        },
+        "notes": {
+          "$ref": "#/$defs/text",
+          "title": "Notes",
+          "x-widget": "textarea"
+        },
+        "share": {
+          "enum": [
+            "private",
+            "peers",
+            "public"
+          ],
+          "title": "Who can see it",
+          "description": "Private stays on this device. Peers syncs with people you meet. Public goes to the hub."
+        },
+        "created": {
+          "type": "string",
+          "maxLength": 40,
+          "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(\\.\\d{1,9})?(Z|[+-]\\d{2}:\\d{2})$",
+          "description": "ISO 8601 time this was made"
+        },
+        "author": {
+          "$ref": "#/$defs/author"
+        },
+        "sig": {
+          "$ref": "#/$defs/sig"
+        },
+        "pow": {
+          "type": "string",
+          "maxLength": 40
+        }
+      }
+    },
+    "vote": {
+      "type": "object",
+      "title": "Vote",
+      "required": [
+        "id",
+        "target",
+        "value",
+        "created"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "string",
+          "maxLength": 40,
+          "pattern": "^[A-Za-z0-9_-]{1,40}$"
+        },
+        "target": {
+          "type": "string",
+          "pattern": "^(devices/[a-z0-9_]+#[a-z0-9_]+|comments/[A-Za-z0-9_-]{1,40}|observations/[A-Za-z0-9_-]{1,40})$",
+          "title": "About",
+          "description": "A device's part (devices/<id>#<part key>), a comment (comments/<id>) or a field note (observations/<id>)."
+        },
+        "value": {
+          "enum": [
+            1,
+            -1,
+            0
+          ],
+          "title": "Vote",
+          "description": "1: found it, helpful, still true. -1: not in mine, not anymore. 0: takes a vote back."
+        },
+        "created": {
+          "type": "string",
+          "maxLength": 40,
+          "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(\\.\\d{1,9})?(Z|[+-]\\d{2}:\\d{2})$",
+          "description": "ISO 8601 time this was made"
+        },
+        "author": {
+          "$ref": "#/$defs/author"
+        },
+        "sig": {
+          "$ref": "#/$defs/sig"
+        },
+        "pow": {
+          "type": "string",
+          "maxLength": 40
+        }
+      }
+    },
+    "proposal": {
+      "type": "object",
+      "title": "Proposed change",
+      "required": [
+        "id",
+        "coll",
+        "rid",
+        "op",
+        "created"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "string",
+          "maxLength": 40,
+          "pattern": "^[A-Za-z0-9_-]{1,40}$"
+        },
+        "coll": {
+          "enum": [
+            "parts",
+            "boards",
+            "devices",
+            "models",
+            "buildings",
+            "jobs",
+            "hazards",
+            "guides"
+          ]
+        },
+        "rid": {
+          "$ref": "#/$defs/id"
+        },
+        "op": {
+          "enum": [
+            "put",
+            "delete"
+          ]
+        },
+        "data": {
+          "type": "object"
+        },
+        "baseRev": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0,
+          "description": "The revision this change was made against. Null for new records."
+        },
+        "reason": {
+          "type": "string",
+          "maxLength": 2000,
+          "title": "Why"
+        },
+        "source": {
+          "enum": [
+            "human",
+            "ai",
+            "import"
+          ],
+          "description": "AI-written proposals are always labelled and never auto-accepted."
+        },
+        "created": {
+          "type": "string",
+          "maxLength": 40,
+          "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(\\.\\d{1,9})?(Z|[+-]\\d{2}:\\d{2})$",
+          "description": "ISO 8601 time this was made"
+        },
+        "author": {
+          "$ref": "#/$defs/author"
+        },
+        "sig": {
+          "$ref": "#/$defs/sig"
+        },
+        "pow": {
+          "type": "string",
+          "maxLength": 40
+        }
+      }
+    },
+    "author": {
+      "type": "object",
+      "required": [
+        "key"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "key": {
+          "type": "string",
+          "maxLength": 64,
+          "description": "Ed25519 public key, base64url."
+        },
+        "name": {
+          "type": "string",
+          "maxLength": 60
+        }
+      }
+    },
+    "sig": {
+      "type": "string",
+      "maxLength": 128,
+      "description": "Ed25519 signature over the canonical JSON of the object without sig, base64url."
+    },
+    "refs": {
+      "type": "array",
+      "title": "See also, in offline libraries",
+      "description": "Links into the offline libraries next to this guide (Wikipedia, iFixit, the medical encyclopedia and others on a Kiwix server, as on Project NOMAD). Without refs, the app still links each record by its name.",
+      "items": {
+        "type": "object",
+        "required": [
+          "lib"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "lib": {
+            "type": "string",
+            "x-ref": "vocab.libraries",
+            "title": "Library"
+          },
+          "q": {
+            "$ref": "#/$defs/line",
+            "title": "Search for",
+            "description": "Text to search for. Defaults to the record’s name."
+          },
+          "path": {
+            "type": "string",
+            "maxLength": 300,
+            "title": "Exact page",
+            "description": "Path of the page inside the library (e.g. Magnetron for a Wikipedia article), when known."
+          },
+          "note": {
+            "$ref": "#/$defs/line",
+            "title": "Why it’s useful"
+          }
+        }
+      }
+    },
+    "amount": {
+      "anyOf": [
+        {
+          "type": "number"
+        },
+        {
+          "type": "array",
+          "items": {
+            "type": "number"
+          },
+          "minItems": 2,
+          "maxItems": 2
+        }
+      ],
+      "x-widget": "range",
+      "description": "A number, or a range written as two numbers (100-240)."
+    }
+  }
+}

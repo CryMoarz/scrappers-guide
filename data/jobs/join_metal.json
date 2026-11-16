@@ -1,0 +1,17 @@
+{
+  "id": "join_metal",
+  "name": "Join metal",
+  "keywords": ["join metal","weld","welding","weld metal","stick weld","spot weld","braze","brazing","battery welding","fix broken metal","repair metal"],
+  "summary": "Bolts and rivets need no power and come apart again, so try them first. For real welds, stick welders sit in farm shops and garages long after looters pass by. Two or three car batteries in series (24–36V) will run thin stick rods in a pinch, and microwave oven transformers can be rebuilt into spot welders for sheet metal.",
+  "parts": [
+    {"fn":"fasteners","why":"Bolts, screws and rivets: no power needed","core":true},
+    {"fn":"battery_pb","why":"Two or three car batteries in series run a stick rod"},
+    {"fn":"wire_heavy","why":"Welding cable and heavy leads","core":true},
+    {"fn":"transformer_hv","why":"Microwave transformers rewound for spot welding","core":true},
+    {"fn":"propane","why":"Fuel for brazing and heating"},
+    {"fn":"gas_cylinder","why":"Shielding gas and torch bottles"},
+    {"fn":"sheet_metal","why":"Patches and gussets to strengthen joints"}
+  ],
+  "guides": ["build_mot_spot_welder","safety_mains_isolation","safety_lead_acid","build_brake_drum_forge"],
+  "tips": ["Welding arcs burn eyes like staring at the sun. Use a shade 10 or darker filter; sunglasses aren’t enough.","Batteries give off hydrogen. When battery welding, keep sparks well away from the batteries and work outdoors.","Grind the zinc off galvanised steel before welding and work in open air: the fumes make you ill.","Microwave transformer welders run on mains and kill people who get them wrong. Follow the guide exactly."]
+}

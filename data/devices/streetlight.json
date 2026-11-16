@@ -1,0 +1,31 @@
+{
+  "id": "streetlight",
+  "name": "Streetlight",
+  "abstract": true,
+  "group": "Retail and public",
+  "aliases": ["street lamp","street light","lamp post","parking lot light","area light","roadway light","pole light"],
+  "brands": ["Philips","GE","Cree","Hubbell","Acuity Brands","Lithonia Lighting","Eaton"],
+  "prev": 5,
+  "tools": ["screwdriver","socket","cutters","ladder"],
+  "mins": 30,
+  "kg": 15,
+  "hazards": ["fall"],
+  "comps": [
+    {"key":"led_light","fn":"led_light","spec":"LED module, 30–200W","w":[30,200],"qty":1,"ext":2,"obs":5,"loc":"Head at the top of the pole"},
+    {"key":"optics","fn":"optics","spec":"Glass or polycarbonate lens and reflector","qty":1,"ext":1,"obs":5,"loc":"Head"},
+    {"key":"tube_frame","fn":"tube_frame","spec":"Steel or aluminium pole, 4–12 m — a ready-made antenna mast","qty":1,"ext":5,"obs":5,"loc":"The pole","kg":150},
+    {"key":"wire_copper","fn":"wire_copper","spec":"Feed cable inside the pole","qty":1,"ext":3,"obs":4,"loc":"Inside the pole, through the base hand-hole"}
+  ],
+  "buildings": [
+    {"b":"roadside","l":5},
+    {"b":"parking","l":5},
+    {"b":"car_dealer","l":4},
+    {"b":"mall","l":3},
+    {"b":"stadium","l":3},
+    {"b":"train_station","l":3},
+    {"b":"bus_depot","l":3},
+    {"b":"airport","l":3},
+    {"b":"marina","l":3}
+  ],
+  "notes": "Pick a variant: mains-fed (most) or solar. Getting to the head needs a long ladder or a lift."
+}

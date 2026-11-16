@@ -1,0 +1,24 @@
+# systemd user service: keeps the guide running on your own machine, next to Project NOMAD.
+# No sudo. It starts when you log in and restarts if it crashes.
+#   (edit WorkingDirectory and the node path in ExecStart below)
+#   cp deploy/scrappers-guide-user.service ~/.config/systemd/user/scrappers-guide.service
+#   systemctl --user daemon-reload && systemctl --user enable --now scrappers-guide
+# To start it at boot without logging in: loginctl enable-linger
+[Unit]
+Description=Scrapper's Digital Guide to the Apocalypse (port 8787)
+
+[Service]
+Type=simple
+WorkingDirectory=/home/you/scrappers-guide
+ExecStart=/usr/bin/node server/hub.js
+# Reachable from phones and other devices on the network, like NOMAD itself.
+Environment=SDG_HOST=0.0.0.0
+Environment=SDG_PORT=8787
+# NOMAD's Command Center: library links (Kiwix on 8090) and field-note pins on its map.
+Environment=SDG_NOMAD=http://localhost:8080
+Environment=SDG_NOMAD_MARKERS=1
+Restart=on-failure
+RestartSec=10
+
+[Install]
+WantedBy=default.target

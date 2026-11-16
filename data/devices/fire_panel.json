@@ -1,0 +1,33 @@
+{
+  "id": "fire_panel",
+  "name": "Fire alarm control panel",
+  "group": "Building systems",
+  "aliases": ["fire alarm panel","fire alarm system"],
+  "brands": ["Notifier","Simplex","Fire-Lite","Edwards","Gamewell-FCI","Siemens","Mircom","Hochiki"],
+  "prev": 4,
+  "tools": ["screwdriver"],
+  "mins": 10,
+  "hazards": [],
+  "comps": [
+    {"key":"battery_pb","fn":"battery_pb","spec":"Pair of 12V 7–18Ah sealed lead-acid batteries","v":12,"ah":[7,18],"qty":2,"ext":1,"obs":5,"loc":"Bottom of the panel cabinet"},
+    {"key":"psu","fn":"psu","spec":"24V power supply","v":24,"qty":1,"ext":2,"obs":5,"loc":"Panel"},
+    {"key":"speaker","fn":"speaker","spec":"Horns and sounders","v":24,"w":[0.5,2],"qty":4,"ext":2,"obs":5,"loc":"Throughout the building"},
+    {"key":"led_light","fn":"led_light","spec":"Strobe lights","v":24,"w":[1,5],"qty":4,"ext":2,"obs":5,"loc":"Throughout the building"}
+  ],
+  "boards": [
+    {"id":"smps_board","qty":1,"loc":"Panel power supply","p":1},
+    {"id":"mcu_board","qty":1,"loc":"Panel main board","p":1}
+  ],
+  "buildings": [
+    {"b":"office","l":5},
+    {"b":"school","l":5},
+    {"b":"hospital","l":5},
+    {"b":"hotel","l":5},
+    {"b":"warehouse","l":5},
+    {"b":"factory","l":5},
+    {"b":"apartment","l":5},
+    {"b":"church","l":4},
+    {"b":"supermarket","l":4},
+    {"b":"department","l":5}
+  ]
+}

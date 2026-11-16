@@ -1,0 +1,20 @@
+{
+  "id": "wifi_router_motorola_wa840g",
+  "device": "wifi_router",
+  "brand": "Motorola",
+  "model": "WA840G",
+  "fcc": "ACQWA840G",
+  "notes": "Hardware versions of the WA840G can differ.",
+  "research": {"gaps":[],"method":["Not yet fact-checked: its parts show as likely until a fact-check confirms them against their sources.","Imported from the OpenWrt Table of Hardware (toh.json, 2026-11-13): the hardware data page for this version, by OpenWrt wiki contributors under CC BY-SA 4.0."]},
+  "comps": [
+    {"key":"ic_mcu_soc","fn":"ic_mcu","spec":"SoC Broadcom BCM4702, 1 core at 125 MHz","qty":1,"ext":4,"obs":3,"source":"https://openwrt.org/toh/hwdata/motorola/motorola_wa840g","conf":"likely"},
+    {"key":"ic_memory_flash","fn":"ic_memory","spec":"Flash, 4 MB","qty":1,"ext":2,"obs":4,"source":"https://openwrt.org/toh/hwdata/motorola/motorola_wa840g","conf":"likely"},
+    {"key":"ic_memory_ram","fn":"ic_memory","spec":"RAM, 16 MB","qty":1,"ext":3,"obs":3,"source":"https://openwrt.org/toh/hwdata/motorola/motorola_wa840g","conf":"likely"},
+    {"key":"radio_rf","spec":"Wi-Fi: Broadcom BCM4306, Broadcom BCM2050 (2.4 GHz b/g)","qty":2,"source":"https://openwrt.org/toh/hwdata/motorola/motorola_wa840g","conf":"likely"},
+    {"key":"psu","spec":"Power supply: 5 VDC, 2A","v":5,"a":2,"source":"https://openwrt.org/toh/hwdata/motorola/motorola_wa840g","conf":"likely"},
+    {"key":"connector","spec":"Ethernet ports: 1× 100M","qty":1,"source":"https://openwrt.org/toh/hwdata/motorola/motorola_wa840g","conf":"likely"}
+  ],
+  "sources": [
+    {"title":"OpenWrt Table of Hardware: Motorola WA840G (OpenWrt wiki contributors, CC BY-SA 4.0)","url":"https://openwrt.org/toh/hwdata/motorola/motorola_wa840g"}
+  ]
+}

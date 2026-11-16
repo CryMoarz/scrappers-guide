@@ -1,0 +1,18 @@
+{
+  "id": "hair_dryer_revlon_1875w_compact",
+  "device": "hair_dryer",
+  "brand": "Revlon",
+  "model": "1875W Compact Travel Hair Dryer",
+  "notes": "The parts come from one community teardown of the Revlon 1875W Compact Travel Hair Dryer, which prints no model code, so other Revlon 1875 W dryers may differ. The motor and fan are glued together and the teardown says the fan can't be removed without destroying it.",
+  "research": {"checked":"2026-11-12","gaps":["The teardown (title, device name, text) prints no model code, only 'Revlon 1875W Compact Travel Hair Dryer'; the record's id keeps RVDR5034 but the model name follows the teardown.","An Elitsac retailer page gives RVDR5034 as the model of a 'Revlon Essentials 1875W Black 2 Heat Compact Hair Dryer'; it does not mention the teardown, so the two are not tied.","Voltage, wattage and rpm of the motor and coils are not given by the teardown; the retailer's 120 V line is labelled AI-generated, so left out.","The teardown names no thermal cut-out, rectifier, circuit board or cord, so those template parts are not claimed."],"method":["iFixit teardown 'Revlon 1875W Compact Travel Hair Dryer Teardown' (guide 103582, community-written), read through the iFixit guide API and on the web page; no bot check. iFixit content is CC BY-NC-SA, used for facts and links only.","Elitsac product page for the Revlon Essentials 1875W 2 Heat Compact Hair Dryer opened to look for the RVDR5034 tie; not used as a source.","Walmart and Safeway listings showed bot checks and were not used; the manuals.plus page returned HTTP 403."]},
+  "comps": [
+    {"key":"motor_dc_small","conf":"documented","spec":"Hair dryer fan DC motor, yfd 385 2073 57 per the teardown. The impeller is glued onto its shaft.","source":"https://www.ifixit.com/Teardown/Revlon+1875W+Compact+Travel+Hair+Dryer%C2%A0+Teardown/103582"},
+    {"key":"fan","conf":"documented","spec":"7-fin PP impeller, tightly glued to the motor shaft. The teardown says the fan can't be replaced without destroying it.","source":"https://www.ifixit.com/Teardown/Revlon+1875W+Compact+Travel+Hair+Dryer%C2%A0+Teardown/103582"},
+    {"key":"heating_element","conf":"documented","spec":"Open heating coils, closely soldered with the motor. The teardown says two coils control the temperature.","source":"https://www.ifixit.com/Teardown/Revlon+1875W+Compact+Travel+Hair+Dryer%C2%A0+Teardown/103582"},
+    {"key":"switch","conf":"documented","spec":"3-position slide switch, TOPLY YSS-16-2413, for the High-Off-Low control.","loc":"In the handle section of the front case","source":"https://www.ifixit.com/Teardown/Revlon+1875W+Compact+Travel+Hair+Dryer%C2%A0+Teardown/103582"},
+    {"key":"switch_cold_shot","fn":"switch","spec":"Cold shot button, a TOPLY YSS-16 slide switch.","qty":1,"ext":2,"obs":3,"conf":"documented","loc":"In the handle section of the front case","source":"https://www.ifixit.com/Teardown/Revlon+1875W+Compact+Travel+Hair+Dryer%C2%A0+Teardown/103582"}
+  ],
+  "sources": [
+    {"title":"Revlon 1875W Compact Travel Hair Dryer Teardown (iFixit guide 103582, community-written)","url":"https://www.ifixit.com/Teardown/Revlon+1875W+Compact+Travel+Hair+Dryer%C2%A0+Teardown/103582"}
+  ]
+}

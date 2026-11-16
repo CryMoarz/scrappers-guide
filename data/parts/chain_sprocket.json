@@ -1,0 +1,14 @@
+{
+  "id": "chain_sprocket",
+  "name": "Chains and sprockets",
+  "group": "Mechanical",
+  "demand": 1,
+  "keywords": ["chain","sprocket","roller chain","bike chain","bicycle chain","chain drive","motorcycle chain","#25 chain","#35 chain","#40 chain","420 chain","chainring","freewheel"],
+  "substitutes": ["belt_pulley","gearbox"],
+  "summary": "Roller chain and toothed sprockets that pass power without slipping: bikes, motorbikes, go-karts and machines.",
+  "uses": ["Pedal generators and bike-powered machines","Gearing a motor down to drive a pump or winch drum","Replacing a worn drive on a mower or cart"],
+  "identify": "Bike chain is everywhere; motorbikes, go-karts, garage door openers, conveyors and farm machines use heavier sizes like #35, #40 and #420, often stamped on the side plates. A sprocket must match the chain’s pitch and width.",
+  "test": "Lay the chain flat and look for stiff links, rust and stretch: a worn chain lifts off the back of the sprocket. Sprocket teeth should be even, not hooked.",
+  "decay": {"halfLifeMonths":null,"note":"Lasts if oiled; dry chain rusts stiff but often frees up with oil."},
+  "hazards": []
+}

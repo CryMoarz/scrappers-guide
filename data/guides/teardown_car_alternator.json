@@ -1,0 +1,30 @@
+{
+  "id": "teardown_car_alternator",
+  "kind": "teardown",
+  "title": "Car alternator: remove it from the engine",
+  "keywords": ["alternator removal","remove alternator","car alternator","truck alternator","serpentine belt","alternator generator","vehicle alternator"],
+  "summary": "Take the 12–14 V alternator off a car or truck engine, with its plug and output cable. On most cars it sits high on the front of the engine and comes off with a socket set in under an hour. Disconnect the battery first: the output stud is wired straight to it.",
+  "difficulty": 2,
+  "mins": 45,
+  "tools": ["socket","wrench","pliers","screwdriver","cutters","multimeter","pry"],
+  "hazards": ["acid","burn","spring","crush","sharp"],
+  "materials": [],
+  "steps": [
+    {"text":"Pick an easy vehicle: open the hood and find the alternator, a finned round case on the front of the engine driven by the belt. On many small cars it is near the top and in easy reach. Skip ones buried low under other parts unless you have time and stands."},
+    {"text":"Let a recently run engine cool for an hour.","warn":"Exhaust parts and the engine block stay hot enough to burn skin for a long time after running."},
+    {"text":"Disconnect the battery negative (-) terminal first and tuck the cable end away so it can't spring back onto the post.","warn":"The alternator output stud is wired to the battery with only a large fuse or fusible link. A spanner across it and the engine can weld itself and burn you."},
+    {"text":"Photograph or sketch the belt route before you touch it. Many engines have a routing diagram sticker under the hood."},
+    {"text":"Release the belt. Modern engines have a spring-loaded tensioner pulley: fit a socket, spanner or square drive into it and swing it against the spring, slip the belt off the alternator pulley, then let the tensioner back slowly. Older engines: loosen the pivot bolt and adjusting bolt, push the alternator in and lift the belt off.","warn":"The tensioner spring is strong. Keep fingers out from between the belt and pulleys and don't let the tool slip."},
+    {"text":"Unplug the small connector on the back (1–4 thin wires). Press its latch; don't pull the wires."},
+    {"text":"Pull back the rubber boot on the output stud, undo the nut and take the thick cable's ring terminal off. Put the nut back on the stud so it isn't lost."},
+    {"text":"Undo the mounting bolts, usually 2–3 long bolts through the alternator's lugs. Support the alternator as the last bolt comes out; it weighs about 4–8 kg."},
+    {"text":"Work it out. You may need to remove an air intake duct, a heat shield or a splash guard. If it only comes out from below, support the vehicle on proper stands on firm ground first.","warn":"Never work under a vehicle held up only by a jack."},
+    {"text":"Cut the wiring harness about 15 cm back from the small connector and from the output cable, so you keep the matching plug and some cable. Label the wires."},
+    {"text":"Spin the pulley by hand. It should turn smoothly with a light tick of the brushes. Grinding or roughness means worn bearings; still keep it for parts."}
+  ],
+  "notes": "## What's worth keeping and why\n\n- **The alternator.** A 3-phase generator with a built-in rectifier and (on most cars since the 1980s) a built-in voltage regulator. Output is 13.5–14.5 V at 60–150 A on cars, more on trucks and buses. It charges 12 V lead-acid batteries directly when spun fast enough.\n- **The plug and harness stub.** Without the matching plug, wiring up the regulator is fiddly.\n- **The pulley and belt.** Match a drive pulley to them.\n\n## Using it as a generator\n\n- An alternator needs field current to work. Most need the battery to be connected and the warning-lamp or ignition terminal fed through a small bulb or resistor (often marked L, IG, D+ or 1). Older units have an external regulator.\n- It needs speed: often 1,500–2,000 alternator RPM or more before it charges well. Cars run it at 2–3 times engine speed through the small pulley. Wind and pedal power need gearing or large pulley ratios.\n- The field draws 2–5 A from the battery even when it isn't spinning fast. Switch the field off when the generator stops.\n- Pedal power: a fit adult makes 50–100 W steadily. A car alternator wastes a large part of that on its field, so a permanent-magnet DC motor is usually a better pedal generator (see build_pedal_generator).\n\n## Variations\n\n- Some newer cars use \"smart\" alternators controlled by the engine computer. They may not charge without it. Check the plug: two or more thin wires with no simple lamp terminal suggests this.\n- Diesel engines may have a vacuum pump bolted to the back of the alternator. Disconnect its oil and vacuum lines first.\n- Trucks, buses and heavy equipment in some regions run 24 V alternators. Read the label.\n\n## Also worth taking from the same car\n\nThe starter motor (a powerful short-duty 12 V motor), radiator fan, wiper motor, window motors, relays, fuses and fuse boxes, and the battery itself (see safety_lead_acid).",
+  "tree": {"era":3,"branch":"salvage","requires":["safety_lifting","safety_lead_acid"]},
+  "devices": ["car","semi"],
+  "parts": ["alternator","belt_pulley","wire_heavy","connector"],
+  "license": "CC-BY-SA-4.0"
+}

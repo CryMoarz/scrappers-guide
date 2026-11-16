@@ -1,0 +1,35 @@
+{
+  "id": "traffic_signal",
+  "name": "Traffic signal and controller cabinet",
+  "group": "Retail and public",
+  "aliases": ["traffic light","stop light","signal cabinet","traffic controller","traffic signal","signal controller","traffic lamp"],
+  "brands": ["Econolite","Siemens","Yunex Traffic","Intelight","Iteris","McCain","Peek Traffic","Global Traffic Technologies"],
+  "prev": 4,
+  "tools": ["screwdriver","socket","cutters","ladder"],
+  "mins": 45,
+  "kg": 200,
+  "hazards": ["mains","acid","fall","heavy"],
+  "comps": [
+    {"key":"battery_pb","fn":"battery_pb","spec":"Battery backup: 4–6 AGM 12V blocks, 50–100Ah (many signalised intersections)","v":12,"ah":[50,100],"qty":4,"ext":2,"obs":5,"loc":"Small cabinet bolted beside the controller cabinet","kg":30},
+    {"key":"inverter","fn":"inverter","spec":"Battery backup inverter, 24–48V in, 120/230V out, about 1–2 kVA","v":[24,48],"w":[1000,2000],"ac":true,"qty":1,"ext":2,"obs":5,"loc":"Battery backup cabinet"},
+    {"key":"led_light","fn":"led_light","spec":"LED signal modules, 200–300 mm, mains with built-in driver","v":[120,240],"w":[5,20],"ac":true,"qty":12,"ext":2,"obs":5,"loc":"Signal heads on the poles and mast arms"},
+    {"key":"thyristor","fn":"thyristor","spec":"Plug-in load switches full of triacs, one per signal phase","qty":12,"ext":1,"obs":5,"loc":"Rack in the controller cabinet"},
+    {"key":"relay","fn":"relay","spec":"Plug-in flash transfer relays","v":120,"a":[15,25],"ac":true,"qty":4,"ext":1,"obs":5,"loc":"Controller cabinet"},
+    {"key":"fan","fn":"fan","spec":"Thermostat-switched cabinet fan, mains","v":[120,240],"ac":true,"qty":1,"ext":1,"obs":5,"loc":"Top of the cabinet"},
+    {"key":"thermostat","fn":"thermostat","spec":"Adjustable cabinet fan thermostat","qty":1,"ext":1,"obs":5,"loc":"Top of the cabinet"},
+    {"key":"breaker","fn":"breaker","spec":"Main and auxiliary breakers","qty":2,"ext":2,"obs":5,"loc":"Cabinet power panel"},
+    {"key":"surge_protect","fn":"surge_protect","spec":"Surge protectors on power and detector inputs","qty":4,"ext":1,"obs":5,"loc":"Cabinet power panel"},
+    {"key":"camera","fn":"camera","spec":"Video detection cameras (many intersections)","qty":4,"ext":4,"obs":5,"loc":"Mast arms and poles"},
+    {"key":"radio_rf","fn":"radio_rf","spec":"Radio or cellular modem (networked signals)","qty":1,"ext":2,"obs":5,"loc":"Controller cabinet"},
+    {"key":"switch","fn":"switch","spec":"Weatherproof pedestrian push buttons","qty":4,"ext":2,"obs":5,"loc":"Poles at each crossing"},
+    {"key":"wire_copper","fn":"wire_copper","spec":"Multi-conductor signal cable","qty":1,"ext":3,"obs":5,"loc":"Conduits and poles"}
+  ],
+  "boards": [
+    {"id":"mcu_board","qty":2,"loc":"Controller and conflict monitor","p":1},
+    {"id":"smps_board","qty":1,"loc":"Cabinet power supply","p":0.8}
+  ],
+  "buildings": [
+    {"b":"roadside","l":5}
+  ],
+  "notes": "The battery backup cabinet is the hidden prize: almost nobody thinks to open it. Switch off the mains breaker before pulling modules."
+}

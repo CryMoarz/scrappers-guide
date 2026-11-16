@@ -1,0 +1,14 @@
+{
+  "id": "transformer_hv",
+  "name": "High-voltage transformers",
+  "group": "Power conversion",
+  "demand": 1,
+  "keywords": ["high voltage","hv transformer","mot","flyback","welder","microwave transformer","microwave oven transformer","neon sign transformer","nst","ignition transformer","oil burner transformer","ignition coil","crt flyback","spot welder"],
+  "substitutes": ["transformer_lv"],
+  "summary": "High-voltage transformers: microwave oven (MOT), neon sign, ignition and CRT flyback.",
+  "uses": ["Rewinding a MOT into a spot welder or high-current, low-voltage supply","Heavy copper wire and steel cores","Replacement igniters for oil burners and engines"],
+  "identify": "A MOT is a heavy steel-core block (3–6 kg) beside the magnetron, with thick and thin windings; neon sign transformers are tar-filled metal boxes; flybacks are black blocks with a thick red wire in CRT sets. A powered MOT secondary kills.",
+  "test": "Check winding continuity with the power off. Never power-test a MOT secondary.",
+  "decay": {"halfLifeMonths":null,"note":"Lasts."},
+  "hazards": ["hv","mains"]
+}

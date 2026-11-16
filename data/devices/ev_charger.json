@@ -1,0 +1,39 @@
+{
+  "id": "ev_charger",
+  "name": "EV charger (Level 2 AC)",
+  "group": "Power and solar",
+  "aliases": ["ev charger","charging station","car charger","wallbox","evse","level 2 charger","juicebox","wall connector"],
+  "brands": ["ChargePoint","Tesla","Emporia","Grizzl-E","Wallbox","Autel","Clipper Creek"],
+  "era": "2010–present",
+  "prev": 3,
+  "tools": ["screwdriver","security_bits","socket","cutters"],
+  "mins": 20,
+  "kg": 30,
+  "hazards": ["mains"],
+  "comps": [
+    {"key":"wire_heavy","fn":"wire_heavy","spec":"Charging cable, 5–8 m of heavy flexible copper (6–10 mm² cores) with plug","qty":1,"ext":1,"obs":3,"loc":"Hanging on the unit"},
+    {"key":"relay","fn":"relay","spec":"Main contactor, 32–80A, 2-pole","a":[32,80],"qty":1,"ext":2,"obs":5,"loc":"Inside the unit or pedestal"},
+    {"key":"sensor_misc","fn":"sensor_misc","spec":"Current transformers and residual-current sensor","qty":2,"ext":2,"obs":5,"loc":"Around the power conductors"},
+    {"key":"breaker","fn":"breaker","spec":"Dedicated 40–100A breaker feeding the unit","a":[40,100],"qty":1,"ext":2,"obs":5,"loc":"Nearby panel or the pedestal base"},
+    {"key":"radio_rf","fn":"radio_rf","spec":"Cellular or Wi-Fi modem (networked units)","qty":1,"ext":2,"obs":5,"loc":"Control board"},
+    {"key":"led_light","fn":"led_light","spec":"Status LEDs and light ring","v":[3,12],"w":[0.5,3],"qty":1,"ext":2,"obs":5,"loc":"Front panel"}
+  ],
+  "boards": [
+    {"id":"mcu_board","qty":1,"loc":"Control board","p":1},
+    {"id":"smps_small","qty":1,"loc":"Logic supply","p":0.8}
+  ],
+  "buildings": [
+    {"b":"car_dealer","l":5},
+    {"b":"parking","l":4},
+    {"b":"mall","l":4},
+    {"b":"supermarket","l":3},
+    {"b":"hotel","l":3},
+    {"b":"office","l":3},
+    {"b":"gas_station","l":3},
+    {"b":"house","l":3},
+    {"b":"garage_res","l":3},
+    {"b":"airport","l":3},
+    {"b":"train_station","l":2},
+    {"b":"stadium","l":2}
+  ]
+}

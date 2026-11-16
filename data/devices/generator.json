@@ -1,0 +1,30 @@
+{
+  "id": "generator",
+  "name": "Portable generator",
+  "group": "Power and solar",
+  "aliases": ["inverter generator","dual fuel generator","generator"],
+  "brands": ["Honda","Generac","Champion","DuroMax","Westinghouse","Predator","Yamaha","Briggs & Stratton","Pulsar","Vevor"],
+  "prev": 3,
+  "tools": ["socket"],
+  "mins": 30,
+  "hazards": ["fuel","heavy"],
+  "comps": [
+    {"key":"engine_small","fn":"engine_small","spec":"Small gas engine","w":[2000,12000],"qty":1,"ext":1,"obs":1,"loc":"Frame"},
+    {"key":"alternator","fn":"alternator","spec":"120/240V alternator head","v":240,"qty":1,"ext":3,"obs":2,"loc":"Coupled to the engine"},
+    {"key":"controller_board","fn":"controller_board","spec":"Inverter board (inverter generators)","qty":1,"ext":3,"obs":4,"loc":"Inside the case"},
+    {"key":"battery_pb","fn":"battery_pb","spec":"Small 12V starting battery (electric-start models)","v":12,"qty":1,"ext":1,"obs":3,"loc":"Frame","p":0.5}
+  ],
+  "boards": [
+    {"id":"inverter_board","qty":1,"loc":"Inverter generators only","p":0.4}
+  ],
+  "buildings": [
+    {"b":"house","l":3},
+    {"b":"garage_res","l":4},
+    {"b":"hardware","l":5},
+    {"b":"tool_rental","l":5},
+    {"b":"farm","l":4},
+    {"b":"construction","l":5},
+    {"b":"rv_dealer","l":3},
+    {"b":"campground","l":3}
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "id": "wifi_router_d_link_dir_505_a1_a2",
+  "device": "wifi_router",
+  "brand": "D-Link",
+  "model": "DIR-505 A1, A2",
+  "fcc": "KA2IR505A1",
+  "notes": "Chips for hardware version A1, A2; other versions of the DIR-505 can differ.",
+  "research": {"gaps":[],"method":["Not yet fact-checked: its parts show as likely until a fact-check confirms them against their sources.","Imported from the OpenWrt Table of Hardware (toh.json, 2026-11-13): the hardware data page for this version, by OpenWrt wiki contributors under CC BY-SA 4.0."]},
+  "comps": [
+    {"key":"ic_mcu_soc","fn":"ic_mcu","spec":"SoC Atheros AR1311, 1 core at 400 MHz","qty":1,"ext":4,"obs":3,"source":"https://openwrt.org/toh/hwdata/d-link/d-link_dir-505","conf":"likely"},
+    {"key":"ic_memory_flash","fn":"ic_memory","spec":"Flash, 8 MB","qty":1,"ext":2,"obs":4,"source":"https://openwrt.org/toh/hwdata/d-link/d-link_dir-505","conf":"likely"},
+    {"key":"ic_memory_ram","fn":"ic_memory","spec":"RAM, 64 MB","qty":1,"ext":3,"obs":3,"source":"https://openwrt.org/toh/hwdata/d-link/d-link_dir-505","conf":"likely"},
+    {"key":"radio_rf","spec":"Wi-Fi: Atheros AR1311 (2.4 GHz b/g/n)","qty":1,"source":"https://openwrt.org/toh/hwdata/d-link/d-link_dir-505","conf":"likely"},
+    {"key":"psu","spec":"Power supply: 100-240 VAC, 50/60Hz, 0.3A","a":0.3,"source":"https://openwrt.org/toh/hwdata/d-link/d-link_dir-505","conf":"likely"},
+    {"key":"connector","spec":"Ethernet ports: 1× 100M","qty":1,"source":"https://openwrt.org/toh/hwdata/d-link/d-link_dir-505","conf":"likely"},
+    {"key":"connector_usb","fn":"connector","spec":"USB: 1x 2.0","qty":1,"ext":2,"obs":4,"source":"https://openwrt.org/toh/hwdata/d-link/d-link_dir-505","conf":"likely"}
+  ],
+  "sources": [
+    {"title":"OpenWrt Table of Hardware: D-Link DIR-505 A1, A2 (OpenWrt wiki contributors, CC BY-SA 4.0)","url":"https://openwrt.org/toh/hwdata/d-link/d-link_dir-505"}
+  ]
+}

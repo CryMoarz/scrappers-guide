@@ -1,0 +1,19 @@
+{
+  "id": "preserve_food",
+  "name": "Preserve food",
+  "keywords": ["preserve food","food preservation","make food last","keep food from spoiling","store food","food storage","cure meat","salt meat","smoke meat","canning","can food","pickle"],
+  "summary": "Drying, salting, smoking, pickling and canning all work without power; cold storage needs the most. Salt is the overlooked staple: restaurants and food warehouses hold sacks of it, and it never goes off. Dry goods sealed in food-grade buckets, kept cool and dark, last for years.",
+  "parts": [
+    {"fn":"salt","why":"Cures meat and fish, and brines vegetables","core":true},
+    {"fn":"tank","why":"Food-grade buckets and drums keep stores dry and pest-free","core":true},
+    {"fn":"cooler_box","why":"Keeps cured and fresh food cool"},
+    {"fn":"insulation","why":"Lines a root cellar or cold box"},
+    {"fn":"propane","why":"Fuel for canning"}
+  ],
+  "guides": ["build_solar_dehydrator","build_chest_freezer_fridge"],
+  "tips": ["Low-acid foods (meat, beans, most vegetables) must be pressure-canned. Boiling-water canning is safe only for acidic foods like fruit, jam and pickles.","Use food salt where you can. Water softener and road salt aren’t made for food; road salt holds grit and chemicals.","Cool, dark and dry storage makes any food last far longer.","Bulging cans, spurting lids or a bad smell mean throw it out. Never taste to check."],
+  "refs": [
+    {"lib":"canning","q":"canning"},
+    {"lib":"food_lib","q":"preserving"}
+  ]
+}

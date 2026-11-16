@@ -1,0 +1,14 @@
+{
+  "id": "hydraulic",
+  "name": "Hydraulic cylinders and pumps",
+  "group": "Motion",
+  "demand": 2,
+  "keywords": ["hydraulic","hydraulic cylinder","hydraulic pump","hydraulic jack","bottle jack","floor jack","trolley jack","car jack","hydraulic ram","hydraulic hose","pallet jack","engine hoist","engine crane","log splitter","hydraulic press"],
+  "substitutes": ["linear_actuator","winch"],
+  "summary": "Oil-filled jacks, cylinders and pumps that lift tonnes with hand force.",
+  "uses": ["Lifting vehicles and heavy loads","Pressing bearings and bending metal","Rams for home-built presses, lifts and log splitters"],
+  "identify": "Bottle jacks, floor jacks, engine cranes, pallet jacks and log splitters each hold a cylinder and a pump. Tractors, tail lifts, dump trailers and lifts have long cylinders with hoses. Polished chrome rods and hoses with crimped ends give them away.",
+  "test": "Pump a jack under a light load and leave it: it should hold without sinking. Never get under a load held only by a jack, and feel for leaks with cardboard, not your hand: a pinhole jet can inject oil into skin.",
+  "decay": {"halfLifeMonths":null,"note":"Cylinders last; seals harden and exposed rods rust, but both can be rebuilt."},
+  "hazards": ["hydraulic","crush"]
+}

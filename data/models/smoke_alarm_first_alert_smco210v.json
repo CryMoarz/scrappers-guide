@@ -1,0 +1,16 @@
+{
+  "id": "smoke_alarm_first_alert_smco210v",
+  "device": "smoke_alarm",
+  "brand": "First Alert",
+  "model": "SMCO210V",
+  "notes": "Combination smoke and CO alarm with voice alerts.",
+  "research": {"checked":"2026-11-11","gaps":["Sensor types are listed without saying which is smoke and which is CO.","The page's repeated spec tables disagree on height, weight and UPC, so they may mix variants."],"method":["First Alert's page gives SKU 1046806 and lists 1046803 and 1046805 as related options."]},
+  "comps": [
+    {"key":"battery_primary","conf":"documented","spec":"Built-in 10-year sealed lithium metal battery; battery not user replaceable","source":"https://firstalert.com/us/en/products/alarms/combo-smoke-carbon-monoxide-alarms/1046806-10-year-battery-2-in-1-smoke-co-alarm-with-voice-alerts-1046806"},
+    {"key":"speaker","conf":"documented","spec":"Sound level 85 dB at 10 feet","source":"https://firstalert.com/us/en/products/alarms/combo-smoke-carbon-monoxide-alarms/1046806-10-year-battery-2-in-1-smoke-co-alarm-with-voice-alerts-1046806"},
+    {"key":"sensor_misc","conf":"documented","spec":"Sensor type listed as Electrochemical; Photoelectric (page does not map each to smoke or CO)","source":"https://firstalert.com/us/en/products/alarms/combo-smoke-carbon-monoxide-alarms/1046806-10-year-battery-2-in-1-smoke-co-alarm-with-voice-alerts-1046806"}
+  ],
+  "sources": [
+    {"title":"First Alert 10-year battery 2-in-1 smoke and CO alarm with voice alerts, product page and specifications (firstalert.com)","url":"https://firstalert.com/us/en/products/alarms/combo-smoke-carbon-monoxide-alarms/1046806-10-year-battery-2-in-1-smoke-co-alarm-with-voice-alerts-1046806"}
+  ]
+}

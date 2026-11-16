@@ -1,0 +1,14 @@
+{
+  "id": "motor_dc_large",
+  "name": "Large DC motors",
+  "group": "Motion",
+  "demand": 1,
+  "keywords": ["motor","large motor","pmdc","treadmill motor","golf cart motor","generator motor","dc motor","permanent magnet motor","pmdc motor","90v dc motor","180v dc motor","forklift motor"],
+  "substitutes": ["motor_bldc","alternator"],
+  "summary": "Big permanent-magnet DC motors, often 90–180V and 1–3 hp: the best scrap generators.",
+  "uses": ["Wind or water generators (treadmill motors are famous for this)","Driving a grinder, lathe or saw from DC","Golf cart and small electric vehicle drives"],
+  "identify": "Heavy cylinders with two thick wires and a flywheel or pulley: under the hood of treadmills, in golf carts, forklifts, floor scrubbers and some industrial machines. The label gives volts, amps and rpm.",
+  "test": "Spin the shaft and measure DC volts across the two wires: it should rise with speed. Short the wires and the shaft should get much harder to turn.",
+  "decay": {"halfLifeMonths":null,"note":"Lasts. Brushes wear but can be replaced."},
+  "hazards": []
+}

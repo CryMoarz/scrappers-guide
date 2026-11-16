@@ -1,0 +1,14 @@
+{
+  "id": "hall_reed",
+  "name": "Hall sensors and reed switches",
+  "group": "Electronic components",
+  "demand": 1,
+  "keywords": ["hall sensor","hall effect","reed switch","magnetic sensor","hall effect sensor","a3144","us1881","reed relay","magnetic switch","door contact","door sensor","window sensor","alarm contact","hall throttle"],
+  "substitutes": ["switch"],
+  "summary": "Magnetic sensors: Hall-effect chips and glass reed switches that detect a nearby magnet.",
+  "uses": ["Door and window alarm contacts","Counting wheel or shaft turns (speed, flow)","Float level switches","Throttle and position sensing"],
+  "identify": "Reed switches are tiny glass tubes with two metal reeds, inside door and window alarm contacts, float switches, bike speed sensors and laptop lids. Hall sensors are small three-legged chips in BLDC motors, e-bike throttles, flow meters and brushless fans.",
+  "test": "Reed: continuity changes when a magnet comes close. Hall: power it with 5V and the output pin flips when a magnet passes.",
+  "decay": {"halfLifeMonths":null,"note":"Lasts."},
+  "hazards": []
+}

@@ -1,0 +1,32 @@
+{
+  "id": "ups",
+  "name": "Office UPS (battery backup)",
+  "group": "Electronics and office",
+  "aliases": ["uninterruptible power supply","backup power supply"],
+  "brands": ["APC","CyberPower","Tripp Lite","Eaton","Belkin","Vertiv","Liebert"],
+  "prev": 4,
+  "tools": ["screwdriver"],
+  "mins": 10,
+  "hazards": [],
+  "comps": [
+    {"key":"battery_pb","fn":"battery_pb","spec":"12V 7–9Ah sealed lead-acid (1–4 per unit)","v":12,"ah":[7,9],"qty":2,"ext":1,"obs":4,"loc":"Front battery door or bottom"},
+    {"key":"inverter","fn":"inverter","spec":"12/24V to 120V inverter with charger","v":[12,24],"w":[200,1000],"ac":true,"qty":1,"ext":1,"obs":4,"loc":"The whole unit"},
+    {"key":"charger","fn":"charger","spec":"Lead-acid charging circuit","v":[12,24],"a":[0.5,2],"qty":1,"ext":1,"obs":4,"loc":"Main board"},
+    {"key":"transformer_lv","fn":"transformer_lv","spec":"Heavy iron transformer","v":[12,24],"w":[300,1000],"ac":true,"qty":1,"ext":2,"obs":4,"loc":"Inside"}
+  ],
+  "boards": [
+    {"id":"inverter_board","qty":1,"loc":"Main board","p":1},
+    {"id":"mcu_board","qty":1,"loc":"Front panel board","p":1}
+  ],
+  "buildings": [
+    {"b":"office","l":5},
+    {"b":"datacenter","l":5},
+    {"b":"school","l":4},
+    {"b":"hospital","l":4},
+    {"b":"bank","l":4},
+    {"b":"house","l":2},
+    {"b":"electronics","l":3},
+    {"b":"pharmacy","l":3},
+    {"b":"shop_small","l":2}
+  ]
+}

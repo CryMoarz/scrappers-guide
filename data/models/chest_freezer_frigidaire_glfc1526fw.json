@@ -1,0 +1,26 @@
+{
+  "id": "chest_freezer_frigidaire_glfc1526fw",
+  "device": "chest_freezer",
+  "brand": "Frigidaire",
+  "model": "GLFC1526FW",
+  "notes": "Frigidaire manual-defrost chest freezer with interior light, lock and power-on light. Covers revision FW0 only.",
+  "research": {"checked":"2026-11-12","gaps":["The cover voltage is for the product, so no voltage is set on the compressor.","The spec sheet names GLFC1526FW but no revision.","Capacity conflict: the spec sheet says '15 Cu. Ft.' in the heading and 14.8 cu. ft. in the table.","The spec sheet heads page 2 'Frigidaire Baseline', while the catalog says Gallery.","The spec sheet rates the appliance 115 V / 60 Hz / 5 A, connected load 0.6 kW; these are appliance figures, not set on any part.","Capacity conflict: the Energy Guide says 14.9 cu. ft., while the spec sheet's table says 14.8 cu. ft.","The catalog lists no separate start relay or overload.","Its 'Controller, compressor' (216954201) is classed as a relay because wiring diagram 297010500D draws it beside the run capacitor, with an overload and a relay as the other build; its contents are not documented.","The lid insulation is listed as bulk fiberglass; cabinet wall insulation is not listed.","Besides the interior lamp, the catalog's only light is the amber signal light 216212700.","The lamp socket is listed as 25 W but the bulb's wattage is not, so no rating is set on the lamp.","The spec sheet gives width 73-1/4 in on page 1 and 48 in on page 2, so dimensions are left out."],"method":["Part numbers come from the Electrolux factory parts catalog for product no. GLFC1526FW0 (publication 5995462313, dated 06/02/27, cover: series Gallery, 115 V, wiring diagram 297010500, energy guide 216794215), read as text on 2026-11-12.","Cabinet figures come from a Frigidaire Canada spec sheet dated 08/13, seven years after the catalog.","Energy Guide 216794215, the number on the catalog cover, names GLFC1526FW and FFC1526FW, manual defrost, 397 kWh per year as on the spec sheet.","Abt's GLFC1526FW page links the Energy Guide and wiring diagram.","Ext/obs on extra parts are editorial."]},
+  "comps": [
+    {"key":"compressor","conf":"documented","spec":"Compressor without electricals, part 216977300 (system pos. 29), on support 5303212615 with grommet 5308002681 and spring clip 216056400","source":"https://assets.ajmadison.com/ajmadison/itemdocs/5995462313.pdf"},
+    {"key":"thermostat","conf":"documented","spec":"Temperature control, part 216714601 (cabinet pos. 21), knob 216707200","source":"https://assets.ajmadison.com/ajmadison/itemdocs/5995462313.pdf"},
+    {"key":"relay_compressor_controller","fn":"relay","spec":"Compressor controller (catalog: 'Controller, compressor'), part 216954201 (system pos. 30), held by clip 216954300","qty":1,"ext":2,"obs":4,"conf":"documented","source":"https://assets.ajmadison.com/ajmadison/itemdocs/5995462313.pdf"},
+    {"key":"capacitor_large_run","fn":"capacitor_large","spec":"Run capacitor, 220 VAC, 15 microfarad, part 218909913 (system pos. 55)","v":220,"ac":true,"qty":1,"ext":1,"obs":3,"conf":"documented","source":"https://assets.ajmadison.com/ajmadison/itemdocs/5995462313.pdf"},
+    {"key":"switch","conf":"documented","spec":"Light switch, ramp type, part 216822900 (door/lid pos. 14); lid harness 216908000 also listed","source":"https://assets.ajmadison.com/ajmadison/itemdocs/5995462313.pdf"},
+    {"key":"led_light","conf":"documented","spec":"Lamp parts in the catalog's door (lid) section: light bulb, short, part 297048600; lamp socket 216817600; light shield 297013900 (pos. 15, 16, 34)","source":"https://assets.ajmadison.com/ajmadison/itemdocs/5995462313.pdf"},
+    {"key":"led_light_signal","fn":"led_light","spec":"Signal light, amber, part 216212700 (door/lid pos. 23)","qty":1,"ext":2,"obs":4,"conf":"documented","source":"https://assets.ajmadison.com/ajmadison/itemdocs/5995462313.pdf"},
+    {"key":"insulation","conf":"documented","spec":"Lid (door) insulation: fiberglass, bulk, part 5303917276 (non-illustrated)","source":"https://assets.ajmadison.com/ajmadison/itemdocs/5995462313.pdf"},
+    {"key":"cooler_box","conf":"documented","spec":"Manual-defrost chest, total capacity 14.8 cu. ft., annual energy 397 kWh; interior lighting, power-on light, lock with pop-out key","source":"https://frigidaire.bynder.com/m/1be7195962e4a874/original/GLFC1526F_0813_CN-pdf.pdf"}
+  ],
+  "sources": [
+    {"title":"GLFC1526FW0 factory parts catalog, publication 5995462313 (Electrolux Major Appliances, 2006; PDF hosted by AJ Madison)","url":"https://assets.ajmadison.com/ajmadison/itemdocs/5995462313.pdf"},
+    {"title":"GLFC1526FW 15 cu. ft. chest freezer specifications sheet (Frigidaire Canada, 08/13)","url":"https://frigidaire.bynder.com/m/1be7195962e4a874/original/GLFC1526F_0813_CN-pdf.pdf"},
+    {"title":"Energy Guide label 216794215 for GLFC1526FW and FFC1526FW (Frigidaire; PDF hosted by Abt)","url":"https://content.abt.com/documents/2008/216794215_006.pdf"},
+    {"title":"Service data sheet / wiring diagram 297010500D, chest freezer (Electrolux; PDF hosted by Abt)","url":"https://content.abt.com/documents/12184/glfc1526_wiring.pdf"},
+    {"title":"Frigidaire GLFC1526FW product page with energy guide, parts manual and wiring diagram links (Abt)","url":"https://www.abt.com/Frigidaire-Chest-Freezer-White-Finish-GLFC1526FW/p/24135.html"}
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "id": "electric_fence",
+  "name": "Electric fence energiser and fencing",
+  "group": "Farm and outdoor",
+  "aliases": ["fence charger","fence energiser","fence energizer","electric fence","hot wire","livestock fence","fence controller","polywire"],
+  "brands": ["Zareba","Parmak","Gallagher","Premier 1 Supplies"],
+  "prev": 3,
+  "tools": ["screwdriver","pliers","cutters"],
+  "mins": 20,
+  "kg": 4,
+  "hazards": ["hv_cap"],
+  "comps": [
+    {"key":"capacitor_large","fn":"capacitor_large","spec":"Energy storage capacitor, several hundred volts — can hold a painful charge after unplugging","qty":1,"ext":2,"obs":5,"loc":"Inside the energiser"},
+    {"key":"transformer_hv","fn":"transformer_hv","spec":"Pulse step-up transformer, 5–10 kV pulses","v":[5000,10000],"qty":1,"ext":2,"obs":5,"loc":"Inside the energiser"},
+    {"key":"thyristor","fn":"thyristor","spec":"SCR switch","qty":1,"ext":3,"obs":5,"loc":"Energiser board"},
+    {"key":"solar_panel","fn":"solar_panel","spec":"5–30W panel (solar models)","w":[5,30],"qty":1,"ext":1,"obs":4,"loc":"On top of the energiser box","p":0.5},
+    {"key":"battery_pb","fn":"battery_pb","spec":"12V deep-cycle or sealed battery (battery and solar models)","v":12,"qty":1,"ext":1,"obs":3,"loc":"Inside or beside the energiser box","p":0.5},
+    {"key":"cable_steel","fn":"cable_steel","spec":"Galvanised high-tensile steel fence wire, hundreds of metres","qty":1,"ext":2,"obs":4,"loc":"Strung along the fence"},
+    {"key":"rope_webbing","fn":"rope_webbing","spec":"Polywire and polytape reels with fine steel strands","qty":2,"ext":1,"obs":4,"loc":"Temporary fences and the barn"},
+    {"key":"tube_frame","fn":"tube_frame","spec":"Steel T-posts and fibreglass step-in posts","qty":20,"ext":2,"obs":4,"loc":"Along the fence line"},
+    {"key":"rod_shaft","fn":"rod_shaft","spec":"Earth rods, 1–2 m galvanised or copper-clad steel","qty":3,"ext":3,"obs":5,"loc":"Driven into the ground near the energiser"},
+    {"key":"spring","fn":"spring","spec":"Gate handle springs","qty":2,"ext":1,"obs":5,"loc":"Fence gates"}
+  ],
+  "boards": [
+    {"id":"analog_timer_board","qty":1,"loc":"Pulse timing (older and cheaper units)","p":0.5},
+    {"id":"mcu_board","qty":1,"loc":"Pulse timing (newer units)","p":0.4}
+  ],
+  "buildings": [
+    {"b":"farm","l":5},
+    {"b":"farm_supply","l":5},
+    {"b":"garden_centre","l":2},
+    {"b":"hardware","l":2},
+    {"b":"house","l":2}
+  ],
+  "notes": "For keeping livestock in and wildlife out of gardens. Unplug and short the output terminals before opening an energiser."
+}

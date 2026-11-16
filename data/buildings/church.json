@@ -1,0 +1,6 @@
+{
+  "id": "church",
+  "name": "Churches and community halls",
+  "osm": ["amenity=place_of_worship","amenity=community_centre","amenity=social_centre"],
+  "exposure": 1
+}

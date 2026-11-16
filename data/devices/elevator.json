@@ -1,0 +1,26 @@
+{
+  "id": "elevator",
+  "name": "Elevator machine room",
+  "group": "Building systems",
+  "aliases": ["lift machine","traction machine"],
+  "brands": ["Otis","Schindler","KONE","ThyssenKrupp","Mitsubishi Electric","Hitachi","Fujitec"],
+  "prev": 3,
+  "tools": ["screwdriver","socket","cutters","heavy"],
+  "mins": 90,
+  "hazards": ["hv","heavy"],
+  "comps": [
+    {"key":"battery_pb","fn":"battery_pb","spec":"Emergency lighting and rescue battery pack","v":12,"ah":[4,12],"qty":1,"ext":2,"obs":5,"loc":"Controller cabinet or car top"},
+    {"key":"motor_ac","fn":"motor_ac","spec":"Large hoist motor","v":[208,480],"w":[7500,40000],"ac":true,"qty":1,"ext":5,"obs":4,"loc":"Machine room"},
+    {"key":"relay","fn":"relay","spec":"Heavy contactors and relays","a":[25,100],"qty":10,"ext":2,"obs":5,"loc":"Controller cabinet"},
+    {"key":"wire_heavy","fn":"wire_heavy","spec":"Heavy copper feeders and travelling cables","qty":1,"ext":3,"obs":5,"loc":"Machine room and shaft"},
+    {"key":"controller_board","fn":"controller_board","spec":"Controller boards and drives","qty":2,"ext":2,"obs":5,"loc":"Controller cabinet"}
+  ],
+  "buildings": [
+    {"b":"apartment","l":4},
+    {"b":"office","l":5},
+    {"b":"hospital","l":5},
+    {"b":"hotel","l":5},
+    {"b":"school","l":3},
+    {"b":"department","l":4}
+  ]
+}

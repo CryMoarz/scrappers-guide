@@ -1,0 +1,36 @@
+{
+  "id": "pet_shop_equipment",
+  "name": "Pet shop fish room and reptile equipment",
+  "group": "Commercial",
+  "aliases": ["fish room","aquarium rack","reptile enclosure","vivarium","terrarium","aquatics department","pet store fixtures","pet store shelving"],
+  "brands": ["Hagen","Exo Terra","Zoo Med","Fluval","Marineland"],
+  "prev": 2,
+  "tools": ["screwdriver","knife","hands"],
+  "mins": 30,
+  "hazards": ["glass","uv","mains"],
+  "comps": [
+    {"key":"compressor","fn":"compressor","spec":"Central air blower or large linear air pumps feeding every tank","v":[120,240],"w":[40,750],"ac":true,"qty":2,"ext":1,"obs":5,"loc":"Under the tank racks or in a back room"},
+    {"key":"pump_water","fn":"pump_water","spec":"Submersible and inline pumps, 10–200W, mains (some 12/24V DC)","v":24,"w":[10,200],"qty":6,"ext":1,"obs":5,"loc":"Sumps under the racks and display tanks","p":0.5},
+    {"key":"uv_lamp","fn":"uv_lamp","spec":"UV-C steriliser lamps, 9–55W, in sealed units — burns eyes and skin when lit outside the housing","w":[9,55],"qty":2,"ext":2,"obs":5,"loc":"In the filter plumbing of the rack system"},
+    {"key":"carbon","fn":"carbon","spec":"Activated carbon filter media, often sealed bags on the shelves","qty":5,"ext":1,"obs":5,"loc":"Filter media aisle and stockroom"},
+    {"key":"filter_water","fn":"filter_water","spec":"Filter sponges, floss and canister filters","qty":4,"ext":1,"obs":5,"loc":"Tanks, sumps and shelves"},
+    {"key":"glass_pane","fn":"glass_pane","spec":"Glass tanks, 4–12 mm panes held with silicone — cut the silicone to free the panes","qty":20,"ext":2,"obs":5,"loc":"Display racks"},
+    {"key":"heating_element","fn":"heating_element","spec":"Aquarium heaters, 50–500W, glass or titanium","w":[50,500],"qty":10,"ext":1,"obs":5,"loc":"Inside tanks and sumps"},
+    {"key":"heating_element_reptile","fn":"heating_element","spec":"Reptile heat mats and ceramic heat emitters, 25–150W","w":[25,150],"qty":6,"ext":1,"obs":5,"loc":"Vivariums and shelves"},
+    {"key":"thermostat","fn":"thermostat","spec":"Reptile and aquarium thermostats with probes","qty":6,"ext":1,"obs":5,"loc":"Vivariums and shelves"},
+    {"key":"led_light","fn":"led_light","spec":"LED aquarium lights, 12–24V","v":[12,24],"qty":10,"ext":1,"obs":4,"loc":"Tank tops"},
+    {"key":"hose_tubing","fn":"hose_tubing","spec":"Silicone airline tubing, PVC pipe and fittings","qty":5,"ext":1,"obs":5,"loc":"Racks and shelves"},
+    {"key":"tank","fn":"tank","spec":"Plastic tubs, buckets and sump tanks","qty":4,"ext":1,"obs":4,"loc":"Under the racks and in the back room"}
+  ],
+  "boards": [
+    {"id":"led_driver_dc","qty":4,"loc":"Aquarium lights","p":0.5},
+    {"id":"electronic_ballast","qty":2,"loc":"UV steriliser power units","p":0.8}
+  ],
+  "buildings": [
+    {"b":"pet_shop","l":5},
+    {"b":"garden_centre","l":3},
+    {"b":"mall","l":2},
+    {"b":"school","l":1}
+  ],
+  "notes": "Food and medicine go first; the pumps, air blowers and carbon usually stay. Tanks of stagnant water may be foul: wear gloves."
+}

@@ -1,0 +1,14 @@
+{
+  "id": "fabric_tarp",
+  "name": "Tarps, canvas and fabric",
+  "group": "Materials",
+  "demand": 4,
+  "keywords": ["tarp","tarpaulin","canvas","fabric","cloth","banner","vinyl banner","billboard vinyl","awning","tent fabric","shade cloth","ground sheet","groundsheet","trampoline mat","pool cover","sailcloth","nylon fabric"],
+  "substitutes": ["plastic_sheet"],
+  "summary": "Tarps, canvas, vinyl banners, awnings and heavy fabric for shelter and covers.",
+  "uses": ["Roofs, walls and ground sheets for shelter","Rain catchment and liners for water storage","Covering gear, firewood and vehicles","Shade over gardens and people"],
+  "identify": "Hardware and farm stores, truck curtain sides, trampoline mats, shop awnings, gazebos, pool covers, sail lofts, and vinyl banners on shops and billboards. Billboard vinyl is huge, tough and usually ignored.",
+  "test": "Hold it to the light to spot holes and thin wear, then pour water on: good fabric sheds water without dripping through.",
+  "decay": {"halfLifeMonths":60,"note":"Stored tarps last years; tarps left in the sun fall apart in one or two."},
+  "hazards": []
+}

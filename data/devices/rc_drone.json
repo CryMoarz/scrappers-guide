@@ -1,0 +1,32 @@
+{
+  "id": "rc_drone",
+  "name": "Drones and RC vehicles",
+  "group": "Leisure and fitness",
+  "aliases": ["quadcopter","rc car"],
+  "brands": ["DJI","Autel Robotics","Parrot","Potensic","Holy Stone","Traxxas","Arrma","Axial","Tamiya"],
+  "prev": 3,
+  "tools": ["screwdriver"],
+  "mins": 15,
+  "kg": 0.89,
+  "materials": {"aluminium":0.007,"copper":0.025,"steel":0.11,"plastic":0.51,"battery":0.062,"boards":0.15,"glass":0.009,"other":0.015},
+  "hazards": ["li_fire"],
+  "comps": [
+    {"key":"battery_li","fn":"battery_li","spec":"LiPo battery packs","v":[3.7,22.2],"ah":[0.5,6],"qty":2,"ext":1,"obs":3,"loc":"Body"},
+    {"key":"motor_bldc","fn":"motor_bldc","spec":"Small brushless motors","v":[7.4,22.2],"w":[50,800],"qty":4,"ext":1,"obs":4,"loc":"Arms or chassis"},
+    {"key":"radio_rf","fn":"radio_rf","spec":"2.4 GHz receiver and transmitter","qty":2,"ext":2,"obs":4,"loc":"Body and remote"},
+    {"key":"camera","fn":"camera","spec":"Camera module","qty":1,"ext":2,"obs":4,"loc":"Nose"},
+    {"key":"controller_board","fn":"controller_board","spec":"Flight controller and speed controllers","qty":1,"ext":2,"obs":5,"loc":"Body"}
+  ],
+  "boards": [
+    {"id":"bldc_controller","qty":4,"loc":"Speed controllers","p":1}
+  ],
+  "buildings": [
+    {"b":"house","l":3},
+    {"b":"electronics","l":4},
+    {"b":"toy_store","l":4},
+    {"b":"department","l":3}
+  ],
+  "sources": [
+    {"title":"Weight: drones averaged 0.89 kg, from 0.08 to 1.9 kg (Babbitt et al. 2020, disassembly-based bill of materials data for consumer electronics, CC0)","url":"https://doi.org/10.6084/m9.figshare.11306792"}
+  ]
+}

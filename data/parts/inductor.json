@@ -1,0 +1,14 @@
+{
+  "id": "inductor",
+  "name": "Inductors, chokes and toroids",
+  "group": "Electronic components",
+  "demand": 1,
+  "keywords": ["inductor","inductors","choke","toroid","coil","ferrite core","toroid core","ferrite ring","ferrite bead","choke coil","power inductor","common mode choke","air core coil"],
+  "substitutes": ["ferrite_xfmr"],
+  "summary": "Coils and chokes that store energy and filter noise: toroids, drum cores and common-mode chokes.",
+  "uses": ["Building buck and boost converters","Filtering noise on power lines","Wire and ferrite cores for radio coils and transformers"],
+  "identify": "Copper wire wound on a ring (toroid), drum or bar, on power supplies, inverters, motherboards, LED drivers and amplifiers. Yellow and white toroids from PC power supplies are common.",
+  "test": "A working coil reads low ohms. Look for burnt or cracked insulation and broken cores.",
+  "decay": {"halfLifeMonths":null,"note":"Lasts."},
+  "hazards": []
+}

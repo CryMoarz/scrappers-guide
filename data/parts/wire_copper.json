@@ -1,0 +1,14 @@
+{
+  "id": "wire_copper",
+  "name": "Copper wire and cord",
+  "group": "Magnets and wire",
+  "demand": 2,
+  "keywords": ["wire","copper","copper wire","magnet wire","cable","cord","harness","extension cord","speaker wire","stranded wire","solid wire","romex","nm cable","building wire","enamelled wire","enameled wire","winding wire","lamp cord","zip cord","ethernet cable","cat5","cat6"],
+  "substitutes": ["wire_heavy"],
+  "summary": "Copper wire, cords and cable, from mains cords and house wiring to enamelled magnet wire.",
+  "uses": ["Wiring solar, battery and lighting systems","Rewinding motors, transformers and coils","Extension cords and repairs","Tying, binding and antennas"],
+  "identify": "Cords on every appliance, house wiring in walls (NM or Romex), extension cords, and speaker and network cable. Magnet wire is shiny copper with a thin varnish, inside motors, transformers and coils.",
+  "test": "Check insulation for cracks and burns and test continuity end to end; thicker wire carries more current. Never cut building wiring that might still be live from solar or a generator.",
+  "decay": {"halfLifeMonths":null,"note":"Lasts."},
+  "hazards": ["mains"]
+}

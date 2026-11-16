@@ -1,0 +1,27 @@
+{
+  "id": "boat",
+  "name": "Small powerboat",
+  "group": "Vehicles and mobility",
+  "aliases": ["motorboat","fishing boat"],
+  "brands": ["Boston Whaler","Bayliner","Sea Ray","Chris-Craft","Robalo","Crestliner","Lund","Grady-White"],
+  "prev": 3,
+  "tools": ["screwdriver","socket","cutters"],
+  "mins": 40,
+  "hazards": ["fuel"],
+  "comps": [
+    {"key":"battery_pb","fn":"battery_pb","spec":"Marine deep-cycle battery","v":12,"ah":[70,125],"qty":1,"ext":1,"obs":3,"loc":"Stern compartment"},
+    {"key":"pump_water","fn":"pump_water","spec":"12V submersible bilge pump","v":12,"qty":1,"ext":2,"obs":4,"loc":"Lowest point of the hull"},
+    {"key":"motor_dc_small","fn":"motor_dc_small","spec":"12/24V trolling motor","v":24,"qty":1,"ext":1,"obs":3,"loc":"Bow or transom"},
+    {"key":"radio_rf","fn":"radio_rf","spec":"VHF marine radio","qty":1,"ext":2,"obs":3,"loc":"Console"},
+    {"key":"antenna_coax","fn":"antenna_coax","spec":"VHF antenna and coax","qty":1,"ext":2,"obs":4,"loc":"Console or T-top"},
+    {"key":"led_light","fn":"led_light","spec":"Navigation lights","v":12,"w":[1,10],"qty":3,"ext":1,"obs":4,"loc":"Bow and stern"},
+    {"key":"switch","fn":"switch","spec":"Waterproof switches and bilge float switch","qty":4,"ext":1,"obs":5,"loc":"Console and bilge"},
+    {"key":"fuse","fn":"fuse","spec":"Blade fuses and breakers","a":[5,30],"qty":8,"ext":1,"obs":4,"loc":"Console panel"}
+  ],
+  "buildings": [
+    {"b":"marina","l":5},
+    {"b":"boat_shop","l":5},
+    {"b":"house","l":3},
+    {"b":"campground","l":2}
+  ]
+}

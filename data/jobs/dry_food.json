@@ -1,0 +1,20 @@
+{
+  "id": "dry_food",
+  "name": "Dry food",
+  "keywords": ["dry food","drying food","dehydrate","dehydrate food","dehydrator","food dehydrator","solar dryer","sun dry","dry meat","jerky","dried fruit"],
+  "summary": "Moving air matters as much as heat. A solar dryer is a black box under glass that sends warm air up through screened trays; a small 12V fan on a solar panel speeds it up and runs only when the sun is out. On a sunny day, a parked car with the windows cracked works in a pinch.",
+  "parts": [
+    {"fn":"fan","why":"Moves damp air out and speeds drying","core":true},
+    {"fn":"glass_pane","why":"Glazing for a solar dryer","core":true},
+    {"fn":"sheet_metal","why":"A black absorber plate heats the air","core":true},
+    {"fn":"solar_panel","why":"Runs the fan directly, with no battery","need":{"w":10}},
+    {"fn":"heating_element","why":"Low, gentle heat for drying in cloudy weather"},
+    {"fn":"plastic_sheet","why":"Clear covers where glass is scarce"},
+    {"fn":"fabric_tarp","why":"Mesh and cloth to keep insects off"}
+  ],
+  "guides": ["build_solar_dehydrator"],
+  "tips": ["Slice food thin and even, about 5 mm, so it dries before it spoils.","Heat meat to 71°C before or after drying to kill germs.","Keep flies off with fine mesh. They lay eggs on drying food.","Food is dry when it’s leathery or snaps, with no moist spots. Store it sealed."],
+  "refs": [
+    {"lib":"food_lib","q":"drying"}
+  ]
+}

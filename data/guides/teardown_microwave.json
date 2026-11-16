@@ -1,0 +1,32 @@
+{
+  "id": "teardown_microwave",
+  "kind": "teardown",
+  "title": "Microwave oven (transformer type): safe teardown",
+  "keywords": ["microwave teardown","microwave oven transformer","mot","magnetron magnet","microwave capacitor","strip microwave","salvage microwave"],
+  "summary": "Get the heavy transformer, magnetron ring magnets, fan, turntable motor, switches and fuse out of a transformer-type microwave. The high-voltage capacitor can kill even after unplugging: discharge it with a proper tool and prove it dead with a meter before you touch anything inside.",
+  "difficulty": 3,
+  "mins": 30,
+  "tools": ["screwdriver","security_bits","multimeter","pliers","socket","cutters","drill"],
+  "hazards": ["hv_cap","mains","heavy","sharp","chemical","beryllium"],
+  "materials": [],
+  "steps": [
+    {"text":"Unplug the oven and cut the plug off the cord so nobody plugs it back in while it is open. Leave it at least 10 minutes."},
+    {"text":"Remove the screws along the back and sides of the outer cover. Many use tri-wing or pin-Torx heads; use security bits. Slide the cover back and lift it off. Watch the sheet-metal edges.","warn":"Do not reach inside yet. The high-voltage capacitor may still be charged."},
+    {"text":"Find the high-voltage capacitor: a metal can, about 4–6 cm across, near the big transformer in the base, with two terminals on top. Do not touch it, its terminals, the transformer or the magnetron leads with your hands.","warn":"This capacitor can hold about 2,000 V or more and enough energy to stop your heart."},
+    {"text":"Discharge it with a proper discharge tool: an insulated probe with a high-wattage resistor (tens of kilohms) and a clip lead. Clip the lead to bare chassis metal. Touch the probe to each capacitor terminal in turn for 5 seconds, then hold it across both terminals. See safety_discharge_capacitor.","warn":"Never use a bare screwdriver or your fingers. One hand only; keep the other hand away from the chassis."},
+    {"text":"Prove it is dead. Set your meter to its highest DC volts range (at least 1,000 V if it has one). Measure across the two capacitor terminals and from each terminal to chassis. You want 0 V. If you see any voltage, discharge again and re-measure.","warn":"Do not trust the built-in bleeder resistor. Measure every time."},
+    {"text":"Clip an insulated jumper wire across the two capacitor terminals and leave it there while you work. Photograph the wiring before you unplug anything."},
+    {"text":"Pull the spade connectors off the capacitor and unbolt it (one screw or a strap). Pull off the high-voltage diode next to it (a small black part with a ring terminal to chassis). Keep the capacitor shorted with a twisted wire if you store it."},
+    {"text":"Take the easy parts: the cooling fan (2–4 screws), the turntable motor under the floor (2 screws, outside the cavity), the 3 door interlock microswitches on the latch, the thermal cutoffs on the magnetron and cavity, the main fuse in its clip, and the interior lamp."},
+    {"text":"Remove the magnetron: unplug its two leads, then undo the 4 nuts or screws holding it to the waveguide and lift it out.","warn":"The ceramic insulators on some magnetrons are beryllium oxide. Never crack, grind, sand or drill them: the dust can cause a deadly lung disease."},
+    {"text":"Get the magnets out of the magnetron: two thick ferrite ring magnets sit above and below the copper core, under a steel cover held by screws or rivets. Undo the screws or drill out the rivets, bend the cover open with pliers and lift the rings off. Keep the ceramic parts whole."},
+    {"text":"Remove the transformer last: unplug its leads, then undo the 4 bolts or screws through its base. It weighs 6–9 kg; lift it by the iron core with both hands, not by the wires.","warn":"Never power a microwave transformer with its original high-voltage winding in place. About 2,000 V at high current kills instantly."},
+    {"text":"Take the control board behind the keypad (relays, small transformer, buzzer), the mains cord, and the steel case if you need sheet metal. Bag screws and small parts together."}
+  ],
+  "notes": "## What's worth keeping and why\n\n- **Transformer (MOT).** 6–9 kg of iron core with a thick copper primary. The classic reuse is a spot welder or heavy low-voltage supply after the thin high-voltage secondary is cut out and replaced with a few turns of very thick cable (see build_mot_spot_welder). Even as scrap it's the heaviest copper in the oven.\n- **Magnetron ring magnets.** Two strong ferrite rings, good for generators, holding tools and magnetic sweeps for nails and filings.\n- **Fan motor.** Small shaded-pole mains motor with a blade. Runs on mains AC only.\n- **Turntable motor.** Small synchronous gear motor, about 3–6 RPM, mains AC. Good for slow rotation jobs (a rotisserie, a turning display, a slow stirrer) where mains power exists.\n- **Microswitches, thermal cutoffs, 15–20 A fuse, relays.** Small but useful spares for repairs.\n- **Cord, case steel, glass turntable plate.**\n\n## Removing the transformer secondary\n\nThe secondary is the outer winding of many thin turns. To remove it, cut it flush on one face of the core with a hacksaw or grinder, then drive the cut pieces out from the other side with a punch and hammer. Keep the primary (fewer, thicker turns) intact if you want to reuse the transformer. The small metal shims between the two windings are magnetic shunts; knocking them out raises the output current of a rebuilt transformer.\n\n## Variations\n\n- Most microwaves since the 1970s use this transformer layout. Newer inverter-type ovens have a light switching board in place of the transformer and capacitor; that board also holds a dangerous charge (see microwave_inv).\n- Over-the-range units add a vent fan and lamp; combination ovens add a heating element.\n- Capacitors are usually around 0.8–1.2 µF rated about 2,000–2,500 V AC.\n\n## What to leave\n\n- The high-voltage diode and capacitor are of little use outside a microwave. Keep the capacitor shorted, or leave it.\n- Never open or break the magnetron's ceramic parts.\n- The waveguide and cavity are thin painted steel; only worth it if you need sheet.",
+  "tree": {"era":3,"branch":"salvage","requires":["safety_discharge_capacitor"]},
+  "devices": ["microwave_tx"],
+  "parts": ["transformer_hv","capacitor_large","wire_copper","magnet_ferrite","fan","motor_sync","switch","thermostat","fuse","relay"],
+  "experienced": true,
+  "license": "CC-BY-SA-4.0"
+}

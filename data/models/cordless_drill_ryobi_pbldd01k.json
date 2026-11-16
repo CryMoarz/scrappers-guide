@@ -1,0 +1,17 @@
+{
+  "id": "cordless_drill_ryobi_pbldd01k",
+  "device": "cordless_drill",
+  "brand": "Ryobi",
+  "model": "PBLDD01K",
+  "notes": "The 18V ONE+ HP Brushless 1/2 in. Drill/Driver Kit (model PBLDD01K) includes two 2Ah batteries and a charger.",
+  "research": {"checked":"2026-11-11","method":["The support page lists a brushless motor, a 2-speed gearbox with a 24-position clutch, and up to 750 in-lbs."]},
+  "comps": [
+    {"key":"motor_dc_small","conf":"documented","spec":"Brushless motor; kit max torque up to 750 in-lbs","source":"https://support.ryobitools.com/products/details/18v-one-plus-hp-brushless-12-drilldriver"},
+    {"key":"gearbox","conf":"documented","spec":"2-speed gearbox, 0 - 500 / 0 - 2,100 RPM; 24-position clutch","source":"https://support.ryobitools.com/products/details/18v-one-plus-hp-brushless-12-drilldriver"},
+    {"key":"battery_li","conf":"documented","spec":"Included in kit: (2) 18V ONE+ 2Ah High Performance Batteries","v":18,"ah":2,"source":"https://support.ryobitools.com/products/details/18v-one-plus-hp-brushless-12-drilldriver"},
+    {"key":"charger","conf":"documented","spec":"Included in kit: (1) 18V ONE+ Charger","v":18,"source":"https://support.ryobitools.com/products/details/18v-one-plus-hp-brushless-12-drilldriver"}
+  ],
+  "sources": [
+    {"title":"Ryobi 18V ONE+ HP Brushless 1/2 in. Drill/Driver Kit product page (support.ryobitools.com)","url":"https://support.ryobitools.com/products/details/18v-one-plus-hp-brushless-12-drilldriver"}
+  ]
+}

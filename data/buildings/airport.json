@@ -1,0 +1,8 @@
+{
+  "id": "airport",
+  "name": "Airports and airfields",
+  "osm": ["aeroway=aerodrome"],
+  "exposure": 2,
+  "notes": "Ground power units, baggage tractors, lighting, radios and fuel.",
+  "hazards": ["fuel"]
+}

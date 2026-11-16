@@ -1,0 +1,25 @@
+{
+  "id": "chest_freezer_frigidaire_ffc0723dw",
+  "device": "chest_freezer",
+  "brand": "Frigidaire",
+  "model": "FFC0723DW",
+  "notes": "Compact manual-defrost chest freezer. Covers revision DW0 only, and later revisions may use other part numbers.",
+  "research": {"checked":"2026-11-12","gaps":["The cover voltage is for the product; the catalog gives no voltage for the compressor itself, so none is set on it.","Neither the catalog nor the service data sheet 216787900 lists a separate start relay or overload.","That controller is classed as a relay here because a parts price listing names 216954200 a start relay device.","What it contains is not documented.","These are performance figures, not ratings, so they are not put in rating fields.","Capacity conflict: Abt's product page says 7.0 cu. ft.; the Energy Guide label (same number 216793915 as the catalog) says 7.2 cu. ft., used here.","Abt's product page lists a power-on light; the only light in the catalog is the amber signal light.","The lid insulation is listed as bulk fiberglass; the cabinet wall insulation is not listed."],"method":["Part numbers come from the Electrolux factory parts catalog for product no. FFC0723DW0 (publication 5995415295, dated 04/08/18, cover: series 134A, 115 V, wiring diagram 216787900, energy guide 216793915), read as text on 2026-11-12.","The data sheet's circuit shows cold control, compressor, run capacitor and a compressor controller (catalog: 'Controller, compressor, 5 speed', 216954200).","Parts Town gives the same catalog name and a size of 2.6 x 1.7 x 1.55 in, 41 g.","The data sheet gives the temperature control as 9.5 F cut-in / -9.2 F cut-out at setting 1 and a wattage range of 65-85 (last third of cycle, 70 F room).","Ext/obs on extra parts are editorial."]},
+  "comps": [
+    {"key":"compressor","conf":"documented","spec":"Compressor without electricals, part 216951200 (system pos. 29), with mounting spring clip 216056400 and grommet 5308002681","source":"https://content.abt.com/documents/5538/5995415295.pdf"},
+    {"key":"thermostat","conf":"documented","spec":"Temperature control, part 216787700 (cabinet pos. 21), knob 216707200","source":"https://content.abt.com/documents/5538/5995415295.pdf"},
+    {"key":"relay_compressor_controller","fn":"relay","spec":"Compressor controller (catalog: 'Controller, compressor, 5 speed'), part 216954200 (system pos. 30), held by clip 216954300","qty":1,"ext":2,"obs":4,"conf":"documented","source":"https://content.abt.com/documents/5538/5995415295.pdf"},
+    {"key":"capacitor_large_run","fn":"capacitor_large","spec":"Run capacitor, 220 VAC, 12 microfarad, part 218909912 (system pos. 55)","v":220,"ac":true,"qty":1,"ext":1,"obs":3,"conf":"documented","source":"https://content.abt.com/documents/5538/5995415295.pdf"},
+    {"key":"led_light_signal","fn":"led_light","spec":"Signal light, amber, part 06594648 (cabinet pos. 23)","qty":1,"ext":2,"obs":4,"conf":"documented","source":"https://content.abt.com/documents/5538/5995415295.pdf"},
+    {"key":"insulation","conf":"documented","spec":"Lid (door) insulation: fiberglass, bulk, part 5303917276 (non-illustrated)","source":"https://content.abt.com/documents/5538/5995415295.pdf"},
+    {"key":"cooler_box","conf":"documented","spec":"Chest-type freezer with manual defrost, capacity 7.2 cu. ft.; Energy Guide 279 kWh per year (label 216793915, shared with FFC0723FW, FFC07K1FW, FFC0723GB)","source":"https://content.abt.com/documents/2001/216793915.pdf"}
+  ],
+  "sources": [
+    {"title":"FFC0723DW0 factory parts catalog, publication 5995415295 (Electrolux Home Products, 2004; PDF hosted by Abt)","url":"https://content.abt.com/documents/5538/5995415295.pdf"},
+    {"title":"Energy Guide label 216793915 for FFC0723DW and siblings (Frigidaire; PDF hosted by Abt)","url":"https://content.abt.com/documents/2001/216793915.pdf"},
+    {"title":"Service data sheet / wiring diagram 216787900, compact chest freezer (Electrolux; PDF hosted by Abt)","url":"https://content.abt.com/documents/4799/216787900.pdf"},
+    {"title":"Frigidaire FFC0723DW product page with parts manual, wiring diagram and energy guide links (Abt)","url":"https://www.abt.com/Frigidaire-White-Chest-Freezer-FFC0723DW/p/16299.html"},
+    {"title":"Frigidaire 216954200 listed as 'Start Relay Device' (Part Price Check)","url":"https://partpricecheck.com/part/frigidaire-216954200"},
+    {"title":"Frigidaire 216954200 'Controller, Compressor, 5 Speed' with dimensions and weight (Parts Town)","url":"https://www.partstown.com/frigidaire/fri216954200"}
+  ]
+}

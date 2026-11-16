@@ -1,0 +1,18 @@
+{
+  "id": "electric_toothbrush_philips_sonicare_hx6810",
+  "device": "electric_toothbrush",
+  "brand": "Philips Sonicare",
+  "model": "ProtectiveClean 4100 HX6810/50",
+  "notes": "Covers the Sonicare ProtectiveClean 4100 HX6810/50; the manual copy also covers HX6811/01, HX6812/01, HX6816/01, HX6817/01 and HX6817/31. The manual's end-of-life steps pry the battery off two metal tabs with sharp edges, and the product sheet lists a power voltage of 110-220 V without saying which part it belongs to.",
+  "research": {"checked":"2026-11-12","gaps":["The product sheet gives the battery as lithium-ion with up to 2 weeks of operation; it gives no capacity or cell size.","The sheet's power voltage (110-220 V) is not tied to the charger, so no voltage is put on the charger part.","A search snippet's rating for the HX6100 charging base was not used: the Philips PDFs carrying it returned HTTP 404 to the researcher, and the link to the HX6810 was not confirmed.","No teardown, chip list or motor description was found for the HX6810, so the motor, magnets and any controller chip are not claimed.","The manual copy names the battery only as rechargeable; the lithium-ion chemistry comes from the product sheet."],"method":["Philips product sheet for the HX6810/50 ('Sonic electric toothbrush' PDF on documents.philips.com, issue date 2021-05-21), specifications page: battery type, operating time, power voltage and items included.","ManualsLib copy 145382 of the Philips Sonicare ProtectiveClean 4100 manual, read on manualslib.mx: page 21 (end-of-life battery removal steps 1-4, suitable-for list including HX6810/50).","Same manual, page 22: steps 5-9 (battery tabs, green circuit board, taping the contacts). The same page on manualslib.com returned HTTP 404."]},
+  "comps": [
+    {"key":"battery_li","conf":"documented","spec":"Rechargeable lithium-ion battery; the product sheet gives up to 2 weeks of operation from full to empty","qty":1,"source":"https://www.documents.philips.com/assets/20211007/1adde57ea5a3431fa220adba009cf642.pdf"},
+    {"key":"charger","conf":"documented","spec":"Charger, one included with the handle (product sheet's items-included list)","qty":1,"source":"https://www.documents.philips.com/assets/20211007/1adde57ea5a3431fa220adba009cf642.pdf"},
+    {"key":"controller_board_handle","fn":"controller_board","spec":"Green printed circuit board in the handle's internal assembly, joined to the battery by a metal tab (the manual's disposal steps break the tab)","qty":1,"ext":3,"obs":3,"conf":"documented","source":"https://manualslib.mx/manual/145382/Philips-Sonicare-Protectiveclean-4100.html?page=22"}
+  ],
+  "sources": [
+    {"title":"Philips Sonicare ProtectiveClean 4100 Sonic electric toothbrush HX6810/50, product sheet (Philips, PDF): battery type and items included","url":"https://www.documents.philips.com/assets/20211007/1adde57ea5a3431fa220adba009cf642.pdf"},
+    {"title":"Philips Sonicare ProtectiveClean 4100 manual, ManualsLib copy (145382), page 21: end-of-life battery removal, suitable-model list","url":"https://manualslib.mx/manual/145382/Philips-Sonicare-Protectiveclean-4100.html?page=21"},
+    {"title":"Philips Sonicare ProtectiveClean 4100 manual, ManualsLib copy (145382), page 22: remaining battery removal steps, battery tabs and green circuit board","url":"https://manualslib.mx/manual/145382/Philips-Sonicare-Protectiveclean-4100.html?page=22"}
+  ]
+}

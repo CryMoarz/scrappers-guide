@@ -1,0 +1,31 @@
+{
+  "id": "stairlift",
+  "name": "Stairlift",
+  "group": "Medical and mobility",
+  "aliases": ["stair lift","stair chair","chair lift for stairs","stair glide","indoor stair lift","home stairlift"],
+  "brands": ["Acorn","Bruno","Handicare","Stannah","Harmar","Amico"],
+  "prev": 2,
+  "tools": ["socket","hex","screwdriver","wrench"],
+  "mins": 60,
+  "kg": 90,
+  "hazards": ["heavy","crush"],
+  "comps": [
+    {"key":"battery_pb","fn":"battery_pb","spec":"Two 12V sealed lead-acid batteries, 7–12Ah, wired for 24V and charged at the rail ends","ah":[7,12],"qty":2,"ext":2,"obs":5,"loc":"Inside the carriage under the seat","kg":3},
+    {"key":"motor_dc_small","fn":"motor_dc_small","spec":"24V DC gear motor, about 150–400W, with worm gearbox","v":24,"w":[150,400],"qty":1,"ext":3,"obs":5,"loc":"Carriage, under the seat","kg":7},
+    {"key":"gearbox","fn":"gearbox","spec":"Worm or planetary reduction gearbox with a pinion on the rack","qty":1,"ext":3,"obs":5,"loc":"Carriage"},
+    {"key":"tube_frame","fn":"tube_frame","spec":"Extruded aluminium or steel rail with a toothed rack, 3–6 m — a very stiff beam","qty":1,"ext":3,"obs":5,"loc":"Bolted to the stair treads","kg":30},
+    {"key":"solenoid_actuator","fn":"solenoid_actuator","spec":"Electromagnetic brake on the motor","v":24,"qty":1,"ext":2,"obs":5,"loc":"End of the motor"},
+    {"key":"switch","fn":"switch","spec":"Limit microswitches and safety-edge switches","qty":6,"ext":2,"obs":5,"loc":"Footrest, carriage ends and seat"},
+    {"key":"charger","fn":"charger","spec":"24V charging through contacts at the rail ends","v":24,"qty":1,"ext":1,"obs":5,"loc":"Rail ends and carriage"},
+    {"key":"psu","fn":"psu","spec":"Mains transformer or power supply, 24–36V","v":[24,36],"qty":1,"ext":1,"obs":5,"loc":"Plugged in at the top or bottom of the stairs"},
+    {"key":"foam_rubber","fn":"foam_rubber","spec":"Padded seat and backrest","qty":1,"ext":1,"obs":5,"loc":"Seat"}
+  ],
+  "boards": [
+    {"id":"power_motor_controller","qty":1,"loc":"Control board in the carriage","p":0.8}
+  ],
+  "buildings": [
+    {"b":"church","l":3},
+    {"b":"nursing_home","l":3},
+    {"b":"house","l":2}
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "id": "mini_fridge_koolatron_corc24",
+  "device": "mini_fridge",
+  "brand": "Koolatron",
+  "model": "CORC24",
+  "notes": "A 12 V thermoelectric cooler (the manual's cover calls it the Cruiser) that draws about 4.5 A from a vehicle lighter socket. It also runs from the included Koolatron PowerPack adapter on a 110/120 V AC wall outlet.",
+  "research": {"checked":"2026-11-12","gaps":["The manual gives about 4.5 A from the 12 V socket and no wattage, so no w is set.","The Peltier module count, size and part number are not in the manual (it says only 'Peltier devices'), so none is claimed.","The manual gives no rating for the fan or for the PowerPack's output.","The 12 V power cord and a battery saver appear only under the manual's accessories heading ('for prices and availability, please call'), so the cord is not claimed as part of the cooler.","The cover carries a drinks brand; only the model name is used.","A search for Peltier part numbers found only a user report about another brand's cooler, which is not used."],"method":["Koolatron CORC24 owner's manual (Koolatron CDN PDF, print code 01/2015-v1): two pages, read as text; page 2 rendered at 110 dpi and checked against the text.","No site refused; no bot checks."]},
+  "comps": [
+    {"key":"thermoelectric","conf":"documented","spec":"Thermoelectric cooling with Peltier devices, 12 V DC, about 4.5 A drawn from the vehicle 12 V lighter socket; the manual says it cools to roughly 40 F (22 C) below outside temperature","v":12,"a":4.5,"source":"https://cdn.shopify.com/s/files/1/0558/1674/9125/files/CORC24-12V-Cooler-Manual-EN.pdf"},
+    {"key":"fan","conf":"documented","spec":"Fan with a motor; the manual's cleaning advice mentions the fan blades and motor shaft","source":"https://cdn.shopify.com/s/files/1/0558/1674/9125/files/CORC24-12V-Cooler-Manual-EN.pdf"},
+    {"key":"psu","conf":"documented","spec":"Koolatron PowerPack AC power adapter, included, for use from a 110/120 V AC wall outlet","v":[110,120],"ac":true,"qty":1,"source":"https://cdn.shopify.com/s/files/1/0558/1674/9125/files/CORC24-12V-Cooler-Manual-EN.pdf"},
+    {"key":"cooler_box","conf":"documented","spec":"Cooler body with a lid; lime storage compartment inside the lid, built-in bottle opener and easy-grip handles","source":"https://cdn.shopify.com/s/files/1/0558/1674/9125/files/CORC24-12V-Cooler-Manual-EN.pdf"}
+  ],
+  "sources": [
+    {"title":"CORC24 12V Cooler owner's manual (Koolatron, 2015, print code 01/2015-v1), PDF","url":"https://cdn.shopify.com/s/files/1/0558/1674/9125/files/CORC24-12V-Cooler-Manual-EN.pdf"}
+  ]
+}

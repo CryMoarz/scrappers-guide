@@ -1,0 +1,27 @@
+{
+  "id": "server_room",
+  "name": "Server room or data centre",
+  "group": "Electronics and office",
+  "aliases": ["server rack","network rack"],
+  "brands": ["Dell","HPE","Lenovo","Cisco","Supermicro","IBM","Vertiv","APC"],
+  "prev": 3,
+  "tools": ["screwdriver","socket","heavy"],
+  "mins": 60,
+  "hazards": ["heavy"],
+  "comps": [
+    {"key":"battery_pb","fn":"battery_pb","spec":"Large UPS battery banks","v":12,"ah":[7,200],"qty":20,"ext":3,"obs":5,"loc":"UPS cabinets"},
+    {"key":"psu","fn":"psu","spec":"Server power supplies, 12V at high current","v":12,"qty":10,"ext":1,"obs":4,"loc":"Back of each server"},
+    {"key":"fan","fn":"fan","spec":"High-speed 12V fans","v":12,"qty":20,"ext":1,"obs":4,"loc":"Servers and racks"},
+    {"key":"wire_heavy","fn":"wire_heavy","spec":"Copper power cables and busbars","qty":1,"ext":2,"obs":5,"loc":"Racks and PDUs"}
+  ],
+  "boards": [
+    {"id":"smps_board","qty":10,"loc":"Server power supplies","p":1}
+  ],
+  "buildings": [
+    {"b":"datacenter","l":5},
+    {"b":"office","l":3},
+    {"b":"hospital","l":3},
+    {"b":"school","l":3},
+    {"b":"bank","l":3}
+  ]
+}

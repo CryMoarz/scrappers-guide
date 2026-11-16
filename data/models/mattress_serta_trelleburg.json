@@ -1,0 +1,17 @@
+{
+  "id": "mattress_serta_trelleburg",
+  "device": "mattress",
+  "brand": "Serta",
+  "model": "Perfect Sleeper Elite Trelleburg Super Pillowtop (15 in, no-flip innerspring)",
+  "notes": "A 15 in no-flip innerspring pillow-top that Good Bed files under the pre-2019 Serta Perfect Sleeper line and marks discontinued. Good Bed also lists a separate Firm version of the name, so check which one you have.",
+  "research": {"checked":"2026-11-12","gaps":["The page lists the support system as 886 Custom Support and does not say what 886 means, so no coil count is claimed.","Coil gauge is printed as 15.5 with no unit.","The page does not describe the FireBlocker Fiber, so no fibre material is claimed.","No coil type or border rod is listed, so no rod_shaft is claimed.","No production years are given beyond the line label \"Serta Perfect Sleeper (Pre-2019)\"."],"method":["Specs are from the Good Bed (goodbed.com) model page, read with WebFetch: Build Details and the Construction section, which the page heads as product description from Serta.","Discontinued status is from the same page and from Good Bed's Serta discontinued-models listing (page 7), which shows the model tagged as a discontinued product.","Good Bed is a third-party review site; no Serta page, law label or manual was read.","No bot check, login or paywall on either page."]},
+  "comps": [
+    {"key":"spring","conf":"documented","spec":"Innerspring support system, listed on the page under Correct Back Support System as Custom Support, with coil gauge 15.5 (no unit printed).","ext":2,"obs":5,"source":"https://www.goodbed.com/mattress-model/serta-perfect-sleeper-elite-trelleburg-super-pillowtop/"},
+    {"key":"foam_rubber","conf":"documented","spec":"Foam layers as listed: 1 in PillowSoft foam in the quilt on top; in the comfort padding layers, 2 3/4 in Comfort XD foam, 1/2 in Cool Action gel memory foam and 1 in Balanced Support foam. Best Edge Foam Encasement is listed with the support system.","ext":1,"obs":5,"loc":"Quilt on top and comfort padding layers","source":"https://www.goodbed.com/mattress-model/serta-perfect-sleeper-elite-trelleburg-super-pillowtop/"},
+    {"key":"insulation_fireblocker_fiber","fn":"insulation","conf":"documented","spec":"Layer listed as FireBlocker Fiber, in the quilt at the top of the mattress.","ext":2,"obs":5,"loc":"Quilt, top of the mattress","source":"https://www.goodbed.com/mattress-model/serta-perfect-sleeper-elite-trelleburg-super-pillowtop/"}
+  ],
+  "sources": [
+    {"title":"Serta Perfect Sleeper Elite Trelleburg Super Pillowtop, Good Bed model page (Find the Right Bed)","url":"https://www.goodbed.com/mattress-model/serta-perfect-sleeper-elite-trelleburg-super-pillowtop/"},
+    {"title":"Serta discontinued models, Good Bed listing page 7 (Find the Right Bed)","url":"https://www.goodbed.com/mattresses/serta/discontinued-models/?page=7"}
+  ]
+}

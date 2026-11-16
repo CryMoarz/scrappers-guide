@@ -1,0 +1,49 @@
+{
+  "id": "build_tarp_shelter",
+  "kind": "build",
+  "title": "Tarp shelter on a ridgeline or salvaged poles",
+  "keywords": ["tarp shelter","shelter","emergency shelter","tarp","tarpaulin","lean-to","a-frame","ridgeline","plastic sheet shelter","rain shelter","bivouac","camp","ground insulation","sleeping pad","groundsheet","tent","pitch a tarp"],
+  "summary": "Pitch a tarp, plastic sheet or heavy fabric over a rope ridgeline or salvaged poles as an A-frame or lean-to that sheds rain and turns the wind. Put as much effort into what you lie on as the roof: the ground draws heat out of you faster than the air, so use foam or a thick layer of dry leaves. Choose the site first: no dead branches overhead, no hollow where water runs or cold air pools, and the low side to the wind.",
+  "difficulty": 2,
+  "mins": 90,
+  "tools": ["hands","knife","saw","hammer","tape"],
+  "hazards": ["co_gas","structural","sharp"],
+  "materials": [
+    {"item":"Roof: tarp, pool cover, billboard vinyl, a sail or heavy plastic sheet (0.15 mm or thicker), about 3 × 3 m for one or two people","qty":"1","fn":"fabric_tarp","only":["tarps","pool cover","sails"]},
+    {"item":"Ridgeline: rope 6–10 mm, 8–12 m","qty":"1","fn":"rope_webbing","only":["rope","paracord","guy line"]},
+    {"item":"Guy lines: cord 3–5 mm (paracord, blind cord), 2–3 m each","qty":"6–8","fn":"rope_webbing","only":["paracord","guy line"]},
+    {"item":"Stakes 20–40 cm: tent pegs, steel rod, rebar offcuts or sharpened hardwood sticks","qty":"6–10","fn":"rod_shaft"},
+    {"item":"Ground insulation: closed-cell foam mats, gym mats or foam board 2–5 cm thick, or 15–20 cm of dry leaves, straw or crumpled paper in bags","qty":"body length","fn":"foam_rubber","only":["closed-cell","safety pads"]},
+    {"item":"Poles, if there are no trees: two 1.5–2 m tent poles, conduit, aluminium or steel tube, or straight sticks","qty":"2","fn":"tube_frame","only":["tent pole","shaft tube"],"optional":true},
+    {"item":"Groundsheet: second tarp, plastic sheet or shower curtain, a little smaller than the roof","qty":"1","fn":"plastic_sheet","optional":true},
+    {"item":"Duct tape for patches and corner reinforcement","qty":"1 roll","optional":true},
+    {"item":"Small round pebbles for tie-outs where there are no grommets","qty":"6–8","optional":true}
+  ],
+  "steps": [
+    {"text":"Look up before anything else. Reject any spot within reach of dead trees, leaning trunks or hanging dead branches, and don't pitch against or beside damaged walls.","warn":"Dead branches and trees fall without warning, often in wind or at night. Damaged buildings shed bricks and roofing the same way."},
+    {"text":"Look down: pick ground a little higher than its surroundings, gently sloped so rain drains away. Avoid hollows, dry stream beds and the foot of slopes, where water runs and cold air settles. Clear stones and sticks from where you'll lie."},
+    {"text":"Read the wind: note where it and the rain are coming from. Plan to face the low or closed side of the shelter into the wind, and use bushes, banks or a vehicle as a windbreak."},
+    {"text":"Prepare the tarp: patch holes with tape on both sides. Where there are no grommets, push a pebble into the fabric from underneath, twist the fabric round it and tie a cord round the neck."},
+    {"text":"Rig the ridgeline between two trees 3–4 m apart, about 1–1.2 m high for an A-frame (lower in wind and rain), tied off with a round turn and two half hitches at one end and a trucker's hitch at the other (skill_knots_and_lashing). No trees: stand a pole at each end and guy each top out with two lines at about 45°, staked 1.5–2 m beyond the pole."},
+    {"text":"Drape the tarp over the line, centre it, and stake the windward side first: corners, then the middles, close to the ground and angled away from the tarp."},
+    {"text":"Tension it: tie guy lines with taut-line hitches and adjust until the roof is tight with no sags. Pour some water on it; if it pools anywhere, steepen or tighten that part."},
+    {"text":"For a lean-to instead, raise the ridgeline to about 1.5 m, stake the back edge to the ground on the windward side, and guy the front edge out at about 1 m high. It suits weather from one direction only."},
+    {"text":"Stop water running along the ridgeline into the shelter: tie a short piece of string round the line just inside each end of the tarp and let it hang down. Water drips off there instead. If water flows across the ground, scrape a shallow channel on the uphill side to steer it round."},
+    {"text":"Lay the groundsheet inside the roof's footprint, with its edges folded under so it can't catch rain running off the roof."},
+    {"text":"Insulate the ground: at least 2 cm of closed-cell foam in mild weather and 4–5 cm or two mats in frost, or 15–20 cm of dry leaves, pine needles, straw or crumpled paper stuffed into bags so it doesn't spread."},
+    {"text":"Cook and keep any fire outside, at least 3 m downwind of the shelter.","warn":"Never run a stove, heater, charcoal or generator under a tarp or in any enclosed shelter: carbon monoxide builds up even with open sides. Tarps also melt and burn fast."},
+    {"text":"Check it at dusk and after rain: re-tighten lines (nylon and canvas stretch when wet), push stakes back in, and knock off snow before it piles up. Pack the tarp dry, or dry it at the next chance."}
+  ],
+  "notes": "## How it works\nThe roof sheds rain and blocks wind, which is what strips heat fastest from a wet body. The ground is the other half: lying on cold or damp ground pulls heat out of you all night, and a sleeping bag squashed flat underneath you insulates almost nothing. Foam or a thick bed of dry plant material traps still air between you and the ground.\n\n## Sizes\n\n| Tarp | Fits |\n|---|---|\n| 2 × 3 m | one person, little gear |\n| 3 × 3 m | one or two people |\n| 3 × 4 m | two people with gear, or one with room to sit up |\n\n- A-frame ridgeline: about 1–1.2 m high for a 3 m tarp. Lower is warmer and sheds wind; higher gives headroom but lets rain blow in.\n- Roof pitch: 45° or steeper for rain and snow; canvas needs it steep or it drips through.\n- Guy lines and stakes: about 45° from the pole or edge. Steeper angles pull stakes out.\n\n## Pitches\n- **A-frame:** two equal sides over a ridgeline. Good in rain and wind from any direction. Close one end by folding the corners in if the tarp is square.\n- **Lean-to:** one slope, open at the front. Good for steady wind from one side and for sitting up. Poor in shifting wind or driving rain.\n- **Low wedge:** ridgeline at knee height, one end staked to the ground into the wind. Warmest and most storm-proof, but cramped.\n\n## Materials\n- Polythene tarps: light, waterproof, rot-proof; sunlight wrecks them in months. Keep spares.\n- Billboard and truck vinyl: heavy, very tough and long-lasting. Cut to size; edges don't fray.\n- Pool covers and sails: big, tough, UV-resistant.\n- Canvas: breathes (less condensation) but is heavy, needs a steep pitch, and leaks wherever you touch it from inside when wet.\n- Heavy plastic sheeting from building sites: fine for a season if you reinforce tie-out points with tape.\n\n## Ground insulation\n- Closed-cell foam (camping mats, gym and trampoline pads, foam board) doesn't soak up water: best on damp ground.\n- Open-cell foam (mattresses, chair cushions) insulates well only if kept dry under a groundsheet.\n- Dry leaves, straw, pine needles, cardboard: need far more thickness than foam. 15–20 cm compresses to a few centimetres under you.\n- In snow, double everything under you.\n\n## Mistakes\n- Groundsheet bigger than the roof: it collects rain and funnels it under you.\n- Sagging roof: water pools, stretches the tarp and pours in.\n- Pitching in a hollow: you wake up in a puddle, colder than on the slope above.\n- Sealing every gap: your breath condenses and soaks everything. Leave the ends a little open.\n- Cotton sleeping gear on bare ground: it soaks up damp and stops insulating.\n\n## Variations\n- Use a wall, a vehicle or a rock face as one side, guying the tarp out from it.\n- Hot climates: pitch the tarp high with a 30–50 cm air gap above a second sheet for shade that doesn't trap heat.\n- Snow: steep A-frame, stakes buried sideways as deadmen, and clear the roof often.\n",
+  "tree": {"era":2,"branch":"shelter","requires":["skill_knots_and_lashing"]},
+  "devices": ["camping_gear","trampoline","pool_pump","sailboat","string_trimmer","mattress","inkjet"],
+  "parts": ["fabric_tarp","plastic_sheet","rope_webbing","foam_rubber","insulation","tube_frame","rod_shaft"],
+  "license": "CC-BY-SA-4.0",
+  "refs": [
+    {"lib":"outdoors","q":"tarp shelter"},
+    {"lib":"readygov","q":"shelter"}
+  ],
+  "sources": [
+    {"title":"Common outdoor-training tarp pitches (A-frame, lean-to, wedge)","note":"Widely taught; described in our own words."}
+  ]
+}

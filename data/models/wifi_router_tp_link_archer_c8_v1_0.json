@@ -1,0 +1,21 @@
+{
+  "id": "wifi_router_tp_link_archer_c8_v1_0",
+  "device": "wifi_router",
+  "brand": "TP-Link",
+  "model": "Archer C8 v1.0",
+  "fcc": "TE7C8",
+  "notes": "Chips for hardware version v1.0; other versions of the Archer C8 can differ.",
+  "research": {"gaps":[],"method":["Not yet fact-checked: its parts show as likely until a fact-check confirms them against their sources.","Imported from the OpenWrt Table of Hardware (toh.json, 2026-11-13): the hardware data page for this version, by OpenWrt wiki contributors under CC BY-SA 4.0."]},
+  "comps": [
+    {"key":"ic_mcu_soc","fn":"ic_mcu","spec":"SoC Broadcom BCM4708, 2 cores at 800 MHz","qty":1,"ext":4,"obs":3,"source":"https://openwrt.org/toh/hwdata/tp-link/tp-link_archer_c8_v1.0","conf":"likely"},
+    {"key":"ic_memory_flash","fn":"ic_memory","spec":"Flash, 16 MB","qty":1,"ext":2,"obs":4,"source":"https://openwrt.org/toh/hwdata/tp-link/tp-link_archer_c8_v1.0","conf":"likely"},
+    {"key":"ic_memory_ram","fn":"ic_memory","spec":"RAM, 128 MB","qty":1,"ext":3,"obs":3,"source":"https://openwrt.org/toh/hwdata/tp-link/tp-link_archer_c8_v1.0","conf":"likely"},
+    {"key":"radio_rf","spec":"Wi-Fi: Broadcom BCM4331, Broadcom BCM4360 (2.4 GHz b/g/n, 5 GHz a/n/ac)","qty":2,"source":"https://openwrt.org/toh/hwdata/tp-link/tp-link_archer_c8_v1.0","conf":"likely"},
+    {"key":"antenna_coax","spec":"Detachable external antennas","qty":3,"source":"https://openwrt.org/toh/hwdata/tp-link/tp-link_archer_c8_v1.0","conf":"likely"},
+    {"key":"connector","spec":"Ethernet ports: 5× gigabit","qty":5,"source":"https://openwrt.org/toh/hwdata/tp-link/tp-link_archer_c8_v1.0","conf":"likely"},
+    {"key":"connector_usb","fn":"connector","spec":"USB: 1x 2.0, 1x 3.0","qty":1,"ext":2,"obs":4,"source":"https://openwrt.org/toh/hwdata/tp-link/tp-link_archer_c8_v1.0","conf":"likely"}
+  ],
+  "sources": [
+    {"title":"OpenWrt Table of Hardware: TP-Link Archer C8 v1.0 (OpenWrt wiki contributors, CC BY-SA 4.0)","url":"https://openwrt.org/toh/hwdata/tp-link/tp-link_archer_c8_v1.0"}
+  ]
+}

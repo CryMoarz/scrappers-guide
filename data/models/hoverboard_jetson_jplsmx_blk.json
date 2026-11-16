@@ -1,0 +1,19 @@
+{
+  "id": "hoverboard_jetson_jplsmx_blk",
+  "device": "hoverboard",
+  "brand": "Jetson",
+  "model": "JPLSMX-BLK",
+  "notes": "Covers four model SKUs: JPLSMX-BLK, JPLSMX-IRS, JPLSMX-OS-BLK and JPLSMX-OS-IRS, with one set of specs.",
+  "research": {"checked":"2026-11-12","gaps":["It gives no motor, controller board or cell details."],"method":["The Jetson Plasma X manual (2024, document edition v3.0).","It gives the battery, charger, Bluetooth speaker, LED lights, charging port and power button.","Page numbers are the printed ones.","Ext and obs ratings are research judgment, not source facts."]},
+  "comps": [
+    {"key":"battery_li","conf":"documented","spec":"36V 2.0Ah lithium-ion (Product Specs, printed p.10). The manual says not to attempt to remove or disassemble the battery (p.17).","v":36,"ah":2,"source":"https://cdn.shopify.com/s/files/1/2530/6734/files/PLASMA-X-MANUAL-2024-web-1710780315662.pdf"},
+    {"key":"charger","conf":"documented","spec":"Input UL 100-240V; charging time up to 5 hours (Product Specs, p.10). The manual says to use only the included charger or one from Jetson labelled MSL-CH42040P, CP4210, FY0184200400, GLH017A-4200040CU, or part SKU PJPLSMX-CH or PJ240V10A-ADX (p.17).","v":[100,240],"source":"https://cdn.shopify.com/s/files/1/2530/6734/files/PLASMA-X-MANUAL-2024-web-1710780315662.pdf"},
+    {"key":"speaker","conf":"documented","spec":"Built-in Bluetooth speaker; the lights sync to streamed music (section 2.8, p.25).","source":"https://cdn.shopify.com/s/files/1/2530/6734/files/PLASMA-X-MANUAL-2024-web-1710780315662.pdf"},
+    {"key":"led_light","conf":"documented","spec":"LED lights (product overview item 1) and light-up wheels (item 3), p.8. Six lighting patterns, switched by a quick press of the power button (section 2.9, p.26).","source":"https://cdn.shopify.com/s/files/1/2530/6734/files/PLASMA-X-MANUAL-2024-web-1710780315662.pdf"},
+    {"key":"connector_charging_port","fn":"connector","spec":"Charging port (product overview item 6, p.8). The manual does not state the connector type.","qty":1,"ext":2,"obs":3,"conf":"documented","source":"https://cdn.shopify.com/s/files/1/2530/6734/files/PLASMA-X-MANUAL-2024-web-1710780315662.pdf"},
+    {"key":"switch_power","fn":"switch","spec":"Power button (product overview item 7, p.8). Press and hold 1 second to power on and 3 seconds to power off (p.12).","qty":1,"ext":2,"obs":3,"conf":"documented","source":"https://cdn.shopify.com/s/files/1/2530/6734/files/PLASMA-X-MANUAL-2024-web-1710780315662.pdf"}
+  ],
+  "sources": [
+    {"title":"Jetson Plasma X Hoverboard user manual, 2024 (document edition v3.0), PDF on cdn.shopify.com","url":"https://cdn.shopify.com/s/files/1/2530/6734/files/PLASMA-X-MANUAL-2024-web-1710780315662.pdf"}
+  ]
+}

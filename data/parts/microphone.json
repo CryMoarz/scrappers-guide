@@ -1,0 +1,14 @@
+{
+  "id": "microphone",
+  "name": "Microphones",
+  "group": "Signal and control",
+  "demand": 1,
+  "keywords": ["microphone","mic","electret","electret mic","mic capsule","condenser mic","dynamic mic","mems mic","headset mic"],
+  "substitutes": [],
+  "summary": "Microphones that turn sound into a signal: electret capsules, dynamic mics and MEMS chips.",
+  "uses": ["Baby monitors and sound alarms","Radio and intercom builds","Recording messages"],
+  "identify": "Tiny round metal capsules (electret, 6–10 mm) with two wires in phones, headsets, toys, cameras and baby monitors; dynamic mics in CB radios, PA systems and karaoke gear.",
+  "test": "Electret mics need a small bias voltage (2–10V through a resistor); tap them and watch the signal on a meter or amp. Dynamic mics: plug into any amp and speak.",
+  "decay": {"halfLifeMonths":null,"note":"Lasts."},
+  "hazards": []
+}

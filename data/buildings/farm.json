@@ -1,0 +1,6 @@
+{
+  "id": "farm",
+  "name": "Farms and farm supply",
+  "osm": ["landuse=farmyard","building=barn","building=farm_auxiliary"],
+  "exposure": 2
+}

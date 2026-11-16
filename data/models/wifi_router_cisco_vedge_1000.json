@@ -1,0 +1,20 @@
+{
+  "id": "wifi_router_cisco_vedge_1000",
+  "device": "wifi_router",
+  "brand": "Cisco",
+  "model": "vEdge 1000",
+  "fcc": "ANATEL01926-16-02024",
+  "notes": "Hardware versions of the vEdge 1000 can differ.",
+  "research": {"gaps":[],"method":["Not yet fact-checked: its parts show as likely until a fact-check confirms them against their sources.","Imported from the OpenWrt Table of Hardware (toh.json, 2026-11-13): the hardware data page for this version, by OpenWrt wiki contributors under CC BY-SA 4.0."]},
+  "comps": [
+    {"key":"ic_mcu_soc","fn":"ic_mcu","spec":"SoC Cavium CN6130, 4 cores at 1000 MHz","qty":1,"ext":4,"obs":3,"source":"https://openwrt.org/toh/hwdata/cisco/cisco_vedge_1000","conf":"likely"},
+    {"key":"ic_memory_flash","fn":"ic_memory","spec":"Flash, 16, 8192 MB NAND","qty":1,"ext":2,"obs":4,"source":"https://openwrt.org/toh/hwdata/cisco/cisco_vedge_1000","conf":"likely"},
+    {"key":"ic_memory_ram","fn":"ic_memory","spec":"RAM, 4096 MB","qty":1,"ext":3,"obs":3,"source":"https://openwrt.org/toh/hwdata/cisco/cisco_vedge_1000","conf":"likely"},
+    {"key":"psu","spec":"Power supply: Redundant 12 VDC, 5A","v":12,"a":5,"source":"https://openwrt.org/toh/hwdata/cisco/cisco_vedge_1000","conf":"likely"},
+    {"key":"connector","spec":"Ethernet ports: 1× gigabit","qty":1,"source":"https://openwrt.org/toh/hwdata/cisco/cisco_vedge_1000","conf":"likely"},
+    {"key":"connector_usb","fn":"connector","spec":"USB: 2x 3.0","qty":1,"ext":2,"obs":4,"source":"https://openwrt.org/toh/hwdata/cisco/cisco_vedge_1000","conf":"likely"}
+  ],
+  "sources": [
+    {"title":"OpenWrt Table of Hardware: Cisco vEdge 1000 (OpenWrt wiki contributors, CC BY-SA 4.0)","url":"https://openwrt.org/toh/hwdata/cisco/cisco_vedge_1000"}
+  ]
+}

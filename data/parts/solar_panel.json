@@ -1,0 +1,14 @@
+{
+  "id": "solar_panel",
+  "name": "Solar panels and cells",
+  "group": "Power generation",
+  "demand": 5,
+  "keywords": ["solar","solar panel","pv","photovoltaic","solar cell","solar module","solar array","monocrystalline","polycrystalline","thin film","solar charger","rv solar","100w panel"],
+  "substitutes": ["alternator"],
+  "summary": "Photovoltaic panels and cells that turn sunlight into DC power.",
+  "uses": ["Charging batteries through a charge controller","Running pumps and fans directly in sun","Charging phones and radios with a small panel and a USB regulator"],
+  "identify": "Glass-faced panels with aluminium frames on roofs, RVs, boats, sheds, road signs, parking meters, street lights and telecom sites; small panels in garden lights and calculators. The label on the back gives Voc, Vmp and watts.",
+  "test": "In full sun, open-circuit volts should be near the label’s Voc and short-circuit amps near Isc. Cracked glass and brown burn marks cut output. Strings of panels in sun make lethal DC: cover them before disconnecting.",
+  "decay": {"halfLifeMonths":null,"note":"Lasts decades. Broken glass lets water in."},
+  "hazards": ["glass","hv"]
+}

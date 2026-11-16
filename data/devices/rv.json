@@ -1,0 +1,33 @@
+{
+  "id": "rv",
+  "name": "RV, camper or travel trailer",
+  "group": "Vehicles and mobility",
+  "aliases": ["motorhome","fifth wheel"],
+  "brands": ["Winnebago","Forest River","Jayco","Coachmen","Keystone","Grand Design","Airstream","Tiffin","Thor Motor Coach"],
+  "prev": 3,
+  "tools": ["screwdriver","socket","cutters"],
+  "mins": 60,
+  "hazards": ["fuel"],
+  "comps": [
+    {"key":"battery_pb","fn":"battery_pb","spec":"12V deep-cycle house batteries","v":12,"qty":2,"ext":1,"obs":3,"loc":"Tongue box or compartment"},
+    {"key":"solar_panel","fn":"solar_panel","spec":"Roof solar panels (many units)","w":[100,200],"qty":2,"ext":3,"obs":2,"loc":"Roof","p":0.75},
+    {"key":"charge_controller","fn":"charge_controller","spec":"Solar charge controller","qty":1,"ext":2,"obs":3,"loc":"Near the batteries"},
+    {"key":"inverter","fn":"inverter","spec":"Inverter or converter/charger","v":12,"w":[1000,3000],"ac":true,"qty":1,"ext":2,"obs":4,"loc":"Under a bench or bed"},
+    {"key":"pump_water","fn":"pump_water","spec":"12V freshwater pump","v":12,"qty":1,"ext":2,"obs":5,"loc":"Under a bench"},
+    {"key":"fan","fn":"fan","spec":"12V roof vent fan","v":12,"qty":1,"ext":2,"obs":5,"loc":"Ceiling"},
+    {"key":"led_light","fn":"led_light","spec":"12V LED interior lights","v":12,"qty":10,"ext":1,"obs":4,"loc":"Ceiling"},
+    {"key":"heating_element","fn":"heating_element","spec":"Water heater element (some units)","v":120,"w":[1000,1500],"ac":true,"qty":1,"ext":2,"obs":5,"loc":"Outside access door","p":0.5},
+    {"key":"fuse","fn":"fuse","spec":"Blade fuses and DC breakers","a":[5,30],"qty":15,"ext":1,"obs":4,"loc":"Converter panel"}
+  ],
+  "boards": [
+    {"id":"inverter_board","qty":1,"loc":"Inside the inverter","p":1},
+    {"id":"mcu_board","qty":1,"loc":"Tank monitor and control panel","p":0.6}
+  ],
+  "buildings": [
+    {"b":"rv_dealer","l":5},
+    {"b":"campground","l":5},
+    {"b":"house","l":3},
+    {"b":"farm","l":3},
+    {"b":"parking","l":2}
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "id": "wash_clothes",
+  "name": "Wash clothes",
+  "keywords": ["wash clothes","washing clothes","clean clothes","laundry","do laundry","hand wash clothes","wash without power","washing machine without power"],
+  "summary": "Soak, agitate, rinse, wring, dry. A bucket with a lid and a clean plunger make a hand washer, and the mop bucket wringer in every janitor’s closet squeezes clothes far drier than hands can. Sun and wind do the drying, and sunlight helps kill germs.",
+  "parts": [
+    {"fn":"tank","why":"Buckets and drums for soaking and agitating","core":true},
+    {"fn":"rope_webbing","why":"Clothes lines","core":true},
+    {"fn":"hose_tubing","why":"Fills and drains without lifting"},
+    {"fn":"bearing","why":"A drum on bearings makes a hand-crank washer"},
+    {"fn":"motor_dc_small","why":"A wiper motor can turn a small drum"}
+  ],
+  "tips": ["Soak overnight. It does most of the work.","Wash the least dirty things first so the water goes further.","Use grey water to flush toilets, not to water vegetables you eat raw.","Dry clothes fully before storing them, or they go mouldy."]
+}

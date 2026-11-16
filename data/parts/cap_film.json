@@ -1,0 +1,14 @@
+{
+  "id": "cap_film",
+  "name": "Film and safety capacitors",
+  "group": "Electronic components",
+  "demand": 1,
+  "keywords": ["film capacitor","x2 capacitor","safety capacitor","polyester capacitor","capacitor","mkp","mkt","x2","x capacitor","y2 capacitor","y capacitor","polypropylene capacitor","snubber capacitor","metallised film"],
+  "substitutes": ["cap_elec"],
+  "summary": "Film and safety capacitors for AC lines, snubbers and timing: X2, Y, MKP and polyester types.",
+  "uses": ["Replacing an X2 capacitor in a power supply or appliance","Snubbers across relay and motor contacts","Timing and audio circuits that need stable values"],
+  "identify": "Rectangular yellow, grey or blue boxes, or orange dipped blobs, marked with a value such as 104 or 0.1 µF and a voltage, sometimes X2 or Y2. X2 types sit across the mains input of most appliances; big ones in induction hobs and inverters can hold a charge.",
+  "test": "On the capacitance range, within about 10% of the label is good. Cracked or burnt bodies are dead; old X2 capacitors slowly lose value.",
+  "decay": {"halfLifeMonths":null,"note":"Lasts. Old X2 capacitors slowly lose capacity."},
+  "hazards": ["hv_cap"]
+}

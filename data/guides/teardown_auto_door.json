@@ -1,0 +1,30 @@
+{
+  "id": "teardown_auto_door",
+  "kind": "teardown",
+  "title": "Automatic sliding door: get the gear motor, belt, sensors and power supply",
+  "keywords": ["automatic door teardown","sliding door operator","door header","door motor","door sensor","microwave motion sensor","24v gear motor","automatic door belt"],
+  "summary": "The header above an automatic sliding door holds a 24 V DC gear motor, a toothed belt and pulleys, microwave or infrared motion sensors, a 24 V power supply and sometimes a backup battery. Allow an hour or more with a helper and a ladder. The dangers are mains wired into the header, glass door leaves that weigh tens of kilograms, and falling from the ladder.",
+  "difficulty": 3,
+  "mins": 75,
+  "tools": ["ladder","screwdriver","hex","socket","wrench","pliers","cutters","multimeter","clamps","tape","heavy"],
+  "hazards": ["mains","fall","glass","heavy","crush","spring"],
+  "materials": [],
+  "steps": [
+    {"text":"Make it dead. Most operators are hard-wired to a mains circuit through a switch or breaker. Switch it off at the breaker and prove the wires dead with a tester or meter (see safety_mains_isolation). Don't work on an operator that is wet or flood-damaged.","warn":"Mains is wired into the header. A wall switch alone is not enough: isolate at the breaker and test."},
+    {"text":"Secure the door leaves. Slide each leaf closed by hand (power off, they should move). Wedge wooden blocks into the track on both sides of every leaf, or clamp locking pliers onto the track. Keep your head, hands and feet out of the leaf path from now on.","warn":"A glass leaf weighs 40–100 kg or more and hangs from the same carriages the belt drives. A leaf that rolls or drops can break bones."},
+    {"text":"Put a stable ladder or platform on dry, level floor with a helper holding it. Take off the header cover: undo its screws, clips or lock and lower it away. It can be 2–4 m long and awkward, so a second person takes the other end.","warn":"Ladders slip on polished or wet floors. Have someone hold it, don't overreach and don't work with both hands busy at the top."},
+    {"text":"Photograph and label every connector on the control board: motor, encoder, sensors, locks, mains input, backup battery, selector switch. Unplug the backup battery first, because it keeps the board alive when the mains is off."},
+    {"text":"Backup battery: unplug its lead and lift it out. Tape over any bare terminals. Look for swelling, leaks or white crust. A 24 V nickel pack is about 20 cells; some units use sealed lead-acid (see safety_lead_acid)."},
+    {"text":"Motion sensors: above the door and in the header are small boxes with a lens or a flat radar window. Unclip or unscrew each one, unplug its lead and take it whole with its cable. Presence (safety) sensors are the same kind of part."},
+    {"text":"Power supply and boards. With the mains proven dead, take the cover off the terminal block and loosen the live, neutral and earth wires, or cut the mains cable 20 cm from the unit and cap the bare ends with tape. Unscrew the 24 V power supply and the control boards from the header plate. Keep each board with its leads.","warn":"Don't open the power supply: its capacitors can hold a charge after the power is off."},
+    {"text":"Release the belt. Check the wedges on the leaves again first. Undo the belt tensioner at the idler end of the header until the belt goes slack, slip it off the motor pulley, undo the clamp plates that hold each leaf carriage to the belt, then draw the belt out through the end of the header.","warn":"Some operators have a spring or counterweight that closes the door if the power fails. If you find one under tension, leave it alone and work around it (see safety_garage_spring for the same rule)."},
+    {"text":"Motor: usually 4 bolts at one end of the header hold the gear motor, with a toothed pulley on its output shaft. Support the motor (a few kilograms) as the last bolt comes out. Keep the encoder (a small disc and sensor at the back) and the pulley with it."},
+    {"text":"Idler end: undo the bolt that holds the idler pulley and its tensioner bracket at the far end of the header and take them."},
+    {"text":"Leave the glass leaves, track, floor guide and sill in place. Taking a leaf down needs two or three people and suction cups, and you don't need it for the parts. Leave the doors wedged closed so nothing rolls."}
+  ],
+  "notes": "## What's worth keeping and why\n\n- **24 V gear motor with encoder.** A smooth, strong motor with a built-in gearbox and a sensor that counts turns. Use it for a winch (see build_motor_winch), a gate opener or a pump drive. Identify it first (see skill_identify_motors, test_motor): a brushed motor has 2 wires and runs from two 12 V batteries in series; a brushless motor needs its driver board, so keep the board and motor together.\n- **Toothed belt and pulleys.** A long loop (about twice the door width) of toothed belt: linear drives, sliding gates, camera sliders, shutter openers.\n- **Motion sensors.** Microwave (radar) sensors run from 12–24 V and switch a relay or an output on movement. Use them for a light, a bell or a perimeter alarm (see build_perimeter_alarm).\n- **24 V power supply.** Runs the motor from mains, or is a source for a step-down converter to 12 V.\n- **Backup battery.** Test each cell before use (see reference_battery_chemistry).\n\n## Variations\n\n- Swing-door operators and revolving doors have springs, arms and much heavier mechanisms. Leave them alone unless you know them.\n- Some operators use a chain or a rack instead of a belt.\n- Older operators have a mains-voltage motor and a separate gearbox. Check the nameplate before you power it.\n\n## What to leave\n\n- The glass leaves, the track, the floor guide and the header extrusion.\n- Any spring or counterweight that is still loaded.",
+  "tree": {"era":3,"branch":"salvage","requires":["safety_mains_isolation","safety_lifting"]},
+  "devices": ["auto_door"],
+  "parts": ["motor_dc_small","belt_pulley","sensor_motion","psu","battery_nimh"],
+  "license": "CC-BY-SA-4.0"
+}

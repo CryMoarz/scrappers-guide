@@ -1,0 +1,100 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 560" width="1280" height="560" role="img" aria-labelledby="t d">
+  <title id="t">How the guide plugs into Project NOMAD</title>
+  <desc id="d">On a NOMAD box, everything offline: the Command Center installs and runs the Scrapper's Guide on port 8787. The guide links every record into the Information Library (Kiwix, 35 known libraries), loads itself into the AI Assistant's knowledge base as 7 documents, and pins field notes on the offline maps. Phones, laptops and cyberdecks reach it with any browser on the network, and LoRa mesh radios can text it questions.</desc>
+  <defs>
+    <clipPath id="card"><rect width="1280" height="560" rx="18"/></clipPath>
+    <pattern id="grid" width="32" height="32" patternUnits="userSpaceOnUse">
+      <path d="M32 0H0V32" fill="none" stroke="#24323B" stroke-width="1.5"/>
+    </pattern>
+    <pattern id="hazard" width="24" height="24" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+      <rect width="12" height="24" fill="#E5AE17"/>
+      <rect x="12" width="12" height="24" fill="#1B2A35"/>
+    </pattern>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 Z" fill="#62B9A6"/>
+    </marker>
+    <marker id="arrowg" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 Z" fill="#97A3AA"/>
+    </marker>
+    <radialGradient id="glow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#E5AE17" stop-opacity="0.25"/>
+      <stop offset="1" stop-color="#E5AE17" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <g clip-path="url(#card)">
+    <rect width="1280" height="560" fill="#1B2A35"/>
+    <rect width="1280" height="560" fill="url(#grid)"/>
+    <rect width="1280" height="10" fill="url(#hazard)"/>
+  </g>
+
+  <g font-family="system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif">
+    <!-- the box -->
+    <rect x="36" y="44" width="864" height="484" rx="16" fill="#1E2A32" fill-opacity="0.7" stroke="#E5AE17" stroke-width="2.5" stroke-dasharray="10 7"/>
+    <rect x="56" y="30" width="318" height="30" rx="15" fill="#E5AE17"/>
+    <text x="215" y="51" text-anchor="middle" font-size="14" font-weight="800" fill="#231C05" letter-spacing="1.5" textLength="286" lengthAdjust="spacingAndGlyphs">YOUR NOMAD BOX · ALL OFFLINE</text>
+
+    <!-- connectors inside the box -->
+    <g stroke="#62B9A6" stroke-width="3" fill="none">
+      <path d="M318 168 L392 236" marker-end="url(#arrow)"/>
+      <path d="M548 236 L618 168" marker-end="url(#arrow)"/>
+      <path d="M392 346 L318 408" marker-end="url(#arrow)"/>
+      <path d="M548 346 L618 408" marker-end="url(#arrow)"/>
+    </g>
+    <g font-size="14" font-weight="700" fill="#62B9A6" text-anchor="middle">
+      <text x="282" y="214">installs, runs</text>
+      <text x="282" y="232">and updates</text>
+      <text x="622" y="214">links every</text>
+      <text x="622" y="232">record</text>
+      <text x="290" y="356">loads the</text>
+      <text x="290" y="374">whole guide</text>
+      <text x="622" y="360">pins field</text>
+      <text x="622" y="378">notes</text>
+    </g>
+
+    <!-- NOMAD pieces -->
+    <g>
+      <rect x="66" y="84" width="252" height="96" rx="12" fill="#24323B" stroke="#33434D" stroke-width="2"/>
+      <text x="90" y="122" font-size="21" font-weight="700" fill="#E1E6E0">Command Center</text>
+      <text x="90" y="150" font-size="15" fill="#97A3AA">Supply Depot app</text>
+      <text x="90" y="169" font-size="15" fill="#97A3AA">one tile, updates by tag</text>
+
+      <rect x="618" y="84" width="252" height="96" rx="12" fill="#24323B" stroke="#33434D" stroke-width="2"/>
+      <text x="642" y="122" font-size="21" font-weight="700" fill="#E1E6E0">Information Library</text>
+      <text x="642" y="150" font-size="15" fill="#97A3AA">Kiwix: Wikipedia, iFixit,</text>
+      <text x="642" y="169" font-size="15" fill="#97A3AA">medical, how-to, Q&amp;A</text>
+
+      <rect x="66" y="396" width="252" height="96" rx="12" fill="#24323B" stroke="#33434D" stroke-width="2"/>
+      <text x="90" y="434" font-size="21" font-weight="700" fill="#E1E6E0">AI Assistant</text>
+      <text x="90" y="462" font-size="15" fill="#97A3AA">knowledge base:</text>
+      <text x="90" y="481" font-size="15" fill="#97A3AA">7 documents, opt-in</text>
+
+      <rect x="618" y="396" width="252" height="96" rx="12" fill="#24323B" stroke="#33434D" stroke-width="2"/>
+      <text x="642" y="434" font-size="21" font-weight="700" fill="#E1E6E0">Offline maps</text>
+      <text x="642" y="462" font-size="15" fill="#97A3AA">field notes as pins,</text>
+      <text x="642" y="481" font-size="15" fill="#97A3AA">coloured by status</text>
+    </g>
+
+    <!-- the guide -->
+    <circle cx="470" cy="291" r="150" fill="url(#glow)"/>
+    <rect x="352" y="236" width="236" height="110" rx="14" fill="#E5AE17"/>
+    <text x="470" y="282" text-anchor="middle" font-size="22" font-weight="800" fill="#231C05" letter-spacing="1" textLength="200" lengthAdjust="spacingAndGlyphs">SCRAPPER’S GUIDE</text>
+    <text x="470" y="310" text-anchor="middle" font-size="15" font-weight="600" fill="#231C05">port 8787</text>
+    <text x="470" y="331" text-anchor="middle" font-size="13" fill="#231C05">finds NOMAD by itself</text>
+
+    <!-- outside the box -->
+    <g stroke-width="3" fill="none">
+      <path d="M956 214 L592 276" stroke="#62B9A6" marker-end="url(#arrow)"/>
+      <path d="M956 372 L592 310" stroke="#97A3AA" stroke-dasharray="9 7" marker-end="url(#arrowg)"/>
+    </g>
+    <rect x="956" y="160" width="288" height="104" rx="12" fill="#24323B" stroke="#62B9A6" stroke-width="2"/>
+    <text x="980" y="198" font-size="21" font-weight="700" fill="#E1E6E0">Phones, laptops,</text>
+    <text x="980" y="222" font-size="21" font-weight="700" fill="#E1E6E0">cyberdecks</text>
+    <text x="980" y="248" font-size="15" fill="#97A3AA">any browser on the network</text>
+
+    <rect x="956" y="320" width="288" height="104" rx="12" fill="#24323B" stroke="#97A3AA" stroke-width="2" stroke-dasharray="8 6"/>
+    <text x="980" y="358" font-size="21" font-weight="700" fill="#E1E6E0">LoRa mesh radios</text>
+    <text x="980" y="384" font-size="15" fill="#97A3AA">text it a question:</text>
+    <text x="980" y="406" font-size="16" font-weight="700" fill="#E5AE17" font-family="ui-monospace, 'DejaVu Sans Mono', Menlo, Consolas, monospace">?scrap 12v motor</text>
+  </g>
+</svg>

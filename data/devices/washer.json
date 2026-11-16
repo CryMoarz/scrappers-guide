@@ -1,0 +1,35 @@
+{
+  "id": "washer",
+  "name": "Washing machine",
+  "abstract": true,
+  "group": "Kitchen and appliances",
+  "aliases": ["clothes washer","front load washer"],
+  "brands": ["Whirlpool","GE","Samsung","LG","Maytag","Kenmore","Frigidaire","Electrolux"],
+  "prev": 5,
+  "tools": ["screwdriver","socket"],
+  "mins": 45,
+  "hazards": ["heavy"],
+  "comps": [
+    {"key":"pump_water","fn":"pump_water","spec":"Drain pump, 120V","v":120,"qty":1,"ext":2,"obs":3,"loc":"Bottom front or rear"},
+    {"key":"valve_solenoid","fn":"valve_solenoid","spec":"Hot and cold water inlet solenoid valves","v":[120,240],"ac":true,"qty":2,"ext":2,"obs":4,"loc":"Rear, where the hoses connect"},
+    {"key":"hose_tubing","fn":"hose_tubing","spec":"Inlet and drain hoses","qty":3,"ext":1,"obs":2,"loc":"Rear"},
+    {"key":"switch","fn":"switch","spec":"Lid or door switch","qty":1,"ext":2,"obs":4,"loc":"Door frame"},
+    {"key":"sensor_misc","fn":"sensor_misc","spec":"Water level pressure sensor","qty":1,"ext":2,"obs":5,"loc":"Top console, attached to a small tube"},
+    {"key":"bearing","fn":"bearing","spec":"Drum bearings","qty":2,"ext":5,"obs":4,"loc":"Rear of the drum"},
+    {"key":"spring","fn":"spring","spec":"Suspension springs","qty":4,"ext":2,"obs":4,"loc":"Drum supports"},
+    {"key":"controller_board","fn":"controller_board","spec":"Control board","qty":1,"ext":2,"obs":4,"loc":"Top console"}
+  ],
+  "boards": [
+    {"id":"mcu_board","qty":1,"loc":"Top console or front panel","p":1}
+  ],
+  "buildings": [
+    {"b":"house","l":5},
+    {"b":"apartment","l":3},
+    {"b":"laundromat","l":5},
+    {"b":"hotel","l":4},
+    {"b":"appliance","l":4},
+    {"b":"gym","l":2},
+    {"b":"recycling","l":3},
+    {"b":"salon","l":3}
+  ]
+}

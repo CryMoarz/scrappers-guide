@@ -1,0 +1,8 @@
+{
+  "id": "shop_small",
+  "name": "Small shops",
+  "osm": ["shop=clothes","shop=shoes","shop=gift","shop=jewelry","shop=books","shop=florist","shop=sports","shop=outdoor","shop=music","shop=musical_instrument","shop=stationery","shop=art","shop=craft","shop=fabric","shop=sewing","shop=watches","shop=bag","shop=fashion_accessories","craft=tailor","shop=shoe_repair","craft=shoemaker","shop=frame","shop=games","shop=collector","shop=hobby","shop=military_surplus"],
+  "exposure": 4,
+  "notes": "Clothing, shoe, gift, book, jewellery, sports and other small shops. The stock goes early (clothes and shoes are needed), but the fittings stay: lighting, tills, alarm panels and cameras. Outdoor and surplus shops hold camping gear, music shops amplifiers and speakers, florists a walk-in cooler, tailors and fabric shops sewing machines.",
+  "access": "A glass shopfront and a back door; a shopping street has dozens side by side."
+}

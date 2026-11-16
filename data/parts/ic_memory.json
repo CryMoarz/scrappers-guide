@@ -1,0 +1,14 @@
+{
+  "id": "ic_memory",
+  "name": "Memory chips (EEPROM, flash)",
+  "group": "Electronic components",
+  "demand": 1,
+  "keywords": ["eeprom","flash chip","memory chip","24c02","bios chip","spi flash","24c04","24c256","25q32","w25q","93c46","sd card","microsd","memory card","usb stick","flash drive","usb drive"],
+  "substitutes": [],
+  "summary": "Chips and cards that store data: EEPROM, flash chips, SD cards and USB sticks.",
+  "uses": ["Storing maps, books and data offline","Saving settings in microcontroller projects","Recovering data from dead devices"],
+  "identify": "8-pin chips marked 24C02 or 25Q32 on most boards; SD and microSD cards in cameras, dash cams, phones and drones; USB sticks in every office drawer.",
+  "test": "Plug cards and sticks into a computer and check they read and write. Chips need a programmer to test.",
+  "decay": {"halfLifeMonths":null,"note":"Lasts. Data on unpowered flash can fade after many years."},
+  "hazards": []
+}

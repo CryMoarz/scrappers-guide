@@ -1,0 +1,14 @@
+{
+  "id": "motor_sync",
+  "name": "Slow synchronous motors",
+  "group": "Motion",
+  "demand": 1,
+  "keywords": ["motor","synchronous motor","slow motor","turntable motor","timer motor","microwave turntable motor","clock motor","ac gear motor","49tyj","tyc-50","fan swing motor"],
+  "substitutes": ["motor_dc_small","motor_stepper"],
+  "summary": "Small slow AC motors that turn at a fixed speed: microwave turntables, clocks, timers and vents.",
+  "uses": ["Slow rotisseries and turntables","Rotating solar or display mounts","Timers and stirrers"],
+  "identify": "Small round motors turning a few rpm, often marked 49TYJ or TYC-50, in microwave turntables, oscillating fans, timer switches, ice makers and some heaters. Most run on mains; some on 12 or 24V AC.",
+  "test": "Plug into its rated AC supply: it should turn slowly and steadily. Many start in either direction, which is normal.",
+  "decay": {"halfLifeMonths":null,"note":"Lasts."},
+  "hazards": ["mains"]
+}

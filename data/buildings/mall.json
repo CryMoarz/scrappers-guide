@@ -1,0 +1,7 @@
+{
+  "id": "mall",
+  "name": "Shopping malls",
+  "osm": ["shop=mall"],
+  "exposure": 4,
+  "notes": "Anchor stores are hit first, but service corridors, rooftop units, escalators and back rooms are rarely touched."
+}

@@ -1,0 +1,14 @@
+{
+  "id": "heating_element",
+  "name": "Heating elements",
+  "group": "Heat",
+  "demand": 2,
+  "keywords": ["heater","heating","heating element","nichrome","resistance wire","hot plate","element","kanthal","heater coil","heating coil","cartridge heater","immersion heater","water heater element","ptc heater","oven element","stove element","dump load"],
+  "substitutes": [],
+  "summary": "Resistance heaters: coils, rods, cartridges and plates from kettles, ovens, heaters and dryers.",
+  "uses": ["Cooking and water heating from a generator or big inverter","Dump load for a wind turbine or spare solar","Dryers, incubators and dehydrators","Nichrome wire for cutting foam"],
+  "identify": "Nichrome coils in toasters, hair dryers, space heaters and clothes dryers; steel-sheathed rods in ovens, kettles and water heaters; flat pads in irons and hot plates. Watts and volts are usually stamped on the element or the appliance.",
+  "test": "Measure resistance: a 1,000W element reads about 53 Ω on 230V or 14 Ω on 120V. Open means burnt out; any reading to the metal sheath means it’s shorted and unsafe.",
+  "decay": {"halfLifeMonths":null,"note":"Lasts."},
+  "hazards": ["burn","mains"]
+}

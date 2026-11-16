@@ -1,0 +1,14 @@
+{
+  "id": "speaker",
+  "name": "Speakers, buzzers and sirens",
+  "group": "Signal and control",
+  "demand": 2,
+  "keywords": ["speaker","speakers","buzzer","siren","piezo","horn","audio","loudspeaker","woofer","subwoofer","tweeter","horn speaker","pa speaker","alarm siren","piezo buzzer","piezo disc"],
+  "substitutes": ["magnet_ferrite"],
+  "summary": "Speakers, buzzers, horns and sirens that make sound, plus their magnets.",
+  "uses": ["Alarms and signalling","Radios and PA systems","Magnets from big speakers"],
+  "identify": "Paper or plastic cones with a magnet in TVs, stereos, vehicles and PA cabinets; piezo discs in smoke alarms, toys and appliances; loud sirens on alarm panels and fire systems; horn speakers on poles and in schools.",
+  "test": "Touch a speaker to a 1.5V cell: it should click. The coil usually reads 4–8 Ω.",
+  "decay": {"halfLifeMonths":null,"note":"Lasts; foam surrounds on old speakers crumble."},
+  "hazards": []
+}

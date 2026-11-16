@@ -1,0 +1,44 @@
+{
+  "id": "bicycle",
+  "name": "Bicycle",
+  "group": "Vehicles and mobility",
+  "aliases": ["bike","push bike","pushbike","mountain bike","road bike","cycle","kids bike","bmx"],
+  "brands": ["Trek","Specialized","Giant","Cannondale","Schwinn","Huffy","Raleigh","Diamondback","Marin","GT"],
+  "prev": 5,
+  "tools": ["hex","wrench","pliers","screwdriver"],
+  "mins": 20,
+  "kg": 13,
+  "repairs": {"records":18162,"fixed":0.83,"end_of_life":0.05},
+  "hazards": [],
+  "comps": [
+    {"key":"chain_sprocket","fn":"chain_sprocket","spec":"Roller chain, 1/2 in pitch, with chainrings, rear sprockets and derailleurs — the drive for pedal generators","qty":1,"ext":2,"obs":3,"loc":"Drivetrain"},
+    {"key":"hall_reed","fn":"hall_reed","spec":"Reed switch speed sensor with a spoke magnet (bike computers)","qty":1,"ext":1,"obs":5,"loc":"On the fork, magnet on a spoke"},
+    {"key":"dynamo","fn":"dynamo","spec":"Hub dynamo, 6V 3W, or bottle dynamo (city and touring bikes)","v":6,"w":3,"qty":1,"ext":2,"obs":5,"loc":"Front hub or clamped to the fork"},
+    {"key":"cable_steel","fn":"cable_steel","spec":"Steel brake and gear cables, about 1.1–1.6 mm, with housings","qty":4,"ext":1,"obs":5,"loc":"Handlebars to brakes and derailleurs"},
+    {"key":"bearing","fn":"bearing","spec":"Hub, bottom bracket and headset bearings; wheels with tyres","qty":4,"ext":3,"obs":4,"loc":"Wheels, crank and steering"},
+    {"key":"foam_rubber","fn":"foam_rubber","spec":"Inner tubes and tyres — strong rubber straps and patches","qty":2,"ext":1,"obs":4,"loc":"Wheels"},
+    {"key":"tube_frame","fn":"tube_frame","spec":"Steel or aluminium tube frame","qty":1,"ext":2,"obs":4,"loc":"The frame","kg":2.5},
+    {"key":"led_light","fn":"led_light","spec":"Battery or USB LED front and rear lights","v":[3,7.4],"w":[0.5,10],"qty":2,"ext":1,"obs":3,"loc":"Handlebar and seat post"},
+    {"key":"compressor","fn":"compressor","spec":"Frame pump or floor pump","qty":1,"ext":1,"obs":3,"loc":"On the frame or in the garage"},
+    {"key":"battery_coin","fn":"battery_coin","spec":"Coin cell in the bike computer","v":3,"ah":0.22,"qty":1,"ext":1,"obs":5,"loc":"Handlebar computer"}
+  ],
+  "buildings": [
+    {"b":"bike_shop","l":5},
+    {"b":"garage_res","l":5},
+    {"b":"house","l":4},
+    {"b":"apartment","l":4},
+    {"b":"department","l":3},
+    {"b":"school","l":3},
+    {"b":"train_station","l":3},
+    {"b":"self_storage","l":3},
+    {"b":"recycling","l":3},
+    {"b":"mall","l":2},
+    {"b":"parking","l":2},
+    {"b":"campground","l":2},
+    {"b":"shop_small","l":2}
+  ],
+  "notes": "Working bikes get ridden away; broken ones in sheds, bike racks and recycling yards still give chains, cables, bearings and dynamos.",
+  "sources": [
+    {"title":"Open Repair Alliance, Open Repair Data v0.3 (community repair events, 2012 to July 2026; CC BY-SA 4.0): 18,162 repairs recorded as Unpowered - Bicycle","url":"https://github.com/openrepair/data"}
+  ]
+}

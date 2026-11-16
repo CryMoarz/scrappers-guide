@@ -1,0 +1,21 @@
+{
+  "id": "power_from_wind",
+  "name": "Power from wind",
+  "keywords": ["power from wind","power from the wind","wind power","wind energy","wind generator","wind charger","windmill","build a wind turbine","make a wind turbine","diy wind turbine"],
+  "summary": "Treadmill motors and direct-drive washing machine motors are the classic scavenged wind generators: permanent magnets, slow speeds, real power. Height matters more than anything; get it well clear of trees and buildings. Most places have less steady wind than people think, so watch the wind for a few weeks before building big. Small ready-made turbines hide on boats, RVs and remote cabins.",
+  "parts": [
+    {"fn":"wind_turbine_small","why":"Ready-made turbines from boats, cabins and RVs","core":true},
+    {"fn":"motor_dc_large","why":"Treadmill motors make good homemade wind generators","core":true},
+    {"fn":"motor_bldc","why":"Direct-drive washer motors generate well at slow speeds","core":true},
+    {"fn":"charge_controller","why":"Wind controllers with a dump load protect the battery","core":true},
+    {"fn":"bridge_rect","why":"Turns AC or three-phase output into DC"},
+    {"fn":"resistor","why":"A dump load burns off spare power"},
+    {"fn":"tube_frame","why":"Tower and tail boom"},
+    {"fn":"battery_pb","why":"Stores the power"}
+  ],
+  "guides": ["build_treadmill_wind_generator","teardown_treadmill","teardown_washer_motor"],
+  "tips": ["Mount the turbine at least 9 m above anything within about 90 m.","Never let a turbine spin with nothing connected. Shorting a permanent-magnet generator’s leads brakes it in a storm.","Add a blocking diode so the battery can’t spin a DC motor like a fan.","Towers fall. Guy them well and never climb one in wind."],
+  "refs": [
+    {"lib":"appropedia","q":"small wind turbine"}
+  ]
+}

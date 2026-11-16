@@ -1,0 +1,32 @@
+{
+  "id": "floor_scrubber",
+  "name": "Floor scrubber (ride-on or walk-behind)",
+  "group": "Commercial",
+  "aliases": ["auto scrubber","scrubber dryer"],
+  "brands": ["Tennant","Nilfisk","Karcher","Clarke","Minuteman","Windsor","Hako"],
+  "prev": 3,
+  "tools": ["socket","cutters"],
+  "mins": 30,
+  "hazards": ["heavy","acid"],
+  "comps": [
+    {"key":"battery_pb","fn":"battery_pb","spec":"24–36V deep-cycle battery bank (4–6 batteries)","v":[24,36],"qty":4,"ext":2,"obs":5,"loc":"Under the seat or deck"},
+    {"key":"motor_dc_large","fn":"motor_dc_large","spec":"DC brush motors","v":[24,36],"w":[400,1500],"qty":2,"ext":3,"obs":5,"loc":"Brush deck"},
+    {"key":"motor_dc_small","fn":"motor_dc_small","spec":"Vacuum and drive motors","v":[24,36],"w":[200,700],"qty":2,"ext":3,"obs":5,"loc":"Body"},
+    {"key":"pump_water","fn":"pump_water","spec":"Solution pump","v":[24,36],"w":[40,100],"qty":1,"ext":2,"obs":5,"loc":"Near the tank"},
+    {"key":"charger","fn":"charger","spec":"On-board battery charger","v":[24,36],"a":[10,25],"qty":1,"ext":2,"obs":5,"loc":"Body"},
+    {"key":"controller_board","fn":"controller_board","spec":"Motor controller","qty":1,"ext":2,"obs":5,"loc":"Control console"}
+  ],
+  "boards": [
+    {"id":"power_motor_controller","qty":1,"loc":"Control console","p":1}
+  ],
+  "buildings": [
+    {"b":"supermarket","l":4},
+    {"b":"hospital","l":4},
+    {"b":"school","l":4},
+    {"b":"warehouse","l":4},
+    {"b":"department","l":5},
+    {"b":"hardware","l":4},
+    {"b":"office","l":3},
+    {"b":"factory","l":3}
+  ]
+}

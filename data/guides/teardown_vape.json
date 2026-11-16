@@ -1,0 +1,28 @@
+{
+  "id": "teardown_vape",
+  "kind": "teardown",
+  "title": "Disposable vape: recover the lithium cell",
+  "keywords": ["vape teardown","disposable vape battery","vape cell","e-cigarette battery","vape lithium","free lithium cell","puff bar"],
+  "summary": "Most disposable vapes hold a small rechargeable lithium cell, about 400–1,000 mAh, plus an LED and an airflow switch. Pick them up by the bagful at shops, stations and bins. Open them without puncturing the cell, cut one lead at a time, and handle the nicotine liquid with gloves.",
+  "difficulty": 1,
+  "mins": 3,
+  "tools": ["hands","pliers","knife","cutters","tape","multimeter"],
+  "hazards": ["li_fire","chemical"],
+  "materials": [],
+  "steps": [
+    {"text":"Sort first. Set aside any vape that is swollen, dented, hot, leaking or smells sweet and chemical. Work outdoors or on concrete or a metal tray, with a bucket of sand or dirt close by.","warn":"A punctured or shorted lithium cell can burst into flame. Never work over a bed, sofa or carpet."},
+    {"text":"Wear gloves. The liquid inside contains nicotine, which is poisonous and passes through skin.","warn":"Keep the liquid, wicks and pods away from children and animals. Wash your hands afterwards."},
+    {"text":"Open the end away from the mouthpiece: pry off the bottom cap with a thumbnail, a flat screwdriver or the tip of a knife. On some models the mouthpiece pulls off instead and the insides slide out from the top.","warn":"Never cut or stab into the body where the cell sits."},
+    {"text":"Pull the insides out by gripping the plastic frame or the tank, not the cell. You will see the cell, a soaked wick or tank, a tiny board or airflow switch, and an LED."},
+    {"text":"Cut the wires one at a time, close to the board, not the cell. Cut one wire, tape its end, then cut the other and tape it.","warn":"Never cut both wires in one bite of the cutters. That shorts the cell through the blades."},
+    {"text":"Check the label for \"Li-ion\", \"3.7 V\" or a capacity in mAh. Measure the voltage. Above 3.0 V: good. 2.0–3.0 V: usable, charge slowly and watch it. Below 2.0 V after resting: discard it. See test_lithium_cell."},
+    {"text":"Keep the cell with its wire tails taped. Store several in a metal tin or a box with dividers so their ends can't touch."},
+    {"text":"On rechargeable models keep the small USB charge board; it is a ready-made single-cell charger. Keep the airflow switch and LED if you want them."},
+    {"text":"Bag the wicks, pods and liquid tightly and bin them away from water sources."}
+  ],
+  "notes": "## What's worth keeping and why\n\n- **The cell.** Nearly all disposable vapes use a rechargeable lithium-ion cell, even when the vape itself can't be recharged. Typical size is 400–1,000 mAh at 3.7 V nominal. A few dozen of them make a useful pack for lights, radios or a USB power bank (see build_18650_pack for pack-building rules; the same rules apply to small cells).\n- **USB charge board.** Rechargeable vapes carry a single-cell charge board (often a TP4056-type chip). Reuse it to charge other small cells.\n- **Airflow switch.** A sensitive pressure switch that closes on a puff of suction. Makes a breath or draught sensor.\n- **LED.** Small indicator light.\n\n## Charging small cells\n\nCharge only with a proper single-cell lithium charger that stops at 4.2 V. Charge at no more than half the capacity in amps (0.25 A for a 500 mAh cell) and never unattended. A cell that gets hot while charging is finished.\n\n## Variations\n\n- Some cells are cylinders, some are flat pouches. Pouches bend and puncture easily: don't fold them.\n- Very cheap or early models may use a cell with no label. Measure it and treat it like any lithium-ion cell.\n- Cells from vapes are high-drain types and usually healthy because they saw few cycles.\n\n## What to leave\n\n- The heating coil and wick. The coil wire is fine resistance wire but soaked in liquid.\n- Any cell that is swollen, dented, leaking or below 2.0 V.",
+  "tree": {"era":2,"branch":"salvage","requires":["safety_swollen_lithium"]},
+  "devices": ["vape"],
+  "parts": ["battery_li","charger","sensor_misc","led_light","wire_copper"],
+  "license": "CC-BY-SA-4.0"
+}

@@ -1,0 +1,15 @@
+{
+  "id": "stepper_driver_board",
+  "name": "Stepper motor driver board",
+  "notes": "Precision motion control from copiers, 3D printers and scanners.",
+  "comps": [
+    {"key":"ic_driver","fn":"ic_driver","spec":"Stepper driver ICs (A4988/DRV/TMC-type)","qty":3,"ext":4,"obs":5,"loc":"Board or plug-in modules"},
+    {"key":"ic_mcu","fn":"ic_mcu","spec":"Microcontroller","qty":1,"ext":4,"obs":5,"loc":"Largest chip"},
+    {"key":"crystal","fn":"crystal","spec":"Crystal","qty":1,"ext":3,"obs":5,"loc":"Next to the microcontroller"},
+    {"key":"mosfet","fn":"mosfet","spec":"Heater and fan MOSFETs","qty":3,"ext":3,"obs":5,"loc":"Power section"},
+    {"key":"reg_linear","fn":"reg_linear","spec":"Linear regulator or small buck converter","qty":1,"ext":3,"obs":4,"loc":"Power input"},
+    {"key":"resistor","fn":"resistor","spec":"Current-sense resistors","qty":4,"ext":4,"obs":5,"loc":"Next to each driver"},
+    {"key":"cap_elec","fn":"cap_elec","spec":"Capacitors","qty":4,"ext":2,"obs":4,"loc":"Power input"},
+    {"key":"connector","fn":"connector","spec":"Motor, sensor and power connectors","qty":8,"ext":2,"obs":4,"loc":"Board edges"}
+  ]
+}

@@ -1,0 +1,6 @@
+{
+  "id": "warehouse",
+  "name": "Warehouses and distribution centres",
+  "osm": ["building=warehouse","landuse=industrial"],
+  "exposure": 2
+}

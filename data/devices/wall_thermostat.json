@@ -1,0 +1,45 @@
+{
+  "id": "wall_thermostat",
+  "name": "Wall thermostats",
+  "group": "Building systems",
+  "aliases": ["thermostat","room thermostat","smart thermostat","programmable thermostat","heating control","sensi","touchscreen thermostat"],
+  "brands": ["Honeywell","Ecobee","Nest","Emerson","Hunter"],
+  "prev": 5,
+  "tools": ["screwdriver"],
+  "mins": 5,
+  "kg": 0.2,
+  "materials": {"aluminium":0.007,"steel":0.028,"plastic":0.11,"battery":0.007,"boards":0.033,"glass":0.012},
+  "hazards": ["mercury"],
+  "comps": [
+    {"key":"thermostat","fn":"thermostat","spec":"Room thermostat switching 24V AC — ready-made control for a heater, incubator or greenhouse fan (add a relay for bigger loads)","v":24,"ac":true,"qty":1,"ext":1,"obs":5,"loc":"On an inside wall"},
+    {"key":"thermostat_line","fn":"thermostat","spec":"Line-voltage thermostat for electric baseboard heat, switches 120–240V at up to about 20A","v":[120,240],"a":20,"qty":1,"ext":1,"obs":5,"loc":"Rooms with electric baseboard heaters"},
+    {"key":"switch","fn":"switch","spec":"Mercury tilt switch in a glass bulb (older round and lever models) — don't break it; mercury vapour is toxic","qty":1,"ext":1,"obs":5,"loc":"On the bimetal coil under the cover","p":0.5},
+    {"key":"relay","fn":"relay","spec":"Latching relays or switching transistors (digital models)","v":[3,5],"a":[1,2],"qty":2,"ext":2,"obs":5,"loc":"Circuit board","p":0.5},
+    {"key":"sensor_misc","fn":"sensor_misc","spec":"Thermistor and humidity sensor","qty":1,"ext":2,"obs":5,"loc":"Circuit board"},
+    {"key":"display","fn":"display","spec":"LCD or touchscreen (digital models)","qty":1,"ext":2,"obs":5,"loc":"Front","p":0.5},
+    {"key":"radio_rf","fn":"radio_rf","spec":"Wi-Fi radio (smart models)","qty":1,"ext":3,"obs":5,"loc":"Circuit board","p":0.5}
+  ],
+  "boards": [
+    {"id":"mcu_board","qty":1,"loc":"Digital models","p":0.6}
+  ],
+  "buildings": [
+    {"b":"house","l":5},
+    {"b":"apartment","l":5},
+    {"b":"office","l":5},
+    {"b":"school","l":5},
+    {"b":"church","l":5},
+    {"b":"hotel","l":4},
+    {"b":"bank","l":4},
+    {"b":"clinic","l":4},
+    {"b":"nursing_home","l":4},
+    {"b":"restaurant","l":4},
+    {"b":"hardware","l":4},
+    {"b":"gym","l":3},
+    {"b":"warehouse","l":3},
+    {"b":"self_storage","l":2}
+  ],
+  "notes": "Old mercury thermostats are worth keeping intact as tilt switches or thermostats; if one breaks, ventilate the room and see the mercury hazard.",
+  "sources": [
+    {"title":"Weight: smart thermostats averaged 0.2 kg (Babbitt et al. 2020, disassembly-based bill of materials data for consumer electronics, CC0)","url":"https://doi.org/10.6084/m9.figshare.11306792"}
+  ]
+}

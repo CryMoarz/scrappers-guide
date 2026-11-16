@@ -1,0 +1,14 @@
+{
+  "id": "diode_schottky",
+  "name": "Schottky diodes",
+  "group": "Electronic components",
+  "demand": 1,
+  "keywords": ["schottky","schottky diode","1n5819","1n5822","sb560","ss34","ss14","1n5817","mbr","sb5100","bypass diode","schottky rectifier"],
+  "substitutes": ["diode_rect"],
+  "summary": "Fast diodes with a low voltage drop, used in solar, switching supplies and polarity protection.",
+  "uses": ["Solar blocking diodes that waste less power","Repairing switching power supplies and DC-DC converters","Combining two power sources so either can feed a load"],
+  "identify": "Like rectifier diodes but marked SS14, SS34, 1N5819, 1N5822 or SR560; dual ones in TO-220 cases on PC power supplies, and bypass diodes in solar panel junction boxes.",
+  "test": "On diode mode: about 0.15–0.45V forward and open in reverse. A little reverse leakage is normal for Schottkys.",
+  "decay": {"halfLifeMonths":null,"note":"Lasts."},
+  "hazards": []
+}

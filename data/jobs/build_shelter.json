@@ -1,0 +1,20 @@
+{
+  "id": "build_shelter",
+  "name": "Build a shelter",
+  "keywords": ["build a shelter","build shelter","make a shelter","shelter","emergency shelter","lean-to","keep the rain off","fix a roof","patch a roof","fix a leaking roof","weatherproof"],
+  "summary": "A sound existing building beats anything you build, once you’ve checked it for structure, asbestos and mould. Otherwise, get off the ground, out of the wind, then dry. Billboard vinyl and truck tarps make huge, tough covers, and trampoline frames and carports make ready-made shelter skeletons.",
+  "parts": [
+    {"fn":"fabric_tarp","why":"Tarps and billboard vinyl for roofs and walls","core":true},
+    {"fn":"lumber","why":"Framing and floors","core":true},
+    {"fn":"sheet_metal","why":"Roofing that sheds rain and lasts years","core":true},
+    {"fn":"fasteners","why":"Screws, bolts and nails hold it together","core":true},
+    {"fn":"rope_webbing","why":"Guy lines and lashings"},
+    {"fn":"tube_frame","why":"Frames from carports, trampolines and scaffolding"},
+    {"fn":"plastic_sheet","why":"Clear roofing and windows that let light in"}
+  ],
+  "guides": ["safety_entering_buildings","safety_asbestos_check","build_tarp_shelter","skill_knots_and_lashing"],
+  "tips": ["Check a building before you move in. Sagging roofs, cracked walls, fallen ceilings or a mouldy smell mean keep out.","Pitch a roof steep enough to shed rain and snow.","Face the opening away from the wind.","Old corrugated cement roof sheets may contain asbestos. Don’t cut, drill or break them."],
+  "refs": [
+    {"lib":"outdoors","q":"shelter"}
+  ]
+}

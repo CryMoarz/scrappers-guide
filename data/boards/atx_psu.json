@@ -1,0 +1,21 @@
+{
+  "id": "atx_psu",
+  "name": "Computer ATX power supply internals",
+  "notes": "Big, generous parts and a very useful 12V rail. Discharge the bulk capacitors first.",
+  "comps": [
+    {"key":"fuse","fn":"fuse","spec":"Glass input fuse, 6–10A","a":[6,10],"qty":1,"ext":2,"obs":4,"loc":"Mains input"},
+    {"key":"surge_protect","fn":"surge_protect","spec":"NTC inrush thermistor and MOV","qty":2,"ext":3,"obs":5,"loc":"Mains input"},
+    {"key":"bridge_rect","fn":"bridge_rect","spec":"Large bridge rectifier on a heatsink","qty":1,"ext":3,"obs":4,"loc":"Primary side"},
+    {"key":"cap_bulk","fn":"cap_elec","spec":"One or two large 200–400V bulk capacitors","v":[200,400],"qty":2,"ext":2,"obs":4,"loc":"Primary side"},
+    {"key":"mosfet","fn":"mosfet","spec":"PFC and switching MOSFETs","qty":4,"ext":3,"obs":4,"loc":"Primary heatsink"},
+    {"key":"inductor","fn":"inductor","spec":"Large toroid inductors (rewindable copper)","qty":4,"ext":2,"obs":4,"loc":"Output side and PFC"},
+    {"key":"ferrite_xfmr","fn":"ferrite_xfmr","spec":"Main and standby ferrite transformers","qty":2,"ext":3,"obs":5,"loc":"Centre"},
+    {"key":"diode_schottky","fn":"diode_schottky","spec":"Dual Schottky rectifiers","qty":3,"ext":3,"obs":4,"loc":"Secondary heatsink"},
+    {"key":"ic_pwm","fn":"ic_pwm","spec":"PWM and supervisor ICs","qty":2,"ext":4,"obs":5,"loc":"Small daughterboard or main board"},
+    {"key":"optocoupler","fn":"optocoupler","spec":"Optocouplers","qty":2,"ext":3,"obs":5,"loc":"Across the isolation gap"},
+    {"key":"tl431","fn":"tl431","spec":"TL431 shunt reference","qty":1,"ext":4,"obs":5,"loc":"Standby section"},
+    {"key":"cap_out","fn":"cap_elec","spec":"Low-ESR output capacitors","qty":10,"ext":2,"obs":4,"loc":"Output side"},
+    {"key":"heatsink","fn":"heatsink","spec":"Large aluminium heatsinks","qty":2,"ext":2,"obs":3,"loc":"Primary and secondary"},
+    {"key":"fan","fn":"fan","spec":"80–140 mm 12V fan","v":12,"qty":1,"ext":1,"obs":3,"loc":"Case"}
+  ]
+}

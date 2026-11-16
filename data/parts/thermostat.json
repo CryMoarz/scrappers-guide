@@ -1,0 +1,14 @@
+{
+  "id": "thermostat",
+  "name": "Thermostats and thermal fuses",
+  "group": "Heat",
+  "demand": 1,
+  "keywords": ["thermostat","thermal fuse","thermal switch","thermal cutoff","temperature switch","bimetal","bimetallic","ksd301","thermal protector","overheat switch","high limit","capillary thermostat","oven thermostat","kettle thermostat"],
+  "substitutes": ["sensor_misc"],
+  "summary": "Thermostats, thermal switches and one-shot thermal fuses that react to temperature.",
+  "uses": ["Temperature control for incubators, coolers and dehydrators","Overheat protection for heaters and motors","Replacing blown thermal fuses in kettles and dryers"],
+  "identify": "Small round bimetal discs (KSD301) on heaters, kettles, irons and dryers; thermal fuses as small cylinders on leads in coffee makers, fans and motors; capillary thermostats with a dial in ovens and fridges. Old round wall thermostats hold a glass mercury switch: don’t break it.",
+  "test": "At room temperature a thermostat or thermal fuse should show continuity. Warm a bimetal disc and it should click open at its rating.",
+  "decay": {"halfLifeMonths":null,"note":"Lasts."},
+  "hazards": ["mercury"]
+}

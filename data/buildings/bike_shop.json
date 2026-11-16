@@ -1,0 +1,6 @@
+{
+  "id": "bike_shop",
+  "name": "Bike shops",
+  "osm": ["shop=bicycle"],
+  "exposure": 3
+}

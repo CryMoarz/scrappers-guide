@@ -1,0 +1,14 @@
+{
+  "id": "winch",
+  "name": "Winches and hoists",
+  "group": "Motion",
+  "demand": 3,
+  "keywords": ["winch","hoist","chain hoist","come along","come-along","electric winch","hand winch","boat winch","trailer winch","cable puller","block and tackle","chain block","lever hoist"],
+  "substitutes": ["hydraulic","motor_dc_small"],
+  "summary": "Drums and chain blocks that pull or lift heavy loads: vehicle winches, hand winches, come-alongs and hoists.",
+  "uses": ["Pulling vehicles out of ditches","Lifting engines and heavy loads","Hauling boats, logs and debris","Tensioning fences and shelter lines"],
+  "identify": "Vehicle winches sit on 4x4 bumpers with a 12V motor and drum. Boat trailers have hand-crank winches; workshops and farms have chain hoists and ratchet come-alongs. Capacity is stamped on the body.",
+  "test": "Run it in and out unloaded: the drum should turn smoothly and the brake should hold. Reject cable with kinks or broken strands, and under load keep clear of the line: a snapping cable whips with deadly force.",
+  "decay": {"halfLifeMonths":null,"note":"The mechanism lasts; steel cable rusts and synthetic rope weakens in sunlight."},
+  "hazards": ["crush"]
+}

@@ -1,0 +1,14 @@
+{
+  "id": "gearbox",
+  "name": "Gearboxes and gear trains",
+  "group": "Mechanical",
+  "demand": 1,
+  "keywords": ["gearbox","gears","gear","planetary","reduction","torque","worm gear","gear reduction","worm drive","spur gear","planetary gear","rack and pinion","right angle gearbox","transmission","differential"],
+  "substitutes": ["belt_pulley"],
+  "summary": "Gearboxes and gear trains that trade speed for torque, from tiny plastic gears to vehicle transmissions.",
+  "uses": ["Slow, strong drives for winches, pumps and grinders","Gearing a slow wind or water rotor up to a generator","Repairing tools and appliances"],
+  "identify": "Cordless drills (planetary), mixers, garage door openers, wiper motors (worm), mobility scooters, washing machines and vehicle differentials. Worm gears hold their load when stopped; spur and planetary gears don’t.",
+  "test": "Turn the input by hand: it should feel smooth, with little play and no grinding or missing teeth.",
+  "decay": {"halfLifeMonths":null,"note":"Lasts if greased."},
+  "hazards": []
+}

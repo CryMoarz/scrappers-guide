@@ -1,0 +1,22 @@
+{
+  "id": "electric_toothbrush_oral_b_pro_1000",
+  "device": "electric_toothbrush",
+  "brand": "Oral-B",
+  "model": "Pro 1000 (Professional Care 1000; handle type 3756, charger type 3757)",
+  "notes": "Covers the Oral-B Pro 1000 (Professional Care 1000), handle type 3756 and charger type 3757, with one Ni-MH battery; the manual also covers the 2000 and 3000. The charger rating is the manual's Mexico-only block, so read the label on a base from another market; the manual says opening the handle destroys the appliance.",
+  "research": {"checked":"2026-11-12","gaps":["The charger rating (110-130 V, 60 Hz, 0.9 W) is the manual's Mexico-only block; other markets' bases may differ.","The Spanish spec block also lists 1.2 V DC for the brush unit; it is not put on the battery because the block does not name the cell.","iFixit names the motor, the coil and the motherboard but gives no maker, part number or rating for any of them.","No chip is named for this model in the sources read.","iFixit user comments suggest 4/5 AA-size or 1200 mAh alternative cells; comments are not used."],"method":["Oral-B Professional Care 1000 manual (ManualsLib 195336, Spanish with English and Portuguese sections; cover reads 1000, 2000, 3000): Mexico-only spec block on page 4 (Spanish) and page 14 (English).","Same manual: handle and charger type numbers on page 18; Ni-MH label and end-of-life battery removal on pages 6 and 16.","iFixit guide 101091, Oral-B White Pro 1000 Battery Replacement: parts list Ni-MH 42 x 14 mm battery, quantity 1; introduction names type 3756.","iFixit guide 100537, Oral-B White Pro 1000 Motherboard Replacement: steps that desolder the coil wire, the motor and the battery connections from the motherboard.","Manual pages were read on manualslib.mx; the same page numbers on manualslib.com serve a different manual.","No datasheet link: no chip is named for this model."]},
+  "comps": [
+    {"key":"battery_nimh","conf":"documented","spec":"Ni-MH battery, one, 42 x 14 mm (iFixit parts list, guide 101091)","qty":1,"source":"https://www.ifixit.com/Guide/Oral-B+White+Pro+1000+Battery+Replacement/101091"},
+    {"key":"motor_dc_small","conf":"documented","spec":"Motor soldered to the motherboard; the iFixit motherboard guide has you desolder it (step 6)","qty":1,"source":"https://www.ifixit.com/Guide/Oral-B+White+Pro+1000+Motherboard+Replacement/100537"},
+    {"key":"charger","conf":"documented","spec":"Charger type 3757; the manual's Mexico-only spec block gives 110-130 V ~, 60 Hz, 0.9 W","v":[110,130],"w":0.9,"ac":true,"qty":1,"source":"https://manualslib.mx/manual/195336/Braun-Oral-B-1000.html?page=4"},
+    {"key":"inductor_coil","fn":"inductor","spec":"Coil with a wire soldered to the motherboard; the iFixit motherboard guide has you desolder the wire and squeeze the coil out (step 5)","qty":1,"ext":3,"obs":4,"conf":"documented","source":"https://www.ifixit.com/Guide/Oral-B+White+Pro+1000+Motherboard+Replacement/100537"},
+    {"key":"controller_board_handle","fn":"controller_board","spec":"Motherboard in the toothbrush body; the coil wire, the motor and the battery connections are soldered to it (iFixit motherboard guide)","qty":1,"ext":3,"obs":3,"conf":"documented","source":"https://www.ifixit.com/Guide/Oral-B+White+Pro+1000+Motherboard+Replacement/100537"}
+  ],
+  "sources": [
+    {"title":"Oral-B Professional Care 1000 (Braun Oral-B 1000) manual, ManualsLib copy, page 4: charger type 3757 and the Mexico-only specification block (page 14 repeats it in English)","url":"https://manualslib.mx/manual/195336/Braun-Oral-B-1000.html?page=4"},
+    {"title":"Oral-B Professional Care 1000 manual, ManualsLib copy, page 6: battery removal at end of product life, Ni-MH label, opening the handle destroys the appliance","url":"https://manualslib.mx/manual/195336/Braun-Oral-B-1000.html?page=6"},
+    {"title":"Oral-B Professional Care 1000 manual, ManualsLib copy, page 18: handle type 3756 and charger type 3757","url":"https://manualslib.mx/manual/195336/Braun-Oral-B-1000.html?page=18"},
+    {"title":"Oral-B White Pro 1000 Battery Replacement (iFixit guide 101091, parts list)","url":"https://www.ifixit.com/Guide/Oral-B+White+Pro+1000+Battery+Replacement/101091"},
+    {"title":"Oral-B White Pro 1000 Motherboard Replacement (iFixit guide 100537, coil, motor and battery steps)","url":"https://www.ifixit.com/Guide/Oral-B+White+Pro+1000+Motherboard+Replacement/100537"}
+  ]
+}

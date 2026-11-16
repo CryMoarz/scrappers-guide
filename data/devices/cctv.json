@@ -1,0 +1,33 @@
+{
+  "id": "cctv",
+  "name": "Security cameras and recorders",
+  "group": "Electronics and office",
+  "aliases": ["surveillance camera","nvr"],
+  "brands": ["Hikvision","Dahua","Lorex","Swann","Reolink","Arlo","Ring","Annke","Amcrest","Uniview"],
+  "prev": 4,
+  "tools": ["screwdriver"],
+  "mins": 15,
+  "hazards": [],
+  "comps": [
+    {"key":"camera","fn":"camera","spec":"Camera modules with night vision","qty":4,"ext":2,"obs":3,"loc":"Building exterior"},
+    {"key":"led_light","fn":"led_light","spec":"Infrared LEDs","v":[5,12],"w":[1,6],"qty":20,"ext":2,"obs":5,"loc":"Camera faces"},
+    {"key":"psu","fn":"psu","spec":"12V power supply","v":12,"qty":1,"ext":1,"obs":4,"loc":"Near the recorder"},
+    {"key":"magnet_strong","fn":"magnet_strong","spec":"Hard drive magnets in the recorder","qty":2,"ext":3,"obs":5,"loc":"Recorder box"}
+  ],
+  "boards": [
+    {"id":"smps_small","qty":1,"loc":"12V adapter","p":1}
+  ],
+  "buildings": [
+    {"b":"gas_station","l":5},
+    {"b":"convenience","l":5},
+    {"b":"bank","l":5},
+    {"b":"office","l":4},
+    {"b":"warehouse","l":4},
+    {"b":"supermarket","l":4},
+    {"b":"house","l":3},
+    {"b":"pharmacy","l":4},
+    {"b":"school","l":4},
+    {"b":"salon","l":2},
+    {"b":"shop_small","l":3}
+  ]
+}

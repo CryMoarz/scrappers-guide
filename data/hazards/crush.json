@@ -1,0 +1,15 @@
+{
+  "id": "crush",
+  "label": "Crush and pinch points",
+  "severity": 4,
+  "summary": "Things that fall, tip, close or move: vehicles slipping off jacks, tall machines tipping over, motorised beds and lifts moving when you don't expect it, and fingers caught in gears, chains, belts and scissor linkages.",
+  "signs": ["Anything held up by a jack, hydraulics, a spring or a single prop","Tall heavy items: vending machines, shelving racks, fridges, safes and cabinets","Scissor linkages in lifts, recliners and hospital beds","Gears, chains, belts and rollers","Machines with batteries that could still move: stairlifts, power chairs, lifts, garage doors","Doors and gates with closers or motors"],
+  "do": ["Support anything raised with stands or solid timber blocks, never a jack alone","Jack only on firm, level ground, and chock the wheels that stay on the ground every time","Disconnect batteries and power so mechanisms can't move","Keep hands out of the path of anything that could move or close","Plan where a heavy item will fall and keep a clear escape route","Work with a second person who can get help"],
+  "dont": ["Don't get under a vehicle or load held only by a jack","Don't rock or tip vending machines or tall shelving","Don't reach into linkages, gears or belts to clear a jam while there is power","Don't wear loose sleeves, gloves or long loose hair near spinning parts","Don't prop a vehicle or load on bricks, hollow concrete blocks or stacked junk: they can crumble without warning"],
+  "ppe": ["Boots with toe protection","Gloves, except near spinning machinery"],
+  "firstAid": ["Free a trapped person as quickly as you safely can, then get medical help: long crush injuries can harm the kidneys hours later","Control bleeding with firm pressure","Crushed finger: cool it and raise it; a bent or badly swollen finger may be broken","A crushed chest with difficult breathing is an emergency","After a long trapping, give plenty to drink in the first hours if they are awake and can swallow, and watch for dark, cola-coloured or very little urine: that means kidney trouble and needs medical care"],
+  "refs": [
+    {"lib":"wikimed","q":"Crush injury"},
+    {"lib":"wikipedia","q":"Crush injury"}
+  ]
+}

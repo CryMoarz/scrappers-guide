@@ -1,0 +1,6 @@
+{
+  "id": "convenience",
+  "name": "Convenience and vape shops",
+  "osm": ["shop=convenience","shop=tobacco","shop=e-cigarette","shop=alcohol","shop=wine","shop=beverages","shop=cannabis","shop=newsagent","shop=kiosk","shop=lottery","shop=confectionery"],
+  "exposure": 5
+}

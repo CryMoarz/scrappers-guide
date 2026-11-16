@@ -1,0 +1,20 @@
+{
+  "id": "wifi_router_d_link_dap_1522_a1",
+  "device": "wifi_router",
+  "brand": "D-Link",
+  "model": "DAP-1522 A1",
+  "fcc": "KA2AP1522A1",
+  "notes": "Chips for hardware version A1; other versions of the DAP-1522 can differ.",
+  "research": {"gaps":[],"method":["Not yet fact-checked: its parts show as likely until a fact-check confirms them against their sources.","Imported from the OpenWrt Table of Hardware (toh.json, 2026-11-13): the hardware data page for this version, by OpenWrt wiki contributors under CC BY-SA 4.0."]},
+  "comps": [
+    {"key":"ic_mcu_soc","fn":"ic_mcu","spec":"SoC Ralink RT2880, 1 core at 266 MHz","qty":1,"ext":4,"obs":3,"source":"https://openwrt.org/toh/hwdata/d-link/d-link_dap-1522_a1","conf":"likely"},
+    {"key":"ic_memory_flash","fn":"ic_memory","spec":"Flash, 4 MB","qty":1,"ext":2,"obs":4,"source":"https://openwrt.org/toh/hwdata/d-link/d-link_dap-1522_a1","conf":"likely"},
+    {"key":"ic_memory_ram","fn":"ic_memory","spec":"RAM, 32 MB","qty":1,"ext":3,"obs":3,"source":"https://openwrt.org/toh/hwdata/d-link/d-link_dap-1522_a1","conf":"likely"},
+    {"key":"radio_rf","spec":"Wi-Fi: Ralink RT2880, Ralink RT2850 (2.4 GHz b/g/n, 5 GHz a/n)","qty":2,"source":"https://openwrt.org/toh/hwdata/d-link/d-link_dap-1522_a1","conf":"likely"},
+    {"key":"psu","spec":"Power supply: 5 VDC, 2.0A","v":5,"a":2,"source":"https://openwrt.org/toh/hwdata/d-link/d-link_dap-1522_a1","conf":"likely"},
+    {"key":"connector","spec":"Ethernet ports: 4× gigabit","qty":4,"source":"https://openwrt.org/toh/hwdata/d-link/d-link_dap-1522_a1","conf":"likely"}
+  ],
+  "sources": [
+    {"title":"OpenWrt Table of Hardware: D-Link DAP-1522 A1 (OpenWrt wiki contributors, CC BY-SA 4.0)","url":"https://openwrt.org/toh/hwdata/d-link/d-link_dap-1522_a1"}
+  ]
+}

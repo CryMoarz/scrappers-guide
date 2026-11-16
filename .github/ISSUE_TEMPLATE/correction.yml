@@ -1,0 +1,29 @@
+name: Something is wrong
+description: A part, rating, place, guide step or hazard card that isn't right.
+title: "Correction: "
+labels: ["correction"]
+body:
+  - type: checkboxes
+    id: safety
+    attributes:
+      label: Safety
+      options:
+        - label: This could hurt someone who follows the guide (hazard cards, first aid, high voltage, lithium, gas…). We fix these first.
+  - type: input
+    id: record
+    attributes:
+      label: Which record
+      description: Its name, or the id from the app's address bar (for example devices/microwave_tx).
+    validations:
+      required: true
+  - type: textarea
+    id: wrong
+    attributes:
+      label: What's wrong, and what it should say
+    validations:
+      required: true
+  - type: input
+    id: source
+    attributes:
+      label: How you know
+      description: "\"I opened one\", or a link to a manual, datasheet or reliable page."

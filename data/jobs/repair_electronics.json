@@ -1,0 +1,17 @@
+{
+  "id": "repair_electronics",
+  "name": "Repair electronics",
+  "keywords": ["repair electronics","fix electronics","electronics repair","broken electronics","fix a circuit board","circuit board repair","fix a radio","soldering","solder"],
+  "summary": "Most dead electronics fail in a few places: bulging or leaking capacitors, blown fuses, cracked solder joints and broken connectors. Find the fault with your eyes and a multimeter, then take the replacement from a donor board. The same parts sit in thousands of chargers, TVs and power supplies.",
+  "parts": [
+    {"fn":"cap_elec","why":"The most common failure: bulging, leaking or dried out","core":true},
+    {"fn":"fuse","why":"Blown fuses are cheap, quick fixes","core":true},
+    {"fn":"connector","why":"Broken plugs and sockets","core":true},
+    {"fn":"diode_rect","why":"Shorted rectifier diodes in power supplies"},
+    {"fn":"mosfet","why":"Switching transistors that fail in power supplies"},
+    {"fn":"reg_linear","why":"Regulators that feed the rest of the board"},
+    {"fn":"wire_copper","why":"Jumper wire and replacement cords"}
+  ],
+  "guides": ["skill_soldering","skill_multimeter","test_capacitor","test_continuity","safety_discharge_capacitor"],
+  "tips": ["Look first. Bulging capacitors, burnt spots and cracked joints often show the fault.","Discharge big capacitors before touching any mains power board.","Replace a capacitor with the same capacity and the same or higher voltage rating.","A fuse that blows again at once means a short somewhere. Find it. Never fit a bigger fuse."]
+}

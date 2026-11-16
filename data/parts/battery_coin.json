@@ -1,0 +1,14 @@
+{
+  "id": "battery_coin",
+  "name": "Coin and button cells",
+  "group": "Power storage",
+  "demand": 3,
+  "keywords": ["coin cell","button cell","coin battery","button battery","watch battery","cr2032","cr2025","cr2016","cr2450","lr44","ag13","sr626","cmos battery","lithium coin","3v coin"],
+  "substitutes": ["battery_li","supercap"],
+  "summary": "Small flat cells that keep clocks, remotes, scales and memory alive. Keep them from children: a swallowed cell burns the gut within hours.",
+  "uses": ["Small LED lights and tags","Remotes, scales, thermometers and sensors","Clock and memory backup in computers and car keys","Watches and hearing aids"],
+  "identify": "Flat discs 5–25 mm across, marked CR2032, CR2025, LR44, SR626 and similar. Look on motherboards and in key fobs, kitchen scales, thermometers and glucose meters. CR cells are 3V lithium; LR and SR cells are 1.5V.",
+  "test": "A fresh CR cell reads about 3V and an LR or SR about 1.5V. Below about 2.7V a CR cell is nearly flat. Test under a small load, like an LED, if you can.",
+  "decay": {"halfLifeMonths":60,"note":"Sealed lithium coin cells lose only about 1% a year; cells left in devices drain faster."},
+  "hazards": ["chemical"]
+}

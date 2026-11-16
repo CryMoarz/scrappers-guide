@@ -1,0 +1,37 @@
+{
+  "id": "pool_pump",
+  "name": "Swimming pool pump, filter and cover",
+  "group": "Leisure and fitness",
+  "aliases": ["pool pump","pool filter","sand filter","cartridge filter","swimming pool","pool equipment","above ground pool pump","variable speed pump"],
+  "brands": ["Hayward","Pentair","Jandy","Sta-Rite","Waterway","Intex","Speck","Vevor"],
+  "prev": 3,
+  "tools": ["screwdriver","wrench","socket","saw"],
+  "mins": 40,
+  "kg": 40,
+  "hazards": ["mains","chemical"],
+  "comps": [
+    {"key":"water_stored","fn":"water_stored","spec":"The pool: 20,000–100,000 litres — filter, then boil or disinfect before drinking","qty":1,"ext":1,"obs":3,"loc":"In the pool"},
+    {"key":"pump_water","fn":"pump_water","spec":"Self-priming centrifugal pump, 0.75–3 hp, 120/240V — moves 150–400 litres a minute for transfer and irrigation","v":240,"qty":1,"ext":2,"obs":4,"loc":"Equipment pad beside the pool","kg":15},
+    {"key":"motor_ac","fn":"motor_ac","spec":"The pump's induction motor, about 3,450 RPM, unbolts from the wet end","v":[120,240],"w":[560,2240],"ac":true,"qty":1,"ext":2,"obs":4,"loc":"Back half of the pump","kg":10},
+    {"key":"filter_water","fn":"filter_water","spec":"Sand, cartridge or DE filter in a pressure tank — a good pre-filter for creek or rain water, not drinking-safe on its own","qty":1,"ext":2,"obs":4,"loc":"Equipment pad","kg":20},
+    {"key":"fabric_tarp","fn":"fabric_tarp","spec":"Pool cover: solid winter cover or bubble solar cover — a huge tarp","qty":1,"ext":1,"obs":4,"loc":"On the pool or rolled up nearby"},
+    {"key":"chlorine","fn":"chlorine","spec":"Chlorine tablets or liquid — water treatment; never mix with acid or other pool chemicals","qty":1,"ext":1,"obs":3,"loc":"Inline feeder, floater or pool shed"},
+    {"key":"hose_tubing","fn":"hose_tubing","spec":"1.5–2 in PVC pipe, unions and valves","qty":1,"ext":2,"obs":4,"loc":"Equipment pad"},
+    {"key":"valve_solenoid","fn":"valve_solenoid","spec":"Multiport valve and check valves","qty":2,"ext":2,"obs":5,"loc":"On the filter and pipes"},
+    {"key":"motor_sync","fn":"motor_sync","spec":"24-hour mechanical timer with a synchronous clock motor","v":[120,240],"ac":true,"qty":1,"ext":1,"obs":5,"loc":"Grey timer box on the wall"}
+  ],
+  "boards": [
+    {"id":"vfd_drive","qty":1,"loc":"Drive and keypad on variable-speed pumps","p":0.3}
+  ],
+  "buildings": [
+    {"b":"pool_supply","l":5},
+    {"b":"hotel","l":5},
+    {"b":"apartment","l":4},
+    {"b":"gym","l":4},
+    {"b":"campground","l":4},
+    {"b":"house","l":3},
+    {"b":"school","l":3},
+    {"b":"golf","l":3},
+    {"b":"hardware","l":2}
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "id": "wifi_router_ubiquiti_nanobeam_2ac_13_2wa",
+  "device": "wifi_router",
+  "brand": "Ubiquiti",
+  "model": "NanoBeam 2AC 13 2WA",
+  "fcc": "SWX-NBE2AC13",
+  "notes": "Chips for hardware version 2WA; other versions of the NanoBeam 2AC 13 can differ.",
+  "research": {"gaps":[],"method":["Not yet fact-checked: its parts show as likely until a fact-check confirms them against their sources.","Imported from the OpenWrt Table of Hardware (toh.json, 2026-11-13): the hardware data page for this version, by OpenWrt wiki contributors under CC BY-SA 4.0."]},
+  "comps": [
+    {"key":"ic_mcu_soc","fn":"ic_mcu","spec":"SoC Atheros AR9342, 1 core at 533 MHz","qty":1,"ext":4,"obs":3,"source":"https://openwrt.org/toh/hwdata/ubiquiti/ubiquiti_nanobeam_ac_13","conf":"likely"},
+    {"key":"ic_memory_flash","fn":"ic_memory","spec":"Flash, 16 MB","qty":1,"ext":2,"obs":4,"source":"https://openwrt.org/toh/hwdata/ubiquiti/ubiquiti_nanobeam_ac_13","conf":"likely"},
+    {"key":"ic_memory_ram","fn":"ic_memory","spec":"RAM, 64 MB","qty":1,"ext":3,"obs":3,"source":"https://openwrt.org/toh/hwdata/ubiquiti/ubiquiti_nanobeam_ac_13","conf":"likely"},
+    {"key":"radio_rf","spec":"Wi-Fi: Ubiquiti U-AME-G1-BR4A (2.4 GHz b/g/n)","qty":1,"source":"https://openwrt.org/toh/hwdata/ubiquiti/ubiquiti_nanobeam_ac_13","conf":"likely"},
+    {"key":"psu","spec":"Power supply: PoE 24 VDC, 0.5A","v":24,"a":0.5,"source":"https://openwrt.org/toh/hwdata/ubiquiti/ubiquiti_nanobeam_ac_13","conf":"likely"},
+    {"key":"connector","spec":"Ethernet ports: 1× gigabit","qty":1,"source":"https://openwrt.org/toh/hwdata/ubiquiti/ubiquiti_nanobeam_ac_13","conf":"likely"}
+  ],
+  "sources": [
+    {"title":"OpenWrt Table of Hardware: Ubiquiti NanoBeam 2AC 13 2WA (OpenWrt wiki contributors, CC BY-SA 4.0)","url":"https://openwrt.org/toh/hwdata/ubiquiti/ubiquiti_nanobeam_ac_13"}
+  ]
+}

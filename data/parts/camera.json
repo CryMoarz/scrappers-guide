@@ -1,0 +1,14 @@
+{
+  "id": "camera",
+  "name": "Cameras",
+  "group": "Signal and control",
+  "demand": 2,
+  "keywords": ["camera","image sensor","cctv","webcam","night vision","security camera","ip camera","doorbell camera","trail camera","camera module","cmos sensor","ir camera","camera flash"],
+  "substitutes": [],
+  "summary": "Camera modules and image sensors from CCTV, webcams, phones, doorbells and trail cameras.",
+  "uses": ["Watching a perimeter with a CCTV camera and a screen","Night vision with IR-lit cameras","Inspecting hard-to-reach spots"],
+  "identify": "Small lens modules on ribbon cables in phones, laptops and doorbells; boxed CCTV cameras on buildings, often ringed with IR LEDs for night. Disposable and film cameras hold a flash capacitor charged to about 300V: discharge it before touching the board.",
+  "test": "Power it and look at the picture: analogue CCTV plugs into any TV’s yellow video input, and USB webcams work on any computer. Cover the lens to check the IR night mode switches on.",
+  "decay": {"halfLifeMonths":null,"note":"Lasts."},
+  "hazards": ["hv_cap"]
+}

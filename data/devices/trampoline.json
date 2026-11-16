@@ -1,0 +1,29 @@
+{
+  "id": "trampoline",
+  "name": "Trampoline",
+  "group": "Leisure and fitness",
+  "aliases": ["backyard trampoline","garden trampoline","rebounder","trampoline park","jumping mat","trampoline frame"],
+  "brands": ["Jumpking","Skywalker","Springfree","Upper Bounce","Sportspower","Vuly"],
+  "prev": 4,
+  "tools": ["pliers","socket","hands"],
+  "mins": 30,
+  "kg": 60,
+  "hazards": ["spring"],
+  "comps": [
+    {"key":"spring","fn":"spring","spec":"64–120 galvanised steel tension springs, about 13–25 cm long — use a hook or spring puller; they snap back hard","qty":96,"ext":1,"obs":5,"loc":"Around the frame under the pads"},
+    {"key":"tube_frame","fn":"tube_frame","spec":"Galvanised steel tube frame, about 40–50 mm, 3–5 m across — curved sections make greenhouse or shelter hoops","qty":1,"ext":2,"obs":5,"loc":"The ring and legs","kg":35},
+    {"key":"fabric_tarp","fn":"fabric_tarp","spec":"Polypropylene jumping mat — tough, UV-resistant and sheds water","qty":1,"ext":1,"obs":5,"loc":"Centre","kg":8},
+    {"key":"foam_rubber","fn":"foam_rubber","spec":"Foam safety pads in a PVC cover","qty":1,"ext":1,"obs":5,"loc":"Over the springs"},
+    {"key":"rope_webbing","fn":"rope_webbing","spec":"Safety enclosure net, bungee ties and webbing","qty":1,"ext":1,"obs":5,"loc":"Enclosure poles"}
+  ],
+  "boards": [],
+  "buildings": [
+    {"b":"house","l":4},
+    {"b":"gym","l":3},
+    {"b":"department","l":3},
+    {"b":"toy_store","l":3},
+    {"b":"self_storage","l":2},
+    {"b":"campground","l":2},
+    {"b":"school","l":2}
+  ]
+}

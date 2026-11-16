@@ -1,0 +1,22 @@
+{
+  "id": "wifi_router_tp_link_tl_wr2543nd_v1_0_v1_2",
+  "device": "wifi_router",
+  "brand": "TP-Link",
+  "model": "TL-WR2543ND v1.0, v1.2",
+  "fcc": "TE7WR2543N",
+  "notes": "Chips for hardware version v1.0, v1.2; other versions of the TL-WR2543ND can differ.",
+  "research": {"gaps":[],"method":["Not yet fact-checked: its parts show as likely until a fact-check confirms them against their sources.","Imported from the OpenWrt Table of Hardware (toh.json, 2026-11-13): the hardware data page for this version, by OpenWrt wiki contributors under CC BY-SA 4.0."]},
+  "comps": [
+    {"key":"ic_mcu_soc","fn":"ic_mcu","spec":"SoC Atheros AR7242, 1 core at 400 MHz","qty":1,"ext":4,"obs":3,"source":"https://openwrt.org/toh/hwdata/tp-link/tp-link_tl-wr2543nd_v1","conf":"likely"},
+    {"key":"ic_memory_flash","fn":"ic_memory","spec":"Flash, 8 MB","qty":1,"ext":2,"obs":4,"source":"https://openwrt.org/toh/hwdata/tp-link/tp-link_tl-wr2543nd_v1","conf":"likely"},
+    {"key":"ic_memory_ram","fn":"ic_memory","spec":"RAM, 64 MB","qty":1,"ext":3,"obs":3,"source":"https://openwrt.org/toh/hwdata/tp-link/tp-link_tl-wr2543nd_v1","conf":"likely"},
+    {"key":"radio_rf","spec":"Wi-Fi: Atheros AR9380 (2.4 GHz b/g/n, 5 GHz a/n)","qty":1,"source":"https://openwrt.org/toh/hwdata/tp-link/tp-link_tl-wr2543nd_v1","conf":"likely"},
+    {"key":"antenna_coax","spec":"Detachable external antennas","qty":3,"source":"https://openwrt.org/toh/hwdata/tp-link/tp-link_tl-wr2543nd_v1","conf":"likely"},
+    {"key":"psu","spec":"Power supply: 12 VDC, 1.5A","v":12,"a":1.5,"source":"https://openwrt.org/toh/hwdata/tp-link/tp-link_tl-wr2543nd_v1","conf":"likely"},
+    {"key":"connector","spec":"Ethernet ports: 5× gigabit","qty":5,"source":"https://openwrt.org/toh/hwdata/tp-link/tp-link_tl-wr2543nd_v1","conf":"likely"},
+    {"key":"connector_usb","fn":"connector","spec":"USB: 1x 2.0","qty":1,"ext":2,"obs":4,"source":"https://openwrt.org/toh/hwdata/tp-link/tp-link_tl-wr2543nd_v1","conf":"likely"}
+  ],
+  "sources": [
+    {"title":"OpenWrt Table of Hardware: TP-Link TL-WR2543ND v1.0, v1.2 (OpenWrt wiki contributors, CC BY-SA 4.0)","url":"https://openwrt.org/toh/hwdata/tp-link/tp-link_tl-wr2543nd_v1"}
+  ]
+}

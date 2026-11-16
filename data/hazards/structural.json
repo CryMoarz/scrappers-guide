@@ -1,0 +1,14 @@
+{
+  "id": "structural",
+  "label": "Unstable structure",
+  "severity": 5,
+  "summary": "Buildings damaged by fire, flood, earthquake, storms or years of neglect can drop floors, ceilings, walls and roofs without warning. Collapsed shelving and piled stock can bury you. Getting trapped alone is how people die.",
+  "signs": ["Cracks you can fit a coin edge into, especially diagonal ones from the corners of doors and windows","Doors and windows that jam or have pulled out of square","Sagging, bouncy or bowed floors, ceilings and roofs","Fire damage: charred beams, or crumbling concrete with rusty steel showing","Water damage: stained, soft or rotten floors and ceilings, and mould","Leaning walls, bulging brickwork, fresh dust or creaking","Overloaded or bent shelving racks"],
+  "do": ["Look all the way around the outside before going in","Tell someone where you're going and when you'll be back; go in pairs","Know two ways out before you go deep inside","Test the floor ahead with a pole or bar","Walk close to walls, where floors are best supported","Leave at once if you hear creaking or see fresh dust falling"],
+  "dont": ["Don't enter buildings that have burned, flooded or been through an earthquake unless you must","Don't climb on rubble or collapsed stock","Don't pull or cut posts, beams or braces","Don't jump onto floors, or bunch several people on one spot","Don't go into basements under damaged buildings","Don't go in if you smell gas, and don't use flames or flick switches in a damaged building"],
+  "ppe": ["Hard hat","Boots with stiff soles","Gloves","Dust mask","Torch and spare batteries","Whistle"],
+  "firstAid": ["If someone is trapped, call for help and don't become a second casualty","Free a trapped person as quickly as you safely can, then get medical help","Dust in eyes: rinse with clean water","A head injury with confusion, vomiting or drowsiness needs urgent medical care","Someone pinned under heavy weight for a long time (often an hour or more) can collapse soon after being freed, and their kidneys can fail days later: keep them lying down and watched, and get medical help even if they seem fine"],
+  "refs": [
+    {"lib":"wikipedia","q":"Structural integrity and failure"}
+  ]
+}

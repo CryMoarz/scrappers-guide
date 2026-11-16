@@ -1,0 +1,14 @@
+{
+  "id": "spring",
+  "name": "Springs",
+  "group": "Mechanical",
+  "demand": 1,
+  "keywords": ["spring","springs","torsion spring","tension spring","compression spring","extension spring","coil spring","leaf spring","garage door spring","mattress spring","trampoline spring","spring steel"],
+  "substitutes": [],
+  "summary": "Coil, torsion, extension and leaf springs, from pen springs to garage door springs.",
+  "uses": ["Door closers, latches and tensioners","Suspension for carts and trailers","Spring steel for scrapers and tools","Mattress springs as wire stock"],
+  "identify": "Everywhere: mattresses, trampolines, recliners, screen doors, garage doors, vehicle suspension, cribs and toys. Garage door torsion springs sit on a bar above the door.",
+  "test": "Look for cracks and rust pits; a good spring returns to its exact length. Never release a garage door torsion spring or a vehicle coil spring without the right tools and training.",
+  "decay": {"halfLifeMonths":null,"note":"Lasts; rust pits can make springs snap."},
+  "hazards": ["spring"]
+}

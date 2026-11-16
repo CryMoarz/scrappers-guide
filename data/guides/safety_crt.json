@@ -1,0 +1,35 @@
+{
+  "id": "safety_crt",
+  "kind": "safety",
+  "title": "Take parts from a CRT TV or monitor safely",
+  "keywords": ["crt","crt tv","tube tv","picture tube","crt monitor","flyback","anode","anode cap","discharge crt","yoke","degaussing coil","old tv"],
+  "summary": "Old tube TVs and monitors hold copper coils, a flyback transformer, speakers and a power supply. But the tube can implode, and its anode can hold up to about 30 kV. Discharge the anode properly, never touch the neck, and leave the tube in one piece.",
+  "difficulty": 4,
+  "mins": 30,
+  "tools": ["screwdriver","security_bits","cutters","pliers","multimeter","desolder"],
+  "hazards": ["hv_cap","implosion","glass","lead","heavy","mains"],
+  "materials": [
+    {"item":"CRT discharge probe: a long plastic or dry wooden handle with a metal tip, wired with heavy insulated wire to a crocodile clip","qty":"1"},
+    {"item":"Resistor discharge tool for the power supply capacitors","fn":"resistor","qty":"1"},
+    {"item":"Clip lead to leave on the anode","fn":"wire_copper","qty":"1"},
+    {"item":"Old blanket","qty":"1"}
+  ],
+  "steps": [
+    {"text":"Unplug the set, and leave it unplugged for a few hours if you can. Put on goggles and gloves."},
+    {"text":"Lay it face-down on a blanket on a sturdy table and take the back cover off.","warn":"Lift by the cabinet or the tube's mounting ears, never by the thin neck at the back of the tube."},
+    {"text":"Find the anode: a thick lead from the flyback transformer to a rubber cup on the side of the tube. Find the tube's ground: a bare braid or springy wire running over the black coating on the tube, connected to the chassis."},
+    {"text":"Clip the discharge probe's lead firmly onto that ground braid, or onto the ground wire where it bolts to the chassis.","warn":"Clip to the tube's own ground, not to a mains earth pin or anything else."},
+    {"text":"Holding only the insulated handle, slide the metal tip under the edge of the rubber cup until it touches the metal clip inside. Hold it there for several seconds. A snap is normal.","warn":"Keep your other hand off the set and your body clear of the chassis."},
+    {"text":"Take the probe out, wait a minute, and do it again two or three more times. The tube's glass slowly pushes charge back onto the anode."},
+    {"text":"Press the rubber cup to one side and squeeze the clip through the rubber to free it, then lift the cup off. Touch the probe to the metal button on the tube again, and touch the loose anode clip to the ground braid.","warn":"Hold the cup only by the rubber, never by the metal clip or button."},
+    {"text":"No handheld meter can measure 25 kV, so repeated discharging is your proof. Hook a wire into the anode button and clip its other end to the ground braid, and leave it there while you work."},
+    {"text":"Discharge the big capacitors on the power supply board with the resistor tool and check them with your meter."},
+    {"text":"Take the boards, flyback transformer, speakers and degaussing coil (the coil of wire taped around the front edge of the tube). Leave the tube alone.","warn":"The deflection yoke sits on the neck. Removing it means working on the neck: skip it unless you really need its copper, and never lever against the neck."},
+    {"text":"Leave the tube face-down in its cabinet or a box, away from where people walk. Don't break it to get rid of it.","warn":"The funnel glass contains lead, and a broken tube throws glass."}
+  ],
+  "notes": "## What's worth taking\n\n| Part | Where | Good for |\n|---|---|---|\n| Degaussing coil | Loop of wire around the front of the tube | Copper wire, electromagnets |\n| Flyback transformer | Main board, joined to the anode lead | Ferrite core and fine wire |\n| Power supply section | Main board | Fuses, capacitors, diodes, transistors, heatsinks |\n| Speakers | Sides or front | Speakers, small magnets |\n| Mains lead and switch | Back and front | Wire and switch |\n| Deflection yoke | On the neck | Copper, but only if you can remove it without stressing the neck |\n\n## Why the anode is dangerous\n\nThe anode runs at roughly 20–30 kV in colour sets. The tube itself acts as a capacitor and holds that charge, sometimes for days or weeks. The energy is small compared with a microwave capacitor, but the shock is violent. The real danger is the jerk: your hand hits the neck, or you fall.\n\n## About the probe\n\nDischarge straight to the tube's own ground braid. Some people put a high-value, high-voltage resistor inside the probe to soften the discharge, but it must be rated for well over 30 kV. An ordinary resistor arcs straight across and does nothing.\n\n## Why not break the tube\n\nThe tube is under strong vacuum. A crack or a knock to the neck can make it implode and throw glass. The funnel glass is loaded with lead. Letting the vacuum out safely is a job for proper recyclers. Leave it whole.\n\n## Common mistakes\n\n- Picking the set up by the neck.\n- Clipping the probe to the wrong ground.\n- Thinking a TV unplugged for years must be safe.\n- Pulling the anode cup off before discharging.\n- Smashing the tube to get rid of it.",
+  "tree": {"era":3,"branch":"salvage","requires":["safety_discharge_capacitor"]},
+  "devices": ["crt_tv","arcade_cabinet"],
+  "parts": ["transformer_hv","ferrite_xfmr","wire_copper","speaker","cap_elec"],
+  "license": "CC-BY-SA-4.0"
+}

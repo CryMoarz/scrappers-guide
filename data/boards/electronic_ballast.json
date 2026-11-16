@@ -1,0 +1,16 @@
+{
+  "id": "electronic_ballast",
+  "name": "Electronic lamp ballast",
+  "notes": "Drives fluorescent tubes, compact fluorescents and UV-C lamps at high frequency. With no lamp fitted the output can reach several hundred volts.",
+  "comps": [
+    {"key":"fuse","fn":"fuse","spec":"Small fuse or fusible resistor","a":[1,3],"qty":1,"ext":2,"obs":5,"loc":"Input"},
+    {"key":"bridge_rect","fn":"bridge_rect","spec":"Bridge rectifier or four diodes","qty":1,"ext":2,"obs":5,"loc":"Input"},
+    {"key":"cap_elec","fn":"cap_elec","spec":"400V filter capacitor — discharge before handling","v":400,"qty":1,"ext":2,"obs":5,"loc":"Input side"},
+    {"key":"bjt","fn":"bjt","spec":"High-voltage switching transistors (13003/13005-type) or MOSFETs","qty":2,"ext":2,"obs":5,"loc":"Often clamped to the metal case"},
+    {"key":"ferrite_xfmr","fn":"ferrite_xfmr","spec":"Small ferrite toroid drive transformer","qty":1,"ext":2,"obs":5,"loc":"Between the transistors"},
+    {"key":"inductor","fn":"inductor","spec":"Ferrite resonant choke","qty":1,"ext":2,"obs":5,"loc":"Output side"},
+    {"key":"cap_film","fn":"cap_film","spec":"High-voltage film capacitors (resonant and DC-blocking)","qty":3,"ext":2,"obs":5,"loc":"Output side"},
+    {"key":"diode_rect","fn":"diode_rect","spec":"Fast diodes","qty":4,"ext":2,"obs":5,"loc":"Throughout"},
+    {"key":"ic_driver","fn":"ic_driver","spec":"Half-bridge ballast controller IC (newer units)","qty":1,"ext":3,"obs":5,"loc":"Board","p":0.5}
+  ]
+}

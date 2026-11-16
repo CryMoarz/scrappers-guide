@@ -1,0 +1,14 @@
+{
+  "id": "thermoelectric",
+  "name": "Peltier (thermoelectric) modules",
+  "group": "Heat",
+  "demand": 2,
+  "keywords": ["peltier","peltier module","peltier element","peltier cooler","tec","tec1-12706","12706","thermoelectric","thermoelectric module","thermoelectric cooler","thermoelectric generator","teg"],
+  "substitutes": ["compressor"],
+  "summary": "Flat ceramic squares that pump heat from one face to the other on DC, or make a little power from a temperature difference.",
+  "uses": ["Small cooler for medicine or drinks (power-hungry: about 50W for a small box)","Condensing water out of damp air","A few watts from a stove-top generator"],
+  "identify": "Thin white squares about 40 × 40 mm with a red and a black wire, often marked TEC1-12706 (12V, about 6A). Found in car and drinks coolers, small cosmetic or wine fridges and some dehumidifiers, always sandwiched between heatsinks and fans.",
+  "test": "Touch the wires to a 1.5–5V battery: one face should go cold and the other warm within seconds. Never run one at 12V without a heatsink: the hot side burns you and the module dies in seconds.",
+  "decay": {"halfLifeMonths":null,"note":"Lasts if kept dry; damp can get past the edge seal."},
+  "hazards": ["burn"]
+}

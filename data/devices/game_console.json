@@ -1,0 +1,46 @@
+{
+  "id": "game_console",
+  "name": "Game consoles and controllers",
+  "group": "Electronics and office",
+  "aliases": ["video game console","games console","gaming console","handheld console","game controller","playstation","xbox","steam deck"],
+  "brands": ["Sony","Microsoft","Nintendo","Atari","8BitDo","Logitech"],
+  "era": "1980s–present",
+  "prev": 5,
+  "tools": ["screwdriver","security_bits"],
+  "mins": 20,
+  "kg": 2.7,
+  "repairs": {"records":1481,"fixed":0.43,"end_of_life":0.25},
+  "materials": {"aluminium":0.24,"copper":0.059,"steel":0.85,"plastic":0.93,"boards":0.45,"other":0.17},
+  "hazards": ["li_fire","laser"],
+  "comps": [
+    {"key":"battery_li","fn":"battery_li","spec":"Lithium packs in wireless controllers (about 500–2,000 mAh) and handhelds (about 3,000–5,500 mAh)","v":[3.7,7.7],"ah":[0.5,5.5],"qty":2,"ext":2,"obs":4,"loc":"Inside controllers and handhelds"},
+    {"key":"heatsink","fn":"heatsink","spec":"Heavy copper and aluminium heatsink, often with heat pipes","qty":1,"ext":2,"obs":4,"loc":"On the main chip","kg":0.5},
+    {"key":"fan","fn":"fan","spec":"Large 12V blower or axial fan","v":12,"qty":1,"ext":1,"obs":4,"loc":"Inside the case"},
+    {"key":"laser_diode","fn":"laser_diode","spec":"Blu-ray and DVD laser diodes in the disc drive (405–650 nm) — never look into one powered","qty":1,"ext":3,"obs":5,"loc":"Optical pickup in the disc drive"},
+    {"key":"motor_dc_small","fn":"motor_dc_small","spec":"Rumble motors with offset weights, plus disc and tray motors","v":[3,5],"qty":4,"ext":2,"obs":5,"loc":"Controller grips and disc drive"},
+    {"key":"magnet_strong","fn":"magnet_strong","spec":"Neodymium magnets in the internal hard drive (many models)","qty":2,"ext":2,"obs":5,"loc":"Internal 2.5 in hard drive","p":0.75},
+    {"key":"hall_reed","fn":"hall_reed","spec":"Hall-effect sticks or triggers on some controllers; lid sensor in clamshell handhelds","qty":1,"ext":4,"obs":5,"loc":"Controllers and handheld hinges","p":0.5}
+  ],
+  "boards": [
+    {"id":"motherboard","qty":1,"loc":"Main board in home consoles","p":0.8},
+    {"id":"smps_board","qty":1,"loc":"Internal power supply (some use an external brick)","p":0.7},
+    {"id":"battery_bms","qty":1,"loc":"Controller and handheld packs","p":0.8}
+  ],
+  "buildings": [
+    {"b":"house","l":5},
+    {"b":"apartment","l":5},
+    {"b":"electronics","l":5},
+    {"b":"department","l":4},
+    {"b":"mall","l":4},
+    {"b":"toy_store","l":3},
+    {"b":"self_storage","l":3},
+    {"b":"recycling","l":3},
+    {"b":"church","l":2},
+    {"b":"nursing_home","l":2},
+    {"b":"makerspace","l":2}
+  ],
+  "sources": [
+    {"title":"Weight: game consoles averaged 2.7 kg (Babbitt et al. 2020, disassembly-based bill of materials data for consumer electronics, CC0)","url":"https://doi.org/10.6084/m9.figshare.11306792"},
+    {"title":"Open Repair Alliance, Open Repair Data v0.3 (community repair events, 2012 to July 2026; CC BY-SA 4.0): 1,481 repairs recorded as Games console","url":"https://github.com/openrepair/data"}
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "id": "biohazard",
+  "label": "Medical waste and sharps",
+  "severity": 3,
+  "summary": "Used needles, scalpels, blood, body fluids, medical waste, sewage and human or animal remains can carry hepatitis, HIV, tetanus and gut infections. Hospitals, clinics, nursing homes, pharmacies and abandoned homes all have them.",
+  "signs": ["Yellow or red bins and bags, often with the biohazard symbol","Sharps boxes and loose needles","Bloody dressings, tubing and swabs","Sewage, overflowing toilets and standing dirty water","Dead animals or human remains; flies and a sweet rotten smell","Mouse or rat droppings, nests and urine stains, especially in closed-up rooms, sheds, cabins and vehicles"],
+  "do": ["Wear thick gloves and pick up needles with pliers or tongs","Drop needles point-first into a hard plastic bottle with a screw lid","Assume all blood and body fluid is infectious","Wash hands with soap and water after any contact, even with gloves on","Keep sewage and remains well away from water sources","Leave remains alone, or move them only with gloves, a mask and help","Air out rooms with rodent droppings for 30 minutes, then soak droppings and nests with 1 part bleach to 10 parts water for 5 minutes and wipe up with gloves; never sweep or vacuum them dry"],
+  "dont": ["Don't reach blindly into bins, bags, drawers or between cushions","Don't recap, bend or break needles","Don't open sharps boxes","Don't eat or drink in contaminated rooms"],
+  "ppe": ["Thick puncture-resistant gloves over nitrile gloves","Safety glasses","A mask","Boots with stiff soles"],
+  "firstAid": ["Needle stick or cut: let it bleed freely and wash with soap and running water; don't suck or scrub it","Blood or fluid in eyes or mouth: rinse with plenty of clean water","Get medical help as soon as you can: medicine to prevent HIV has to start within 72 hours, and sooner is better","Watch any wound for redness, swelling, pus or fever","Fever and muscle aches followed by a cough or breathlessness 1–8 weeks after cleaning up rodent mess needs urgent medical care (hantavirus)"],
+  "refs": [
+    {"lib":"wikimed","q":"Sharps waste"},
+    {"lib":"wikipedia","q":"Sharps waste"}
+  ]
+}

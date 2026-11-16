@@ -1,0 +1,28 @@
+{
+  "id": "exercise_bike",
+  "name": "Exercise bike or elliptical",
+  "group": "Leisure and fitness",
+  "aliases": ["spin bike","stationary bike"],
+  "brands": ["Peloton","NordicTrack","Schwinn","Echelon","Sunny Health & Fitness","Life Fitness","Bowflex"],
+  "prev": 4,
+  "tools": ["screwdriver","socket"],
+  "mins": 30,
+  "hazards": [],
+  "comps": [
+    {"key":"magnet_strong","fn":"magnet_strong","spec":"Eddy-current resistance magnets","qty":4,"ext":2,"obs":5,"loc":"Around the flywheel"},
+    {"key":"alternator","fn":"alternator","spec":"Self-powered generator (some models)","w":[100,300],"qty":1,"ext":3,"obs":5,"loc":"Flywheel housing","p":0.5},
+    {"key":"belt_pulley","fn":"belt_pulley","spec":"Belt or chain drive and heavy flywheel","qty":1,"ext":2,"obs":4,"loc":"Body"},
+    {"key":"bearing","fn":"bearing","spec":"Bearings","qty":4,"ext":3,"obs":4,"loc":"Cranks and flywheel"},
+    {"key":"display","fn":"display","spec":"Console display","qty":1,"ext":1,"obs":4,"loc":"Handlebars"}
+  ],
+  "boards": [
+    {"id":"mcu_board","qty":1,"loc":"Console","p":1}
+  ],
+  "buildings": [
+    {"b":"gym","l":5},
+    {"b":"house","l":3},
+    {"b":"hotel","l":4},
+    {"b":"apartment","l":3},
+    {"b":"school","l":2}
+  ]
+}

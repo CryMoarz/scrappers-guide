@@ -1,0 +1,17 @@
+{
+  "id": "power_bank_anker_a1263",
+  "device": "power_bank",
+  "brand": "Anker",
+  "model": "PowerCore 10000 (A1263)",
+  "years": "2016-2019",
+  "notes": "The model was produced between 2016 and 2019 and sold through 2022.",
+  "research": {"checked":"2026-11-11","method":["Lumafield CT-scanned five units (PB1-PB5; PB1, PB2, PB3 recalled) and found three 18650 cells in each.","CPSC gives the US online sale window as June 2016 to December 2022."]},
+  "comps": [
+    {"key":"battery_li","conf":"documented","spec":"Three 18650 lithium-ion cells per unit; cells from at least two suppliers; at least two cell versions. PB3 (recalled) cells have a mandrel, reinforcement foil and three larger vent openings; PB1, PB2, PB4, PB5 have four smaller ones.","source":"https://www.lumafield.com/article/what-went-wrong-inside-these-recalled-power-banks"},
+    {"key":"b:battery_bms:wire_copper","conf":"documented","spec":"Tab bus bars connect the cell terminals in all five units. PB1-PB3 (recalled) use flat tab wire for the entire connection to the PCB; PB4 and PB5 use conventional insulated wires. Positive-to-negative bus bar gap: 0.52 mm (PB1), 1.12 mm (PB2), 1.58 mm (PB3).","source":"https://www.lumafield.com/article/what-went-wrong-inside-these-recalled-power-banks"}
+  ],
+  "sources": [
+    {"title":"Lumafield: What Went Wrong Inside These Recalled Power Banks (CT scan of PowerCore 10000 A1263, units PB1-PB5)","url":"https://www.lumafield.com/article/what-went-wrong-inside-these-recalled-power-banks"},
+    {"title":"CPSC recall notice: Anker PowerCore 10000 model A1263, June 12 2025","url":"https://cpsc.gov/Recalls/2025/More-than-One-Million-Anker-Power-Banks-Recalled-Due-to-Fire-and-Burn-Hazards-Manufactured-by-Anker-Innovations"}
+  ]
+}

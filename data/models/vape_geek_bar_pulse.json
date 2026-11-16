@@ -1,0 +1,18 @@
+{
+  "id": "vape_geek_bar_pulse",
+  "device": "vape",
+  "brand": "Geek Bar",
+  "model": "Pulse",
+  "notes": "The battery is internal and rechargeable, with a USB Type-C connection.",
+  "research": {"checked":"2026-11-11","gaps":["Battery chemistry is not stated.","It identifies no chips and does not mention the battery or USB-C port."],"method":["IFixit product page gives a 650 mAh internal battery, rechargeable, with a USB Type-C connection.","The iFixit teardown names a circuit board in an L-shaped plastic holder and a basket-style heater with a flat wick."]},
+  "comps": [
+    {"key":"battery_li","conf":"documented","spec":"650 mAh internal battery, rechargeable (chemistry not stated)","ah":0.65,"source":"https://www.ifixit.com/Device/Geek_Bar_Pulse"},
+    {"key":"b:li_charger_small:connector","conf":"documented","spec":"USB Type-C charging connection","source":"https://www.ifixit.com/Device/Geek_Bar_Pulse"},
+    {"key":"wire_copper","conf":"documented","spec":"Basket-style heater unit with flat wick; resistance readings of 1.1, 1.1 and 2.2 ohms across three wire pairs","source":"https://www.ifixit.com/Teardown/Geek+Bar+Pulse+Teardown/173552"},
+    {"key":"board_pcb","fn":"controller_board","spec":"Circuit board held in an L-shaped plastic holder","qty":1,"ext":2,"obs":2,"conf":"documented","source":"https://www.ifixit.com/Teardown/Geek+Bar+Pulse+Teardown/173552"}
+  ],
+  "sources": [
+    {"title":"Geek Bar Pulse device page (iFixit)","url":"https://www.ifixit.com/Device/Geek_Bar_Pulse"},
+    {"title":"Geek Bar Pulse teardown guide (iFixit)","url":"https://www.ifixit.com/Teardown/Geek+Bar+Pulse+Teardown/173552"}
+  ]
+}

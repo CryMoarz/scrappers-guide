@@ -1,0 +1,33 @@
+{
+  "id": "battery_yard_ego_lm2000e",
+  "device": "battery_yard",
+  "brand": "EGO",
+  "model": "LM2000E",
+  "notes": "EGO 56 volt lithium-ion cordless mower LM2000E, 51 cm deck. The LM2000E packing list does not include a battery or charger.",
+  "research": {"checked":"2026-11-12","gaps":["The same switch part number 4870501000 appears as 'Position Switch' (page 17), 'Push switch' (page 57) and 'Main switch' (page 95, with the same 25 A ratings), so the mower may use it in more than one place, but no quantity is given.","Motor type: neither manual says brushed or brushless, so it is filed as a large DC motor and motor_bldc is not claimed.","The resistor's purpose is not stated.","No chip-level parts documented."],"method":["Main source: EGO's LM2000E repair manual ('Repair Guideline, Lawn Mower_LM2000E', version 1, 03/12/2015, 142 pages) read page by page on ManualsLib on 2026-11-12.","ManualsLib's text separates table columns, so rows were aligned by position (description and part-number lists have equal lengths) and the switch and resistor ratings on page 57 were matched to their rows by where they fall between the part numbers (resistor 0.5 ohm 60 W, push switch 25 A).","The product description is from the operator's manual.","Operator's manual (EGO Australia download, model LM2000E) gives 56 V, 3300/min no-load speed and a blade brake for the mower, and lists the compatible battery packs and chargers.","The repair manual calls it a 'DC Motor Assembly' and tests it by connecting its two motor cables to a 43 VDC supply (page 76: https://www.manualslib.com/manual/2306205/Ego-Lm2000e.html?page=76).","The repair manual has four screws in the PCB removed to take it off the motor, and two 'magnet rings' taken off the red and black cables (page 77), and has a 'big resistor' cut free of zip ties on the motor body (page 60: https://www.manualslib.com/manual/2306205/Ego-Lm2000e.html?page=60).","Troubleshooting (page 4) says three terminals connect the battery to the main PCB."]},
+  "comps": [
+    {"key":"controller_board","conf":"documented","spec":"PCB Assembly, part no. 2830052000; the manual lists the 10-pin cable 4930490000 among parts that can be replaced along with it","source":"https://www.manualslib.com/manual/2306205/Ego-Lm2000e.html?page=57"},
+    {"key":"motor_dc_large_deck","fn":"motor_dc_large","spec":"DC Motor Assembly, part no. 2823675000","qty":1,"ext":2,"obs":2,"conf":"documented","source":"https://www.manualslib.com/manual/2306205/Ego-Lm2000e.html?page=75"},
+    {"key":"resistor_power","fn":"resistor","spec":"Power resistor, part no. 4970295000, 0.5 ohm +/-10%, 60 W","w":60,"ext":2,"obs":4,"conf":"documented","source":"https://www.manualslib.com/manual/2306205/Ego-Lm2000e.html?page=57"},
+    {"key":"switch_power","fn":"switch","spec":"Push switch, part no. 4870501000, rated 25 A 50 VDC 1E4 (TUV/CE) and 25 A 60 VDC 1E4 (UL/cUL)","a":25,"v":[50,60],"ext":2,"obs":3,"conf":"documented","source":"https://www.manualslib.com/manual/2306205/Ego-Lm2000e.html?page=57"},
+    {"key":"switch_limit","fn":"switch","spec":"Micro switch, part no. 4870500000, inside the left beam housing set; the same page lists switch actuator 3126768000","qty":1,"ext":3,"obs":4,"conf":"documented","source":"https://www.manualslib.com/manual/2306205/Ego-Lm2000e.html?page=117"},
+    {"key":"switch_film","fn":"switch","spec":"LED film switch button ('Film Switch'), part no. 4870499000","qty":1,"ext":2,"obs":4,"conf":"documented","source":"https://www.manualslib.com/manual/2306205/Ego-Lm2000e.html?page=48"},
+    {"key":"led_light_headlight","fn":"led_light","spec":"LED Light Assembly, part no. 2823665000","qty":1,"ext":2,"obs":3,"conf":"documented","source":"https://www.manualslib.com/manual/2306205/Ego-Lm2000e.html?page=41"},
+    {"key":"inductor_magnet_ring","fn":"inductor","spec":"Magnet Ring, part no. 3680152000; two sit on the red and black cables, taken off after the PCB is removed from the motor","qty":2,"ext":1,"obs":4,"conf":"documented","source":"https://www.manualslib.com/manual/2306205/Ego-Lm2000e.html?page=77"},
+    {"key":"connector_battery","fn":"connector","spec":"Battery Compartment Assembly, part no. 2823667000","qty":1,"ext":2,"obs":3,"conf":"documented","source":"https://www.manualslib.com/manual/2306205/Ego-Lm2000e.html?page=88"},
+    {"key":"battery_li","conf":"documented","spec":"Not in the LM2000E packing list; the operator's manual names battery packs BA1120E, BA1400, BA2240E, BA2800, BA3360 and BA4200 (chargers CH5500E, CH2100E) for this lithium-ion mower","source":"https://egopowerplus.com.au/mpattachment/file/download/id/670"}
+  ],
+  "sources": [
+    {"title":"EGO LM2000E repair manual, 'Repair Guideline, Lawn Mower_LM2000E', version 1, 03/12/2015 (ManualsLib, 142 pages)","url":"https://www.manualslib.com/manual/2306205/Ego-Lm2000e.html"},
+    {"title":"EGO LM2000E repair manual p. 41, LED Light Assembly part number (ManualsLib)","url":"https://www.manualslib.com/manual/2306205/Ego-Lm2000e.html?page=41"},
+    {"title":"EGO LM2000E repair manual p. 48, LED film switch part number (ManualsLib)","url":"https://www.manualslib.com/manual/2306205/Ego-Lm2000e.html?page=48"},
+    {"title":"EGO LM2000E repair manual p. 57, PCB assembly, resistor and push switch part numbers and ratings (ManualsLib)","url":"https://www.manualslib.com/manual/2306205/Ego-Lm2000e.html?page=57"},
+    {"title":"EGO LM2000E repair manual p. 60, PCB assembly replacement, resistor on motor body (ManualsLib)","url":"https://www.manualslib.com/manual/2306205/Ego-Lm2000e.html?page=60"},
+    {"title":"EGO LM2000E repair manual p. 75, DC motor assembly part number (ManualsLib)","url":"https://www.manualslib.com/manual/2306205/Ego-Lm2000e.html?page=75"},
+    {"title":"EGO LM2000E repair manual p. 76, motor test at 43 VDC (ManualsLib)","url":"https://www.manualslib.com/manual/2306205/Ego-Lm2000e.html?page=76"},
+    {"title":"EGO LM2000E repair manual p. 77, magnet rings on the red and black cables (ManualsLib)","url":"https://www.manualslib.com/manual/2306205/Ego-Lm2000e.html?page=77"},
+    {"title":"EGO LM2000E repair manual p. 88, battery compartment assembly (ManualsLib)","url":"https://www.manualslib.com/manual/2306205/Ego-Lm2000e.html?page=88"},
+    {"title":"EGO LM2000E repair manual p. 117, left/right beam housing and micro switch (ManualsLib)","url":"https://www.manualslib.com/manual/2306205/Ego-Lm2000e.html?page=117"},
+    {"title":"EGO 56 Volt Lithium-Ion Cordless Mower LM2000E operator's manual (EGO Australia download)","url":"https://egopowerplus.com.au/mpattachment/file/download/id/670"}
+  ]
+}

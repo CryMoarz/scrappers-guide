@@ -1,0 +1,14 @@
+{
+  "id": "hose_tubing",
+  "name": "Hoses and tubing",
+  "group": "Fluids",
+  "demand": 2,
+  "keywords": ["hose","tubing","tube","copper pipe","pipe","copper tubing","garden hose","silicone tube","vinyl tube","pvc pipe","pex","fuel line","air hose","drain hose","flexible hose","line set","pipe fitting","hose fitting"],
+  "substitutes": [],
+  "summary": "Hoses, tubing and pipe: garden hose, PVC, PEX, silicone, copper and fuel line.",
+  "uses": ["Moving water from tanks, gutters and creeks","Siphoning and fuel transfer","Plumbing repairs","Coils for solar water heaters"],
+  "identify": "Garden hoses, washer and dishwasher hoses, fridge water lines, aquarium tubing, car coolant and fuel hoses, and plumbing pipe in every building. Copper tubing comes from plumbing, AC line sets and fridges; charged AC and fridge lines still hold refrigerant, so don’t cut them.",
+  "test": "Run water through and look for cracks, bulges and kinks. Rubber that is hard or cracks when bent will leak.",
+  "decay": {"halfLifeMonths":120,"note":"Rubber and PVC hose harden and crack with age; copper and PEX last."},
+  "hazards": ["refrigerant"]
+}

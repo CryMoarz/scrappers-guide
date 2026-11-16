@@ -1,0 +1,16 @@
+{
+  "id": "acid",
+  "label": "Battery acid",
+  "severity": 3,
+  "summary": "Lead-acid batteries hold sulphuric acid that burns skin and eyes and eats clothing and metal. When charging, and especially when overcharged, they give off hydrogen, which explodes from a single spark.",
+  "signs": ["White, grey or blue crust on the terminals or the tray","Wet, sticky or stained case, or a puddle under the battery","Cracked, bulging or melted case","Rotten-egg smell near a battery on charge: it is being overcharged","Holes in clothing or rust spots on metal around old batteries"],
+  "do": ["Wear eye protection whenever you handle a lead-acid battery","Keep the battery upright when you carry it","Keep a bucket of clean water and a box of baking soda nearby","Neutralise spills on the ground or on tools with baking soda and water until the fizzing stops, then rinse","Charge in a ventilated space, away from sparks and flames","Connect the charger clips before switching the charger on; switch it off before you take them off","On a vehicle, take the earth lead (the one bolted to the body or engine) off first and put it back last; on almost all vehicles that is the negative"],
+  "dont": ["Don't lean over the battery while connecting or disconnecting anything","Don't smoke, grind or use flames near batteries on charge","Don't charge a battery that is frozen, cracked or bulging","Don't let a wrench or other metal bridge the terminals: it can weld on and throw molten metal","Don't put baking soda in eyes or on skin: use plain water"],
+  "ppe": ["Safety glasses or goggles","Rubber or nitrile gloves","Long sleeves, ideally old clothes you don't mind losing"],
+  "firstAid": ["Acid on skin: rinse with plenty of clean water for at least 20 minutes and take off soaked clothing","Acid in an eye: rinse with clean running water for at least 15 minutes, holding the lids open, then get medical help","Swallowed acid: rinse the mouth; if they are fully awake and can swallow, give a few small sips of water or milk; don't make them vomit and don't give baking soda; get medical help","Burns that blister, are bigger than the person's palm, or involve the eyes need real medical care"],
+  "refs": [
+    {"lib":"nomad_conditions","q":"burns","path":"burns","note":"First aid and over-the-counter treatment on a NOMAD box"},
+    {"lib":"wikimed","q":"Chemical burn"},
+    {"lib":"wikipedia","q":"Chemical burn"}
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "id": "magnet_pinch",
+  "label": "Strong magnets",
+  "severity": 3,
+  "summary": "Neodymium magnets from hard drives, speakers, motors, hub motors and wind turbines snap together hard enough to pinch, cut or break fingers. They are brittle and can shatter, throwing sharp chips. They upset pacemakers and implanted defibrillators, and two small magnets swallowed by a child can pull together through the gut.",
+  "signs": ["Shiny silver or nickel-plated blocks, arcs and discs","A part that pulls hard on tools or snaps to steel","Hard drive head magnets, speaker magnets, and the rotors of hub motors and brushless motors","Big motors from treadmills, e-bikes, washers and generators"],
+  "do": ["Handle one magnet at a time","Slide magnets apart sideways; don't try to pull them straight apart","Keep spacers of wood or plastic between stored magnets","Store them away from electronics, cards, compasses and loose steel tools","Keep them well away from anyone with a pacemaker or implanted defibrillator"],
+  "dont": ["Don't let two strong magnets jump together, or bring one near steel with your fingers in the way","Don't carry big magnets in your pockets","Don't give small magnets to children","Don't grind, drill or cut them: they shatter, and the dust can catch fire","Don't heat them; they lose strength well below red heat"],
+  "ppe": ["Safety glasses","Thick gloves for big magnets"],
+  "firstAid": ["Pinched finger: slide the magnets apart, or lever them with a wooden wedge; don't yank","Cool and raise a pinched finger, and check for a break","A child who swallowed two or more magnets, or a magnet and a metal object, needs urgent medical care even without symptoms","Chips in skin: treat like glass splinters. Chips in an eye: don't rub; rinse out loose specks with clean water, but if a chip is stuck or the eye is cut, don't rinse or remove it: shield the eye without pressing and get medical help"],
+  "refs": [
+    {"lib":"nomad_conditions","q":"wounds cuts","path":"wounds-cuts","note":"First aid and over-the-counter treatment on a NOMAD box"},
+    {"lib":"wikipedia","q":"Neodymium magnet"}
+  ]
+}

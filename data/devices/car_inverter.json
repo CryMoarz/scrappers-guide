@@ -1,0 +1,28 @@
+{
+  "id": "car_inverter",
+  "name": "Car power inverter (12V to 120V)",
+  "group": "Power and solar",
+  "aliases": ["pure sine wave inverter","dc to ac inverter"],
+  "brands": ["Bestek","Whistler","Renogy","Krieger","Ampeak","GO POWER!"],
+  "prev": 3,
+  "tools": ["screwdriver"],
+  "mins": 15,
+  "hazards": [],
+  "comps": [
+    {"key":"inverter","fn":"inverter","spec":"Modified or pure-sine inverter, 150–2,000W","w":[150,2000],"qty":1,"ext":1,"obs":3,"loc":"The whole unit"},
+    {"key":"fuse","fn":"fuse","spec":"Blade fuses","a":[15,40],"qty":3,"ext":1,"obs":4,"loc":"Inside or on the end panel"},
+    {"key":"fan","fn":"fan","spec":"12V cooling fan","v":12,"qty":1,"ext":1,"obs":4,"loc":"End panel"}
+  ],
+  "boards": [
+    {"id":"inverter_board","qty":1,"loc":"Inside the case","p":1}
+  ],
+  "buildings": [
+    {"b":"auto_parts","l":5},
+    {"b":"hardware","l":4},
+    {"b":"garage_res","l":3},
+    {"b":"gas_station","l":4},
+    {"b":"house","l":2},
+    {"b":"campground","l":3},
+    {"b":"rv_dealer","l":3}
+  ]
+}

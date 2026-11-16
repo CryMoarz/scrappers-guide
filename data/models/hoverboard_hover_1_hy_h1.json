@@ -1,0 +1,24 @@
+{
+  "id": "hoverboard_hover_1_hy_h1",
+  "device": "hoverboard",
+  "brand": "Hover-1",
+  "model": "HY-H1",
+  "notes": "Model HY-H1.",
+  "research": {"checked":"2026-11-11","gaps":["Headlight count is inconsistent: the intro says four and the Background says eight customizable headlights, so the led_light spec quotes both.","Battery capacity is uncertain: eRideHero gives 4 Ah, which conflicts with the 4.3 Ah figure.","The battery guide does not say where on the board the connector sits."],"method":["The iFixit device page names model HY-H1 and gives a 36 V 4.3 Ah battery, a Bluetooth capable speaker and replacement guides for the battery, charging port, gyroscope sensor assemblies, LED headlights, power button and shell.","ERideHero lists a 400 W motor and a 144 Wh / 36 V / 4 Ah battery.","The eRideHero page names the product only as Hover-1 H1 and does not print the model number HY-H1.","The iFixit battery guide unplugs the orange connector after lifting the bottom shell.","Not source facts."]},
+  "comps": [
+    {"key":"battery_li","conf":"documented","spec":"36 V rechargeable lithium-ion battery, 4.3 Ah, with overcharge and discharge protection.","v":36,"ah":4.3,"source":"https://www.ifixit.com/Device/Hover-1_H1"},
+    {"key":"motor_bldc","conf":"documented","spec":"400 W motor, as listed (\"400W motor\", singular). Number of motors and motor type not stated.","w":400,"source":"https://eridehero.com/products/hover-1-h1/"},
+    {"key":"sensor_misc","conf":"documented","spec":"Two gyroscope sensor assemblies (iFixit guide title), one on the battery side and one on the motherboard side. After the bottom shell is lifted off and the battery is unplugged (not removed), each is removed by lifting and pulling it away from the hoverboard.","source":"https://www.ifixit.com/Guide/Hover-1+H1+Gyroscope+Sensor+Assemblies+Replacement/114377"},
+    {"key":"led_light","conf":"documented","spec":"LED headlights. iFixit lists an \"LED Headlights\" replacement guide for the H1. The device page gives the headlight count twice and inconsistently: \"four headlights on both sides of the shell\" (intro) and \"eight customizable headlights\" (Background).","source":"https://www.ifixit.com/Device/Hover-1_H1"},
+    {"key":"speaker","conf":"documented","spec":"Bluetooth-capable speaker.","source":"https://www.ifixit.com/Device/Hover-1_H1"},
+    {"key":"connector_battery","fn":"connector","spec":"Orange battery connector, released by pulling gently on both sides of it.","qty":1,"ext":1,"obs":2,"loc":"under the bottom shell (reached after the shell is lifted off)","conf":"documented","source":"https://www.ifixit.com/Guide/Hover-1+H1+Battery+Replacement/114612"},
+    {"key":"connector_charge","fn":"connector","spec":"Charging port. iFixit lists a \"Charging Port\" replacement guide for the H1.","qty":1,"ext":1,"obs":2,"conf":"documented","source":"https://www.ifixit.com/Device/Hover-1_H1"},
+    {"key":"switch_power","fn":"switch","spec":"Power button. iFixit lists a \"Power Button\" replacement guide for the H1.","qty":1,"ext":1,"obs":2,"conf":"documented","source":"https://www.ifixit.com/Device/Hover-1_H1"}
+  ],
+  "sources": [
+    {"title":"iFixit: Hover-1 H1 device page (states Model: HY-H1)","url":"https://www.ifixit.com/Device/Hover-1_H1"},
+    {"title":"iFixit: Hover-1 H1 Battery Replacement guide","url":"https://www.ifixit.com/Guide/Hover-1+H1+Battery+Replacement/114612"},
+    {"title":"iFixit: Hover-1 H1 Gyroscope Sensor Assemblies Replacement guide","url":"https://www.ifixit.com/Guide/Hover-1+H1+Gyroscope+Sensor+Assemblies+Replacement/114377"},
+    {"title":"eRideHero: Hover-1 H1 product specifications","url":"https://eridehero.com/products/hover-1-h1/"}
+  ]
+}

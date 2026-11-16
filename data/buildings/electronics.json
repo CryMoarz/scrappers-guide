@@ -1,0 +1,6 @@
+{
+  "id": "electronics",
+  "name": "Electronics and phone stores",
+  "osm": ["shop=electronics","shop=computer","shop=mobile_phone","shop=telecommunication","craft=electronics_repair","shop=video_games","shop=hifi","shop=camera","shop=photo","shop=video"],
+  "exposure": 5
+}

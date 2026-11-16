@@ -1,0 +1,6 @@
+{
+  "id": "gas_station",
+  "name": "Gas stations and truck stops",
+  "osm": ["amenity=fuel"],
+  "exposure": 5
+}

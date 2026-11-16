@@ -1,0 +1,15 @@
+{
+  "id": "shopping_cart_wanzl_hybrid_hc20",
+  "device": "shopping_cart",
+  "brand": "Wanzl",
+  "model": "Hybrid HC20 (sheet 1787)",
+  "notes": "A steel tube frame carrying a one-piece molded resin basket. The figures are from the June 2024 North American sheet (form 1787).",
+  "research": {"checked":"2026-11-12","gaps":["The sheet names only rear fixed casters and a rear roller lifter; caster size, count and bearing type are not given, so none are claimed.","Tube wall thickness and steel grade are not given beyond 'heavy-gauge oval tube'.","The text layer of page 3 reads 18,130 in3 total payload in one place; the rendered table shows 18,120 in3 (297 L), which is used.","The sheet is dated June 2024; no production years are given."],"method":["Wanzl Hybrid HC20 product sheet (PDF, form 1787, June 2024): read as text; the specs table on page 3 read from a rendered image."]},
+  "comps": [
+    {"key":"tube_frame","conf":"documented","spec":"Heavy-gauge oval steel tube frame in Granite TECH-SEAL finish (three-year written warranty against spreading corrosion); one-piece molded resin basket attached without rivets. Total payload 18,120 cu in (297 L), top basket 11,120 cu in (182 L), nesting 10.5 in, weight 53.5 lb (24.3 kg).","source":"https://wanzl.com/Downloads/Prospekte/Retail/1787_Hybrid-HC20-Cart_US.pdf"},
+    {"key":"bearing","conf":"documented","spec":"Rear fixed casters, which a rear roller lifter raises when carts are nested.","source":"https://wanzl.com/Downloads/Prospekte/Retail/1787_Hybrid-HC20-Cart_US.pdf"}
+  ],
+  "sources": [
+    {"title":"Wanzl Hybrid HC20 shopping cart product sheet, form 1787 (June 2024), North America","url":"https://wanzl.com/Downloads/Prospekte/Retail/1787_Hybrid-HC20-Cart_US.pdf"}
+  ]
+}

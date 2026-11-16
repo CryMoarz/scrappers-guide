@@ -1,0 +1,6 @@
+{
+  "id": "pharmacy",
+  "name": "Pharmacies",
+  "osm": ["amenity=pharmacy","shop=chemist","shop=medical_supply","shop=nutrition_supplements"],
+  "exposure": 5
+}

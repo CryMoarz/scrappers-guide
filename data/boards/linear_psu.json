@@ -1,0 +1,12 @@
+{
+  "id": "linear_psu",
+  "name": "Linear power supply (older adapters and chargers)",
+  "notes": "Heavy iron transformer, simple and repairable.",
+  "comps": [
+    {"key":"transformer_lv","fn":"transformer_lv","spec":"Iron-core transformer","v":[6,24],"w":[3,30],"ac":true,"qty":1,"ext":2,"obs":3,"loc":"Most of the weight"},
+    {"key":"diode_rect","fn":"diode_rect","spec":"Rectifier diodes or bridge","qty":4,"ext":2,"obs":4,"loc":"After the transformer"},
+    {"key":"cap_elec","fn":"cap_elec","spec":"Filter capacitor","qty":1,"ext":2,"obs":4,"loc":"After the rectifier"},
+    {"key":"reg_linear","fn":"reg_linear","spec":"78xx or LM317 regulator (regulated models)","qty":1,"ext":2,"obs":4,"loc":"On a small heatsink","p":0.5},
+    {"key":"fuse","fn":"fuse","spec":"Thermal fuse buried in the transformer winding","a":[1,2],"qty":1,"ext":4,"obs":5,"loc":"Under the transformer tape"}
+  ]
+}

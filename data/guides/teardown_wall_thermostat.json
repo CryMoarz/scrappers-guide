@@ -1,0 +1,29 @@
+{
+  "id": "teardown_wall_thermostat",
+  "kind": "teardown",
+  "title": "Wall thermostat: take it off whole, then relays, sensor and display",
+  "keywords": ["thermostat teardown","wall thermostat removal","mercury thermostat","24v thermostat","baseboard heater thermostat","programmable thermostat","thermistor sensor","heating control switch"],
+  "summary": "A wall thermostat is a ready-made temperature switch: take it off whole to control a heater, incubator or greenhouse fan, or strip a digital one for relays, a sensor, a display and a radio. Allow about 10 minutes. Cut the power first, and handle old round-dial types gently so the mercury switch stays whole.",
+  "difficulty": 2,
+  "mins": 10,
+  "tools": ["screwdriver","pliers","cutters","multimeter","tape"],
+  "hazards": ["mercury","mains","glass"],
+  "materials": [],
+  "steps": [
+    {"text":"Switch off the power to the heating system at the breaker or fuse, and at the furnace or boiler switch. Prove it with a meter. Low-voltage thermostats run on 24 V from a small transformer that is itself wired to mains, and electric baseboard heaters use thermostats that carry full mains at the wall.","warn":"A line-voltage thermostat has 120-240 V on its terminals. Prove the wires dead with a meter before you touch them (see safety_mains_isolation)."},
+    {"text":"Work out the type. Three to five thin wires of different colours on terminals marked R, W, Y, G or C: low-voltage 24 V. Two or four thick wires joined with wire nuts, and a label such as 120/240 V and 20 A or more: line-voltage. A round dial or a lever with a coil behind the cover: an old mercury type."},
+    {"text":"Take the cover off. Digital ones pull or slide off the back plate or release with a clip at the top and bottom. Round dial types twist off or have a small screw under the dial. Look inside before you touch anything."},
+    {"text":"Photograph the wiring. Put a strip of tape on each wire and write on it the letter of the terminal it was on. Loosen each terminal screw or press the push-in tab and pull the wire free.","warn":"Don't let two bare 24 V wires touch: a short can blow the transformer fuse. Tape each bare end as you free it."},
+    {"text":"Undo the two screws that hold the back plate to the wall and take it off. Keep the screws and any wall anchors."},
+    {"text":"Mercury types: inside is a coil of two bonded metals and a small glass vial held in a clip, with a silver bead rolling inside. Don't pull the vial out. Unscrew the whole coil and bracket (or the whole mechanism) from the back plate as one piece and carry it level in a padded box.","warn":"The vial holds a few grams of mercury. If it breaks, open windows, leave for 15 minutes, don't vacuum or sweep, and pick the beads up with card and tape into a sealed jar. Keep jewellery well away."},
+    {"text":"Test the switch. Set the meter to continuity and touch the two switch terminals (R and W on a heat-only thermostat, or the two line terminals). Turn the dial or setting up and down past room temperature: the contacts should click and the meter should beep or stop beeping. For a digital model, give it batteries or 24 V AC from a doorbell transformer and watch for the click."},
+    {"text":"Digital and smart models: take out the batteries, then release the circuit board from its clips or screws. Find the relays (small blocks that click), the temperature sensor, the display and any radio module. Some smart models have a sealed rechargeable lithium cell; if it looks puffy, see safety_swollen_lithium. Keep a working board whole."},
+    {"text":"Check the temperature sensor. It is usually a small bead or a two-leg part on the board near a vent in the case. Set the meter to ohms: many read about 10 kilohms at room temperature and fall as you warm them with a finger. Cut or desolder it with 1 cm of leg if you want a spare."},
+    {"text":"Cut each wire 15 cm back from the thermostat so you keep a usable pigtail. Label the thermostat with its type and the volts and amps printed on its label. Bag the back plate and screws with it."}
+  ],
+  "notes": "## What's worth keeping and why\n\n- **A 24 V thermostat.** Its contacts are only good for about 1 A at 24 V AC. Use it to switch a relay or contactor, and let that switch the heater, fan or pump. Fed from a doorbell transformer, it makes a temperature controller for an incubator, a greenhouse vent fan or a small heater.\n- **A line-voltage thermostat.** Switches mains directly, often 15-22 A. Put it in series with a heater, incubator element or fan, in a closed box. Check the label for volts and amps first.\n- **Mercury tilt switch.** Works as a tilt switch or level alarm. Keep it whole and sealed. Don't use it anywhere the glass could be broken.\n- **Relays and sensor from digital models.** A 10 kilohm thermistor, a 10 kilohm resistor and a comparator or microcontroller make a thermostat for 12 V projects.\n- **Display and radio.** Keep a working display whole with its board. A Wi-Fi module won't do much without the maker's app.\n- **Thermostat wire.** Thin multicore cable, useful for sensors and low-voltage signals.\n\n## Variations\n\n- Heat pump and multi-stage thermostats have extra terminals (O/B, Y2, W2 and more). Photograph them before you disconnect.\n- Some digital models have no C wire and take their power from the heating circuit; they may not run on the bench without a 24 V supply.\n- Older gas furnace thermostats may have a heat anticipator, a tiny resistor with a slider. Leave it be.\n\n## What to leave\n\n- A broken mercury vial.\n- Display glass that is cracked.",
+  "tree": {"era":3,"branch":"salvage","requires":["safety_mains_isolation","skill_multimeter"]},
+  "devices": ["wall_thermostat"],
+  "parts": ["thermostat","switch","relay","sensor_misc","display","radio_rf"],
+  "license": "CC-BY-SA-4.0"
+}

@@ -1,0 +1,26 @@
+{
+  "id": "reference_what_fits",
+  "kind": "reference",
+  "title": "What fits what: standard parts and where to find them",
+  "keywords": ["bearing size","608 bearing","6203 bearing","v-belt size","18650","cr2032","bulb base","e26 e27","screw sizes","hose thread"],
+  "summary": "The standard numbers on bearings, belts, cells, bulbs, screws and fittings, how to read them, and which devices hold the common ones. A part with a standard number fits anything else that takes that number.",
+  "difficulty": 1,
+  "mins": 5,
+  "tools": ["multimeter"],
+  "hazards": [],
+  "materials": [],
+  "steps": [
+    {"text":"Clean the part and read the number printed or stamped on it."},
+    {"text":"If the number is gone, measure: bore, outside diameter and width for a bearing; top width and length for a belt; diameter and length for a cell."},
+    {"text":"Match the standard size, then check the rating (load, voltage, current) is at least what the new job needs."}
+  ],
+  "notes": "## Bearings\n\nMost are deep-groove ball bearings numbered 6xxx: 60xx is light, 62xx medium, 63xx heavy (same bore, bigger and stronger). The last two digits give the bore: 00 is 10 mm, 01 is 12, 02 is 15, 03 is 17, and from 04 up multiply by 5 (6204 is 20 mm, 6205 is 25 mm). Small three-digit ones end in the bore: 608 is 8 mm, 626 is 6 mm.\n\nSuffixes: Z or ZZ is a metal shield on one or both sides; RS or 2RS is a rubber seal, better against water and grit.\n\n| Bearing | Bore × outside × width | Common in |\n|---|---|---|\n| 608 | 8 × 22 × 7 mm | Skateboards, scooters, inline skates, fans, 3D printers |\n| 626 | 6 × 19 × 6 mm | Small motors, printers, power tools |\n| 6000 | 10 × 26 × 8 mm | Small motors and pumps |\n| 6201 | 12 × 32 × 10 mm | Motors, small wheels |\n| 6202 | 15 × 35 × 11 mm | Motors, pumps |\n| 6203 | 17 × 40 × 12 mm | Washing machine drums, motors |\n| 6204 | 20 × 47 × 14 mm | Washing machine drums, pumps |\n| 6205 | 25 × 52 × 15 mm | Front-load washer drums |\n| 6206 | 30 × 62 × 16 mm | Large front-load washer drums |\n\n## Belts\n\n- **V-belts**: the size is printed on the belt. Classical A is ½ in (13 mm) across the top and B 21/32 in (17 mm); the light-duty equivalents are 4L and 5L, and 3L is ⅜ in. Classical A and B numbers are the inside length in inches (A42 is about 44 in around the outside); 4L and 5L numbers are the outside length in tenths of an inch, so 4L420 is 42 in and matches an A40.\n- **Ribbed belts**: 6PK1200 is 6 ribs of the PK profile (cars), 1200 mm long. Dryers, washers and treadmills use finer PJ and PH ribs.\n- **Toothed (timing) belts**: the pitch must match the pulley: GT2 (2 mm) in 3D printers, HTD 3M and 5M in machines.\n\n## Cells and batteries\n\n| Cell | Size | Found in |\n|---|---|---|\n| 18650 | 18 × 65 mm, 3.6–3.7 V lithium-ion | Laptop packs, power tool and e-bike packs, power banks, flashlights |\n| 21700 | 21 × 70 mm, 3.6–3.7 V | Newer tool and e-bike packs, flashlights |\n| 14500 | AA size but 3.2–3.7 V | Flashlights, some solar lights. Never use where AA cells go |\n| CR2032 | 20 × 3.2 mm, 3 V lithium | Computer motherboards, key fobs, scales |\n| 12 V 7 Ah sealed lead-acid | About 151 × 65 × 94 mm | UPSes, alarm panels, emergency lights, kids' ride-ons |\n\n## Bulbs\n\n- **E26** (North America) and **E27** (Europe) screw bases fit each other in practice. A 120 V bulb burns out on 230 V; a 230 V bulb is dim or dead on 120 V.\n- **E12** (North America) and **E14** (Europe) are the small candelabra screws.\n- **GU10** twist-lock bulbs run on mains; **MR16** bulbs with two thin pins (GU5.3) run on 12 V.\n- Car bulbs 1156 and 1157 (BA15s, BAY15d) are 12 V and fit trailer and RV lights.\n\n## Screws and bits\n\n- M3 in electronics; M4 and M5 in appliances; M6 and M8 on furniture and machinery. PC cases and hard drives use 6-32 UNC and M3; camera tripods ¼-20 UNC.\n- Bits you will meet: Phillips, Pozidriv (extra lines in the cross), Torx T10–T25 in appliances, security Torx (pin in the middle), tri-wing (Nintendo), pentalobe (Apple).\n\n## Hoses and fittings\n\n- Garden hose thread (¾ in GHT in North America) is not pipe thread (NPT): they don't seal on each other. Washing machine inlet hoses use garden hose thread.\n- Fridge water lines are ¼ in tubing with compression or push-fit ends.\n- Propane: 20 lb barbecue tanks have an ACME outer thread; 1 lb camping cylinders a 1 in fine thread. Use proper adapters, never improvised ones.\n",
+  "tree": {"era":2,"branch":"salvage","requires":[]},
+  "parts": ["bearing","belt_pulley","battery_li","battery_coin","battery_pb","fasteners","hose_tubing","led_light"],
+  "license": "CC-BY-SA-4.0",
+  "sources": [
+    {"title":"ISO 15 / ISO 355 and bearing makers’ catalogues: boundary dimensions of deep-groove ball bearings"},
+    {"title":"RMA/MPTA belt standards: classical and light-duty V-belt sections"},
+    {"title":"IEC 60061: lamp caps and holders (E26, E27, GU10, GU5.3)"}
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "id": "wifi_router_d_link_dir_859_a1",
+  "device": "wifi_router",
+  "brand": "D-Link",
+  "model": "DIR-859 A1",
+  "fcc": "KA2IR859A1",
+  "notes": "Chips for hardware version A1; other versions of the DIR-859 can differ.",
+  "research": {"gaps":[],"method":["Not yet fact-checked: its parts show as likely until a fact-check confirms them against their sources.","Imported from the OpenWrt Table of Hardware (toh.json, 2026-11-13): the hardware data page for this version, by OpenWrt wiki contributors under CC BY-SA 4.0."]},
+  "comps": [
+    {"key":"ic_mcu_soc","fn":"ic_mcu","spec":"SoC Qualcomm Atheros QCA9563, 1 core at 750 MHz","qty":1,"ext":4,"obs":3,"source":"https://openwrt.org/toh/hwdata/d-link/d-link_dir-859_a1","conf":"likely"},
+    {"key":"ic_memory_flash","fn":"ic_memory","spec":"Flash, 16 MB","qty":1,"ext":2,"obs":4,"source":"https://openwrt.org/toh/hwdata/d-link/d-link_dir-859_a1","conf":"likely"},
+    {"key":"ic_memory_ram","fn":"ic_memory","spec":"RAM, 64 MB","qty":1,"ext":3,"obs":3,"source":"https://openwrt.org/toh/hwdata/d-link/d-link_dir-859_a1","conf":"likely"},
+    {"key":"radio_rf","spec":"Wi-Fi: Qualcomm Atheros QCA9563, Qualcomm Atheros QCA9880 (2.4 GHz b/g/n, 5 GHz a/n/ac)","qty":2,"source":"https://openwrt.org/toh/hwdata/d-link/d-link_dir-859_a1","conf":"likely"},
+    {"key":"psu","spec":"Power supply: 12 VDC, 1.5 A","v":12,"a":1.5,"source":"https://openwrt.org/toh/hwdata/d-link/d-link_dir-859_a1","conf":"likely"},
+    {"key":"connector","spec":"Ethernet ports: 5× gigabit","qty":5,"source":"https://openwrt.org/toh/hwdata/d-link/d-link_dir-859_a1","conf":"likely"}
+  ],
+  "sources": [
+    {"title":"OpenWrt Table of Hardware: D-Link DIR-859 A1 (OpenWrt wiki contributors, CC BY-SA 4.0)","url":"https://openwrt.org/toh/hwdata/d-link/d-link_dir-859_a1"}
+  ]
+}

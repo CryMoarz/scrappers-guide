@@ -1,0 +1,31 @@
+{
+  "id": "power_station",
+  "name": "Portable power station or jump starter",
+  "group": "Power and solar",
+  "aliases": ["jump box","solar generator"],
+  "brands": ["Jackery","EcoFlow","Bluetti","Anker","Goal Zero","Jump-N-Carry","NOCO","Schumacher","Vevor"],
+  "prev": 3,
+  "tools": ["screwdriver"],
+  "mins": 15,
+  "hazards": ["li_fire"],
+  "comps": [
+    {"key":"battery_li","fn":"battery_li","spec":"LiFePO4 or Li-ion pack","v":[11.1,51.2],"ah":[6,50],"qty":1,"ext":2,"obs":1,"loc":"Case"},
+    {"key":"inverter","fn":"inverter","spec":"Built-in pure-sine inverter","v":[12,51.2],"w":[300,3000],"ac":true,"qty":1,"ext":2,"obs":2,"loc":"Case"},
+    {"key":"charge_controller","fn":"charge_controller","spec":"Built-in MPPT solar input","qty":1,"ext":2,"obs":2,"loc":"Case"}
+  ],
+  "boards": [
+    {"id":"inverter_board","qty":1,"loc":"Inside the case","p":1},
+    {"id":"battery_bms","qty":1,"loc":"On the battery pack","p":1},
+    {"id":"mcu_board","qty":1,"loc":"Control board","p":1}
+  ],
+  "buildings": [
+    {"b":"house","l":3},
+    {"b":"garage_res","l":3},
+    {"b":"hardware","l":5},
+    {"b":"electronics","l":5},
+    {"b":"department","l":4},
+    {"b":"campground","l":3},
+    {"b":"rv_dealer","l":3},
+    {"b":"car_repair","l":3}
+  ]
+}

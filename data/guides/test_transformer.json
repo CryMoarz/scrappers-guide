@@ -1,0 +1,34 @@
+{
+  "id": "test_transformer",
+  "kind": "test",
+  "title": "Test a transformer",
+  "keywords": ["test transformer","transformer test","primary secondary","winding resistance","step down transformer","mains transformer","mot test","dim bulb tester","transformer output","burnt transformer","thermal fuse"],
+  "summary": "Work out which winding is which, check for broken windings and leaks between windings and to the core with a meter, then power-test mains transformers through a dim-bulb tester. Microwave oven transformers get resistance checks only.",
+  "difficulty": 3,
+  "mins": 20,
+  "tools": ["multimeter","screwdriver","cutters","pliers","tape"],
+  "hazards": ["mains","hv_cap","burn","heavy"],
+  "materials": [
+    {"item":"Dim-bulb tester: an old-style filament bulb of 40–100 W in an insulated holder, wired in series with the transformer's mains lead","qty":"1","optional":true},
+    {"item":"Fuse and holder rated for the transformer","fn":"fuse","qty":"1"},
+    {"item":"Insulated terminal block or connectors","fn":"connector","qty":"1"}
+  ],
+  "steps": [
+    {"text":"Read the label: input voltage, output voltage or voltages, VA or watts, and frequency. Note any wire colour list."},
+    {"text":"Look and smell. Burnt varnish, charred tape, melted plastic or bulging windings mean it has overheated."},
+    {"text":"With the meter on ohms, find which wires connect. Each winding is a pair of wires, or more if it has taps, that show continuity to each other and to no other wires."},
+    {"text":"On a step-down mains transformer, the mains (primary) winding has the higher resistance, usually tens to hundreds of ohms on small ones. The low-voltage winding reads much lower."},
+    {"text":"Check insulation on the highest ohms range: from each winding to every other winding, and from each winding to the metal core. Every reading should be OL.","warn":"Any reading between the mains winding and the low-voltage winding or the core makes the transformer unsafe to use."},
+    {"text":"If the primary of a small transformer reads open, a thermal fuse buried under the outer tape may have blown. Replace it only with one of the same temperature and current rating.","warn":"Never bridge a thermal fuse with wire. It is what stops the transformer catching fire."},
+    {"text":"Power test, mains transformers only: wire the primary through the fuse and the dim-bulb tester. Separate and tape every low-voltage wire. Then plug in.","warn":"Make every connection before you plug in. Keep your hands off while it is live, and unplug before touching anything."},
+    {"text":"The bulb should glow briefly, then stay dim or dark. If it lights brightly and stays bright, a winding is shorted: unplug at once."},
+    {"text":"Measure the output on AC volts. With no load it usually reads 5–20% above the label, and small transformers can read even higher."},
+    {"text":"Microwave oven transformers (MOTs) get resistance tests only. The primary reads a fraction of an ohm; the high-voltage winding reads far higher, tens of ohms or more.","warn":"A MOT puts out about 2 kV at a current that kills. Don't power-test one with its high-voltage winding in place."},
+    {"text":"Never feed power into the low-voltage side of a transformer.","warn":"A step-down transformer fed backwards steps the voltage up, putting mains voltage or more on the primary wires."}
+  ],
+  "notes": "## How a dim-bulb tester works\n\n    mains live ---[fuse]---[filament bulb]---+\n                                             |  transformer primary\n    mains neutral ---------------------------+\n\nThe bulb is in series with the transformer. A healthy transformer with nothing connected to its output draws little current, so the bulb barely glows. A shorted winding draws heavy current, the bulb lights up fully, and the bulb takes the voltage instead of your wiring.\n\nIt must be an old-style filament bulb. LED and compact fluorescent bulbs don't work in a dim-bulb tester. A 60 W bulb suits most small and medium transformers.\n\n## Rough resistances\n\n| Transformer | Primary (mains side) | Secondary |\n|---|---|---|\n| Small mains, under about 50 VA | tens to hundreds of ohms | a few ohms or less |\n| Large mains, hundreds of VA | a few ohms or less | a fraction of an ohm |\n| Microwave oven (MOT) | a fraction of an ohm | tens of ohms or more |\n\nThese are only a guide. What matters is that each winding reads something (not OL), and nothing reads between windings or to the core.\n\n## Ferrite (switch-mode) transformers\n\nThe small transformers inside switch-mode power supplies run at tens of thousands of hertz. Never connect them to mains: they will short. Test them for continuity and insulation only.\n\n## VA and watts\n\nVA is volts × amps. A 12 V 50 VA transformer can supply about 4 A of AC. Rectified and smoothed into DC, it can supply noticeably less DC current, often around two-thirds of that.\n\n## Common mistakes\n\n- Using an LED bulb in the dim-bulb tester.\n- Scrapping a transformer whose only fault is a thermal fuse.\n- Leaving low-voltage wires touching during the power test.\n- Power-testing a MOT.",
+  "tree": {"era":3,"branch":"power","requires":["safety_mains_isolation","skill_multimeter"]},
+  "devices": ["microwave_tx","ups","ups_large","battery_charger","welder","pa_system","garage_opener"],
+  "parts": ["transformer_lv","transformer_hv","ferrite_xfmr","fuse"],
+  "license": "CC-BY-SA-4.0"
+}

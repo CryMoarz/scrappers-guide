@@ -1,0 +1,33 @@
+{
+  "id": "streetlight_solar",
+  "name": "Solar streetlight",
+  "variantOf": "streetlight",
+  "aliases": ["solar street lamp","solar pole light","all-in-one solar light","solar path light","solar roadway light","solar area light"],
+  "brands": ["Carmanah","Vevor"],
+  "era": "2010s–present",
+  "prev": 3,
+  "hazards": ["li_fire"],
+  "comps": [
+    {"key":"solar_panel","fn":"solar_panel","spec":"Panel, 30–200W, on top of the pole or built into the head","w":[30,200],"qty":1,"ext":3,"obs":4,"loc":"Top of the pole"},
+    {"key":"battery_li","fn":"battery_li","spec":"12.8V or 25.6V LiFePO4 pack, 20–100Ah (newer units)","ah":[20,100],"qty":1,"ext":3,"obs":5,"loc":"Inside the head (all-in-one units) or a box on the pole","p":0.5},
+    {"key":"battery_pb","fn":"battery_pb","spec":"12V gel battery (older units)","v":12,"qty":1,"ext":3,"obs":5,"loc":"Box on the pole or buried at the base","p":0.5},
+    {"key":"charge_controller","fn":"charge_controller","spec":"12/24V solar charge controller with LED driver","v":24,"qty":1,"ext":2,"obs":5,"loc":"Head or battery box"},
+    {"key":"sensor_motion","fn":"sensor_motion","spec":"PIR or microwave motion sensor (many all-in-one heads)","qty":1,"ext":2,"obs":5,"loc":"Underside of the head"},
+    {"key":"led_light","fn":"led_light","spec":"12/24V LED module, 20–100W","v":24,"w":[20,100],"qty":1,"ext":2,"obs":5,"loc":"Head"},
+    {"key":"wire_copper","fn":"wire_copper","spec":"Short DC cables between panel, battery and head","qty":1,"ext":1,"obs":5,"loc":"Pole"}
+  ],
+  "boards": [
+    {"id":"battery_bms","qty":1,"loc":"On the lithium pack","p":0.6}
+  ],
+  "buildings": [
+    {"b":"roadside","l":4},
+    {"b":"parking","l":3},
+    {"b":"campground","l":3},
+    {"b":"golf","l":2},
+    {"b":"marina","l":2},
+    {"b":"school","l":2},
+    {"b":"solar_farm","l":2},
+    {"b":"farm","l":2}
+  ],
+  "notes": "Common on paths, rural roads, car parks and parks. A complete small solar power system on a pole."
+}

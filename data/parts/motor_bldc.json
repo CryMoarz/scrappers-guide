@@ -1,0 +1,14 @@
+{
+  "id": "motor_bldc",
+  "name": "Brushless motors",
+  "group": "Motion",
+  "demand": 2,
+  "keywords": ["motor","brushless","bldc","hub motor","direct drive","spindle motor","brushless motor","outrunner","inrunner","drone motor","rc motor","ebike motor","e-bike motor","hoverboard motor","ec motor","ecm motor","washing machine motor"],
+  "substitutes": ["motor_dc_large","motor_dc_small","alternator"],
+  "summary": "Brushless DC motors: efficient, long-lived motors in e-bikes, drones, fans, washers and hard drives.",
+  "uses": ["Efficient wind and water generators (hub motors work well)","E-bike and cart drives, with their controller","Pumps and fans"],
+  "identify": "Usually three thick phase wires plus a bundle of thin Hall sensor wires. Hub motors in e-bikes, scooters and hoverboards; outrunners in drones and RC models; flat direct-drive motors in front-loading washers; small ones in PC fans and hard drives.",
+  "test": "Spin the shaft with two phase wires shorted: it should feel notchy and stiff. Spun open, any two phases give AC volts. Opening one is risky: the magnets slam the rotor back in and pinch fingers.",
+  "decay": {"halfLifeMonths":null,"note":"Lasts."},
+  "hazards": ["magnet_pinch"]
+}

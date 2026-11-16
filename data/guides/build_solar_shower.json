@@ -1,0 +1,38 @@
+{
+  "id": "build_solar_shower",
+  "kind": "build",
+  "title": "Solar shower",
+  "keywords": ["solar shower","camp shower","hot water","warm shower","black drum","hose coil heater","batch water heater","wash"],
+  "summary": "Heat water in a black container or coil of black hose in the sun, raise it above head height and let gravity run a shower. A 20 L drum in summer sun reaches a comfortable 35–45 °C by afternoon; a hose coil can get dangerously hot. Not for drinking.",
+  "difficulty": 1,
+  "mins": 60,
+  "tools": ["drill","knife","saw","screwdriver","pliers","ladder"],
+  "hazards": ["burn","heavy","structural"],
+  "materials": [
+    {"item":"Dark container that never held fuel or chemicals: drum, jerrycan or water bag, 10–40 L (or 20–30 m of black garden hose)","qty":"1","fn":"tank","only":["jug","19-litre","freshwater"]},
+    {"item":"Black garden hose for a coil heater","qty":"20–30 m","fn":"hose_tubing","optional":true},
+    {"item":"Tap or valve at the outlet","qty":"1","fn":"valve_solenoid","only":["bypass"]},
+    {"item":"Hose from tap to shower head","qty":"1–1.5 m","fn":"hose_tubing","only":["inlet"]},
+    {"item":"Shower head: watering-can rose, or a bottle cap with 10–20 small holes","qty":"1"},
+    {"item":"Matt black paint for light-coloured containers","qty":"small tin","optional":true},
+    {"item":"Clear glazing (glass or clear plastic) for a warm box around the container","qty":"1","fn":"plastic_sheet","optional":true},
+    {"item":"Insulation behind the container in a box","qty":"some","fn":"insulation","optional":true},
+    {"item":"Stand: timber or steel, strong enough for the full container","qty":"1","fn":"lumber"},
+    {"item":"Screws, brackets, straps","qty":"some","fn":"fasteners","optional":true}
+  ],
+  "steps": [
+    {"text":"Pick a container that never held chemicals, fuel or poisons. Clean it well. Paint the outside matt black if it isn't dark already."},
+    {"text":"Fit a tap at the lowest point and a short hose to a shower head. Seal the fittings with washers on both sides."},
+    {"text":"Optional: set the container in a shallow box with insulation behind and clear glass or plastic in front. It heats faster and still works in cool, sunny weather."},
+    {"text":"Build or choose a stand that puts the container 1.5–2.2 m off the ground, above head height. Brace it so it can't tip.","warn":"Water weighs 1 kg per litre: a 40 L container is 40 kg overhead. A weak stand can drop it on someone."},
+    {"text":"Fill it in the morning and face it into the sun. Lift it into place full only if you can do it safely; otherwise fill it in place with a hose or bucket from a ladder.","warn":"Lifting a heavy full container overhead strains backs and drops loads. Fill it in place or use a pulley."},
+    {"text":"Before showering, run a little water onto your wrist. Mix with cold water if it's too hot.","warn":"Water from a black hose coil can pass 60 °C on a hot day and scalds in seconds. Always test first."},
+    {"text":"Shower: wet down, turn off, soap up, turn on to rinse. About 5–10 L does one person."},
+    {"text":"Drain what's left at the end of the day and refill fresh. Let used water soak away onto plants or a gravel pit, well away from wells and streams."}
+  ],
+  "notes": "## Heating maths\nEnergy to heat water: 1.16Wh per litre per °C.\n- 20 L from 15 °C to 40 °C: 20 × 25 × 1.16 ≈ 580Wh.\n- Strong sun gives about 800W per m². A dark container showing 0.5 m² to the sun, catching about half of that, gains about 200W: roughly 3 hours to heat 20 L by 25 °C.\n- Clouds, wind and cold air slow it. A glazed box halves the losses.\n\n## Hose coil\nA black hose coiled flat on a dark roof heats fast because it holds little water: 30 m of 13 mm hose holds only about 4 L. It's ideal for a quick hand wash or a short shower, but can reach scalding temperatures by midday.\n\n## Germs\nWarm water left standing for days (25–45 °C) can grow bacteria, including the kind that causes Legionnaires' disease when breathed in as spray. Use water within a day, drain the container, and let it dry and get hot and empty now and then. Shower water isn't drinking water.\n\n## Pressure\nEach metre of height gives about 0.1 bar. At 2 m you get a gentle flow, enough with a fine rose. For more, use a garden pressure sprayer as a pump shower: fill with warm water, pump, spray.\n\n## Variations\n- Several black drums in a glazed box on the roof can heat 100–200 L for a household.\n- Pre-warm a water heater tank's inlet water this way to save fuel.\n- Use the same setup to heat washing-up water.\n\n## If you lack a part\n- No tap: a hose clamp on the outlet hose works as a valve.\n- No stand: hang the container from a branch or roof beam with a strap rated for the weight, or use a pulley to lift it.\n",
+  "tree": {"era":2,"branch":"water","requires":["teardown_water_heater"]},
+  "devices": ["camping_gear","water_cooler","washer","water_heater","irrigation_system","rv","pressure_washer"],
+  "parts": ["tank","hose_tubing","valve_solenoid","plastic_sheet","glass_pane"],
+  "license": "CC-BY-SA-4.0"
+}

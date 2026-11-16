@@ -1,0 +1,24 @@
+{
+  "id": "mobility_scooter_drive_medical_sfscout3",
+  "device": "mobility_scooter",
+  "brand": "Drive Medical",
+  "model": "Spitfire Scout 3-Wheel (SFSCOUT3)",
+  "notes": "One set of power specs covers the 3- and 4-wheel Scout. The 12 V x 20 Ah pair is for the EXT model only.",
+  "research": {"checked":"2026-11-12","gaps":["The SC31xxx part numbers are not checked against a Drive Medical parts list.","Battery sizes conflict: the manual lists 12AH or 20AH batteries, while Westin's sheet gives the 12 V x 20 Ah pair for the EXT model only.","Westin's parts list names a wiring harness 'Scout, Curtis Electronics' (SC31026), while every spec table gives the controller as CTE 45A.","It is unclear whether some production runs used a Curtis controller."],"method":["The scooter is a compact 3-wheel travel scooter.","Read as text from the PDFs.","Battery and motor ratings come from Drive Medical's own order form (media.drivemedical.com), which also gives the controller as CTE 45A and a 2A charger.","Part numbers come from a product sheet published by Westin Healthcare, a Canadian seller (westinhealthcare.ca), whose parts list uses SC31xxx part numbers.","The Westin sheet repeats the same specs (CTE 45A, 24V x 270W x 4700 rpm, 2A offboard charger).","The owner's manual used is the copy on Westin's site, REV5.9.1.15; a later copy, REV6.3.20.17, on a retailer's Shopify CDN, gives the same spec table and parts diagram list.","The manual says to use only sealed lead-acid AGM or gel-cell batteries and lists 12AH or 20AH batteries.","The manual describes regenerative braking plus a park brake that locks the drive wheels automatically once the scooter stops."]},
+  "comps": [
+    {"key":"battery_pb","conf":"documented","spec":"Pair of 12 V 12 Ah batteries, included as standard","v":12,"ah":12,"qty":2,"source":"https://media.drivemedical.com/rs/planbdrivemed/images/Order%20Form-Scooter-Scout3.pdf"},
+    {"key":"motor_dc_large","conf":"documented","spec":"Drive motor 24 V x 270 W x 4700 rpm","v":24,"w":270,"source":"https://media.drivemedical.com/rs/planbdrivemed/images/Order%20Form-Scooter-Scout3.pdf"},
+    {"key":"controller_board_motor","fn":"controller_board","spec":"Controller listed as CTE 45A; replacement part SC31052 'Controller, 45A, Scout 3-Wheel'","a":45,"qty":1,"ext":2,"obs":3,"conf":"documented","source":"https://westinhealthcare.ca/westin/product-document/5/download"},
+    {"key":"gearbox","conf":"documented","spec":"Transaxle with motor and brake, Scout, part SC31053","source":"https://westinhealthcare.ca/westin/product-document/5/download"},
+    {"key":"solenoid_actuator","conf":"documented","spec":"Electromagnetic brake, Scout, part SC31037","source":"https://westinhealthcare.ca/westin/product-document/5/download"},
+    {"key":"charger","conf":"documented","spec":"2 A off-board battery charger","a":2,"source":"https://westinhealthcare.ca/westin/product-document/5/download"},
+    {"key":"wire_copper_harness","fn":"wire_copper","spec":"Wire harness 'Scout, Curtis Electronics', part SC31026; also front/rear connector block set with harness, part SC31033","qty":1,"ext":2,"obs":3,"conf":"documented","source":"https://westinhealthcare.ca/westin/product-document/5/download"},
+    {"key":"breaker","conf":"documented","spec":"Circuit breaker, item 12 in the manual's scooter parts diagram","source":"https://westinhealthcare.ca/westin/product-document/6/download"}
+  ],
+  "sources": [
+    {"title":"Spitfire Scout 3-Wheel Transport Scooter order form/price list, SFSCOUT3 (Drive Medical PDF, media.drivemedical.com)","url":"https://media.drivemedical.com/rs/planbdrivemed/images/Order%20Form-Scooter-Scout3.pdf"},
+    {"title":"Scout 3 (SFSCOUT3) product sheet with specifications and replacement parts list (Westin Healthcare PDF)","url":"https://westinhealthcare.ca/westin/product-document/5/download"},
+    {"title":"Drive Medical Scout owner's manual, REV5.9.1.15 (copy hosted by Westin Healthcare)","url":"https://westinhealthcare.ca/westin/product-document/6/download"},
+    {"title":"Drive Medical Scout owner's manual, REV6.3.20.17 (copy on a retailer's Shopify CDN), same spec table","url":"https://cdn.shopify.com/s/files/1/1732/6501/files/Scout_3_man.pdf"}
+  ]
+}

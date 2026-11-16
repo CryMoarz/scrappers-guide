@@ -1,0 +1,31 @@
+{
+  "id": "bbq_grill_weber_spirit_ii_e310",
+  "device": "bbq_grill",
+  "brand": "Weber",
+  "model": "Spirit II E-310 LP",
+  "years": "2017",
+  "notes": "Propane (LP) Spirit II E-310, three burners: the part numbers come from the 2017 US/CA/MX schematic for the black (Blk) version, and some rows are tagged '18 or '19. The owner's manual calls the cooking grates porcelain-enameled cast iron and the burners heavy-duty stainless steel (p.5), and says the regulator has a flow-limiting device and a Type 1 (CGA 810) tank connection (p.8).",
+  "research": {"checked":"2026-11-12","gaps":["No burner rating is claimed: the manual's rating box is in kJ/h and does not say whether it is per burner or total.","Propane and gas_cylinder are not claimed; the tank is not part of the grill.","The schematic gives no quantities, so qty is kept only on kit, set and assembly rows (one row = one kit or assembly) and removed from the other rows.","The schematic shows the LP manifold assembly (67033) but not the control valves, so valve_solenoid carries the manifold row only.","The grate, burner and regulator facts from the manual are in the notes, not the part rows, because the part numbers come from a different document.","The igniter battery's type and voltage are not claimed; the manual (p.16) names only the battery that powers the ignition module.","Filing as tube_frame (burner tube kit, crossover tube), bearing (wheel), rod_shaft (axle), battery_primary (igniter battery), sensor_misc (tank scale) and sheet_metal (flavorizer bars, heat deflector, control panel, cookbox) is the researcher's classification; each spec names the part.","SS in the schematic (heat deflector, control panel) is kept as printed.","Years: the schematic title says 2017 and some rows carry '18 and '19 tags; no production span is stated."],"method":["Weber LP Owner's Manual 59502 (revision 08/06/23, 60 pages, covers E-210, S-210, E-310 and S-310), PDF from digital-assets.weber.com, read as text; PDF page numbers equal the printed ones.","Weber parts schematic 45010001, 'Spirit II E-310 LP Blk (2017) (US/CA/MX)', schematics.weber.com print page; fetched three times and every part number compared with its part name digit by digit.","No site refused access."]},
+  "comps": [
+    {"key":"igniter","conf":"documented","spec":"Igniter kit 67053 for the 3-burner Spirit II; ignition module 67052, igniter switch (button) 66220, ignition button wires 67054 and wire/electrode assembly 67055 are listed as separate rows","source":"https://schematics.weber.com/en-us/print/45010001"},
+    {"key":"hose_tubing","conf":"documented","spec":"Hose and regulator kit 67069","source":"https://schematics.weber.com/en-us/print/45010001"},
+    {"key":"valve_solenoid","conf":"documented","spec":"LP manifold assembly 67033 for the 3-burner Spirit II","source":"https://schematics.weber.com/en-us/print/45010001"},
+    {"key":"sheet_metal","conf":"documented","spec":"Cooking grates, Weber 67023","source":"https://schematics.weber.com/en-us/print/45010001"},
+    {"key":"sensor_misc","conf":"documented","spec":"Lid thermometer, Weber 67031","source":"https://schematics.weber.com/en-us/print/45010001"},
+    {"key":"burner_tube_kit","fn":"tube_frame","spec":"LP burner tube kit 67025 for the 3-burner Spirit II","qty":1,"ext":2,"obs":4,"conf":"documented","source":"https://schematics.weber.com/en-us/print/45010001"},
+    {"key":"crossover_tube","fn":"tube_frame","spec":"Crossover tube 67279 for the 3-burner Spirit II","ext":2,"obs":3,"conf":"documented","source":"https://schematics.weber.com/en-us/print/45010001"},
+    {"key":"flavorizer_bars","fn":"sheet_metal","spec":"Set of FLAVORIZER bars, porcelain enameled, for the 3-burner Spirit II, Weber 67046","qty":1,"ext":1,"obs":3,"conf":"documented","source":"https://schematics.weber.com/en-us/print/45010001"},
+    {"key":"heat_deflector","fn":"sheet_metal","spec":"Heat deflector (SS), Weber 67060","ext":1,"obs":3,"conf":"documented","source":"https://schematics.weber.com/en-us/print/45010001"},
+    {"key":"control_panel_ss","fn":"sheet_metal","spec":"Control panel (SS) for the 3-burner Spirit II, Weber 67008","qty":1,"ext":2,"obs":3,"conf":"documented","source":"https://schematics.weber.com/en-us/print/45010001"},
+    {"key":"cookbox","fn":"sheet_metal","spec":"Cookbox assembly 67012 for the 3-burner Spirit II","qty":1,"ext":3,"obs":3,"conf":"documented","source":"https://schematics.weber.com/en-us/print/45010001"},
+    {"key":"tank_scale_gauge","fn":"sensor_misc","spec":"Tank scale assembly 66232","qty":1,"ext":2,"obs":3,"conf":"documented","source":"https://schematics.weber.com/en-us/print/45010001"},
+    {"key":"corrugated_gas_line","fn":"hose_tubing","spec":"Corrugated gas line 67036 (Spirit II)","ext":1,"obs":3,"conf":"documented","source":"https://schematics.weber.com/en-us/print/45010001"},
+    {"key":"wheel_insert","fn":"bearing","spec":"Wheel with insert 67058 (a wheel insert kit, 67059, is a separate row)","ext":1,"obs":3,"conf":"documented","source":"https://schematics.weber.com/en-us/print/45010001"},
+    {"key":"axle","fn":"rod_shaft","spec":"Axle with hardware 67043 (Spirit II)","ext":1,"obs":3,"conf":"documented","source":"https://schematics.weber.com/en-us/print/45010001"},
+    {"key":"battery_igniter","fn":"battery_primary","spec":"Igniter battery: the battery that powers the ignition module (manual p.16); the manual says some batteries have a plastic protective wrap that must be removed","qty":1,"ext":1,"obs":4,"conf":"documented","source":"https://digital-assets.weber.com/documents/59502_121418.pdf?fm=pdf"}
+  ],
+  "sources": [
+    {"title":"Weber Spirit II LP Owner's Manual, document 59502 (revision 08/06/23), covers E-210, S-210, E-310 and S-310 (Weber PDF)","url":"https://digital-assets.weber.com/documents/59502_121418.pdf?fm=pdf"},
+    {"title":"Weber parts schematic 45010001: Spirit II E-310 LP Blk (2017) (US/CA/MX), schematics.weber.com print page","url":"https://schematics.weber.com/en-us/print/45010001"}
+  ]
+}

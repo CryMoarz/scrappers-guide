@@ -1,0 +1,32 @@
+{
+  "id": "ev_charger_dc",
+  "name": "DC fast charger",
+  "variantOf": "ev_charger",
+  "aliases": ["dc fast charger","rapid charger","level 3 charger","ccs charger","fast charger","dc charger"],
+  "brands": ["ABB","Tesla","ChargePoint","Tritium","Kempower","Alpitronic","Delta Electronics","Blink"],
+  "prev": 2,
+  "tools": ["screwdriver","security_bits","socket","cutters","heavy"],
+  "mins": 90,
+  "kg": 800,
+  "hazards": ["hv","hv_cap","heavy"],
+  "comps": [
+    {"key":"psu","fn":"psu","spec":"Rectifier power modules, 15–50 kW each, 3-phase in, 200–1000V DC out — hard to reuse whole, full of big parts","v":[200,1000],"w":[15000,50000],"qty":4,"ext":2,"obs":5,"loc":"Racks inside the cabinet","kg":20},
+    {"key":"capacitor_large","fn":"capacitor_large","spec":"Large DC-link film and electrolytic capacitors — discharge before handling","qty":8,"ext":3,"obs":5,"loc":"Inside each power module"},
+    {"key":"inductor","fn":"inductor","spec":"Heavy copper chokes and transformers","qty":4,"ext":3,"obs":5,"loc":"Inside each power module","kg":8},
+    {"key":"mosfet","fn":"mosfet","spec":"IGBT or silicon-carbide power modules","qty":6,"ext":3,"obs":5,"loc":"On the module heatsinks"},
+    {"key":"heatsink","fn":"heatsink","spec":"Large aluminium heatsinks","qty":4,"ext":2,"obs":5,"loc":"Power modules"},
+    {"key":"fan","fn":"fan","spec":"High-flow cooling fans","v":[12,48],"qty":6,"ext":1,"obs":5,"loc":"Cabinet and modules"},
+    {"key":"pump_water","fn":"pump_water","spec":"Coolant pump for liquid-cooled cables (high-power units)","v":[12,24],"qty":1,"ext":2,"obs":5,"loc":"Base of the cabinet"},
+    {"key":"wire_heavy","fn":"wire_heavy","spec":"Very heavy DC charging cables, some liquid-cooled","qty":2,"ext":2,"obs":3,"loc":"Hanging on the dispenser"},
+    {"key":"relay","fn":"relay","spec":"DC contactors, 200–500A","a":[200,500],"qty":4,"ext":2,"obs":5,"loc":"Cabinet"},
+    {"key":"breaker","fn":"breaker","spec":"Large 3-phase breaker or switchgear feeding the cabinet","qty":1,"ext":3,"obs":5,"loc":"Switchgear beside the chargers"}
+  ],
+  "buildings": [
+    {"b":"gas_station","l":4},
+    {"b":"car_dealer","l":4},
+    {"b":"mall","l":3},
+    {"b":"supermarket","l":3},
+    {"b":"parking","l":3},
+    {"b":"hotel","l":2}
+  ]
+}

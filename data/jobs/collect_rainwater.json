@@ -1,0 +1,19 @@
+{
+  "id": "collect_rainwater",
+  "name": "Collect rainwater",
+  "keywords": ["collect rainwater","collect rain","rainwater","rain water","catch rain","harvest rain","rainwater harvesting","rain catchment","rain barrel"],
+  "summary": "Any roof or tarp turns rain into stored water: every millimetre of rain on a square metre gives about a litre. Run gutters or a sloped tarp into a covered tank, and send the first dirty flush to waste. Treat the water before drinking.",
+  "parts": [
+    {"fn":"tank","why":"Holds the water; keep it covered and screened","core":true},
+    {"fn":"fabric_tarp","why":"Catchment where there’s no roof, and covers for tanks","core":true},
+    {"fn":"hose_tubing","why":"Downpipes and overflow lines","core":true},
+    {"fn":"sheet_metal","why":"Bends into gutters, or makes a catchment roof"},
+    {"fn":"plastic_sheet","why":"Corrugated roofing and tank liners"},
+    {"fn":"filter_water","why":"Cleans collected water before drinking"}
+  ],
+  "guides": ["build_rainwater_collection","build_gravity_water_filter"],
+  "tips": ["A 50 m² roof in a 10 mm shower gives about 400–500 litres.","Screen inlets and keep tanks covered: mosquitoes breed in open water within a week.","Let the first few minutes of rain wash the roof and run to waste before you collect.","Roof water carries bird droppings and dust. Filter and disinfect it before drinking."],
+  "refs": [
+    {"lib":"appropedia","q":"rainwater harvesting"}
+  ]
+}

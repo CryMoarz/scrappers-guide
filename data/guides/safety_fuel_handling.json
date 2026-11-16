@@ -1,0 +1,38 @@
+{
+  "id": "safety_fuel_handling",
+  "kind": "safety",
+  "title": "Handle and store fuel safely",
+  "keywords": ["fuel","petrol","gasoline","gas","diesel","kerosene","propane","siphon","fuel storage","jerry can","stale fuel","old petrol","fuel stabiliser","transfer fuel","underground tank"],
+  "summary": "Petrol, diesel and propane are among the first supplies looted and the most dangerous to handle. Move fuel with a pump, never your mouth; store it outdoors in proper containers; keep sparks and static away; and learn to spot fuel that has gone bad.",
+  "difficulty": 2,
+  "mins": 20,
+  "tools": ["hands","wrench","pliers"],
+  "hazards": ["fuel","co_gas","compressed_gas","burn","chemical"],
+  "materials": [
+    {"item":"Hand transfer pump or self-priming siphon hose","qty":"1"},
+    {"item":"Fuel-resistant hose","fn":"hose_tubing","qty":"2–5 m"},
+    {"item":"Proper fuel cans with tight caps","fn":"tank","qty":"several"},
+    {"item":"Funnel and a clean cloth or filter","qty":"1"},
+    {"item":"Clear glass jar for checking fuel","qty":"1"},
+    {"item":"Fire extinguisher, bucket of sand or fire blanket","qty":"1"},
+    {"item":"Soapy water in a spray bottle, for gas leak checks","qty":"1"},
+    {"item":"Fuel stabiliser","qty":"1 bottle","optional":true}
+  ],
+  "steps": [
+    {"text":"Work outdoors, upwind, away from flames, running engines and anyone smoking. Have the extinguisher or sand ready."},
+    {"text":"Check fuel before you take it. Pour a little into a clear jar and let it settle. Good petrol is clear and light. Stale petrol is darker and smells sour or like varnish. Water and sludge sink to the bottom as a separate layer."},
+    {"text":"Move fuel with a hand pump or a self-priming siphon. Many newer cars have a valve or screen that stops a hose reaching the tank; don't force it.","warn":"Never start a siphon by mouth. Fuel in the lungs causes a severe pneumonia that can kill."},
+    {"text":"At petrol stations, the underground tanks have fill points under round covers on the forecourt. Pump from them with a long hose and a hand pump, keeping the end of the hose clear of the bottom so you don't pull up water and sludge.","warn":"Tank openings hold heavy vapour. No sparks, and don't put your face over the opening."},
+    {"text":"Put cans on the ground to fill them, never in a vehicle or on a plastic liner. Keep the nozzle touching the can so static can't spark."},
+    {"text":"Leave a little space at the top of each can for expansion, close it tightly and wipe off spills."},
+    {"text":"Store fuel in a shaded, ventilated shed or outdoor store, away from living spaces, wells and streams."},
+    {"text":"Keep propane cylinders upright and outdoors, with the valve closed when not in use. Check every connection with soapy water: growing bubbles mean a leak.","warn":"Propane is heavier than air and pools in basements, pits and low ground."},
+    {"text":"Let engines cool before refuelling. Never refuel a running engine or a hot generator.","warn":"Petrol spilled on a hot exhaust can ignite."},
+    {"text":"Use the oldest fuel first. Add stabiliser to fresh fuel if you have it, and label cans with the date."}
+  ],
+  "notes": "## Shelf life\n\n| Fuel | Rough life, sealed and cool | Signs it has gone off |\n|---|---|---|\n| Petrol with ethanol | about 3–6 months; longer with stabiliser | darker, sour or varnish smell, water layer, hard starting |\n| Petrol without ethanol | longer, perhaps a year | same |\n| Diesel | about 6–12 months; longer with stabiliser and biocide | dark, cloudy, slime or sludge at the bottom |\n| Kerosene (paraffin) | years if sealed and dry | cloudy, water at the bottom |\n| Propane | indefinitely in a sound cylinder | rusty, dented or damaged cylinder |\n\nThese are rough. Heat, air and water shorten them.\n\n## Vapour\n\nPetrol vapour burns at only about 1–8% in air, so a small spill in a closed room can be enough. The vapour is heavier than air and flows downhill along floors to pilot lights, heaters and switches.\n\n## Static\n\nFuel flowing through a hose builds static charge. A can sitting on a plastic truck bed liner or carpet can't let the charge go, and it sparks at the nozzle. On the ground, the charge drains away.\n\n## Wrong fuel\n\n- Petrol in a diesel engine can wreck it.\n- Diesel in a petrol engine stops it running.\n- Two-stroke engines (chainsaws, trimmers, many outboards) need oil mixed into the petrol. The ratio is usually on the tank cap or in the manual.\n\n## Common mistakes\n\n- Filling cans in a truck bed.\n- Storing a fuel can inside the house.\n- Using petrol to start a fire.\n- Topping up a hot generator.\n- Storing propane in a basement or tent.",
+  "tree": {"era":2,"branch":"fire","requires":["safety_carbon_monoxide"]},
+  "devices": ["car","gas_mower","generator","standby_generator","fuel_dispenser","riding_mower","chainsaw","motorcycle","atv","outboard_motor","bbq_grill","patio_heater","rv","boat","snow_blower","pressure_washer","string_trimmer"],
+  "parts": ["fuel_liquid","propane","gas_cylinder","tank","hose_tubing","engine_small"],
+  "license": "CC-BY-SA-4.0"
+}

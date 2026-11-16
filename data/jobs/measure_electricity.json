@@ -1,0 +1,16 @@
+{
+  "id": "measure_electricity",
+  "name": "Measure electricity",
+  "keywords": ["measure electricity","measure voltage","measure current","check voltage","test voltage","multimeter","voltmeter","test a battery","check a battery","test a circuit","test lamp"],
+  "summary": "Multimeters sit forgotten in car repair shops, HVAC vans, school labs and makerspaces; looters walk right past them. With no meter, a 12V bulb or an LED with a resistor makes a test lamp, and a known resistor lets you work out current. Many chargers, power stations and solar controllers have a voltage display built in.",
+  "parts": [
+    {"fn":"resistor","why":"Shunts and dividers for measuring current and voltage","core":true},
+    {"fn":"led_light","why":"LED test lamps show power is present","core":true},
+    {"fn":"wire_copper","why":"Test leads and probes","core":true},
+    {"fn":"display","why":"Voltage displays from chargers and controllers"},
+    {"fn":"tl431","why":"A steady 2.5V reference to check a meter against"},
+    {"fn":"diode_zener","why":"Rough voltage references"}
+  ],
+  "guides": ["skill_multimeter","test_continuity","build_battery_tester","test_lead_acid","test_lithium_cell"],
+  "tips": ["Never measure current straight across a battery. The meter becomes a short.","Current in amps = volts across a known resistor ÷ its ohms.","Check the meter on a known battery before you trust a reading of zero.","Cheap meters can fail dangerously on mains. Stay on low voltage unless the meter is rated for it."]
+}

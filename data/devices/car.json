@@ -1,0 +1,35 @@
+{
+  "id": "car",
+  "name": "Car or light truck (gas or diesel)",
+  "group": "Vehicles and mobility",
+  "aliases": ["automobile","pickup truck"],
+  "brands": ["Toyota","Ford","Honda","Chevrolet","Nissan","Hyundai","Subaru","Mazda","GMC"],
+  "prev": 5,
+  "tools": ["socket","screwdriver","cutters"],
+  "mins": 60,
+  "hazards": ["acid","fuel"],
+  "comps": [
+    {"key":"battery_pb","fn":"battery_pb","spec":"12V starting battery","v":12,"qty":1,"ext":1,"obs":2,"loc":"Engine bay or trunk"},
+    {"key":"alternator","fn":"alternator","spec":"12–14V alternator, 60–150A","v":[12,14],"a":[60,150],"qty":1,"ext":3,"obs":3,"loc":"Front of the engine, belt-driven"},
+    {"key":"motor_dc_small","fn":"motor_dc_small","spec":"12V motors: windows, wipers, seats, blower","v":12,"qty":8,"ext":3,"obs":4,"loc":"Doors, cowl, seats, dash"},
+    {"key":"starter","fn":"motor_dc_small","spec":"Starter motor (large 12V motor)","v":12,"qty":1,"ext":3,"obs":4,"loc":"Side of the engine"},
+    {"key":"pump_water","fn":"pump_water","spec":"12V fuel pump and washer pump","v":12,"qty":2,"ext":3,"obs":4,"loc":"Fuel tank; washer reservoir"},
+    {"key":"fan","fn":"fan","spec":"12V radiator cooling fan (high power)","v":12,"qty":1,"ext":2,"obs":4,"loc":"Behind the grille"},
+    {"key":"relay","fn":"relay","spec":"12V automotive relays","v":12,"qty":8,"ext":1,"obs":4,"loc":"Fuse boxes"},
+    {"key":"wire_copper","fn":"wire_copper","spec":"Wiring harness, lots of copper","qty":1,"ext":3,"obs":3,"loc":"Throughout"},
+    {"key":"led_light","fn":"led_light","spec":"Lamps and LED assemblies","v":12,"w":[1,60],"qty":6,"ext":2,"obs":3,"loc":"Exterior and interior"},
+    {"key":"speaker","fn":"speaker","spec":"Speakers","w":[15,50],"qty":4,"ext":2,"obs":3,"loc":"Doors"},
+    {"key":"radio_rf","fn":"radio_rf","spec":"Stereo with AM/FM receiver","qty":1,"ext":2,"obs":3,"loc":"Dash"},
+    {"key":"fuse","fn":"fuse","spec":"Blade fuses, dozens per car, plus fuse boxes","a":[5,40],"qty":30,"ext":1,"obs":3,"loc":"Under the dash and in the engine bay"}
+  ],
+  "buildings": [
+    {"b":"auto_wrecker","l":5},
+    {"b":"car_repair","l":5},
+    {"b":"car_dealer","l":4},
+    {"b":"parking","l":5},
+    {"b":"house","l":4},
+    {"b":"apartment","l":4},
+    {"b":"gas_station","l":3},
+    {"b":"auto_parts","l":2}
+  ]
+}

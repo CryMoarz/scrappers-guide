@@ -1,0 +1,15 @@
+{
+  "id": "cut_metal",
+  "name": "Cut metal",
+  "keywords": ["cut metal","cut steel","cutting metal","metal cutting","cut through metal","cut a pipe","cut bolts","cut rebar","cut sheet metal"],
+  "summary": "Hacksaws, files and bolt cutters never need charging and handle most jobs. Cordless grinders get grabbed, but corded angle grinders and saws sit in every garage; run one from a big 12V battery through an inverter of 1000W or more. Grinders cut fast but throw sparks and shards, so protect your eyes.",
+  "parts": [
+    {"fn":"motor_universal","why":"The motor in corded grinders and saws","core":true},
+    {"fn":"inverter","why":"Runs corded tools from a battery","core":true},
+    {"fn":"battery_pb","why":"A big 12V battery to feed the inverter"},
+    {"fn":"wire_heavy","why":"Short, thick cables from battery to inverter"},
+    {"fn":"fuse","why":"Protects the battery cables"}
+  ],
+  "guides": ["reference_wire_gauge","safety_lead_acid","build_brake_drum_forge"],
+  "tips": ["Wear eye protection when grinding. Cutting discs can shatter.","A hacksaw cuts on the push stroke. Use the full blade length and steady pressure.","Grinders surge when they start. Size the inverter at about twice the grinder’s rating.","Keep sparks away from fuel, dry grass and batteries."]
+}

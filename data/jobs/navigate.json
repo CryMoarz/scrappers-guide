@@ -1,0 +1,18 @@
+{
+  "id": "navigate",
+  "name": "Navigate",
+  "keywords": ["navigate","navigation","find my way","where am i","find my location","get my bearings","plan a route","route finding","offline map"],
+  "summary": "GPS receivers hide in car sat-navs, dashcams, fitness watches and phones, and many run off 5V USB. GPS should keep working for a long time, but carry a compass and paper maps as a backup. A magnetised needle, the sun and the stars still work when every battery is dead.",
+  "parts": [
+    {"fn":"gps","why":"Sat-navs, dashcams, phones and modules give a position fix","core":true},
+    {"fn":"battery_li","why":"Keeps a GPS unit running away from vehicles"},
+    {"fn":"dcdc_buck","why":"Runs a 5V GPS unit from a 12V battery"},
+    {"fn":"battery_coin","why":"Keeps a module’s memory so it finds a fix faster"},
+    {"fn":"magnet_strong","why":"Magnetises a needle for a backup compass"}
+  ],
+  "guides": ["build_compass"],
+  "tips": ["Copy or print maps while you can. A position without a map is just numbers.","At midday the sun is due south in the northern hemisphere, and due north in the southern.","Polaris, the North Star, sits almost exactly over true north.","Write down the coordinates of water, shelter and caches, and share them with your group."],
+  "refs": [
+    {"lib":"outdoors","q":"navigation"}
+  ]
+}

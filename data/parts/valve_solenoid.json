@@ -1,0 +1,14 @@
+{
+  "id": "valve_solenoid",
+  "name": "Valves",
+  "group": "Fluids",
+  "demand": 1,
+  "keywords": ["valve","solenoid valve","water valve","gas valve","check valve","non-return valve","ball valve","gate valve","float valve","pressure relief valve","water inlet valve","12v solenoid valve","irrigation valve","water tap","faucet"],
+  "substitutes": [],
+  "summary": "Valves that control water, air and gas: electric solenoid valves, ball, check and float valves.",
+  "uses": ["Automatic tank filling and irrigation","Shut-offs and taps for water systems","One-way check valves for pumps"],
+  "identify": "Solenoid valves with a coil on top in washing machines, dishwashers, fridges with ice makers, irrigation boxes and coffee machines; ball valves and taps on plumbing; float valves in toilet cisterns and stock troughs.",
+  "test": "Feed the coil its rated voltage: it should click. Most solenoid valves need some water pressure to open fully.",
+  "decay": {"halfLifeMonths":null,"note":"Lasts; rubber seats harden after many years."},
+  "hazards": []
+}

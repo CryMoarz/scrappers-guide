@@ -1,0 +1,38 @@
+{
+  "id": "welder",
+  "name": "Welding machine",
+  "abstract": true,
+  "group": "Industrial and construction",
+  "aliases": ["welder","arc welder","stick welder","mig welder","tig welder","welding machine","multi process welder","flux core welder"],
+  "brands": ["Lincoln Electric","Miller","ESAB","Hobart","Everlast","Forney","Vevor"],
+  "prev": 3,
+  "tools": ["screwdriver","socket"],
+  "mins": 30,
+  "hazards": ["burn","compressed_gas"],
+  "comps": [
+    {"key":"wire_heavy","fn":"wire_heavy","spec":"Welding leads, 3–15 m of very flexible heavy copper cable with clamps — ideal battery cable","qty":2,"ext":1,"obs":4,"loc":"Coiled on the machine or cart"},
+    {"key":"gas_cylinder","fn":"gas_cylinder","spec":"Argon, argon-CO2 or CO2 shielding gas cylinder with regulator (MIG and TIG sets)","qty":1,"ext":1,"obs":4,"loc":"Chained to the cart or wall","kg":25},
+    {"key":"motor_dc_small","fn":"motor_dc_small","spec":"24V wire-feed gear motor (MIG sets)","v":24,"qty":1,"ext":2,"obs":5,"loc":"Wire feed compartment"},
+    {"key":"valve_solenoid","fn":"valve_solenoid","spec":"Gas solenoid valve (MIG and TIG sets)","v":[12,36],"qty":1,"ext":2,"obs":5,"loc":"Behind the gas inlet"},
+    {"key":"thermostat","fn":"thermostat","spec":"Thermal overload switch","qty":1,"ext":2,"obs":5,"loc":"On the transformer or heatsink"},
+    {"key":"fan","fn":"fan","spec":"Cooling fan","qty":1,"ext":1,"obs":4,"loc":"Rear of the case"}
+  ],
+  "buildings": [
+    {"b":"car_repair","l":5},
+    {"b":"farm","l":5},
+    {"b":"factory","l":5},
+    {"b":"construction","l":4},
+    {"b":"makerspace","l":4},
+    {"b":"tool_rental","l":4},
+    {"b":"bus_depot","l":4},
+    {"b":"garage_res","l":3},
+    {"b":"hardware","l":3},
+    {"b":"boat_shop","l":3},
+    {"b":"auto_wrecker","l":3},
+    {"b":"farm_supply","l":3},
+    {"b":"water_works","l":3},
+    {"b":"school","l":2},
+    {"b":"marina","l":2}
+  ],
+  "notes": "Pick a variant: transformer, inverter or engine-driven."
+}

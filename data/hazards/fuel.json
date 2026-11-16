@@ -1,0 +1,14 @@
+{
+  "id": "fuel",
+  "label": "Fuel",
+  "severity": 4,
+  "summary": "Petrol, diesel, kerosene and propane burn easily and their vapour can explode. Petrol vapour and propane are heavier than air: they flow along floors and pool in pits, basements and low spots, where a pilot light, switch or spark sets them off.",
+  "signs": ["Smell of petrol, diesel or gas","Rainbow sheen on puddles, or stained ground","Cans, drums, cylinders and vehicles; tanks under petrol station forecourts","Hissing, or frost on a gas cylinder valve or hose","Bubbles when soapy water is brushed on a fitting"],
+  "do": ["Store fuel outside or in a ventilated shed, away from where people sleep","Use proper fuel cans with tight caps","Put cans on the ground while filling so static can drain away","Let engines cool before refuelling","Wipe up spills and let the vapour clear before starting anything","Keep a fire extinguisher, sand or a fire blanket close to fuel","Smell gas in a building: don't work switches, phones or flames; shut the cylinder or meter valve if you can do it safely, open doors and windows, and get out"],
+  "dont": ["Don't siphon by mouth: fuel in the lungs causes a severe pneumonia","Don't smoke or make sparks near fuel or open cans","Don't use petrol to clean parts or to start a fire","Don't fill cans standing in a vehicle or on a plastic truck bed liner","Don't store propane cylinders indoors or in basements","Don't throw water on burning fuel: it spreads the fire","Never put petrol in a kerosene (paraffin) or diesel heater, lamp or stove: it flares up and can explode"],
+  "ppe": ["Nitrile gloves; petrol soaks through skin","Safety glasses when pouring or draining","Cotton or wool clothes; synthetics melt onto skin in a fire"],
+  "firstAid": ["Fuel on skin: wash with soap and water; take off soaked clothing and keep it away from flames","Fuel in an eye: rinse with clean water for at least 15 minutes","Swallowed fuel: don't make them vomit; get medical help, especially if they cough or are short of breath","Breathed vapour: get to fresh air; confusion or collapse needs medical care","Burns: cool under cool running water for 20 minutes and cover loosely; large or deep burns need medical care","Clothing on fire: stop, drop to the ground and roll, or smother the flames with a coat or blanket; then cool the burns"],
+  "refs": [
+    {"lib":"wikipedia","q":"Gasoline"}
+  ]
+}

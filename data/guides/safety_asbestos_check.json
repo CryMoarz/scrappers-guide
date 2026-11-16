@@ -1,0 +1,32 @@
+{
+  "id": "safety_asbestos_check",
+  "kind": "safety",
+  "title": "Spot likely asbestos and work around it",
+  "keywords": ["asbestos","pipe lagging","popcorn ceiling","vermiculite","cement sheet","old insulation","floor tiles","fibro","boiler insulation","brake dust","old building"],
+  "summary": "You can't test for asbestos in the field, and you can't remove it safely without training, sealed enclosures and proper filters. Learn what probably contains it, leave it undisturbed, and take your salvage from somewhere else.",
+  "difficulty": 1,
+  "mins": 10,
+  "tools": ["hands"],
+  "hazards": ["asbestos","structural","mold","fiberglass"],
+  "materials": [
+    {"item":"Spray bottle of water","qty":"1"},
+    {"item":"Well-fitted P100 (P3, FFP3) respirator","qty":"1"},
+    {"item":"Heavy plastic bags for dusty clothes","qty":"several"},
+    {"item":"Disposable coveralls, or old clothes you can bag","qty":"1 set","optional":true}
+  ],
+  "steps": [
+    {"text":"Date the building. The older it is, especially from before the 1990s, the more likely it holds asbestos."},
+    {"text":"Check the usual places: pipe lagging, boiler and furnace insulation, textured ceilings, old floor tiles and their black glue, cement roof and wall sheets, loft insulation, fire doors and old heating appliances."},
+    {"text":"Judge its condition from a distance. Sealed, painted and intact is lower risk. Crumbling, broken, frayed, water-damaged or dusty is high risk.","warn":"Don't poke, scrape or break a piece to check it."},
+    {"text":"Treat anything you suspect as asbestos. If your target is behind it, under it or wrapped in it, choose another target."},
+    {"text":"If you must pass close to damaged material, put the respirator on first, mist the area lightly with water, move slowly and touch nothing.","warn":"Dry sweeping, blowing or vacuuming throws fibres into the air, where they hang for hours."},
+    {"text":"Don't cut pipes wrapped in old lagging to get at the copper. Find copper elsewhere."},
+    {"text":"Mark the room or building so others know: write ASBESTOS on the door."},
+    {"text":"Before going back to camp, take off dusty outer clothes outside, bag them or wash them wet, and wash your hands, face and hair."}
+  ],
+  "notes": "## Why it matters\n\nAsbestos fibres are far thinner than a hair. Breathed in, they lodge in the lungs for life. Ten to forty years later they can cause lung cancer, mesothelioma (a cancer of the lining of the lungs or gut) and asbestosis (scarring). There is no known safe dose, and every exposure adds to the risk. Smoking makes the lung cancer risk much worse.\n\nOnly a laboratory can confirm asbestos. In the field, suspect it and stay away.\n\n## Where it hides\n\n| Where | Looks like |\n|---|---|\n| Heating pipes and boilers | White or grey chalky wrap, often under cloth or paint |\n| Ceilings | Textured, bumpy or swirled coatings |\n| Floors | Old square vinyl tiles and black glue underneath |\n| Roofs, walls, sheds | Grey corrugated or flat cement sheets |\n| Lofts | Loose grey-brown or gold pebbly fill (vermiculite) |\n| Appliances | Heat pads and insulation in old heaters, ovens and hair dryers |\n| Vehicles | Dust in old brake drums and clutch housings |\n\n## The respirator\n\nA paper dust mask does not stop asbestos fibres. A P100 (P3, FFP3) respirator cuts exposure a lot, but only if it seals: no beard, straps tight, and you check the seal each time. It reduces risk; it doesn't make disturbing asbestos safe.\n\n## Common mistakes\n\n- Trusting a dust mask.\n- Stripping pipe lagging for copper.\n- Blowing out old brake drums with compressed air.\n- Carrying dust home on clothes and boots.\n- Breaking cement roof sheets to get through.",
+  "tree": {"era":1,"branch":"salvage","requires":["safety_entering_buildings"]},
+  "devices": ["furnace","water_heater","hair_dryer","space_heater","car"],
+  "parts": ["insulation","heating_element","sheet_metal"],
+  "license": "CC-BY-SA-4.0"
+}

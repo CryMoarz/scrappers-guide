@@ -1,0 +1,41 @@
+{
+  "id": "projector",
+  "name": "Video projector",
+  "group": "Electronics and office",
+  "aliases": ["projector","beamer","data projector","video projector","cinema projector","lcd projector","dlp projector"],
+  "brands": ["Epson","BenQ","Optoma","ViewSonic","Sony","LG","Anker","XGIMI","Panasonic"],
+  "prev": 4,
+  "tools": ["screwdriver"],
+  "mins": 20,
+  "kg": 4,
+  "repairs": {"records":1657,"fixed":0.54,"end_of_life":0.23},
+  "hazards": ["mercury","laser","glass"],
+  "comps": [
+    {"key":"optics","fn":"optics","spec":"Multi-element glass projection lens, condenser lenses, mirrors and dichroic filters — good magnifiers and burning glasses","qty":4,"ext":2,"obs":5,"loc":"Front lens barrel and light path"},
+    {"key":"fan","fn":"fan","spec":"Blower and axial fans, 12V","v":12,"qty":3,"ext":1,"obs":4,"loc":"Around the lamp and power supply"},
+    {"key":"motor_bldc","fn":"motor_bldc","spec":"Colour wheel motor (DLP models)","qty":1,"ext":2,"obs":5,"loc":"Light path before the chip","p":0.5},
+    {"key":"laser_diode","fn":"laser_diode","spec":"Blue laser diode banks (laser models) — eye damage even from reflections","qty":1,"ext":3,"obs":5,"loc":"Light source module on a heatsink","p":0.5},
+    {"key":"led_light","fn":"led_light","spec":"High-power LEDs on heatsinks (LED models); lamp models use a small mercury lamp that can burst when hot","v":[2.5,4.5],"w":[10,100],"qty":3,"ext":2,"obs":5,"loc":"Light source module","p":0.5},
+    {"key":"heatsink","fn":"heatsink","spec":"Heat pipes and finned heatsinks","qty":2,"ext":2,"obs":5,"loc":"Light source and power board"},
+    {"key":"opto_sensor","fn":"opto_sensor","spec":"IR remote receiver","qty":1,"ext":2,"obs":5,"loc":"Front and rear panels"},
+    {"key":"speaker","fn":"speaker","spec":"Small speaker","w":[2,10],"qty":1,"ext":1,"obs":5,"loc":"Side of the case"}
+  ],
+  "boards": [
+    {"id":"smps_board","qty":1,"loc":"Power supply","p":1},
+    {"id":"mcu_board","qty":1,"loc":"Main board","p":1}
+  ],
+  "buildings": [
+    {"b":"school","l":5},
+    {"b":"cinema","l":5},
+    {"b":"office","l":4},
+    {"b":"church","l":4},
+    {"b":"hotel","l":3},
+    {"b":"makerspace","l":3},
+    {"b":"electronics","l":3},
+    {"b":"house","l":2},
+    {"b":"stadium","l":2}
+  ],
+  "sources": [
+    {"title":"Open Repair Alliance, Open Repair Data v0.3 (community repair events, 2012 to July 2026; CC BY-SA 4.0): 1,657 repairs recorded as Projector","url":"https://github.com/openrepair/data"}
+  ]
+}

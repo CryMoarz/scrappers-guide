@@ -1,0 +1,17 @@
+{
+  "id": "garden_solar_harbor_freight_57681",
+  "device": "garden_solar",
+  "brand": "Harbor Freight",
+  "model": "57681",
+  "notes": "Harbor Freight 57681 solar spot light (UPC 193175421111). The cell sits under a battery cover held by six screws, and the manual says replacement parts other than the battery are not available.",
+  "research": {"checked":"2026-11-12","gaps":["The manual gives no solar panel volts or watts, no size, no LED count and no lumens, and does not say what lamp type the light head uses, so no LED claim is made.","The manual only warns that porch lights and streetlights nearby can make the light turn off or flicker; it names no sensor, so no dusk sensor part is claimed.","The diagram's Switch label sits by the solar panel and the text does not say where the switch is, so no switch location is given.","No driver chip, inductor or charger circuit is named, so none is claimed.","The manual is copyright 2020 and gives no production years, so years is not set."],"method":["Harbor Freight Owner's Manual & Safety Instructions, Solar Spot Light, Item 57681 (PDF, copyright 2020), read in full with the research tool's pdf command; pages 2 and 3 also rendered at 110 dpi.","Specifications table and instructions are on page 2, battery replacement on page 3, UPC and the parts note on page 4.","The harborfreight.com product page returned HTTP 403 to the researcher and was not used.","Third-party copies of the manual were not cited; a search for a teardown of 57681 found none."]},
+  "comps": [
+    {"key":"battery_li_18650","fn":"battery_li","spec":"One 18650 lithium-ion cell, 3.7 V, 2000 mAh; the manual says to fit the same type and match polarity","v":3.7,"ah":2,"qty":1,"loc":"Under the battery cover, held by six screws","ext":2,"obs":4,"conf":"documented","source":"https://manuals.harborfreight.com/manuals/57000-57999/57681-193175421111.pdf"},
+    {"key":"solar_panel","conf":"documented","spec":"Solar panel that recharges the battery by day; it can be inserted into the top of the light or staked into the ground, and pivots toward the sun","loc":"Top of the light, or staked separately","source":"https://manuals.harborfreight.com/manuals/57000-57999/57681-193175421111.pdf"},
+    {"key":"switch_onoff","fn":"switch","spec":"Switch with ON and OFF positions; the manual has it set OFF for the initial charge and ON afterwards","qty":1,"ext":1,"obs":3,"conf":"documented","source":"https://manuals.harborfreight.com/manuals/57000-57999/57681-193175421111.pdf"},
+    {"key":"fasteners_battery_cover","fn":"fasteners","spec":"Six screws holding the battery cover","qty":6,"ext":1,"obs":1,"conf":"documented","source":"https://manuals.harborfreight.com/manuals/57000-57999/57681-193175421111.pdf"}
+  ],
+  "sources": [
+    {"title":"Harbor Freight Solar Spot Light Owner's Manual & Safety Instructions, Item 57681, UPC 193175421111 (copyright 2020, PDF)","url":"https://manuals.harborfreight.com/manuals/57000-57999/57681-193175421111.pdf"}
+  ]
+}

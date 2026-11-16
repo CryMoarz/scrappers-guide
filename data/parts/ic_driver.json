@@ -1,0 +1,14 @@
+{
+  "id": "ic_driver",
+  "name": "Motor and driver ICs",
+  "group": "Electronic components",
+  "demand": 1,
+  "keywords": ["motor driver","driver ic","h-bridge","h bridge","l298","l293","uln2003","darlington array","drv8825","a4988","stepper driver","gate driver","tb6612","drv8833","ir2110","ir2104","bts7960","uln2803","l9110","mosfet driver"],
+  "substitutes": ["mosfet","bjt"],
+  "summary": "Chips that switch motors, relays and steppers on behalf of a microcontroller.",
+  "uses": ["Driving a DC motor both ways (H-bridge)","Running stepper motors from scrapped printers","Switching relays and solenoids from logic"],
+  "identify": "Chips or small boards near the motors in printers, scanners, toys, optical drives, robots and 3D printers, marked L298, L293, ULN2003, DRV8825, A4988 or TB6612.",
+  "test": "Hard to test alone; try it in a known circuit. One that runs hot with no load or has a burnt top is dead.",
+  "decay": {"halfLifeMonths":null,"note":"Lasts."},
+  "hazards": []
+}

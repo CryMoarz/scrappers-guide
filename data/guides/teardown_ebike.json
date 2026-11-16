@@ -1,0 +1,29 @@
+{
+  "id": "teardown_ebike",
+  "kind": "teardown",
+  "title": "E-bike and e-scooter: battery, hub motor and controller",
+  "keywords": ["ebike teardown","e-bike battery","electric bike motor","hub motor","ebike controller","e-scooter teardown","36v battery","48v battery"],
+  "summary": "E-bikes and e-scooters carry a 36–48 V lithium pack, a brushless hub or mid-drive motor, a motor controller, a throttle and brake sensors, lights and a charger. A dead pack is usually the only fault, so check before you strip. Treat the pack as a fire risk at every step.",
+  "difficulty": 3,
+  "mins": 40,
+  "tools": ["socket","wrench","hex","screwdriver","cutters","pliers","multimeter","tape"],
+  "hazards": ["li_fire","magnet_pinch","sharp"],
+  "materials": [],
+  "steps": [
+    {"text":"Switch the pack off at its key or button. Unlock it with the key if you have it and slide it off the frame or rack. Scooters: the pack is in the deck; open the deck cover underneath."},
+    {"text":"Look at the pack outdoors. Swollen, dented, burnt-smelling or water-logged packs: stop and follow safety_swollen_lithium.","warn":"A 36–48 V pack holds enough energy for a fierce, long fire that water won't reliably stop."},
+    {"text":"Measure the pack at its output terminals. A 36 V pack reads about 30–42 V; a 48 V pack about 40–54.6 V. A reading of 0 V may mean the protection board has shut it off, not that the cells are dead."},
+    {"text":"Read the controller label for its voltage and current. Photograph and label every plug between controller, motor, throttle, brakes, display and battery."},
+    {"text":"Hub motor: cut the cable ties, unplug the motor cable at its waterproof plug, undo the axle nuts and any torque arm, and drop the wheel out. Keep the axle washers in order."},
+    {"text":"Mid-drive motor: remove the crank arms (needs a crank puller), then the motor's mounting bolts. It weighs 3–5 kg."},
+    {"text":"Unbolt the controller box and keep its whole loom: the 3 thick phase wires, the thin sensor wires and the plugs."},
+    {"text":"Take the throttle, the brake levers (they hold cut-off switches), the pedal sensor (a magnet ring and a sensor near the crank), the display, the lights and the charger."},
+    {"text":"Open the pack only if it is truly dead and you want its cells. Cut through the outer wrap or case away from the cells, cut the main leads one at a time, tape each, and separate the cells as in teardown_laptop_battery.","warn":"Never cut two wires at once. One slip across a 48 V pack makes an arc that burns skin and starts fires."},
+    {"text":"Opening a hub motor is rarely worth it. If you must, its side cover pulls off against strong magnets: keep fingers out of the gap."}
+  ],
+  "notes": "## What's worth keeping and why\n\n- **The whole bike, running.** Most \"dead\" e-bikes have a worn-out pack. The motor and controller will run from any battery of the right voltage: three 12 V lead-acid batteries in series for 36 V, four for 48 V, through a fused lead. Lead-acid is heavy but fine for a cargo trike or a cart.\n- **Battery pack.** 10 cells in series (36 V) or 13 in series (48 V) of 18650 or 21700 cells, often 300–750 Wh. Good packs power a 12 V system through a DC-DC converter, or an inverter rated for the pack voltage. Cells from dead packs rebuild into smaller packs.\n- **Hub motor.** A brushless motor with Hall sensors. Driven by pedal or water it is a 3-phase generator; with a rectifier it charges a battery. With its controller it powers a cart, winch or pump.\n- **Controller.** Brushless motor controller with power MOSFETs: runs any similar motor at the same voltage.\n- **Charger.** Outputs about 42 V (for 36 V packs) or 54.6 V (for 48 V packs). Only for lithium packs of matching cell count.\n- **Throttle, brake switches, pedal sensor.** Hall sensor parts, useful as contactless switches.\n- **Lights.** Many run on the pack voltage, some on 6–12 V.\n\n## Variations\n\n- Rear-hub motors are most common on budget bikes; mid-drives on dearer ones. Front-hub conversions also exist.\n- Scooters and hoverboards use smaller packs (often 36 V) and 1–2 hub motors in the wheels.\n- Some packs talk to the controller and refuse to work with another brand's parts.\n\n## What to leave\n\n- Cells under 2.0 V, swollen pouch cells, rusty or water-damaged packs.\n- Plastic body panels, unless you need them.",
+  "tree": {"era":3,"branch":"salvage","requires":["safety_swollen_lithium"]},
+  "devices": ["ebike","scooter"],
+  "parts": ["battery_li","bms","motor_bldc","controller_board","charger","hall_reed","led_light","wire_heavy","connector"],
+  "license": "CC-BY-SA-4.0"
+}

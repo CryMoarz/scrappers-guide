@@ -1,0 +1,14 @@
+{
+  "id": "engine_small",
+  "name": "Small gas engines",
+  "group": "Power generation",
+  "demand": 4,
+  "keywords": ["engine","gas engine","small engine","petrol engine","lawnmower engine","mower engine","generator engine","go-kart engine","diesel engine","two-stroke","2-stroke","four-stroke","4-stroke","pull start","carburettor","carburetor","horizontal shaft","vertical shaft"],
+  "substitutes": [],
+  "summary": "Small petrol and diesel engines, about 1–20 hp, from mowers, generators, pumps and tools.",
+  "uses": ["Turning a generator head or alternator","Driving a water pump, air compressor or saw","Powering carts, boats and go-karts"],
+  "identify": "Single-cylinder engines with a pull-start on mowers, generators, pressure washers, tillers, log splitters, water pumps and go-karts. Two-strokes (chainsaws, trimmers, some outboards) need oil mixed into the fuel. Never run one indoors or in a garage: the exhaust carbon monoxide kills.",
+  "test": "Check the oil, then pull slowly: you should feel strong compression. Pull the plug and crank it against bare metal to look for a spark; stale fuel in the carburettor is the commonest no-start.",
+  "decay": {"halfLifeMonths":null,"note":"Lasts. Fuel left in the carburettor gums it up within months, but cleaning fixes it."},
+  "hazards": ["fuel","co_gas","burn"]
+}

@@ -1,0 +1,14 @@
+{
+  "id": "bridge_rect",
+  "name": "Bridge rectifiers",
+  "group": "Electronic components",
+  "demand": 1,
+  "keywords": ["bridge rectifier","rectifier bridge","full bridge","kbp","gbu","db107","kbpc","kbpc3510","gbj","mb6s","rectifier","bridge diode"],
+  "substitutes": ["diode_rect"],
+  "summary": "Four diodes in one block that turn AC into DC.",
+  "uses": ["Rectifying a transformer or wind generator output","Polarity protection on a DC input","Building a linear power supply or battery charger"],
+  "identify": "Square, flat or round blocks with four legs marked ~ ~ + −, on nearly every mains power supply board and in battery chargers and amplifiers. Big metal-cased ones (KBPC, 25–50A) sit on heatsinks in welders and chargers.",
+  "test": "On diode mode each of the four diodes should read about 0.5–0.7V one way and open the other. A short in any direction means it’s dead.",
+  "decay": {"halfLifeMonths":null,"note":"Lasts."},
+  "hazards": []
+}

@@ -1,0 +1,14 @@
+{
+  "id": "hv_cap",
+  "label": "Stored high voltage",
+  "severity": 5,
+  "summary": "Capacitors in microwaves, camera flashes, power supplies, inverters, UPSes and motor drives can hold a lethal charge for days after unplugging. A microwave oven capacitor charges to roughly 2 kV and is a classic killer.",
+  "signs": ["Microwave ovens: a metal-can capacitor next to the big transformer, marked in µF and about 2,000 VAC or more","Large cylindrical electrolytic capacitors rated 200–450 V in power supplies, UPSes, inverters, TVs and motor drives","Round or oval run and start capacitors on compressors, air conditioners, pumps and fans","Camera flash boards with one capacitor rated about 300 V","Any capacitor rated over 50 V: treat it as charged until you have measured it"],
+  "do": ["Unplug, wait a few minutes, then discharge through a resistor tool with insulated leads","Measure with a meter after discharging, before you touch anything","Clip a wire across the terminals while you work: big capacitors can recover part of their charge","Keep one hand away from the work, in a pocket, so current can't cross your chest","Work on a dry floor, with dry hands, with no rings or watch"],
+  "dont": ["Don't short a capacitor with a screwdriver: it can spray molten metal and leaves your hand next to the terminals (a CRT tube's anode is the exception; see the implosion card)","Don't trust bleed resistors, or 'it's been unplugged for days'","Don't put a meter on a kilovolt capacitor before discharging it: most meters are rated only 600–1,000 V","Don't power up a microwave with its cover off","Don't work on high-voltage gear when tired"],
+  "ppe": ["Safety glasses","A resistor discharge tool with insulated leads, and insulated tools","Dry footwear with rubber soles"],
+  "firstAid": ["Don't touch someone still in contact with the circuit; switch off, or push them free with dry wood or plastic","If they aren't breathing normally, start CPR, and use a defibrillator (AED) as soon as one can be found","Anyone who took a shock across the chest, passed out or has burns needs medical care: heart rhythm problems can start hours later","Electrical burns go deeper than they look; cool with clean water and cover loosely"],
+  "refs": [
+    {"lib":"wikipedia","q":"Capacitor"}
+  ]
+}

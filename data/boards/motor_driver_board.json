@@ -1,0 +1,14 @@
+{
+  "id": "motor_driver_board",
+  "name": "Small motor driver board",
+  "notes": "Drives DC motors in printers, robot vacuums and automatic doors.",
+  "comps": [
+    {"key":"ic_driver","fn":"ic_driver","spec":"H-bridge driver IC (L293/L298/DRV-type)","qty":2,"ext":4,"obs":5,"loc":"Board, sometimes on a heatsink"},
+    {"key":"mosfet","fn":"mosfet","spec":"Small MOSFETs","qty":4,"ext":3,"obs":5,"loc":"Near the motor connectors"},
+    {"key":"reg_linear","fn":"reg_linear","spec":"Linear regulator","qty":1,"ext":2,"obs":4,"loc":"Power input"},
+    {"key":"cap_elec","fn":"cap_elec","spec":"Capacitors","qty":3,"ext":2,"obs":4,"loc":"Power input"},
+    {"key":"resistor","fn":"resistor","spec":"Current-sense resistors","qty":2,"ext":3,"obs":5,"loc":"Near the driver"},
+    {"key":"opto_sensor","fn":"opto_sensor","spec":"Encoder or position sensors","qty":2,"ext":3,"obs":5,"loc":"Near the motors"},
+    {"key":"connector","fn":"connector","spec":"Motor and sensor connectors","qty":4,"ext":2,"obs":4,"loc":"Board edges"}
+  ]
+}

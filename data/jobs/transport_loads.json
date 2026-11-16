@@ -1,0 +1,17 @@
+{
+  "id": "transport_loads",
+  "name": "Transport loads",
+  "keywords": ["transport loads","haul loads","haul gear","carry loads","carry gear","move supplies","hand cart","push cart","build a cart","bike trailer","cargo bike","wagon"],
+  "summary": "Wheels beat backs. Shopping carts, wheelbarrows, bike trailers and garden wagons carry far more than a pack. Big wheels roll over rough ground, so take them from bicycles and wheelchairs rather than small casters. For powered hauling, mobility scooters and e-bikes have motors, batteries and controllers sized to move a person and a load.",
+  "parts": [
+    {"fn":"bearing","why":"Wheels and bearings from bikes, carts and chairs","core":true},
+    {"fn":"tube_frame","why":"Frames from bikes, carts and furniture","core":true},
+    {"fn":"rope_webbing","why":"Straps and tie-downs to secure the load","core":true},
+    {"fn":"fasteners","why":"Bolts the frame together"},
+    {"fn":"lumber","why":"A plywood deck for the cart bed"},
+    {"fn":"motor_bldc","why":"Hub motors from e-bikes and scooters for a powered cart"},
+    {"fn":"battery_li","why":"Powers a hub motor"}
+  ],
+  "guides": ["build_hand_cart","teardown_ebike"],
+  "tips": ["Keep the load low and over the axle so the cart doesn’t tip or drag on your arms.","Solid tyres can’t puncture; air tyres ride better. Carry a patch kit.","Grease or oil wheel bearings. Dry ones drag and wear out."]
+}

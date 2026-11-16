@@ -1,0 +1,22 @@
+{
+  "id": "wifi_router_linksys_wrtu54g_tm",
+  "device": "wifi_router",
+  "brand": "Linksys",
+  "model": "WRTU54G-TM",
+  "fcc": "Q87-WRTU54G",
+  "notes": "Hardware versions of the WRTU54G-TM can differ.",
+  "research": {"gaps":[],"method":["Not yet fact-checked: its parts show as likely until a fact-check confirms them against their sources.","Imported from the OpenWrt Table of Hardware (toh.json, 2026-11-13): the hardware data page for this version, by OpenWrt wiki contributors under CC BY-SA 4.0."]},
+  "comps": [
+    {"key":"ic_mcu_soc","fn":"ic_mcu","spec":"SoC Infineon ADM8668, 1 core at 200 MHz","qty":1,"ext":4,"obs":3,"source":"https://openwrt.org/toh/hwdata/linksys/linksys_wrtu54g-tm","conf":"likely"},
+    {"key":"ic_memory_flash","fn":"ic_memory","spec":"Flash, 8 MB","qty":1,"ext":2,"obs":4,"source":"https://openwrt.org/toh/hwdata/linksys/linksys_wrtu54g-tm","conf":"likely"},
+    {"key":"ic_memory_ram","fn":"ic_memory","spec":"RAM, 64 MB","qty":1,"ext":3,"obs":3,"source":"https://openwrt.org/toh/hwdata/linksys/linksys_wrtu54g-tm","conf":"likely"},
+    {"key":"radio_rf","spec":"Wi-Fi: Ralink RT2561S (2.4 GHz b/g)","qty":1,"source":"https://openwrt.org/toh/hwdata/linksys/linksys_wrtu54g-tm","conf":"likely"},
+    {"key":"antenna_coax","spec":"Detachable external antennas","qty":1,"source":"https://openwrt.org/toh/hwdata/linksys/linksys_wrtu54g-tm","conf":"likely"},
+    {"key":"psu","spec":"Power supply: 12 VDC, 1.5A","v":12,"a":1.5,"source":"https://openwrt.org/toh/hwdata/linksys/linksys_wrtu54g-tm","conf":"likely"},
+    {"key":"connector","spec":"Ethernet ports: 5× 100M","qty":5,"source":"https://openwrt.org/toh/hwdata/linksys/linksys_wrtu54g-tm","conf":"likely"},
+    {"key":"connector_usb","fn":"connector","spec":"USB: Mod","qty":1,"ext":2,"obs":4,"source":"https://openwrt.org/toh/hwdata/linksys/linksys_wrtu54g-tm","conf":"likely"}
+  ],
+  "sources": [
+    {"title":"OpenWrt Table of Hardware: Linksys WRTU54G-TM (OpenWrt wiki contributors, CC BY-SA 4.0)","url":"https://openwrt.org/toh/hwdata/linksys/linksys_wrtu54g-tm"}
+  ]
+}

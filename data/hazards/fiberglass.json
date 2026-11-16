@@ -1,0 +1,16 @@
+{
+  "id": "fiberglass",
+  "label": "Fibreglass",
+  "severity": 2,
+  "summary": "Fine glass fibres in loft and duct insulation, boat hulls, baths, panels and circuit boards. They make skin itch and burn and irritate eyes and lungs, and cutting or grinding fibreglass makes clouds of fine dust. Older loose-fill and mineral insulation may also contain asbestos.",
+  "signs": ["Pink, yellow, white or brown fluffy batts and rolls","Duct wrap and boards in heating and cooling systems","Boat hulls, shower trays, kayaks, roof sheets and ladder rails","Circuit board material and fibre-reinforced plastic panels","A glittery, fibrous edge where something has been cut"],
+  "do": ["Cover all skin and wear a mask and goggles","Handle batts gently and bag them before moving them","Wet the surface, or cut slowly by hand, to keep dust down","Rinse skin with cool water first, then wash with soap","Wash work clothes separately"],
+  "dont": ["Don't rub or scratch itchy skin","Don't blow fibres off with compressed air","Don't grind or sand fibreglass indoors","Don't sleep in clothes you worked in"],
+  "ppe": ["Long sleeves and gloves","Goggles","An N95 or P2 mask or better"],
+  "firstAid": ["Skin: rinse with running water and lift fibres off with sticky tape; don't rub","Eyes: rinse with clean water for at least 15 minutes; get medical help if pain continues","Cough and throat irritation usually pass in a day or two; breathlessness that doesn't pass needs medical care"],
+  "refs": [
+    {"lib":"nomad_conditions","q":"skin rash itch","path":"skin-rash-itch","note":"First aid and over-the-counter treatment on a NOMAD box"},
+    {"lib":"wikimed","q":"Glass wool"},
+    {"lib":"wikipedia","q":"Glass wool"}
+  ]
+}

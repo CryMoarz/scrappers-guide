@@ -1,0 +1,16 @@
+{
+  "id": "smoke_alarm_google_nest_protect_2nd_gen_battery",
+  "device": "smoke_alarm",
+  "brand": "Google",
+  "model": "Nest Protect 2nd gen (battery)",
+  "notes": "Battery version of the 2nd gen Nest Protect smoke and CO alarm.",
+  "research": {"checked":"2026-11-11","gaps":["Google's spec page gives no model number and does not say whether the batteries are user replaceable."],"method":["The spec page has separate Battery and Wired columns."]},
+  "comps": [
+    {"key":"battery_primary","qty":6,"conf":"documented","spec":"Six long-life batteries (Energizer Ultimate Lithium L91 AA)","source":"https://support.google.com/googlenest/answer/9229922"},
+    {"key":"speaker","conf":"documented","spec":"2-watt speaker; horn sound output 85 dB SPL at 10 ft (3 m)","source":"https://support.google.com/googlenest/answer/9229922"},
+    {"key":"sensor_misc","conf":"documented","spec":"Split-Spectrum Sensor and 10-year electrochemical carbon monoxide sensor (10 years counted from date of manufacture)","source":"https://support.google.com/googlenest/answer/9229922"}
+  ],
+  "sources": [
+    {"title":"Google Nest Help: Nest Protect 2nd generation technical specifications","url":"https://support.google.com/googlenest/answer/9229922"}
+  ]
+}

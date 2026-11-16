@@ -1,0 +1,30 @@
+{
+  "id": "corded_tools",
+  "name": "Corded drills, grinders and saws",
+  "group": "Tools and yard",
+  "aliases": ["angle grinder","circular saw"],
+  "brands": ["Makita","DeWalt","Bosch","Milwaukee","Black+Decker","Ryobi","Metabo HPT","Skil","Vevor"],
+  "prev": 5,
+  "tools": ["screwdriver"],
+  "mins": 10,
+  "hazards": [],
+  "comps": [
+    {"key":"motor_universal","fn":"motor_universal","spec":"Universal motor (runs on AC or DC)","v":[120,240],"w":[400,2400],"ac":true,"qty":1,"ext":2,"obs":3,"loc":"Tool body"},
+    {"key":"gearbox","fn":"gearbox","spec":"Reduction gears","qty":1,"ext":2,"obs":4,"loc":"Tool head"},
+    {"key":"switch","fn":"switch","spec":"Heavy-duty trigger switch","qty":1,"ext":2,"obs":4,"loc":"Handle"},
+    {"key":"wire_copper","fn":"wire_copper","spec":"Power cord","qty":1,"ext":1,"obs":3,"loc":"Tool"},
+    {"key":"thyristor","fn":"thyristor","spec":"Triac speed controller (variable-speed tools)","qty":1,"ext":3,"obs":5,"loc":"Inside the trigger switch"}
+  ],
+  "buildings": [
+    {"b":"hardware","l":5},
+    {"b":"garage_res","l":5},
+    {"b":"house","l":4},
+    {"b":"tool_rental","l":5},
+    {"b":"warehouse","l":4},
+    {"b":"factory","l":4},
+    {"b":"farm","l":4},
+    {"b":"school","l":3},
+    {"b":"construction","l":4},
+    {"b":"car_repair","l":4}
+  ]
+}

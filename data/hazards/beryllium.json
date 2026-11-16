@@ -1,0 +1,15 @@
+{
+  "id": "beryllium",
+  "label": "Beryllium oxide ceramic",
+  "severity": 4,
+  "summary": "Some magnetrons and older high-power RF transistors use a beryllium oxide (beryllia) ceramic insulator. Whole, it is harmless. Broken, ground, cut or filed, its dust can cause chronic beryllium disease, an incurable lung illness.",
+  "signs": ["Pink, white or cream ceramic washer or block between the magnetron body and its terminals or antenna dome","Labelled BeO or marked with a warning on the part or in its datasheet","You can’t tell beryllia from ordinary alumina by eye: treat every magnetron ceramic as beryllia"],
+  "do": ["Keep the magnetron whole, or remove its magnets by unbolting the outer frame without breaking ceramics","Store damaged magnetrons sealed in a bag","Work outdoors and wet any dust if a ceramic is already cracked"],
+  "dont": ["Never crush, cut, drill, file or sand a magnetron’s ceramics","Never sweep or blow dust from a broken one","Don’t heat or burn it"],
+  "ppe": ["A P100 or FFP3 respirator and gloves if you must handle a broken ceramic"],
+  "firstAid": ["There is no field treatment for inhaled beryllium dust: leave the area and avoid further exposure","Shortness of breath, a persistent cough, tiredness or weight loss, weeks or even years later, needs a doctor; tell them about beryllium","Cut by broken ceramic: wash it out well under running water; a cut that won't heal or a lump that forms there needs a doctor"],
+  "refs": [
+    {"lib":"wikimed","q":"Berylliosis"},
+    {"lib":"wikipedia","q":"Berylliosis"}
+  ]
+}

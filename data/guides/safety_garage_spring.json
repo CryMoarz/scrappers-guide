@@ -1,0 +1,27 @@
+{
+  "id": "safety_garage_spring",
+  "kind": "safety",
+  "title": "Garage door springs: what to leave alone",
+  "keywords": ["garage door","torsion spring","extension spring","garage spring","garage door cable","garage opener","overhead door","sectional door","door spring","bottom bracket"],
+  "summary": "Garage door springs hold enough energy to break bones and kill. Releasing them safely takes proper winding bars, training and practice, which you probably don't have. This guide shows how to recognise them, take the opener and other useful parts without touching the springs, and leave the door safe.",
+  "difficulty": 2,
+  "mins": 30,
+  "tools": ["ladder","screwdriver","socket","pliers","clamps","heavy"],
+  "hazards": ["spring","crush","fall","heavy","mains"],
+  "steps": [
+    {"text":"Look before you touch anything. A torsion spring is a thick coil on a steel bar just above the door, with cable drums at each end. Extension springs run along the horizontal tracks on each side, usually with a safety cable through them. Steel cables run from the bottom corners of the door up to the drums or pulleys."},
+    {"text":"Note where the door is. Closed, the springs are at full tension. Fully open, they are mostly relaxed, but the whole door is hanging above you.","warn":"Never work or stand under an open garage door."},
+    {"text":"Close the door fully if you can. Clamp locking pliers or a clamp onto the track just above one of the rollers so the door can't move.","warn":"A door with a broken spring is far heavier than it looks. Keep fingers and feet clear of the bottom edge."},
+    {"text":"Unplug the opener. Pull the emergency release cord (often red) only when the door is fully closed.","warn":"Pulling the release with the door open and a weak or broken spring lets the door crash down."},
+    {"text":"Take the opener head unit: disconnect the wires to the wall button and the safety sensors, take the weight of the unit, and unbolt it from its ceiling hangers. Unbolt the rail from its bracket above the door.","warn":"Head units are heavy and awkward on a ladder. Get a second person to take the weight."},
+    {"text":"Take the safety beam sensors, wall button, remotes, wiring and light. The opener rail and its chain or belt are not spring-loaded."},
+    {"text":"Leave the springs, winding cones, cable drums, cables and bottom brackets exactly as they are. Don't loosen any bolt or set screw on them.","warn":"The bottom brackets carry full spring tension when the door is closed. Undoing them can throw the bracket and cable at you."},
+    {"text":"If you only need to get in, use another door. If you must lift the door by hand, do it slowly with the spring intact. A balanced door feels light and stays put halfway. If it feels very heavy, a spring has broken: lower it gently and leave it.","warn":"Never prop a heavy door open on a stick or block and go under it."},
+    {"text":"Need spring steel or cable? Take it from things that hold no dangerous tension when unloaded: screen door closers, trampoline springs, mattress springs, scrap cable on reels."}
+  ],
+  "notes": "## Why they're so dangerous\n\nA garage door can weigh 50–150 kg or more. The springs carry nearly all of that weight. When the door is closed, a torsion spring is wound tight. If it lets go, the winding cone and anything in it spin with enough force to break wrists, smash faces and fracture skulls. Extension springs that snap without a safety cable fly across the garage.\n\n## Why winding bars and training\n\nPeople who do this work use solid steel winding bars of exactly the right diameter, follow a set order, and still get hurt. Screwdrivers and rebar bend or slip out of the cone. There is no safe improvised method. Leave it.\n\n## Torsion or extension?\n\n| Type | Where | When tense |\n|---|---|---|\n| Torsion | One or two thick coils on a bar above the door | Door closed |\n| Extension | Long springs above each horizontal track | Door closed |\n\n## What you can take\n\n| Part | Where | Good for |\n|---|---|---|\n| Opener motor and gearbox | Ceiling head unit | Slow, strong gear motor for winches, gates and pumps |\n| Transformer or power supply | Head unit | Low-voltage power |\n| Logic board with radio receiver | Head unit | Remote switching |\n| Infrared safety beam pair | Low on each side of the door | Beam alarm for a perimeter |\n| Light, wiring, wall button | Head unit and walls | Lighting, wire, switches |\n| Backup battery (some newer openers) | Head unit | 12 V battery |\n\n## Common mistakes\n\n- Undoing the bottom bracket bolts to \"take the door down\".\n- Cutting the lift cables.\n- Pulling the release cord with the door open.\n- Trying to lift a door with a broken spring using the opener.",
+  "tree": {"era":2,"branch":"salvage","requires":["safety_entering_buildings"]},
+  "devices": ["garage_opener"],
+  "parts": ["spring","cable_steel","motor_ac","gearbox","sensor_motion","transformer_lv"],
+  "license": "CC-BY-SA-4.0"
+}

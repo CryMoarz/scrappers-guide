@@ -1,0 +1,14 @@
+{
+  "id": "fuel_liquid",
+  "name": "Petrol and diesel",
+  "group": "Stored supplies",
+  "demand": 5,
+  "keywords": ["fuel","petrol","gasoline","unleaded","diesel","red diesel","dyed diesel","biodiesel","kerosene","paraffin","lamp oil","heating oil","fuel oil","jet fuel","two-stroke mix","2-stroke mix","mixed fuel","e10"],
+  "substitutes": ["propane"],
+  "summary": "Petrol (gasoline), diesel and kerosene for engines, generators, heaters and lamps. The vapour explodes: no flames, sparks or phones nearby, and never siphon by mouth.",
+  "uses": ["Running generators, vehicles and small engines","Diesel and kerosene for heaters and lamps","Petrol for chainsaws and garden tools"],
+  "identify": "Underground tanks at fuel stations (need a hand pump), vehicle tanks, farm diesel tanks, generator day tanks at hospitals, phone sites and data centres, boat tanks, and cans in garages and sheds. Diesel is oily and yellowish (farm and off-road diesel is often dyed red); petrol is thin and sharp-smelling.",
+  "test": "Look in a clear jar: good petrol is clear and sharp-smelling; dark, varnish-smelling or layered fuel is stale. Water settles at the bottom as beads or a layer.",
+  "decay": {"halfLifeMonths":9,"note":"Petrol goes stale in about 6 months, sooner in heat; diesel lasts a year or more if sealed and dry."},
+  "hazards": ["fuel"]
+}

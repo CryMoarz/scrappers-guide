@@ -1,0 +1,20 @@
+{
+  "id": "talk_long_distance",
+  "name": "Talk over long distance",
+  "keywords": ["talk long distance","talk to another caravan","talk to other caravan","contact other group","reach other survivor","long distance communication","long range communication","two way radio","two-way radio","ham radio","radio contact","talk on the radio"],
+  "summary": "Radios hide in plain sight: CB sets in semi trucks, marine VHF on boats at every marina, and walkie-talkies in sports and toy stores. The antenna matters more than the radio: get it high and in the clear and range can double or more. Vehicle radios run straight off 12V, so a car battery and a small solar panel keep a base station going.",
+  "parts": [
+    {"fn":"radio_rf","why":"CB, marine VHF, walkie-talkies and ham sets","core":true},
+    {"fn":"antenna_coax","why":"A good antenna up high beats more power","core":true},
+    {"fn":"battery_pb","why":"Powers a base station"},
+    {"fn":"solar_panel","why":"Keeps the radio battery charged","need":{"w":5}},
+    {"fn":"wire_copper","why":"Wire antennas and ground radials"},
+    {"fn":"tube_frame","why":"A mast to get the antenna high"},
+    {"fn":"rope_webbing","why":"Hoists wire antennas into trees"}
+  ],
+  "guides": ["build_yagi_antenna","skill_dc_wiring"],
+  "tips": ["Agree channels and call times with other groups before you split up.","Rough ranges: walkie-talkies 1–3 km, CB 5–30 km, ham HF radio can reach other continents.","Listen more than you talk: transmitting drains batteries and gives away where you are.","Never transmit without an antenna connected. It can damage the radio."],
+  "refs": [
+    {"lib":"ham","q":"emergency communication"}
+  ]
+}

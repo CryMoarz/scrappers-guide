@@ -1,0 +1,47 @@
+{
+  "id": "build_mot_spot_welder",
+  "kind": "build",
+  "title": "Spot welder from a microwave oven transformer",
+  "keywords": ["spot welder","mot","microwave transformer","resistance welder","tab welder","battery tab welding","nickel strip welding","mot welder"],
+  "summary": "Rewind a microwave oven transformer (MOT) with a 1–3 turn secondary of very heavy cable to make a resistance spot welder for thin sheet steel and battery tabs. For experienced builders only: the primary runs on mains, the original secondary makes about 2,000V and must be removed completely, and welding throws sparks and makes metal red hot.",
+  "difficulty": 5,
+  "mins": 360,
+  "tools": ["saw","grinder","hammer","drill","crimper","multimeter","wrench","screwdriver","cutters","file","clamps","desolder"],
+  "hazards": ["mains","hv","hv_cap","burn","li_fire"],
+  "materials": [
+    {"item":"Microwave oven transformer from a 700–1,200W transformer-type microwave","qty":"1","fn":"transformer_hv","only":["microwave"]},
+    {"item":"Heavy copper: 50 mm² (1/0 AWG) or thicker cable for the secondary, plus 8–12 mm copper rod or bar for electrodes","qty":"about 1 m cable, 2 × 100 mm rod","fn":"wire_heavy"},
+    {"item":"Heavy lugs for the secondary ends, plus an earth lug, strain relief and insulated mains terminals","qty":"2 heavy lugs + fittings","fn":"connector","only":["lug","terminal block"]},
+    {"item":"Mains cord with earth, 1.5–2.5 mm² (14–12 AWG)","qty":"2 m","fn":"wire_copper","only":["14–16 awg","heavy mains"]},
+    {"item":"Circuit breaker or fuse: 15–20A on 120V, 10A on 230V","qty":"1","fn":"breaker","only":["main and auxiliary","breaker panel","output breaker"]},
+    {"item":"Switch rated 20A or more, or a relay or contactor driven by a timer","qty":"1","fn":"relay","only":["24v ac coil","24v coils","motor starter"]},
+    {"item":"Triac on a heatsink, if switching electronically","qty":"1","fn":"thyristor","optional":true},
+    {"item":"555 timer board for repeatable pulses","qty":"1","fn":"ic_555","optional":true},
+    {"item":"Thermal cutout 100–120 °C on the transformer","qty":"1","fn":"thermostat","only":["bimetal","cutoff"]},
+    {"item":"Fan for cooling","qty":"1","fn":"fan","optional":true},
+    {"item":"Enclosure and electrode arm: timber or plywood base, closed box over mains parts","qty":"1","fn":"lumber"}
+  ],
+  "steps": [
+    {"text":"Get the MOT out of a transformer-type microwave following teardown_microwave. Discharge and remove the high-voltage capacitor first (safety_discharge_capacitor).","warn":"The microwave capacitor can hold a lethal charge for days. Discharge it and check with a meter before touching anything."},
+    {"text":"Identify the windings. The primary has heavier wire and two mains spade terminals. The secondary has many turns of thin wire, with one end welded or bolted to the core. A 2–3 turn filament winding sits beside it. Note the primary's resistance (usually well under 2 Ω). Measure primary to core: it must read open (no continuity)."},
+    {"text":"Clamp the MOT. Cut the secondary and filament windings off flush with the core on both sides using a hacksaw or grinder, without touching the primary.","warn":"The original secondary makes about 2,000V at currents that kill instantly. Remove it completely. Never power a MOT with its original secondary in place."},
+    {"text":"Drive the remains of the secondary out with a hammer and a drift. Pull out the magnetic shunts (small steel bars between the windings) if you want more output; it also makes the transformer run hotter."},
+    {"text":"Wind the new secondary: as many turns of the heaviest cable as fit, usually 1.5–3 turns. Thicker cable gives more current than more turns. Keep the tails as short as possible."},
+    {"text":"Crimp or hammer-crimp heavy lugs on the tails and bolt on the copper electrodes. Keep the whole secondary loop under about 40 cm long."},
+    {"text":"Build the primary circuit (safety_mains_isolation): earth wire to the transformer core, then breaker or fuse → thermal cutout → switch or relay contacts → primary. Use an enclosed switch rated for at least 20A.","warn":"This is mains wiring. If you are not experienced with mains, stop here and get someone who is. No bare mains terminal may be reachable from outside the box."},
+    {"text":"Box all mains parts. Fit strain relief on the cord. Mount the transformer and electrodes on a timber base with a lever arm for clamping pressure."},
+    {"text":"Before plugging in, shine a light into both core windows: no turns or stubs of the old thin secondary may remain. Then check with the meter: primary to core open; new secondary to primary open; earth pin to core closed."},
+    {"text":"First power-up: electrodes apart, fire one short pulse and measure the new secondary's open-circuit AC voltage. Expect about 1.5–3.5V. If you read more than about 5V, unplug at once and recheck the windings.","warn":"Stand clear, keep one hand away, and be ready to cut power at the breaker."},
+    {"text":"Weld: clean both metal surfaces bright, clamp them hard between the electrodes, then pulse. Thin sheet steel needs about 0.2–1 s; battery tabs need far shorter pulses (see notes).","warn":"Wear eye protection and leather gloves, no rings or watch. Sparks and molten spatter fly; electrodes and work glow red. Clear flammables and keep an extinguisher or sand at hand."},
+    {"text":"Let the transformer rest. Check its temperature every few welds; the thermal cutout should trip before it gets too hot to touch."},
+    {"text":"Battery tabs: practise on dead cells first, use a timer for repeatable short pulses, and never hold the electrodes on a cell for longer than a pulse.","warn":"Overheating a lithium cell can make it vent and burn. Weld with a sand bucket nearby and never on charged cells you can't afford to lose."}
+  ],
+  "notes": "## How it works\nA MOT steps 120V or 230V up to about 2,000V. Replace the thousands of thin turns with 1–3 turns of thick cable and it steps down instead, to about 1–3V at hundreds to over a thousand amps. Pressed between copper electrodes, the thin metal's resistance is the hottest point in the loop, so it melts and fuses there.\n\n## Volts per turn\nMOTs give roughly 0.8–1.2V per turn. Wind one test turn of thin insulated wire round the core, power the primary briefly through the breaker, and measure the AC volts on that turn. Secondary volts = turns × volts per turn.\n\n## Primary current\nA 1,000W microwave's MOT is roughly a 1–1.5kVA transformer. While welding, the primary can draw 10–20A on 120V or 5–10A on 230V. Breakers often trip; that's why it needs its own circuit. Never bypass the breaker.\n\n## Cable and loop resistance\nAt 1,000A, every 0.001 Ω in the loop loses 1V, which is the whole output. Use the thickest cable that fits through the window (50–70 mm² or more), keep it short, and make lug joints tight and clean. Copper electrode tips should be shaped to a blunt point 3–5 mm across and dressed with a file when they mushroom.\n\n## Pulse timing\n- Sheet steel 0.5–1 mm: about 0.2–1 s with firm pressure. Hold pressure until the spot stops glowing.\n- Nickel strip 0.1–0.2 mm on cells: tens of milliseconds. Hand switches can't do this repeatably. Use a 555 monostable driving a triac or a solid-state relay rated well above primary current, or a commercial timer board. Some builders use two pulses: a short pre-pulse, a pause, then the weld pulse.\n- A zero-cross solid-state relay times pulses in whole mains half-cycles (8–10 ms each), which keeps them repeatable.\n\n## What it can't do\nIt isn't an arc welder. It joins thin overlapping sheet only, about 2 × 1 mm steel at most for a single MOT. Aluminium and copper are too conductive to spot weld this way.\n\n## Safety summary\n- Mains on the primary: earth the core, fuse it, box it.\n- Old secondary: remove completely; test output volts before every first use after changes.\n- Fire and burns: sparks, red-hot electrodes, transformer heating. Thermal cutout, short duty, extinguisher.\n- Eyes: safety glasses at minimum.\n- Battery work: lithium cells can vent and burn if overheated.\n\n## Troubleshooting\n- Breaker trips at once with no load: primary damaged during cutting. Compare its resistance with the reading you took before cutting, and check insulation to the core.\n- Weak welds: too-thin or too-long cable, dirty metal, loose lugs, low clamping pressure.\n- Transformer smells hot: duty too high. Rest it, add a fan.\n\n## If you lack a part\n- No heavy cable: several runs of thinner cable in parallel, or copper busbar bent to shape.\n- No timer: a foot switch on a contactor frees both hands; practise for consistent timing on scrap.\n",
+  "tree": {"era":6,"branch":"fabrication","requires":["teardown_microwave","test_transformer","skill_soldering"]},
+  "devices": ["microwave_tx","microwave","welder","forklift","golf_cart","car","semi","dryer"],
+  "parts": ["transformer_hv","wire_heavy","relay","thermostat","breaker"],
+  "license": "CC-BY-SA-4.0",
+  "sources": [
+    {"title":"Widely shared home-built MOT spot welder designs","note":"General method only; safety steps and numbers written for this guide."}
+  ]
+}

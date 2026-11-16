@@ -1,0 +1,17 @@
+{
+  "id": "see_in_dark",
+  "name": "See in the dark",
+  "keywords": ["see in the dark","see at night","night vision","night sight","infrared camera","infrared light","ir illuminator","see without light"],
+  "summary": "Most security cameras see in the dark with their own ring of infrared LEDs, invisible to the eye. Baby monitors with night vision are a ready-made camera and screen in one, and many run on 5V. For your own eyes, a dim red light keeps them adjusted to the dark.",
+  "parts": [
+    {"fn":"camera","why":"Security cameras and baby monitors see infrared","core":true},
+    {"fn":"opto_sensor","why":"Infrared LEDs light a scene only cameras can see","core":true},
+    {"fn":"led_light","why":"Dim red lights keep your night vision","core":true},
+    {"fn":"display","why":"Small screens to view a camera"},
+    {"fn":"battery_li","why":"Portable power for camera and screen"},
+    {"fn":"dcdc_buck","why":"Runs 5V cameras and monitors from 12V"},
+    {"fn":"optics","why":"Reflectors and lenses focus a light into a beam"}
+  ],
+  "guides": ["skill_dc_wiring"],
+  "tips": ["Your eyes take 20–30 minutes to adjust to the dark. One bright white light resets them.","Many phone cameras see some infrared. Check by pointing a TV remote at one and pressing a button.","Older analogue CCTV cameras run on 12V and plug into any TV with a yellow video input."]
+}

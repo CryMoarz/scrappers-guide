@@ -1,0 +1,13 @@
+{
+  "id": "battery_bms",
+  "name": "Battery protection board (BMS)",
+  "notes": "On nearly every lithium pack. Reusable when rebuilding packs from salvaged cells.",
+  "comps": [
+    {"key":"bms","fn":"bms","spec":"Protection or balancing IC","qty":1,"ext":4,"obs":4,"loc":"Board on the pack"},
+    {"key":"mosfet","fn":"mosfet","spec":"Charge and discharge MOSFETs","qty":2,"ext":4,"obs":5,"loc":"Board"},
+    {"key":"resistor","fn":"resistor","spec":"Balance and shunt resistors","qty":4,"ext":3,"obs":5,"loc":"Board"},
+    {"key":"fuse","fn":"fuse","spec":"PTC or thermal fuse","a":[2,15],"qty":1,"ext":3,"obs":5,"loc":"Pack lead"},
+    {"key":"sensor_misc","fn":"sensor_misc","spec":"NTC temperature sensor","qty":1,"ext":2,"obs":5,"loc":"Taped to the cells"},
+    {"key":"wire_copper","fn":"wire_copper","spec":"Nickel strip and balance leads","qty":1,"ext":2,"obs":4,"loc":"Between cells"}
+  ]
+}

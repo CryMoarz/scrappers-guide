@@ -1,0 +1,37 @@
+{
+  "id": "skill_solar_disinfection",
+  "kind": "skill",
+  "title": "Solar water disinfection (SODIS) in clear plastic bottles",
+  "keywords": ["sodis","solar water disinfection","solar disinfection","disinfect water","purify water sunlight","bottle water sun","safe drinking water","uv water"],
+  "summary": "Fill clear plastic bottles with clear water and lay them in full sun for at least 6 hours. Sunlight and warmth kill most germs that cause diarrhoea. It costs nothing, but it does not remove chemicals, salt or mud, and it needs sun.",
+  "difficulty": 1,
+  "mins": 360,
+  "tools": ["hands"],
+  "hazards": ["chemical"],
+  "materials": [
+    {"item":"Clear PET plastic bottles, 2 litres or smaller, unscratched, labels removed","qty":"2 per person per day"},
+    {"item":"Clean cloth for pre-filtering","fn":"fabric_tarp","optional":true},
+    {"item":"Corrugated metal sheet or a sunny roof to lay bottles on","fn":"sheet_metal","optional":true}
+  ],
+  "steps": [
+    {"text":"Pick bottles: clear (not coloured) PET plastic, marked with recycling code 1, 2 litres or smaller, not badly scratched. Peel the labels off.","warn":"Never use bottles that held fuel, pesticide or other chemicals. Washing doesn't make them safe."},
+    {"text":"Check the water is clear. Fill a bottle, stand it on a printed page or a sign with letters about 1 cm high, and look down through the water. If you can't read the letters, the water is too cloudy."},
+    {"text":"Clear cloudy water first: let it settle in a bucket for a few hours and pour off the top, or pour it through a folded clean cloth."},
+    {"text":"Fill a bottle three-quarters full, cap it and shake it for 20 seconds. Then fill it to the top and cap it."},
+    {"text":"Lay the bottles flat in full sun, on a metal roof, a sheet of corrugated metal or anything reflective or dark, from morning. Don't let them fall into shade."},
+    {"text":"Leave them at least 6 hours in sun or light cloud. If more than half the sky is cloudy, leave them 2 full days. In continuous rain SODIS does not work: collect rainwater instead."},
+    {"text":"Drink straight from the bottle or pour into a clean cup. Use the water within a day."},
+    {"text":"Replace bottles when they get scratched, cloudy or deformed."}
+  ],
+  "notes": "## How it works\n\nUV-A light in sunlight damages germs, and warming the water speeds that up. Together they kill most bacteria, viruses and parasites that cause diarrhoea, including cholera and typhoid bacteria. Some parasites with tough cysts take longer, so the full exposure time matters. Shaking adds oxygen, which helps.\n\nIf the water in the bottle gets above about 50 °C (too hot to keep your hand on), 1 hour is enough.\n\n## What SODIS does not do\n\n- It does not remove chemicals, fuel, heavy metals, salt or poisons.\n- It does not clear mud or cloudiness: you must do that first.\n- It does not protect water once it's poured into a dirty container.\n- It is less reliable in winter and far from the equator, when the sun is low and weak.\n\n## Other ways to make water safe\n\n| Method | What it does | Notes |\n|---|---|---|\n| Boiling | Kills germs | Most reliable. Bring to a rolling boil for 1 minute (3 minutes above about 2,000 m). Needs fuel |\n| Chlorine | Kills most germs | See chlorine. Use the right dose and wait 30 minutes |\n| Filtering | Removes germs (fine filters) and some chemicals (carbon) | See build_gravity_water_filter |\n| SODIS | Kills most germs | Free, needs sun, bottles and time |\n\nCombine methods when the source is poor: settle, filter through cloth, then SODIS or boil.\n\n## Bottles\n\nPET is the clear, light, slightly flexible plastic of most drink bottles. Many kinds of glass block much of the useful UV, and PVC can leach chemicals, so stick to PET. Studies of PET bottles used this way have found leaching to be very low.",
+  "tree": {"era":1,"branch":"water"},
+  "license": "CC-BY-SA-4.0",
+  "refs": [
+    {"lib":"water_lib","q":"SODIS"},
+    {"lib":"appropedia","q":"SODIS"}
+  ],
+  "sources": [
+    {"title":"Eawag (Swiss Federal Institute of Aquatic Science and Technology), SODIS method guidance","note":"Summarised in our own words"},
+    {"title":"World Health Organization guidance on household water treatment","note":"Summarised in our own words"}
+  ]
+}

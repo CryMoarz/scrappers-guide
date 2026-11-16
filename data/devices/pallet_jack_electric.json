@@ -1,0 +1,34 @@
+{
+  "id": "pallet_jack_electric",
+  "name": "Electric pallet jack (walkie)",
+  "variantOf": "pallet_jack",
+  "aliases": ["walkie","powered pallet truck","electric pallet truck","electric pallet jack","walkie stacker","electric stacker"],
+  "brands": ["Crown","Toyota","Hyster","Yale","Raymond","Jungheinrich","Vestil"],
+  "prev": 3,
+  "tools": ["socket","cutters","heavy"],
+  "mins": 45,
+  "kg": 350,
+  "hazards": ["acid"],
+  "comps": [
+    {"key":"battery_pb","fn":"battery_pb","spec":"24V traction battery or 2× 12V AGM blocks, 85–250Ah","ah":[85,250],"qty":1,"ext":2,"obs":5,"loc":"Compartment under the top cover","kg":70},
+    {"key":"battery_li","fn":"battery_li","spec":"24V lithium pack (some newer light-duty models)","v":24,"qty":1,"ext":1,"obs":4,"loc":"Slide-out pack under the cover","p":0.25},
+    {"key":"motor_dc_large","fn":"motor_dc_large","spec":"24V drive motor, about 0.5–1.5 kW, built into the steer wheel","v":24,"w":[500,1500],"qty":1,"ext":3,"obs":5,"loc":"Drive wheel under the handle"},
+    {"key":"motor_dc_large_pump","fn":"motor_dc_large","spec":"24V hydraulic pump motor, about 1–2 kW","v":24,"w":[1000,2000],"qty":1,"ext":3,"obs":5,"loc":"Pump unit beside the battery"},
+    {"key":"hydraulic","fn":"hydraulic","spec":"Electric hydraulic power unit with small reservoir and lift cylinder","qty":1,"ext":3,"obs":5,"loc":"Under the top cover","kg":15},
+    {"key":"charger","fn":"charger","spec":"Built-in 24V charger, mains input","v":24,"qty":1,"ext":2,"obs":5,"loc":"Under the top cover"},
+    {"key":"wire_heavy","fn":"wire_heavy","spec":"Battery cables and connector","qty":4,"ext":1,"obs":5,"loc":"Battery compartment"}
+  ],
+  "boards": [
+    {"id":"power_motor_controller","qty":1,"loc":"Under the top cover","p":1}
+  ],
+  "buildings": [
+    {"b":"warehouse","l":5},
+    {"b":"supermarket","l":5},
+    {"b":"factory","l":4},
+    {"b":"hardware","l":4},
+    {"b":"department","l":4},
+    {"b":"farm_supply","l":3},
+    {"b":"mall","l":3},
+    {"b":"airport","l":2}
+  ]
+}

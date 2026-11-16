@@ -1,0 +1,20 @@
+{
+  "id": "mobility_scooter_golden_gb107",
+  "device": "mobility_scooter",
+  "brand": "Golden Technologies",
+  "model": "Buzzaround Lite GB107 (3-wheel; GB108 is the 4-wheel version)",
+  "notes": "Covers the Buzzaround Lite GB107 and GB108. Lightweight travel scooter.",
+  "research": {"checked":"2026-11-12","gaps":["The 180W motor rating is below the template's 250-800 W range.","The manual does not say what sensor the throttle uses.","Its warranty lists a 'Potentiometer Assembly' among the electronic assemblies without saying which control it belongs to, so no potentiometer part is claimed.","No charger current, breaker rating or fuse ratings are stated.","A Buzzaround Lite service manual is listed on ManualsLib but was not read."],"method":["One document was read as text: the Golden Buzzaround Lite owner's manual for GB107/GB108 (LIT-107-108-OM_11.15.2022), in a copy on 1800wheelchair.com.","It is Golden's own document (Golden title page, Old Forge PA address, document code).","Golden's own owner's-manuals page links only to a Dropbox folder that could not be read.","The manual's spec table gives the batteries, controller current and motor power, and it is the only source found for the 180W motor rating.","The manual calls the controller a 'microprocessor based motor control board' with flash/beep fault codes.","It says to use only AGM or gel-cell SLA deep-cycle batteries; the 2-battery pack weighs 17.5 lbs. Braking per the manual: the motor slows the scooter when the throttle lever is released (and resists fast pushing in freewheel), and a park brake clicks on when the lever returns to centre.","The spec table lists electro-mechanical brakes.","The throttle is a self-centring lever (right side forward, left side reverse)."]},
+  "comps": [
+    {"key":"battery_pb","conf":"documented","spec":"Two 12 Ah batteries in a removable battery pack; AGM or gel-cell SLA deep-cycle only","ah":12,"qty":2,"source":"https://www.1800wheelchair.com/media/manuals/Golden_Buzzaround_LT_Scooter_User_Manual.pdf"},
+    {"key":"motor_dc_large","conf":"documented","spec":"Motor 180W (spec table, GB107 and GB108)","w":180,"source":"https://www.1800wheelchair.com/media/manuals/Golden_Buzzaround_LT_Scooter_User_Manual.pdf"},
+    {"key":"controller_board_motor","fn":"controller_board","spec":"Controller 50 Amp (spec table); microprocessor-based motor control board with flash/beep diagnostic codes","a":50,"qty":1,"ext":2,"obs":3,"conf":"documented","source":"https://www.1800wheelchair.com/media/manuals/Golden_Buzzaround_LT_Scooter_User_Manual.pdf"},
+    {"key":"gearbox","conf":"documented","spec":"Transaxle with a motor/brake assembly (both listed under the 2-year drive-train warranty)","source":"https://www.1800wheelchair.com/media/manuals/Golden_Buzzaround_LT_Scooter_User_Manual.pdf"},
+    {"key":"solenoid_actuator","conf":"documented","spec":"Electro-mechanical park brake: clicks on when the throttle lever returns to centre; released in freewheel mode","source":"https://www.1800wheelchair.com/media/manuals/Golden_Buzzaround_LT_Scooter_User_Manual.pdf"},
+    {"key":"charger","conf":"documented","spec":"Automatic off-board charger; plugs into the charger port on the battery pack or on the side of the console","source":"https://www.1800wheelchair.com/media/manuals/Golden_Buzzaround_LT_Scooter_User_Manual.pdf"},
+    {"key":"breaker","conf":"documented","spec":"Main circuit breaker with reset button","loc":"On the battery pack","source":"https://www.1800wheelchair.com/media/manuals/Golden_Buzzaround_LT_Scooter_User_Manual.pdf"}
+  ],
+  "sources": [
+    {"title":"Golden Buzzaround Lite owner's manual, models GB107/GB108, LIT-107-108-OM_11.15.2022 (copy hosted by 1800wheelchair.com)","url":"https://www.1800wheelchair.com/media/manuals/Golden_Buzzaround_LT_Scooter_User_Manual.pdf"}
+  ]
+}

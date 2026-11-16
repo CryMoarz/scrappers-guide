@@ -1,0 +1,21 @@
+{
+  "id": "wifi_router_tp_link_tl_wr802n_v1",
+  "device": "wifi_router",
+  "brand": "TP-Link",
+  "model": "TL-WR802N v1",
+  "fcc": "TE7WR802N",
+  "notes": "Chips for hardware version v1; other versions of the TL-WR802N can differ.",
+  "research": {"gaps":[],"method":["Not yet fact-checked: its parts show as likely until a fact-check confirms them against their sources.","Imported from the OpenWrt Table of Hardware (toh.json, 2026-11-13): the hardware data page for this version, by OpenWrt wiki contributors under CC BY-SA 4.0."]},
+  "comps": [
+    {"key":"ic_mcu_soc","fn":"ic_mcu","spec":"SoC Qualcomm Atheros QCA9533-AL3A, 1 core at 550 MHz","qty":1,"ext":4,"obs":3,"source":"https://openwrt.org/toh/hwdata/tp-link/tp-link_tl-wr802n_v1","conf":"likely"},
+    {"key":"ic_memory_flash","fn":"ic_memory","spec":"Flash, 4 MB","qty":1,"ext":2,"obs":4,"source":"https://openwrt.org/toh/hwdata/tp-link/tp-link_tl-wr802n_v1","conf":"likely"},
+    {"key":"ic_memory_ram","fn":"ic_memory","spec":"RAM, 32 MB","qty":1,"ext":3,"obs":3,"source":"https://openwrt.org/toh/hwdata/tp-link/tp-link_tl-wr802n_v1","conf":"likely"},
+    {"key":"radio_rf","spec":"Wi-Fi: Qualcomm Atheros QCA9533 (2.4 GHz b/g/n)","qty":1,"source":"https://openwrt.org/toh/hwdata/tp-link/tp-link_tl-wr802n_v1","conf":"likely"},
+    {"key":"psu","spec":"Power supply: 5 VDC, 0.55A","v":5,"a":0.55,"source":"https://openwrt.org/toh/hwdata/tp-link/tp-link_tl-wr802n_v1","conf":"likely"},
+    {"key":"connector","spec":"Ethernet ports: 1× 100M","qty":1,"source":"https://openwrt.org/toh/hwdata/tp-link/tp-link_tl-wr802n_v1","conf":"likely"},
+    {"key":"connector_usb","fn":"connector","spec":"USB: 1x µUSB (power)","qty":1,"ext":2,"obs":4,"source":"https://openwrt.org/toh/hwdata/tp-link/tp-link_tl-wr802n_v1","conf":"likely"}
+  ],
+  "sources": [
+    {"title":"OpenWrt Table of Hardware: TP-Link TL-WR802N v1 (OpenWrt wiki contributors, CC BY-SA 4.0)","url":"https://openwrt.org/toh/hwdata/tp-link/tp-link_tl-wr802n_v1"}
+  ]
+}

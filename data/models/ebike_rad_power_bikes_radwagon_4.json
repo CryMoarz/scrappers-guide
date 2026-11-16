@@ -1,0 +1,18 @@
+{
+  "id": "ebike_rad_power_bikes_radwagon_4",
+  "device": "ebike",
+  "brand": "Rad Power Bikes",
+  "model": "RadWagon 4",
+  "years": "2020",
+  "notes": "These entries are from the 2020 specification.",
+  "research": {"checked":"2026-11-11","gaps":["It does not give a motor power, a controller or lights.","A June 2021 road test of the RadWagon 4 lists a 750 W geared hub motor but does not say which model year it tested, so that figure is not recorded here."],"method":["The 2020 spec page gives the 48V 14 Ah (672 Wh) pack, the geared hub motor with 5:1 planetary reduction and the 48V 2 A charger.","Not source facts."]},
+  "comps": [
+    {"key":"battery_li","conf":"documented","spec":"48V, 14 Ah (672 Wh) battery pack with Samsung 35E lithium NMC cells.","v":48,"ah":14,"source":"https://bikes.fan/radpowerbikes-radwagon-4-2020/"},
+    {"key":"motor_bldc","conf":"documented","spec":"Geared hub motor (Motor line: geared hub motor with 5:1 planetary reduction). Motor power and whether it is brushless are not stated on this page.","source":"https://bikes.fan/radpowerbikes-radwagon-4-2020/"},
+    {"key":"charger","conf":"documented","spec":"48V, 2 A Rad Power Bikes smart charger; listed for 110V and 230V AC outlets.","a":2,"source":"https://bikes.fan/radpowerbikes-radwagon-4-2020/"},
+    {"key":"gearbox_planetary","fn":"gearbox","spec":"5:1 planetary reduction inside the geared hub motor.","qty":1,"ext":1,"obs":1,"loc":"inside the geared hub motor","conf":"documented","source":"https://bikes.fan/radpowerbikes-radwagon-4-2020/"}
+  ],
+  "sources": [
+    {"title":"Rad Power Bikes RadWagon 4 (2020) spec page, bikes.fan","url":"https://bikes.fan/radpowerbikes-radwagon-4-2020/"}
+  ]
+}

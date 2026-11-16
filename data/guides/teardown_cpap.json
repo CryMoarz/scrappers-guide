@@ -1,0 +1,29 @@
+{
+  "id": "teardown_cpap",
+  "kind": "teardown",
+  "title": "CPAP machine: blower, controller, heater plate, hose and filters",
+  "keywords": ["cpap teardown","cpap blower","cpap forge blower","resmed","sleep apnea machine","cpap humidifier heater","22mm hose","cpap power supply"],
+  "summary": "A CPAP machine is a quiet brushless blower with its own controller, a 12–24 V power brick, a heater plate under the water tub, a 22 mm smooth-bore hose and fine filters. It is medical equipment that someone may still need: take one only when it is clearly abandoned. Stripping takes about 20 minutes; the blower runs from a battery and drives a forge or stove.",
+  "difficulty": 2,
+  "mins": 20,
+  "tools": ["screwdriver","security_bits","pry","cutters","pliers","multimeter","tape"],
+  "hazards": ["mold","mains"],
+  "materials": [],
+  "steps": [
+    {"text":"Check that it is abandoned. A CPAP is a nightly treatment for sleep apnoea, and a person without one can sleep badly and be at real risk. Take a machine only from an empty house, a closed clinic, a store room or a plain dump. If its owner or a carer is alive and nearby, leave it with them. If you can, tell them where spares are."},
+    {"text":"Put on gloves and a dust mask. Empty the water tub outdoors, unclip it and set it aside. Pull the hose and any mask off the outlet.","warn":"Used tubs, hoses and filters carry mould and germs. Don't breathe through salvaged parts."},
+    {"text":"Test before you strip. Plug in the power brick and start the machine (press the button or dial). Hold a hand at the outlet: a steady, strong flow of air means the blower and its board work. A working machine is worth more whole (see notes)."},
+    {"text":"Take out the filters behind the rear grille: a foam pad or paper disc in a slot. Keep any new filters still sealed in their packs, and look in the box, drawers and cupboards for spares. Look at the foam inside the air path as you go.","warn":"Some Philips Respironics machines sold before mid-2021 have sound foam that breaks into black flakes. Flakes are harmful to breathe: keep that air path away from your face and wear the mask."},
+    {"text":"Open the case. Remove the screws on the underside (often under rubber feet and the label, and often security Torx), then pry the halves apart with a plastic tool. Photograph the wiring before you disconnect anything.","warn":"Nearly all CPAPs run from an external brick. If a mains lead goes into the case itself, treat the inside as mains and prove it dead first (see safety_mains_isolation)."},
+    {"text":"Heater plate (humidifier models): an aluminium plate under the tub, on 2 plugs for the heater and a temperature sensor. Unplug it, undo 2–4 screws and lift it out. Measure the heater across its two wires: a few to about ten ohms. No reading (open circuit) means a dead element. Note the voltage and watts from the label."},
+    {"text":"Blower: a rubber-mounted drum about the size of a coffee mug, in a foam-lined box. Unplug its motor lead, lift it out with its outlet duct and foam, and note the wire colours. Keep it whole. Don't take it apart: the impeller spins at very high speed and is balanced."},
+    {"text":"Controller board: keep it with the blower. The brushless motor has 3 thick wires and often 3–5 thin ones for position sensors. The board that came with it is the easiest way to drive it. Leave the flow and pressure sensors on the board."},
+    {"text":"Power brick: take it whole with its lead. Read the label (12 V or 24 V, and the watts). The machine's back panel shows the DC input voltage it needs. Many machines run from a battery of the right voltage with a matching lead."},
+    {"text":"Hose: wash it in soapy water, rinse and hang it to dry. A heated hose carries two thin heater wires and a plug: keep the plug and wires. Keep the hose's smooth, 22 mm bore."}
+  ],
+  "notes": "## What's worth keeping and why\n\n- **Blower.** A quiet, strong small air pump. It moves a good flow of air at low pressure (about 0.4–2 kPa). Use it as a draft blower for a forge or stove (see build_brake_drum_forge), a small dust fan, an air-mattress pump or a ventilation fan. Power it from its brick or from a 12 V or 24 V battery, with the controller board it came with.\n- **Power brick.** 12–24 V at 60–90 W, a clean supply for lights, radios and a router.\n- **Heater plate.** A 50–80 W heater with a temperature sensor, for a warm box, a drying tray or keeping a small container warm.\n- **Hose.** Flexible smooth-bore 22 mm duct. Use it to feed the blower to a fire or a vent. It melts: join a metal pipe at the hot end.\n- **Filters.** Fine dust filters. Use new ones to protect the blower itself, or in a ventilation inlet.\n\n## Use the blower safely\n\n- Keep it out of hot gas, smoke and fuel vapour. Push clean air in; never pull fire or fumes through it.\n- Put a length of metal pipe or a one-way valve between the blower and the fire, so heat and sparks can't flow back along the hose.\n- Never use a blower from a CPAP to supply air to a person's face. A stove or forge also makes carbon monoxide (see safety_carbon_monoxide).\n\n## Variations\n\n- BiPAP and auto-adjusting machines carry the same parts with a slightly stronger blower.\n- Travel machines are small with a battery option. A hospital ventilator or oxygen concentrator is a different machine: leave it.\n- Machines with no heater plate have simpler boards, and some have no tub at all.\n\n## What to leave\n\n- Masks, cushions and the water tub: mouldy and not reusable.\n- Dirty or damp filters.\n- A machine that someone may still use.",
+  "tree": {"era":3,"branch":"salvage","requires":["safety_entering_buildings","skill_multimeter"]},
+  "devices": ["cpap"],
+  "parts": ["fan","motor_bldc","psu","heating_element","sensor_misc","hose_tubing","filter_air","controller_board"],
+  "license": "CC-BY-SA-4.0"
+}

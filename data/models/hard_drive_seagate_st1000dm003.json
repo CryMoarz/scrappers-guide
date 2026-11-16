@@ -1,0 +1,19 @@
+{
+  "id": "hard_drive_seagate_st1000dm003",
+  "device": "hard_drive",
+  "brand": "Seagate",
+  "model": "ST1000DM003",
+  "notes": "Seagate 1 TB Desktop HDD (the board seller calls it a 3.5 in drive). The manual's Table 1 lists two 1 TB variants, -1SB102 with a 64 MB cache buffer and -1SB10C with 32 MB; both have 1 disk and 2 heads. The board number and chips are one seller's listing, which lists board revisions A to E as compatible.",
+  "research": {"checked":"2026-11-12","gaps":["Magnets, voice coil, pivot bearing and platter material are not claimed: no source found shows them for this model.","The board and the two chips come from a seller's listing, not a teardown; the chips are as the seller names them (B64002 and SMOOTH). No datasheet is linked for either.","The listing also mentions REV F and REV G only as board versions it ships at random; its compatibility line names REV A to REV E.","The manual does not name the motor type, so brushless is not claimed.","The 12 V 2.0 A figure is the manual's typical peak startup current, so it is kept in the spec only, not in the volts and amps fields.","Whole-drive power figures from the manual and the seller's BIOS chip mention are not claimed."],"method":["Seagate Desktop HDD Product Manual, publication 100768625 Rev. E (June 2017), covers ST1000DM003 and ST500DM002: features (printed p. 5), Table 1 (p. 6), spindle speed (p. 8), cache buffer (p. 9), power table (p. 10).","Table 1 was rendered to confirm that the heads value 2 spans both 1 TB columns and the disks value 1 spans all three.","hddzone.com product page 'ST1000DM003 Seagate PCB 100674384' read: board number, compatible revisions, the drive it is listed for, and the two chips named in the description text (not in the image alt text).","Other board listings and teardowns for this model were not opened."]},
+  "comps": [
+    {"key":"motor_bldc","conf":"documented","spec":"Spindle motor: the drive's spindle speed is 7200 RPM (+/-0.2%). The manual's spec summary lists a typical 2.0 A peak startup current on the 12 V supply","source":"https://www.seagate.com/www-content/product-content/desktop-hdd-fam/en-us/docs/100768625e.pdf"},
+    {"key":"optics","conf":"documented","spec":"One disk in the 1 TB models, read by 2 heads","qty":1,"source":"https://www.seagate.com/www-content/product-content/desktop-hdd-fam/en-us/docs/100768625e.pdf"},
+    {"key":"controller_board","conf":"documented","spec":"Seagate PCB 100674384, the logic board a seller lists for the ST1000DM003 1 TB SATA drive, with board revisions REV A to REV E listed as compatible (listing, not a teardown)","source":"https://hddzone.com/st1000dm003-seagate-pcb-100674384-p-1601.html"},
+    {"key":"ic_mcu_main","fn":"ic_mcu","spec":"Main controller IC listed as B64002, which the seller labels the Smooth chip (listing)","qty":1,"ext":3,"obs":4,"conf":"documented","source":"https://hddzone.com/st1000dm003-seagate-pcb-100674384-p-1601.html"},
+    {"key":"ic_driver_combo","fn":"ic_driver","spec":"HDD motor combo IC, listed by the seller as SMOOTH (listing)","qty":1,"ext":3,"obs":4,"conf":"documented","source":"https://hddzone.com/st1000dm003-seagate-pcb-100674384-p-1601.html"}
+  ],
+  "sources": [
+    {"title":"Seagate Desktop HDD Product Manual, publication 100768625 Rev. E (June 2017), covers ST1000DM003 and ST500DM002","url":"https://www.seagate.com/www-content/product-content/desktop-hdd-fam/en-us/docs/100768625e.pdf"},
+    {"title":"ST1000DM003 Seagate PCB 100674384 (hddzone.com product listing)","url":"https://hddzone.com/st1000dm003-seagate-pcb-100674384-p-1601.html"}
+  ]
+}

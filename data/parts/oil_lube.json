@@ -1,0 +1,14 @@
+{
+  "id": "oil_lube",
+  "name": "Oil and lubricants",
+  "group": "Stored supplies",
+  "demand": 3,
+  "keywords": ["oil","motor oil","engine oil","lubricant","lube","grease","bearing grease","wd-40","wd40","penetrating oil","hydraulic oil","hydraulic fluid","gear oil","atf","transmission fluid","2-stroke oil","two-stroke oil","chain oil","bar oil","sewing machine oil","silicone spray"],
+  "substitutes": [],
+  "summary": "Motor oil, gear oil, hydraulic fluid, grease and spray lubricants that keep machines running.",
+  "uses": ["Engine oil changes and top-ups","Greasing bearings, chains and hinges","Refilling hydraulic jacks (use hydraulic oil)","Rust-proofing tools and stored parts"],
+  "identify": "Auto parts stores, garages, farm sheds, marine and garden shops, and workshops. Machines carry their own: engine sumps, gearboxes, hydraulic tanks and compressor crankcases can be drained.",
+  "test": "Rub a drop between your fingers: it should feel slick, not gritty. Milky oil has water in it; black, burnt-smelling oil is worn out but still fine for chains and rust-proofing.",
+  "decay": {"halfLifeMonths":null,"note":"Sealed oil keeps for years. Open containers pick up water."},
+  "hazards": ["chemical"]
+}

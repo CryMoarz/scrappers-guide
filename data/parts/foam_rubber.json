@@ -1,0 +1,14 @@
+{
+  "id": "foam_rubber",
+  "name": "Foam and rubber",
+  "group": "Materials",
+  "demand": 1,
+  "keywords": ["foam","rubber","foam rubber","rubber sheet","inner tube","foam pad","foam mat","gym mat","gasket","gasket material","neoprene","rubber mat","sponge","o-ring","closed cell foam","pool noodle","carpet underlay","door seal"],
+  "substitutes": ["insulation"],
+  "summary": "Foam pads, rubber sheet, inner tubes, mats and seals for padding, sealing and insulating.",
+  "uses": ["Sleeping pads and seat cushions","Gaskets, seals and vibration mounts","Inner tube strips as heavy-duty rubber bands","Insulating pipes and boxes"],
+  "identify": "Mattresses and furniture, gym floor mats, carpet underlay, packing foam, car and bike inner tubes, conveyor belts, pipe lagging and fridge door seals. Closed-cell foam (camping mats, pool noodles) doesn’t soak up water; open-cell foam does. Burning foam gives off toxic smoke.",
+  "test": "Squeeze and stretch it: good rubber springs back, old rubber cracks or goes sticky. Foam should spring back without crumbling.",
+  "decay": {"halfLifeMonths":120,"note":"Rubber and foam harden, crack and crumble with heat and sunlight."},
+  "hazards": []
+}

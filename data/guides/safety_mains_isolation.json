@@ -1,0 +1,32 @@
+{
+  "id": "safety_mains_isolation",
+  "kind": "safety",
+  "title": "Make a circuit dead and prove it",
+  "keywords": ["isolate","isolation","turn off power","lock out","lockout","breaker panel","fuse box","consumer unit","prove dead","test before touch","backfeed","generator backfeed","live dead live"],
+  "summary": "Before you touch building wiring or an opened appliance: find every source of power, switch them all off, lock or tag them, and prove the circuit is dead with a meter you have just proved works. Never connect a generator to a building through a socket.",
+  "difficulty": 3,
+  "mins": 20,
+  "tools": ["multimeter","screwdriver","tape","pliers"],
+  "hazards": ["mains","hv","hv_cap","burn"],
+  "materials": [
+    {"item":"Tape and a written note, or a padlock, to stop anyone switching back on","qty":"1"},
+    {"item":"A known live source to prove the meter on: your own generator or inverter socket, or a battery on the DC range","qty":"1"}
+  ],
+  "steps": [
+    {"text":"List every source that could feed the circuit: the grid, a generator, a solar inverter, a battery inverter, a UPS, or a second supply into the same building. Follow cables and look for panels, inverters and changeover switches.","warn":"Solar and battery systems can keep a building live with the grid dead."},
+    {"text":"Switch off the main breaker or main switch. For solar, also switch off the inverter and its DC isolator. For a single appliance, unplug it and keep the plug where you can see it."},
+    {"text":"Tape or lock the switch in the off position and leave a note: Working on this. Do not switch on."},
+    {"text":"Put the black lead in COM and the red lead in V. Set the meter to AC volts on a range above the supply (600 V or higher, or auto). Prove the meter on a known live source.","warn":"With the red lead in an amps socket the meter is a dead short. Check the sockets before every voltage test."},
+    {"text":"Test the circuit you'll work on: live to neutral, live to earth, and neutral to earth. All should read close to zero.","warn":"Hold the probes behind their finger guards and don't touch the metal tips. Keep your other hand away if you can."},
+    {"text":"Prove the meter again on the known live source. If it doesn't read now, your test proved nothing: fix the meter and start again."},
+    {"text":"If the circuit has big capacitors (inverters, UPSes, motor drives, air conditioners), wait, discharge them with a resistor tool and measure."},
+    {"text":"Do your work. If you leave and come back, test again before touching anything."},
+    {"text":"When you're done, check that nobody is touching the circuit, put covers back, take off your lock or note, then switch on."},
+    {"text":"To run a building from a generator, use a proper changeover switch fitted by someone who knows how, or run extension leads from the generator straight to each appliance. Never plug a generator into a wall socket.","warn":"A double-ended plug lead can make the street wiring live and kill someone working on it, and its bare pins are live in your hand."}
+  ],
+  "notes": "## Why live, dead, live\n\nA meter with a flat battery, a blown fuse, a broken lead or the wrong setting reads zero on a live wire. Proving it on a known live source before and after your test is the only way to know your \"zero\" is real.\n\n## Where power can come from after the grid goes down\n\n| Source | How it gets into the wiring | What to switch off |\n|---|---|---|\n| Generator | Changeover switch, or a dangerous plug lead into a socket | Generator, and the changeover switch |\n| Solar inverter | Connected to the panel or a sub-panel | Inverter AC switch and DC isolator; cover the panels |\n| Battery inverter or large UPS | Hard-wired into a panel | Inverter, and its battery switch |\n| Neighbour's system | Shared wiring in flats and terraces | Your main switch; test anyway |\n\n## Voltages and colours\n\nMains is about 120 V in North America and parts of Latin America, and 220–240 V in most other places. Wire colours vary by country and age:\n\n| Wiring | Live | Neutral | Earth |\n|---|---|---|---|\n| Europe and most newer installs | Brown | Blue | Green/yellow |\n| Old UK | Red | Black | Green or bare |\n| North America | Black or red | White | Green or bare |\n\nNever trust colours. Old, DIY and repaired wiring breaks the rules. Test.\n\n## Meter ratings\n\nMeters are rated by category. CAT II is for sockets and appliances, CAT III for panels and fixed wiring. A cheap meter with no category and thin leads can explode in your hand on a panel fault. Use the best meter and leads you have.\n\n## Common mistakes\n\n- Switching off a light switch and assuming the fitting is dead. Some switches only break the neutral.\n- Trusting a non-contact voltage pen alone. They miss things.\n- Testing only live to neutral.\n- Forgetting a second source.\n- Leaving the red lead in the amps socket from the last job.",
+  "tree": {"era":2,"branch":"salvage","requires":["safety_entering_buildings"]},
+  "devices": ["generator","standby_generator","solar_home","ups","ups_large","power_station","car_inverter","ev_charger"],
+  "parts": ["breaker","fuse","switch","wire_copper","wire_heavy","inverter"],
+  "license": "CC-BY-SA-4.0"
+}

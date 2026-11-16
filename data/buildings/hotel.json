@@ -1,0 +1,6 @@
+{
+  "id": "hotel",
+  "name": "Hotels and motels",
+  "osm": ["tourism=hotel","tourism=motel","tourism=guest_house","tourism=hostel","tourism=apartment"],
+  "exposure": 3
+}

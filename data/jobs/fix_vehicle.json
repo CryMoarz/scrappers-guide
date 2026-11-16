@@ -1,0 +1,21 @@
+{
+  "id": "fix_vehicle",
+  "name": "Fix a vehicle",
+  "keywords": ["fix a vehicle","fix a car","fix my car","fix a truck","repair car","car repair","vehicle repair","car won’t start","car won't start","car wont start","jump start","flat tyre"],
+  "summary": "A dead car is usually a flat battery, a blown fuse, a failed relay or stale fuel; check those before anything else. Relays in the same fuse box are often identical, so swap in a known-good one to test. Parking lots and wreckers full of the same model are your parts store.",
+  "parts": [
+    {"fn":"battery_pb","why":"Flat batteries are the most common no-start. Only a car-sized starting battery will crank an engine","core":true,"only":["starting","cranking","group 31","marine","deep-cycle"]},
+    {"fn":"fuse","why":"Blown fuses kill single circuits; take spares from the same make"},
+    {"fn":"relay","why":"Fuel pump and starter relays fail and swap easily"},
+    {"fn":"fuel_liquid","why":"Fresh fuel; old petrol gums up engines","core":true},
+    {"fn":"oil_lube","why":"Engine oil, grease and fluids","core":true},
+    {"fn":"alternator","why":"A battery light while running means a dead alternator or belt"},
+    {"fn":"belt_pulley","why":"A snapped drive belt stops charging and cooling"},
+    {"fn":"hose_tubing","why":"Split coolant and fuel hoses"}
+  ],
+  "guides": ["safety_lead_acid","test_lead_acid","teardown_car_alternator","safety_fuel_handling","safety_lifting"],
+  "tips": ["Petrol goes stale in about 3–6 months. Diesel keeps a year or so if sealed, dark and dry.","Never siphon fuel by mouth.","When jump starting, connect the last clamp to bare metal on the engine, away from the battery.","Copy the fuse box map from the lid or manual before you start swapping parts."],
+  "refs": [
+    {"lib":"mechanics","q":"no start"}
+  ]
+}

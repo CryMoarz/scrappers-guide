@@ -1,0 +1,26 @@
+{
+  "id": "cpap_philips_dreamstation_2",
+  "device": "cpap",
+  "brand": "Philips Respironics",
+  "model": "DreamStation 2 Advanced (DSX520)",
+  "fcc": "THO1141623",
+  "notes": "Covers DSX520 models (DreamStation 2 Advanced CPAP / Advanced Auto CPAP). Newer units may carry another modem.",
+  "research": {"checked":"2026-11-12","gaps":["The manual names no power-supply part.","The Bluetooth chip shows a Dialog logo, but its part number reads only as DA1458 followed by an illegible digit, so it isn't claimed.","The quad flat chip on the main board shows an Arm logo but no legible part number.","The second two-port package (MT2) has no legible marking."],"method":["FCC exhibits for THO1141623 (Bluetooth, original grant 2020-04-17) were read through the fccid.io mirror because apps.fcc.gov returned HTTP 403.","The internal photos used are the 2020-10-12 set (7 pages: main PCBA top and bottom, Bluetooth circuit, cellular circuit, installed views).","The 2020-04-17 grant names co-located cellular module XPY2AGQN4NNN, the ID printed on the module in these photos.","Later permissive changes name other cellular module FCC IDs (XPY1CGM5NNN in 2021, XPYUBX19KM01 in 2022, XPYUBX21BE01 in 2024).","The Philips spec sheet lists DSX520H11C and DSX520T11C.","The manual gives the AC rating (100-240 VAC 50/60 Hz, 2.0-1.0 A) and says a Philips DC power cord with a battery adapter cable runs the device from a 12 VDC free-standing battery.","The 80 W / 1144267 power supply comes from a retailer listing, not Philips.","FDA's foam-recall page does not list DreamStation 2."]},
+  "comps": [
+    {"key":"psu","conf":"documented","spec":"Philips 80 W power supply, SKU 1144267, listed as compatible with DreamStation and DreamStation 2","w":80,"source":"https://www.cpap.co.uk/product/dreamstation-80w-power-supply/"},
+    {"key":"heating_element","conf":"documented","spec":"Integrated humidifier heater plate, maximum 68 C; water tank 325 ml at the recommended level; delivered gas under 43 C","source":"https://fccid.io/pdf.php?id=4687718"},
+    {"key":"hose_tubing","conf":"documented","spec":"Heated tubing HT15 (15 mm) or HT12 (12 mm), 1.83 m, 16-30 C range, 41 C cut-out; standard flexible tubing in 12, 15 or 22 mm, 1.83 m","source":"https://fccid.io/pdf.php?id=4687718"},
+    {"key":"filter_air","conf":"documented","spec":"DS2 reusable pollen filter part 1142687; DS2 disposable ultra-fine filter part 1142828 (1-pack), 1142829 (2-pack), 1142831 (6-pack)","source":"https://www.documents.philips.com/assets/20201207/2cea806ef64c458db49eac8a016ce7de.pdf"},
+    {"key":"sensor_misc","conf":"documented","spec":"Sensirion SDP3x differential pressure sensor (marked SDP3X, two ports) at MT1, plus a second two-port package at MT2 with no legible marking","source":"https://fccid.io/pdf.php?id=4687716"},
+    {"key":"controller_board","conf":"documented","spec":"Main PCBA, silkscreen PCA 1141624: micro-USB connector, SD card socket, coin cell, quad flat chip with an Arm logo (part number not legible), Dialog Bluetooth chip next to SWIO/SWCK pads","source":"https://fccid.io/pdf.php?id=4687716"},
+    {"key":"radio_rf_cellular","fn":"radio_rf","spec":"u-blox SARA-R410M cellular module (module FCC ID XPY2AGQN4NNN) on the main PCBA, coax lead to a flexible Taoglas antenna","qty":1,"ext":3,"obs":4,"conf":"documented","source":"https://fccid.io/pdf.php?id=4687716"}
+  ],
+  "sources": [
+    {"title":"DreamStation 2 internal photographs (Philips Respironics), FCC exhibit for THO1141623, 2020-10-12 (fccid.io mirror)","url":"https://fccid.io/pdf.php?id=4687716"},
+    {"title":"DreamStation 2 Advanced user manual, DSX520 models, FCC exhibit for THO1141623, 2020-10-12 (fccid.io mirror)","url":"https://fccid.io/pdf.php?id=4687718"},
+    {"title":"DreamStation 2 Auto CPAP Advanced specifications and ordering information (Philips PDF, PN 1149011, 03/2023)","url":"https://www.documents.philips.com/assets/20201207/2cea806ef64c458db49eac8a016ce7de.pdf"},
+    {"title":"DreamStation 80W Power Supply, SKU 1144267 (cpap.co.uk retailer listing)","url":"https://www.cpap.co.uk/product/dreamstation-80w-power-supply/"},
+    {"title":"Datasheet: Sensirion SDP3x-Digital differential pressure sensor (sensirion.com PDF)","url":"https://sensirion.com/media/documents/4D045D69/6375F34F/DP_DS_SDP3x_digital_D1.pdf"},
+    {"title":"THO1141623 FCC filing summary with grant notes (fccid.io), cited in the notes for the cellular module IDs","url":"https://fccid.io/THO1141623"}
+  ]
+}

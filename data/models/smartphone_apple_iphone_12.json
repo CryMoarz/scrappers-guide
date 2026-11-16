@@ -1,0 +1,24 @@
+{
+  "id": "smartphone_apple_iphone_12",
+  "device": "smartphone",
+  "brand": "Apple",
+  "model": "iPhone 12 (A2172, A2402)",
+  "years": "2020",
+  "notes": "The iPhone 12 models are A2172 (United States) and A2402 (Canada, Japan).",
+  "research": {"checked":"2026-11-11","gaps":["The A2402 model is not mentioned on the A2172 page, so those figures are sourced to A2172 only."],"method":["Apple's model identification table lists A2172 (United States) and A2402 (Canada, Japan) under iPhone 12.","EveryMac's A2172 page gives the processor, display, cameras, battery and the October 13, 2020 introduction.","IFixit's A2172 US parts listing names A2172 and A2402, among other models, for the earpiece speaker, Wi-Fi antenna and Bluetooth antenna."]},
+  "comps": [
+    {"key":"b:phone_board:ic_mcu","conf":"documented","spec":"Apple A14 Bionic processor","source":"https://everymac.com/systems/apple/iphone/specs/apple-iphone-12-united-states-a2172-specs.html"},
+    {"key":"battery_li","conf":"documented","spec":"Lithium Ion, 2815 mAh","ah":2.815,"source":"https://everymac.com/systems/apple/iphone/specs/apple-iphone-12-united-states-a2172-specs.html"},
+    {"key":"camera","conf":"documented","spec":"Dual 12 MP rear cameras: Ultra Wide at f/2.4 with 120-degree field of view, and Wide at f/1.6","source":"https://everymac.com/systems/apple/iphone/specs/apple-iphone-12-united-states-a2172-specs.html"},
+    {"key":"camera_front","fn":"camera","spec":"12 MP TrueDepth front camera, f/2.2 aperture","qty":1,"ext":2,"obs":3,"loc":"front","conf":"documented","source":"https://everymac.com/systems/apple/iphone/specs/apple-iphone-12-united-states-a2172-specs.html"},
+    {"key":"display","conf":"documented","spec":"6.1-inch Super Retina XDR OLED, 2532 x 1170 pixels at 460 ppi","source":"https://everymac.com/systems/apple/iphone/specs/apple-iphone-12-united-states-a2172-specs.html"},
+    {"key":"speaker","conf":"documented","spec":"Earpiece speaker; iFixit listing 'iPhone 12/12 Pro Earpiece Speaker' says compatible with A2172, A2402, A2403, A2404, A2341, A2406, A2407, A2408","source":"https://www.ifixit.com/Parts/iPhone_12:A2172_US"},
+    {"key":"antenna_coax_wifi","fn":"antenna_coax","spec":"Wi-Fi antenna, Apple part 821-02826; iFixit listing says compatible with iPhone 12 or 12 Pro models A2172, A2402, A2403, A2404, A2341, A2406, A2407, A2408","qty":1,"ext":2,"obs":3,"loc":"inside the phone","conf":"documented","source":"https://www.ifixit.com/Parts/iPhone_12:A2172_US"},
+    {"key":"antenna_coax_bluetooth","fn":"antenna_coax","spec":"Bluetooth antenna; iFixit listing says compatible with iPhone 12 or 12 Pro models A2172, A2402, A2403, A2404, A2341, A2406, A2407, A2408","qty":1,"ext":2,"obs":3,"loc":"inside the phone","conf":"documented","source":"https://www.ifixit.com/Parts/iPhone_12:A2172_US"}
+  ],
+  "sources": [
+    {"title":"EveryMac: Apple iPhone 12 (US/A2172) specifications","url":"https://everymac.com/systems/apple/iphone/specs/apple-iphone-12-united-states-a2172-specs.html"},
+    {"title":"Apple Support: iPhone model identification table (iPhone 12 A2172 United States, A2402 Canada and Japan)","url":"https://support.apple.com/en-us/HT201296"},
+    {"title":"iFixit parts listing: iPhone 12:A2172 US (earpiece speaker, Wi-Fi and Bluetooth antenna compatibility)","url":"https://www.ifixit.com/Parts/iPhone_12:A2172_US"}
+  ]
+}

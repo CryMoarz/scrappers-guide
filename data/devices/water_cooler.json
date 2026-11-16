@@ -1,0 +1,48 @@
+{
+  "id": "water_cooler",
+  "name": "Water cooler and dispenser",
+  "group": "Kitchen and appliances",
+  "aliases": ["water dispenser","bottled water cooler","office water cooler","point-of-use cooler","5 gallon jug","bottom load cooler","bottled water dispenser"],
+  "brands": ["Elkay","Oasis","Primo Water","Glacier Water","Igloo","Vevor"],
+  "prev": 4,
+  "tools": ["screwdriver","socket"],
+  "mins": 20,
+  "kg": 15,
+  "hazards": ["refrigerant","uv"],
+  "comps": [
+    {"key":"water_stored","fn":"water_stored","spec":"Full 19-litre (5-gallon) bottles on top and in storerooms","qty":2,"ext":1,"obs":2,"loc":"On top; spares in a closet or storeroom","kg":19},
+    {"key":"tank","fn":"tank","spec":"Empty 19-litre bottles — tough water carriers","qty":3,"ext":1,"obs":4,"loc":"Stacked in a corner or storeroom"},
+    {"key":"thermoelectric","fn":"thermoelectric","spec":"Peltier module, usually 12V drawing about 4–5A, with heatsink and fan (cheaper thermoelectric models)","v":12,"a":[4,5],"qty":1,"ext":2,"obs":5,"loc":"Back of the cold reservoir","p":0.5},
+    {"key":"compressor","fn":"compressor","spec":"Small compressor, about 1/10 hp (compressor models)","v":[120,240],"w":70,"ac":true,"qty":1,"ext":4,"obs":4,"loc":"Bottom rear","kg":7,"p":0.5},
+    {"key":"heating_element","fn":"heating_element","spec":"Hot-tank band or immersion heater, about 400–600W","w":[400,600],"qty":1,"ext":2,"obs":5,"loc":"Hot reservoir, upper back"},
+    {"key":"thermostat","fn":"thermostat","spec":"Bimetal thermostats on the hot and cold tanks","qty":2,"ext":1,"obs":5,"loc":"Clipped to the reservoirs"},
+    {"key":"tank_reservoir","fn":"tank","spec":"Stainless cold and hot reservoirs, 1–3 litres","qty":2,"ext":2,"obs":5,"loc":"Inside the top of the cabinet"},
+    {"key":"filter_water","fn":"filter_water","spec":"Inline filter cartridge (plumbed point-of-use models)","qty":1,"ext":1,"obs":4,"loc":"Inside the cabinet or on the inlet line","p":0.5},
+    {"key":"uv_lamp","fn":"uv_lamp","spec":"UV-C lamp or UV LEDs in the reservoir (some newer models)","qty":1,"ext":2,"obs":5,"loc":"Reservoir lid","p":0.25},
+    {"key":"fan","fn":"fan","spec":"12V fan on the Peltier heatsink or condenser","v":12,"qty":1,"ext":1,"obs":4,"loc":"Rear"}
+  ],
+  "boards": [
+    {"id":"smps_board","qty":1,"loc":"12V supply on thermoelectric models","p":0.3}
+  ],
+  "buildings": [
+    {"b":"office","l":5},
+    {"b":"school","l":4},
+    {"b":"clinic","l":4},
+    {"b":"gym","l":4},
+    {"b":"hospital","l":4},
+    {"b":"nursing_home","l":4},
+    {"b":"church","l":3},
+    {"b":"bank","l":3},
+    {"b":"hotel","l":3},
+    {"b":"warehouse","l":3},
+    {"b":"factory","l":3},
+    {"b":"car_dealer","l":3},
+    {"b":"car_repair","l":3},
+    {"b":"fire_station","l":3},
+    {"b":"police","l":3},
+    {"b":"supermarket","l":3},
+    {"b":"appliance","l":3},
+    {"b":"salon","l":1},
+    {"b":"shop_small","l":1}
+  ]
+}

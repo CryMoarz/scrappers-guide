@@ -1,0 +1,34 @@
+{
+  "id": "alarm_panel",
+  "name": "Burglar alarm panel",
+  "group": "Building systems",
+  "aliases": ["security panel","alarm keypad"],
+  "brands": ["ADT","Honeywell","DSC","Interlogix","Ring","SimpliSafe","Vivint","Qolsys","Napco","Elk Products"],
+  "prev": 4,
+  "tools": ["screwdriver"],
+  "mins": 10,
+  "hazards": [],
+  "comps": [
+    {"key":"battery_pb","fn":"battery_pb","spec":"12V 4–7Ah sealed lead-acid battery","v":12,"ah":[4,7],"qty":1,"ext":1,"obs":5,"loc":"Metal box in a closet or basement"},
+    {"key":"transformer_lv","fn":"transformer_lv","spec":"16.5V AC plug-in transformer","v":16.5,"ac":true,"qty":1,"ext":1,"obs":5,"loc":"Nearby outlet"},
+    {"key":"sensor_motion","fn":"sensor_motion","spec":"PIR motion sensors","qty":3,"ext":1,"obs":4,"loc":"Room corners"},
+    {"key":"speaker","fn":"speaker","spec":"Siren","v":12,"w":[10,30],"qty":1,"ext":2,"obs":4,"loc":"Indoors or on an outside wall"}
+  ],
+  "boards": [
+    {"id":"mcu_board","qty":1,"loc":"Panel main board","p":1},
+    {"id":"analog_timer_board","qty":1,"loc":"Siren driver in older systems","p":0.3}
+  ],
+  "buildings": [
+    {"b":"house","l":3},
+    {"b":"office","l":5},
+    {"b":"school","l":5},
+    {"b":"convenience","l":5},
+    {"b":"bank","l":5},
+    {"b":"electronics","l":5},
+    {"b":"pharmacy","l":5},
+    {"b":"hardware","l":4},
+    {"b":"church","l":3},
+    {"b":"salon","l":3},
+    {"b":"shop_small","l":4}
+  ]
+}

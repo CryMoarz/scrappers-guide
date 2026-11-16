@@ -1,0 +1,29 @@
+{
+  "id": "power_bank",
+  "name": "Power banks",
+  "group": "Power and solar",
+  "aliases": ["portable charger","usb battery pack"],
+  "brands": ["Anker","RAVPower","Belkin","Baseus","Mophie","INIU","Aukey","Xiaomi"],
+  "prev": 5,
+  "tools": ["hands","pry"],
+  "mins": 5,
+  "hazards": ["li_fire"],
+  "comps": [
+    {"key":"battery_li","fn":"battery_li","spec":"18650 or pouch cells","v":3.7,"ah":[5,25],"qty":1,"ext":2,"obs":1,"loc":"Case"},
+    {"key":"charger","fn":"charger","spec":"USB charging and boost circuit","v":5,"a":[1,3],"qty":1,"ext":1,"obs":2,"loc":"Case"}
+  ],
+  "boards": [
+    {"id":"li_charger_small","qty":1,"loc":"Board at one end","p":1},
+    {"id":"battery_bms","qty":1,"loc":"On the cells","p":0.6}
+  ],
+  "buildings": [
+    {"b":"house","l":5},
+    {"b":"apartment","l":5},
+    {"b":"office","l":4},
+    {"b":"school","l":4},
+    {"b":"electronics","l":5},
+    {"b":"convenience","l":4},
+    {"b":"gas_station","l":4},
+    {"b":"department","l":4}
+  ]
+}

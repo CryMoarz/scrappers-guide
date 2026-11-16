@@ -1,0 +1,20 @@
+{
+  "id": "ups_cyberpower_cp1500avrlcd",
+  "device": "ups",
+  "brand": "CyberPower",
+  "model": "CP1500AVRLCD",
+  "notes": "Batteries are user-replaceable behind the front panel.",
+  "research": {"checked":"2026-11-11","gaps":["It does not say which board each part is on.","No battery voltage, Ah or cartridge number was found for this model in any readable source."],"method":["One Aug 2024 EEVblog repair thread on a 7-year-old unit (E21 fault) names its MOSFETs, battery charging PSU, fuses, main transformer and relays.","CyberPower's 2019 battery-replacement instructions (read as text from the PDF, checked 2026-11-11) list CP1500AVRLCD in one shared procedure."]},
+  "comps": [
+    {"key":"battery_pb","conf":"documented","spec":"Replacement batteries (plural) in a battery pack, user-replaceable after removing the front panel cover; the instructions say to charge the unit for 4-8 hours afterwards; voltage and Ah not stated","source":"https://inquirecontent2.ingrammicro.com/User-Manual/1053057429.pdf"},
+    {"key":"charger","conf":"documented","spec":"Battery charging PSU, VIPer22A based; post says functional","source":"https://eevblog.com/forum/repair/cyberpower-ups-cp1500avrlcd-e21-error-repair-successful"},
+    {"key":"b:inverter_board:mosfet","conf":"documented","spec":"8 MOSFETs, originals SinoPower SM6002N; several visibly blown or charred; the author replaced them with STMicro STP130N6F7 (listed as N-channel, 60 V, 80 A)","v":60,"a":80,"source":"https://eevblog.com/forum/repair/cyberpower-ups-cp1500avrlcd-e21-error-repair-successful"},
+    {"key":"b:inverter_board:fuse","conf":"documented","spec":"High current fuses, not blown at time of repair; ratings not stated","source":"https://eevblog.com/forum/repair/cyberpower-ups-cp1500avrlcd-e21-error-repair-successful"},
+    {"key":"transformer_lv","conf":"documented","spec":"Main transformer, checked for shorts with no issues; core type and ratings not stated","source":"https://eevblog.com/forum/repair/cyberpower-ups-cp1500avrlcd-e21-error-repair-successful"},
+    {"key":"relay_spdt","fn":"relay","conf":"documented","spec":"4 relays (4 pcs), tested with SPDT contacts per the post","qty":4,"ext":2,"obs":2,"source":"https://eevblog.com/forum/repair/cyberpower-ups-cp1500avrlcd-e21-error-repair-successful"}
+  ],
+  "sources": [
+    {"title":"CyberPower battery replacement instructions (user manual, 2019)","url":"https://inquirecontent2.ingrammicro.com/User-Manual/1053057429.pdf"},
+    {"title":"EEVblog repair thread: CP1500AVRLCD E21 error repair (Aug 2024)","url":"https://eevblog.com/forum/repair/cyberpower-ups-cp1500avrlcd-e21-error-repair-successful"}
+  ]
+}

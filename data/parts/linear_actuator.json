@@ -1,0 +1,14 @@
+{
+  "id": "linear_actuator",
+  "name": "Linear actuators",
+  "group": "Motion",
+  "demand": 1,
+  "keywords": ["linear actuator","actuator","push pull","lift","lifting","electric actuator","recliner motor","bed actuator","desk actuator","lift column","tv lift","window opener","hatch opener"],
+  "substitutes": ["solenoid_actuator","motor_dc_small"],
+  "summary": "Motors with a screw drive that push and pull in a straight line: recliners, beds, desks and lifts.",
+  "uses": ["Opening gates, vents and hatches","Solar panel trackers","Lifting and tilting heavy things slowly","Pressing, clamping and tipping carts"],
+  "identify": "A motor on the side of a long tube with a rod that slides out, often 24–29V DC, under power recliners, adjustable and hospital beds, in standing desks, TV lifts and treadmill incline drives. Many push several thousand newtons, enough to crush fingers.",
+  "test": "Feed it 12–24V DC and it should extend; swap the wires and it retracts. Built-in limit switches stop it at each end.",
+  "decay": {"halfLifeMonths":null,"note":"Lasts."},
+  "hazards": ["crush"]
+}

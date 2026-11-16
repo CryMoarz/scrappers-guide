@@ -1,0 +1,51 @@
+{
+  "id": "smartphone",
+  "name": "Smartphones",
+  "group": "Communications",
+  "aliases": ["cell phone","mobile phone","cellphone","android phone","old phones","dead phones","iphone","galaxy phone"],
+  "brands": ["Apple","Samsung","Google","Motorola","OnePlus","Xiaomi","Nokia","Sony","TCL"],
+  "era": "2007–present",
+  "prev": 5,
+  "tools": ["screwdriver","security_bits","knife"],
+  "mins": 15,
+  "kg": 0.14,
+  "repairs": {"records":6290,"fixed":0.56,"end_of_life":0.15,"faults":[{"what":"screen","share":0.51},{"what":"power or battery","share":0.19},{"what":"USB or charging port","share":0.07},{"what":"buttons","share":0.03}]},
+  "materials": {"aluminium":0.014,"steel":0.009,"plastic":0.033,"battery":0.032,"boards":0.02,"glass":0.022,"other":0.006},
+  "hazards": ["li_fire","glass"],
+  "comps": [
+    {"key":"gps","fn":"gps","spec":"GPS receiver that works with no SIM, signal or internet once offline maps are loaded","qty":1,"ext":1,"obs":3,"loc":"The whole phone: keep it working"},
+    {"key":"radio_rf","fn":"radio_rf","spec":"FM broadcast radio on many budget Android phones — wired earphones act as the antenna; needs no network","qty":1,"ext":1,"obs":5,"loc":"Built in; look for an FM radio app"},
+    {"key":"battery_li","fn":"battery_li","spec":"Single 3.7–3.85V lithium pouch, 2,000–5,000 mAh — glued in; never pry with metal, bend or puncture it","v":[3.7,3.85],"ah":[2,5],"qty":1,"ext":3,"obs":3,"loc":"Under the back cover or the screen"},
+    {"key":"camera","fn":"camera","spec":"Camera modules, 8–50 MP, with an LED flash that doubles as a torch","qty":2,"ext":3,"obs":4,"loc":"Top corner, on flex cables"},
+    {"key":"display","fn":"display","spec":"OLED or LCD touchscreen, 5–7 in — glued in and cracks easily","qty":1,"ext":4,"obs":4,"loc":"Front"},
+    {"key":"speaker","fn":"speaker","spec":"Earpiece and loudspeaker modules","w":[0.1,1],"qty":2,"ext":2,"obs":4,"loc":"Top and bottom ends"},
+    {"key":"motor_dc_small","fn":"motor_dc_small","spec":"Vibration motor (coin or linear type), about 3V","v":3,"qty":1,"ext":2,"obs":5,"loc":"Bottom end"},
+    {"key":"magnet_strong","fn":"magnet_strong","spec":"Tiny neodymium magnets in the speakers, vibration motor and (some models) a charging ring","qty":3,"ext":3,"obs":5,"loc":"Speakers and back cover","p":0.5},
+    {"key":"hall_reed","fn":"hall_reed","spec":"Surface-mount Hall sensor that detects flip covers (many models)","qty":1,"ext":5,"obs":5,"loc":"Logic board","p":0.75}
+  ],
+  "boards": [
+    {"id":"phone_board","qty":1,"loc":"Logic board under the shields","p":1},
+    {"id":"battery_bms","qty":1,"loc":"Small protection board on the battery","p":1}
+  ],
+  "buildings": [
+    {"b":"house","l":5},
+    {"b":"apartment","l":5},
+    {"b":"electronics","l":5},
+    {"b":"mall","l":4},
+    {"b":"office","l":4},
+    {"b":"school","l":4},
+    {"b":"recycling","l":4},
+    {"b":"hotel","l":3},
+    {"b":"self_storage","l":3},
+    {"b":"nursing_home","l":3},
+    {"b":"department","l":3},
+    {"b":"convenience","l":3},
+    {"b":"supermarket","l":3},
+    {"b":"police","l":2}
+  ],
+  "notes": "A working phone beats its parts: with offline maps and files it is a GPS, camera, torch, library and voice recorder that charges from any 5V USB source. Drawers of dead phones still hold lithium cells and magnets; check each cell for swelling before charging.",
+  "sources": [
+    {"title":"Weight: smartphones averaged 0.14 kg (Babbitt et al. 2020, disassembly-based bill of materials data for consumer electronics, CC0)","url":"https://doi.org/10.6084/m9.figshare.11306792"},
+    {"title":"Open Repair Alliance, Open Repair Data v0.3 (community repair events, 2012 to July 2026; CC BY-SA 4.0): 6,290 repairs recorded as Mobile","url":"https://github.com/openrepair/data"}
+  ]
+}

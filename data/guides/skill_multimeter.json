@@ -1,0 +1,36 @@
+{
+  "id": "skill_multimeter",
+  "kind": "skill",
+  "title": "Use a multimeter",
+  "keywords": ["multimeter","meter","voltmeter","ohmmeter","how to use multimeter","measure voltage","measure current","measure resistance","dmm","test meter","continuity","diode test","amps"],
+  "summary": "The multimeter is a scrapper's most important tool. Learn the sockets and the dial, safe voltage measurement, current measurement in series, resistance and continuity, diode checks, and the mistakes that blow meters and hurt people.",
+  "difficulty": 1,
+  "mins": 30,
+  "tools": ["multimeter"],
+  "hazards": ["mains","hv_cap","hv","burn"],
+  "materials": [
+    {"item":"A battery to practise on, such as a 1.5 V AA or a 9 V","qty":"1"},
+    {"item":"Spare batteries for the meter","qty":"1 set","optional":true},
+    {"item":"Spare meter fuses of the right rating","fn":"fuse","qty":"2","optional":true}
+  ],
+  "steps": [
+    {"text":"Learn the sockets. The black lead always goes in COM. The red lead goes in the V/Ω socket for volts, ohms, continuity and diodes. It goes in mA or 10A only when measuring current.","warn":"With the red lead in an amps socket the meter is a short circuit. Touching it across a battery or a socket can blow the fuse or the meter."},
+    {"text":"Learn the dial. V with a straight line is DC volts. V with a wavy line is AC volts. A is current. Ω is resistance. A sound-wave symbol is continuity. An arrow with a bar is diode test. A capacitor symbol or F is capacitance."},
+    {"text":"Check the meter works: on continuity, touch the probes together; it should beep and read close to 0 Ω. Then measure a known battery on DC volts."},
+    {"text":"DC voltage: set DC volts on a range above what you expect, or auto. Black to negative, red to positive. A minus sign on the display means the leads are swapped; nothing is harmed."},
+    {"text":"AC (mains) voltage: set AC volts on a range above 250 V. Hold the probes behind their finger guards. Connect black first, then red; remove red first.","warn":"Only measure mains with a meter and leads in good condition, rated CAT II or better. Never measure above the meter's rated voltage."},
+    {"text":"Resistance and continuity: the circuit must be dead. Disconnect at least one end of the part. Don't hold both metal tips with your fingers; your body adds to the reading."},
+    {"text":"Current: switch the circuit off, break it open, and put the meter in the gap so the current flows through it. Start on the 10A socket and range, then move down if the reading is small.","warn":"Never put a meter set to amps across a battery or supply. Don't exceed the socket's rating, and keep 10 A readings short."},
+    {"text":"Diode test: red on the anode, black on the end with the band. A good silicon diode reads about 0.5–0.7 V one way and OL the other way. Close to 0 both ways means shorted; OL both ways means open."},
+    {"text":"When you finish, put the red lead back in the V/Ω socket and switch the meter off."},
+    {"text":"Look after the meter. Replace its battery when the display dims or shows a battery symbol. Replace blown fuses with the same rating. Replace cracked or frayed leads."}
+  ],
+  "notes": "## Reading the display\n\n| You see | It means |\n|---|---|\n| OL, or a 1 on the left | Over the range, or an open circuit |\n| A minus sign | Leads are the other way round (DC) |\n| k | × 1,000 (4.7 kΩ = 4,700 Ω) |\n| M | × 1,000,000 |\n| m | ÷ 1,000 (250 mA = 0.25 A) |\n| µ | ÷ 1,000,000 |\n\nOn a manual meter, pick the lowest range that is still above what you expect. If it shows OL, go up a range.\n\n## Category ratings\n\n| Rating | Use on |\n|---|---|\n| CAT II | Sockets and plug-in appliances |\n| CAT III | Breaker panels, fixed wiring, large machines |\n| CAT IV | Where the supply enters a building, outdoor lines |\n\nA higher category means better protection against voltage spikes. A cheap meter with no rating can explode in your hand on a panel fault.\n\n## Handy formulas\n\n- Volts = amps × ohms. Amps = volts ÷ ohms.\n- Watts = volts × amps.\n\n## Handy readings\n\n| Thing | Good reading |\n|---|---|\n| New AA alkaline | 1.5–1.6 V; mostly used up below about 1.2 V |\n| New 9 V battery | about 9–9.6 V |\n| 12 V lead-acid, full and rested | 12.6 V or more |\n| Lithium-ion cell | 4.2 V full, 3.0 V empty |\n| Silicon diode (diode test) | 0.5–0.7 V |\n| Schottky diode | about 0.15–0.45 V |\n| LED | about 1.6–3.3 V; some meters can't light blue or white LEDs |\n\n## Common mistakes\n\n- Leaving the red lead in the amps socket.\n- Measuring resistance on a live circuit.\n- Using AC volts on a battery or DC volts on mains.\n- Trusting a meter with a flat battery. Readings drift.\n- Using frayed or cracked leads on mains.",
+  "tree": {"era":2,"branch":"power"},
+  "parts": ["fuse","resistor","diode_rect","battery_pb","battery_li"],
+  "license": "CC-BY-SA-4.0",
+  "refs": [
+    {"lib":"electronics","q":"multimeter"},
+    {"lib":"khan","q":"voltage current resistance"}
+  ]
+}

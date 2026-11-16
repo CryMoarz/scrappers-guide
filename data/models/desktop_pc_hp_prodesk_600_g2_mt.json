@@ -1,0 +1,21 @@
+{
+  "id": "desktop_pc_hp_prodesk_600_g2_mt",
+  "device": "desktop_pc",
+  "brand": "HP",
+  "model": "ProDesk 600 G2 Microtower (MT) Business PC",
+  "notes": "The guide covers the microtower (MT) chassis only. The 280 W power supply is sold in three efficiency grades, so check the label on the unit.",
+  "research": {"checked":"2026-11-12","gaps":["The parts list gives descriptions only; no spare part numbers appear in the text.","No output voltages or rails are given for the 280 W supply, so none is set; the 3.6 A is input current and stays in the spec, not in the a field.","The coin cell is not named by type or size beyond 3 V lithium, so no CR2032 claim is made.","The parts list's 'Fan' item (Misc parts, item 1) is not placed in the chassis and is not tied to the rear chassis fan.","Optical drive options are listed without saying which part they are, so no optical drive part is claimed.","The guide does not describe the hard drive spindle motor or magnets; the entry records the drives only."],"method":["HP Maintenance and Service Guide, HP ProDesk 600 G2 Microtower Business PC, first edition October 2015, document 822849-001 (h10032.www1.hp.com PDF, read as text; the Appendix D page was rendered and checked).","Read: the Microtower spare parts list (printed pp.5-10), the power supply fan and coin cell notes (pp.15-16), the fan sink, speaker, rear chassis fan and power supply removal sections, the system board connector table, Appendix A (battery) and Appendix D (MT specifications).","No third-party mirrors used."]},
+  "comps": [
+    {"key":"psu","conf":"documented","spec":"Power supply, 280 W active PFC, sold in three grades (92% efficient, 85% efficient and standard). Operating input 90-264 VAC at 47-63 Hz (rated 100-240 VAC, 50-60 Hz); rated input current 3.6 A.","w":280,"loc":"Screwed to the rear of the chassis (four Torx T15 screws)","source":"https://h10032.www1.hp.com/ctg/Manual/c04832034.pdf"},
+    {"key":"fan_processor","fn":"fan","spec":"Fan sink (processor heat sink with fan, spare includes replacement thermal material); four captive Torx T15 screws to the system board, fan cable to the CPUFAN connector","qty":1,"ext":2,"obs":3,"conf":"documented","source":"https://h10032.www1.hp.com/ctg/Manual/c04832034.pdf"},
+    {"key":"fan","conf":"documented","spec":"Rear chassis fan, held to the rear of the chassis by three Phillips screws; fan cable to the board connector CHFAN2 (labelled rear fan connector)","source":"https://h10032.www1.hp.com/ctg/Manual/c04832034.pdf"},
+    {"key":"fan_psu","fn":"fan","spec":"Power supply fan, variable speed, with its speed based on the temperature in the power supply","qty":1,"ext":2,"obs":3,"conf":"documented","source":"https://h10032.www1.hp.com/ctg/Manual/c04832034.pdf"},
+    {"key":"speaker_internal","fn":"speaker","spec":"Speaker (parts list item 6), held to the chassis by one Torx T15 screw; cable to the SPKR connector on the system board","qty":1,"ext":1,"obs":4,"conf":"documented","source":"https://h10032.www1.hp.com/ctg/Manual/c04832034.pdf"},
+    {"key":"motor_bldc","conf":"documented","spec":"Hard drives in the parts list: 2 TB, 1 TB and 500 GB models at 7200 rpm (1 TB and 500 GB offered in 3.5-in and 2.5-in), plus 500 GB 2.5-in models at 5400 rpm","source":"https://h10032.www1.hp.com/ctg/Manual/c04832034.pdf"},
+    {"key":"b:motherboard:battery_coin","conf":"documented","spec":"3 V lithium (lithium manganese dioxide) coin cell battery in a holder on the system board (connector labelled BATTERY) that powers the real-time clock; minimum life about three years","v":3,"source":"https://h10032.www1.hp.com/ctg/Manual/c04832034.pdf"},
+    {"key":"wire_copper","conf":"documented","spec":"Internal cables: power supply cable to the PWR (6-pin main power), PWRCMD and PWRCPU (4-pin processor power) board connectors; SATA data cable (14 in) and SATA drive power cable listed as spare parts","source":"https://h10032.www1.hp.com/ctg/Manual/c04832034.pdf"}
+  ],
+  "sources": [
+    {"title":"HP ProDesk 600 G2 Microtower Business PC Maintenance and Service Guide (HP, first edition October 2015, document 822849-001)","url":"https://h10032.www1.hp.com/ctg/Manual/c04832034.pdf"}
+  ]
+}

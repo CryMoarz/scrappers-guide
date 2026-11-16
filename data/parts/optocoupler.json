@@ -1,0 +1,14 @@
+{
+  "id": "optocoupler",
+  "name": "Optocouplers",
+  "group": "Electronic components",
+  "demand": 1,
+  "keywords": ["optocoupler","opto","optoisolator","opto-isolator","pc817","moc3021","4n35","el817","ltv817","pc123","tlp521","moc3041","4n25","optotriac"],
+  "substitutes": ["relay"],
+  "summary": "Small chips that pass a signal across an isolation gap using light, in power supplies and controllers.",
+  "uses": ["Safely linking a microcontroller to mains-side circuits","Repairing switch-mode power supplies","Isolating sensors and switches"],
+  "identify": "4 or 6-pin white or black chips marked PC817, EL817, MOC3021 or 4N35, usually straddling the gap between the mains and low-voltage sides of a power supply.",
+  "test": "Diode mode across the input pins shows the LED (about 1.1–1.2V). Light the LED through a resistor and check the output pins conduct.",
+  "decay": {"halfLifeMonths":null,"note":"Lasts."},
+  "hazards": []
+}

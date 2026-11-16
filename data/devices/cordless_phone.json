@@ -1,0 +1,40 @@
+{
+  "id": "cordless_phone",
+  "name": "Cordless home phones",
+  "group": "Communications",
+  "aliases": ["cordless phone","landline phone","dect phone","home phone","answering machine","dect handset"],
+  "brands": ["Panasonic","VTech","AT&T","Uniden","Gigaset"],
+  "era": "1980s–present",
+  "prev": 4,
+  "tools": ["screwdriver"],
+  "mins": 5,
+  "kg": 0.5,
+  "hazards": [],
+  "comps": [
+    {"key":"battery_nimh","fn":"battery_nimh","spec":"2 × AAA NiMH cells (2.4V) in each handset","v":2.4,"qty":2,"ext":1,"obs":5,"loc":"Battery door on each handset"},
+    {"key":"radio_rf","fn":"radio_rf","spec":"DECT 1.9 GHz (older: 900 MHz, 2.4 or 5.8 GHz) link to its own base, about 50–300 m; some allow handset-to-handset intercom","qty":2,"ext":2,"obs":5,"loc":"Handsets and base"},
+    {"key":"psu","fn":"psu","spec":"Plug-in adapters, about 5–9V; older ones are heavy linear transformers","v":[5,9],"qty":2,"ext":1,"obs":5,"loc":"Behind the base and chargers"},
+    {"key":"speaker","fn":"speaker","spec":"Earpiece and speakerphone speakers","w":[0.1,1],"qty":2,"ext":2,"obs":5,"loc":"Handset"},
+    {"key":"microphone","fn":"microphone","spec":"Electret microphone","qty":1,"ext":2,"obs":5,"loc":"Bottom of the handset"},
+    {"key":"display","fn":"display","spec":"Small monochrome LCD","qty":1,"ext":3,"obs":5,"loc":"Handset front"},
+    {"key":"charger","fn":"charger","spec":"Charging cradles","v":2.4,"a":[0.1,0.2],"qty":2,"ext":1,"obs":5,"loc":"Around the house"}
+  ],
+  "boards": [
+    {"id":"linear_psu","qty":1,"loc":"Older plug-in adapters","p":0.4},
+    {"id":"smps_small","qty":1,"loc":"Newer plug-in adapters","p":0.6}
+  ],
+  "buildings": [
+    {"b":"house","l":4},
+    {"b":"apartment","l":4},
+    {"b":"office","l":3},
+    {"b":"church","l":3},
+    {"b":"clinic","l":3},
+    {"b":"nursing_home","l":3},
+    {"b":"recycling","l":3},
+    {"b":"department","l":3},
+    {"b":"electronics","l":3},
+    {"b":"school","l":2},
+    {"b":"self_storage","l":2},
+    {"b":"hotel","l":2}
+  ]
+}

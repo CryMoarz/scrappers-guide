@@ -1,0 +1,21 @@
+{
+  "id": "garage_opener_liftmaster_8500w",
+  "device": "garage_opener",
+  "brand": "LiftMaster",
+  "model": "8500W",
+  "notes": "DC battery-backup wall-mount Wi-Fi opener. The light is a separate myQ remote LED light supplied in the carton.",
+  "research": {"checked":"2026-11-12","gaps":["There is no repair-parts list here.","No FCC ID tied to this model was found."],"method":["Main source: LiftMaster's own product sheet LMGDENPG8500W (dated 10/19, copyright 2019); its text layer is scrambled, so page 2 was also read as a rendered image.","The owner's manual listed on Chamberlain Group's support site opens in a Widen document viewer that couldn't be read as text.","Dealer-hosted copies weren't used.","The sheet rates the whole opener at 120 V AC, 60 Hz, 1.5 A current rating; that is kept here rather than on any part.","The sheet gives the light as 827LM, called Wi-Fi on page 1.","The sheet's myQ radio is 902-928 MHz, 50-channel FHSS, for 2-way communication between the opener and myQ accessories.","The logic board number is the one the sheet gives for replacement logic boards.","The battery entry comes from a garage-door parts retailer page that lists the 8500W among the openers using the 485LM and gives 41A6357-1 as another number for it; the product sheet confirms the 485LM is included."]},
+  "comps": [
+    {"key":"motor_ac","fn":"motor_dc_small","conf":"documented","spec":"Heavy-duty 12 V DC motor with automatic thermal protection, permanently lubricated","v":12,"source":"https://images.salsify.com/image/upload/s--889OMrWe--/466ef0e7b95e919749bc1685c9743525a78b1c21.pdf"},
+    {"key":"gearbox","conf":"documented","spec":"Internal chain and sprocket drive, 63:1 gear reduction","source":"https://images.salsify.com/image/upload/s--889OMrWe--/466ef0e7b95e919749bc1685c9743525a78b1c21.pdf"},
+    {"key":"radio_rf","conf":"documented","spec":"DC Wi-Fi logic board with built-in surge suppressor (replacement logic boards: part 050DCRJWF); the opener is listed as frequency-agile on 310, 315 and 390 MHz under Security+ 2.0 radio controls","source":"https://images.salsify.com/image/upload/s--889OMrWe--/466ef0e7b95e919749bc1685c9743525a78b1c21.pdf"},
+    {"key":"led_light","conf":"documented","spec":"myQ remote LED light 827LM, a separate unit included in the carton: 1,500 lm, mounts to ceiling or wall, hinged cover","source":"https://images.salsify.com/image/upload/s--889OMrWe--/466ef0e7b95e919749bc1685c9743525a78b1c21.pdf"},
+    {"key":"sensor_motion","conf":"documented","spec":"The Protector System safety reversing sensors, included","source":"https://images.salsify.com/image/upload/s--889OMrWe--/466ef0e7b95e919749bc1685c9743525a78b1c21.pdf"},
+    {"key":"battery_pb_backup","fn":"battery_pb","spec":"Backup battery LiftMaster 485LM (also sold as 485LMC, Chamberlain 4228, 41A6357-1): 12 V DC sealed rechargeable lead battery","v":12,"qty":1,"ext":1,"obs":3,"conf":"documented","source":"https://www.movingupgaragedoors.com/liftmaster-485lm-integrated-battery-back-up-system"},
+    {"key":"wire_copper_cord","fn":"wire_copper","spec":"6 ft 3-prong power cord for the opener's AC supply","ac":true,"qty":1,"ext":1,"obs":3,"conf":"documented","source":"https://images.salsify.com/image/upload/s--889OMrWe--/466ef0e7b95e919749bc1685c9743525a78b1c21.pdf"}
+  ],
+  "sources": [
+    {"title":"LiftMaster 8500W DC Battery Backup Wall Mount Wi-Fi Garage Door Opener product sheet LMGDENPG8500W (10/19, manufacturer PDF)","url":"https://images.salsify.com/image/upload/s--889OMrWe--/466ef0e7b95e919749bc1685c9743525a78b1c21.pdf"},
+    {"title":"LiftMaster 485LM integrated battery backup listing with 8500W in its fit list (Moving Up Garage Door, retailer)","url":"https://www.movingupgaragedoors.com/liftmaster-485lm-integrated-battery-back-up-system"}
+  ]
+}

@@ -1,0 +1,47 @@
+{
+  "id": "build_battery_bank_lead_acid",
+  "kind": "build",
+  "title": "Lead-acid battery bank from salvaged batteries",
+  "keywords": ["battery bank","lead acid bank","series parallel","golf cart batteries","ups batteries","forklift battery","deep cycle bank","24v bank","battery wiring"],
+  "summary": "Test, match and wire salvaged lead-acid batteries (UPS, golf cart, floor scrubber, forklift, telecom) into a 12V, 24V or 48V bank with proper fusing and balanced cabling. Matching batteries matters more than adding more of them.",
+  "difficulty": 2,
+  "mins": 180,
+  "tools": ["wrench","socket","multimeter","crimper","cutters","hammer","screwdriver","tape","heavy"],
+  "hazards": ["acid","heavy","lead","burn"],
+  "materials": [
+    {"item":"Lead-acid batteries of the same type, voltage and similar age","qty":"2–16","fn":"battery_pb","only":["deep-cycle","vrla","agm"]},
+    {"item":"Battery cable sized to the load: 8 AWG (10 mm²) for under 40A up to 2/0 AWG (70 mm²) for inverters","qty":"about 0.5 m per link","fn":"wire_heavy"},
+    {"item":"Crimp or hammer-crimp lugs to match terminals","qty":"2 per cable","fn":"connector","only":["lug"]},
+    {"item":"Fuses: a main fuse (ANL, MEGA or similar) sized to the cable, plus one per parallel string","qty":"1 + 1 per string","fn":"fuse","only":["fuse box","dc breaker"]},
+    {"item":"Disconnect switch or breaker rated for the main current","qty":"1","fn":"breaker","optional":true},
+    {"item":"Busbars: copper bar or heavy bolts with stacked lugs","qty":"2","fn":"wire_heavy","optional":true},
+    {"item":"Acid-proof tray or tub under the batteries","qty":"1","fn":"tank","only":["tub","tray"]},
+    {"item":"Shelf or rack, insulated from cold floors","qty":"1","fn":"lumber","optional":true},
+    {"item":"Baking soda and water for spills; petroleum jelly or grease for terminals","qty":"some"},
+    {"item":"Distilled or clean rain water for flooded batteries","qty":"a few litres","optional":true}
+  ],
+  "steps": [
+    {"text":"Collect batteries of one type only: all flooded, all AGM or all gel. Same voltage, and as close as you can get in capacity and age.","warn":"Batteries are heavy: a golf-cart battery is 25–30 kg, forklift cells far more. Lift with your legs or with help. Wear eye protection and gloves."},
+    {"text":"Reject any battery that is cracked, bulging, leaking, heavily corroded or has frozen (bulged sides)."},
+    {"text":"Charge each battery fully on its own (safety_lead_acid, test_lead_acid), then let it rest 12–24 hours. Measure resting voltage. A healthy 12V battery reads 12.6–12.8V; reject any below 12.4V (6V batteries: below 6.2V)."},
+    {"text":"Load test each one the same way, for example a 55W headlight bulb for 1 hour, and note the voltage at the end. Group batteries that end within about 0.1V of each other."},
+    {"text":"Plan the bank. Series adds voltage; parallel adds amp-hours. Build series strings first, then parallel no more than 3–4 strings. Write the plan down."},
+    {"text":"Set the batteries on an insulated shelf in an acid-proof tray, in a ventilated spot away from living space, flames and sparks. Leave 1–2 cm between batteries for air."},
+    {"text":"Clean terminals to bright metal. Cut cables to equal lengths for every parallel string and crimp the lugs tight; tug-test each one.","warn":"Terminal corrosion and lead dust are toxic. Wear gloves, don't eat while working, and wash your hands afterwards."},
+    {"text":"Wire each series string: positive of one battery to negative of the next. Measure each finished string; they should match within 0.1–0.2V.","warn":"Remove rings and watches. Tape the handle of your spanner. A tool across terminals arcs, welds and burns."},
+    {"text":"Fit a fuse on the positive end of each string. Join the strings with busbars. Take the bank's main positive from one end of the busbar and the main negative from the opposite end (diagonal), so every string sees the same cable length."},
+    {"text":"Fit the main fuse within 30 cm of the bank's positive, and a disconnect switch if you have one. Leave the main fuse out until the end."},
+    {"text":"Tighten all terminals firmly (snug, not stripped), coat them with grease or petroleum jelly and cover them so nothing can drop across them."},
+    {"text":"Insert the main fuse and charge the whole bank fully. A day later, measure each battery: all should sit within 0.05–0.1V of each other. A battery that is always low is failing; take it out."},
+    {"text":"Every month: check each battery's voltage, tighten connections, clean corrosion with baking soda and water. Top up flooded batteries with distilled water after charging, just to cover the plates.","warn":"Acid burns skin and eyes. Rinse with lots of water for 15 minutes if splashed."}
+  ],
+  "notes": "## Series and parallel\n- Series: volts add, amp-hours stay the same. Two 6V 225Ah → 12V 225Ah.\n- Parallel: amp-hours add, volts stay the same. Two 12V 100Ah → 12V 200Ah.\n- Energy (Wh) = volts × amp-hours. 4 × 6V 225Ah golf-cart batteries = 5.4kWh, about half usable.\n\nExamples: 4 × 6V in series = 24V. 2 × (2 × 6V in series) in parallel = 12V, double capacity. 8 × 12V UPS batteries as 4S2P = 48V.\n\n## Why diagonal wiring\nIn a parallel bank the string nearest the main cables works hardest and dies first. Taking positive from one end and negative from the other evens out the cable resistance each string sees.\n\n## State of charge (12V, at rest 12+ hours, 25 °C)\n| Volts | Charge |\n|---|---|\n| 12.7 | 100% |\n| 12.4 | 75% |\n| 12.2 | 50% |\n| 12.0 | 25% |\n| 11.8 | nearly empty |\n\nFor 6V batteries halve these; for 24V double them. Try to stay above 50%.\n\n## Charging\n- Flooded: absorb 14.4–14.8V, float 13.4–13.6V (per 12V). AGM: 14.4–14.6V / 13.5–13.7V. Gel: 14.0–14.2V / 13.6–13.8V.\n- Charge current 10–20% of the Ah rating (C/10 to C/5).\n- Equalise flooded batteries only (15.0–15.5V for a few hours, with water topped up) when cells drift apart. Never equalise AGM or gel.\n- Flooded cells: specific gravity 1.265–1.280 when full (hydrometer). A cell 0.05 lower than the others is weak.\n\n## Cable and fuse sizing\nCurrent = watts ÷ volts. A 1,000W inverter at 12V draws about 95A with losses.\n\n| Current | Cable (short runs) | Fuse |\n|---|---|---|\n| up to 40A | 8 AWG / 10 mm² | 40A |\n| up to 70A | 4 AWG / 25 mm² | 80A |\n| up to 120A | 2 AWG / 35 mm² | 125–150A |\n| up to 200A | 2/0 AWG / 70 mm² | 200–250A |\n\nGoing to 24V or 48V halves or quarters the current and the copper.\n\n## Mixing batteries\nOld and new batteries in one bank drag the new ones down to the old ones' level. Different capacities in series means the small one is over-drained. If you have a mixed collection, build several small separate banks instead of one big mismatched one.\n\n## Sources by type\n- **UPS and alarm batteries:** 12V 7–9Ah AGM, light, often tired. Good for small banks and DC UPS builds.\n- **Golf carts and floor scrubbers:** 6V or 8V flooded deep-cycle, 150–250Ah. The best salvage.\n- **Forklifts:** a ready-made 24–48V bank of 2V cells weighing hundreds of kilos. Use in place.\n- **Telecom huts and server rooms:** 12V 100–200Ah AGM or 2V cells, often well maintained.\n\n## If you lack a part\n- No lugs: flatten the cable end, drill it and bolt it on, then coat it. Replace with proper lugs when you can.\n- No big fuse: a large DC breaker from a boat, RV or solar install works. Never run without a main fuse.\n- No hydrometer: use resting voltage and load tests.\n",
+  "tree": {"era":4,"branch":"power","requires":["test_lead_acid","skill_dc_wiring"]},
+  "devices": ["ups","golf_cart","floor_scrubber","forklift","telecom_site","server_room","alarm_panel","fire_panel","elevator","emergency_light","car","semi","boat","rv","mobility_scooter","power_wheelchair","ups_large","scissor_lift","pallet_jack"],
+  "parts": ["battery_pb","wire_heavy","fuse","connector","breaker"],
+  "license": "CC-BY-SA-4.0",
+  "refs": [
+    {"lib":"energypedia","q":"battery"},
+    {"lib":"electronics","q":"lead acid battery bank"}
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "id": "hospital_bed",
+  "name": "Hospital beds and patient lifts",
+  "group": "Commercial",
+  "aliases": ["patient bed","care bed"],
+  "brands": ["Hill-Rom","Invacare","Drive Medical","Medline","Graham-Field","Sunrise Medical","Carex"],
+  "prev": 3,
+  "tools": ["screwdriver","socket"],
+  "mins": 30,
+  "hazards": ["heavy"],
+  "comps": [
+    {"key":"linear_actuator","fn":"linear_actuator","spec":"24V linear actuators (3–5 per bed)","v":24,"qty":4,"ext":2,"obs":5,"loc":"Under the bed frame"},
+    {"key":"battery_pb","fn":"battery_pb","spec":"24V backup battery","v":24,"qty":1,"ext":2,"obs":5,"loc":"Control box under the bed"},
+    {"key":"controller_board","fn":"controller_board","spec":"Control box","qty":1,"ext":2,"obs":5,"loc":"Under the bed"},
+    {"key":"bearing","fn":"bearing","spec":"Locking caster wheels","qty":4,"ext":1,"obs":4,"loc":"Legs"}
+  ],
+  "boards": [
+    {"id":"motor_driver_board","qty":1,"loc":"Control box","p":1},
+    {"id":"smps_board","qty":1,"loc":"Control box","p":1}
+  ],
+  "buildings": [
+    {"b":"hospital","l":5},
+    {"b":"nursing_home","l":5},
+    {"b":"house","l":2}
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "id": "reference_connectors",
+  "kind": "reference",
+  "title": "Connectors and pinouts: USB, PC power, barrels and car sockets",
+  "keywords": ["pinout","usb voltage","usb-c power delivery","atx power supply","paperclip test","barrel plug","laptop charger voltage","cigarette lighter socket","obd2 pinout","anderson powerpole"],
+  "summary": "What voltage each common connector gives and how to get power out of salvaged supplies: USB, USB-C Power Delivery, PC power supplies, barrel plugs, laptop chargers, car sockets and battery connectors.",
+  "difficulty": 1,
+  "mins": 5,
+  "tools": ["multimeter"],
+  "hazards": ["mains"],
+  "materials": [],
+  "steps": [
+    {"text":"Read the label on the power supply: output volts, amps and the polarity symbol."},
+    {"text":"Measure the output with a meter before you connect anything to it."},
+    {"text":"Match the voltage exactly. The supply’s current rating must be at least what the device draws; more is fine."},
+    {"text":"Fuse anything you wire straight to a battery, close to the battery.","warn":"A car or lithium battery can deliver hundreds of amps into a short: enough to melt wire and start a fire."}
+  ],
+  "notes": "## USB\n\n| Kind | Gives |\n|---|---|\n| USB-A and micro-USB chargers | 5 V, 0.5–2.4 A |\n| USB-C (plain) | 5 V, up to 3 A |\n| USB-C Power Delivery | 5, 9, 15 or 20 V, up to 5 A (100 W); newer chargers 28, 36 or 48 V (240 W) |\n| Quick Charge (Qualcomm, USB-A) | 5, 9 or 12 V (some 20 V) |\n\nA Power Delivery charger only raises its voltage when the device asks. A cheap **PD trigger board** does the asking, turning a USB-C charger or power bank into a 9, 15 or 20 V supply for other things (12 V too on chargers that offer it).\n\nUSB-A pins: 1 +5 V, 2 data −, 3 data +, 4 ground. The two outer contacts (the longer ones) are power; the two inner ones are data. Check which outer one is + with a meter.\n\n## PC power supply (ATX)\n\n- To run one without a computer, connect the green wire (pin 16 of the 24-pin plug, PS_ON) to any black wire. Unplug it from the wall before you do.\n- +12 V comes out on the yellow wires: the 24-pin, the 4- or 8-pin CPU plug, the 6- or 8-pin graphics plugs, Molex and SATA.\n- Molex 4-pin: yellow +12 V, black, black, red +5 V.\n- SATA power: orange +3.3 V, red +5 V, yellow +12 V.\n- Some older supplies won't stay on without a small load on +5 V: a 10 Ω, 10 W resistor across red and black does it.\n\n## Barrel plugs and laptop chargers\n\n- Most are centre positive: check the polarity symbol on the label.\n- 5.5 × 2.1 mm and 5.5 × 2.5 mm are the common 12 V sizes (routers, LED strip, cameras, monitors). The two look alike; the wrong one connects badly.\n- Laptop chargers are mostly 19–20 V (Dell and HP about 19.5 V, Asus and Acer 19 V, Lenovo 20 V). Read the label. USB-C laptops use Power Delivery.\n\n## Vehicles and batteries\n\n| Connector | Pins |\n|---|---|\n| Car accessory socket (cigarette lighter) | Centre +12 V, sides ground; usually fused at 10–20 A |\n| OBD-II port (under the dash) | Pin 16 battery +12 V (always on), pins 4 and 5 ground |\n| Anderson Powerpole | Red +, black −; both halves identical; solar, radio |\n| Anderson SB (SB50, SB120…) | The housing colour marks the system voltage, not polarity (forklifts, winches, battery chargers): check polarity with a meter |\n| XT60, XT90 | + and − moulded on the plastic; RC, drones, e-bikes |\n\n## Network and mains\n\n- Standard Power over Ethernet (802.3af/at) puts 44–57 V DC on the cable only after the device asks for it. **Passive PoE** (24 or 48 V, common on Ubiquiti and cheap cameras) is always on and can damage ordinary network ports.\n- North American 240 V plugs for dryers and stoves carry two live wires. Never adapt one to a 120 V device.\n",
+  "tree": {"era":3,"branch":"power","requires":["skill_multimeter"]},
+  "parts": ["psu","connector","battery_li"],
+  "license": "CC-BY-SA-4.0",
+  "sources": [
+    {"title":"USB Implementers Forum: USB Power Delivery specification (fixed supply voltages)"},
+    {"title":"ATX power supply design guide (Intel): 24-pin connector pinout"},
+    {"title":"SAE J1962: OBD-II diagnostic connector pinout"},
+    {"title":"IEEE 802.3af/at: Power over Ethernet"}
+  ]
+}

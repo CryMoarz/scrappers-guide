@@ -1,0 +1,14 @@
+{
+  "id": "dynamo",
+  "name": "Dynamos and hand-crank generators",
+  "group": "Power generation",
+  "demand": 3,
+  "keywords": ["dynamo","hand crank","hand-crank","crank generator","hand crank generator","hub dynamo","bottle dynamo","bike dynamo","bicycle dynamo","wind-up","crank radio","crank torch","crank flashlight","shake flashlight"],
+  "substitutes": ["alternator","motor_dc_small","motor_stepper"],
+  "summary": "Small generators turned by hand, pedal or wheel: crank torches and radios, and bike hub and bottle dynamos.",
+  "uses": ["Charging a phone or small battery with no sun","Bike lights that never need batteries","Pedal and hand-crank generator builds","Emergency radio power"],
+  "identify": "Crank radios and torches have a folding handle and a small geared generator inside. Bike hub dynamos are a fat front hub with two wire tabs; bottle dynamos press a ribbed wheel on the tyre. Most bike dynamos give about 6V and 3W.",
+  "test": "Spin it with a meter on volts (hub dynamos give AC): you should see several volts that rise with speed. The gears should turn smoothly without slipping.",
+  "decay": {"halfLifeMonths":null,"note":"The generators last; the small built-in batteries in crank gadgets die within a few years."},
+  "hazards": []
+}

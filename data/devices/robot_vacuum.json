@@ -1,0 +1,35 @@
+{
+  "id": "robot_vacuum",
+  "name": "Robot vacuum",
+  "group": "Kitchen and appliances",
+  "aliases": ["roomba","robovac"],
+  "brands": ["iRobot","Eufy","Shark","Ecovacs","Roborock","Dreame","Neato","Samsung"],
+  "era": "2010s–present",
+  "prev": 4,
+  "tools": ["screwdriver"],
+  "mins": 20,
+  "repairs": {"records":1280,"fixed":0.45,"end_of_life":0.26},
+  "hazards": ["li_fire"],
+  "comps": [
+    {"key":"battery_li","fn":"battery_li","spec":"14.4V battery pack","v":14.4,"qty":1,"ext":1,"obs":3,"loc":"Underside"},
+    {"key":"motor_dc_small","fn":"motor_dc_small","spec":"Wheel gear motors with encoders","v":14.4,"qty":2,"ext":2,"obs":5,"loc":"Wheel modules"},
+    {"key":"robot_brush_motors","fn":"motor_dc_small","spec":"Brush and vacuum motors","v":14.4,"w":[10,50],"qty":2,"ext":2,"obs":5,"loc":"Body"},
+    {"key":"sensor_misc","fn":"sensor_misc","spec":"Infrared cliff and bump sensors","qty":6,"ext":2,"obs":5,"loc":"Bumper and underside"},
+    {"key":"charger","fn":"charger","spec":"Charging dock","v":[19,24],"a":[0.6,1.5],"qty":1,"ext":1,"obs":4,"loc":"Against a wall"},
+    {"key":"controller_board","fn":"controller_board","spec":"Main board","qty":1,"ext":2,"obs":5,"loc":"Body"}
+  ],
+  "boards": [
+    {"id":"motor_driver_board","qty":1,"loc":"Main board","p":1},
+    {"id":"battery_bms","qty":1,"loc":"On the battery pack","p":1},
+    {"id":"smps_small","qty":1,"loc":"Inside the dock power supply","p":1}
+  ],
+  "buildings": [
+    {"b":"house","l":4},
+    {"b":"apartment","l":4},
+    {"b":"electronics","l":3},
+    {"b":"department","l":3}
+  ],
+  "sources": [
+    {"title":"Open Repair Alliance, Open Repair Data v0.3 (community repair events, 2012 to July 2026; CC BY-SA 4.0): 1,280 repairs recorded as Vacuum (robot vacuum subset)","url":"https://github.com/openrepair/data"}
+  ]
+}

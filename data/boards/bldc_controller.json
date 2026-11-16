@@ -1,0 +1,16 @@
+{
+  "id": "bldc_controller",
+  "name": "Brushless motor controller (ESC)",
+  "notes": "From e-bikes, scooters, drones and cordless tools. Power MOSFETs are the prize.",
+  "comps": [
+    {"key":"mosfet","fn":"mosfet","spec":"Power MOSFETs, 6–18","qty":6,"ext":3,"obs":4,"loc":"Lined up against the heatsink"},
+    {"key":"ic_driver","fn":"ic_driver","spec":"Gate driver IC","qty":1,"ext":4,"obs":5,"loc":"Near the MOSFETs"},
+    {"key":"ic_mcu","fn":"ic_mcu","spec":"Microcontroller","qty":1,"ext":4,"obs":5,"loc":"Logic section"},
+    {"key":"resistor","fn":"resistor","spec":"Shunt resistors","qty":2,"ext":3,"obs":5,"loc":"Power path"},
+    {"key":"cap_elec","fn":"cap_elec","spec":"Low-ESR bulk capacitors","qty":3,"ext":2,"obs":4,"loc":"Power input"},
+    {"key":"dcdc_buck","fn":"dcdc_buck","spec":"Buck converter for the logic supply","v":5,"a":[0.5,3],"qty":1,"ext":4,"obs":5,"loc":"Logic section"},
+    {"key":"heatsink","fn":"heatsink","spec":"Aluminium heatsink or case","qty":1,"ext":2,"obs":4,"loc":"Bolted to the MOSFETs"},
+    {"key":"wire_heavy","fn":"wire_heavy","spec":"Phase and battery wires","qty":5,"ext":1,"obs":4,"loc":"Leads"},
+    {"key":"connector","fn":"connector","spec":"XT60, Anderson or bullet connectors","qty":2,"ext":1,"obs":4,"loc":"Leads"}
+  ]
+}

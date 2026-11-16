@@ -1,0 +1,28 @@
+{
+  "id": "water_heater",
+  "name": "Water heater (tank)",
+  "group": "Building systems",
+  "aliases": ["hot water heater","gas water heater"],
+  "brands": ["Rheem","A.O. Smith","Bradford White","GE","State Industries","Ruud"],
+  "prev": 5,
+  "tools": ["screwdriver","socket","pliers"],
+  "mins": 40,
+  "hazards": ["heavy"],
+  "comps": [
+    {"key":"heating_element","fn":"heating_element","spec":"Screw-in heating elements, about 4.5 kW (electric models)","w":4500,"qty":2,"ext":2,"obs":4,"loc":"Behind the front access panels","p":0.5},
+    {"key":"thermostat","fn":"thermostat","spec":"Adjustable thermostats","qty":2,"ext":2,"obs":4,"loc":"Behind the same panels"},
+    {"key":"magnesium","fn":"magnesium","spec":"Magnesium anode rod — shavings make a fire starter","qty":1,"ext":3,"obs":5,"loc":"Top of the tank, large hex head"},
+    {"key":"valve_solenoid","fn":"valve_solenoid","spec":"Gas control valve with thermocouple (gas models)","qty":1,"ext":2,"obs":4,"loc":"Front, at the base","p":0.5}
+  ],
+  "buildings": [
+    {"b":"house","l":5},
+    {"b":"apartment","l":5},
+    {"b":"hotel","l":5},
+    {"b":"restaurant","l":4},
+    {"b":"gym","l":4},
+    {"b":"school","l":3},
+    {"b":"church","l":3},
+    {"b":"hardware","l":3},
+    {"b":"salon","l":4}
+  ]
+}

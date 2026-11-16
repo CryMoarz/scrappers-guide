@@ -1,0 +1,16 @@
+{
+  "id": "garden_solar_hampton_bay_84066",
+  "device": "garden_solar",
+  "brand": "Hampton Bay",
+  "model": "84066",
+  "notes": "Hampton Bay 84066 solar LED path light (Home Depot item 1003 459 415). The guide gives one 1.2 V 1000 mAh AA NiMH cell as the replacement and says the light ships with it pre-installed.",
+  "research": {"checked":"2026-11-12","gaps":["The guide gives no solar panel volts, watts or size, no LED count and no lumens.","The package table lists quantity 6 for every part (cover, cell, housing, post, stake), so a box may hold six lights; only the replacement-cell line (one cell) is used for the per-light count.","The guide only warns that nearby porch or street lights can stop the light turning on automatically; it names no sensor, so no dusk sensor part is claimed.","No driver chip, inductor, charger circuit or switch is named, so none is claimed.","A Home Depot Q&A title for 84066 (not opened) gives 15 lumens and a 6-pack; neither is claimed.","Check the model number on the box before applying these specs."],"method":["Hampton Bay Use and Care Guide, Solar LED Path Light, Model #84066, Item #1003 459 415 (Home Depot-hosted PDF); English pages 1 and 2 read in full with the research tool's pdf command, Spanish pages repeat the same battery line.","Cell details are on page 1 (package contents, part B) and page 2 (replacing the battery); the solar panel and charging description are on page 1 (How solar works).","Home Depot product and Q&A pages for 84066 returned HTTP 403 or were not opened.","A search for a teardown or driver chip for 84066 found none."]},
+  "comps": [
+    {"key":"solar_panel","conf":"documented","spec":"Solar panel in the light that charges the rechargeable cell from sunlight during the day","source":"https://images.thdstatic.com/catalog/pdfImages/81/8171a39f-23ca-4d44-9f2a-c941d2cd9998.pdf"},
+    {"key":"battery_nimh","conf":"documented","spec":"One AA NiMH rechargeable cell, 1.2 V, 1000 mAh, pre-installed; the manual asks for a replacement of 1000 mAh or greater","v":1.2,"ah":1,"qty":1,"loc":"Behind the battery cover (C), under the top cover (A)","source":"https://images.thdstatic.com/catalog/pdfImages/81/8171a39f-23ca-4d44-9f2a-c941d2cd9998.pdf"},
+    {"key":"led_light","conf":"documented","spec":"LED light source (the guide is titled Solar LED Path Light)","source":"https://images.thdstatic.com/catalog/pdfImages/81/8171a39f-23ca-4d44-9f2a-c941d2cd9998.pdf"}
+  ],
+  "sources": [
+    {"title":"Hampton Bay Solar LED Path Light Use and Care Guide, Model #84066, Item #1003 459 415 (Home Depot-hosted PDF, English and Spanish)","url":"https://images.thdstatic.com/catalog/pdfImages/81/8171a39f-23ca-4d44-9f2a-c941d2cd9998.pdf"}
+  ]
+}

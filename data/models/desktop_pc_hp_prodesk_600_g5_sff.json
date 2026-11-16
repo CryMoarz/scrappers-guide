@@ -1,0 +1,20 @@
+{
+  "id": "desktop_pc_hp_prodesk_600_g5_sff",
+  "device": "desktop_pc",
+  "brand": "HP",
+  "model": "ProDesk 600 G5 Small Form Factor (SFF) Business PC",
+  "notes": "Small form factor chassis (95 x 270 x 300 mm in the desktop position). The guide lists three power supply options (180 W, 250 W and 310 W), so check the label on the unit.",
+  "research": {"checked":"2026-11-12","gaps":["The parts list gives descriptions only; no spare part numbers appear in the text.","No output currents are given for the 180, 250 and 310 W supplies, only input currents in Appendix D, so no a value is set.","The Appendix D efficiency rows run out of order in the text layer; the rated input current rows were checked on the rendered page.","The parts list prints the fan-sink as 65-W and the speaker with an extra 140-mm figure; neither is claimed as a rating.","The 'Fan (includes cable)' item has no position or rating in the guide.","The system board entry in the parts list also names mini-tower (MT) configurations; the guide title and Appendix D are for the SFF.","The coin cell is not named by type or size beyond 3 V lithium, so no CR2032 claim is made.","Optical drive options are listed without saying which part they are, so no optical drive part is claimed.","The guide does not describe the hard drive spindle motor or magnets; the entry records the drives only."],"method":["HP Maintenance and Service Guide, HP ProDesk 600 G5 SFF, third edition September 2019, document L16887-003 (h10032.www1.hp.com PDF, read as text; the Appendix D page was rendered and checked).","Read: the parts list (chapter 2), the coin cell note and Appendix A, the speaker, power supply, fan shroud, fan-sink and system board removal sections, and Appendix D (printed p.114).","No third-party mirrors used."]},
+  "comps": [
+    {"key":"psu","conf":"documented","spec":"Power supply options in the parts list: 180 W, 250 W and 310 W, each described as 12-V, with two output connectors and one control cable connector, cables included. Operating input 90-264 VAC at 47-63 Hz (rated 100-240 VAC, 50-60 Hz). Rated input current 2.3 A (180 W), 3 A (250 W) and 4 A (310 W).","v":12,"w":[180,310],"source":"https://h10032.www1.hp.com/ctg/Manual/c06442415.pdf"},
+    {"key":"fan_processor","fn":"fan","spec":"Fan-sink with retention clips (processor heat sink with fan, spare kit includes replacement thermal material); four captive Torx-15 screws to the chassis, fan-sink cable to the system board","qty":1,"ext":2,"obs":3,"conf":"documented","source":"https://h10032.www1.hp.com/ctg/Manual/c06442415.pdf"},
+    {"key":"fan","conf":"documented","spec":"Fan (includes cable), a separate item in the parts list","source":"https://h10032.www1.hp.com/ctg/Manual/c06442415.pdf"},
+    {"key":"speaker_internal","fn":"speaker","spec":"Speaker, 40 x 28.5 mm, 2 W, 4 ohm (parts list entry includes cable); two Phillips M2.0x5.5 screws to the chassis, cable to the system board","w":2,"qty":1,"ext":1,"obs":4,"conf":"documented","source":"https://h10032.www1.hp.com/ctg/Manual/c06442415.pdf"},
+    {"key":"motor_bldc","conf":"documented","spec":"Hard drives in the parts list: 500 GB, 1 TB and 2 TB models in 3.5-in, 2.5-in, 9.5 mm and 7.0 mm sizes, at 7200 or 5400 rpm (some hybrid with 8 GB NAND)","source":"https://h10032.www1.hp.com/ctg/Manual/c06442415.pdf"},
+    {"key":"b:motherboard:battery_coin","conf":"documented","spec":"3 V lithium (lithium manganese dioxide) coin cell battery that powers the real-time clock; minimum life about three years","v":3,"source":"https://h10032.www1.hp.com/ctg/Manual/c06442415.pdf"},
+    {"key":"wire_copper","conf":"documented","spec":"Internal cables: power supply P1, P2 and P3 cables to the system board, the fan-sink cable and the speaker cable","source":"https://h10032.www1.hp.com/ctg/Manual/c06442415.pdf"}
+  ],
+  "sources": [
+    {"title":"HP ProDesk 600 G5 SFF Maintenance and Service Guide (HP, third edition September 2019, document L16887-003)","url":"https://h10032.www1.hp.com/ctg/Manual/c06442415.pdf"}
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "id": "battery_primary",
+  "name": "Non-rechargeable cells (lithium and alkaline)",
+  "group": "Power storage",
+  "demand": 4,
+  "keywords": ["primary battery","primary cell","non-rechargeable","alkaline","aa battery","aaa battery","9v battery","c cell","d cell","cr123a","cr123","cr2","lithium primary","lithium thionyl chloride","li-socl2","lithium iron disulfide","smoke alarm battery","smoke detector battery","10-year battery"],
+  "substitutes": ["battery_li","battery_nimh","battery_coin"],
+  "summary": "Single-use cells: alkaline AA to D and 9V, and long-life lithium cells in alarms, defibrillators, cameras and meters.",
+  "uses": ["Torches, radios and remotes","Smoke and CO alarms","Meters and sensors that sip power for years"],
+  "identify": "Labelled alkaline, lithium or \"do not recharge\". Lithium primaries are often CR123A, 2/3A or sealed 10-year packs; 3.0–3.6V per cell.",
+  "test": "Measure open-circuit voltage: alkaline above about 1.4V and lithium above about 3.0V still have useful charge. Check again under a small load.",
+  "decay": {"halfLifeMonths":120,"note":"Lithium primaries lose 1–2% a year in storage; alkalines a few percent but leak with age."},
+  "hazards": ["chemical","li_fire"]
+}

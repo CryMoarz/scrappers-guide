@@ -1,0 +1,19 @@
+{
+  "id": "store_water",
+  "name": "Store water",
+  "keywords": ["store water","water storage","stockpile water","keep water","hold water","save water","water supply","emergency water"],
+  "summary": "Food-grade drums and tanks, kept dark and sealed, keep treated water for months. The overlooked stock is water already inside buildings: a tank water heater holds 100–300 litres of drinkable water, and toilet cisterns, office water coolers and pipes hold more. Treat anything of doubtful origin before drinking.",
+  "parts": [
+    {"fn":"tank","why":"Drums, IBC totes and tanks to hold water","core":true},
+    {"fn":"water_stored","why":"Water already sitting in heaters, cisterns and coolers","core":true},
+    {"fn":"chlorine","why":"A few drops keep stored water safe"},
+    {"fn":"hose_tubing","why":"Fills and drains tanks without lifting"},
+    {"fn":"valve_solenoid","why":"Taps and drain valves on tanks and heaters"},
+    {"fn":"filter_water","why":"Cleans water from doubtful stores"}
+  ],
+  "guides": ["teardown_water_heater","build_rainwater_collection","safety_entering_buildings"],
+  "tips": ["To drain a water heater: shut off its power or gas, open a hot tap to let air in, then open the drain valve at the bottom.","Use food-grade containers only (HDPE, recycling mark 2). Never ones that held chemicals or fuel.","Keep stored water dark and cool, and re-treat it every 6 months.","Toilet cisterns (the tank, not the bowl) are fine to treat and drink, unless there’s a cleaning tablet in them.","Plan on about 4 litres a day per person for drinking and cooking."],
+  "refs": [
+    {"lib":"water_lib","q":"storage"}
+  ]
+}

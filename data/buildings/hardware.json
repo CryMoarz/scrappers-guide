@@ -1,0 +1,6 @@
+{
+  "id": "hardware",
+  "name": "Hardware and DIY stores",
+  "osm": ["shop=hardware","shop=doityourself","shop=paint","shop=locksmith","craft=glaziery","craft=plumber","craft=electrician","craft=hvac","craft=carpenter"],
+  "exposure": 5
+}

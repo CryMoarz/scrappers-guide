@@ -1,0 +1,18 @@
+{
+  "id": "coffee_maker_breville_bes870",
+  "device": "coffee_maker",
+  "brand": "Breville",
+  "model": "BES870 (Barista Express)",
+  "notes": "The Barista Express espresso machine with a built-in conical burr grinder, from the US/Canada/Mexico instruction book. Its rating line, 120 V ~ 60 Hz 1750 W, is for the machine as a whole, not for the pump or the heater.",
+  "research": {"checked":"2026-11-12","gaps":["The 120 V ~ 60 Hz 1750 W rating is the machine's rating line, so it is not put on the heater or the pump.","The Australia and NZ edition of the instruction book lists 1850 W high power; that is a different market's edition, so it is not used.","No pump maker, pump or heater watts, or OEM part numbers were found, so none is claimed.","The grinder motor and control board are not named in the manual, so no parts are claimed for them.","The pump and heater are documented from the manual's feature and troubleshooting text, not from a teardown or parts list."],"method":["Barista Express BES870 US trilingual Instruction Book V23 (assets.breville.com), read as text with research.js pdf: thermocoil and PID on page 7, water tank and rating line on page 9, 15 bar Italian pump on pages 15, 19 and 31; the last page reads BES870 Series.","Breville Canada product page for BES870, read with WebFetch: 15 bar Italian pump and Thermocoil heating system with PID temperature control; its specification table was collapsed, so nothing was taken from it.","Australia and NZ instruction book (P22) read for comparison only."]},
+  "comps": [
+    {"key":"pump_water","conf":"documented","spec":"15 bar Italian pump, as the manual calls it","source":"https://assets.breville.com/BES870/BES870_USCM_IB_V23_LR.pdf"},
+    {"key":"heating_element","conf":"documented","spec":"Thermocoil heating system: an integrated stainless steel water coil that controls the water temperature, with electronic PID temperature control.","source":"https://assets.breville.com/BES870/BES870_USCM_IB_V23_LR.pdf"},
+    {"key":"tank","fn":"tank","spec":"Removable water tank, 67 fl oz (2 L)","qty":1,"ext":1,"obs":3,"conf":"documented","source":"https://assets.breville.com/BES870/BES870_USCM_IB_V23_LR.pdf"}
+  ],
+  "sources": [
+    {"title":"Barista Express BES870 Instruction Book, US trilingual edition (English, FR-CA, ES-MX), V23, Breville (assets.breville.com)","url":"https://assets.breville.com/BES870/BES870_USCM_IB_V23_LR.pdf"},
+    {"title":"Breville BES870 Barista Express product page, Canada (breville.com)","url":"https://www.breville.com/en-ca/product/BES870"},
+    {"title":"Barista Express BES870 Instruction Book, Australia and NZ edition (P22), Breville (assets.breville.com), for comparison only","url":"https://assets.breville.com/BES870/BES870_ANZ_IB_P22_FA_Online.pdf"}
+  ]
+}

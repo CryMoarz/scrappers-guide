@@ -1,0 +1,14 @@
+{
+  "id": "switch",
+  "name": "Switches",
+  "group": "Signal and control",
+  "demand": 1,
+  "keywords": ["switch","switches","microswitch","limit switch","float switch","button","trigger","toggle switch","rocker switch","push button","pushbutton","tact switch","tactile switch","slide switch","rotary switch","key switch","micro switch","dip switch"],
+  "substitutes": [],
+  "summary": "Switches of every kind: toggles, rockers, microswitches, limit and float switches, and push buttons.",
+  "uses": ["Power switches and controls for builds","Limit and safety switches","Float switches for tank pumps","Alarm triggers"],
+  "identify": "Rocker switches on power strips and appliances; microswitches in the doors of microwaves, washers and printers; float switches in sump pits and tanks; toggles on tools and dashboards. The rating in amps and volts is stamped on the body.",
+  "test": "Continuity across the terminals should change cleanly when switched. Microswitches have common, NO and NC terminals.",
+  "decay": {"halfLifeMonths":null,"note":"Lasts."},
+  "hazards": []
+}

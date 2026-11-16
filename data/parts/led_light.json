@@ -1,0 +1,14 @@
+{
+  "id": "led_light",
+  "name": "LEDs and lights",
+  "group": "Light",
+  "demand": 4,
+  "keywords": ["led","leds","light","lights","lamp","lighting","flashlight","torch","led strip","led bulb","led panel","led tube","fluorescent tube","cfl","floodlight","work light","headlamp","head torch","lantern","emergency light","exit sign","cob led","smd led","5050","string lights","fairy lights"],
+  "substitutes": [],
+  "summary": "LEDs and lamps of every kind: bulbs, tubes, strips, torches, floodlights and the LEDs inside them.",
+  "uses": ["Light at night on very little power","12V lights run straight from a battery (strips and vehicle bulbs)","Signal and warning lights"],
+  "identify": "Bulbs, panels and tubes in every building; 12V LED strips in cabinets, vehicles and signs; torches and headlamps in cars and drawers; solar garden lights and emergency exit signs with their own batteries. Fluorescent tubes and CFLs hold mercury: don’t break them indoors.",
+  "test": "Try LED strips and 12V lamps on a battery. A meter on diode mode makes a single LED glow faintly. Try mains bulbs in a socket or on an inverter.",
+  "decay": {"halfLifeMonths":null,"note":"LEDs last; the batteries in torches and emergency lights don’t."},
+  "hazards": ["mercury"]
+}

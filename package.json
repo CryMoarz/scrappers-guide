@@ -1,0 +1,24 @@
+{
+  "name": "scrappers-guide",
+  "version": "4.0.0",
+  "description": "Offline salvage and survival database: what's inside everyday devices, which parts to strip, where to find them, and how to get them out safely. Single-file app, sync hub and Project NOMAD add-on.",
+  "keywords": ["offline-first", "survival", "prepper", "emergency-preparedness", "salvage", "repair", "teardown", "e-waste", "electronics", "off-grid", "self-hosted", "project-nomad", "kiwix", "meshtastic", "lora", "offline-maps", "open-data"],
+  "homepage": "https://github.com/CryMoarz/scrappers-guide#readme",
+  "repository": { "type": "git", "url": "git+https://github.com/CryMoarz/scrappers-guide.git" },
+  "bugs": { "url": "https://github.com/CryMoarz/scrappers-guide/issues" },
+  "author": "CryMoarz",
+  "license": "MIT",
+  "private": true,
+  "engines": { "node": ">=20" },
+  "bin": { "sdg-hub": "server/hub.js", "sdg-mcp": "mcp/stdio.js" },
+  "scripts": {
+    "validate": "node tools/validate.js --warn",
+    "build": "node tools/build.js",
+    "test": "node --test test/*.test.js",
+    "hub": "node server/hub.js",
+    "node": "node server/hub.js --mode node",
+    "mcp": "node mcp/stdio.js",
+    "fmt": "node tools/fmt.js"
+  },
+  "dependencies": {}
+}

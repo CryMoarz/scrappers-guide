@@ -1,0 +1,14 @@
+{
+  "id": "sheet_metal",
+  "name": "Sheet metal and panels",
+  "group": "Materials",
+  "demand": 2,
+  "keywords": ["sheet metal","metal sheet","steel sheet","sheet steel","aluminium sheet","aluminum sheet","corrugated iron","corrugated metal","roofing sheet","metal roofing","tin roof","flashing","metal panel","galvanised sheet","galvanized sheet"],
+  "substitutes": ["plastic_sheet","lumber"],
+  "summary": "Flat and corrugated steel and aluminium sheet: appliance cases, roofing, ducting, signs and panels.",
+  "uses": ["Roofs, walls and weather shields","Heat shields, stove parts and solar cookers","Patching vehicles, tanks and ducts","Brackets, guards and boxes"],
+  "identify": "Washer, dryer and fridge cabinets, computer cases, HVAC ducts, road signs, roofing and shed panels. A magnet sticks to steel but not to aluminium. Galvanised steel has a dull grey zinc coat: don’t weld or burn it indoors, as the fumes make you ill.",
+  "test": "Look for rust-through and cracks at bends. Thin rusty spots dent easily under a thumb or screwdriver.",
+  "decay": {"halfLifeMonths":null,"note":"Lasts. Bare steel rusts outdoors; aluminium and galvanised steel last decades."},
+  "hazards": ["sharp"]
+}

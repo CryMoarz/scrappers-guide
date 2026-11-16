@@ -1,0 +1,38 @@
+{
+  "id": "emergency_light",
+  "name": "Exit signs and emergency lights",
+  "group": "Building systems",
+  "aliases": ["emergency lighting","battery backup light"],
+  "brands": ["Lithonia Lighting","Exitronix","Sure-Lites","Dual-Lite","Hubbell","Cooper Lighting","Morris Products"],
+  "prev": 5,
+  "tools": ["screwdriver"],
+  "mins": 10,
+  "hazards": [],
+  "comps": [
+    {"key":"battery_nimh","fn":"battery_nimh","spec":"6V or 12V backup pack (NiCd or NiMH)","v":[6,12],"ah":[0.8,4],"qty":1,"ext":1,"obs":5,"loc":"Behind the sign face"},
+    {"key":"battery_pb","fn":"battery_pb","spec":"Small 6V sealed lead-acid (twin-head units)","v":6,"qty":1,"ext":1,"obs":5,"loc":"Inside the housing"},
+    {"key":"led_light","fn":"led_light","spec":"LED arrays and lamp heads","v":[3.6,12],"w":[1,10],"qty":2,"ext":1,"obs":4,"loc":"Front"},
+    {"key":"charger","fn":"charger","spec":"Built-in charger and transfer circuit","v":[6,12],"qty":1,"ext":2,"obs":5,"loc":"Inside the housing"}
+  ],
+  "boards": [
+    {"id":"led_driver_dc","qty":1,"loc":"Inside the housing","p":0.7},
+    {"id":"analog_timer_board","qty":1,"loc":"Charger and test circuit (older units)","p":0.3}
+  ],
+  "buildings": [
+    {"b":"office","l":5},
+    {"b":"school","l":5},
+    {"b":"hospital","l":5},
+    {"b":"church","l":5},
+    {"b":"hotel","l":5},
+    {"b":"supermarket","l":5},
+    {"b":"warehouse","l":5},
+    {"b":"factory","l":5},
+    {"b":"gym","l":5},
+    {"b":"apartment","l":4},
+    {"b":"department","l":5},
+    {"b":"hardware","l":5},
+    {"b":"restaurant","l":4},
+    {"b":"salon","l":3},
+    {"b":"shop_small","l":4}
+  ]
+}

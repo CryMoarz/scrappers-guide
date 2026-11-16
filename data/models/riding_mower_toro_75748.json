@@ -1,0 +1,27 @@
+{
+  "id": "riding_mower_toro_75748",
+  "device": "riding_mower",
+  "brand": "Toro",
+  "model": "75748 (TimeCutter 42 in. zero-turn)",
+  "notes": "A 42-inch Toro TimeCutter zero-turn with a Briggs & Stratton 15.5 hp, 500 cc engine, two hydro transaxles and a 3 gal fuel tank. The parts catalogue covers serial numbers 400000000 and up.",
+  "research": {"checked":"2026-11-12","gaps":["The catalogue lists the engine as a Briggs & Stratton Professional engine without a model number, and gives no battery amp-hours or fuel tank capacity; engine size, horsepower and tank capacity are from the Toro product page.","The product page names the transmission Dual Hydrostatic HG-ZT2100; the catalogue lists the LH and RH hydro transaxle assemblies, so the HG-ZT2100 name is not claimed as a part.","Switch 110-6765 (qty 2) is listed only as 'Switch', so its job is not stated.","Bearing 138-9770 is listed with quantity 2 under spindle assembly 139-3214; no per-machine total is set.","The LED light kit 140-2056 is an accessory, so no headlight is claimed.","The product page gives no serial range for model 75748; the catalogue's serial 400000000 and up is used.","No years found; the catalogue gives a serial range, not a production year."],"method":["Toro TimeCutter 42in parts catalogue, Form 3446-923 Rev C, model 75748, serial 400000000 and up (toro.com/getpub/281591): pages 11, 13, 15 (drive), 23 (seat), 27 (engine), 29 (fuel), 31 (electrical), 33 (deck), 38 (accessories). Part numbers compared character by character.","Toro product page for model 75748 (toro.com/en/product/75748): engine brand Briggs and Stratton, 15.5 hp, 500 cc, fuel capacity 3 gal / 11.4 L, fuel type gasoline, 2 blades.","Toro catalogues for the 50 inch TimeCutter MR5075T and the HD ZX4800 are other models and were not used."]},
+  "comps": [
+    {"key":"engine_small","conf":"documented","spec":"Briggs & Stratton engine, 15.5 hp, 500 cc","source":"https://www.toro.com/en/product/75748"},
+    {"key":"battery_pb","conf":"documented","spec":"12 V dry battery, 230 CCA, Toro part 105-1692 (catalogue page 31, qty 1)","v":12,"qty":1,"source":"https://www.toro.com/getpub/281591"},
+    {"key":"solenoid_actuator","conf":"documented","spec":"Solenoid 117-1197 (qty 1), with cover 140-2080 and cap 140-2081 (catalogue page 31)","qty":1,"source":"https://www.toro.com/getpub/281591"},
+    {"key":"hydraulic","conf":"documented","spec":"Two hydro transaxle assemblies: LH 139-7450 and RH 139-7451, qty 1 each (catalogue page 11); each has pump block 110-8561 (pages 13 and 15)","qty":2,"source":"https://www.toro.com/getpub/281591"},
+    {"key":"belt_pulley","conf":"documented","spec":"V-belt 139-2399 in the traction drive assembly (qty 1, page 11) and V-belt 119-8819 on the 42 inch deck (qty 1, page 33); the accessories page (page 38) also lists mower deck drive belt 79004","qty":2,"source":"https://www.toro.com/getpub/281591"},
+    {"key":"bearing","conf":"documented","spec":"Ball bearing 138-9770, qty 2 within spindle assembly 139-3214 (catalogue page 33)","source":"https://www.toro.com/getpub/281591"},
+    {"key":"switch","conf":"documented","spec":"Ignition switch 137-4100 (qty 1), PTO switch 103-5221 (qty 1) and Switch 110-6765 (qty 2), catalogue page 31","qty":4,"source":"https://www.toro.com/getpub/281591"},
+    {"key":"switch_seat_bail","fn":"switch","spec":"Bail switch 82-2190 in seat assembly 147-5157 (catalogue page 23)","qty":1,"ext":1,"obs":4,"conf":"documented","source":"https://www.toro.com/getpub/281591"},
+    {"key":"fuse_15a","fn":"fuse","spec":"Blade fuse, 15 A, Toro part 109355, listed with wire harness 138-2521 (catalogue page 31)","a":15,"qty":1,"ext":1,"obs":3,"conf":"documented","source":"https://www.toro.com/getpub/281591"},
+    {"key":"fuse_25a","fn":"fuse","spec":"Blade fuse, 25 A, Toro part 109102, listed with wire harness 138-2521 (catalogue page 31)","a":25,"qty":1,"ext":1,"obs":3,"conf":"documented","source":"https://www.toro.com/getpub/281591"},
+    {"key":"tank_fuel","fn":"tank","spec":"Fuel tank, 3 gal (11.4 L), gasoline (product page)","qty":1,"ext":2,"obs":2,"conf":"documented","source":"https://www.toro.com/en/product/75748"},
+    {"key":"blade","fn":"sheet_metal","spec":"Blade 137-1999-03, qty 2, on the 42 inch deck (catalogue page 33)","qty":2,"ext":1,"obs":3,"conf":"documented","source":"https://www.toro.com/getpub/281591"},
+    {"key":"seat_foam_rubber","fn":"foam_rubber","spec":"Seat, 16 in, Toro part 139-5891, in seat assembly 147-5157 (catalogue page 23)","qty":1,"ext":1,"obs":2,"conf":"documented","source":"https://www.toro.com/getpub/281591"}
+  ],
+  "sources": [
+    {"title":"Toro TimeCutter 42in Riding Mower Parts Catalog, Form No. 3446-923 Rev C, Model 75748, serial 400000000 and up (Toro PDF)","url":"https://www.toro.com/getpub/281591"},
+    {"title":"Toro product page: 42 in. (107 cm) TimeCutter Zero Turn Mower, Model 75748 (specifications)","url":"https://www.toro.com/en/product/75748"}
+  ]
+}

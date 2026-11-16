@@ -1,0 +1,14 @@
+{
+  "id": "motor_stepper",
+  "name": "Stepper motors",
+  "group": "Motion",
+  "demand": 1,
+  "keywords": ["motor","stepper","stepper motor","precision motor","cnc","nema 17","nema17","nema 23","nema23","28byj-48","28byj","bipolar stepper","unipolar stepper","printer motor"],
+  "substitutes": ["motor_dc_small"],
+  "summary": "Motors that move in precise steps: printers, scanners, 3D printers and CNC machines.",
+  "uses": ["Precise positioning for CNC and solar trackers","Hand-crank generators (they make AC when spun)","Slow, controlled drives for valves and dampers"],
+  "identify": "Square-flanged motors with four, five or six wires: NEMA 17 and 23 in 3D printers, CNC machines and big printers; small round 28BYJ-48s in air conditioner louvres and toys; tiny ones in floppy and optical drives.",
+  "test": "Find the coil pairs with a meter (a few ohms each). Spin the shaft with a pair shorted and it goes stiff; spun open, each coil gives AC volts.",
+  "decay": {"halfLifeMonths":null,"note":"Lasts."},
+  "hazards": []
+}

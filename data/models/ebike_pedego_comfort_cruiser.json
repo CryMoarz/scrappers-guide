@@ -1,0 +1,20 @@
+{
+  "id": "ebike_pedego_comfort_cruiser",
+  "device": "ebike",
+  "brand": "Pedego",
+  "model": "Comfort Cruiser",
+  "notes": "The motor and charger entries rest on general Pedego statements, not on this model's details.",
+  "research": {"checked":"2026-11-11","gaps":["It gives no battery voltage or capacity, motor rating or controller for this model.","The model year is not pinned down."],"method":["The Canadian Pedego Assembly Instructions and Owners Manual (PDF file name ends 04132021) names the Comfort Cruiser in its gears, mechanical disc brake, rear light, battery and operating sections."]},
+  "comps": [
+    {"key":"led_light","conf":"documented","spec":"Integrated rear light that runs from the battery; turned on and off with the 'rear light' button on top of the battery. The manual's Comfort Cruiser lights section lists a rear light only.","source":"https://pedegoelectricbikes.ca/wp-content/uploads/2021/04/Pedego-Master-Manual-Canada-04132021.pdf"},
+    {"key":"battery_li","conf":"documented","spec":"Removable lithium-ion battery (manual says all Pedego models include a lithium ion battery). Slides forward into the battery holder and locks when fully inserted; a key lock releases it. Pack voltage and capacity are not stated for this model in this manual.","source":"https://pedegoelectricbikes.ca/wp-content/uploads/2021/04/Pedego-Master-Manual-Canada-04132021.pdf"},
+    {"key":"charger","conf":"documented","spec":"Battery charger included with the bike. Plugs into a standard household outlet. Charges a fully depleted battery in 4-5 hours; indicator is red or orange while charging and green when fully charged. Charger output is not stated for this model.","source":"https://pedegoelectricbikes.ca/wp-content/uploads/2021/04/Pedego-Master-Manual-Canada-04132021.pdf"},
+    {"key":"motor_bldc","conf":"documented","spec":"Brushless electric motor, per the manual's general introduction ('Our brushless electric motors'). No model-specific rating, wattage or position is stated in this manual.","source":"https://pedegoelectricbikes.ca/wp-content/uploads/2021/04/Pedego-Master-Manual-Canada-04132021.pdf"},
+    {"key":"chain_sprocket_rear","fn":"chain_sprocket","spec":"7-speed drivetrain with a rear derailleur and thumb shifter; the rear wheel carries seven chain sprockets. The gears section lists Comfort Cruiser.","qty":1,"ext":2,"obs":4,"loc":"rear wheel","conf":"documented","source":"https://pedegoelectricbikes.ca/wp-content/uploads/2021/04/Pedego-Master-Manual-Canada-04132021.pdf"},
+    {"key":"cable_steel_brake","fn":"cable_steel","spec":"Mechanical (cable-actuated) disc brakes operated by two handlebar levers. A threaded barrel adjuster at the brake lever takes up cable slack. The mechanical disc brakes section lists Comfort Cruiser.","qty":2,"ext":2,"obs":4,"loc":"handlebar brake levers to front and rear brakes","conf":"documented","source":"https://pedegoelectricbikes.ca/wp-content/uploads/2021/04/Pedego-Master-Manual-Canada-04132021.pdf"},
+    {"key":"switch_battery","fn":"switch","spec":"Battery on/off switch on the bottom of the battery, marked '|' for on and 'O' for off. The manual says to switch it off when the bike is not in use or is charging.","qty":1,"ext":1,"obs":3,"loc":"underside of battery","conf":"documented","source":"https://pedegoelectricbikes.ca/wp-content/uploads/2021/04/Pedego-Master-Manual-Canada-04132021.pdf"}
+  ],
+  "sources": [
+    {"title":"Pedego Assembly Instructions and Owners Manual, Canada (PDF, master manual covering several models)","url":"https://pedegoelectricbikes.ca/wp-content/uploads/2021/04/Pedego-Master-Manual-Canada-04132021.pdf"}
+  ]
+}

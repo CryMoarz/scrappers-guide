@@ -1,0 +1,20 @@
+{
+  "id": "power_from_water",
+  "name": "Power from water",
+  "keywords": ["power from water","water power","hydro power","hydropower","micro hydro","hydroelectric","water wheel","waterwheel","stream power","power from a stream","power from the creek"],
+  "summary": "A small stream with a good drop runs day and night, which beats solar on short winter days. Power in watts is roughly 5 × drop in metres × flow in litres per second, so drop matters most. Pipe water down from upstream onto a wheel driving a treadmill motor or car alternator, or run a centrifugal pump backwards as a turbine.",
+  "parts": [
+    {"fn":"motor_dc_large","why":"Permanent-magnet motors make simple hydro generators","core":true},
+    {"fn":"alternator","why":"Car alternators suit fast, high-drop turbines","core":true},
+    {"fn":"hose_tubing","why":"Pipe that carries water down to the turbine","core":true},
+    {"fn":"pump_water","why":"Centrifugal pumps run backwards as turbines"},
+    {"fn":"bearing","why":"Carries the wheel or runner shaft"},
+    {"fn":"belt_pulley","why":"Gears a slow wheel up to generator speed"},
+    {"fn":"charge_controller","why":"A diversion controller protects the battery"}
+  ],
+  "guides": ["build_micro_hydro"],
+  "tips": ["Measure flow with a bucket and a watch: litres filled ÷ seconds.","A stream falling 10 m at 5 litres per second gives about 250W.","Screen the intake, and never take all of the stream.","Floods wreck riverside gear. Mount the generator well above high water."],
+  "refs": [
+    {"lib":"energypedia","q":"micro hydro"}
+  ]
+}

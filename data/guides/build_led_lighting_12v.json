@@ -1,0 +1,41 @@
+{
+  "id": "build_led_lighting_12v",
+  "kind": "build",
+  "title": "12V LED lighting",
+  "keywords": ["led lighting","12v lights","led strip","low voltage lighting","camp lights","led resistor","tv backlight","cabin lights","house lights off grid"],
+  "summary": "Light a room or camp from a 12V battery with salvaged LED strips, car and RV lights or TV backlight strips. LEDs need their current limited; 12V strips have this built in, bare LEDs need a resistor or a constant-current driver. Fuse each circuit at the battery.",
+  "difficulty": 2,
+  "mins": 120,
+  "tools": ["cutters","crimper","desolder","multimeter","screwdriver","drill","tape","knife"],
+  "hazards": ["burn"],
+  "materials": [
+    {"item":"LED strips, modules or 12V LED bulbs","qty":"200–800 lumens per room","fn":"led_light","only":["12v led","12/24v led","lighting strips","light bars"]},
+    {"item":"Resistors for bare LEDs, ¼–2W (sized in notes)","qty":"1 per LED string","fn":"resistor","optional":true},
+    {"item":"Constant-current buck board for 1W+ LEDs or TV backlight strips","qty":"1 per light","fn":"dcdc_buck","optional":true},
+    {"item":"Wire 18–14 AWG (0.75–2.5 mm²), red and black","qty":"run length × 2","fn":"wire_copper","only":["extension","awg","cord"]},
+    {"item":"Fuses: one main at the battery plus one per lighting circuit","qty":"2+","fn":"fuse"},
+    {"item":"Switches on the positive wire","qty":"1 per circuit","fn":"switch"},
+    {"item":"Aluminium strip or heatsink for LEDs over about 0.5W each","qty":"as needed","fn":"heatsink","optional":true},
+    {"item":"Diffuser: frosted plastic, a lampshade, or a light cover","qty":"1 per light","fn":"optics","optional":true},
+    {"item":"12V battery","qty":"1","fn":"battery_pb","only":["12v"]},
+    {"item":"Connectors and heat-shrink","qty":"some","fn":"connector","optional":true}
+  ],
+  "steps": [
+    {"text":"Decide how much light: about 200–400 lumens for a room you move about in, 300+ lumens on a work or reading spot. Modern LEDs give 80–150 lumens per watt, so a room needs only 3–6W."},
+    {"text":"Test 12V strips and bulbs through a 1A fuse on a 12V battery. They should light evenly. Note which wire is positive."},
+    {"text":"Test unknown LED strips (TV backlights, signs) with a current-limited supply, or with 12V through a 470 Ω resistor. If they light, measure the voltage across the strip; that is its forward voltage. If nothing lights, the strip needs more than 12V: split it into shorter sections or use a boost driver."},
+    {"text":"For bare LEDs, work out the resistor (notes). Calculate at 14.4V, the battery's charging voltage, so the LEDs survive when the battery is full."},
+    {"text":"Plan circuits: each light or group of lights gets its own fused feed from a fuse block next to the battery. Pick the wire size from the current and the length (notes)."},
+    {"text":"Mount LEDs. Anything over about 0.5W per LED needs aluminium behind it to carry heat away. Put a diffuser in front to cut glare."},
+    {"text":"Join wires by soldering (skill_soldering) or crimping and cover every joint with heat-shrink or tape. Positive (red) to the LED anode or the strip's + pad.","warn":"Hot soldering iron and molten solder burn. Work on a clear surface."},
+    {"text":"Fit switches in the positive wire of each circuit."},
+    {"text":"At the battery: main fuse within 30 cm of positive, then a fuse block with one fuse per circuit (about 1.5–2× the circuit's current, at least 1A). Leave fuses out until the wiring is done.","warn":"A short on an unfused wire from a battery melts insulation and starts fires."},
+    {"text":"Insert the fuses and switch on. Measure the current in each circuit. After 30 minutes, touch the LEDs and resistors: warm is fine, too hot to hold is not; add heatsink or reduce current."},
+    {"text":"Label each circuit and its fuse."}
+  ],
+  "notes": "## Resistor for bare LEDs\nR = (supply V − LEDs in series × LED V) ÷ current (A). Power = current² × R; use a resistor rated at least double.\n\n| LED colour | Forward V |\n|---|---|\n| Red, amber | 1.8–2.2V |\n| White, blue, green | 2.9–3.4V |\n\nExamples at 14.4V (worst case):\n- 3 white 5 mm LEDs at 20 mA: (14.4 − 9.6) ÷ 0.02 = 240 Ω, ¼W. At 12.0V they run at about 10 mA, dimmer but fine.\n- 3 white 1W LEDs at 300 mA: (14.4 − 9.9) ÷ 0.3 = 15 Ω, 1.35W → use a 3W resistor. A constant-current driver wastes less.\n- Never put LEDs in parallel on one resistor; each string gets its own.\n\n## TV backlight strips\nStrips from flat TVs are long series chains, often 3V or 6V per LED, built to run at high voltage. Cut them into sections that add up to 9–11V and drive each section through a resistor, or use a constant-current driver. Start at about 50–100 mA and check heat. Run them below the TV's original current for long life.\n\n## Constant-current drivers\nBuck boards with two trim pots (voltage and current) can drive 1–3W LEDs efficiently. Set the voltage just above the string's forward voltage and the current to the LED's rating or less.\n\n## Wire size (12V, 3% drop)\nLongest one-way run: 18 AWG at 1A about 9 m, at 2A about 4.5 m. 16 AWG at 2A about 7 m. 14 AWG at 3A about 7 m. Formula: drop = amps × 2 × metres × ohms per metre (18 AWG 21 mΩ/m, 16 AWG 13, 14 AWG 8.3).\n\n## How long the battery lasts\n6W of lights for 5 hours = 30Wh, about 2.5Ah from a 12V battery per night. A 7Ah alarm battery covers 1–2 nights at half charge; a 100Ah battery covers weeks.\n\n## Dimming\nUse a PWM dimmer board, or switch between a high and a low resistor. Lower current also makes LEDs last longer.\n\n## Troubleshooting\n- Flickers: loose joint, or a driver struggling at low battery voltage.\n- One section dark on a strip: a failed LED in that series group; cut it out and bridge it, or cut the strip there.\n- Dim at night: battery low or wire too thin.\n\n## If you lack a part\n- No resistors: put a 12V incandescent bulb in series as a crude current limiter, or use LEDs in a count that adds up to just under the battery voltage (4 × white ≈ 12–13V) and accept that brightness changes with charge.\n- No 12V LEDs: solar garden lights each give 10–30 lumens; several make a useful path or room light.\n",
+  "tree": {"era":3,"branch":"signal","requires":["skill_dc_wiring"]},
+  "devices": ["flat_tv","rv","car","emergency_light","solar_sign","motion_light","holiday_decor","streetlight","boat","garden_solar","stage_lighting","led_billboard"],
+  "parts": ["led_light","resistor","wire_copper","fuse","switch","heatsink","optics"],
+  "license": "CC-BY-SA-4.0"
+}

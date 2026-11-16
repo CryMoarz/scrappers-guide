@@ -1,0 +1,32 @@
+{
+  "id": "test_motor",
+  "kind": "test",
+  "title": "Test a salvaged motor",
+  "keywords": ["test motor","motor test","is motor good","motor winding","motor resistance","dc motor test","stepper test","bldc test","induction motor test","generator test","burnt motor","motor bearings","insulation test"],
+  "summary": "Check a motor before you carry it: spin it by hand, test the windings and insulation with a meter, use permanent-magnet motors as generators to prove magnets and windings, and only then run it briefly on the right supply.",
+  "difficulty": 2,
+  "mins": 20,
+  "tools": ["multimeter","screwdriver","pliers","clamps","hands"],
+  "hazards": ["mains","hv_cap","crush","burn"],
+  "materials": [
+    {"item":"Supply at the motor's rated voltage, with a fuse in line","fn":"psu","qty":"1","optional":true},
+    {"item":"Cordless drill or string to spin the shaft fast","qty":"1","optional":true}
+  ],
+  "steps": [
+    {"text":"Read the label: voltage, AC or DC, current and speed. The rating plate guide explains the numbers."},
+    {"text":"Turn the shaft by hand. It should turn smoothly with no grinding, tight spots or side-to-side play. An even, regular notchy feel is normal in magnet motors and steppers. Grinding or rough spots mean worn bearings or rubbing."},
+    {"text":"Look and smell. A burnt varnish smell, dark or blistered windings, melted plastic or a scorched commutator mean the motor has overheated."},
+    {"text":"Two-wire brushed motors: measure resistance across the leads. Expect a low reading, from under 1 Ω on big motors to tens of ohms on tiny ones. Turn the shaft slowly while measuring: the reading may wobble but should never jump to open (OL)."},
+    {"text":"Generator test for magnet motors (brushed DC, brushless and steppers): set the meter to volts (DC for brushed, AC for brushless and steppers), spin the shaft fast, and read the output. A steady voltage proves the magnets and windings.","warn":"Big motors spun fast can make dangerous voltages. Keep hands off the leads and clear of the shaft."},
+    {"text":"Short test: join the leads (two of the three wires on a brushless motor, or one coil pair on a stepper) and turn the shaft. It should feel much stiffer than with the leads apart. If not, a winding is open."},
+    {"text":"Brushless motors: measure resistance between each pair of the three thick wires. All three readings should be about equal."},
+    {"text":"Steppers: find the wire pairs that show continuity. Each pair is one coil, and the coils should read the same resistance."},
+    {"text":"AC motors: measure each winding. On single-phase motors the start winding usually reads higher than the run winding. Then measure from every lead to the metal frame on the highest ohms range: it should read open (OL).","warn":"Any reading from a winding to the frame means failed insulation. That motor can make its case live."},
+    {"text":"Run test: clamp the motor down, fuse the supply, and run it briefly at its rated voltage. Listen for grinding, feel for shaking, look for heavy sparking at the brushes, and smell for burning.","warn":"Clamp it before power: motors jump when they start. Keep loose clothes, hair and gloves away from the shaft. Discharge any start or run capacitor first."}
+  ],
+  "notes": "## Which test for which motor\n\n| Motor | Wires | Meter test | Spin test |\n|---|---|---|---|\n| Brushed magnet DC (treadmills, wipers, drills, toys) | 2 | Low ohms, steady while turning | DC volts out; stiff with leads joined |\n| Universal (vacuums, blenders, corded tools) | 2, with brushes | Continuity through field and brushes | Almost nothing out (no magnets) |\n| Brushless (hub motors, hoverboards, drones, direct-drive washers) | 3 thick, often 5 thin sensor wires too | Equal ohms between the three thick wires | AC volts between any two thick wires |\n| Stepper (printers, 3D printers, optical drives) | 4, 5, 6 or 8 | Coil pairs read the same | AC volts on a coil pair |\n| Induction (fans, pumps, washers, compressors) | 2–4, often a capacitor | Each winding, and no continuity to the frame | Nothing out |\n| Synchronous (microwave turntables, timers) | 2 | Usually high ohms, often kilohms | Small AC voltage |\n\n## Insulation limits\n\nA proper insulation test uses 500 V or more from a special tester. An ordinary meter only uses a few volts and finds only dead shorts. A pass on your meter is not a guarantee. Run a mains motor on a fused supply, earth its frame, and use an RCD or GFCI if you have one.\n\n## Brushes\n\nBrushed motors wear their carbon brushes down. If a motor cuts in and out or won't start, check the brushes: worn ones are short, chipped, or have a spring that no longer presses them onto the commutator. See the brush repair guide.\n\n## Common mistakes\n\n- Testing a brushless motor on DC volts. It reads almost nothing; use AC.\n- Mistaking the thin sensor wires for phase wires.\n- Running a motor without clamping it.\n- Spinning a big motor fast with its leads joined. It brakes hard and heats up.\n- Forgetting the capacitor on an AC motor.",
+  "tree": {"era":3,"branch":"machines","requires":["skill_identify_motors","skill_multimeter"]},
+  "devices": ["treadmill","washer_dd","washer_belt","cordless_drill","ebike","hoverboard","inkjet","printer_3d","optical_drive","vacuum","corded_tools","exercise_bike","window_ac","ceiling_fan","pool_pump","well_pump"],
+  "parts": ["motor_dc_small","motor_dc_large","motor_bldc","motor_stepper","motor_ac","motor_universal","motor_sync","bearing"],
+  "license": "CC-BY-SA-4.0"
+}

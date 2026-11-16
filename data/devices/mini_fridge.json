@@ -1,0 +1,49 @@
+{
+  "id": "mini_fridge",
+  "name": "Mini fridges and 12V coolers",
+  "group": "Kitchen and appliances",
+  "aliases": ["bar fridge","dorm fridge","minibar","thermoelectric cooler","car fridge","12v cooler","wine cooler","medicine fridge","compact fridge","portable fridge"],
+  "brands": ["Frigidaire","Igloo","Haier","Danby","Whynter","Dometic","Vevor"],
+  "prev": 5,
+  "tools": ["screwdriver","socket"],
+  "mins": 20,
+  "kg": 18,
+  "hazards": ["refrigerant","chemical"],
+  "comps": [
+    {"key":"thermoelectric","fn":"thermoelectric","spec":"Peltier module, about 40 × 40 mm, 12V drawing about 4–5A, with heatsinks and fans (12V car coolers, wine coolers, some minibars)","v":12,"a":[4,5],"qty":1,"ext":2,"obs":5,"loc":"Back wall, between two heatsinks"},
+    {"key":"cooler_box","fn":"cooler_box","spec":"Foam-insulated cabinet or cool box — still works as an icebox with no power","qty":1,"ext":1,"obs":4,"loc":"The whole unit"},
+    {"key":"compressor","fn":"compressor","spec":"Small compressor, about 1/12–1/8 hp (dorm and bar fridges) — have the refrigerant recovered first","v":[120,240],"w":[60,90],"ac":true,"qty":1,"ext":4,"obs":3,"loc":"Bottom rear","kg":6},
+    {"key":"heating_element","fn":"heating_element","spec":"Absorption cooling unit with a small electric heater (silent hotel minibars) — the sealed coil holds ammonia under pressure; never cut it","v":[120,240],"w":[50,100],"ac":true,"qty":1,"ext":3,"obs":5,"loc":"Back of the cabinet"},
+    {"key":"fan","fn":"fan","spec":"12V DC fans on the Peltier heatsinks","v":12,"qty":2,"ext":1,"obs":4,"loc":"Back"},
+    {"key":"heatsink","fn":"heatsink","spec":"Aluminium heatsinks and cold block","qty":2,"ext":2,"obs":4,"loc":"Back and inside wall"},
+    {"key":"psu","fn":"psu","spec":"12V car lead and mains adapter (thermoelectric models)","v":12,"qty":1,"ext":1,"obs":4,"loc":"Stored in the lid or plugged in","p":0.5},
+    {"key":"thermostat","fn":"thermostat","spec":"Mechanical thermostat dial","qty":1,"ext":1,"obs":4,"loc":"Inside, near the top"},
+    {"key":"magnet_ferrite","fn":"magnet_ferrite","spec":"Magnetic door gasket strip","qty":1,"ext":1,"obs":5,"loc":"Door seal"}
+  ],
+  "boards": [
+    {"id":"smps_board","qty":1,"loc":"Mains supply of thermoelectric models","p":0.3}
+  ],
+  "buildings": [
+    {"b":"hotel","l":5},
+    {"b":"school","l":4},
+    {"b":"office","l":4},
+    {"b":"apartment","l":4},
+    {"b":"house","l":4},
+    {"b":"department","l":4},
+    {"b":"appliance","l":4},
+    {"b":"clinic","l":3},
+    {"b":"nursing_home","l":3},
+    {"b":"hospital","l":3},
+    {"b":"fire_station","l":3},
+    {"b":"garage_res","l":3},
+    {"b":"campground","l":3},
+    {"b":"rv_dealer","l":3},
+    {"b":"auto_parts","l":3},
+    {"b":"gas_station","l":3},
+    {"b":"self_storage","l":3},
+    {"b":"church","l":2},
+    {"b":"salon","l":2},
+    {"b":"shop_small","l":2}
+  ],
+  "notes": "Peltier coolers are inefficient (about 40–60W to cool a small box) but run straight from 12V. Medicine and vaccine fridges in clinics are built for tight temperature control."
+}

@@ -1,0 +1,14 @@
+{
+  "id": "fan",
+  "name": "Fans and blowers",
+  "group": "Fluids",
+  "demand": 2,
+  "keywords": ["fan","fans","blower","cooling fan","ventilation","exhaust fan","extractor fan","computer fan","pc fan","radiator fan","squirrel cage","centrifugal blower","blower motor","axial fan","120mm fan","80mm fan"],
+  "substitutes": ["motor_dc_small","motor_ac"],
+  "summary": "Fans and blowers that move air, from small 12V computer fans to mains blower wheels.",
+  "uses": ["Ventilating shelters, stoves and toilets","Cooling electronics and inverters","Blowers for forges and rocket stoves","Evaporative coolers and food dryers"],
+  "identify": "Square 12V fans in computers, power supplies, inverters and amplifiers; squirrel-cage blowers in furnaces, range hoods and air handlers; mains axial fans in fridges, bathrooms and AC condensers.",
+  "test": "Spin it by hand: it should coast freely. Feed DC fans 12V (red +, black −) or plug in mains fans, and listen for grinding.",
+  "decay": {"halfLifeMonths":null,"note":"Lasts. Dry bearings get noisy, but a drop of oil helps."},
+  "hazards": []
+}

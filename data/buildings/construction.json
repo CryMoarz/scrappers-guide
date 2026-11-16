@@ -1,0 +1,6 @@
+{
+  "id": "construction",
+  "name": "Construction sites",
+  "osm": ["landuse=construction","building=construction"],
+  "exposure": 2
+}

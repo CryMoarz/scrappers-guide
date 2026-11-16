@@ -1,0 +1,25 @@
+{
+  "id": "led_bulb_philips_9290011840",
+  "device": "led_bulb",
+  "brand": "Philips",
+  "model": "9290011840",
+  "notes": "A 60 W-equivalent A19 rated 9.5 W and 800 lumens, with a warm-glow low-light mode, from a 2017 teardown. The driver is all discrete parts (transistors, diodes, a transformer and an SCR) with no integrated circuits.",
+  "research": {"checked":"2026-11-12","gaps":["Model number 9290011840 is not confirmed on a Philips page: it comes only from the 2017 teardown, and searches of Philips and Signify pages did not show it.","The teardown gives no values for the capacitors, inductor, transformer or diodes and no part numbers for the transistors, bridge, SCR, zener or varistor, so none are claimed.","The fuse resistor is given as 33 ohm; no current rating is stated, so no amps are set.","The varistor is given as 270v at the AC input with no AC or DC rating, so no voltage field is set.","The teardown gives no string voltage for the LEDs, so none is claimed.","No Philips spec sheet, retail listing or FCC/ISED filing for this model was found, so the 9.5 W and 800 lumen rating is the teardown's statement."],"method":["Teardown: Patent Refinery page on the Philips 9290011840 LED bulb, dated 2017.07.24; every part claim was checked against its text.","Searches for 9290011840 on Philips, Signify and retail pages found only other warm-glow codes, which are not used."]},
+  "comps": [
+    {"key":"led_light","conf":"documented","spec":"26 LEDs on a flexible PCB wrapped around a pentagonal aluminium heat sink: 20 large LEDs in two strings of 10 for full power, and 6 small LEDs for the warm-glow low level","source":"https://sites.google.com/patentrefinery.com/home/teardowns/led-bulb-teardowns/philips-led-bulb"},
+    {"key":"b:led_driver_mains:fuse","conf":"documented","spec":"33 ohm fuse resistor at the AC input","loc":"AC input","source":"https://sites.google.com/patentrefinery.com/home/teardowns/led-bulb-teardowns/philips-led-bulb"},
+    {"key":"b:led_driver_mains:bridge_rect","conf":"documented","spec":"Diode bridge on the power board","source":"https://sites.google.com/patentrefinery.com/home/teardowns/led-bulb-teardowns/philips-led-bulb"},
+    {"key":"b:led_driver_mains:inductor","conf":"documented","spec":"Inductor among the larger through-hole parts on one side of the power board","source":"https://sites.google.com/patentrefinery.com/home/teardowns/led-bulb-teardowns/philips-led-bulb"},
+    {"key":"b:led_driver_mains:cap_elec","conf":"documented","spec":"Large electrolytic output capacitor of the switching regulator","source":"https://sites.google.com/patentrefinery.com/home/teardowns/led-bulb-teardowns/philips-led-bulb"},
+    {"key":"bjt_switch","fn":"bjt","spec":"NPN switch transistor of the buck-boost switching regulator","qty":1,"ext":3,"obs":4,"conf":"documented","source":"https://sites.google.com/patentrefinery.com/home/teardowns/led-bulb-teardowns/philips-led-bulb"},
+    {"key":"bjt_clamp","fn":"bjt","spec":"Two 3-transistor circuits (six transistors): a clamp that controls the main switch transistor's base-emitter voltage, and a circuit that detects the output voltage dropping as dimming is applied, which switches over to the small LEDs","qty":6,"ext":3,"obs":4,"conf":"documented","source":"https://sites.google.com/patentrefinery.com/home/teardowns/led-bulb-teardowns/philips-led-bulb"},
+    {"key":"ferrite_xfmr_regulator","fn":"ferrite_xfmr","spec":"Transformer in the switching regulator; its secondary is not used for isolation","qty":1,"ext":3,"obs":4,"loc":"Power board, through-hole side","conf":"documented","source":"https://sites.google.com/patentrefinery.com/home/teardowns/led-bulb-teardowns/philips-led-bulb"},
+    {"key":"thyristor_ovp","fn":"thyristor","spec":"SCR in the transient over-voltage protection circuit of the DC output section","qty":1,"ext":3,"obs":4,"conf":"documented","source":"https://sites.google.com/patentrefinery.com/home/teardowns/led-bulb-teardowns/philips-led-bulb"},
+    {"key":"diode_zener_ovp","fn":"diode_zener","spec":"Zener diode in the transient over-voltage protection circuit of the DC output section","qty":1,"ext":3,"obs":4,"conf":"documented","source":"https://sites.google.com/patentrefinery.com/home/teardowns/led-bulb-teardowns/philips-led-bulb"},
+    {"key":"surge_varistor","fn":"surge_protect","spec":"270v varistor for transient protection at the AC input","qty":1,"ext":2,"obs":4,"loc":"AC input","conf":"documented","source":"https://sites.google.com/patentrefinery.com/home/teardowns/led-bulb-teardowns/philips-led-bulb"},
+    {"key":"heatsink_base","fn":"heatsink","spec":"Aluminium heat sink inside the A19 base; the pentagonal LED heat sink is pressed into it","qty":1,"ext":2,"obs":3,"loc":"Inside the A19 base","conf":"documented","source":"https://sites.google.com/patentrefinery.com/home/teardowns/led-bulb-teardowns/philips-led-bulb"}
+  ],
+  "sources": [
+    {"title":"Philips 9290011840 LED bulb teardown (Patent Refinery, dated 2017.07.24)","url":"https://sites.google.com/patentrefinery.com/home/teardowns/led-bulb-teardowns/philips-led-bulb"}
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "id": "laptop_lenovo_thinkpad_x1_carbon_gen_9",
+  "device": "laptop",
+  "brand": "Lenovo",
+  "model": "ThinkPad X1 Carbon Gen 9 (20XW, 20XX)",
+  "years": "2021",
+  "notes": "Covers machine types 20XX and 20XW. The power adapter plug and the camera vary by configuration, so each part names its configuration.",
+  "research": {"checked":"2026-11-11","gaps":["Not recorded: memory (16 GB soldered LPDDR4x on 20XW004RUS), M.2 SSD, keyboard, fingerprint reader, CPU and base cover, which have no matching part type or no source read."],"method":["Specs come from three Lenovo PSREF sheets for 20XW004RUS, 20XW0026GE and 20XW0050BM (copies on third-party sites), the Lenovo X1 Carbon Gen 9 and Yoga Gen 6 user guide (second edition, July 2021), and a ManualsLib copy of the Yoga Gen 6 and Carbon Gen 9 hardware maintenance manual (copyright 2021...","Which lists machine types 20XX and 20XW on viewer page 5.","Years 2021 comes from the PSREF announce dates (2021-03-02 and 2021-04-20)."]},
+  "comps": [
+    {"key":"battery_li","conf":"documented","spec":"Integrated 57 Wh battery (PSREF 20XW004RUS; the same 57 Wh is listed on 20XW0026GE and 20XW0050BM)","source":"https://www.eclipsecat.com/sites/default/files/X1%20Carbon%2020XW004RUS%20%20Specs.pdf"},
+    {"key":"psu","conf":"documented","spec":"65 W USB-C ac power adapter. PSREF 20XW004RUS lists a 2-pin plug; PSREFs 20XW0026GE and 20XW0050BM list a Slim 3-pin plug","w":65,"source":"https://www.eclipsecat.com/sites/default/files/X1%20Carbon%2020XW004RUS%20%20Specs.pdf"},
+    {"key":"display","conf":"documented","spec":"14-inch WUXGA 1920x1200 IPS panel, 400 nits, anti-glare, 10-point multi-touch (PSREF 20XW004RUS)","source":"https://www.eclipsecat.com/sites/default/files/X1%20Carbon%2020XW004RUS%20%20Specs.pdf"},
+    {"key":"camera","conf":"documented","spec":"720p camera with privacy shutter (PSREF 20XW004RUS)","source":"https://www.eclipsecat.com/sites/default/files/X1%20Carbon%2020XW004RUS%20%20Specs.pdf"},
+    {"key":"speaker","conf":"documented","spec":"Stereo speakers, 2 W x2 and 0.8 W x2, Dolby Atmos (PSREF 20XW004RUS)","source":"https://www.eclipsecat.com/sites/default/files/X1%20Carbon%2020XW004RUS%20%20Specs.pdf"},
+    {"key":"fan","conf":"documented","spec":"Thermal fan assembly, item 9 in the Carbon Gen 9 FRU table; the page read gives no size, rating or part number","source":"https://www.manualslib.com/manual/3302204/Lenovo-20xy.html?page=62"},
+    {"key":"b:motherboard:battery_coin","conf":"documented","spec":"Coin-cell battery; checkout reads +2.5 to +3.2 V dc between the red wire and black ground, and says to replace the coin-cell battery if out of range; chemistry not stated","v":3.2,"source":"https://www.manualslib.com/manual/3302204/Lenovo-20xy.html?page=36"},
+    {"key":"b:motherboard:connector","conf":"documented","spec":"Ports on 20XW004RUS (PSREF): 1x HDMI 2.0, 1x USB 3.2 Gen 1, 1x USB 3.2 Gen 1 always-on, 2x Thunderbolt 4 / USB4 40 Gbps, 1x 3.5 mm headphone/mic combo jack","source":"https://www.eclipsecat.com/sites/default/files/X1%20Carbon%2020XW004RUS%20%20Specs.pdf"},
+    {"key":"radio_rf_wlan_bt","fn":"radio_rf","spec":"Intel AX201 11ax 2x2 WLAN with Bluetooth 5.2 (PSREF 20XW004RUS)","qty":1,"ext":3,"obs":3,"conf":"documented","source":"https://www.eclipsecat.com/sites/default/files/X1%20Carbon%2020XW004RUS%20%20Specs.pdf"},
+    {"key":"radio_rf_wwan","fn":"radio_rf","spec":"Wireless WAN card, for selected models; removal needs the base cover off and the built-in battery disabled first","qty":1,"ext":2,"obs":3,"conf":"documented","source":"https://download.lenovo.com/pccbbs/mobiles_pdf/x1_carbon_gen9_x1_yoga_gen6_ug_en.pdf#page=46"},
+    {"key":"antenna_coax_wlan","fn":"antenna_coax","spec":"WLAN antenna; the LCD unit comes with the WLAN antenna","qty":1,"ext":4,"obs":3,"loc":"Inside the LCD unit","conf":"documented","source":"https://www.manualslib.com/manual/3302204/Lenovo-20xy.html?page=64"},
+    {"key":"antenna_coax_wwan","fn":"antenna_coax","spec":"Wireless-WAN antenna assembly, item 11 in the Carbon Gen 9 FRU table, for selected models","qty":1,"ext":3,"obs":3,"conf":"documented","source":"https://www.manualslib.com/manual/3302204/Lenovo-20xy.html?page=62"},
+    {"key":"microphone_array","fn":"microphone","spec":"4x array microphones (PSREF 20XW004RUS)","qty":4,"ext":4,"obs":2,"conf":"documented","source":"https://www.eclipsecat.com/sites/default/files/X1%20Carbon%2020XW004RUS%20%20Specs.pdf"},
+    {"key":"camera_ir","fn":"camera","spec":"IR camera for Windows Hello (PSREF 20XW0050BM)","qty":1,"ext":2,"obs":2,"conf":"documented","source":"https://cdn.jmt.bg/productfiles/ThinkPad_X1_Carbon_Gen_9_20XW0050BM.pdf"}
+  ],
+  "sources": [
+    {"title":"Lenovo PSREF, ThinkPad X1 Carbon Gen 9 20XW004RUS (copy on eclipsecat.com)","url":"https://www.eclipsecat.com/sites/default/files/X1%20Carbon%2020XW004RUS%20%20Specs.pdf"},
+    {"title":"Lenovo PSREF, ThinkPad X1 Carbon Gen 9 20XW0026GE (copy on ba-computer.at)","url":"https://ba-computer.at/media/awagimport/lenovo/psreflink/20XW0026GE.pdf"},
+    {"title":"Lenovo PSREF, ThinkPad X1 Carbon Gen 9 20XW0050BM (copy on cdn.jmt.bg)","url":"https://cdn.jmt.bg/productfiles/ThinkPad_X1_Carbon_Gen_9_20XW0050BM.pdf"},
+    {"title":"Lenovo X1 Carbon Gen 9 and X1 Yoga Gen 6 User Guide, PDF p.46 (wireless WAN card)","url":"https://download.lenovo.com/pccbbs/mobiles_pdf/x1_carbon_gen9_x1_yoga_gen6_ug_en.pdf#page=46"},
+    {"title":"X1 Yoga Gen 6 and X1 Carbon Gen 9 Hardware Maintenance Manual, ManualsLib viewer p.5 (machine types 20XX and 20XW)","url":"https://www.manualslib.com/manual/3302204/Lenovo-20xy.html?page=5"},
+    {"title":"X1 Yoga Gen 6 and X1 Carbon Gen 9 Hardware Maintenance Manual, ManualsLib viewer p.36 (coin-cell checkout)","url":"https://www.manualslib.com/manual/3302204/Lenovo-20xy.html?page=36"},
+    {"title":"X1 Yoga Gen 6 and X1 Carbon Gen 9 Hardware Maintenance Manual, ManualsLib viewer p.62 (Carbon Gen 9 FRU table)","url":"https://www.manualslib.com/manual/3302204/Lenovo-20xy.html?page=62"},
+    {"title":"X1 Yoga Gen 6 and X1 Carbon Gen 9 Hardware Maintenance Manual, ManualsLib viewer p.64 (LCD unit contents)","url":"https://www.manualslib.com/manual/3302204/Lenovo-20xy.html?page=64"}
+  ]
+}

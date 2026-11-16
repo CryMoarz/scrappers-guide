@@ -1,0 +1,31 @@
+{
+  "id": "window_ac",
+  "name": "Window air conditioner",
+  "group": "Kitchen and appliances",
+  "aliases": ["window unit","room ac"],
+  "brands": ["Frigidaire","GE","Haier","LG","Midea","Friedrich","Keystone","Whirlpool","Arctic King"],
+  "prev": 4,
+  "tools": ["screwdriver","socket"],
+  "mins": 30,
+  "hazards": ["refrigerant","heavy","sharp"],
+  "comps": [
+    {"key":"compressor","fn":"compressor","spec":"Rotary compressor","v":[120,240],"w":[400,2000],"ac":true,"qty":1,"ext":4,"obs":2,"loc":"Base"},
+    {"key":"motor_ac","fn":"motor_ac","spec":"Dual-shaft fan motor","v":[120,240],"w":[50,190],"ac":true,"qty":1,"ext":3,"obs":3,"loc":"Centre, driving both fans"},
+    {"key":"fan","fn":"fan","spec":"Blower wheel and condenser fan blade","qty":2,"ext":3,"obs":3,"loc":"Both ends of the motor"},
+    {"key":"capacitor_large","fn":"capacitor_large","spec":"Dual run capacitor","qty":1,"ext":2,"obs":4,"loc":"Control area"},
+    {"key":"hose_tubing","fn":"hose_tubing","spec":"Copper refrigerant tubing","qty":1,"ext":3,"obs":3,"loc":"Coils"},
+    {"key":"thermostat","fn":"thermostat","spec":"Thermostat and controls","qty":1,"ext":2,"obs":4,"loc":"Control panel"}
+  ],
+  "boards": [
+    {"id":"mcu_board","qty":1,"loc":"Control panel","p":0.7}
+  ],
+  "buildings": [
+    {"b":"house","l":4},
+    {"b":"apartment","l":5},
+    {"b":"hotel","l":3},
+    {"b":"office","l":2},
+    {"b":"school","l":2},
+    {"b":"appliance","l":4},
+    {"b":"recycling","l":3}
+  ]
+}

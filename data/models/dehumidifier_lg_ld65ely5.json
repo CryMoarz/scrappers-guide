@@ -1,0 +1,21 @@
+{
+  "id": "dehumidifier_lg_ld65ely5",
+  "device": "dehumidifier",
+  "brand": "LG",
+  "model": "LD65ELY5",
+  "notes": "The LD65ELY5 has an electronic control panel and a solenoid valve; the spec table shows no solenoid valve for the 30- and 40-pint models. Some parts lists also carry Goldstar-branded variants.",
+  "research": {"checked":"2026-11-12","gaps":["The supply voltage and the 850 W / 8.3 A are whole-unit figures, so they are not put on any part.","Production years are not stated."],"method":["Source is LG's own dehumidifier service manual (P/No 3828A31001, dated January 2005) covering DH300EY5/DH305Y5/DH300MY5, LD40Y5/DH400MY5, DH404EY5/DH400EY5/LD40EY5, DH504ELY5/LD50ELY5 and LD65ELY5.","It is hosted as a PDF by the parts retailer Appliance Factory Parts, which adds its own cover sheet as PDF page 1; page numbers below are PDF pages.","Read as text and checked against a rendered image of the spec table (PDF p.5) on 2026-11-12.","The maker shown is LG.","LD65ELY5 figures: 65 pints/24 h, 1-phase 115 V 60 Hz, 850 W input, 8.3 A running current, R22 refrigerant, 8.46 oz (240 g) charge (spec table, PDF p.5).","LD65ELY5 parts: circuit-diagram parts table (PDF p.13) and replacement parts list (PDF p.34).","The solenoid valve is drawn as a reversing coil in the circuit diagram.","The fan is listed as a shaded-pole motor, and the parts list carries a single capacitor."]},
+  "comps": [
+    {"key":"compressor","conf":"documented","spec":"Rotary compressor, model QA114CBD; LG service part 'compressor (rotary), set' 2520UCBA007; R22 refrigerant, charge 8.46 oz (240 g)","ac":true,"qty":1,"source":"https://www.appliancefactoryparts.com/content/pdfs/116983-8.pdf"},
+    {"key":"capacitor_large_comp","fn":"capacitor_large","spec":"Capacitor 35 uF 270 VAC, LG part 0CZZA20005J; wired to the compressor in the circuit diagram; held by a screw in the control box","v":270,"ac":true,"qty":1,"loc":"Control box","ext":2,"obs":3,"conf":"documented","source":"https://www.appliancefactoryparts.com/content/pdfs/116983-8.pdf"},
+    {"key":"thermostat_olp","fn":"thermostat","spec":"Compressor overload protector (OLP), LG part 6750U-L048A","qty":1,"ext":3,"obs":4,"conf":"documented","source":"https://www.appliancefactoryparts.com/content/pdfs/116983-8.pdf"},
+    {"key":"fan","conf":"documented","spec":"Shaded-pole fan motor 91 W / 1.8 A with 266 F (130 C) thermal cutoff, LG motor assembly 4681A20040K; turbo fan 5900A20007A","w":91,"a":1.8,"ac":true,"qty":1,"source":"https://www.appliancefactoryparts.com/content/pdfs/116983-8.pdf"},
+    {"key":"switch","conf":"documented","spec":"Bucket micro switch assembly 15 A / 250 VAC, LG part 6600A30003C; shuts the unit off when the bucket is full","v":250,"a":15,"ac":true,"qty":1,"loc":"Drain pan","source":"https://www.appliancefactoryparts.com/content/pdfs/116983-8.pdf"},
+    {"key":"sensor_misc","conf":"documented","spec":"Sensor assembly, LG part 6877A30013L: humidity sensor plus a thermistor (spec table: thermistor opens at 33.8 F / 1 C and closes at 50 F / 10 C), wired to the main PCB","qty":1,"source":"https://www.appliancefactoryparts.com/content/pdfs/116983-8.pdf"},
+    {"key":"valve_solenoid_coil","fn":"valve_solenoid","spec":"Solenoid valve coil assembly, LG part 6421A20003K, rated 7 W / 90 mA","w":7,"a":0.09,"qty":1,"ext":3,"obs":4,"conf":"documented","source":"https://www.appliancefactoryparts.com/content/pdfs/116983-8.pdf"},
+    {"key":"controller_board_main","fn":"controller_board","spec":"Main PWB (PCB) assembly, LG part 6871A10141C; separate display PWB assembly 6871A20482A","qty":1,"ext":2,"obs":3,"conf":"documented","source":"https://www.appliancefactoryparts.com/content/pdfs/116983-8.pdf"}
+  ],
+  "sources": [
+    {"title":"LG dehumidifier service manual, models DH300EY5 to LD65ELY5 (LG P/No 3828A31001, January 2005), PDF hosted by Appliance Factory Parts","url":"https://www.appliancefactoryparts.com/content/pdfs/116983-8.pdf"}
+  ]
+}

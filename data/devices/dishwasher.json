@@ -1,0 +1,29 @@
+{
+  "id": "dishwasher",
+  "name": "Dishwasher",
+  "group": "Kitchen and appliances",
+  "aliases": ["dish washer"],
+  "brands": ["Bosch","Whirlpool","GE","Samsung","LG","Frigidaire","KitchenAid","Maytag","Kenmore","Miele"],
+  "prev": 4,
+  "tools": ["screwdriver"],
+  "mins": 30,
+  "hazards": [],
+  "comps": [
+    {"key":"pump_water","fn":"pump_water","spec":"Circulation pump and drain pump","v":[120,240],"w":[25,200],"ac":true,"qty":2,"ext":2,"obs":4,"loc":"Sump at the bottom"},
+    {"key":"heating_element","fn":"heating_element","spec":"Heating element, about 1 kW","w":1000,"qty":1,"ext":2,"obs":4,"loc":"Floor of the tub"},
+    {"key":"valve_solenoid","fn":"valve_solenoid","spec":"Water inlet solenoid valve","v":[120,240],"ac":true,"qty":1,"ext":2,"obs":4,"loc":"Behind the kick plate"},
+    {"key":"sensor_misc","fn":"sensor_misc","spec":"Turbidity and temperature sensors","qty":2,"ext":3,"obs":5,"loc":"Sump"},
+    {"key":"controller_board","fn":"controller_board","spec":"Control board","qty":1,"ext":2,"obs":4,"loc":"Door"}
+  ],
+  "boards": [
+    {"id":"mcu_board","qty":1,"loc":"Inside the door","p":1}
+  ],
+  "buildings": [
+    {"b":"house","l":5},
+    {"b":"apartment","l":4},
+    {"b":"restaurant","l":3},
+    {"b":"office","l":2},
+    {"b":"church","l":2},
+    {"b":"appliance","l":4}
+  ]
+}

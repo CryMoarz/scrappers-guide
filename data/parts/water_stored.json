@@ -1,0 +1,14 @@
+{
+  "id": "water_stored",
+  "name": "Stored water",
+  "group": "Stored supplies",
+  "demand": 5,
+  "keywords": ["bottled water","drinking water","stored water","water bottle","water jug","water cooler jug","5 gallon water","emergency water","spring water","mineral water","distilled water"],
+  "substitutes": [],
+  "summary": "Water already stored somewhere: bottles and jugs, water heaters, pipes, header tanks and toilet cisterns.",
+  "uses": ["Drinking, after treatment if you’re unsure of it","Cooking and washing","Hygiene and flushing"],
+  "identify": "Bottled water and 19-litre cooler jugs in offices and shops; 150–300 litres in every tank water heater (cut power or gas and let it cool before draining); water in the pipes of tall buildings, loft header tanks and toilet cisterns (not bowls). Pools and hot tubs hold tonnes for washing and filtering.",
+  "test": "Look and smell: clear and odourless is a good start. Treat anything not from a sealed bottle by boiling, chlorine or filtering.",
+  "decay": {"halfLifeMonths":null,"note":"Sealed bottles keep for years; open tanks grow algae and bacteria."},
+  "hazards": []
+}

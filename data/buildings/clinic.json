@@ -1,0 +1,8 @@
+{
+  "id": "clinic",
+  "name": "Clinics, dentists and vets",
+  "osm": ["amenity=clinic","amenity=doctors","amenity=dentist","amenity=veterinary","shop=optician","shop=hearing_aids"],
+  "exposure": 3,
+  "notes": "Small medical buildings with backup batteries, suction and air compressors, sterilisers and oxygen. Medicines go fast; equipment does not.",
+  "hazards": ["biohazard"]
+}

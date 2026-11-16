@@ -1,0 +1,33 @@
+{
+  "id": "shopping_cart",
+  "name": "Shopping cart",
+  "group": "Retail and public",
+  "aliases": ["shopping trolley","trolley","grocery cart","luggage trolley","shopping cart","cart corral","retail cart"],
+  "brands": ["Unarco","Rehrig Pacific","Rubbermaid"],
+  "prev": 5,
+  "tools": ["hands","socket"],
+  "mins": 5,
+  "kg": 20,
+  "hazards": [],
+  "comps": [
+    {"key":"bearing","fn":"bearing","spec":"Swivel casters, 100–125 mm, with ball bearings","qty":4,"ext":2,"obs":4,"loc":"Under the frame"},
+    {"key":"tube_frame","fn":"tube_frame","spec":"Plated steel tube frame and wire basket — a cage or rack; don't heat or cook on it, the plating gives off toxic fumes","qty":1,"ext":3,"obs":3,"loc":"The whole cart"}
+  ],
+  "buildings": [
+    {"b":"supermarket","l":5},
+    {"b":"department","l":5},
+    {"b":"hardware","l":5},
+    {"b":"mall","l":4},
+    {"b":"garden_centre","l":4},
+    {"b":"pet_shop","l":4},
+    {"b":"parking","l":4},
+    {"b":"airport","l":4},
+    {"b":"pharmacy","l":3},
+    {"b":"farm_supply","l":3},
+    {"b":"electronics","l":3},
+    {"b":"toy_store","l":3},
+    {"b":"train_station","l":3},
+    {"b":"recycling","l":2}
+  ],
+  "notes": "The cart itself carries 100 kg on pavement; small wheels struggle on gravel. Locking-wheel carts jam at the edge of the car park."
+}

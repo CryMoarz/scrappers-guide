@@ -1,0 +1,14 @@
+{
+  "id": "connector",
+  "name": "Connectors and terminals",
+  "group": "Electronic components",
+  "demand": 1,
+  "keywords": ["connector","connectors","terminal block","terminals","jst","xt60","anderson","barrel jack","usb port","header","spade terminal","ring terminal","ferrule","molex","dupont","ec5","mc4","banana plug","alligator clip","crocodile clip","lever connector","wire nut"],
+  "substitutes": [],
+  "summary": "Plugs, sockets, terminals and wire joints: the bits that join wires and boards.",
+  "uses": ["Joining batteries, panels and loads safely","Making removable connections on builds","Repairing broken leads and cords"],
+  "identify": "Everywhere wires end: XT60 and Anderson plugs on RC and e-bike gear, MC4 on solar panels, spade and ring terminals in cars and appliances, terminal blocks in control panels, and JST and Dupont headers on boards.",
+  "test": "Check pins aren’t burnt, corroded or loose. Measure continuity through the joint while wiggling the wire.",
+  "decay": {"halfLifeMonths":null,"note":"Lasts; damp corrodes contacts."},
+  "hazards": []
+}

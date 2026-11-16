@@ -1,0 +1,38 @@
+{
+  "id": "build_usb_charging_station",
+  "kind": "build",
+  "title": "12V USB charging station",
+  "keywords": ["usb charger","phone charging","charge phones","12v to 5v","car charger","charging hub","lm2596","buck converter","usb hub"],
+  "summary": "Power several phones, radios and lights from a 12V battery using salvaged car USB chargers or buck-converter boards, fused at the battery. Car chargers already handle the phone handshake, so they are the easy choice.",
+  "difficulty": 2,
+  "mins": 60,
+  "tools": ["screwdriver","cutters","crimper","multimeter","desolder","drill","tape","pliers"],
+  "hazards": ["burn"],
+  "materials": [
+    {"item":"Car USB chargers (cigarette-lighter plugs) or buck-converter boards (LM2596 type)","qty":"2–6","fn":"dcdc_buck"},
+    {"item":"12V sockets to plug car chargers into, or USB sockets for bare boards","qty":"1 per charger","fn":"connector","only":["usb socket","lighter"]},
+    {"item":"Fuse and holder, 5–10A, within 30 cm of battery +","qty":"1","fn":"fuse"},
+    {"item":"Wire 16–14 AWG (1.5–2.5 mm²), red and black","qty":"2–4 m","fn":"wire_copper","only":["extension","awg","cord"]},
+    {"item":"Switch rated 10A DC","qty":"1","fn":"switch","optional":true},
+    {"item":"12V battery or other 12–24V DC source","qty":"1","fn":"battery_pb","only":["12v"]},
+    {"item":"Board or box to mount everything on","qty":"1","fn":"lumber","optional":true},
+    {"item":"Small panel voltmeter to watch the battery","qty":"1","optional":true},
+    {"item":"USB cables","qty":"1 per port"}
+  ],
+  "steps": [
+    {"text":"Test each car charger: plug it into a 12V source and measure 5.0–5.25V between the outer pins of the USB socket (pin 1 positive, pin 4 negative). Scrap any that read wrong or get hot with no load."},
+    {"text":"Decide: keep chargers whole and plug them into 12V sockets (easiest, swappable), or open them and wire the boards directly (compact). Note which wire is + on each."},
+    {"text":"Mount the sockets or boards on the board with gaps between them for air. They get warm at full load."},
+    {"text":"Run a positive and a negative bus wire past every socket. On 12V sockets the centre contact is positive and the outer shell is negative.","warn":"Reversed polarity kills most chargers instantly. Check with the multimeter before plugging anything in."},
+    {"text":"Fit the fuse holder within 30 cm of battery positive. Size: number of ports × 1–1.5A at 12V, e.g. 4 ports → 7.5A fuse. Leave the fuse out while wiring.","warn":"An unfused wire from a battery can melt and start a fire if it shorts."},
+    {"text":"Add the switch and voltmeter on the positive line after the fuse."},
+    {"text":"For bare buck boards: power them up with nothing plugged in and turn the trim screw until the output reads 5.1V. Then short the two middle USB pins (D+ and D−) together at each socket so most phones will accept full current."},
+    {"text":"Insert the fuse, plug in phones one at a time, and check each charges. After 30 minutes at full load, feel each charger and the wiring: warm is fine, too hot to hold is not."},
+    {"text":"Label the station with the fuse size and keep it out of rain. Switch it off when not charging; idle chargers still draw a little."}
+  ],
+  "notes": "## Power maths\n- A USB port at full load: 5V × 2.1A ≈ 10.5W. At about 85% efficiency that draws roughly 1A from a 12V battery.\n- A phone charge is about 10–20Wh. A 12V 7Ah battery (about 40Wh usable) charges 2–4 phones. A 100Ah battery (about 600Wh usable) charges 30–60.\n- Fuse: total 12V current × 1.25, rounded up to a standard size. Wire: 16 AWG for up to about 8A over 2 m, 14 AWG for more.\n\n## Why car chargers\nPhones only draw full current when the charger tells them they may, through the data pins. Car chargers do this already. Bare buck boards don't; shorting D+ to D− works for most Android phones (about 1.5A). Some phones still charge slowly from bare boards.\n\n## Bare buck boards\n- LM2596-type boards: 4.5–40V in, up to about 2A continuous without extra cooling.\n- Always set the output voltage before connecting a phone. A new board's trim pot may be set anywhere.\n- A board fed from 24V runs hotter than from 12V.\n\n## Protecting the battery\nLead-acid: stop at about 12.0V (under light load) to avoid damage. A voltmeter is the simplest guard. A low-voltage cut-off board or a solar controller's load output does it for you.\n\n## Variations\n- Feed it straight from a solar panel? Only through a battery or a solar controller's load output. A bare panel's voltage sags and swings, and phones stop and start charging.\n- From 24V systems, car chargers rated 12–24V work; check the label.\n\n## If you lack a part\n- No 12V sockets: open the car chargers and solder wires to their tip (+) and side spring (−).\n- No fuse holder: an inline blade fuse from a car's wiring loom works; or a short length of thin wire as a fusible link, as a last resort.\n",
+  "tree": {"era":3,"branch":"power","requires":["skill_dc_wiring"]},
+  "devices": ["car_usb_charger","car","power_bank","wifi_router","dashcam","gps_unit","boat","rv","semi"],
+  "parts": ["dcdc_buck","connector","fuse","wire_copper"],
+  "license": "CC-BY-SA-4.0"
+}

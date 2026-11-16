@@ -1,0 +1,44 @@
+{
+  "id": "build_crystal_radio",
+  "kind": "build",
+  "title": "Crystal radio (no batteries)",
+  "keywords": ["crystal radio","crystal set","am radio","foxhole radio","no battery radio","emergency radio","germanium diode","listen news","medium wave"],
+  "summary": "Hear AM broadcast stations with no power source at all: a long wire antenna, a good ground, a hand-wound coil, a tuning capacitor, a detector diode and a high-impedance earphone. It only picks up strong AM stations, but if any are on air it works for ever.",
+  "difficulty": 2,
+  "mins": 120,
+  "tools": ["cutters","desolder","knife","pliers","screwdriver","multimeter","ladder"],
+  "hazards": ["fall"],
+  "materials": [
+    {"item":"Wire: 0.3–0.5 mm enamelled copper for the coil (from transformers, relays or small motors), and any wire for the antenna","qty":"15–20 m coil wire, 20–40 m antenna wire","fn":"wire_copper","only":["degaussing","yoke"]},
+    {"item":"Tube for the coil former: cardboard, PVC or a bottle, 50–75 mm across","qty":"1"},
+    {"item":"Variable tuning capacitor, about 300–400 pF, from an old AM radio","qty":"1","fn":"radio_rf","only":["am/fm","am radio"]},
+    {"item":"Detector: germanium signal diode (1N34A, OA90 type) or a small Schottky diode","qty":"1","fn":"diode_rect"},
+    {"item":"High-impedance earpiece: crystal earphone or a piezo disc","qty":"1","fn":"speaker","only":["piezo"]},
+    {"item":"47–100 kΩ resistor across a piezo earpiece","qty":"1","fn":"resistor"},
+    {"item":"Small audio transformer to use ordinary headphones","qty":"1","fn":"transformer_lv","optional":true},
+    {"item":"Ground rod or pipe, 1–1.5 m","qty":"1","fn":"rod_shaft","only":["earth rod"]},
+    {"item":"Plastic insulators for the antenna ends (cut plastic, bottle necks)","qty":"2","fn":"plastic_sheet","optional":true}
+  ],
+  "steps": [
+    {"text":"Put up the antenna: 20–40 m of wire, as high as you can get it (5–10 m), with an insulator at each end. Bring a down-lead to where you'll listen.","warn":"Keep the antenna and ladder well clear of power lines. Disconnect the antenna and connect it straight to the ground rod before thunderstorms."},
+    {"text":"Make the ground: drive a metal rod 1–1.5 m into damp soil, or clamp to a metal water pipe that runs underground. A good ground matters as much as the antenna."},
+    {"text":"Wind the coil: about 60 close turns of 0.3–0.5 mm wire on a 60 mm tube (or 45–50 turns on a 75 mm tube), roughly 250 µH. Twist a small loop out as a tap every 10 turns. Anchor the ends through small holes."},
+    {"text":"Scrape the enamel off the ends and the tap loops with a knife until you see bright copper."},
+    {"text":"Wire the tuner: coil top to the antenna and to the capacitor's fixed plates; coil bottom to the ground and to the capacitor's moving plates (its frame)."},
+    {"text":"Wire the detector: diode from the coil top to one earpiece lead; the other earpiece lead to ground. With a piezo earpiece, put the 47–100 kΩ resistor across its two leads."},
+    {"text":"Listen somewhere quiet, ideally in the evening. Turn the capacitor slowly through its range. Try connecting the antenna to different taps: lower taps give sharper tuning but weaker sound."},
+    {"text":"If it's weak: raise and lengthen the antenna, improve the ground (water the soil round the rod), try another diode, and check every joint is bright copper."}
+  ],
+  "notes": "## How it works\nThe antenna picks up every station at once. The coil and capacitor form a tuned circuit that resonates at one frequency, picking one station out. The diode lets only one half of each radio wave through, leaving the audio. The earpiece turns the tiny audio current into sound. All the power comes from the radio station's transmitter.\n\n## Tuning maths\nFrequency = 1 ÷ (2π × √(L × C)). With 240 µH: 365 pF tunes about 540 kHz; 25 pF about 2,000 kHz. That covers the AM broadcast band (about 530–1,700 kHz).\n\nCoil inductance (rough): L (µH) = r² × N² ÷ (9r + 10ℓ), with r = coil radius and ℓ = coil length, both in inches. 60 turns of 0.5 mm wire on a 60 mm tube: r ≈ 1.18, ℓ ≈ 1.18 → about 220–250 µH.\n\n## Range\nStrong AM stations can be heard from tens of kilometres in daytime and hundreds at night, when signals bounce off the upper atmosphere. After a disaster, broadcast and emergency stations on AM are often among the last to stay on air.\n\n## Earpieces\n- Crystal (ceramic) earpieces and piezo discs work well; they need the resistor across them to give the diode a DC path.\n- Smoke-alarm and buzzer piezo discs work if you hold them to your ear.\n- Ordinary 16–32 Ω headphones are too low in impedance. Put a small audio transformer between them and the detector (high-impedance side to the detector).\n\n## No diode? Make one\n- **Foxhole detector:** a blued (heat-darkened) razor blade with a pencil lead or safety pin touching its surface lightly. Move the point until a station comes in. Improvised by soldiers in the Second World War.\n- **Mineral crystal:** galena (lead sulphide) or iron pyrite with a fine wire touching it. Wash hands after handling galena.\n\n## Making it louder\nAdd an audio amplifier chip (LM386-type) running from a 9V battery, then use a speaker. It's no longer a pure crystal set, but it is much easier to listen to.\n\n## No tuning capacitor\nTune with a slider: a strip of metal that touches bare spots along the coil (scrape a narrow line of enamel off down the coil). Choose turns instead of capacitance.\n",
+  "tree": {"era":3,"branch":"signal","requires":["test_continuity"]},
+  "devices": ["smoke_alarm","crt_tv","vacuum","blender","car","alarm_panel","pa_system"],
+  "parts": ["wire_copper","diode_rect","speaker","radio_rf","antenna_coax"],
+  "license": "CC-BY-SA-4.0",
+  "refs": [
+    {"lib":"ham","q":"crystal radio"},
+    {"lib":"survivorlibrary","q":"radio"}
+  ],
+  "sources": [
+    {"title":"Classic crystal set and foxhole radio designs","note":"Long-public designs, described in our own words; coil figures calculated for this guide."}
+  ]
+}

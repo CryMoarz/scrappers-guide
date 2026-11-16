@@ -1,0 +1,6 @@
+{
+  "id": "bank",
+  "name": "Banks",
+  "osm": ["amenity=bank","amenity=bureau_de_change","amenity=money_transfer"],
+  "exposure": 2
+}

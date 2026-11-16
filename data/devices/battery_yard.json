@@ -1,0 +1,29 @@
+{
+  "id": "battery_yard",
+  "name": "Battery mowers, trimmers and blowers",
+  "group": "Tools and yard",
+  "aliases": ["cordless mower","cordless leaf blower"],
+  "brands": ["EGO","Greenworks","Ryobi","DeWalt","Makita","Milwaukee","Stihl","Husqvarna","Craftsman","Kobalt"],
+  "era": "2010s–present",
+  "prev": 4,
+  "tools": ["screwdriver"],
+  "mins": 15,
+  "hazards": ["li_fire"],
+  "comps": [
+    {"key":"battery_li","fn":"battery_li","spec":"40–80V battery pack","v":[40,80],"qty":1,"ext":1,"obs":2,"loc":"Tool"},
+    {"key":"motor_bldc","fn":"motor_bldc","spec":"Brushless motor","v":[40,80],"w":[400,3000],"qty":1,"ext":2,"obs":3,"loc":"Tool head"},
+    {"key":"controller_board","fn":"controller_board","spec":"Motor controller","qty":1,"ext":2,"obs":5,"loc":"Tool body"},
+    {"key":"charger","fn":"charger","spec":"Charger","v":[40,82],"a":[2,6],"qty":1,"ext":1,"obs":2,"loc":"Garage shelf"}
+  ],
+  "boards": [
+    {"id":"bldc_controller","qty":1,"loc":"Tool body","p":1},
+    {"id":"battery_bms","qty":1,"loc":"Inside the battery pack","p":1}
+  ],
+  "buildings": [
+    {"b":"garage_res","l":5},
+    {"b":"house","l":4},
+    {"b":"hardware","l":5},
+    {"b":"department","l":3},
+    {"b":"farm","l":2}
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "id": "fuse",
+  "name": "Fuses",
+  "group": "Electronic components",
+  "demand": 2,
+  "keywords": ["fuse","fuses","blade fuse","glass fuse","ceramic fuse","polyfuse","ptc fuse","resettable fuse","fuse holder","auto fuse","atc fuse","mini fuse","maxi fuse","midi fuse","mega fuse","anl fuse","cartridge fuse","inline fuse","fusible link","5x20"],
+  "substitutes": ["thermostat"],
+  "summary": "Fuses that blow to protect wiring: glass, ceramic, blade, cartridge and resettable types.",
+  "uses": ["Protecting battery and solar wiring","Replacing blown fuses in appliances and vehicles","Inline fuses for DIY builds"],
+  "identify": "Glass and ceramic tubes (5 × 20 mm, 6 × 30 mm) in appliances and power supplies; coloured plastic blades in every vehicle fuse box; big ANL and Mega fuses in RV, boat and inverter wiring. The amp rating is printed or colour-coded.",
+  "test": "Near 0 Ω across the fuse is good; open means blown. Always replace with the same amp rating or lower.",
+  "decay": {"halfLifeMonths":null,"note":"Lasts."},
+  "hazards": []
+}

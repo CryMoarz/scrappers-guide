@@ -1,0 +1,40 @@
+{
+  "id": "smartphone_apple_iphone_7_a1779",
+  "device": "smartphone",
+  "brand": "Apple",
+  "model": "iPhone 7 (A1779)",
+  "notes": "The Japan models A1779 and A1785 contain FeliCa.",
+  "research": {"checked":"2026-11-11","gaps":["The teardown gives the iPhone 7 display as 4.7-inch IPS, 1334 x 750, which the parts listing does not state."],"method":["Apple's model table lists the iPhone 7 model numbers on the back cover as A1660, A1778 and A1779 (Japan).","IFixit's teardown names A1779 once (stamped on the rear case) and lists the chips found in its unit, including 32 GB flash (the page lists 32, 128 or 256 GB models).","IFixit's A1779 Japan parts index lists the display, battery, cameras, speakers, vibrator and Lightning connector assembly."]},
+  "comps": [
+    {"key":"b:phone_board:ic_mcu","conf":"documented","spec":"Apple A10 Fusion APL1W24 SoC; the page says it has an embedded M10 motion coprocessor","source":"https://www.ifixit.com/Teardown/iPhone+7+Teardown/67382"},
+    {"key":"b:phone_board:ic_memory","conf":"documented","spec":"In the teardown unit: Samsung 2 GB LPDDR4 RAM, marking K3RG1G10CM-YGCH; SK Hynix H23QEG8VG2ACS 32 GB Flash (the page lists 32, 128 or 256 GB models)","source":"https://www.ifixit.com/Teardown/iPhone+7+Teardown/67382"},
+    {"key":"b:phone_board:radio_rf","conf":"documented","spec":"Qualcomm MDM9645M LTE Cat. 12 modem; Murata 339S00199 Wi-Fi/Bluetooth module","source":"https://www.ifixit.com/Teardown/iPhone+7+Teardown/67382"},
+    {"key":"b:phone_board:dcdc_buck","conf":"documented","spec":"Apple/Dialog Semiconductor 338S00225 power management IC; Qualcomm PMD9645 power management IC; Texas Instruments TPS65730A0P power management IC","source":"https://www.ifixit.com/Teardown/iPhone+7+Teardown/67382"},
+    {"key":"b:phone_board:sensor_misc","conf":"documented","spec":"Invensense accelerometer; Bosch Sensortec BMP280 barometric pressure sensor","source":"https://www.ifixit.com/Teardown/iPhone+7+Teardown/67382"},
+    {"key":"b:phone_board:microphone","conf":"documented","spec":"Two microphones included with the Lightning connector assembly (iPhone 7 Lightning Connector Assembly listing)","source":"https://www.ifixit.com/Parts/iPhone_7:A1779_Japan"},
+    {"key":"b:phone_board:connector","conf":"documented","spec":"Lightning connector assembly, Part #821-00270-08, with flex cable and two microphones; Lightning port gasket and bezel also listed","source":"https://www.ifixit.com/Parts/iPhone_7:A1779_Japan"},
+    {"key":"battery_li","conf":"documented","spec":"1960 mAh replacement battery listed for the iPhone 7 (the page says it is not for the iPhone 7 Plus)","ah":1.96,"source":"https://www.ifixit.com/Parts/iPhone_7:A1779_Japan"},
+    {"key":"camera","conf":"documented","spec":"12 MP main rear camera (iPhone 7 Rear Camera listing)","source":"https://www.ifixit.com/Parts/iPhone_7:A1779_Japan"},
+    {"key":"display","conf":"documented","spec":"LCD and digitizer assembly, listed as iPhone 7 LCD and Digitizer, a replacement for a scratched or cracked front glass panel or malfunctioning display","source":"https://www.ifixit.com/Parts/iPhone_7:A1779_Japan"},
+    {"key":"speaker","conf":"documented","spec":"iPhone 7 Loudspeaker, and an earpiece speaker listed for the iPhone 7 among other models","source":"https://www.ifixit.com/Parts/iPhone_7:A1779_Japan"},
+    {"key":"motor_dc_small","conf":"documented","spec":"iPhone 7 Vibrator, described on the page as a linear oscillating vibrator","source":"https://www.ifixit.com/Parts/iPhone_7:A1779_Japan"},
+    {"key":"camera_front","fn":"camera","spec":"Front camera and sensor cable, Part #821-00504-A; the listing says it includes a proximity sensor","qty":1,"ext":2,"obs":3,"loc":"front panel","conf":"documented","source":"https://www.ifixit.com/Parts/iPhone_7:A1779_Japan"},
+    {"key":"sensor_touch_id","fn":"sensor_misc","spec":"Non-mechanical Touch ID home button, described in the teardown as a solid state mini touch sensor","qty":1,"ext":2,"obs":3,"loc":"home button","conf":"documented","source":"https://www.ifixit.com/Teardown/iPhone+7+Teardown/67382"},
+    {"key":"radio_wtr4905","fn":"radio_rf","spec":"Qualcomm WTR4905 multimode LTE transceiver","qty":1,"ext":2,"obs":3,"conf":"documented","source":"https://www.ifixit.com/Teardown/iPhone+7+Teardown/67382"},
+    {"key":"radio_wtr3925","fn":"radio_rf","spec":"Qualcomm WTR3925 RF transceiver","qty":1,"ext":2,"obs":3,"conf":"documented","source":"https://www.ifixit.com/Teardown/iPhone+7+Teardown/67382"},
+    {"key":"radio_pa_sky78100","fn":"radio_rf","spec":"Skyworks SKY78100-20 power amplifier module","qty":1,"ext":2,"obs":3,"conf":"documented","source":"https://www.ifixit.com/Teardown/iPhone+7+Teardown/67382"},
+    {"key":"radio_pa_afem8065","fn":"radio_rf","spec":"Avago AFEM-8065 power amplifier module","qty":1,"ext":2,"obs":3,"conf":"documented","source":"https://www.ifixit.com/Teardown/iPhone+7+Teardown/67382"},
+    {"key":"radio_pa_afem8055","fn":"radio_rf","spec":"Avago AFEM-8055 power amplifier module","qty":1,"ext":2,"obs":3,"conf":"documented","source":"https://www.ifixit.com/Teardown/iPhone+7+Teardown/67382"},
+    {"key":"radio_rx_sky13702","fn":"radio_rf","spec":"Skyworks SKY13702-20 diversity receive module","qty":1,"ext":2,"obs":3,"conf":"documented","source":"https://www.ifixit.com/Teardown/iPhone+7+Teardown/67382"},
+    {"key":"radio_rx_sky13703","fn":"radio_rf","spec":"Skyworks SKY13703-21 diversity receive module","qty":1,"ext":2,"obs":3,"conf":"documented","source":"https://www.ifixit.com/Teardown/iPhone+7+Teardown/67382"},
+    {"key":"radio_nfc","fn":"radio_rf","spec":"NXP PN67V NFC controller with secure element","qty":1,"ext":2,"obs":3,"conf":"documented","source":"https://www.ifixit.com/Teardown/iPhone+7+Teardown/67382"},
+    {"key":"ic_audio_codec","fn":"ic_audio","spec":"Apple/Cirrus Logic 338S00105 audio codec","qty":1,"ext":2,"obs":3,"conf":"documented","source":"https://www.ifixit.com/Teardown/iPhone+7+Teardown/67382"},
+    {"key":"ic_audio_amp","fn":"ic_audio","spec":"Cirrus Logic 338S00220 audio amplifier, two of them","qty":2,"ext":2,"obs":3,"conf":"documented","source":"https://www.ifixit.com/Teardown/iPhone+7+Teardown/67382"},
+    {"key":"antenna_top_right","fn":"radio_rf","spec":"iPhone 7 Top Right Antenna, listed for A1779 Japan","qty":1,"ext":2,"obs":3,"loc":"top right","conf":"documented","source":"https://www.ifixit.com/Parts/iPhone_7:A1779_Japan"}
+  ],
+  "sources": [
+    {"title":"Apple support: iPhone model identification table (A1779 Japan; FeliCa footnote)","url":"https://support.apple.com/en-us/HT201296"},
+    {"title":"iFixit iPhone 7 Teardown (names A1779 on the rear case; chip and module steps)","url":"https://www.ifixit.com/Teardown/iPhone+7+Teardown/67382"},
+    {"title":"iFixit iPhone 7 A1779 Japan replacement parts index","url":"https://www.ifixit.com/Parts/iPhone_7:A1779_Japan"}
+  ]
+}

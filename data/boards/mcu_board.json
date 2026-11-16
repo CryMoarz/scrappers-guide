@@ -1,0 +1,26 @@
+{
+  "id": "mcu_board",
+  "name": "Appliance control board",
+  "notes": "The standard brains in washers, fridges, microwaves, furnaces and vending machines.",
+  "comps": [
+    {"key":"ic_mcu","fn":"ic_mcu","spec":"Microcontroller","qty":1,"ext":4,"obs":5,"loc":"Largest chip"},
+    {"key":"crystal","fn":"crystal","spec":"Crystal or ceramic resonator","qty":1,"ext":3,"obs":5,"loc":"Next to the microcontroller"},
+    {"key":"reg_linear","fn":"reg_linear","spec":"7805 or similar linear regulator","qty":1,"ext":2,"obs":4,"loc":"Often on a small heatsink"},
+    {"key":"relay","fn":"relay","spec":"PCB relays, 5–30A","a":[5,30],"qty":3,"ext":3,"obs":4,"loc":"Along the high-voltage edge"},
+    {"key":"ic_driver","fn":"ic_driver","spec":"ULN2003-type transistor array (relay driver)","qty":1,"ext":3,"obs":5,"loc":"Between the microcontroller and relays"},
+    {"key":"bjt","fn":"bjt","spec":"Small transistors","qty":4,"ext":3,"obs":5,"loc":"Scattered"},
+    {"key":"thyristor","fn":"thyristor","spec":"Triacs for fans, pumps or valves (many boards)","qty":2,"ext":3,"obs":5,"loc":"High-voltage section"},
+    {"key":"ic_memory","fn":"ic_memory","spec":"EEPROM memory chip","qty":1,"ext":4,"obs":5,"loc":"Near the microcontroller"},
+    {"key":"speaker","fn":"speaker","spec":"Piezo buzzer","v":[5,12],"qty":1,"ext":2,"obs":5,"loc":"Board edge"},
+    {"key":"cap_elec","fn":"cap_elec","spec":"Electrolytic capacitors","qty":4,"ext":2,"obs":4,"loc":"Power section"},
+    {"key":"transformer_lv","fn":"transformer_lv","spec":"Small PCB transformer (older boards)","v":[9,15],"w":[1,5],"ac":true,"qty":1,"ext":3,"obs":4,"loc":"Power section"},
+    {"key":"switch","fn":"switch","spec":"Tactile buttons","qty":6,"ext":2,"obs":4,"loc":"Under the keypad"},
+    {"key":"connector","fn":"connector","spec":"Terminal blocks and wire connectors","qty":6,"ext":2,"obs":4,"loc":"Board edges"},
+    {"key":"fuse","fn":"fuse","spec":"PCB fuse","a":[1,5],"qty":1,"ext":2,"obs":5,"loc":"Power input"}
+  ],
+  "refs": [
+    {"lib":"arduino","q":"bootloader"},
+    {"lib":"raspberrypi","q":"Pico"},
+    {"lib":"electronics","q":"microcontroller board"}
+  ]
+}

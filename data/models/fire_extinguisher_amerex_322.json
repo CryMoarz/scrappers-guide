@@ -1,0 +1,20 @@
+{
+  "id": "fire_extinguisher_amerex_322",
+  "device": "fire_extinguisher",
+  "brand": "Amerex",
+  "model": "322",
+  "notes": "5 lb carbon dioxide extinguisher; the non-magnetic version (322NM in the 2015 parts book, printed 322MN in the ManualsLib manual) has its own ring pin and wall bracket numbers. Part numbers are from the February 2015 parts book and may differ on units made at other dates.",
+  "research": {"checked":"2026-11-12","gaps":["Cylinder material: the manual's page 7 mentions 'aluminum cylinders' for Amerex CO2 in general without tying them to the 322, so the record does not say aluminium.","The ManualsLib parts list (page 8) is headed 322 and 322MN as printed; the 2015 parts book prints 322NM for the non-magnetic version. Read as the same 5 lb unit.","Fill weight (CO2 mass), test pressure, discharge time and range are not in the sources read.","The ManualsLib copy is an excerpt (OM05603C, rev. 3/11); the part numbers here come from the 2015 parts book, which agrees with the manual's list for the numbers checked.","Discharge tube and horn are recorded under the hose key as the closest match; the source lists no flexible hose for the 5 lb unit.","Bracket material is not stated in the sources, so the sheet_metal key is the record's category."],"method":["Amerex Portable and Wheeled Parts Book (February 2015, SL-2000), copy on absupply.net: printed page 12 (2½ and 5 lb carbon dioxide list) and page 28 (wall brackets).","Amerex 322 Inspection, Maintenance and Recharge Service Manual, P/N 05603 (form OM05603C, rev. 3/11), excerpt on ManualsLib: pages 1, 4, 5, 7 and 8 read through WebFetch, which summarises, so wording was checked with several narrow questions.","Amerex's own CO2 PDF on amerex-fire.com was not used."]},
+  "comps": [
+    {"key":"gas_cylinder","conf":"documented","spec":"Carbon dioxide cylinder of the 5 lb unit. The manual says to weigh it against the nameplate weight, and gives 1-1/8 in.-12 UNF straight threads for Amerex CO2 valve bodies and aluminium cylinders (a general note, not tied to the 322)","source":"https://www.manualslib.com/manual/2004828/Amerex-322.html"},
+    {"key":"valve_solenoid","conf":"documented","spec":"Valve assembly 03090 for the 322 (does not include the elbow or downtube), with lever 07762, handle 09020, safety disc, gasket and nut assembly 04000, valve stem assembly 01539, spring 00501 and retainer 00503","source":"https://absupply.net/pdf/Amerex_Portable_and_Wheeled_Parts_Book.pdf"},
+    {"key":"hose_tubing","conf":"documented","spec":"Discharge tube 01769 with horn 01772 for the 322; elbow with O-ring 02735 and O-ring for elbow 05689 are also listed","source":"https://absupply.net/pdf/Amerex_Portable_and_Wheeled_Parts_Book.pdf"},
+    {"key":"hose_tubing_siphon","fn":"hose_tubing","spec":"Downtube 00533 for the 322 (the siphon tube)","qty":1,"ext":2,"obs":4,"conf":"documented","source":"https://absupply.net/pdf/Amerex_Portable_and_Wheeled_Parts_Book.pdf"},
+    {"key":"fasteners_ring_pin","fn":"fasteners","spec":"Stainless steel ring pin 00160 for the 322, with nylon chain 00532 and yellow lockwire seal 01387; the non-magnetic 322NM uses stainless ring pin 06901","ext":1,"obs":4,"conf":"documented","source":"https://absupply.net/pdf/Amerex_Portable_and_Wheeled_Parts_Book.pdf"},
+    {"key":"sheet_metal_bracket","fn":"sheet_metal","spec":"Red wall hanger bracket 00546, listed for the 322; the 322NM has its own wall hanger bracket 17737","qty":1,"ext":1,"obs":4,"conf":"documented","source":"https://absupply.net/pdf/Amerex_Portable_and_Wheeled_Parts_Book.pdf"}
+  ],
+  "sources": [
+    {"title":"Amerex Portable and Wheeled Parts Book (February 2015), copy on absupply.net","url":"https://absupply.net/pdf/Amerex_Portable_and_Wheeled_Parts_Book.pdf"},
+    {"title":"Amerex 322 Inspection, Maintenance and Recharge service manual for carbon dioxide extinguishers, OM05603C rev. 3/11 (excerpt on ManualsLib)","url":"https://www.manualslib.com/manual/2004828/Amerex-322.html"}
+  ]
+}

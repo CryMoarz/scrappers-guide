@@ -1,0 +1,34 @@
+{
+  "id": "repair_motor_brushes",
+  "kind": "repair",
+  "title": "Replace worn carbon brushes in a motor",
+  "keywords": ["motor brushes","carbon brushes","replace brushes","brush replacement","commutator","motor sparking","power tool not working","universal motor repair"],
+  "summary": "Brushed motors in drills, grinders, vacuums, blenders, treadmills and car parts stop when their carbon brushes wear down. Replacing or re-shaping brushes and cleaning the commutator brings most of them back.",
+  "difficulty": 2,
+  "mins": 30,
+  "tools": ["screwdriver","pliers","file","knife","multimeter","desolder"],
+  "hazards": ["mains","spring","sharp"],
+  "materials": [
+    {"item":"Replacement carbon brushes, or larger brushes from a donor motor filed to fit","qty":"2"},
+    {"item":"Fine sandpaper, 400–600 grit (not emery cloth)"},
+    {"item":"Donor brushed motor for brushes and springs","fn":"motor_universal","optional":true},
+    {"item":"Brush springs","fn":"spring","optional":true}
+  ],
+  "steps": [
+    {"text":"Know the signs: the motor runs on and off, only runs in some positions, sparks a lot, smells hot, or is weak. Brushes are the first thing to check."},
+    {"text":"Unplug the tool or disconnect its battery.","warn":"Mains motors carry full mains voltage at the brushes. Never work on them plugged in."},
+    {"text":"Find the brush holders. Many corded tools have two screw caps on opposite sides of the motor body. Others need the case opened; the brushes sit in small holders pressing on the copper commutator at the back of the motor."},
+    {"text":"Take out each brush with its spring. Mark which way round it came out: the curved face matches the commutator.","warn":"Brush springs flick out. Hold a thumb over the holder as you release them."},
+    {"text":"Measure the brushes. Replace them when they are worn to about a third of their new length or past any wear line. Some brushes have a plastic pin that stops the motor when they are worn; those must be replaced."},
+    {"text":"Look at the commutator: the ring of copper bars the brushes ride on. Smooth and brown is normal. Clean black or rough areas with fine sandpaper held on a stick while turning the motor by hand. Pick dirt out of the gaps between bars with a knife point. Blow out the dust."},
+    {"text":"Fit the new brushes. If they are oversized, file the sides until each slides freely in its holder without rocking."},
+    {"text":"Shape a new brush face: wrap sandpaper around the commutator, rough side out, and turn the motor back and forth with the brush pressed on it until the face is curved to match."},
+    {"text":"Refit the springs and connect the brush leads (clip, screw or solder) exactly as they were."},
+    {"text":"Run the motor with no load for 5–10 minutes so the brushes bed in. Small blue sparks at the brushes are normal. A ring of orange sparks means the commutator is damaged or the brushes don't fit."}
+  ],
+  "notes": "## Brush types matter\n\n- **Mains motors** (drills, grinders, vacuums, blenders) use carbon or graphite brushes with fairly high resistance to keep sparking down.\n- **Low-voltage high-current motors** (starter motors, cordless tools, some 12 V motors) use copper-graphite brushes: shiny, coppery, low resistance.\n\nSwapping one type for the other works poorly: copper brushes in a mains motor wear the commutator and spark; carbon brushes in a starter motor drop too much voltage.\n\n## Improvising brushes\n\n- File larger brushes from another motor down to size. This is the best field fix.\n- Carbon rods from old zinc-carbon batteries can be filed into brushes for small low-power motors. They are harder than real brushes and wear the commutator faster: a stopgap only.\n\n## When it isn't the brushes\n\n- Burnt smell and dark windings: the armature or field is burnt out.\n- Commutator bars lifted, burnt through or very worn: needs a lathe to skim, or a new armature.\n- A motor that hums but won't turn is often seized bearings or gears.\n\n## Where brushes are found\n\nEvery corded drill, angle grinder, circular saw, vacuum, blender and older washing machine; treadmill motors; car starters, alternators, wiper and window motors; brushed cordless tools. Spare brush sets are often taped inside tool cases or sold in hardware stores.",
+  "tree": {"era":3,"branch":"machines","requires":["skill_identify_motors"]},
+  "devices": ["corded_tools","vacuum","blender","treadmill","cordless_drill"],
+  "parts": ["motor_universal","motor_dc_small","motor_dc_large","alternator"],
+  "license": "CC-BY-SA-4.0"
+}

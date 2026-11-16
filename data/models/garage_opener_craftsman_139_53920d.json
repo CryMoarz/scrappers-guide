@@ -1,0 +1,26 @@
+{
+  "id": "garage_opener_craftsman_139_53920d",
+  "device": "garage_opener",
+  "brand": "Craftsman",
+  "model": "139.53920D",
+  "notes": "Opener with chain drive.",
+  "research": {"checked":"2026-11-12","gaps":["The parts list names no separate transformer.","The motor is filed under the template's motor_ac slot; the slot is not a source claim: the manual does not state the motor type or a motor voltage, only that the opener runs on 120 V 60 Hz, so no v or ac is given for the motor.","Another retailer (Moving Up Garage Door) lists the same number as 53-64 MFD (56 uF), 220 V, so treat the range as approximate.","No FCC ID found in the pages read."],"method":["The manual cover gives the 1/2 HP and 315 MHz details; the rail parts list gives the chain drive (chain and cable 41A5807).","Source: owner's manual 114A3421 for model 139.53920D (back cover copyright 2007, Sears, Roebuck and Co.), Internet Archive copy (manualzilla mirror), scanned with an OCR text layer.","Repair-parts pages 37 (rail and installation parts) and 38 (motor unit assembly parts) were checked as rendered images because the OCR garbles some part numbers (it reads 41C4398A as '4IC439BA').","Capacitor ratings come from a garage-door parts retailer listing for LiftMaster 30B532 (56-64 mfd, 220 V, 60 Hz)."]},
+  "comps": [
+    {"key":"motor_ac","conf":"documented","spec":"Universal replacement motor and bracket assembly 41D3058, supplied with motor, worm, bracket, bearing assembly and RPM sensor; 1/2 HP opener","source":"https://archive.org/download/manualzilla-id-7322924/7322924.pdf"},
+    {"key":"gearbox","conf":"documented","spec":"Gear and sprocket assembly 41C4220A (drive and worm gear, helical gear with retainer, bearing plate, washers, roll pins, grease); drive/worm gear kit 41A2817","source":"https://archive.org/download/manualzilla-id-7322924/7322924.pdf"},
+    {"key":"capacitor_large_motor","fn":"capacitor_large","spec":"Motor capacitor LiftMaster 30B532 (the 1/2 HP capacitor in this model's parts list, with bracket 12A373): 56-64 mfd, 220 V, 60 Hz; also sold as K030B0532-1","v":220,"ac":true,"qty":1,"ext":1,"obs":3,"conf":"documented","source":"https://shop.ddmgaragedoors.com/products/ocl-12"},
+    {"key":"radio_rf","conf":"documented","spec":"Receiver logic board assembly 41A5021-3H-315 (logic board with end panel); 315 MHz opener","source":"https://archive.org/download/manualzilla-id-7322924/7322924.pdf"},
+    {"key":"sensor_motion","conf":"documented","spec":"Safety sensor kit 41A5034: receiving and sending eyes with 3 ft 2-conductor wire; bracket 41A5266-1","source":"https://archive.org/download/manualzilla-id-7322924/7322924.pdf"},
+    {"key":"led_light","conf":"documented","spec":"Light socket 4A1344 behind lens 108D58-2; A19 bulb, 75 W maximum","w":75,"source":"https://archive.org/download/manualzilla-id-7322924/7322924.pdf"},
+    {"key":"chain_sprocket_drive","fn":"chain_sprocket","spec":"Chain and cable 41A5807, master link kit 4A1008, idler pulley 144C56 on the rail","qty":1,"ext":2,"obs":3,"conf":"documented","source":"https://archive.org/download/manualzilla-id-7322924/7322924.pdf"},
+    {"key":"switch_limit","fn":"switch","spec":"Limit switch assembly 41D3452 (up, down and centre contacts driven by a gear) with limit switch drive and retainer 41A2818","qty":1,"ext":2,"obs":4,"conf":"documented","source":"https://archive.org/download/manualzilla-id-7322924/7322924.pdf"},
+    {"key":"sensor_misc_rpm","fn":"sensor_misc","spec":"RPM sensor assembly 41C4398A with interrupter cup assembly 41A2822A","qty":1,"ext":2,"obs":4,"conf":"documented","source":"https://archive.org/download/manualzilla-id-7322924/7322924.pdf"},
+    {"key":"wire_copper_cord","fn":"wire_copper","spec":"Line cord 41B4245; wire harness assembly with plug 41C4246; terminal block 41A3150","qty":1,"ext":1,"obs":3,"conf":"documented","source":"https://archive.org/download/manualzilla-id-7322924/7322924.pdf"}
+  ],
+  "sources": [
+    {"title":"Craftsman 139.53920D 1/2 HP 315 MHz garage door opener owner's manual 114A3421 (Internet Archive PDF)","url":"https://archive.org/download/manualzilla-id-7322924/7322924.pdf"},
+    {"title":"Craftsman 139.53920D owner's manual, Internet Archive item page","url":"https://archive.org/details/manualzilla-id-7322924"},
+    {"title":"LiftMaster 30B532 motor capacitor listing (DDM Garage Doors, retailer)","url":"https://shop.ddmgaragedoors.com/products/ocl-12"},
+    {"title":"LiftMaster 30B532 / K030B0532-1 motor capacitor listing, 53-64 MFD (Moving Up Garage Door, retailer; cited in the notes only)","url":"https://www.movingupgaragedoors.com/liftmaster-30b532-1-capacitor-53-64-mfd"}
+  ]
+}

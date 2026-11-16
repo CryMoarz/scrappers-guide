@@ -1,0 +1,17 @@
+{
+  "id": "store_power",
+  "name": "Store power",
+  "keywords": ["store power","store electricity","store energy","energy storage","power storage","battery bank","backup power","power at night","power for the night"],
+  "summary": "Lead-acid batteries are heavy but forgiving and easy to charge from 12V solar. The hidden stock is where looters don’t look: office UPS units, alarm and fire panels, telecom huts, floor scrubbers and golf carts. Laptop and vape cells rebuild into lithium packs, but only with a BMS and care. Test every battery before you carry it.",
+  "parts": [
+    {"fn":"battery_pb","why":"Forgiving 12V storage from UPS units, scrubbers, golf carts and telecom huts","core":true},
+    {"fn":"battery_li","why":"Light, dense storage from packs and loose cells","core":true},
+    {"fn":"bms","why":"Protects lithium packs from overcharge, overdischarge and shorts","core":true},
+    {"fn":"charge_controller","why":"Charges the bank from solar"},
+    {"fn":"charger","why":"Charges the bank from a generator or vehicle"},
+    {"fn":"fuse","why":"A big fuse at the battery stops a short becoming a fire"},
+    {"fn":"wire_heavy","why":"Short, thick cables between batteries"}
+  ],
+  "guides": ["build_battery_bank_lead_acid","build_18650_pack","test_lead_acid","test_lithium_cell","safety_lead_acid","safety_swollen_lithium","reference_battery_chemistry","build_battery_tester"],
+  "tips": ["A rested 12V lead-acid battery at 12.6V or more is full. Below about 12.0V it’s nearly empty.","Lead-acid left flat for weeks sulphates and dies. Charge salvaged batteries as soon as you can.","Never mix old and new batteries, or different sizes, in one bank.","Pairs of 6V golf cart or floor scrubber batteries make a 12V deep-cycle bank.","Leave swollen, hot or hissing lithium packs where they are."]
+}

@@ -1,0 +1,18 @@
+{
+  "id": "power_station_ecoflow_delta_pro",
+  "device": "power_station",
+  "brand": "EcoFlow",
+  "model": "DELTA Pro (3.6 kWh)",
+  "notes": "EcoFlow DELTA Pro power station.",
+  "research": {"checked":"2026-11-11","gaps":["The EEVblog post describes no internal parts.","No model number is given on any of the three pages, so only the DELTA Pro name is used."],"method":["StorageReview's DELTA Pro review gives a 3.6 kWh LiFePO4 battery, 3600 W total pure-sine AC output (surge 7200 W) and a 1600 W solar input.","The EcoFlow product page names the DELTA Pro with a 3.6 kWh base capacity, LiFePO4 chemistry, 1600 W solar input and up to 4500 W of appliances with X-Boost.","The EEVblog 1499 post names the EcoFlow Delta Pro 3.6 kWh LiFePO4 unit."]},
+  "comps": [
+    {"key":"battery_li","conf":"documented","spec":"LiFePO4 battery, 3.6 kWh (3,600 Wh). Cycle life 6,500 cycles to 50% capacity and 3,500 cycles to 80% capacity; shelf life 1 year. The reviewers' discharge test at a 350 W load measured 3,000 Wh.","w":350,"source":"https://www.storagereview.com/review/ecoflow-delta-pro-review"},
+    {"key":"inverter","conf":"documented","spec":"Pure sine wave AC output (x5): 3,600 W total, surge 7,200 W; review says it can maintain continuous loads of 3,600 W. X-Boost supports devices up to 4,500 W. Sockets: four 20 A AC outlets and one 30 A AC port.","source":"https://www.storagereview.com/review/ecoflow-delta-pro-review"},
+    {"key":"charge_controller","conf":"documented","spec":"Solar charging input: 1,600 W max, 11-150 V, 15 A max.","v":[11,150],"a":15,"w":1600,"source":"https://www.storagereview.com/review/ecoflow-delta-pro-review"}
+  ],
+  "sources": [
+    {"title":"EEVblog 1499 teardown post, starting source (names 3.6 kWh LiFePO4 unit, no parts described)","url":"https://www.eevblog.com/2022/09/08/eevblog-1499-ecoflow-delta-pro-3-6kwh-portable-battery-teardown/"},
+    {"title":"StorageReview DELTA Pro review, Oct 2022 (specs table)","url":"https://www.storagereview.com/review/ecoflow-delta-pro-review"},
+    {"title":"EcoFlow DELTA Pro product page (3.6 kWh, LiFePO4, 1600 W solar)","url":"https://www.ecoflow.com/us/delta-pro-portable-power-station"}
+  ]
+}

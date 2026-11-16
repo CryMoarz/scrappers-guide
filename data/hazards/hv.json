@@ -1,0 +1,15 @@
+{
+  "id": "hv",
+  "label": "High-voltage system",
+  "severity": 5,
+  "summary": "Electric and hybrid vehicle packs (roughly 200–800 V DC), solar arrays, battery rooms, substations and grid lines run at voltages that kill on contact and can hold an arc. Solar panels make voltage whenever light hits them, and a generator or solar system feeding a building can make dead lines live again.",
+  "signs": ["Orange cables and orange-labelled parts in electric and hybrid vehicles","Solar arrays: panels wired in strings, often several hundred volts DC","Battery rooms in data centres, telecom sites and large UPS installations","Substations, transformers on poles and pads, fenced compounds with warning signs","Downed or sagging power lines","Buzzing, crackling, or a sharp ozone smell"],
+  "do": ["Treat every high-voltage system as live until someone trained has proved it dead","Stay at least 10 m from downed lines and anything touching them","Cover solar panels with something opaque before disconnecting them","Take EV packs whole or leave them; take the 12 V battery and accessories instead","Get trained help for battery rooms, large inverters and grid gear","If a power line falls on your vehicle, stay inside unless it catches fire; then jump clear without touching the vehicle and the ground at the same time, and shuffle away with feet together; do the same if your feet tingle near a downed line"],
+  "dont": ["Don't cut or unplug orange cables","Don't open EV or hybrid battery packs","Don't pull solar connectors apart under load: DC arcs keep burning","Don't enter substations or climb poles","Don't touch a person who is touching a line","Don't bring a crashed, dented, flooded or burnt EV battery pack near your shelter or other buildings: it can catch fire days later and its smoke is toxic"],
+  "ppe": ["Voltage-rated insulated gloves and tools, which only help if you are trained to use them","Safety glasses or a face shield against arc flash","Dry rubber-soled boots"],
+  "firstAid": ["Don't go near until the power is off or the person is clear: high voltage can arc to you","If they aren't breathing normally, start CPR, and use a defibrillator (AED) as soon as one can be found","Every high-voltage shock needs medical care, even if the person seems fine","Arc burns can be deep; cool with clean water and cover loosely"],
+  "refs": [
+    {"lib":"wikimed","q":"Electrical injury"},
+    {"lib":"wikipedia","q":"Electrical injury"}
+  ]
+}

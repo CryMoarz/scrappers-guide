@@ -1,0 +1,32 @@
+{
+  "id": "test_solar_panel",
+  "kind": "test",
+  "title": "Test a solar panel",
+  "keywords": ["test solar panel","solar panel test","voc","isc","open circuit voltage","short circuit current","pv panel","solar output","broken solar panel","panel voltage","bypass diode"],
+  "summary": "Check a salvaged solar panel in sunshine: inspect it, measure open-circuit voltage and short-circuit current against the label, and check the junction box diodes. It takes minutes and tells you whether the panel is worth carrying.",
+  "difficulty": 2,
+  "mins": 15,
+  "tools": ["multimeter","screwdriver","cutters","hands"],
+  "hazards": ["hv","glass","sharp","fall","burn"],
+  "materials": [
+    {"item":"Opaque cloth or tarp big enough to cover the panel","fn":"fabric_tarp","qty":"1"},
+    {"item":"Clip leads, or spare connectors to fit the panel's plugs","fn":"connector","qty":"1 pair","optional":true}
+  ],
+  "steps": [
+    {"text":"Test each panel on its own. If panels are wired together, cover them with the cloth before unplugging the connectors between them.","warn":"A string of panels can make several hundred volts DC. Cover the panels first, and stay out of solar farm combiner boxes."},
+    {"text":"Inspect: cracked glass, burn marks or brown spots on the cells, bubbles or peeling on the back, a corroded frame, a scorched or swollen junction box. A cracked panel may still work, but water will get in."},
+    {"text":"Read the label: Pmax (watts), Voc (open-circuit voltage), Isc (short-circuit current), and Vmp and Imp (voltage and current at best output)."},
+    {"text":"Point the panel straight at the sun on a clear day, near midday if you can."},
+    {"text":"Set the meter to DC volts on a range above Voc. Measure across the panel's leads. In bright sun it should read close to the label Voc, often a little lower when the panel is hot."},
+    {"text":"Measure current only if the label Isc is below your meter's amps rating. Move the red lead to the amps socket and set the dial to DC amps. Cover the panel, clip the leads on, uncover it for a few seconds, read, then cover it again before unclipping.","warn":"Move the red lead back to the volts socket straight away, or your next voltage test will short whatever you touch."},
+    {"text":"In bright midday sun, a current of about 70–100% of the label Isc is healthy. Much lower means dirt, shading, damaged cells or a failed diode."},
+    {"text":"If Voc is only about a half or two-thirds of the label, a bypass diode or a section of cells has failed. If the junction box opens (some are filled with resin), check each diode with the meter's diode setting."},
+    {"text":"Clean dirty glass with water and a soft cloth, then test again."},
+    {"text":"Carry panels by the frame, on edge, with gloves. Don't stand, kneel or stack heavy things on them.","warn":"Panels lying in the sun get hot enough to burn, and broken glass edges cut."}
+  ],
+  "notes": "## Label terms\n\n| Term | Meaning | Measure it |\n|---|---|---|\n| Pmax | Best power output in ideal test conditions | Not with a meter alone |\n| Voc | Voltage with nothing connected | DC volts across the leads |\n| Isc | Current with the leads shorted together | DC amps through the meter |\n| Vmp | Voltage at best output | Under a matched load |\n| Imp | Current at best output | Under a matched load |\n\n## What good looks like\n\nExample: a panel labelled Voc 22 V and Isc 6 A should read close to 20–22 V and about 4–6 A in bright summer sun.\n\n- Voltage hardly changes with sunlight, but drops as the panel heats up.\n- Current rises and falls with sunlight. Hazy sun, low winter sun, or tilting the panel away from the sun cuts it a lot.\n- Shading even one cell can cut the output of a whole section.\n\n## Bypass diodes\n\nMost full-size panels have two or three bypass diodes in the junction box, each covering a section of cells. A diode that fails short drops that section out, so Voc falls by about a third or a half. A good diode reads about 0.2–0.7 V one way on the diode setting and OL the other way.\n\n## Small panels\n\nGarden light and gadget panels make 2–6 V and tiny currents. Test them the same way.\n\n## Common mistakes\n\n- Testing in shade, early morning, or through a window.\n- Measuring a whole string of panels with a small meter.\n- Leaving the meter in the amps socket afterwards.\n- Pulling connectors apart while current flows. DC arcs keep burning; cover the panel first.",
+  "tree": {"era":3,"branch":"power","requires":["skill_multimeter"]},
+  "devices": ["garden_solar","solar_sign","solar_home","rv"],
+  "parts": ["solar_panel","charge_controller","diode_schottky","connector"],
+  "license": "CC-BY-SA-4.0"
+}

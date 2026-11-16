@@ -1,0 +1,14 @@
+{
+  "id": "resistor",
+  "name": "Resistors (power, shunt, precision)",
+  "group": "Electronic components",
+  "demand": 1,
+  "keywords": ["resistor","resistors","power resistor","shunt resistor","current sense","cement resistor","load resistor","wirewound","wire wound","dummy load","braking resistor","sense resistor","metal film resistor","ceramic resistor"],
+  "substitutes": ["potentiometer"],
+  "summary": "Resistors that limit current: small colour-banded ones, big ceramic power resistors and shunts.",
+  "uses": ["Dump loads for wind or solar","Current limiting for LEDs","Capacitor discharge tools","Measuring current with a shunt"],
+  "identify": "Colour-banded parts on every board; white ceramic block resistors (5–20W) in power supplies and appliances; aluminium-cased resistors in motor controllers; shunts in meters and inverters.",
+  "test": "Out of circuit it should read the marked value within a few percent. Burnt or cracked ones may read wrong.",
+  "decay": {"halfLifeMonths":null,"note":"Lasts."},
+  "hazards": []
+}

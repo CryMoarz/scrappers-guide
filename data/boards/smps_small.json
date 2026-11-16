@@ -1,0 +1,15 @@
+{
+  "id": "smps_small",
+  "name": "Small switch-mode adapter (USB chargers, wall bricks)",
+  "notes": "Tiny, mostly surface-mount parts packed tightly; often glued shut.",
+  "comps": [
+    {"key":"fuse","fn":"fuse","spec":"Fusible resistor or tiny fuse","a":[0.5,2],"qty":1,"ext":3,"obs":5,"loc":"Mains input"},
+    {"key":"diode_rect","fn":"diode_rect","spec":"Input diodes or small bridge","qty":1,"ext":4,"obs":5,"loc":"Mains input"},
+    {"key":"cap_elec","fn":"cap_elec","spec":"Small 400V bulk capacitor","v":400,"qty":1,"ext":3,"obs":5,"loc":"Mains input"},
+    {"key":"ic_pwm","fn":"ic_pwm","spec":"Integrated switcher IC","qty":1,"ext":4,"obs":5,"loc":"Primary side"},
+    {"key":"ferrite_xfmr","fn":"ferrite_xfmr","spec":"Small ferrite transformer","qty":1,"ext":3,"obs":5,"loc":"Centre"},
+    {"key":"optocoupler","fn":"optocoupler","spec":"Optocoupler (some designs)","qty":1,"ext":4,"obs":5,"loc":"Across the isolation gap","p":0.5},
+    {"key":"diode_schottky","fn":"diode_schottky","spec":"Output Schottky diode","qty":1,"ext":4,"obs":5,"loc":"Output side"},
+    {"key":"connector","fn":"connector","spec":"USB socket or DC lead","qty":1,"ext":3,"obs":4,"loc":"Output end"}
+  ]
+}

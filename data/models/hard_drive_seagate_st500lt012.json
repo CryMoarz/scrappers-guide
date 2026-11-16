@@ -1,0 +1,15 @@
+{
+  "id": "hard_drive_seagate_st500lt012",
+  "device": "hard_drive",
+  "brand": "Seagate",
+  "model": "ST500LT012",
+  "notes": "Seagate 500 GB Laptop Thin drive at 5400 RPM, with one disk, two heads and a 16 MB buffer. The manual gives the same figures for the other 500 GB models it lists (ST500LT015, ST500LT025 and ST500LT034, including the self-encrypting and ZGS versions).",
+  "research": {"checked":"2026-11-12","gaps":["Magnets, voice coil, pivot bearing and platter material are not claimed: the manual does not give them and no model-specific teardown was found.","No controller board or chip is claimed: marketplace listings in search results gave several board numbers for this model but named no chip, and some pages refused to load.","The 1.0 A figure is the manual's typical peak startup current, so it is kept in the spec only, not in the volts and amps fields.","The 5 V power-table figures for the whole drive are not claimed.","The Momentus Thin 7200 RPM manual (publication 100737930 Rev F) covers other models and is not used."],"method":["Seagate Laptop Thin HDD 5400 RPM Product Manual, publication 100713732 Rev. N (May 2016): cover and model list (printed p. 6), features with the FDB motor and 16 MB buffer (p. 6), Table 1 (p. 8), physical organisation and cache buffer (p. 10).","Printed pages 8 and 10 were rendered to confirm that heads 2 and disks 1 span all capacity columns, including the ST500LT012 one.","A search for ST500LT012 teardowns and board listings found no model-specific chip information."]},
+  "comps": [
+    {"key":"motor_bldc","conf":"documented","spec":"Spindle motor on a fluid dynamic bearing (FDB), 5400 RPM (+/-0.2%). The manual's spec summary lists a typical 1.0 A peak startup current on the 5 V supply","source":"https://www.seagate.com/www-content/product-content/momentus-fam/momentus-thin/en-us/docs/100713732n.pdf"},
+    {"key":"optics","conf":"documented","spec":"One disk, read by 2 heads","qty":1,"source":"https://www.seagate.com/www-content/product-content/momentus-fam/momentus-thin/en-us/docs/100713732n.pdf"}
+  ],
+  "sources": [
+    {"title":"Seagate Laptop Thin HDD 5400 RPM Product Manual, publication 100713732 Rev. N (May 2016), covers ST500LT012","url":"https://www.seagate.com/www-content/product-content/momentus-fam/momentus-thin/en-us/docs/100713732n.pdf"}
+  ]
+}

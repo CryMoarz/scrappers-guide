@@ -1,0 +1,14 @@
+{
+  "id": "optics",
+  "name": "Lenses, mirrors and diffusers",
+  "group": "Light",
+  "demand": 1,
+  "keywords": ["lens","lenses","mirror","fresnel","magnifier","optics","diffuser","focus sunlight","fresnel lens","magnifying glass","convex lens","concave mirror","prism","solar concentrator","projector lens","signal mirror"],
+  "substitutes": [],
+  "summary": "Lenses, mirrors, prisms and diffusers from projectors, cameras, scanners and TVs.",
+  "uses": ["Starting fires with sunlight (lenses and concave mirrors)","Solar cookers and concentrators","Signalling with mirrors","Magnifiers for fine work and splinters"],
+  "identify": "Big flat Fresnel lenses in rear-projection TVs and overhead projectors; glass lenses in projectors, cameras, binoculars and scanners; mirrors in vehicles, bathrooms and photocopiers; diffusers in LED panels.",
+  "test": "Focus sunlight on paper: a good lens gives a small bright spot. A big Fresnel lens can start fires and burn eyes in seconds: cover it when not in use.",
+  "decay": {"halfLifeMonths":null,"note":"Lasts."},
+  "hazards": ["burn"]
+}

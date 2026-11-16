@@ -1,0 +1,28 @@
+{
+  "id": "teardown_electric_blanket",
+  "kind": "teardown",
+  "title": "Electric blanket or heating pad: test it, then take the wire, controller and fleece",
+  "keywords": ["electric blanket","heating pad","heated blanket","heating wire","blanket controller","12v car blanket","bed warmer","triac dimmer"],
+  "summary": "An electric blanket or heating pad is a long insulated heating wire sewn through fleece, with a small controller holding a triac or relay, a thermostat and a fuse. Test it first: a working blanket is worth more whole than in parts. A teardown of a dead one takes about 20 minutes with a knife and a meter.",
+  "difficulty": 1,
+  "mins": 20,
+  "tools": ["knife","cutters","screwdriver","pliers","multimeter","desolder"],
+  "hazards": ["mains","sharp"],
+  "materials": [],
+  "steps": [
+    {"text":"Unplug the blanket from the wall, then unplug the controller from the blanket. Look it over: scorch marks, brown or melted patches, kinks, a burnt smell or stiff spots in the fleece all mean the wire has been overheating. Do not power a blanket like that.","warn":"A damaged heating wire can overheat and start a fire. Never plug a doubtful blanket in to see if it works."},
+    {"text":"Test it before you cut it. Set the meter to ohms and touch its two probes to the two blanket-side pins of the controller socket (or across the blanket plug). A working mains blanket reads roughly 100–1,100 ohms: a 120 V, 100 W blanket is near 145 ohms and a 230 V, 100 W blanket near 530 ohms (ohms = volts squared divided by watts). No reading means a break or a blown thermal fuse; near zero means a short. A good, undamaged one is better kept whole: it can run from an inverter or a generator."},
+    {"text":"Controller: undo the screws on the back. Many cases are welded or glued shut: slice the seam with a knife or a thin saw, away from your fingers. Photograph the board and wires before you touch anything.","warn":"Even unplugged, a capacitor on the board can still hold a mains-level charge. Short any large one with an insulated resistor lead before you touch the board."},
+    {"text":"Inside you will find a small circuit board with a triac or a relay, a dial or buttons, an indicator lamp and usually a fuse. A triac is a small three-legged part on a metal tab. Desolder the triac, relay, dial, switches and fuse, or cut their legs with 5–10 mm left on."},
+    {"text":"Thermostat: look for small button thermostats (metal discs, one every 30–40 cm along the wire) and for a second thin sensing wire laid beside the heating wire. Cut each button out with 5 cm of wire. Test one for continuity while it is cold: it should read close to zero ohms."},
+    {"text":"Heating wire: the wire runs in zigzag channels sewn between the layers of fleece, or is stitched on with thread. Cut the stitches along the channels with a knife, taking care not to cut the wire. Then pull the wire out in long, gentle pulls from the end nearest the cable."},
+    {"text":"Check the wire. Measure its whole length in ohms and compare with your first reading. Run a finger along it: any kink, bare patch, melted jacket or stiff spot means scrap. Coil good wire loosely in large loops."},
+    {"text":"Keep the cable and plug. It is a good mains lead: cut the cable at both ends, leaving the plug and a long tail."},
+    {"text":"Wash the fleece and keep it. With the wire out it is an ordinary blanket, a sleeping bag liner or cloth for insulation, patching or rags."}
+  ],
+  "notes": "## What's worth keeping and why\n\n- **A whole working blanket.** It heats a person for about 50–150 W, compared with 1–2 kW for a room heater. Run it from a small inverter or a generator. 12 V car blankets draw 40–60 W (about 4–5 A) straight from a battery: fit a 7.5–10 A fuse in the lead.\n- **Triac and dimmer.** A triac with its dial makes a simple mains dimmer for heaters and incandescent lamps. Don't use it on motors or LED lamps. Check its ratings on the part or the circuit board.\n- **Thermostats and fuse.** Small button thermostats and thermal fuses are useful anywhere you need an overheat cutoff.\n- **Heating wire.** Keep it at its original length and voltage. Its resistance is fixed per metre, so power is voltage squared divided by resistance. A mains blanket wire at 12 V gives about 1 W: useless. If you cut it shorter and run it at its mains voltage, the power per metre rises and the insulation melts.\n- **Fleece.** Insulation and lining.\n\n## Rules for reusing the wire\n\n- Don't splice or shorten mains heating wire. A joint can overheat and a short length cannot shed its heat.\n- Don't bundle, bury or cover live wire; a blanket works only because the heat spreads.\n- Run it only with its own thermostat or a fuse in line.\n\n## Variations\n\n- 12 V and 24 V blankets and low-voltage pads use a thicker wire with fewer ohms. They may have no controller at all, just a switch.\n- Some low-voltage blankets use a transformer in the plug. Keep it: it is a small mains transformer.\n- Heating pads often have a thin sensing wire in addition to the heater, and a digital controller with a small microcontroller board.\n\n## What to leave\n\n- A blanket wire that is kinked, scorched or stiff.\n- Controllers that smell burnt.",
+  "tree": {"era":2,"branch":"salvage","requires":["safety_mains_isolation","test_continuity"]},
+  "devices": ["electric_blanket"],
+  "parts": ["heating_element","fabric_tarp","thyristor","thermostat"],
+  "license": "CC-BY-SA-4.0"
+}

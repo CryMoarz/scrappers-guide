@@ -1,0 +1,16 @@
+{
+  "id": "garden_solar_sunforce_82150",
+  "device": "garden_solar",
+  "brand": "Sunforce",
+  "model": "82150",
+  "notes": "Sunforce 82150 solar motion light (UPC 787769821502). The battery is listed as Ni-Cd, not NiMH, six cells for 7.2 V.",
+  "research": {"checked":"2026-11-12","gaps":["The ManualsLib page is a product spec listing for model 82150 (UPC 787769821502), not the manual text; the battery, panel and LED lines are the only parts claimed from it.","Its battery line reads 'Ni-Cd AA600mAh 7.2V (6 batteries)'; it does not say whether 600 mAh is per cell or for the pack, so the spec quotes the line.","The Lowe's PDF (pdf.lowes.com/useandcareguides/787769821502_use.pdf) is a generic Sunforce Solar Motion Light manual dated 2008 whose cover and text never name 82150; it is tied to the 82150 only by the UPC in its file name, so its sensor, switch and panel-cable claims were dropped.","The Lowe's manual gives a 1 year warranty and the ManualsLib listing 5 years, another reason the two are not treated as the same document.","No source gives the solar panel volts, watts or size, the LED count or the lumens.","No driver chip, circuit board part number or charger is named, and no motion sensor type (PIR or other) is named, so none is claimed."],"method":["ManualsLib page 'SUNFORCE 82150 MANUAL', opened twice with WebFetch; it lists Model 82150, UPC 787769821502, the battery line, 'Amorphous solar panel' and 'Superbrite LEDs'.","Lowe's Solar Motion Light User's Manual (English, French, Spanish; 4 pages) read with the research tool's pdf command and pages 1-2 rendered at 110 dpi; no model number on the cover or inside, so it is not used.","Battery Junction's 82150 page returned HTTP 429 and was not used; a manuals.online copy returned HTTP 403 to the researcher; sunforceproducts.com was not opened."]},
+  "comps": [
+    {"key":"battery_nimh","spec":"Six AA Ni-Cd cells; the listing reads \"Ni-Cd AA600mAh 7.2V (6 batteries)\", so 7.2 V is the six-cell pack total","v":7.2,"ah":0.6,"qty":6,"conf":"documented","source":"https://www.manualslib.com/manual/532247/Sunforce-82150.html"},
+    {"key":"solar_panel","conf":"documented","spec":"Amorphous solar panel","source":"https://www.manualslib.com/manual/532247/Sunforce-82150.html"},
+    {"key":"led_light","conf":"documented","spec":"LED light source, listed as Superbrite LEDs","source":"https://www.manualslib.com/manual/532247/Sunforce-82150.html"}
+  ],
+  "sources": [
+    {"title":"ManualsLib: Sunforce 82150 Solar Motion Light (spec listing, model 82150, UPC 787769821502)","url":"https://www.manualslib.com/manual/532247/Sunforce-82150.html"}
+  ]
+}

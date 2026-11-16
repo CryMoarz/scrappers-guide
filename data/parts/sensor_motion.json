@@ -1,0 +1,14 @@
+{
+  "id": "sensor_motion",
+  "name": "Motion and presence sensors",
+  "group": "Signal and control",
+  "demand": 1,
+  "keywords": ["pir","motion sensor","ir sensor","infrared sensor","occupancy","beam","pir sensor","hc-sr501","motion detector","microwave sensor","radar sensor","rcwl-0516","ultrasonic sensor","hc-sr04","parking sensor"],
+  "substitutes": ["sensor_misc"],
+  "summary": "Sensors that detect people and movement: PIR, microwave radar, ultrasonic and beam sensors.",
+  "uses": ["Perimeter and intruder alarms","Lights that switch on when someone passes","Detecting animals at a pen or crop"],
+  "identify": "White domed or faceted lenses on security lights, alarm sensors and automatic doors; flat radar modules in some lights; round ultrasonic pairs in car parking sensors.",
+  "test": "Power it (PIR boards usually take 5–12V) and wave a hand: the output should switch. PIRs need up to a minute to settle after power-up.",
+  "decay": {"halfLifeMonths":null,"note":"Lasts."},
+  "hazards": []
+}

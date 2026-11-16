@@ -1,0 +1,14 @@
+{
+  "id": "crystal",
+  "name": "Crystals and oscillators",
+  "group": "Electronic components",
+  "demand": 1,
+  "keywords": ["crystal","quartz","oscillator","resonator","16mhz","32.768","clock crystal","xtal","4mhz","8mhz","12mhz","hc-49","ceramic resonator","watch crystal"],
+  "substitutes": ["ic_555"],
+  "summary": "Quartz crystals and resonators that set the clock in radios, computers and timers.",
+  "uses": ["Building or repairing radios and clocks","Clock source for microcontroller projects","32.768 kHz crystals for timekeeping"],
+  "identify": "Small metal cans (oval HC-49 or tiny cylinders) or ceramic blocks marked with a frequency like 16.000 or 32.768, next to every microcontroller and radio chip.",
+  "test": "Hard to test without an oscilloscope. Check for cracks and broken legs, and try it in a known-good circuit.",
+  "decay": {"halfLifeMonths":null,"note":"Lasts."},
+  "hazards": []
+}

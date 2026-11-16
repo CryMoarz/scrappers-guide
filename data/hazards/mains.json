@@ -1,0 +1,15 @@
+{
+  "id": "mains",
+  "label": "Mains electricity",
+  "severity": 5,
+  "summary": "The 100–240 V AC in building wiring, sockets, generators and inverters. A few tens of milliamps across the chest can stop the heart. After a collapse the grid may be dead, but generators, solar systems and inverters can still make building wiring live, sometimes without warning.",
+  "signs": ["Plugs, sockets, switches, breaker panels and fuse boxes","Appliance cords, and cables entering a building","A generator, inverter or solar system anywhere nearby","Lights, fans or chargers working: something is supplying power","Warm or scorched sockets, buzzing, or a smell of hot plastic"],
+  "do": ["Unplug a device before opening it","Switch off at the main breaker or disconnect, then test with a meter before touching","Prove your meter on a known live source before and after testing","Tape or lock the switch off and leave a note so nobody turns it back on","Keep one hand away from the work","Work on a dry floor, with dry hands"],
+  "dont": ["Don't trust wire colours, switches, or 'the power has been off for weeks'","Don't work on wet floors or with wet hands","Don't replace a fuse with wire or a bigger fuse","Don't connect a generator to a building through a socket: it can kill whoever works on the wiring","Don't open a live breaker panel","Don't touch someone who is being shocked","Don't step into standing water in a building that might have power from any source"],
+  "ppe": ["Dry rubber-soled boots","Insulated tools","Safety glasses","No rings, watches or metal bracelets"],
+  "firstAid": ["Switch off the power, or push the person free with dry wood or plastic, before touching them","If they aren't breathing normally, start CPR and keep going, and use a defibrillator (AED) as soon as one can be found","Anyone who took a shock across the chest, passed out or has burns needs medical care: heart rhythm problems can start hours later","Electrical burns go deeper than they look; cool with clean water and cover loosely"],
+  "refs": [
+    {"lib":"wikimed","q":"Electric shock"},
+    {"lib":"wikipedia","q":"Electric shock"}
+  ]
+}

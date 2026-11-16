@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Content-Security-Policy" content="/*CSP*/">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="light dark">
+<meta name="description" content="Offline salvage guide: which devices hide the part you need, how to get it out safely, and where to look.">
+<title>Scrapper’s Digital Guide to the Apocalypse</title>
+<style>
+/*STYLES*/
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <div class="brand">
+      <h1><span class="long">Scrapper’s Digital Guide to the Apocalypse</span><span class="short">Scrapper’s Guide</span></h1>
+      <p>Find the part. Find what it hides in. Find where nobody else looked.</p>
+      <span class="topbtns"><button class="netbadge" id="modebtn" title="Switch between the simple and the full app">Simple</button><button class="netbadge" id="netbadge" title="Sync status">Offline</button></span>
+    </div>
+    <div class="updatebar" id="updatebar" hidden></div>
+    <!-- Wide screens: tabs along the top. Phones: the first four and More, as a bar along the bottom. -->
+    <nav class="tabs" aria-label="Sections">
+      <button data-tab="scrap"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg><span>Find</span></button>
+      <button data-tab="map"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 4L3 6v14l6-2 6 2 6-2V4l-6 2z"/><path d="M9 4v14M15 6v14"/></svg><span>Map</span></button>
+      <button data-tab="plan"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M10 6h10M10 12h10M10 18h10"/><path d="M3.5 6l1.5 1.5L7.5 5M3.5 12l1.5 1.5 2.5-2.5M3.5 18l1.5 1.5 2.5-2.5"/></svg><span>Plan</span><span class="count" id="plancount" hidden></span></button>
+      <button data-tab="guides"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4.5A1.5 1.5 0 016.5 3H19v15H6.5A1.5 1.5 0 005 19.5z"/><path d="M5 19.5A1.5 1.5 0 006.5 21H19v-3"/></svg><span>Guides</span></button>
+      <button data-tab="ref" class="sec">Reference</button>
+      <button data-tab="browse" class="sec">Browse</button>
+      <button data-tab="contribute" class="sec">Contribute</button>
+      <button data-tab="sync" class="sec">Sync</button>
+      <button data-tab="review" class="sec" hidden>Review</button>
+      <button data-tab="more" class="more"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="5" cy="12" r="1.2"/><circle cx="12" cy="12" r="1.2"/><circle cx="19" cy="12" r="1.2"/></svg><span>More</span></button>
+    </nav>
+  </header>
+
+  <main>
+    <section class="view" id="v-scrap">
+      <div class="scrap">
+        <div class="stripe" aria-hidden="true"></div>
+        <div class="scrap-body">
+          <label class="big" for="q">What do you need?</label>
+          <div class="searchrow">
+            <input id="q" type="search" autocomplete="off" placeholder="Part, job or device">
+            <button class="btn" id="go">Find</button>
+          </div>
+          <div id="chips" class="chips" aria-label="Matching part types"></div>
+          <details class="filters" id="filters"><summary>Filters <span class="where" id="filtsum"></span></summary>
+            <div class="opts">
+              <label class="num">Months since collapse <input type="number" id="months" min="0" step="1" placeholder="?"></label>
+              <label class="num">Carry limit (kg) <input type="number" id="maxkg" min="0" step="1" placeholder="any"></label>
+              <label class="toggle"><input type="checkbox" id="subs"> Include substitutes</label>
+            </div>
+            <p class="lbl">My tools</p>
+            <div id="toolpick" class="chips"></div>
+          </details>
+        </div>
+      </div>
+      <div id="out"></div>
+    </section>
+    <section class="view" id="v-map" hidden></section>
+    <section class="view" id="v-guides" hidden></section>
+    <section class="view" id="v-ref" hidden></section>
+    <section class="view" id="v-browse" hidden></section>
+    <section class="view" id="v-contribute" hidden></section>
+    <section class="view" id="v-plan" hidden></section>
+    <section class="view" id="v-sync" hidden></section>
+    <section class="view" id="v-review" hidden></section>
+    <section class="view" id="v-more" hidden></section>
+    <section class="view simple-view" id="v-simple" hidden></section>
+  </main>
+</div>
+<div id="modal" class="modal" hidden><div class="modal-box" role="dialog" aria-modal="true" aria-labelledby="modal-title"><button class="btn small ghost modal-x" id="modal-x">Close</button><div id="modal-body"></div></div></div>
+<div class="toastbox"><div class="toast" id="toast" role="status" aria-live="polite"></div></div>
+<script>
+/*SCRIPTS*/
+</script>
+</body>
+</html>

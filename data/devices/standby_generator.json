@@ -1,0 +1,49 @@
+{
+  "id": "standby_generator",
+  "name": "Standby generator",
+  "group": "Power and solar",
+  "aliases": ["backup generator","home standby generator","genset","diesel generator","emergency generator","natural gas generator","whole house generator","home backup generator"],
+  "brands": ["Generac","Kohler","Cummins","Briggs & Stratton","Champion"],
+  "prev": 3,
+  "tools": ["socket","wrench","cutters","heavy"],
+  "mins": 90,
+  "kg": 250,
+  "hazards": ["fuel","co_gas","mains","heavy","acid"],
+  "comps": [
+    {"key":"alternator","fn":"alternator","spec":"Generator head, 10–25 kW on home units, hundreds of kW on commercial sets","w":[10000,25000],"qty":1,"ext":4,"obs":3,"loc":"Inside the enclosure","kg":80},
+    {"key":"engine_small","fn":"engine_small","spec":"Air-cooled V-twin on home units; large liquid-cooled engines on commercial sets","w":[13000,500000],"qty":1,"ext":4,"obs":3,"loc":"Inside the enclosure","kg":60},
+    {"key":"battery_pb","fn":"battery_pb","spec":"12V starting battery (24V on large diesel sets)","v":[12,24],"ah":[35,100],"qty":1,"ext":1,"obs":4,"loc":"Inside the enclosure"},
+    {"key":"charger","fn":"charger","spec":"Float battery charger","v":[12,24],"a":[2,10],"qty":1,"ext":2,"obs":5,"loc":"Control panel"},
+    {"key":"relay","fn":"relay","spec":"Automatic transfer switch with 100–400A contactors","a":[100,400],"qty":1,"ext":3,"obs":5,"loc":"Grey box beside the main electrical panel"},
+    {"key":"breaker","fn":"breaker","spec":"Output breaker and transfer switch breakers","qty":2,"ext":2,"obs":5,"loc":"Generator and transfer switch"},
+    {"key":"fuel_liquid","fn":"fuel_liquid","spec":"Diesel in a base or day tank, 100–4,000 L (diesel sets)","qty":1,"ext":2,"obs":4,"loc":"Base tank under the generator"},
+    {"key":"propane","fn":"propane","spec":"Large propane tank, roughly 400–4,000 L (propane-fed sets; natural gas units have none) — decanting needs proper fittings","qty":1,"ext":4,"obs":4,"loc":"Buried or on a pad near the generator"},
+    {"key":"oil_lube","fn":"oil_lube","spec":"Engine oil and coolant","qty":1,"ext":1,"obs":5,"loc":"Engine"},
+    {"key":"heating_element","fn":"heating_element","spec":"Block and battery heaters (cold climates)","v":[120,240],"w":[50,1500],"ac":true,"qty":1,"ext":2,"obs":5,"loc":"Engine block"},
+    {"key":"wire_heavy","fn":"wire_heavy","spec":"Heavy copper output cables","qty":1,"ext":3,"obs":5,"loc":"Conduit to the transfer switch"},
+    {"key":"sheet_metal","fn":"sheet_metal","spec":"Weatherproof steel or aluminium enclosure panels","qty":4,"ext":2,"obs":5,"loc":"The enclosure"}
+  ],
+  "boards": [
+    {"id":"mcu_board","qty":1,"loc":"Controller","p":1}
+  ],
+  "buildings": [
+    {"b":"hospital","l":5},
+    {"b":"datacenter","l":5},
+    {"b":"water_works","l":5},
+    {"b":"fire_station","l":5},
+    {"b":"police","l":5},
+    {"b":"telecom","l":4},
+    {"b":"nursing_home","l":4},
+    {"b":"airport","l":4},
+    {"b":"stadium","l":4},
+    {"b":"bank","l":3},
+    {"b":"clinic","l":3},
+    {"b":"supermarket","l":3},
+    {"b":"office","l":3},
+    {"b":"train_station","l":3},
+    {"b":"hotel","l":3},
+    {"b":"house","l":2},
+    {"b":"substation","l":2}
+  ],
+  "notes": "Too heavy to move, but it runs where it stands: the fuel, transfer switch and battery are the quick wins. Open the main breaker to the grid before running it so it can't backfeed the lines."
+}

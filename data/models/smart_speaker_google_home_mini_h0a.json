@@ -1,0 +1,32 @@
+{
+  "id": "smart_speaker_google_home_mini_h0a",
+  "device": "smart_speaker",
+  "brand": "Google",
+  "model": "Home Mini (1st gen), model H0A",
+  "fcc": "A4RH0A",
+  "notes": "The first-generation Google Home Mini, model H0A, FCC grant September 2017. Chip names come from one 2017 teardown article, so the memory and Wi-Fi readings are unconfirmed; the adapter ratings are from Google's specification page.",
+  "research": {"checked":"2026-11-12","gaps":["Chips come from All About Circuits' 2017 teardown only. The user-edited TechInfoDepot wiki differs: RAM SK hynix H5TC4G63CFR-PBA, Wi-Fi 88W8887 in its infobox, LED driver PCA9956BTW. Unresolved; the article's reading is recorded.","The article labels the Toshiba TC58NVG1S3HBA16 EEPROM; no datasheet was found to confirm the memory type.","The article's microphone marking S19548562 is not recorded.","The speaker comes from Google's page (one 40 mm driver); no output power or impedance is recorded.","The status LEDs come from the label in the last step of the iFixit guide; no count is recorded.","No datasheet was found for the Marvell 88DE3006, Marvell 88W8897 or Samsung K4B4G1646E-BYK0, so those chips are cited to the teardown only.","The TAS5720 datasheet covers the TAS5720L and TAS5720M; the teardown names no variant.","fccid.io writes the FCC ID A4RH0A (zero); 9to5Google writes it A4RHOA (letter O). The internal-photo exhibits were not opened."],"method":["All About Circuits, 'Teardown Tuesday: Google Home Mini' (2017): main processor, Wi-Fi, memory, amplifier and LED driver names.","Google support page 'Google Nest and Home device specifications', Google Home Mini (1st gen) entry: power, power adapter, driver size, microphone count.","Google's speakers and displays safety and regulatory guide lists model H0A under Google Home Mini (1st gen).","iFixit 'Google Home Mini Teardown' (guide 102264), read through the iFixit API: the labels in step 9 (motherboard, microphones, status LEDs).","fccid.io page for A4RH0A: grantee Google LLC, model H0A, grant date 2017-09-20.","TechInfoDepot wiki for Google Home Mini (H0A): conflicting chip readings only (user-edited).","9to5Google article on the 2017 FCC filing: FCC ID spelling only.","TI TAS5720 datasheet page (SLOS903B) and NXP PCA9955B data sheet (Rev. 2.3, ordering table lists PCA9955BTW) opened and name the chips."]},
+  "comps": [
+    {"key":"ic_mcu_soc","fn":"ic_mcu","spec":"Marvell 88DE3006-BTK2 main processor, also called ARMADA 1500 Mini Plus, named in the All About Circuits teardown","qty":1,"ext":4,"obs":3,"conf":"documented","source":"https://www.allaboutcircuits.com/news/teardown-tuesday-google-home-mini/"},
+    {"key":"ic_memory_flash","fn":"ic_memory","spec":"Toshiba TC58NVG1S3HBA16 memory chip, labelled Memory (EEPROM) in the All About Circuits teardown","qty":1,"ext":3,"obs":4,"conf":"documented","source":"https://www.allaboutcircuits.com/news/teardown-tuesday-google-home-mini/"},
+    {"key":"ic_memory_dram","fn":"ic_memory","spec":"Samsung K4B4G1646E-BYK0 DRAM, named in the All About Circuits teardown","qty":1,"ext":3,"obs":4,"conf":"documented","source":"https://www.allaboutcircuits.com/news/teardown-tuesday-google-home-mini/"},
+    {"key":"radio_rf_wifi","spec":"Marvell Avastar 88W8897 Wi-Fi combination radio chip (the article spells it Marvall)","qty":1,"ext":3,"obs":3,"conf":"documented","source":"https://www.allaboutcircuits.com/news/teardown-tuesday-google-home-mini/","fn":"radio_rf"},
+    {"key":"ic_audio_amp","fn":"ic_audio","spec":"Texas Instruments TAS5720 audio amplifier IC, named in the All About Circuits teardown","qty":1,"ext":3,"obs":4,"conf":"documented","source":"https://www.allaboutcircuits.com/news/teardown-tuesday-google-home-mini/"},
+    {"key":"ic_driver_led","fn":"ic_driver","spec":"NXP PCA9955BTW LED driver IC, named in the All About Circuits teardown","qty":1,"ext":3,"obs":4,"conf":"documented","source":"https://www.allaboutcircuits.com/news/teardown-tuesday-google-home-mini/"},
+    {"key":"speaker","spec":"One 40 mm driver giving 360-degree sound","qty":1,"conf":"documented","source":"https://support.google.com/googlenest/answer/7072284?hl=en"},
+    {"key":"microphone","spec":"Two far-field microphones","qty":2,"conf":"documented","source":"https://support.google.com/googlenest/answer/7072284?hl=en"},
+    {"key":"led_light","spec":"Status LEDs, labelled in the last step of the iFixit teardown","conf":"documented","source":"https://www.ifixit.com/api/2.0/guides/102264"},
+    {"key":"psu","spec":"Power adapter, mains input 120-240 V, 1.1 A, 50/60 Hz; Google's page lists the power as 5 V, 1.8 A","v":5,"a":1.8,"qty":1,"conf":"documented","source":"https://support.google.com/googlenest/answer/7072284?hl=en"}
+  ],
+  "sources": [
+    {"title":"Teardown Tuesday: Google Home Mini (All About Circuits, 2017)","url":"https://www.allaboutcircuits.com/news/teardown-tuesday-google-home-mini/"},
+    {"title":"Google Nest and Home device specifications (Google support), Google Home Mini (1st gen) entry","url":"https://support.google.com/googlenest/answer/7072284?hl=en"},
+    {"title":"Google Home Mini Teardown (iFixit guide 102264, community-written), via the iFixit API","url":"https://www.ifixit.com/api/2.0/guides/102264"},
+    {"title":"FCC ID A4RH0A, Google LLC, product H0A (fccid.io)","url":"https://fccid.io/A4RH0A"},
+    {"title":"Speakers and displays safety and regulatory guide (Google support), lists model H0A under Google Home Mini (1st gen)","url":"https://support.google.com/product-documentation/answer/7055908?hl=en"},
+    {"title":"Google Home Mini (H0A), TechInfoDepot wiki (user-edited; conflicting readings only)","url":"https://techinfodepot.shoutwiki.com/wiki/Google_Home_Mini_(H0A)"},
+    {"title":"Google Home Mini FCC filing (9to5Google, 20 Sept 2017)","url":"https://9to5google.com/2017/09/20/google-home-mini-fcc/"},
+    {"title":"Datasheet: TAS5720 family (link from TI document viewer, SLOS903B)","url":"https://www.ti.com/document-viewer/TAS5720L/datasheet"},
+    {"title":"Datasheet: PCA9955B 16-channel Fm+ I2C-bus 57 mA constant current LED driver (NXP, link from NXP site)","url":"https://www.nxp.com/docs/en/data-sheet/PCA9955B.pdf"}
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "id": "patio_heater",
+  "name": "Patio heater",
+  "group": "Heating, cooling and water",
+  "aliases": ["mushroom heater","outdoor heater","propane patio heater","pyramid heater","infrared patio heater","electric patio heater","outdoor space heater"],
+  "brands": ["Dyna-Glo","Fire Sense","Bromic","Hiland","Mr. Heater","Infratech","Vevor"],
+  "prev": 3,
+  "tools": ["hands","wrench","screwdriver"],
+  "mins": 20,
+  "kg": 20,
+  "hazards": ["compressed_gas","fuel","co_gas"],
+  "comps": [
+    {"key":"propane","fn":"propane","spec":"Propane in a 20 lb (9 kg) cylinder hidden in the base, often part full — never burn a propane heater indoors","qty":1,"ext":1,"obs":4,"loc":"Inside the base housing","kg":17},
+    {"key":"gas_cylinder","fn":"gas_cylinder","spec":"Refillable steel cylinder","qty":1,"ext":1,"obs":4,"loc":"Inside the base housing"},
+    {"key":"igniter","fn":"igniter","spec":"Piezo push-button igniter","qty":1,"ext":1,"obs":5,"loc":"Control box under the emitter"},
+    {"key":"thermocouple","fn":"thermocouple","spec":"Thermocouple flame-safety sensor","qty":1,"ext":2,"obs":5,"loc":"At the burner, beside the pilot"},
+    {"key":"valve_solenoid","fn":"valve_solenoid","spec":"Gas control valve with flame-safety and anti-tilt cutoff","qty":1,"ext":2,"obs":5,"loc":"Control box"},
+    {"key":"hose_tubing","fn":"hose_tubing","spec":"Regulator and hose","qty":1,"ext":1,"obs":4,"loc":"Inside the base"},
+    {"key":"sheet_metal","fn":"sheet_metal","spec":"Shiny aluminium or steel reflector hood, about 80 cm across — reflector panels for a solar oven","qty":1,"ext":2,"obs":5,"loc":"Top"},
+    {"key":"tube_frame","fn":"tube_frame","spec":"Steel or stainless pole, about 2 m","qty":1,"ext":2,"obs":5,"loc":"Centre column"},
+    {"key":"heating_element","fn":"heating_element","spec":"Infrared halogen or carbon lamps, 1.5–2 kW (electric models)","w":[1500,2000],"qty":1,"ext":2,"obs":5,"loc":"Head of electric models","p":0.5}
+  ],
+  "boards": [],
+  "buildings": [
+    {"b":"restaurant","l":5},
+    {"b":"hotel","l":3},
+    {"b":"golf","l":3},
+    {"b":"garden_centre","l":3},
+    {"b":"hardware","l":3},
+    {"b":"self_storage","l":3},
+    {"b":"house","l":2},
+    {"b":"church","l":2},
+    {"b":"campground","l":2},
+    {"b":"department","l":2},
+    {"b":"pool_supply","l":2},
+    {"b":"furniture","l":2}
+  ],
+  "notes": "Restaurants often keep a row of heaters, each hiding a cylinder in its base. Check the shed or cage out back for spares."
+}

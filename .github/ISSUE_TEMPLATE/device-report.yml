@@ -1,0 +1,61 @@
+name: I opened a device
+description: Tell us what you found inside something you took apart. This is the most useful thing you can contribute.
+title: "Opened: <brand> <model>"
+labels: ["device report"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for opening something up. Write what you saw with your own eyes; if something came from a manual or a website instead, say so and link it.
+        Please don't paste text, diagrams or photos from manuals. Your own photos are welcome as links.
+  - type: input
+    id: device
+    attributes:
+      label: What kind of device
+      placeholder: Treadmill, microwave oven, cordless drill…
+    validations:
+      required: true
+  - type: input
+    id: model
+    attributes:
+      label: Brand and model
+      description: The model number is usually on a label on the back or underneath. Add the FCC ID if there is one.
+      placeholder: "Sharp R-310HK, FCC ID …"
+    validations:
+      required: true
+  - type: textarea
+    id: parts
+    attributes:
+      label: What was inside
+      description: One part per line, with what's printed on it (part numbers, volts, watts, mAh) and where it sat.
+      placeholder: |
+        Motor: 12 V DC, Mabuchi RS-385, in the base
+        Battery: 18650 cells ×3, 3.7 V 2,000 mAh, under the cover
+    validations:
+      required: true
+  - type: input
+    id: effort
+    attributes:
+      label: Tools and time
+      placeholder: Phillips screwdriver and a T10 bit, 25 minutes
+  - type: textarea
+    id: hazards
+    attributes:
+      label: Anything that could hurt someone
+      placeholder: Capacitor still charged after unplugging; sharp sheet-metal edges…
+  - type: dropdown
+    id: how
+    attributes:
+      label: How do you know
+      options:
+        - I opened one myself
+        - From a manual, parts list or teardown (linked above)
+    validations:
+      required: true
+  - type: checkboxes
+    id: license
+    attributes:
+      label: License
+      options:
+        - label: I agree that what I write here is shared under CC BY-SA 4.0, like the rest of the guide's data.
+          required: true

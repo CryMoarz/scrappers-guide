@@ -1,0 +1,25 @@
+{
+  "id": "corded_tools_makita_6408",
+  "device": "corded_tools",
+  "brand": "Makita",
+  "model": "6408",
+  "notes": "3/8 in keyless variable-speed reversing corded drill; the catalogue entry with 4.9 A at 120 V is for the 6408K, and Makita's parts list covers the 6408 and 6408K together. The armature assembly includes the fan and both 627Z bearings, so those are not separate pieces to pull.",
+  "research": {"checked":"2026-11-12","gaps":["Ratings come from the catalogue's 6408K entry (flipbook page 101, printed page 99); the rendered page confirms 4.9 A, 0 to 2,500 rpm and 3.3 lb sit on the 6408K card, not the 6402 card beside it.","Weight conflict: the catalogue gives 3.3 lb (1.5 kg) for the 6408K; the 6408 instruction manual gives 1.4 kg (3.1 lb). Weight is not claimed.","The parts list prints Type 2 on the brush set 195007-0 and Type 3 on the cord 664064-4; the cord guard and strain relief rows carry no type.","The switch rating is not claimed; the list prints an older number 651987-5 as OLD#.","Keyless chuck 763132-1 is an accessory row and is not claimed.","Variable speed is stated by the catalogue and manual, but no speed-control part is claimed (no thyristor).","The 6408K entry does not say AC/DC; ac is set from the 120 V rating and mains cord."],"method":["Makita parts breakdown 6408, 6408K, updated 8/6/2020 (header 02-2010), makita.ca PDF, page 2 read with the pdf tool and rendered to check the Type column.","Makita General Catalogue 2014, flipbook page 101 on makita.ca: 6408K entry; the page was rendered from Makita's per-page PDF to match each figure to its card.","Makita 6408 instruction manual (makita.ca PDF, May 1996 US edition) read with the pdf tool and page 1 rendered: variable speed / reversing, 0 to 2,500 rpm no load, 1.4 kg (3.1 lbs)."]},
+  "comps": [
+    {"key":"motor_universal","conf":"documented","spec":"Motor of the 6408K drill; the catalogue lists the tool at 4.9 A at 120 V and 0 to 2,500 rpm no load (the amps are the tool's rating, not a motor-only figure)","v":120,"a":4.9,"ac":true,"qty":1,"source":"https://www.makita.ca/Flippingbook/eGenCatalogue/files/assets/basic-html/page101.html"},
+    {"key":"motor_universal_armature","fn":"motor_universal","spec":"Armature assembly 115 V, Makita part 517196-5; the list shows fan 52 and both 627Z bearings as included with it","v":115,"ac":true,"qty":1,"ext":2,"obs":3,"conf":"documented","source":"https://makita.ca/data/upload/parts_breakdown/6408,%206408K%20-%20AUG2020.pdf"},
+    {"key":"motor_universal_field","fn":"motor_universal","spec":"Field 115 V, Makita part 633336-8 (parts list)","v":115,"ac":true,"qty":1,"ext":3,"obs":3,"conf":"documented","source":"https://makita.ca/data/upload/parts_breakdown/6408,%206408K%20-%20AUG2020.pdf"},
+    {"key":"motor_universal_brushes","fn":"motor_universal","spec":"Carbon brush set CB-407, 2 pieces, part 195007-0 (Type 2 row, printed W/O ORIGIN), with brush holder 643936-6 (2 listed)","qty":1,"ext":1,"obs":3,"conf":"documented","source":"https://makita.ca/data/upload/parts_breakdown/6408,%206408K%20-%20AUG2020.pdf"},
+    {"key":"switch","conf":"documented","spec":"Switch TG803TLB-1, part 651986-7 (the list prints 651987-5 as the old number)","qty":1,"ext":2,"obs":4,"source":"https://makita.ca/data/upload/parts_breakdown/6408,%206408K%20-%20AUG2020.pdf"},
+    {"key":"gearbox","conf":"documented","spec":"Gear complete, Makita part 153246-8 (parts list)","qty":1,"ext":2,"obs":4,"source":"https://makita.ca/data/upload/parts_breakdown/6408,%206408K%20-%20AUG2020.pdf"},
+    {"key":"bearing_626z","fn":"bearing","spec":"Ball bearing 626Z, part 211020-1 (parts list)","qty":1,"ext":2,"obs":3,"conf":"documented","source":"https://makita.ca/data/upload/parts_breakdown/6408,%206408K%20-%20AUG2020.pdf"},
+    {"key":"bearing_627z","fn":"bearing","spec":"Ball bearing 627Z, part 211030-8; two are listed, and both are included with the armature assembly","qty":2,"ext":2,"obs":3,"conf":"documented","source":"https://makita.ca/data/upload/parts_breakdown/6408,%206408K%20-%20AUG2020.pdf"},
+    {"key":"fan_cooling","fn":"fan","spec":"Fan 52, part 241881-5, listed as included with the armature assembly (parts list)","qty":1,"ext":1,"obs":2,"conf":"documented","source":"https://makita.ca/data/upload/parts_breakdown/6408,%206408K%20-%20AUG2020.pdf"},
+    {"key":"wire_copper","conf":"documented","spec":"Cord with plug printed 2P-18-2.5M SJ, part 664064-4 (Type 3 row); cord clamp (strain relief) 687063-9 and cord guard 682502-4 (no type) are listed separately","ac":true,"qty":1,"source":"https://makita.ca/data/upload/parts_breakdown/6408,%206408K%20-%20AUG2020.pdf"}
+  ],
+  "sources": [
+    {"title":"Makita parts breakdown 6408, 6408K, updated 8/6/2020 (makita.ca PDF)","url":"https://makita.ca/data/upload/parts_breakdown/6408,%206408K%20-%20AUG2020.pdf"},
+    {"title":"Makita General Catalogue 2014, flipbook page 101: 6408K drill entry (makita.ca)","url":"https://www.makita.ca/Flippingbook/eGenCatalogue/files/assets/basic-html/page101.html"},
+    {"title":"Makita 6408 instruction manual (makita.ca PDF)","url":"https://makita.ca/data/upload/tools/6408.pdf"}
+  ]
+}

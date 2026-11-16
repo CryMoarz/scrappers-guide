@@ -1,0 +1,14 @@
+{
+  "id": "reg_linear",
+  "name": "Linear voltage regulators",
+  "group": "Electronic components",
+  "demand": 1,
+  "keywords": ["voltage regulator","regulator","linear regulator","7805","7812","78xx","lm7805","lm317","ams1117","ldo","5v regulator","7809","7905","79xx","lm7812","l7805","78l05","lm1117","ht7333","lm2940","3.3v regulator"],
+  "substitutes": ["dcdc_buck","diode_zener"],
+  "summary": "Three-pin linear regulators that give a fixed or adjustable DC voltage from a higher one.",
+  "uses": ["Clean 5V or 3.3V for small electronics","Adjustable supply with an LM317","Simple constant-current LED drivers"],
+  "identify": "Three-legged parts, often on heatsinks, marked 7805, 7812, LM317, AMS1117 or similar, on almost every board.",
+  "test": "Feed a higher voltage in and the output should match the marking. A 78xx needs about 2V more in than out.",
+  "decay": {"halfLifeMonths":null,"note":"Lasts."},
+  "hazards": []
+}

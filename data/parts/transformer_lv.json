@@ -1,0 +1,14 @@
+{
+  "id": "transformer_lv",
+  "name": "Low-voltage transformers",
+  "group": "Power conversion",
+  "demand": 2,
+  "keywords": ["transformer","step down transformer","24v ac","low voltage transformer","12v transformer","24v transformer","toroidal transformer","doorbell transformer","halogen transformer","hvac transformer","isolation transformer","mains transformer"],
+  "substitutes": ["psu"],
+  "summary": "Mains transformers that step down to about 6–48V AC: doorbells, HVAC, halogen lights and old adapters.",
+  "uses": ["Low-voltage AC for pumps, valves and lights","Building a linear power supply or battery charger","Isolation from the mains"],
+  "identify": "Heavy iron-core blocks or round toroids in old stereos, battery chargers, halogen lighting, doorbells, HVAC systems (24V) and older wall adapters. The label gives input and output volts and VA.",
+  "test": "The primary winding reads higher resistance than the secondary. Powered, measure the AC output; it reads a bit high with no load.",
+  "decay": {"halfLifeMonths":null,"note":"Lasts."},
+  "hazards": ["mains"]
+}

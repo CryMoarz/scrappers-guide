@@ -1,0 +1,21 @@
+{
+  "id": "wifi_router_netgear_r6100_v1",
+  "device": "wifi_router",
+  "brand": "NETGEAR",
+  "model": "R6100 v1",
+  "fcc": "PY312400225",
+  "notes": "Chips for hardware version v1; other versions of the R6100 can differ.",
+  "research": {"gaps":[],"method":["Not yet fact-checked: its parts show as likely until a fact-check confirms them against their sources.","Imported from the OpenWrt Table of Hardware (toh.json, 2026-11-13): the hardware data page for this version, by OpenWrt wiki contributors under CC BY-SA 4.0."]},
+  "comps": [
+    {"key":"ic_mcu_soc","fn":"ic_mcu","spec":"SoC Atheros AR9344, 1 core at 560 MHz","qty":1,"ext":4,"obs":3,"source":"https://openwrt.org/toh/hwdata/netgear/netgear_r6100","conf":"likely"},
+    {"key":"ic_memory_flash","fn":"ic_memory","spec":"Flash, 128 MB NAND","qty":1,"ext":2,"obs":4,"source":"https://openwrt.org/toh/hwdata/netgear/netgear_r6100","conf":"likely"},
+    {"key":"ic_memory_ram","fn":"ic_memory","spec":"RAM, 128 MB","qty":1,"ext":3,"obs":3,"source":"https://openwrt.org/toh/hwdata/netgear/netgear_r6100","conf":"likely"},
+    {"key":"radio_rf","spec":"Wi-Fi: Atheros AR9344, Qualcomm Atheros QCA9882-2R4E (2.4 GHz b/g/n, 5 GHz a/n/ac)","qty":2,"source":"https://openwrt.org/toh/hwdata/netgear/netgear_r6100","conf":"likely"},
+    {"key":"psu","spec":"Power supply: 12 VDC, 1.5A","v":12,"a":1.5,"source":"https://openwrt.org/toh/hwdata/netgear/netgear_r6100","conf":"likely"},
+    {"key":"connector","spec":"Ethernet ports: 5× 100M","qty":5,"source":"https://openwrt.org/toh/hwdata/netgear/netgear_r6100","conf":"likely"},
+    {"key":"connector_usb","fn":"connector","spec":"USB: 1x 2.0","qty":1,"ext":2,"obs":4,"source":"https://openwrt.org/toh/hwdata/netgear/netgear_r6100","conf":"likely"}
+  ],
+  "sources": [
+    {"title":"OpenWrt Table of Hardware: NETGEAR R6100 v1 (OpenWrt wiki contributors, CC BY-SA 4.0)","url":"https://openwrt.org/toh/hwdata/netgear/netgear_r6100"}
+  ]
+}

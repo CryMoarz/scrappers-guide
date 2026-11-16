@@ -1,0 +1,33 @@
+{
+  "id": "vending",
+  "name": "Vending machine",
+  "group": "Commercial",
+  "aliases": ["snack machine","soda machine"],
+  "brands": ["Dixie-Narco","Royal Vendors","Seaga","Vendo","USI","AMS"],
+  "prev": 4,
+  "tools": ["socket","pry","heavy"],
+  "mins": 45,
+  "hazards": ["heavy","refrigerant"],
+  "comps": [
+    {"key":"motor_dc_small","fn":"motor_dc_small","spec":"Spiral dispensing gear motors, 24V (dozens)","v":24,"qty":30,"ext":2,"obs":5,"loc":"Behind each spiral"},
+    {"key":"psu","fn":"psu","spec":"24V power supply","v":24,"qty":1,"ext":2,"obs":5,"loc":"Base"},
+    {"key":"compressor","fn":"compressor","spec":"Refrigeration compressor (cold drink models)","v":[120,240],"w":[250,370],"ac":true,"qty":1,"ext":4,"obs":4,"loc":"Base","p":0.5},
+    {"key":"led_light","fn":"led_light","spec":"LED lighting strips","v":[12,24],"w":[5,30],"qty":2,"ext":1,"obs":4,"loc":"Door and cabinet"},
+    {"key":"solenoid_actuator","fn":"solenoid_actuator","spec":"Coin mechanism solenoids","v":[24,34],"qty":2,"ext":2,"obs":5,"loc":"Door"},
+    {"key":"fan","fn":"fan","spec":"Fans","v":[120,240],"ac":true,"qty":2,"ext":2,"obs":4,"loc":"Base"}
+  ],
+  "boards": [
+    {"id":"mcu_board","qty":1,"loc":"Door controller","p":1},
+    {"id":"smps_board","qty":1,"loc":"Power supply","p":1}
+  ],
+  "buildings": [
+    {"b":"school","l":5},
+    {"b":"office","l":4},
+    {"b":"hospital","l":4},
+    {"b":"gas_station","l":3},
+    {"b":"gym","l":4},
+    {"b":"hotel","l":4},
+    {"b":"factory","l":4},
+    {"b":"warehouse","l":3}
+  ]
+}

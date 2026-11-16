@@ -1,0 +1,15 @@
+{
+  "id": "lead",
+  "label": "Lead",
+  "severity": 3,
+  "summary": "Lead in old solder, CRT glass, old paint, batteries, wheel weights and old pipes is toxic. It builds up in the body and damages nerves, kidneys and the brain. Children and pregnant women are harmed most, at doses that cause no symptoms.",
+  "signs": ["Dull grey solder on older circuit boards","Lead-acid batteries and the crust around them","Flaking or chalky old paint, especially in buildings from before the 1980s","CRT funnel glass","Wheel weights, fishing weights, old pipes and roof flashing"],
+  "do": ["Wash hands and face before eating, drinking or smoking","Work outdoors or with a through-draught","Wet old paint before scraping it","Change clothes after dirty work and wash them separately","Keep children and pregnant women away from lead work and lead dust"],
+  "dont": ["Don't sand, grind or burn old paint","Don't melt lead indoors or anywhere near food","Don't eat, drink or smoke while working with lead","Don't keep food or water in lead-soldered or lead-glazed containers","Don't dry-sweep or blow lead dust: wipe it up with wet rags or a wet mop","Don't let water, damp scrap or a wet mould touch molten lead: it turns to steam and throws molten metal"],
+  "ppe": ["Nitrile gloves","A P100 (P3) respirator for dust and fumes","Work clothes you leave at the door"],
+  "firstAid": ["There is no quick fix: stop the exposure and keep it stopped","Stomach pain, headaches, tiredness, irritability, or a child falling behind after exposure needs medical attention","Only a blood test confirms lead poisoning","A child who swallowed a lead weight, pellet or paint chips needs medical care quickly: lead dissolves in the stomach"],
+  "refs": [
+    {"lib":"wikimed","q":"Lead poisoning"},
+    {"lib":"wikipedia","q":"Lead poisoning"}
+  ]
+}

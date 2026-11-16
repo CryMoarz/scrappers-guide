@@ -1,0 +1,37 @@
+{
+  "id": "medical_equipment",
+  "name": "Clinic and hospital equipment",
+  "group": "Medical and mobility",
+  "aliases": ["patient monitor","infusion pump","suction unit","autoclave","steriliser","exam light","dental chair","medical equipment","exam table","clinic equipment"],
+  "brands": ["Philips","GE Healthcare","Mindray","Welch Allyn","Stryker","Dräger","Hill-Rom","Midmark"],
+  "prev": 3,
+  "tools": ["screwdriver","security_bits"],
+  "mins": 30,
+  "hazards": ["biohazard","li_fire"],
+  "comps": [
+    {"key":"battery_li","fn":"battery_li","spec":"Li-ion packs, about 10–15V, in monitors, infusion pumps and portable units","v":[10,15],"qty":4,"ext":1,"obs":5,"loc":"Battery doors on the back or base"},
+    {"key":"battery_pb","fn":"battery_pb","spec":"12V 2–7Ah sealed lead-acid in older monitors, suction units and carts","v":12,"ah":[2,7],"qty":2,"ext":1,"obs":5,"loc":"Base of the unit or cart"},
+    {"key":"motor_stepper","fn":"motor_stepper","spec":"Small stepper motors with lead screws (infusion and syringe pumps)","v":[5,12],"qty":4,"ext":2,"obs":5,"loc":"Pump mechanism"},
+    {"key":"compressor","fn":"compressor","spec":"Diaphragm vacuum pumps, 12V or mains (suction units)","v":12,"qty":2,"ext":2,"obs":5,"loc":"Base of the suction unit"},
+    {"key":"heating_element","fn":"heating_element","spec":"Autoclave and steriliser heaters, 1–2 kW","w":[1000,2000],"qty":1,"ext":3,"obs":5,"loc":"Under the pressure chamber"},
+    {"key":"valve_solenoid","fn":"valve_solenoid","spec":"Small solenoid valves (autoclaves, suction, dental units)","qty":3,"ext":2,"obs":5,"loc":"Behind side panels"},
+    {"key":"hose_tubing","fn":"hose_tubing","spec":"Silicone and PVC medical tubing, often sealed sterile spares","qty":10,"ext":1,"obs":4,"loc":"Supply cupboards and on the equipment"},
+    {"key":"sensor_misc","fn":"sensor_misc","spec":"Pulse oximeter probes, temperature probes and pressure sensors","qty":6,"ext":1,"obs":4,"loc":"Monitor cables and drawers"},
+    {"key":"display","fn":"display","spec":"Monitor LCD screens","qty":2,"ext":2,"obs":5,"loc":"Patient monitors"},
+    {"key":"led_light","fn":"led_light","spec":"Exam and procedure lights, LED or halogen","v":[12,24],"w":[10,150],"qty":2,"ext":2,"obs":4,"loc":"Ceiling arms and wall mounts"},
+    {"key":"linear_actuator","fn":"linear_actuator","spec":"Actuators in power exam tables and dental chairs","qty":2,"ext":2,"obs":5,"loc":"Under the table or chair"}
+  ],
+  "boards": [
+    {"id":"smps_board","qty":3,"loc":"Equipment power supplies","p":1},
+    {"id":"mcu_board","qty":3,"loc":"Equipment controllers","p":1}
+  ],
+  "buildings": [
+    {"b":"hospital","l":5},
+    {"b":"clinic","l":5},
+    {"b":"nursing_home","l":4},
+    {"b":"fire_station","l":2},
+    {"b":"pharmacy","l":2},
+    {"b":"school","l":1}
+  ],
+  "notes": "Medicines go fast; equipment does not. Wear gloves and treat anything with fluid on it as contaminated. A working autoclave sterilises instruments and dressings."
+}

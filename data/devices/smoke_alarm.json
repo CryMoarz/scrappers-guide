@@ -1,0 +1,24 @@
+{
+  "id": "smoke_alarm",
+  "name": "Smoke and CO alarms",
+  "group": "Building systems",
+  "aliases": ["smoke detector","co detector"],
+  "brands": ["Kidde","First Alert","Nest","X-Sense","Honeywell","Universal Security Instruments","Ei Electronics"],
+  "prev": 5,
+  "tools": ["hands","screwdriver"],
+  "mins": 5,
+  "hazards": ["radiation"],
+  "comps": [
+    {"key":"battery_primary","fn":"battery_primary","spec":"Sealed 10-year lithium cell (not rechargeable) or 9V battery","v":9,"qty":1,"ext":1,"obs":4,"loc":"Inside the cover"},
+    {"key":"speaker","fn":"speaker","spec":"Very loud piezo buzzer","v":[3,9],"qty":1,"ext":2,"obs":5,"loc":"Inside the housing"},
+    {"key":"sensor_misc","fn":"sensor_misc","spec":"Smoke or CO sensor","qty":1,"ext":2,"obs":5,"loc":"Centre"}
+  ],
+  "buildings": [
+    {"b":"house","l":5},
+    {"b":"apartment","l":5},
+    {"b":"hotel","l":5},
+    {"b":"office","l":4},
+    {"b":"school","l":4},
+    {"b":"church","l":4}
+  ]
+}

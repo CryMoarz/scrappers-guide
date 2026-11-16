@@ -1,0 +1,18 @@
+{
+  "id": "inverter_board",
+  "name": "DC-to-AC inverter board",
+  "notes": "From UPS units, power stations and car inverters.",
+  "comps": [
+    {"key":"mosfet","fn":"mosfet","spec":"Low-voltage MOSFET banks (IRF3205-type)","qty":8,"ext":3,"obs":4,"loc":"Input side heatsinks"},
+    {"key":"mosfet_hv","fn":"mosfet","spec":"High-voltage output MOSFETs","qty":4,"ext":3,"obs":5,"loc":"Output side heatsinks"},
+    {"key":"ic_pwm","fn":"ic_pwm","spec":"PWM controller ICs (SG3525/TL494-type)","qty":2,"ext":4,"obs":5,"loc":"Control section"},
+    {"key":"ic_opamp","fn":"ic_opamp","spec":"Comparators and op-amps","qty":1,"ext":4,"obs":5,"loc":"Control section"},
+    {"key":"ferrite_xfmr","fn":"ferrite_xfmr","spec":"Step-up transformer (ferrite, or iron in older UPS units)","qty":1,"ext":3,"obs":5,"loc":"Centre"},
+    {"key":"diode_rect","fn":"diode_rect","spec":"Fast rectifier diodes","qty":4,"ext":3,"obs":5,"loc":"After the transformer"},
+    {"key":"cap_elec","fn":"cap_elec","spec":"Large capacitors","qty":4,"ext":2,"obs":4,"loc":"Input and output"},
+    {"key":"fuse","fn":"fuse","spec":"Blade or glass fuses","a":[10,40],"qty":3,"ext":1,"obs":4,"loc":"DC input"},
+    {"key":"relay","fn":"relay","spec":"Transfer relays","v":[12,24],"a":[10,30],"qty":2,"ext":3,"obs":4,"loc":"Output"},
+    {"key":"heatsink","fn":"heatsink","spec":"Aluminium heatsinks","qty":2,"ext":2,"obs":4,"loc":"Under the MOSFETs"},
+    {"key":"fan","fn":"fan","spec":"12V cooling fan","v":12,"qty":1,"ext":1,"obs":4,"loc":"Case"}
+  ]
+}

@@ -1,0 +1,17 @@
+# Runtime state: hub database, identities and outboxes. Never commit these.
+state/
+*.key
+# Build outputs that are regenerated (the app HTML is kept so people can download it from the repo).
+dist/
+node_modules/
+*.tmp-*
+# The maintainer's working files for AI-assisted research and upkeep: research drafts, fact-check
+# logs, agent definitions and session notes. They stay on the maintainer's machine; what survives
+# checking is published in data/.
+research/inbox/
+research/verified/
+research/logs/
+research/rejected/
+research/verification-log.md
+.claude/
+HANDOFF.md

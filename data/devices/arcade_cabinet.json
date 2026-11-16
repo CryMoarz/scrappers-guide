@@ -1,0 +1,42 @@
+{
+  "id": "arcade_cabinet",
+  "name": "Arcade cabinet or claw machine",
+  "group": "Leisure and fitness",
+  "aliases": ["arcade machine","arcade game","video game cabinet","claw machine","crane game","redemption game","retro arcade"],
+  "brands": ["Raw Thrills","Namco","Sega","Bandai Namco","Incredible Technologies","Bay Tek","Arcade1Up","Konami"],
+  "prev": 3,
+  "tools": ["screwdriver","socket","pry"],
+  "mins": 30,
+  "kg": 120,
+  "hazards": ["heavy","glass","hv_cap","implosion"],
+  "comps": [
+    {"key":"display","fn":"display","spec":"19–32 in LCD; older cabinets have a CRT — treat it as charged and fragile","qty":1,"ext":3,"obs":4,"loc":"Front of the cabinet"},
+    {"key":"speaker","fn":"speaker","spec":"Cabinet speakers, 4–8 Ω","w":[5,20],"qty":2,"ext":1,"obs":4,"loc":"Above or below the screen"},
+    {"key":"switch","fn":"switch","spec":"Arcade buttons and microswitch joysticks","qty":12,"ext":1,"obs":4,"loc":"Control panel"},
+    {"key":"psu","fn":"psu","spec":"5/12V switch-mode supply","v":12,"qty":1,"ext":1,"obs":5,"loc":"Inside the back door"},
+    {"key":"transformer_lv","fn":"transformer_lv","spec":"Isolation transformer (older CRT cabinets)","v":[110,240],"w":[150,400],"ac":true,"qty":1,"ext":2,"obs":5,"loc":"Floor of the cabinet","kg":8},
+    {"key":"solenoid_actuator","fn":"solenoid_actuator","spec":"Coin mechanism and coin counter solenoids","v":[5,12],"qty":2,"ext":2,"obs":5,"loc":"Coin door"},
+    {"key":"motor_dc_small","fn":"motor_dc_small","spec":"Gantry, claw and ticket dispenser motors, 12–24V (claw and redemption games)","v":[12,24],"qty":3,"ext":2,"obs":5,"loc":"Gantry and ticket dispenser"},
+    {"key":"led_light","fn":"led_light","spec":"LED marquee and button lights","v":[5,12],"w":[1,10],"qty":10,"ext":1,"obs":4,"loc":"Marquee and control panel"},
+    {"key":"glass_pane","fn":"glass_pane","spec":"Tempered glass panels and screen bezel (claw machines have several)","qty":2,"ext":2,"obs":5,"loc":"Front and sides"},
+    {"key":"lumber","fn":"lumber","spec":"Cabinet panels, mostly MDF or particle board, some plywood","qty":4,"ext":2,"obs":5,"loc":"The cabinet itself"},
+    {"key":"fan","fn":"fan","spec":"Cooling fan","v":12,"qty":1,"ext":1,"obs":5,"loc":"Back panel"}
+  ],
+  "boards": [
+    {"id":"audio_amp_board","qty":1,"loc":"Game board or separate amp","p":0.8},
+    {"id":"smps_board","qty":1,"loc":"Power supply","p":0.6},
+    {"id":"motherboard","qty":1,"loc":"PC-based game hardware (newer cabinets)","p":0.4},
+    {"id":"mcu_board","qty":1,"loc":"Claw and redemption game controller","p":0.4}
+  ],
+  "buildings": [
+    {"b":"cinema","l":4},
+    {"b":"mall","l":4},
+    {"b":"supermarket","l":3},
+    {"b":"restaurant","l":3},
+    {"b":"laundromat","l":3},
+    {"b":"gas_station","l":2},
+    {"b":"hotel","l":2},
+    {"b":"campground","l":2},
+    {"b":"stadium","l":2}
+  ]
+}

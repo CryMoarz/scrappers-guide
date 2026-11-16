@@ -1,0 +1,6 @@
+{
+  "id": "parking",
+  "name": "Parking lots and garages",
+  "osm": ["amenity=parking","amenity=charging_station"],
+  "exposure": 3
+}

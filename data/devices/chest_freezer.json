@@ -1,0 +1,33 @@
+{
+  "id": "chest_freezer",
+  "name": "Chest freezer",
+  "group": "Kitchen and appliances",
+  "aliases": ["deep freezer","box freezer","garage freezer"],
+  "brands": ["Frigidaire","GE","Haier","Danby","Kenmore","Whirlpool","Insignia","Arctic King","Igloo","Vevor"],
+  "prev": 4,
+  "tools": ["screwdriver","socket"],
+  "mins": 30,
+  "kg": 40,
+  "hazards": ["refrigerant","heavy"],
+  "comps": [
+    {"key":"compressor","fn":"compressor","spec":"Hermetic refrigeration compressor, about 1/6–1/4 hp, in a sealed system: keep the whole freezer running rather than opening it","v":[120,240],"w":[120,190],"ac":true,"qty":1,"ext":5,"obs":3,"loc":"Back corner compartment","kg":9},
+    {"key":"thermostat","fn":"thermostat","spec":"Capillary-bulb thermostat with dial","qty":1,"ext":2,"obs":4,"loc":"Behind the control dial"},
+    {"key":"insulation","fn":"insulation","spec":"Thick polyurethane foam walls, about 5–8 cm, bonded to the cabinet","qty":1,"ext":5,"obs":4,"loc":"All walls and lid"},
+    {"key":"cooler_box","fn":"cooler_box","spec":"The cabinet itself: a superinsulated box that holds cold for a day or more with the power off","qty":1,"ext":1,"obs":5,"loc":"Whole unit","kg":35},
+    {"key":"wire_copper","fn":"wire_copper","spec":"Mains cord, 3-core, about 2 m","qty":1,"ext":1,"obs":3,"loc":"Back"},
+    {"key":"switch","fn":"switch","spec":"Lid light switch (some models)","qty":1,"ext":1,"obs":4,"loc":"Lid hinge edge","p":0.5},
+    {"key":"led_light","fn":"led_light","spec":"Small interior lamp (some models)","v":[120,240],"w":[1,15],"ac":true,"qty":1,"ext":1,"obs":4,"loc":"Under the lid","p":0.4}
+  ],
+  "buildings": [
+    {"b":"house","l":3},
+    {"b":"garage_res","l":4},
+    {"b":"farm","l":4},
+    {"b":"restaurant","l":3},
+    {"b":"convenience","l":2},
+    {"b":"supermarket","l":2},
+    {"b":"self_storage","l":2},
+    {"b":"church","l":2},
+    {"b":"campground","l":2}
+  ],
+  "notes": "The most power-efficient fridge there is: run as a fridge on an external thermostat it uses a fraction of an upright fridge’s energy, because cold air stays in when the lid opens."
+}

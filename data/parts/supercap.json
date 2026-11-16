@@ -1,0 +1,14 @@
+{
+  "id": "supercap",
+  "name": "Supercapacitors",
+  "group": "Power storage",
+  "demand": 1,
+  "keywords": ["supercapacitor","supercap","super capacitor","ultracapacitor","ultracap","edlc","farad capacitor","gold cap","goldcap"],
+  "substitutes": ["battery_li","cap_elec"],
+  "summary": "Capacitors rated in farads (about 1–3,000 F at 2.5–2.7V per cell) that charge and dump power in seconds and take huge numbers of cycles.",
+  "uses": ["Fast-charging buffer for a hand-crank or small solar light","Memory backup in place of a coin cell","Short bursts of high current alongside a weak battery"],
+  "identify": "Cans or coin shapes marked in farads (F) and about 2.5–2.7V, often several in series on a small balance board. Found in dash cams, some solar garden lights, utility meters, toys, car audio and newer crank torches.",
+  "test": "Charge through a resistor to below its rated voltage and see if it holds: a good one keeps most of its charge for hours. Never go over the rated voltage, and never short a charged bank: it throws sparks and can burn you.",
+  "decay": {"halfLifeMonths":120,"note":"Like electrolytic capacitors they slowly dry out, faster when hot."},
+  "hazards": ["burn"]
+}

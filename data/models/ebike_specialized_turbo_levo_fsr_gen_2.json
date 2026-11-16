@@ -1,0 +1,25 @@
+{
+  "id": "ebike_specialized_turbo_levo_fsr_gen_2",
+  "device": "ebike",
+  "brand": "Specialized",
+  "model": "Turbo Levo FSR (2nd generation)",
+  "years": "2019",
+  "notes": "The parts are coded MY19, for the 2019 Turbo Levo FSR. The parts cover the FSR only, not the Levo hardtail.",
+  "research": {"checked":"2026-11-11","gaps":["The manual does not say whether the motor is brushless.","It names no controller board or lights, so those template slots are left empty.","It does not say which battery goes with which trim."],"method":["The Specialized 2nd-generation Levo FSR user manual (rev R1, 06/18) gives the Li-ion pack (36 V; 500 Wh or 700 Wh), two chargers, a battery BMS, the Turbo 2.1 motor name, the TCU display and the handlebar remote.","An MBR review names the 2019 Turbo Levo FSR."]},
+  "comps": [
+    {"key":"battery_li","conf":"documented","spec":"Li-ion (Lithium-Ion) battery pack, 36 V operating voltage. Models SBC-B12 (13.4 Ah, 500 Wh) and SBC-B13 (19 Ah, 700 Wh). Weight 2.8 kg (6.2 lb) without rockguard. Operating -20 to +70 C; charging 0 to +50 C; storage below +35 C.","v":36,"source":"https://www.emtbforums.com/Levo/2019%20Specialized%20Turbo%20Levo%20Manual.pdf"},
+    {"key":"b:battery_bms:bms","conf":"documented","spec":"Battery Management System (BMS). The manual says it is designed to protect a fully discharged battery from damage for a period of time.","source":"https://www.emtbforums.com/Levo/2019%20Specialized%20Turbo%20Levo%20Manual.pdf"},
+    {"key":"charger","conf":"documented","spec":"Chargers SBC-C04 (max 4 A) and SBC-C05 (max 2 A), both 42 V operating voltage, 100-240 V AC input at 50/60 Hz. Charge times: SBC-C04 3 h 50 min (B12) or 5 h 20 min (B13); SBC-C05 7 h 40 min (B12) or 10 h 40 min (B13). Charger LED is red while charging and green when fully charged.","source":"https://www.emtbforums.com/Levo/2019%20Specialized%20Turbo%20Levo%20Manual.pdf"},
+    {"key":"motor_bldc","conf":"documented","spec":"Turbo 2.1 motor (spare part S196800005, 'Turbo 2.1, Custom Rx Trail Tuned Motor'). Sealed, maintenance-free assembly; the manual says not to open it. Support switches off at 25 km/h (15.5 mph), or 20 mph in the US/Canada. Motor type (brushless or not) is not stated.","source":"https://www.emtbforums.com/Levo/2019%20Specialized%20Turbo%20Levo%20Manual.pdf"},
+    {"key":"display_tcu","fn":"display","spec":"TCU display unit, model SBC-D03, FCC ID O4GTTHMI (per the manual's FCC notice). Top-tube LED display: blue LEDs show battery charge; red and blue LEDs show error codes. MODE button cycles the support modes.","qty":1,"ext":2,"obs":3,"loc":"top tube","conf":"documented","source":"https://www.emtbforums.com/Levo/2019%20Specialized%20Turbo%20Levo%20Manual.pdf"},
+    {"key":"battery_coin_tcu","fn":"battery_coin","spec":"1620 coin cell in the TCU display. The manual says to pull it out with tweezers to replace it.","qty":1,"ext":2,"obs":2,"loc":"inside TCU display unit","conf":"documented","source":"https://www.emtbforums.com/Levo/2019%20Specialized%20Turbo%20Levo%20Manual.pdf"},
+    {"key":"switch_remote","fn":"switch","spec":"Handlebar remote with TURBO BOOST, + and - buttons (support level) and a WALK-ASSIST button; pressing and holding WALK-ASSIST gives walk assist at 6 km/h. Included on all LEVO models.","qty":1,"ext":1,"obs":4,"loc":"handlebar","conf":"documented","source":"https://www.emtbforums.com/Levo/2019%20Specialized%20Turbo%20Levo%20Manual.pdf"},
+    {"key":"sensor_misc_speed","fn":"sensor_misc","spec":"Speed sensor, with a Speed Sensor Magnet bolted to the rear brake rotor using two M5 x 0.8, 15 mm countersunk bolts. Speed sensor cable is part S196800004 in the spare parts list.","qty":1,"ext":2,"obs":3,"loc":"rear wheel: magnet on rear brake rotor","conf":"documented","source":"https://www.emtbforums.com/Levo/2019%20Specialized%20Turbo%20Levo%20Manual.pdf"},
+    {"key":"wire_heavy_battery_motor","fn":"wire_heavy","spec":"Battery-to-motor cable, 220 mm (spare parts list part S196800003).","qty":1,"ext":2,"obs":2,"loc":"frame, from battery to motor","conf":"documented","source":"https://www.emtbforums.com/Levo/2019%20Specialized%20Turbo%20Levo%20Manual.pdf"},
+    {"key":"connector_charge_socket","fn":"connector","spec":"Charging socket on the battery. The manual warns against damage to the battery's charging socket or port, and says to turn the battery off before connecting or disconnecting the charger.","qty":1,"ext":1,"obs":3,"loc":"battery","conf":"documented","source":"https://www.emtbforums.com/Levo/2019%20Specialized%20Turbo%20Levo%20Manual.pdf"}
+  ],
+  "sources": [
+    {"title":"Specialized Turbo LEVO FSR (2nd generation) user manual, 0000108690_UM_EN_R1 06/18 (PDF)","url":"https://www.emtbforums.com/Levo/2019%20Specialized%20Turbo%20Levo%20Manual.pdf"},
+    {"title":"MBR review of the 2019 Specialized Turbo Levo (names the 2019 Turbo Levo FSR)","url":"https://www.mbr.co.uk/reviews/electric-bikes/2019-specialized-turbo-levo"}
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "id": "phone_board",
+  "name": "Phone and tablet logic board",
+  "notes": "Dense surface-mount board under metal shields. Almost nothing on it can be reused by hand; the value is the working phone or tablet as a whole. The battery sits separately.",
+  "comps": [
+    {"key":"ic_mcu","fn":"ic_mcu","spec":"Application processor (system-on-chip) under a metal shield","qty":1,"ext":5,"obs":5,"loc":"Centre of the board"},
+    {"key":"ic_memory","fn":"ic_memory","spec":"Flash storage and RAM chips (data may still be readable)","qty":2,"ext":5,"obs":5,"loc":"Beside or stacked on the processor"},
+    {"key":"radio_rf","fn":"radio_rf","spec":"Wi-Fi, Bluetooth and (phones) cellular radio chips","qty":2,"ext":5,"obs":5,"loc":"Under shields near the board ends"},
+    {"key":"dcdc_buck","fn":"dcdc_buck","spec":"Power-management chip and tiny buck converters","v":[0.8,3.3],"a":[0.5,4],"qty":1,"ext":5,"obs":5,"loc":"Near the battery connector"},
+    {"key":"charger","fn":"charger","spec":"Single-cell lithium charge circuit, 5V USB input","v":5,"qty":1,"ext":5,"obs":5,"loc":"Near the USB port"},
+    {"key":"crystal","fn":"crystal","spec":"Tiny crystals (32.768 kHz clock and radio reference)","qty":2,"ext":4,"obs":5,"loc":"Scattered"},
+    {"key":"sensor_misc","fn":"sensor_misc","spec":"Accelerometer, gyro, compass and pressure sensor chips","qty":3,"ext":5,"obs":5,"loc":"Board"},
+    {"key":"microphone","fn":"microphone","spec":"MEMS microphones, about 3 mm","qty":2,"ext":4,"obs":5,"loc":"Board ends, behind small holes"},
+    {"key":"connector","fn":"connector","spec":"USB port, SIM and card tray, flex-cable connectors","qty":4,"ext":3,"obs":5,"loc":"Board edges"}
+  ]
+}

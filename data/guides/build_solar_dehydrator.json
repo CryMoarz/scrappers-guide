@@ -1,0 +1,48 @@
+{
+  "id": "build_solar_dehydrator",
+  "kind": "build",
+  "title": "Solar food dryer",
+  "keywords": ["solar dehydrator","food dryer","dry food","dehydrate","preserve food","solar dryer","jerky","dried fruit","drying rack"],
+  "summary": "A black, glazed collector heats air that rises through a shaded cabinet of mesh trays, drying fruit, vegetables, herbs and meat in 1–3 days at 45–60 °C. Built from plywood, a glass or plastic pane, black sheet metal and food-safe mesh. Keeping insects and moisture out matters as much as heat.",
+  "difficulty": 2,
+  "mins": 300,
+  "tools": ["saw","drill","screwdriver","knife","hammer","tape","clamps"],
+  "hazards": ["burn","glass","mold"],
+  "materials": [
+    {"item":"Glazing: glass pane (fridge shelf, window) or clear plastic sheet, about 0.5–1 m²","qty":"1–2","fn":"glass_pane","only":["panel","panes"]},
+    {"item":"Absorber: sheet metal painted matt black","qty":"same size as glazing","fn":"sheet_metal","only":["shell","housing","cabinet panels","enclosure"]},
+    {"item":"Plywood or boards for the collector box and cabinet","qty":"about 3 sheets","fn":"lumber"},
+    {"item":"Food-safe mesh for trays: nylon or fibreglass fly screen, or stainless racks","qty":"3–6 trays"},
+    {"item":"Fine fly screen for every vent","qty":"0.5 m²","fn":"fabric_tarp","only":["tents"]},
+    {"item":"Insulation behind the absorber","qty":"some","fn":"insulation","optional":true},
+    {"item":"12V fan with a small solar panel, to speed drying","qty":"1 each","fn":"fan","optional":true},
+    {"item":"Small solar panel (5–10W) for the fan","qty":"1","fn":"solar_panel","optional":true},
+    {"item":"Thermometer","qty":"1","optional":true},
+    {"item":"Hinges, screws, weather-strip","qty":"some","fn":"fasteners","optional":true}
+  ],
+  "steps": [
+    {"text":"Choose a site in full sun from mid-morning to late afternoon, with some breeze, off the ground and away from animals."},
+    {"text":"Build the collector: a shallow box (about 0.6–1 m wide, 1.5–2 m long, 10 cm deep) with black-painted metal on the bottom, insulation under it, and glazing on top. Leave the low end open behind fly screen as the air inlet.","warn":"Glass edges cut. Handle panes with gloves and set them in a frame, not loose."},
+    {"text":"Build the cabinet: an upright box with runners for 3–6 trays spaced 8–10 cm apart, a door at the back, and screened vents at the top. Make the cabinet walls solid so sun doesn't hit the food."},
+    {"text":"Join the collector's top end to the bottom of the cabinet, sloping the collector up towards it at 30–45° and facing the equator. Seal the joint so air can only enter through the inlet."},
+    {"text":"Make trays: timber frames with food-safe mesh. Don't use galvanised, copper or painted mesh; zinc, copper and old paint leach into acidic food."},
+    {"text":"Screen every opening with fine fly screen. Insects ruin dried food."},
+    {"text":"Test empty on a sunny day: tray temperature should reach 45–60 °C around midday. Too hot: open the top vents more. Too cool: close them a little, or improve sealing and glazing.","warn":"The absorber and glazing get hot enough to burn. Touch with care."},
+    {"text":"Optional: fit a 12V fan in the top vent, powered straight from a small solar panel. It speeds up when the sun is strong, just when you need more airflow. Red fan wire to the panel's +. A 5–10W panel needs no fuse for a single small fan; add one (1A) if you run it from a battery instead."},
+    {"text":"Prepare food: slice 3–6 mm thick, evenly. Dip fruit in lemon juice or diluted vinegar to slow browning; blanch most vegetables for 2–4 minutes. Heat meat strips to 71 °C before drying (notes)."},
+    {"text":"Load one layer per tray, not touching. Dry for 1–3 days. Close the vents or bring trays in at night so dew doesn't re-wet the food.","warn":"Discard any batch that grows mould, smells off or stays sticky. Mouldy dried food can make you seriously ill."},
+    {"text":"Test dryness: fruit leathery with no moisture when squeezed, vegetables brittle, jerky bends and cracks without snapping. Cool, pack in sealed jars or bags, and store dark and dry. Check jars after a week for condensation."}
+  ],
+  "notes": "## How it works\nThe collector turns sunlight into warm air, which rises (or is pushed by a fan) up through the trays and out of the top. Warm air holds more water, so it pulls moisture out of the food and carries it away. Shading the food in a cabinet keeps colour and vitamins better than drying in direct sun.\n\n## Sizing\nRough rule: 1 m² of collector for every 1 m² of tray area. Each square metre of collector in good sun puts about 300–500W into the air. Removing 1 kg of water takes roughly 0.7kWh, so 1 m² of collector dries 2–5 kg of fresh fruit (which is 75–90% water) in a sunny day or two.\n\n## Temperatures\n| Food | Target |\n|---|---|\n| Herbs | 35–45 °C |\n| Fruit | 50–60 °C |\n| Vegetables | 50–60 °C |\n| Meat (after pre-heating) | 60–70 °C |\n\nBelow about 40 °C food dries slowly and can spoil. Above about 70 °C the outside hardens and traps moisture inside.\n\n## Meat safety\nDrying alone may not kill germs in meat. Heat strips to 71 °C (steam or simmer briefly, or bake) before drying. Use lean meat, trim fat (fat goes rancid), and dry until it cracks when bent. This follows widely published food-safety guidance on home jerky.\n\n## Moisture is the enemy\n- Bring trays in or close the vents at night.\n- Store in airtight containers, in the dark, cool and dry. Add a packet of dry rice or silica gel.\n- If condensation appears in a jar within a week, the food isn't dry enough; dry it more.\n\n## If you lack a part\n- No glazing: a black-painted collector without glass still warms air by 5–15 °C; drying is slower.\n- No mesh: thin sticks or bamboo slats spaced a few millimetres apart, or clean cotton cloth stretched on a frame.\n- No collector at all: hang thin strips in a shaded, airy, insect-screened space in hot dry weather.\n",
+  "tree": {"era":2,"branch":"fire","requires":["build_solar_oven"]},
+  "devices": ["fridge","commercial_fridge","toaster_oven","desktop_pc","garden_solar","solar_sign","range_hood"],
+  "parts": ["glass_pane","sheet_metal","lumber","fan","solar_panel"],
+  "license": "CC-BY-SA-4.0",
+  "refs": [
+    {"lib":"appropedia","q":"solar dryer"},
+    {"lib":"food_lib","q":"drying"}
+  ],
+  "sources": [
+    {"title":"Published home food-safety guidance on drying fruit, vegetables and jerky","note":"Pre-heating meat to 71 °C (160 °F) before drying."}
+  ]
+}

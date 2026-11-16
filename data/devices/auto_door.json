@@ -1,0 +1,34 @@
+{
+  "id": "auto_door",
+  "name": "Automatic sliding door operator",
+  "group": "Building systems",
+  "aliases": ["automatic door","sliding door motor"],
+  "brands": ["Horton","Stanley Access","Dorma","Assa Abloy","Besam","Boon Edam","Tormax"],
+  "prev": 4,
+  "tools": ["screwdriver"],
+  "mins": 30,
+  "hazards": [],
+  "comps": [
+    {"key":"motor_dc_small","fn":"motor_dc_small","spec":"24V DC gear motor","v":24,"qty":1,"ext":3,"obs":5,"loc":"Header above the doors"},
+    {"key":"belt_pulley","fn":"belt_pulley","spec":"Toothed drive belt and pulleys","qty":1,"ext":2,"obs":5,"loc":"Header"},
+    {"key":"sensor_motion","fn":"sensor_motion","spec":"Microwave or infrared motion sensors","qty":2,"ext":2,"obs":4,"loc":"Above the door, both sides"},
+    {"key":"psu","fn":"psu","spec":"24V power supply","v":24,"qty":1,"ext":2,"obs":5,"loc":"Header"},
+    {"key":"battery_nimh","fn":"battery_nimh","spec":"Backup battery (some models)","v":24,"ah":[1.2,3],"qty":1,"ext":2,"obs":5,"loc":"Header","p":0.5}
+  ],
+  "boards": [
+    {"id":"motor_driver_board","qty":1,"loc":"Header","p":1},
+    {"id":"mcu_board","qty":1,"loc":"Header","p":1},
+    {"id":"smps_board","qty":1,"loc":"Header power supply","p":1}
+  ],
+  "buildings": [
+    {"b":"supermarket","l":5},
+    {"b":"hospital","l":5},
+    {"b":"hotel","l":4},
+    {"b":"office","l":3},
+    {"b":"department","l":5},
+    {"b":"pharmacy","l":4},
+    {"b":"hardware","l":4},
+    {"b":"bank","l":3},
+    {"b":"shop_small","l":2}
+  ]
+}

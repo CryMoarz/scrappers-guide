@@ -1,0 +1,14 @@
+{
+  "id": "chlorine",
+  "name": "Chlorine and pool chemicals",
+  "group": "Stored supplies",
+  "demand": 4,
+  "keywords": ["chlorine","bleach","household bleach","pool chlorine","pool shock","calcium hypochlorite","sodium hypochlorite","hypochlorite","cal hypo","chlorine tablets","chlorine granules","liquid chlorine","pool chemicals","trichlor","dichlor"],
+  "substitutes": ["uv_lamp","filter_water"],
+  "summary": "Bleach and pool chlorine: liquid sodium hypochlorite, calcium hypochlorite granules and chlorine tablets.",
+  "uses": ["Disinfecting clear drinking water (about 2 drops of 5–6% plain bleach per litre, wait 30 minutes)","Sanitising surfaces, containers and latrines","Treating stored water and pools"],
+  "identify": "Bleach in homes, shops and laundries; buckets of granules (calcium hypochlorite) and tablets (often trichlor) at pool shops, pool plant rooms, hotels and farm stores. For drinking water use only plain bleach or calcium hypochlorite, with no scent, algaecide or stabiliser.",
+  "test": "Read the label for strength: bleach is about 3–8%, granules about 65–70%. Never mix with acids, ammonia or other chemicals, which gives off toxic gas, and keep granules away from oil and fuel: together they can catch fire.",
+  "decay": {"halfLifeMonths":24,"note":"Liquid bleach loses strength within months, faster when warm; dry granules and tablets keep for years sealed."},
+  "hazards": ["chemical"]
+}

@@ -1,0 +1,29 @@
+{
+  "id": "skill_identify_motors",
+  "kind": "skill",
+  "title": "Identify motor types",
+  "keywords": ["motor types","identify motor","what motor","which motor","dc motor","ac motor","brushless","bldc","stepper","universal motor","induction motor","shaded pole","synchronous motor","generator motor","wind generator motor","pmdc"],
+  "summary": "Tell brushed DC, universal, brushless, stepper, induction and synchronous motors apart by their wires, labels, shape and feel, and know which ones make good generators, pumps and drives.",
+  "difficulty": 2,
+  "mins": 20,
+  "tools": ["hands","screwdriver","multimeter"],
+  "hazards": ["magnet_pinch","hv_cap","sharp"],
+  "steps": [
+    {"text":"Start with the label: AC or DC, voltage, speed in rpm, and words like brushless, stepper, PMDC or capacitor run. A frequency in Hz means it runs on AC."},
+    {"text":"Count the wires. Two: brushed DC, universal, or a small AC or synchronous motor. Three thick wires: brushless (BLDC) or three-phase AC. Three thick wires plus five thin ones: brushless with Hall sensors. Four, five, six or eight similar thin wires: a stepper. Three wires and a capacitor nearby: single-phase AC."},
+    {"text":"Turn the shaft by hand with the leads apart. An even, regular notchy feel (cogging) means permanent magnets: brushed DC, brushless, stepper or synchronous. A smooth feel means an induction or universal motor."},
+    {"text":"Look for brushes: small square or round caps on the end of the motor, carbon dust inside, or a copper commutator with many segments. Brushes mean brushed DC or universal."},
+    {"text":"Brushed DC or universal? Spin it with the meter on DC volts. A magnet DC motor makes a clear voltage; a universal motor makes almost none. Universal motors have wound coils instead of magnets, run on mains, and scream at high speed in vacuums, blenders and power tools."},
+    {"text":"Brushless motors have three equal windings, magnets on the rotor and no brushes. They are in e-bike and scooter hub motors, hoverboards, drones, computer fans, direct-drive washers and newer cordless tools. They need a controller to run."},
+    {"text":"Steppers have square flanged bodies (often about 42 mm square in printers), four to eight wires, and a strong, crisp notchy feel. They need a driver board."},
+    {"text":"Induction motors are heavy and spin smoothly, often with a capacitor or a centrifugal switch inside. They are in washers, pumps, fans, compressors and workshop machines, and need AC at the right voltage and frequency."},
+    {"text":"Shaded-pole motors are small, cheap AC motors with a thick copper ring around part of the iron core. They run fans in microwaves, fridges and bathrooms. They are weak and can't be used as generators."},
+    {"text":"Synchronous motors are small sealed motors with a gearbox and a fixed slow speed, such as microwave turntable and timer motors. They have magnets and make a small AC voltage when you spin them.","warn":"When you open magnet motors, the rotor can snap back into the case. Keep fingers clear of the gap."},
+    {"text":"Pick by job. Generators need permanent magnets: brushed DC, brushless or stepper. Pumps and fans run well on induction motors from AC. Carts, winches and drives want big magnet DC motors, or brushless motors with their controller."}
+  ],
+  "notes": "## Quick reference\n\n| Type | Wires | Brushes | Magnets | Runs on | Common sources | Best uses |\n|---|---|---|---|---|---|---|\n| Brushed magnet DC | 2 | Yes | Yes | DC | Treadmills, wipers, drills, toys, car seats | Generators, DC drives, winches |\n| Universal | 2 | Yes | No | AC or DC mains | Vacuums, blenders, corded tools | Fast mains tools and fans |\n| Brushless (BLDC) | 3 thick (+5 thin) | No | Yes | DC through a controller | Hub motors, hoverboards, drones, direct-drive washers | Efficient drives, generators |\n| Stepper | 4, 5, 6 or 8 | No | Yes | Pulses from a driver | Printers, 3D printers, scanners, optical drives | Precise positioning, small generators |\n| Induction | 2–4 | No | No | AC | Washers, pumps, fans, compressors, machines | Long-running pumps and fans |\n| Shaded-pole | 2 | No | No | AC | Small fans in microwaves and fridges | Small fans |\n| Synchronous | 2 | No | Yes | AC | Microwave turntables, timers | Slow turntables, tiny generators |\n\n## Generators\n\nA motor with permanent magnets makes electricity when you turn it. The faster you turn it, the higher the voltage.\n\n- Big brushed DC motors from treadmills make good wind and water generators.\n- Brushless motors make three-phase AC; rectify it with diodes to charge batteries.\n- Steppers make useful power at slow speeds for small loads.\n- Induction and universal motors don't make useful power on their own.\n- A car alternator has a wound rotor, not magnets: it needs a little battery current to start making power.\n\n## Hall sensor wires\n\nBrushless motors with sensors usually have five thin wires: a supply (often 5 V), ground, and three signal wires. Don't confuse them with the three thick phase wires, and don't put power on them.\n\n## Common mistakes\n\n- Assuming every three-wire motor is brushless. Single-phase AC motors often have three wires too.\n- Connecting a brushless motor straight to a battery. It needs a controller.\n- Running a 50 Hz motor on 60 Hz or the other way round without checking the label.\n- Opening magnet motors without expecting the rotor to snap back in.",
+  "tree": {"era":2,"branch":"machines","requires":["skill_read_nameplate"]},
+  "devices": ["treadmill","washer_dd","washer_belt","microwave","ebike","hoverboard","cordless_drill","inkjet","printer_3d","optical_drive","vacuum","blender","dryer","window_ac","ceiling_fan","exercise_bike"],
+  "parts": ["motor_dc_small","motor_dc_large","motor_bldc","motor_stepper","motor_ac","motor_universal","motor_sync","alternator","hall_reed"],
+  "license": "CC-BY-SA-4.0"
+}

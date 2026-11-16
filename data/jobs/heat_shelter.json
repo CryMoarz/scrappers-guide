@@ -1,0 +1,16 @@
+{
+  "id": "heat_shelter",
+  "name": "Heat a shelter",
+  "keywords": ["heat a shelter","heat shelter","keep warm","stay warm","heat a room","heat my home","space heating","wood stove","survive the cold","cold at night"],
+  "summary": "Heat people, not air. Shrink the space: one small insulated room, or a tent pitched inside a room, holds heat a whole house can’t. A sheet-metal wood stove with a proper flue heats it safely, and any flame indoors needs a carbon monoxide alarm. Electric heat is too hungry for scavenged power, but a 12V heated blanket warms a bed on about 50W.",
+  "parts": [
+    {"fn":"insulation","why":"Holds heat in the room you live in","core":true},
+    {"fn":"sheet_metal","why":"Stove bodies, flue pipe and heat shields","core":true},
+    {"fn":"fabric_tarp","why":"A tent inside a room, door curtains and draught blocks","core":true},
+    {"fn":"foam_rubber","why":"Sleeping pads and draught seals: cold ground steals heat"},
+    {"fn":"propane","why":"Fuel for indoor-rated heaters, used with ventilation"},
+    {"fn":"heating_element","why":"12V blankets and pads warm a person, not a room"}
+  ],
+  "guides": ["build_rocket_stove","safety_carbon_monoxide","safety_fuel_handling"],
+  "tips": ["Fit a battery CO alarm wherever anything burns indoors. Most homes have one on a wall or ceiling.","Never burn charcoal, or run a generator or BBQ grill, indoors.","Insulate under you first: a good sleeping pad matters as much as the bag.","A metal bottle of hot water in a sleeping bag stays warm for hours.","Leave a small vent open even in the cold: a stove needs air in and fumes out."]
+}

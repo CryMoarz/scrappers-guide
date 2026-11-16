@@ -1,0 +1,20 @@
+{
+  "id": "central_ac_carrier_24acc636",
+  "device": "central_ac",
+  "brand": "Carrier",
+  "model": "24ACC636A0030010",
+  "notes": "Size 36 Performance 16 air conditioner outdoor unit, 208/230 V single phase, R-410A (Puron), from the 24ACC6 product data (catalog 24ACC6-8PD, 03/19), which covers sizes 18 to 60. Electrical and physical figures are the size 36 column; the fan motor, coil and cabinet wording comes from the guide specification for the whole range.",
+  "research": {"checked":"2026-11-12","gaps":["The product data does not name the compressor make or model; only the scroll type, RLA and LRA are claimed.","No capacitor or contactor is claimed: the data lists a hard-start capacitor and relay kit and a PTC start assist only as accessories.","No fan blade diameter is given.","Retail listings for other 24ACC6 sizes were seen in search results and not used: they are not Carrier documents for this model.","Catalog 24ACC6-8PD (03/19) is the only revision read; a later 10PD revision appeared in search results and was not compared."],"method":["Carrier Product Data, 24ACC6 Performance 16 Air Conditioner with Puron refrigerant, catalog 24ACC6-8PD, edition 03/19 (copyright line Carrier Corp.), read from a shareddocs.com copy.","PDF p.1 (features), p.2 (standard features and physical data), p.5 (accessories), p.8 (electrical data), p.9 (dimensions table naming 24ACC636A0030010), p.18 (guide specification), p.20 (copyright and catalog number).","Searches for a Carrier parts list for this model found no readable maker copy."]},
+  "comps": [
+    {"key":"compressor","conf":"documented","spec":"Scroll compressor, size 36, 208/230 V 60 Hz single phase: RLA 14.1 A, LRA 77.0 A. Internal thermal overload and internal pressure relief valve. Unit factory charge 6.75 lb (3.06 kg) of R-410A (Puron).","v":[208,230],"a":14.1,"ac":true,"source":"https://www.shareddocs.com/hvac/docs/1009/Public/0B/24ACC6-8PD.pdf"},
+    {"key":"motor_ac","conf":"documented","spec":"Condenser fan motor, 1/12 hp, 800 rpm, full load amps 0.50 (size 36). Guide specification for the range: totally enclosed, single phase, class B insulation, permanently lubricated bearings.","a":0.5,"ac":true,"source":"https://www.shareddocs.com/hvac/docs/1009/Public/0B/24ACC6-8PD.pdf"},
+    {"key":"fan","conf":"documented","spec":"Direct-drive propeller fan, vertical discharge, 3,223 CFM at size 36. Statically and dynamically balanced.","source":"https://www.shareddocs.com/hvac/docs/1009/Public/0B/24ACC6-8PD.pdf"},
+    {"key":"hose_tubing","conf":"documented","spec":"Condenser coil of aluminum fins mechanically bonded to copper tubes. Size 36: 17.6 sq ft face area, 25 fins per inch, 1 row, 4 circuits. Valve connections 7/8 in vapor and 3/8 in liquid.","source":"https://www.shareddocs.com/hvac/docs/1009/Public/0B/24ACC6-8PD.pdf"},
+    {"key":"breaker","conf":"documented","spec":"Maximum fuse or circuit breaker size 30 A for the size 36 unit (the data marks the fuse as time-delay); minimum circuit amps 18.1 A.","a":30,"source":"https://www.shareddocs.com/hvac/docs/1009/Public/0B/24ACC6-8PD.pdf"},
+    {"key":"sensor_misc","conf":"documented","spec":"High-pressure switch and low-pressure switch, standard on size 36.","source":"https://www.shareddocs.com/hvac/docs/1009/Public/0B/24ACC6-8PD.pdf"},
+    {"key":"sheet_metal","conf":"documented","spec":"Unit cabinet of galvanized steel, louvered coil guard, and coated steel wire guards over the condenser fan openings.","source":"https://www.shareddocs.com/hvac/docs/1009/Public/0B/24ACC6-8PD.pdf"}
+  ],
+  "sources": [
+    {"title":"Carrier 24ACC6 Performance 16 Air Conditioner with Puron Refrigerant, Product Data, catalog 24ACC6-8PD (edition 03/19), shareddocs.com copy","url":"https://www.shareddocs.com/hvac/docs/1009/Public/0B/24ACC6-8PD.pdf"}
+  ]
+}

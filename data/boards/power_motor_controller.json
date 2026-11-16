@@ -1,0 +1,16 @@
+{
+  "id": "power_motor_controller",
+  "name": "High-current DC motor controller",
+  "notes": "From golf carts, floor scrubbers, forklifts and treadmills. Heavy-duty parts throughout.",
+  "comps": [
+    {"key":"mosfet","fn":"mosfet","spec":"Power MOSFETs or IGBTs","qty":8,"ext":3,"obs":5,"loc":"Under the heatsink"},
+    {"key":"relay","fn":"relay","spec":"Main contactor","v":[12,72],"a":[100,400],"qty":1,"ext":2,"obs":5,"loc":"Beside the controller"},
+    {"key":"resistor","fn":"resistor","spec":"Shunt resistor","qty":1,"ext":3,"obs":5,"loc":"Power path"},
+    {"key":"cap_elec","fn":"cap_elec","spec":"Large capacitors","qty":4,"ext":2,"obs":5,"loc":"Power input"},
+    {"key":"heatsink","fn":"heatsink","spec":"Heavy aluminium heatsink","qty":1,"ext":2,"obs":5,"loc":"Base plate"},
+    {"key":"ic_mcu","fn":"ic_mcu","spec":"Microcontroller","qty":1,"ext":4,"obs":5,"loc":"Logic section"},
+    {"key":"dcdc_buck","fn":"dcdc_buck","spec":"Logic supply converter","v":[5,12],"a":[0.1,1],"qty":1,"ext":4,"obs":5,"loc":"Logic section"},
+    {"key":"bridge_rect","fn":"bridge_rect","spec":"Bridge rectifier (mains-powered treadmills)","qty":1,"ext":3,"obs":5,"loc":"Power input"},
+    {"key":"fuse","fn":"fuse","spec":"High-current fuse","a":[100,400],"qty":1,"ext":1,"obs":5,"loc":"Power input"}
+  ]
+}

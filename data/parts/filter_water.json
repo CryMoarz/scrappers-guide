@@ -1,0 +1,14 @@
+{
+  "id": "filter_water",
+  "name": "Water filters and membranes",
+  "group": "Water and air treatment",
+  "demand": 4,
+  "keywords": ["water filter","filter cartridge","reverse osmosis","ro membrane","carbon block","water purifier","sediment filter","ceramic filter","hollow fibre","hollow fiber","gravity filter","fridge water filter","pitcher filter","faucet filter","ultrafiltration"],
+  "substitutes": ["carbon","uv_lamp","chlorine"],
+  "summary": "Cartridges and membranes that strip sediment, chemicals or germs from water.",
+  "uses": ["Drinking water from rain, wells or streams","Pre-filter before boiling, chlorine or UV","Removing bad tastes and smells with carbon"],
+  "identify": "Cylindrical cartridges in housings under sinks, in fridges, reverse osmosis systems, pitchers and whole-house filters; camping and gravity filters with hollow-fibre or ceramic elements are the best find. Labels state a micron rating: 0.1–0.2 micron stops bacteria, 1 micron stops cysts, 5–50 micron only stops dirt.",
+  "test": "Run clean water through: it should flow, not leak around the seals, and not shed black fines after the first flush. Few filters stop viruses, so still boil, chlorinate or use UV when the source is dirty.",
+  "decay": {"halfLifeMonths":null,"note":"Sealed spares last years; used cartridges grow bacteria, and freezing cracks hollow-fibre filters."},
+  "hazards": []
+}

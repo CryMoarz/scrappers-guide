@@ -1,0 +1,14 @@
+{
+  "id": "antenna_coax",
+  "name": "Antennas and coax",
+  "group": "Signal and control",
+  "demand": 2,
+  "keywords": ["antenna","aerial","coax","coaxial","rg58","rg6","rg-6","rg213","lmr400","pl259","so239","bnc","f connector","sma","tv antenna","dipole","whip antenna"],
+  "substitutes": ["radio_rf"],
+  "summary": "Antennas and the shielded coax cable that feeds them: TV, radio, Wi-Fi and cellular.",
+  "uses": ["More range from radios and scanners","TV and FM reception","Long cable runs up a radio mast"],
+  "identify": "Rooftop TV aerials, whips on vehicles, CB and ham antennas on houses and trucks, and panels at cell and Wi-Fi sites. Coax is round cable with a copper core, foam, a braided shield and plugs like F, BNC, SMA or PL-259; RG-6 is 75 Ω TV cable, RG-58 and RG-213 are 50 Ω radio cable.",
+  "test": "Check continuity end to end on the centre and on the shield, and check the two are not shorted together. Reject crushed, kinked or waterlogged cable. Stay well clear of power lines when lowering masts.",
+  "decay": {"halfLifeMonths":null,"note":"Lasts. Water that gets into coax ruins it slowly."},
+  "hazards": ["fall"]
+}

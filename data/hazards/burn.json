@@ -1,0 +1,16 @@
+{
+  "id": "burn",
+  "label": "Hot surfaces",
+  "severity": 3,
+  "summary": "Exhaust pipes, engines, motors that have been running, heating elements, soldering irons, heat sinks, lamps, freshly cut or ground metal and discharge resistors can be hot enough to burn skin in a second. Burns infect easily, and without care large burns kill.",
+  "signs": ["Equipment that was running recently","Shimmering air, discolouration, or a hot smell","Blue or straw-coloured metal after grinding or welding","Glowing elements, or elements that look normal but were just switched off","Steam or bubbling fluid"],
+  "do": ["Let things cool before handling them","Hold the back of your hand near a part, without touching, to feel for heat","Put hot tools on a stand, never on the bench or the ground","Hold small parts with pliers while cutting, grinding or soldering","Keep a container of clean water near hot work"],
+  "dont": ["Don't grab metal you have just cut, ground, drilled or welded","Don't touch elements, bulbs or exhausts to see if they're hot","Don't open radiator or coolant caps on a hot engine","Don't wear synthetic clothes for hot work: they melt onto skin"],
+  "ppe": ["Leather gloves","Cotton or wool long sleeves","Safety glasses"],
+  "firstAid": ["Cool the burn under cool running water for 20 minutes; don't use ice","Take off rings, watches and tight clothing before swelling starts, but leave anything that is stuck to the burn","Cover loosely with clean plastic film or a clean non-fluffy cloth","Don't pop blisters or put butter, oil or toothpaste on a burn","Burns bigger than the person's palm, deep, white or charred burns, and burns to the face, hands, feet, joints or groin need medical care","Keep the rest of the person warm while you cool the burn; large burns and small children chill quickly"],
+  "refs": [
+    {"lib":"nomad_conditions","q":"burns","path":"burns","note":"First aid and over-the-counter treatment on a NOMAD box"},
+    {"lib":"wikimed","q":"Burn"},
+    {"lib":"wikipedia","q":"Burn"}
+  ]
+}

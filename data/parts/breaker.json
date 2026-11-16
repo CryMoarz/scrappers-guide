@@ -1,0 +1,14 @@
+{
+  "id": "breaker",
+  "name": "Circuit breakers and disconnects",
+  "group": "Power conversion",
+  "demand": 2,
+  "keywords": ["circuit breaker","breaker","mcb","dc breaker","disconnect","isolator","isolator switch","rcd","rcbo","gfci","breaker panel","consumer unit"],
+  "substitutes": ["fuse","switch"],
+  "summary": "Resettable switches that cut power on overload or fault: panel breakers, DC breakers and big isolator switches.",
+  "uses": ["Protecting solar and battery wiring","Main isolator between a battery and an inverter","Resettable protection for a workshop circuit"],
+  "identify": "Clip-on modules in house panels marked with amps (10–63A); DC breakers say DC or show + and −. Rotary disconnects sit beside solar arrays, AC units and machines. Only use DC-rated breakers on DC, and test a panel before touching: solar or a generator can keep it live.",
+  "test": "On continuity, a breaker should read near 0 Ω when on and open when off. The handle should snap firmly between positions.",
+  "decay": {"halfLifeMonths":null,"note":"Breakers last decades in a dry panel."},
+  "hazards": ["mains"]
+}

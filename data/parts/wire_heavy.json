@@ -1,0 +1,14 @@
+{
+  "id": "wire_heavy",
+  "name": "Heavy cable and busbar",
+  "group": "Magnets and wire",
+  "demand": 2,
+  "keywords": ["heavy cable","busbar","battery cable","welding cable","thick copper","heavy gauge","jumper cables","booster cables","battery lug","welding lead","inverter cable","copper bar","bus bar","4 awg","2 awg","1/0"],
+  "substitutes": ["wire_copper"],
+  "summary": "Thick copper and aluminium cable and busbar for high current: battery, welding and service cable.",
+  "uses": ["Battery bank, inverter and starter cables","Welding leads","Busbars for battery and solar wiring"],
+  "identify": "Battery cables in every vehicle and forklift, welding leads, jumper cables, UPS and inverter cables, and thick service cable at meters and panels. Busbars are flat copper bars in panels, UPS units and switchgear.",
+  "test": "Check insulation and lugs for corrosion: green or white crust adds resistance and heat. A cable too thin for the current gets hot.",
+  "decay": {"halfLifeMonths":null,"note":"Lasts."},
+  "hazards": []
+}

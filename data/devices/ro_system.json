@@ -1,0 +1,40 @@
+{
+  "id": "ro_system",
+  "name": "Reverse osmosis water filter (under sink)",
+  "group": "Heating, cooling and water",
+  "aliases": ["ro system","reverse osmosis","under sink filter","water purifier","drinking water filter","ro unit","osmosis filter","tankless ro"],
+  "brands": ["APEC Water Systems","iSpring","Waterdrop","Culligan","Aquasana","Express Water"],
+  "prev": 3,
+  "tools": ["hands","wrench","screwdriver"],
+  "mins": 15,
+  "kg": 8,
+  "hazards": ["uv"],
+  "comps": [
+    {"key":"filter_water_membrane","fn":"filter_water","spec":"RO membrane, about 190–380 litres (50–100 gallons) a day — removes dissolved salts and most microbes; needs 3–4 bar feed pressure","qty":1,"ext":1,"obs":5,"loc":"Horizontal housing on top"},
+    {"key":"filter_water","fn":"filter_water","spec":"Sediment and carbon-block pre-filters in standard 10 in (25 cm) housings","qty":3,"ext":1,"obs":4,"loc":"Row of vertical housings"},
+    {"key":"carbon","fn":"carbon","spec":"Granular activated carbon in the inline post-filter","qty":1,"ext":1,"obs":5,"loc":"Small inline cartridge before the faucet"},
+    {"key":"tank","fn":"tank","spec":"Pressurised storage tank with a bladder, 8–15 litres","qty":1,"ext":1,"obs":4,"loc":"Under the sink beside the filters","kg":4},
+    {"key":"pump_water","fn":"pump_water","spec":"24V DC diaphragm booster pump (pumped models) — a handy small pump","v":24,"qty":1,"ext":1,"obs":5,"loc":"Under the filter bracket","p":0.5},
+    {"key":"psu","fn":"psu","spec":"24V power supply for the booster pump","v":24,"qty":1,"ext":1,"obs":5,"loc":"Plugged in under the sink"},
+    {"key":"valve_solenoid","fn":"valve_solenoid","spec":"24V inlet solenoid valve and automatic shut-off valve","v":24,"qty":2,"ext":1,"obs":5,"loc":"Inlet line"},
+    {"key":"switch","fn":"switch","spec":"Tank pressure switch (pumped models)","qty":1,"ext":1,"obs":5,"loc":"Tank line","p":0.5},
+    {"key":"uv_lamp","fn":"uv_lamp","spec":"UV-C sterilising lamp stage (some models) — never look at it lit","qty":1,"ext":1,"obs":5,"loc":"Metal tube on the outlet line","p":0.5},
+    {"key":"hose_tubing","fn":"hose_tubing","spec":"1/4 in food-grade tubing and push-fit fittings","qty":1,"ext":1,"obs":4,"loc":"Throughout"}
+  ],
+  "boards": [
+    {"id":"electronic_ballast","qty":1,"loc":"UV lamp driver (UV models)","p":0.15}
+  ],
+  "buildings": [
+    {"b":"hardware","l":4},
+    {"b":"house","l":3},
+    {"b":"apartment","l":3},
+    {"b":"pet_shop","l":3},
+    {"b":"restaurant","l":3},
+    {"b":"clinic","l":3},
+    {"b":"appliance","l":3},
+    {"b":"office","l":2},
+    {"b":"hospital","l":2},
+    {"b":"supermarket","l":2}
+  ],
+  "notes": "A header tank gives far too little pressure for the membrane; feed it with the 24V booster pump or another pressure pump. Change used pre-filters: old cartridges grow bacteria. A membrane left to dry out after use loses much of its performance."
+}

@@ -1,0 +1,24 @@
+{
+  "id": "ride_on_toy",
+  "name": "Kids’ ride-on car",
+  "group": "Vehicles and mobility",
+  "aliases": ["power wheels","kids electric car"],
+  "brands": ["Fisher-Price","Peg Perego","Step2","Kid Trax","Razor","Hot Wheels","Radio Flyer"],
+  "prev": 3,
+  "tools": ["screwdriver"],
+  "mins": 15,
+  "hazards": [],
+  "comps": [
+    {"key":"battery_pb","fn":"battery_pb","spec":"6V or 12V sealed lead-acid battery","v":[6,12],"ah":[4.5,12],"qty":1,"ext":1,"obs":5,"loc":"Under the seat"},
+    {"key":"motor_dc_small","fn":"motor_dc_small","spec":"12V gear motors with gearboxes (1–2)","v":12,"qty":2,"ext":2,"obs":5,"loc":"Rear wheels"},
+    {"key":"switch","fn":"switch","spec":"Foot pedal and gear switches","qty":3,"ext":1,"obs":5,"loc":"Floor and dash"},
+    {"key":"charger","fn":"charger","spec":"Wall charger","v":[6,12],"a":[0.5,1],"qty":1,"ext":1,"obs":5,"loc":"With the toy"},
+    {"key":"fuse","fn":"fuse","spec":"Inline thermal fuse or resettable PTC","a":[20,30],"qty":1,"ext":1,"obs":5,"loc":"Battery lead"}
+  ],
+  "buildings": [
+    {"b":"house","l":4},
+    {"b":"garage_res","l":4},
+    {"b":"toy_store","l":5},
+    {"b":"department","l":5}
+  ]
+}

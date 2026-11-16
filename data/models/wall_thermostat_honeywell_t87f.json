@@ -1,0 +1,18 @@
+{
+  "id": "wall_thermostat_honeywell_t87f",
+  "device": "wall_thermostat",
+  "brand": "Honeywell",
+  "model": "T87F round mercury-switch thermostat (Standard, Tradeline and Designer models)",
+  "notes": "Round 24 to 30 V AC heating or cooling thermostat with an SPDT mercury switch. Keep the switch intact and keep the thermostat out of the trash, as EPA and the notice in Honeywell's product data advise; industry figures for mercury thermostats in general (not T87F measurements) are at least 2.8 g of mercury per switch and 1.4 switches per thermostat on average (IMERC, citing the Thermostat Recycling Corporation).",
+  "research": {"checked":"2026-11-12","gaps":["The product data covers Standard, Tradeline, Designer and Easy-to-See models in one document; the electrical ratings are listed under the Standard models.","1.5 A at 30 Vac is listed for the thermostat without naming a contact, so it sits on the thermostat part, not the mercury switch.","The mercury amounts are IMERC industry figures for mercury thermostats in general, not T87F values, so they are in the notes only.","No production years are given; the copyright line says 2002.","The anticipator ranges are settings, not named parts, so no part is claimed for them.","The EPA sheet says mercury thermostats hold the mercury in glass bulbs; Honeywell's own text says only 'dustproof' and 'sealed tube' (for old controls), so no glass is claimed for the T87F."],"method":["Honeywell T87F Thermostats product data 60-2222-3 (copyright 2002 Honeywell), read from Resideo's own site; the neilrieck.net mirror the researcher used has identical text, and pages 1 to 3 and 8 were read.","EPA fact sheet 'Before You Tear it Down, Get the Mercury Out' (EPA 905-F-11-008, May 2011), for the recycling advice.","IMERC (NEWMOA) fact sheet 'Mercury Use in Thermostats' (December 2018), for the mercury switch count and gram figure."]},
+  "comps": [
+    {"key":"thermostat","conf":"documented","spec":"Round T87F thermostat for 24 to 30 Vac control of heating or cooling; electrical rating 1.5 A at 30 Vac (standard models); heat anticipator adjustable 0.1 to 1.2 A; cooling anticipator 0 to 1.5 A at 24 to 30 Vac; dust-free SPDT mercury switch","v":[24,30],"a":1.5,"ac":true,"source":"https://customer.resideo.com/resources/Techlit/TechLitDocuments/60-0000s/60-2222.pdf"},
+    {"key":"switch","conf":"documented","spec":"Dust-free SPDT mercury switch (the switching action in the product data)","source":"https://customer.resideo.com/resources/Techlit/TechLitDocuments/60-0000s/60-2222.pdf"},
+    {"key":"spring_bimetal","fn":"spring","spec":"Coiled bimetal temperature-sensing element","qty":1,"ext":2,"obs":4,"conf":"documented","source":"https://customer.resideo.com/resources/Techlit/TechLitDocuments/60-0000s/60-2222.pdf"}
+  ],
+  "sources": [
+    {"title":"Honeywell T87F Thermostats product data, document 60-2222-3 (copyright 2002), on Resideo's site","url":"https://customer.resideo.com/resources/Techlit/TechLitDocuments/60-0000s/60-2222.pdf"},
+    {"title":"IMERC Fact Sheet: Mercury Use in Thermostats (NEWMOA, last updated December 2018)","url":"https://www.newmoa.org/wp-content/uploads/2023/01/thermostats_2018.pdf"},
+    {"title":"Before You Tear it Down, Get the Mercury Out (US EPA, EPA 905-F-11-008, May 2011)","url":"https://www.epa.gov/sites/default/files/2015-10/documents/before_you_tear_it_down.pdf"}
+  ]
+}

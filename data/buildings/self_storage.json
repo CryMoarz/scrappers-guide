@@ -1,0 +1,9 @@
+{
+  "id": "self_storage",
+  "name": "Self-storage units",
+  "osm": ["shop=storage_rental","building=storage"],
+  "exposure": 1,
+  "notes": "Rows of locked units full of things people meant to keep: tools, furniture, appliances, camping and hobby gear. Almost nobody thinks to search them.",
+  "access": "Cheap disc and padlocks; bolt cutters or a grinder",
+  "hazards": ["heavy"]
+}

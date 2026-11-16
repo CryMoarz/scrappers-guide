@@ -1,0 +1,27 @@
+{
+  "id": "solar_sign",
+  "name": "Solar road signs and message boards",
+  "group": "Power and solar",
+  "aliases": ["portable message board","solar message board"],
+  "brands": ["Daktronics","Trans-Lux","Watchfire","Vevor"],
+  "prev": 3,
+  "tools": ["socket","cutters","heavy"],
+  "mins": 30,
+  "hazards": ["heavy"],
+  "comps": [
+    {"key":"solar_panel","fn":"solar_panel","spec":"50–300W panels","w":[50,300],"qty":2,"ext":2,"obs":5,"loc":"Top of the trailer or pole"},
+    {"key":"battery_pb","fn":"battery_pb","spec":"12V deep-cycle batteries","v":12,"qty":4,"ext":2,"obs":5,"loc":"Locked box on the trailer"},
+    {"key":"charge_controller","fn":"charge_controller","spec":"Solar charge controller","qty":1,"ext":2,"obs":5,"loc":"Battery box"},
+    {"key":"led_light","fn":"led_light","spec":"Large LED arrays","v":[12,24],"w":[10,100],"qty":1,"ext":3,"obs":5,"loc":"Sign face"}
+  ],
+  "boards": [
+    {"id":"led_driver_dc","qty":1,"loc":"Sign controller","p":1},
+    {"id":"mcu_board","qty":1,"loc":"Sign controller","p":1}
+  ],
+  "buildings": [
+    {"b":"construction","l":5},
+    {"b":"parking","l":2},
+    {"b":"school","l":3}
+  ],
+  "notes": "Also along highways and work zones; the map layer should check roads, not just buildings."
+}

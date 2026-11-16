@@ -1,0 +1,7 @@
+{
+  "id": "fire_station",
+  "name": "Fire stations",
+  "osm": ["amenity=fire_station"],
+  "exposure": 2,
+  "notes": "Generators, rescue tools, radios, breathing air cylinders, first aid kits and scene lighting."
+}

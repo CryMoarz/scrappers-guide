@@ -1,0 +1,18 @@
+{
+  "id": "ups_cyberpower_cp850pfclcd",
+  "device": "ups",
+  "brand": "CyberPower",
+  "model": "CP850PFCLCD",
+  "notes": "Replacement batteries differ by serial: RB1280A for serial numbers beginning CQD, and RB1290 for serial numbers beginning CX2.",
+  "research": {"gaps":["A generic caution says 24 V, maximum 9 Ampere-hour, which conflicts with the model-specific datasheet.","The datasheet states Sine Wave output in its printed text (the manual's spec table says Sinewave), but the PDF's hidden metadata carries a 'Simulated Sine Wave' tag.","No board-level parts documented."],"method":["Manufacturer datasheet and user manual (both read as text from the PDFs, checked 2026-11-11) give the battery, charge and output figures and describe the transformer path.","The manual is shared with CP1000PFCLCD: it names RB1290 as the replacement battery.","The model-specific datasheet gives one 12 V / 9 Ah battery, so its figures are used."]},
+  "comps": [
+    {"key":"battery_pb","conf":"documented","spec":"Battery quantity 1, 12 V / 9 Ah sealed lead-acid, not hot-swappable, user-replaceable battery; replacement cartridge RB1280A (for serial numbers beginning with CQD) or RB1290 (for serial numbers beginning with CX2), replacement cartridge quantity 1","v":12,"ah":9,"source":"https://images.salsify.com/image/upload/s--3ow9Xr9U--/1b5e06546d23953636323ff3364163251d9a3091.pdf"},
+    {"key":"inverter","conf":"documented","spec":"Line interactive; on battery: 60 Hz +/- 1%, 120 VAC +/- 5%, waveform Sine Wave; 850 VA / 510 W","v":120,"ac":true,"w":510,"source":"https://images.salsify.com/image/upload/s--3ow9Xr9U--/1b5e06546d23953636323ff3364163251d9a3091.pdf"},
+    {"key":"charger","conf":"documented","spec":"Typical battery recharge time 8 hours from total discharge under 100% load; the battery charges automatically whenever the UPS is plugged into AC power, on or off; after a battery replacement the manual says to recharge for 8-16 hours","source":"https://images.salsify.com/image/upload/s--F045jzYE--/364392f67932a1d94b0f830be5601f4ab60ab749.pdf"},
+    {"key":"transformer_lv","conf":"documented","spec":"Transformer in the GreenPower bypass design: normally bypassed, and when utility power is abnormal the UPS runs power through its transformer to regulate voltage","source":"https://images.salsify.com/image/upload/s--F045jzYE--/364392f67932a1d94b0f830be5601f4ab60ab749.pdf"}
+  ],
+  "sources": [
+    {"title":"CP850PFCLCD datasheet (manufacturer PDF)","url":"https://images.salsify.com/image/upload/s--3ow9Xr9U--/1b5e06546d23953636323ff3364163251d9a3091.pdf"},
+    {"title":"CP850PFCLCD user manual (manufacturer PDF)","url":"https://images.salsify.com/image/upload/s--F045jzYE--/364392f67932a1d94b0f830be5601f4ab60ab749.pdf"}
+  ]
+}

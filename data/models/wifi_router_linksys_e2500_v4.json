@@ -1,0 +1,20 @@
+{
+  "id": "wifi_router_linksys_e2500_v4",
+  "device": "wifi_router",
+  "brand": "Linksys",
+  "model": "E2500 v4",
+  "fcc": "Q87-03418",
+  "notes": "Chips for hardware version v4; other versions of the E2500 can differ.",
+  "research": {"gaps":[],"method":["Not yet fact-checked: its parts show as likely until a fact-check confirms them against their sources.","Imported from the OpenWrt Table of Hardware (toh.json, 2026-11-13): the hardware data page for this version, by OpenWrt wiki contributors under CC BY-SA 4.0."]},
+  "comps": [
+    {"key":"ic_mcu_soc","fn":"ic_mcu","spec":"SoC MediaTek MT7628DAN, 1 core at 580 MHz","qty":1,"ext":4,"obs":3,"source":"https://openwrt.org/toh/hwdata/linksys/linksys_e2500_v4","conf":"likely"},
+    {"key":"ic_memory_flash","fn":"ic_memory","spec":"Flash, 16 MB","qty":1,"ext":2,"obs":4,"source":"https://openwrt.org/toh/hwdata/linksys/linksys_e2500_v4","conf":"likely"},
+    {"key":"ic_memory_ram","fn":"ic_memory","spec":"RAM, 64 MB","qty":1,"ext":3,"obs":3,"source":"https://openwrt.org/toh/hwdata/linksys/linksys_e2500_v4","conf":"likely"},
+    {"key":"radio_rf","spec":"Wi-Fi: MediaTek MT7628DAN, MediaTek MT7612E (2.4 GHz b/g/n, 5 GHz a/n/ac)","qty":2,"source":"https://openwrt.org/toh/hwdata/linksys/linksys_e2500_v4","conf":"likely"},
+    {"key":"psu","spec":"Power supply: 12 VDC, 0.5A","v":12,"a":0.5,"source":"https://openwrt.org/toh/hwdata/linksys/linksys_e2500_v4","conf":"likely"},
+    {"key":"connector","spec":"Ethernet ports: 5× 100M","qty":5,"source":"https://openwrt.org/toh/hwdata/linksys/linksys_e2500_v4","conf":"likely"}
+  ],
+  "sources": [
+    {"title":"OpenWrt Table of Hardware: Linksys E2500 v4 (OpenWrt wiki contributors, CC BY-SA 4.0)","url":"https://openwrt.org/toh/hwdata/linksys/linksys_e2500_v4"}
+  ]
+}

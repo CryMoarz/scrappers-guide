@@ -1,0 +1,16 @@
+{
+  "id": "mold",
+  "label": "Mould and damp",
+  "severity": 2,
+  "summary": "Mould grows in any building that has been wet for a few days. Its spores irritate the nose, eyes and lungs, set off asthma, and can cause serious lung infections in people who are already ill, very old, or have weak immune systems. Wet buildings also hide rotten floors.",
+  "signs": ["Musty, earthy smell","Black, green, grey or white fuzzy or slimy patches","Water stains, peeling paint, and swollen wood or plasterboard","Soggy carpets, cardboard, ceiling tiles and insulation","Condensation on windows and walls"],
+  "do": ["Open up and air out a damp space before working in it","Wear a mask and goggles in mouldy rooms","Dampen mouldy material lightly before moving it, to keep spores down","Bag mouldy items and take them outside","Keep shelter spaces dry and fix leaks quickly"],
+  "dont": ["Don't bring mouldy bedding, clothes or cardboard into your shelter","Don't sleep in mouldy rooms","Don't dry-brush or scrape mould","Don't mix bleach with ammonia or acid cleaners","Don't let people with asthma, allergies, lung disease or a weak immune system do mould clean-up"],
+  "ppe": ["An N95 or P2 mask or better","Goggles","Gloves"],
+  "firstAid": ["Coughing, wheezing or sore eyes: get to fresh air and rinse eyes with clean water","Use the person's own reliever inhaler if they have one; if it doesn't help or they can't speak in full sentences, it's an emergency: keep them sitting up and get help","A cough that won't go, fever, chest pain or coughing blood needs medical care, especially for the old, the ill or the pregnant"],
+  "refs": [
+    {"lib":"nomad_conditions","q":"allergic reaction","path":"allergic-reaction","note":"First aid and over-the-counter treatment on a NOMAD box"},
+    {"lib":"wikimed","q":"Mold health issues"},
+    {"lib":"wikipedia","q":"Mold health issues"}
+  ]
+}

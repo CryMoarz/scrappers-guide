@@ -1,0 +1,38 @@
+{
+  "id": "bbq_grill",
+  "name": "Gas barbecue grill",
+  "group": "Kitchen and appliances",
+  "aliases": ["barbecue","bbq","propane grill","gas grill","griddle","outdoor grill","propane bbq","gas bbq"],
+  "brands": ["Weber","Char-Broil","Napoleon","Broil King","Dyna-Glo","Blackstone","Camp Chef","Kenmore","Vevor"],
+  "prev": 5,
+  "tools": ["hands","wrench","screwdriver"],
+  "mins": 15,
+  "kg": 45,
+  "hazards": ["compressed_gas","fuel"],
+  "comps": [
+    {"key":"propane","fn":"propane","spec":"Propane in a 20 lb (9 kg) cylinder, often part full — check by weight, or pour warm water down the side and feel for the cold line","qty":1,"ext":1,"obs":2,"loc":"Under or beside the grill","kg":17},
+    {"key":"gas_cylinder","fn":"gas_cylinder","spec":"Refillable steel cylinder with an overfill-protection valve — keep it even when empty","qty":1,"ext":1,"obs":3,"loc":"Under the grill"},
+    {"key":"igniter","fn":"igniter","spec":"Push-button piezo or AA-battery spark igniter with electrode leads — lights stoves and fires","qty":1,"ext":1,"obs":5,"loc":"Control panel; electrodes at the burners"},
+    {"key":"hose_tubing","fn":"hose_tubing","spec":"Regulator and rubber hose with cylinder fitting — feeds propane to other burners and stoves","qty":1,"ext":1,"obs":4,"loc":"From the cylinder to the manifold"},
+    {"key":"valve_solenoid","fn":"valve_solenoid","spec":"Burner control valves on a gas manifold","qty":3,"ext":2,"obs":5,"loc":"Behind the knobs"},
+    {"key":"sheet_metal","fn":"sheet_metal","spec":"Cast-iron or steel grates and steel firebox panels — cook over any fire","qty":2,"ext":1,"obs":4,"loc":"Cooking surface and body"},
+    {"key":"sensor_misc","fn":"sensor_misc","spec":"Bimetal dial thermometer","qty":1,"ext":1,"obs":5,"loc":"Lid"}
+  ],
+  "boards": [],
+  "buildings": [
+    {"b":"house","l":5},
+    {"b":"campground","l":4},
+    {"b":"hardware","l":4},
+    {"b":"department","l":4},
+    {"b":"garden_centre","l":3},
+    {"b":"church","l":3},
+    {"b":"fire_station","l":3},
+    {"b":"apartment","l":2},
+    {"b":"hotel","l":2},
+    {"b":"golf","l":2},
+    {"b":"self_storage","l":2},
+    {"b":"rv_dealer","l":2},
+    {"b":"pool_supply","l":2}
+  ],
+  "notes": "Store cylinders outdoors, upright and in the shade. Never run a grill indoors or in a tent: carbon monoxide kills."
+}

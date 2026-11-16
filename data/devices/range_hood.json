@@ -1,0 +1,36 @@
+{
+  "id": "range_hood",
+  "name": "Range hood (kitchen extractor)",
+  "group": "Kitchen and appliances",
+  "aliases": ["cooker hood","extractor fan","stove hood","kitchen vent hood","exhaust hood","ductless range hood","over the stove vent"],
+  "brands": ["Broan","Zephyr","Faber","Kobe","Vent-A-Hood","Cosmo"],
+  "prev": 5,
+  "tools": ["screwdriver","socket"],
+  "mins": 20,
+  "kg": 10,
+  "hazards": ["sharp"],
+  "comps": [
+    {"key":"fan","fn":"fan","spec":"Squirrel-cage blower","qty":1,"ext":2,"obs":4,"loc":"Inside the hood, above the filters"},
+    {"key":"motor_ac","fn":"motor_ac","spec":"Shaded-pole or capacitor-run blower motor, 120V or 230V, 50–250W","w":[50,250],"qty":1,"ext":2,"obs":4,"loc":"In the blower housing"},
+    {"key":"filter_air","fn":"filter_air","spec":"Washable aluminium mesh grease filters","qty":2,"ext":1,"obs":5,"loc":"Underside"},
+    {"key":"carbon","fn":"carbon","spec":"Charcoal recirculation filters (ductless models)","qty":1,"ext":1,"obs":5,"loc":"Behind the grease filters","p":0.5},
+    {"key":"led_light","fn":"led_light","spec":"LED or halogen lamps","w":[2,40],"qty":2,"ext":1,"obs":4,"loc":"Underside"},
+    {"key":"sheet_metal","fn":"sheet_metal","spec":"Stainless or painted steel shell and duct","qty":1,"ext":2,"obs":5,"loc":"The hood itself","kg":6},
+    {"key":"switch","fn":"switch","spec":"Fan speed and light switches","qty":3,"ext":1,"obs":5,"loc":"Front edge"}
+  ],
+  "boards": [
+    {"id":"mcu_board","qty":1,"loc":"Touch-control models","p":0.3}
+  ],
+  "buildings": [
+    {"b":"house","l":5},
+    {"b":"apartment","l":5},
+    {"b":"church","l":3},
+    {"b":"school","l":3},
+    {"b":"nursing_home","l":3},
+    {"b":"restaurant","l":3},
+    {"b":"appliance","l":3},
+    {"b":"hardware","l":3},
+    {"b":"hotel","l":2},
+    {"b":"office","l":2}
+  ]
+}

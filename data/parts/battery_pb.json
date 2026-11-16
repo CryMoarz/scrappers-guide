@@ -1,0 +1,14 @@
+{
+  "id": "battery_pb",
+  "name": "Lead-acid batteries",
+  "group": "Power storage",
+  "demand": 5,
+  "keywords": ["battery","batteries","lead acid","lead-acid","sla","agm","vrla","deep cycle","deep-cycle","car battery","12v battery","rechargeable","golf cart battery","ups battery","marine battery","leisure battery","gel battery","forklift battery","truck battery","starter battery","alarm panel battery","6v battery","7ah"],
+  "substitutes": ["battery_li","battery_nimh"],
+  "summary": "Lead-acid batteries: car, truck, deep-cycle and golf cart batteries, and sealed AGM or gel blocks in UPS and alarm systems.",
+  "uses": ["Solar and wind battery banks","Starting engines","Running 12V lights, radios and pumps","Backup power through an inverter"],
+  "identify": "Heavy plastic boxes with two lead posts, labelled 6V, 12V, AGM, gel or deep cycle. Big finds hide under floor scrubbers and in golf carts, forklifts, mobility scooters, UPS cabinets, alarm panels and telecom huts.",
+  "test": "A rested 12V battery reads 12.6–12.7V full, about 12.2V half and under 11.8V flat. Charge it and leave it 12 hours: if it falls back fast or gets hot it is sulphated or has a dead cell. Charging gives off explosive hydrogen: ventilate and keep sparks away.",
+  "decay": {"halfLifeMonths":6,"note":"Left flat they sulphate and die within months; ones kept on float chargers last years."},
+  "hazards": ["acid","heavy","lead"]
+}

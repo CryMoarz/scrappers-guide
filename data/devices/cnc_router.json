@@ -1,0 +1,37 @@
+{
+  "id": "cnc_router",
+  "name": "CNC router",
+  "group": "Industrial and construction",
+  "aliases": ["cnc","cnc machine","cnc router","cnc mill","router table","shapeoko","cnc carver"],
+  "brands": ["Carbide 3D","Avid CNC","Sainsmart","Onefinity","Masso","Laguna Tools","Vevor"],
+  "prev": 2,
+  "tools": ["hex","screwdriver","wrench"],
+  "mins": 60,
+  "kg": 100,
+  "hazards": ["sharp","heavy"],
+  "comps": [
+    {"key":"motor_stepper","fn":"motor_stepper","spec":"NEMA 23 stepper motors, about 1–3 Nm (larger machines may use servos)","v":[24,48],"a":[2,4.2],"qty":4,"ext":1,"obs":4,"loc":"End of each axis"},
+    {"key":"rod_shaft","fn":"rod_shaft","spec":"Ball screws or lead screws and hardened linear rails","qty":6,"ext":2,"obs":5,"loc":"Each axis"},
+    {"key":"bearing","fn":"bearing","spec":"Linear bearing blocks and screw-end bearings","qty":12,"ext":2,"obs":5,"loc":"Carriages and screw ends"},
+    {"key":"tube_frame","fn":"tube_frame","spec":"Aluminium extrusion frame, 40–80 mm profile","qty":6,"ext":2,"obs":5,"loc":"Base and gantry"},
+    {"key":"motor_universal","fn":"motor_universal","spec":"Trim router spindle, about 1 kW (hobby machines)","w":1000,"qty":1,"ext":1,"obs":4,"loc":"Z-axis carriage"},
+    {"key":"motor_ac","fn":"motor_ac","spec":"Water- or air-cooled 3-phase spindle, 1.5–2.2 kW, run by its drive (larger machines)","w":[1500,2200],"qty":1,"ext":2,"obs":5,"loc":"Z-axis carriage","kg":5},
+    {"key":"hall_reed","fn":"hall_reed","spec":"Homing sensors: inductive, Hall-effect or microswitch","qty":3,"ext":1,"obs":5,"loc":"Ends of each axis"},
+    {"key":"psu","fn":"psu","spec":"36–48V DC stepper power supply","v":[36,48],"qty":1,"ext":1,"obs":4,"loc":"Control box"},
+    {"key":"pump_water","fn":"pump_water","spec":"Spindle coolant pump (water-cooled spindles)","v":[120,240],"w":[20,80],"ac":true,"qty":1,"ext":1,"obs":4,"loc":"Coolant bucket beside the machine"},
+    {"key":"switch","fn":"switch","spec":"Emergency stop button","qty":1,"ext":1,"obs":5,"loc":"Control box"},
+    {"key":"fan","fn":"fan","spec":"Control box fans","v":[12,24],"qty":2,"ext":1,"obs":4,"loc":"Control box"}
+  ],
+  "boards": [
+    {"id":"stepper_driver_board","qty":1,"loc":"Control box","p":1},
+    {"id":"smps_board","qty":1,"loc":"Stepper power supply","p":1},
+    {"id":"vfd_drive","qty":1,"loc":"Spindle drive (larger machines)","p":0.5}
+  ],
+  "buildings": [
+    {"b":"makerspace","l":5},
+    {"b":"factory","l":4},
+    {"b":"school","l":3},
+    {"b":"garage_res","l":2},
+    {"b":"boat_shop","l":2}
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "id": "safety_carbon_monoxide",
+  "kind": "safety",
+  "title": "Run engines, stoves and heaters without CO poisoning",
+  "keywords": ["carbon monoxide","co","co poisoning","generator indoors","co alarm","co detector","exhaust fumes","heater fumes","headache","generator placement","stove indoors"],
+  "summary": "Carbon monoxide kills many people after disasters, usually from generators and heaters run indoors. Keep fuel-burning things outside or properly vented, fit a salvaged CO alarm in every sleeping area, and know the symptoms.",
+  "difficulty": 1,
+  "mins": 15,
+  "tools": ["hands","screwdriver"],
+  "hazards": ["co_gas","fuel","burn"],
+  "materials": [
+    {"item":"Battery-powered CO alarm, from an abandoned home, hotel or flat","fn":"sensor_misc","qty":"1 per sleeping area"},
+    {"item":"Fresh batteries for the alarm","qty":"1 set"}
+  ],
+  "steps": [
+    {"text":"Put generators and engines outside, at least 6 m from doors, windows and vents, with the exhaust pointing away from buildings and tents.","warn":"Garages, sheds, basements, porches and tarp shelters are not outside, even with the door open."},
+    {"text":"Never run a charcoal grill, barbecue, camp stove, patio heater or generator inside a home, tent or vehicle."},
+    {"text":"Indoors, cook and heat only with appliances made for indoor use, vented through a flue or chimney to the outside.","warn":"A flue blocked by soot, nests, snow or debris pushes fumes back into the room. Check it before lighting."},
+    {"text":"Leave a fresh-air opening whenever anything burns indoors, and check the flame. Blue and steady is good. Lazy, yellow and sooty means it is short of air."},
+    {"text":"Find CO alarms in abandoned homes, hotels and flats. They are often combined with smoke alarms and say CO or carbon monoxide on the label. Check the date on the back: most sensors last 5–10 years."},
+    {"text":"Fit fresh batteries, press the test button and listen for the alarm. Mount one in every sleeping area, not right beside the stove or heater."},
+    {"text":"Learn the symptoms: headache, dizziness, nausea, tiredness, confusion. If several people or pets feel ill at once, or people feel better outside, assume CO."},
+    {"text":"If the alarm sounds or anyone has symptoms, get everyone outside into fresh air at once. Turn off the source only if you can do it quickly. Don't go back in until the place has aired out.","warn":"Don't send someone back in to search. Open doors and windows from outside first."},
+    {"text":"Don't sleep in a vehicle with the engine running, or in a room with an unvented heater on."}
+  ],
+  "notes": "## Why it's so dangerous\n\nCO sticks to the blood far more tightly than oxygen does, so even small amounts in the air steadily starve the body of oxygen. At high levels it kills within minutes. At low levels it builds up over hours. Sleeping people don't notice.\n\n## Fuel-burning things indoors\n\n| Source | Risk in a closed room |\n|---|---|\n| Petrol generator or engine | Deadly within minutes |\n| Charcoal or barbecue | Very high; keeps making CO as it smoulders |\n| Camp stove or gas oven used as a heater | High |\n| Unflued gas or paraffin heater | High without a fresh-air opening |\n| Wood stove with a clear, sound flue | Low |\n\n## CO alarms\n\n- A CO alarm is not a smoke alarm, though some do both. Read the label.\n- Sensors wear out. Many alarms chirp or show an end-of-life warning after 5–10 years. Treat an expired one as unreliable.\n- Test with the button every week, and replace batteries before winter.\n\n## Common mistakes\n\n- Running a generator in a garage with the door open.\n- Bringing a barbecue inside to keep warm.\n- Pulling the battery out of a beeping alarm.\n- Assuming you would smell it. You won't.",
+  "tree": {"era":1,"branch":"fire","requires":["skill_fire_starting"]},
+  "devices": ["generator","standby_generator","smoke_alarm","furnace","water_heater","space_heater","patio_heater","bbq_grill","camping_gear","car","gas_mower","rv"],
+  "parts": ["engine_small","sensor_misc","propane","fuel_liquid"],
+  "license": "CC-BY-SA-4.0"
+}

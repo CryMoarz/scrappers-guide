@@ -1,0 +1,14 @@
+{
+  "id": "bms",
+  "name": "Battery management (BMS) boards",
+  "group": "Electronic components",
+  "demand": 4,
+  "keywords": ["bms","battery management","protection board","balance board","battery protection","pcm","smart bms","3s bms","4s bms","13s bms","bms board","cell balancer","balance lead"],
+  "substitutes": ["charger"],
+  "summary": "Protection and balance boards that stop lithium packs over-charging, over-discharging or shorting.",
+  "uses": ["Building safe 18650 or LiFePO4 packs","Replacing a failed board on an e-bike or tool pack","Low-voltage cutoff for a small battery system"],
+  "identify": "A small board with MOSFETs and a chip, wired to every cell junction in a lithium pack: power banks, laptop, drill, e-bike and scooter packs. Labels like 3S, 4S or 13S give the cell count; ratings run 2–100A.",
+  "test": "Fitted to a pack, the output should match the pack voltage. If output is 0V but the cells are fine, the board may have tripped: briefly connecting a charger usually resets it. Connect balance wires in the right order or the board and pack can burn.",
+  "decay": {"halfLifeMonths":null,"note":"Lasts. Some boards slowly drain the pack they sit on."},
+  "hazards": ["li_fire"]
+}

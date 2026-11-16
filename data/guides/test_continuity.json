@@ -1,0 +1,28 @@
+{
+  "id": "test_continuity",
+  "kind": "test",
+  "title": "Test for continuity: fuses, switches, wires and elements",
+  "keywords": ["continuity","continuity test","test fuse","blown fuse","test switch","broken wire","test cable","beep test","open circuit","short circuit","heating element test","test bulb","thermal fuse"],
+  "summary": "Use the meter's continuity beeper or ohms range to find broken wires, blown fuses, dead switches, burnt-out heating elements and shorts. It is the most-used test in salvage and repair, and it only works on circuits that are switched off.",
+  "difficulty": 1,
+  "mins": 10,
+  "tools": ["multimeter","screwdriver","cutters","pliers"],
+  "hazards": ["mains","hv_cap"],
+  "steps": [
+    {"text":"Unplug or disconnect the power, and discharge any big capacitors. Continuity tests are for dead circuits only.","warn":"Testing continuity on a live circuit can wreck the meter and burn you."},
+    {"text":"Set the meter to continuity (a sound-wave or diode symbol) or the lowest ohms range. Touch the probes together: it should beep and read close to 0 Ω. Note the reading; that is your lead resistance."},
+    {"text":"Isolate the part you are testing. Take a fuse out of its holder, or disconnect one end of a switch or element. Otherwise you may be measuring through other parts."},
+    {"text":"Fuses: a good fuse beeps and reads close to 0 Ω. OL means blown. Glass fuses often show a broken wire or a black smudge inside."},
+    {"text":"Switches: test across the terminals in each position. On should beep; off should read OL. A switch that crackles or reads several ohms when on is worn."},
+    {"text":"Wires and cords: test each wire from end to end. Bend the cable along its length while testing. A beep that cuts in and out means broken strands, often near a plug."},
+    {"text":"Shorts: test between every pair of wires, and from each wire to any metal case. They should read OL.","warn":"A cord or appliance with continuity from live or neutral to its metal case can give a shock. Don't use it."},
+    {"text":"Heating elements: measure ohms. Most read a few to a few tens of ohms. OL means burnt out. Expected resistance is about volts × volts ÷ watts."},
+    {"text":"Thermal fuses and bimetal thermostats: good thermal fuses read close to 0 Ω. Most heating thermostats read close to 0 Ω at room temperature."},
+    {"text":"Mark what you have tested with tape: OK or BAD."}
+  ],
+  "notes": "## What the readings mean\n\n| Reading | Means |\n|---|---|\n| Beep, about 0–1 Ω | Good connection |\n| A few ohms to kilohms | Something is in the path: a winding, an element, a resistor, or a poor contact |\n| OL (or a 1 on the left on older meters) | Open: no connection |\n\nMost meters beep for anything under roughly 30–50 Ω, so a beep doesn't prove a perfect connection. Read the number too.\n\n## Element resistance worked out\n\nResistance ≈ volts × volts ÷ watts.\n\n- 230 V, 2,000 W kettle element: 230 × 230 ÷ 2,000 ≈ 26 Ω.\n- 120 V, 1,500 W heater element: 120 × 120 ÷ 1,500 ≈ 9.6 Ω.\n\nReadings close to these mean the element is good.\n\n## Holding the probes\n\nOn high ohms ranges your body adds a reading. Don't hold both metal tips with your fingers. Use clips, or hold only one end.\n\n## Common mistakes\n\n- Testing in circuit and getting a false path through other parts.\n- Testing a circuit that is still live.\n- Forgetting to subtract lead resistance on low readings.\n- Assuming a beep means a wire can carry heavy current. One strand left in a frayed cable still beeps.",
+  "tree": {"era":2,"branch":"power","requires":["skill_multimeter"]},
+  "devices": ["corded_tools","washer","dryer","water_heater","microwave","car","coffee_maker","electric_kettle","space_heater","toaster_oven","hair_dryer"],
+  "parts": ["fuse","switch","wire_copper","wire_heavy","heating_element","thermostat","connector","relay"],
+  "license": "CC-BY-SA-4.0"
+}

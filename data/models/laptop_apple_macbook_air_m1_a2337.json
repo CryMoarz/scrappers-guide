@@ -1,0 +1,36 @@
+{
+  "id": "laptop_apple_macbook_air_m1_a2337",
+  "device": "laptop",
+  "brand": "Apple",
+  "model": "MacBook Air 13-inch M1 (A2337)",
+  "years": "2020",
+  "notes": "Late 2020 13-inch MacBook Air, model A2337 (EMC 3598).",
+  "research": {"checked":"2026-11-11","gaps":["Not recorded: the M1 chip, memory and storage (no matching part type or no readable source), and any battery board."],"method":["Apple's MacBook Air (M1, 2020) tech specs give the battery, display, camera, microphones and speakers.","MacRumors reports a fanless design with an aluminum spreader in place of the fan. iFixit's trackpad chip ID and logic board guide and Apple's orderable parts list add the rest."]},
+  "comps": [
+    {"key":"battery_li","conf":"documented","spec":"Built-in 49.9-watt-hour lithium-polymer battery","source":"https://support.apple.com/kb/SP825"},
+    {"key":"psu","conf":"documented","spec":"30W USB-C Power Adapter listed in the box","w":30,"source":"https://support.apple.com/kb/SP825"},
+    {"key":"display","conf":"documented","spec":"13.3-inch (diagonal) LED-backlit display with IPS technology; 2560-by-1600 native resolution at 227 pixels per inch","source":"https://support.apple.com/kb/SP825"},
+    {"key":"led_light","conf":"documented","spec":"Display described as LED-backlit","source":"https://support.apple.com/kb/SP825"},
+    {"key":"camera","conf":"documented","spec":"720p FaceTime HD camera","source":"https://support.apple.com/kb/SP825"},
+    {"key":"speaker","conf":"documented","spec":"Stereo speakers","source":"https://support.apple.com/kb/SP825"},
+    {"key":"fan","absent":true,"source":"https://www.macrumors.com/2020/11/10/apple-silicon-mac-unveiled/"},
+    {"key":"b:motherboard:heatsink","conf":"documented","spec":"Aluminum spreader to the left of the logic board replaces the fan; a thick cold plate sits over the M1 processor","source":"https://www.macrumors.com/2020/11/19/ifixit-teardown-m1-macs/"},
+    {"key":"b:motherboard:connector","conf":"documented","spec":"USB-C cable connector socket on the logic board","source":"https://www.ifixit.com/Guide/MacBook+Air+13-Inch+Late+2020+Logic+Board+Replacement/142562"},
+    {"key":"controller_board_logic","fn":"controller_board","spec":"Logic board with paired Touch ID sensor; 8-Core 3.2 GHz CPU with 7-Core or 8-Core GPU variants","qty":1,"ext":4,"obs":3,"loc":"Main board","conf":"documented","source":"https://www.ifixit.com/Guide/MacBook+Air+13-Inch+Late+2020+Logic+Board+Replacement/142562"},
+    {"key":"sensor_misc_touchid","fn":"sensor_misc","spec":"Touch ID board, Apple part 661-15412 (orderable parts list)","qty":1,"ext":3,"obs":4,"conf":"documented","source":"https://support.apple.com/en-gw/100587"},
+    {"key":"microphone_array","fn":"microphone","spec":"Three-mic array with directional beamforming","qty":3,"ext":3,"obs":4,"conf":"documented","source":"https://support.apple.com/kb/SP825"},
+    {"key":"antenna_coax_module","fn":"antenna_coax","spec":"Antenna module, Apple part 923-04327 (orderable parts list)","qty":1,"ext":3,"obs":4,"conf":"documented","source":"https://support.apple.com/en-gw/100587"},
+    {"key":"controller_board_io","fn":"controller_board","spec":"Input/output board, Apple part 923-03553 (orderable parts list)","qty":1,"ext":3,"obs":4,"conf":"documented","source":"https://support.apple.com/en-gw/100587"},
+    {"key":"ic_memory_trackpad","fn":"ic_memory","spec":"Macronix MX25L2006EZUI-12G 2 Mb serial NOR flash","qty":1,"ext":4,"obs":5,"loc":"Trackpad assembly","conf":"documented","source":"https://www.ifixit.com/Teardown/MacBook+Air+13-Inch+Late+2020+Trackpad+Chip+ID/181177"},
+    {"key":"ic_mcu_trackpad","fn":"ic_mcu","spec":"STMicroelectronics STM32F103B ARM Cortex-M3 MCU","qty":1,"ext":4,"obs":5,"loc":"Trackpad assembly","conf":"documented","source":"https://www.ifixit.com/Teardown/MacBook+Air+13-Inch+Late+2020+Trackpad+Chip+ID/181177"}
+  ],
+  "sources": [
+    {"title":"iFixit device page: MacBook Air 13-inch Late 2020, model A2337 (EMC 3598)","url":"https://www.ifixit.com/Device/MacBook_Air_13%22_Late_2020"},
+    {"title":"Apple tech specs: MacBook Air (M1, 2020)","url":"https://support.apple.com/kb/SP825"},
+    {"title":"Apple MacBook Air (M1, 2020) exploded view and orderable parts","url":"https://support.apple.com/en-gw/100587"},
+    {"title":"iFixit logic board replacement guide, Late 2020 MacBook Air (A2337)","url":"https://www.ifixit.com/Guide/MacBook+Air+13-Inch+Late+2020+Logic+Board+Replacement/142562"},
+    {"title":"iFixit teardown: MacBook Air 13-inch Late 2020 trackpad chip ID","url":"https://www.ifixit.com/Teardown/MacBook+Air+13-Inch+Late+2020+Trackpad+Chip+ID/181177"},
+    {"title":"MacRumors: MacBook Air announced as a fanless Apple silicon Mac (Nov 2020)","url":"https://www.macrumors.com/2020/11/10/apple-silicon-mac-unveiled/"},
+    {"title":"MacRumors: iFixit teardown of the M1 Macs (Nov 2020)","url":"https://www.macrumors.com/2020/11/19/ifixit-teardown-m1-macs/"}
+  ]
+}

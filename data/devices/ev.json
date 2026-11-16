@@ -1,0 +1,27 @@
+{
+  "id": "ev",
+  "name": "Electric or hybrid vehicle",
+  "group": "Vehicles and mobility",
+  "aliases": ["electric car","plug-in hybrid"],
+  "brands": ["Tesla","Nissan","Chevrolet","Ford","Hyundai","Kia","Toyota","Honda","Rivian","Volkswagen"],
+  "era": "2000s–present",
+  "prev": 3,
+  "tools": ["socket","cutters","multimeter"],
+  "mins": 180,
+  "hazards": ["hv","li_fire","heavy"],
+  "comps": [
+    {"key":"battery_li","fn":"battery_li","spec":"High-voltage traction pack, hundreds of volts — expert only, lethal","v":[200,800],"qty":1,"ext":5,"obs":3,"loc":"Floor or under the rear seat"},
+    {"key":"battery_pb","fn":"battery_pb","spec":"12V auxiliary battery","v":12,"qty":1,"ext":1,"obs":3,"loc":"Trunk or under the hood"},
+    {"key":"motor_bldc","fn":"motor_bldc","spec":"Permanent-magnet traction motor","v":[200,800],"w":[50000,300000],"qty":1,"ext":5,"obs":4,"loc":"Drive axle"},
+    {"key":"inverter","fn":"inverter","spec":"Traction inverter and DC-DC converter","v":[200,800],"w":[30000,300000],"qty":1,"ext":4,"obs":4,"loc":"Under the hood"},
+    {"key":"motor_dc_small","fn":"motor_dc_small","spec":"12V body motors: windows, wipers, seats","v":12,"qty":8,"ext":3,"obs":4,"loc":"Doors, cowl, seats"}
+  ],
+  "buildings": [
+    {"b":"parking","l":4},
+    {"b":"car_dealer","l":5},
+    {"b":"car_repair","l":4},
+    {"b":"house","l":3},
+    {"b":"auto_wrecker","l":3},
+    {"b":"apartment","l":3}
+  ]
+}

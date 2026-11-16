@@ -1,0 +1,14 @@
+{
+  "id": "belt_pulley",
+  "name": "Belts and pulleys",
+  "group": "Mechanical",
+  "demand": 1,
+  "keywords": ["belt","pulley","drive belt","idler","timing belt","v-belt","v belt","serpentine belt","ribbed belt","poly-v","toothed belt","gt2","flywheel"],
+  "substitutes": ["gearbox"],
+  "summary": "V-belts, flat, ribbed and toothed belts, and the pulleys they run on.",
+  "uses": ["Gearing a motor up or down for a generator or pump","Driving a saw, grinder or fan from one motor","Pulleys for hauling and lifting"],
+  "identify": "Washing machines, dryers, treadmills, mowers, vacuum cleaners, car engines, printers and air compressors. Belts have a size code printed on the back; the ratio of pulley sizes sets the speed change.",
+  "test": "Flex the belt and look for cracks, glazing and missing ribs. A pulley should sit straight on its shaft without wobble, with its set screw or key intact.",
+  "decay": {"halfLifeMonths":120,"note":"Rubber belts crack and stretch over years; pulleys last."},
+  "hazards": []
+}

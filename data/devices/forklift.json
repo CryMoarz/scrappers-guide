@@ -1,0 +1,28 @@
+{
+  "id": "forklift",
+  "name": "Electric forklift",
+  "group": "Commercial",
+  "aliases": ["forklift","lift truck","reach truck","order picker"],
+  "brands": ["Toyota","Hyster","Yale","Crown","Clark","Komatsu","Linde","Jungheinrich","Caterpillar","Raymond"],
+  "prev": 4,
+  "tools": ["socket","cutters","heavy"],
+  "mins": 60,
+  "hazards": ["heavy","acid"],
+  "comps": [
+    {"key":"battery_pb","fn":"battery_pb","spec":"Traction battery, 24–48V, often 500–1,500 kg","v":[24,48],"qty":1,"ext":4,"obs":4,"loc":"Under the seat — needs lifting gear"},
+    {"key":"motor_dc_large","fn":"motor_dc_large","spec":"Drive and hydraulic pump motors","v":[24,48],"w":[2000,15000],"qty":2,"ext":4,"obs":5,"loc":"Chassis"},
+    {"key":"charger","fn":"charger","spec":"Industrial battery charger","v":[24,48],"a":[50,200],"qty":1,"ext":2,"obs":4,"loc":"Wall-mounted by the charging area"},
+    {"key":"wire_heavy","fn":"wire_heavy","spec":"Heavy battery cables and connectors","qty":2,"ext":1,"obs":5,"loc":"Battery compartment"}
+  ],
+  "boards": [
+    {"id":"power_motor_controller","qty":1,"loc":"Under the floor plate","p":1}
+  ],
+  "buildings": [
+    {"b":"warehouse","l":5},
+    {"b":"factory","l":5},
+    {"b":"hardware","l":4},
+    {"b":"supermarket","l":3},
+    {"b":"farm","l":3},
+    {"b":"department","l":3}
+  ]
+}

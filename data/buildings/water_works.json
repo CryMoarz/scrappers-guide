@@ -1,0 +1,8 @@
+{
+  "id": "water_works",
+  "name": "Water and wastewater plants",
+  "osm": ["man_made=water_works","man_made=wastewater_plant","man_made=pumping_station"],
+  "exposure": 1,
+  "notes": "Large pumps, motors, standby generators, chemical stores and spare parts. Chemical hazards on site.",
+  "hazards": ["chemical","mains"]
+}

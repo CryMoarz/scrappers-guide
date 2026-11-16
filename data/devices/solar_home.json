@@ -1,0 +1,28 @@
+{
+  "id": "solar_home",
+  "name": "Rooftop solar installation",
+  "group": "Power and solar",
+  "aliases": ["solar panel system","pv system"],
+  "brands": ["SunPower","Tesla","Sunrun","Q CELLS","Canadian Solar","Enphase","LG"],
+  "prev": 3,
+  "tools": ["socket","cutters","multimeter"],
+  "mins": 120,
+  "hazards": ["hv"],
+  "comps": [
+    {"key":"solar_panel","fn":"solar_panel","spec":"250–450W panels","w":[250,450],"qty":20,"ext":3,"obs":1,"loc":"Roof — work at height"},
+    {"key":"inverter","fn":"inverter","spec":"Grid-tie inverter or microinverters — usually shut off without a grid; hard to repurpose","v":[20,600],"w":[250,10000],"ac":true,"qty":1,"ext":3,"obs":3,"loc":"Garage wall or under each panel"},
+    {"key":"wire_heavy","fn":"wire_heavy","spec":"PV and DC cabling","qty":1,"ext":2,"obs":3,"loc":"Roof and conduit"},
+    {"key":"battery_li","fn":"battery_li","spec":"Home battery (some installs, very heavy)","v":[48,400],"qty":1,"ext":4,"obs":3,"loc":"Garage or utility room","p":0.5}
+  ],
+  "boards": [
+    {"id":"inverter_board","qty":1,"loc":"Inside the inverter","p":1}
+  ],
+  "buildings": [
+    {"b":"house","l":3},
+    {"b":"farm","l":4},
+    {"b":"warehouse","l":3},
+    {"b":"school","l":3},
+    {"b":"office","l":2},
+    {"b":"church","l":2}
+  ]
+}

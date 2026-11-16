@@ -1,0 +1,14 @@
+{
+  "id": "filter_air",
+  "name": "Air filters (HEPA and carbon)",
+  "group": "Water and air treatment",
+  "demand": 3,
+  "keywords": ["air filter","hepa","hepa filter","carbon filter","furnace filter","hvac filter","cabin filter","vacuum filter","merv","pleated filter","air cleaner","fume filter","range hood filter"],
+  "substitutes": ["carbon"],
+  "summary": "Pleated HEPA, carbon and furnace filters that trap dust, smoke, mould spores and fumes.",
+  "uses": ["Cleaner air in a sealed room during smoke or dust","A box fan with a furnace filter strapped on makes a room air cleaner","Carbon filters cut fumes and smells","Replacement filters for vacuums and purifiers"],
+  "identify": "Flat pleated panels in furnaces and air handlers (sizes like 16 × 25 × 1 in), white HEPA cartridges in air purifiers and vacuums, and black carbon pads in range hoods and purifiers. MERV 11–13 or HEPA on the label means fine filtering.",
+  "test": "Hold it to the light: the media should be whole, with no tears or gaps at the frame. Grey loaded media still works but slows airflow; throw out damp or musty ones, and bag used filters because they hold dust and spores.",
+  "decay": {"halfLifeMonths":null,"note":"Sealed spares last; used and damp filters grow mould."},
+  "hazards": ["mold"]
+}

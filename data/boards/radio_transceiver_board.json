@@ -1,0 +1,17 @@
+{
+  "id": "radio_transceiver_board",
+  "name": "Two-way radio transceiver board",
+  "notes": "From walkie-talkies, CB, marine and business radios. A working radio is worth far more than its parts: strip only dead ones.",
+  "comps": [
+    {"key":"mosfet","fn":"mosfet","spec":"RF power MOSFET or transistor, about 1–5W in handhelds, 4–12W in CBs","qty":1,"ext":3,"obs":5,"loc":"Final stage near the antenna socket, often on a heatsink"},
+    {"key":"bjt","fn":"bjt","spec":"Small RF and audio transistors","qty":6,"ext":3,"obs":5,"loc":"Throughout"},
+    {"key":"crystal","fn":"crystal","spec":"Reference crystals for the frequency synthesiser","qty":2,"ext":3,"obs":5,"loc":"Near the synthesiser chip"},
+    {"key":"inductor","fn":"inductor","spec":"Air-wound and slug-tuned coils, antenna low-pass filter coils","qty":8,"ext":2,"obs":5,"loc":"RF section and antenna filter"},
+    {"key":"ic_audio","fn":"ic_audio","spec":"Audio amplifier IC, about 0.5–4W","w":[0.5,4],"qty":1,"ext":3,"obs":5,"loc":"Near the speaker leads"},
+    {"key":"ic_mcu","fn":"ic_mcu","spec":"Microcontroller or PLL synthesiser chip","qty":1,"ext":4,"obs":5,"loc":"Logic section"},
+    {"key":"reg_linear","fn":"reg_linear","spec":"Voltage regulators (78xx-type in CBs)","qty":2,"ext":2,"obs":5,"loc":"Power input"},
+    {"key":"potentiometer","fn":"potentiometer","spec":"Volume and squelch controls, trimmers","qty":3,"ext":2,"obs":5,"loc":"Front or top panel"},
+    {"key":"diode_rect","fn":"diode_rect","spec":"Switching and reverse-polarity diodes","qty":4,"ext":2,"obs":5,"loc":"Throughout"},
+    {"key":"connector","fn":"connector","spec":"Antenna socket (SO-239 on CBs, SMA or BNC on handhelds) and mic jack","qty":2,"ext":2,"obs":4,"loc":"Rear or top"}
+  ]
+}

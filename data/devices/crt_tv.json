@@ -1,0 +1,33 @@
+{
+  "id": "crt_tv",
+  "name": "CRT television or monitor",
+  "group": "Electronics and office",
+  "aliases": ["tube tv","crt monitor"],
+  "brands": ["Sony","Panasonic","Toshiba","Samsung","RCA","Zenith","Magnavox","Sanyo"],
+  "era": "pre-2010",
+  "prev": 2,
+  "tools": ["screwdriver"],
+  "mins": 30,
+  "kg": 15,
+  "materials": {"aluminium":0.15,"copper":0.63,"steel":1.4,"plastic":2.4,"boards":1.1,"glass":8.9,"other_metal":0.24,"other":0.19},
+  "hazards": ["hv_cap","implosion","lead","glass"],
+  "comps": [
+    {"key":"transformer_hv","fn":"transformer_hv","spec":"Flyback transformer","v":[20000,30000],"qty":1,"ext":2,"obs":4,"loc":"Main board near the tube"},
+    {"key":"wire_copper","fn":"wire_copper","spec":"Deflection yoke and degaussing coil copper","qty":2,"ext":3,"obs":4,"loc":"Neck of the tube; around the tube"},
+    {"key":"speaker","fn":"speaker","spec":"Speakers","w":[2,10],"qty":2,"ext":2,"obs":3,"loc":"Sides"},
+    {"key":"optics","fn":"optics","spec":"Large fresnel lens (rear-projection sets only)","qty":1,"ext":3,"obs":5,"loc":"Screen"}
+  ],
+  "boards": [
+    {"id":"smps_board","qty":1,"loc":"Main chassis","p":1},
+    {"id":"audio_amp_board","qty":1,"loc":"Main chassis","p":1}
+  ],
+  "buildings": [
+    {"b":"house","l":3},
+    {"b":"school","l":3},
+    {"b":"recycling","l":4},
+    {"b":"church","l":2}
+  ],
+  "sources": [
+    {"title":"Weight: lab-measured and published CRT monitors averaged 15 kg, CRT TVs 34 kg (Babbitt et al. 2020, disassembly-based bill of materials data for consumer electronics, CC0)","url":"https://doi.org/10.6084/m9.figshare.11306792"}
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "id": "fasteners",
+  "name": "Bolts, screws and fasteners",
+  "group": "Mechanical",
+  "demand": 2,
+  "keywords": ["fastener","bolt","nut","screw","nail","rivet","threaded rod","nuts and bolts","machine screw","wood screw","lag bolt","anchor bolt","u-bolt","flat washer","lock washer","staple"],
+  "substitutes": [],
+  "summary": "Bolts, nuts, screws, nails, rivets and threaded rod: the things that hold every build together.",
+  "uses": ["Building frames, mounts and shelters","Repairing vehicles and machines","Threaded rod for clamps and presses"],
+  "identify": "Every machine is a fastener store: furniture, bed frames, shelving, playgrounds and vehicles give good bolts, and hardware stores and workshops hold sorted bins. Marks on bolt heads show strength: radial lines on inch bolts, 8.8 or 10.9 on metric.",
+  "test": "Run a nut along the thread by hand to check it. Reject bent, stretched (thinned waist) or badly rusted bolts for anything that carries load.",
+  "decay": {"halfLifeMonths":null,"note":"Lasts. Rusty threads clean up with oil and a wire brush."},
+  "hazards": []
+}

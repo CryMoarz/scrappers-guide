@@ -1,0 +1,37 @@
+{
+  "id": "electric_kettle",
+  "name": "Electric kettle",
+  "group": "Kitchen and appliances",
+  "aliases": ["kettle","water boiler","hot water kettle","jug kettle","hot water urn","electric tea kettle","cordless kettle"],
+  "brands": ["Breville","Cuisinart","Hamilton Beach","Bodum","Russell Hobbs","OXO","Black+Decker","Zojirushi"],
+  "prev": 4,
+  "tools": ["screwdriver","security_bits"],
+  "mins": 5,
+  "kg": 1,
+  "repairs": {"records":8913,"fixed":0.43,"end_of_life":0.42},
+  "hazards": [],
+  "comps": [
+    {"key":"heating_element","fn":"heating_element","spec":"Concealed flat-plate or coil element, about 1,500W at 120V (2–3 kW at 230V) — too much for small inverters","v":[120,240],"w":[1500,3000],"ac":true,"qty":1,"ext":2,"obs":4,"loc":"Base of the jug"},
+    {"key":"thermostat","fn":"thermostat","spec":"Steam-sensing bimetal switch and boil-dry thermal cutoffs","qty":3,"ext":2,"obs":5,"loc":"Under the handle and in the base"},
+    {"key":"connector","fn":"connector","spec":"Round 360° power-base connector","qty":1,"ext":1,"obs":5,"loc":"Base"},
+    {"key":"wire_copper","fn":"wire_copper","spec":"Mains cord","qty":1,"ext":1,"obs":5,"loc":"Power base"}
+  ],
+  "boards": [],
+  "buildings": [
+    {"b":"hotel","l":5},
+    {"b":"house","l":4},
+    {"b":"apartment","l":4},
+    {"b":"office","l":4},
+    {"b":"department","l":4},
+    {"b":"appliance","l":4},
+    {"b":"school","l":3},
+    {"b":"church","l":3},
+    {"b":"clinic","l":3},
+    {"b":"nursing_home","l":3},
+    {"b":"campground","l":2},
+    {"b":"self_storage","l":2}
+  ],
+  "sources": [
+    {"title":"Open Repair Alliance, Open Repair Data v0.3 (community repair events, 2012 to July 2026; CC BY-SA 4.0): 8,913 repairs recorded as Kettle","url":"https://github.com/openrepair/data"}
+  ]
+}

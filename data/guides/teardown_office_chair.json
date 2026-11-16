@@ -1,0 +1,29 @@
+{
+  "id": "teardown_office_chair",
+  "kind": "teardown",
+  "title": "Office chair: get the gas spring, casters and steel out",
+  "keywords": ["office chair teardown","remove chair gas lift","gas spring salvage","chair casters","swivel chair wheels","chair tilt spring","gas cylinder removal","chair foam and frame"],
+  "summary": "An office chair gives you a gas spring, five caster wheels, a heavy tilt spring, thick foam and a lot of steel tube and plate. Allow about 20 minutes. Two parts store energy, so slacken the tension knob first and never cut, drill or heat the gas spring.",
+  "difficulty": 2,
+  "mins": 20,
+  "tools": ["hammer","wrench","hex","screwdriver","pliers","pry","knife"],
+  "hazards": ["compressed_gas","spring","crush","sharp"],
+  "materials": [],
+  "steps": [
+    {"text":"Turn the chair upside down on a blanket or clear floor, seat down, with room to swing a hammer. Put on safety glasses and gloves. Work where parts can't roll away."},
+    {"text":"Find the tilt-tension knob under the front of the seat (a big plastic knob or a lever) and wind it right off, usually anticlockwise, until it turns freely and the tension is gone. Set any tilt lock to free.","warn":"The tilt spring can hold a lot of force. If the knob is missing, seized or never goes slack, don't take the tilt mechanism apart: leave it whole and bolted."},
+    {"text":"Pull the casters. Grip each wheel and pull it straight out of its socket in the base leg. If one is stuck, rock it side to side with a pair of pliers on the stem or lever it up with a flat screwdriver. Most stems are about 10-11 mm across, so check before you reuse them."},
+    {"text":"Remove the plastic column cover. It is a two-part telescoping sleeve around the gas spring: slide the lower part down off the cylinder, and lift or unclip the upper part."},
+    {"text":"Free the base from the gas spring. Hold the base by one leg and strike the thick hub at the centre with a hammer, glancing blows from different sides, until the base drops off the column. The column is held in a tight friction cone, not a screw. If it won't move, spray penetrating oil round the hub and wait, then try again.","warn":"Never cut, drill, heat or burn the gas spring, and never hit the cylinder or the polished rod: a dented tube can rupture. Wear eye protection and keep your face to one side."},
+    {"text":"Free the top of the gas spring from the seat mechanism. Its top end is a small cone pressed into a socket in the tilt plate. Hold the cylinder with a large wrench or pipe grips (don't squeeze hard) and tap the metal plate round the socket sharply with a hammer from several sides until the cone lets go. If it won't come, leave it in the mechanism: a gas spring with a steel plate on top is still a gas spring."},
+    {"text":"Separate the seat, back and arms from the mechanism. Undo the four bolts under the seat (hex key or socket, usually 5/16 in or M8), then the bolts that hold the arms and the back uprights. Keep all bolts, washers and nuts sorted by size in a jar or tin."},
+    {"text":"Strip the foam and fabric. The foam is stapled or glued to a plastic or plywood pan: lever the staples out with pliers and peel the foam away. Cut the fabric into large pieces along the seams. Keep the foam and fabric dry."},
+    {"text":"Check the gas spring. Stand it upright on the floor with the polished rod up and lean your weight on the rod: a good one holds you at full height and doesn't sink. Look for oil on the rod or a tube that is dented or deeply rusted. Handle the polished rod carefully: scratches ruin the seal."},
+    {"text":"Sort and store: keep the gas spring upright out of sun and heat, the casters in a bag, the tilt mechanism whole with its spring, and the steel in one pile. Check the pile for sharp edges and wear gloves."}
+  ],
+  "notes": "## What's worth keeping and why\n\n- **Gas spring.** A sealed, pressurised cylinder with a stroke of 10-15 cm that carries a person's weight. Use it to hold up a lid or hatch, to lift a heavy trapdoor or shutter, or to give a stool or workbench adjustable height. Mount it with pipe clamps or in a matching tapered socket. Keep it away from heat and never weld near it.\n- **Casters.** Five wheels with stems. Use them on a hand cart, a dolly or a platform for a heavy tank or tool chest (see build_hand_cart). Each carries only a modest load, so spread the weight over all five and keep the load low.\n- **Tilt spring.** A heavy coil, useful as a return spring for a lever or a latch. Only remove it from its mechanism once it is fully slack.\n- **Foam.** Seat cushions, knee pads, bedding pads and insulation under a roof or a floor. Polyurethane foam burns fast with a poisonous smoke: keep it away from flames and stoves.\n- **Steel.** The column, tilt plate and arms make brackets, handles and frames. The five-star base is strong and spins: use it as a base for a stool, a rotating stand or a small table.\n- **Fabric.** Mesh and upholstery cloth make a sieve, a screen or a patch.\n- **Bolts.** M8 and 5/16 in bolts and screws: sort them and keep them.\n\n## Variations\n\n- Cheap chairs have no tension knob and a simple plate with a smaller spring. They are quicker to take apart.\n- Gaming and executive chairs have heavier steel frames and stronger gas springs. The big seat pan may be plywood.\n- Heavy-duty chairs use a bigger cylinder; read any label on it before you handle it.\n- Mesh chairs have a plastic frame and no foam.\n- Nylon bases are strong glass-filled plastic; aluminium bases are lighter and stiffer.\n\n## What to leave\n\n- A seized tilt mechanism with the spring still under tension.\n- A damaged or leaking gas spring.",
+  "tree": {"era":2,"branch":"salvage","requires":["safety_entering_buildings"]},
+  "devices": ["office_chair"],
+  "parts": ["gas_spring","bearing","spring","foam_rubber","tube_frame","fasteners","fabric_tarp"],
+  "license": "CC-BY-SA-4.0"
+}

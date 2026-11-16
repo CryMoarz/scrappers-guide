@@ -1,0 +1,34 @@
+{
+  "id": "repair_extension_cord",
+  "kind": "repair",
+  "title": "Repair a damaged extension cord or power lead",
+  "keywords": ["extension cord repair","fix extension cord","power cord repair","replace plug","rewire plug","damaged cord","extension lead","replace socket"],
+  "summary": "Cut out the damaged part of a mains extension cord and fit a new plug or socket, or make two shorter cords. Get the wire colours right, clamp the outer sheath, and test with a meter before plugging in.",
+  "difficulty": 2,
+  "mins": 20,
+  "tools": ["cutters","knife","screwdriver","multimeter","pliers","tape"],
+  "hazards": ["mains","burn"],
+  "materials": [
+    {"item":"Rewireable plug and/or socket, rated at least as high as the cord","fn":"connector","only":["mains plug","rewireable"]},
+    {"item":"Heat-shrink tubing or electrical tape","optional":true},
+    {"item":"Donor cord of the same or thicker wire","fn":"wire_copper","optional":true}
+  ],
+  "steps": [
+    {"text":"Unplug both ends. Inspect the whole cord: cuts, crushed or flattened spots, bare copper, melted or scorched plugs.","warn":"Never handle or repair a cord that is plugged in."},
+    {"text":"Decide the fix. Damage near an end: cut it off and fit a new plug or socket. Damage in the middle: cut it there and fit a new plug and socket to make two shorter cords. A spliced middle is a last resort."},
+    {"text":"Cut the cord well past any damage, at least 5 cm into undamaged cord."},
+    {"text":"Open the new plug or socket and see how much outer sheath it needs inside. Strip that much sheath (usually 3–5 cm) by scoring around it lightly with a knife and bending, without cutting the inner insulation."},
+    {"text":"Strip about 1 cm from each inner wire. Twist the strands tight."},
+    {"text":"Identify the wires. North America: black is hot, white is neutral, green is ground. Europe and UK: brown is live, blue is neutral, green-and-yellow is earth. Older cords may differ; trace each wire to the other end with a meter if unsure."},
+    {"text":"Connect them. Hot or live goes to the brass or narrow-blade terminal (or L). Neutral goes to the silver or wide-blade terminal (or N). Ground or earth goes to the green screw (or E or the earth symbol). Wrap wires clockwise round screws, or push fully into clamps. No stray strands."},
+    {"text":"Leave the ground or earth wire a little longer than the others so it is the last to pull free if the cord is yanked."},
+    {"text":"Clamp the outer sheath in the cord grip so the grip takes any pull, not the wire terminals. Close up the plug."},
+    {"text":"Test with the meter on continuity or ohms: each pin to its matching socket hole at the other end should beep; no pair of different pins should beep.","warn":"If any two different conductors connect, or the ground doesn't, don't use the cord."},
+    {"text":"If you must splice: stagger the joins so they don't sit side by side, crimp or solder each, cover each with heat-shrink, then cover the whole splice. Keep spliced cords out of wet places and from under rugs.","warn":"A taped splice can overheat or short. Check it for warmth when first used under load."}
+  ],
+  "notes": "## How much a cord can carry\n\n| Wire size | Typical rating |\n|---|---|\n| 18 AWG (about 0.75 mm²) | about 7–10 A: lamps and small loads only |\n| 16 AWG (about 1.0–1.5 mm²) | about 10–13 A |\n| 14 AWG (about 2.0–2.5 mm²) | about 15 A |\n| 12 AWG (about 3.3–4 mm²) | about 20 A |\n\nThe rating is usually printed on the sheath. A cord's plug and socket must be rated at least as high as the cord. UK-style plugs hold a fuse: fit 13 A for heavy cords and 3 A for thin lamp flex.\n\n## Good habits\n\n- Uncoil a cord fully before running a heavy load (a heater, a kettle, a welder). A coiled cord can overheat and melt.\n- Long thin cords drop voltage. Motors on long thin cords run hot and weak. Use the shortest, thickest cord you have.\n- Check plugs for warmth after an hour of heavy use. Warm means a loose connection or an overloaded cord.\n- Throw away cords with melted plugs or brittle, cracked sheathing. Strip them for wire.\n\n## Generators\n\nWhen running from a generator, use a cord thick enough for the full load, and keep the generator outdoors and away from doors and windows (see safety_carbon_monoxide).",
+  "tree": {"era":2,"branch":"power","requires":["safety_mains_isolation"]},
+  "devices": ["corded_tools","generator"],
+  "parts": ["wire_copper","connector"],
+  "license": "CC-BY-SA-4.0"
+}

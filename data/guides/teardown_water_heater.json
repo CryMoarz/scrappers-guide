@@ -1,0 +1,31 @@
+{
+  "id": "teardown_water_heater",
+  "kind": "teardown",
+  "title": "Water heater: stored water and the magnesium anode",
+  "keywords": ["water heater","hot water tank","anode rod","magnesium anode","magnesium fire starter","emergency water","drain water heater","heating element"],
+  "summary": "A tank water heater holds 100–300 litres of clean water, and a magnesium anode rod you can shave into fire starter. Electric ones also give heating elements and thermostats; gas ones a gas valve, thermocouple and igniter. Cut the power or gas, close the inlet, and let hot water cool before draining.",
+  "difficulty": 2,
+  "mins": 45,
+  "tools": ["socket","wrench","pliers","screwdriver","multimeter","saw","knife"],
+  "hazards": ["burn","mains","fuel","heavy"],
+  "materials": [],
+  "steps": [
+    {"text":"Shut off the energy. Electric: switch off its breaker, even if the grid is down, so the elements can't fire in an empty tank if power returns. Gas: turn the gas control knob to OFF and close the gas valve on the pipe.","warn":"Electric heaters often run on 240 V. Prove it dead with a meter before touching any wiring."},
+    {"text":"Close the cold water inlet valve on the top of the tank. This stops dirty mains water flowing in and keeps the stored water clean."},
+    {"text":"Feel the tank. If it is warm, wait: an insulated tank can stay hot for a day.","warn":"Water from the tank can scald. Let it cool, or drain slowly into a metal container with gloves on."},
+    {"text":"Let air in at the top: open a hot tap in the building, or lift the lever on the pressure relief valve near the top. Without this, water won't flow out."},
+    {"text":"Put a clean container under the drain valve at the bottom (or screw on a hose). Open the valve slowly. Plastic drain valves break easily: turn them gently."},
+    {"text":"Set the first few litres aside: they carry rust and sediment. Let them settle and use them for washing. Collect the rest. Treat it before drinking if you are unsure of it (boil, filter, or see skill_solar_disinfection)."},
+    {"text":"Find the anode: a large hex head (often about 27 mm) on top of the tank, sometimes under a plastic cap or insulation. On some tanks it is built into the hot outlet fitting instead."},
+    {"text":"With some water drained and the pressure released, undo the anode with a long-handled socket. It is often seized; have a helper hold the tank and use a long lever.","warn":"Brace yourself. If the socket slips you can hit pipes or fall."},
+    {"text":"Pull the rod straight up. It is 0.9–1.1 m long; if the ceiling is too low, bend it as it comes out or saw it in two."},
+    {"text":"Check the rod: a heavy coat of magnesium on a steel core wire is good; just the bare wire is spent. Scrape a few shavings and hold a flame to them: magnesium burns with a blinding white flame. Aluminium does not.","warn":"Don't look straight at burning magnesium and never use water on it."},
+    {"text":"Electric: with the tank drained, take off the access panels, push the insulation aside, unclip the thermostats and unscrew the heating elements with a large socket."},
+    {"text":"Gas: with the gas off, undo the gas pipe at the control valve and cap the pipe. Take the control valve, its thermocouple and the piezo igniter.","warn":"Gas lines must be capped with a proper fitting. Never leave an open pipe on a gas supply."}
+  ],
+  "notes": "## What's worth keeping and why\n\n- **Stored water.** The biggest prize. A typical home tank holds 150–200 litres; small ones about 100 litres, large ones 300 or more. That is weeks of drinking water for a family. The water is as clean as the supply was before the tank was cut off. Rotten-egg smell is common (a reaction with the anode) and not dangerous in itself, but treat the water if in doubt.\n- **Magnesium anode.** Shave it with a knife or file into a small pile of fine curls, about the size of a coin, under your tinder. Light the pile with a ferro rod spark or a flame: it burns at a very high temperature, even when damp, and lights stubborn tinder. One rod gives hundreds of fires. Store shavings dry in a sealed tin.\n- **Heating elements.** Screw-in elements of about 2–5.5 kW at mains voltage (read the stamp on the flange). On a lower voltage they make much less heat; on 12 V they are almost useless. Good for diverting surplus solar or generator power into hot water.\n- **Thermostats.** Snap-action thermostats with an adjustable setting: good for any heating control.\n- **Gas parts.** The thermocouple and gas valve make a safety shut-off for a gas burner, and the piezo igniter makes sparks without fuel or batteries.\n- **The tank and insulation.** The steel tank holds pressure and makes a good water store or a solar water heater core. Foam insulation from the jacket is useful too.\n\n## Getting water out when you can't drain\n\nIf the drain valve is broken or blocked, undo the hot outlet pipe on top and siphon from there with a clean hose.\n\n## Variations\n\n- Some tanks use aluminium or zinc-aluminium anodes, not magnesium. Test shavings before relying on them.\n- Tankless heaters store almost no water and have no anode.\n- Commercial buildings have larger tanks, sometimes several, and boilers with storage cylinders.\n\n## What to leave\n\n- The tank, unless you can move it: empty, it still weighs 40–80 kg.\n- The jacket sheet metal is thin.",
+  "tree": {"era":2,"branch":"water","requires":["safety_entering_buildings"]},
+  "devices": ["water_heater"],
+  "parts": ["water_stored","magnesium","heating_element","thermostat","thermocouple","igniter","valve_solenoid","tank","insulation"],
+  "license": "CC-BY-SA-4.0"
+}

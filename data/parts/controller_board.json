@@ -1,0 +1,14 @@
+{
+  "id": "controller_board",
+  "name": "Controller boards",
+  "group": "Signal and control",
+  "demand": 1,
+  "keywords": ["controller","control board","motor controller","microcontroller","mcu","esc","logic board","pcb","circuit board","main board","mainboard","treadmill controller","speed control board","control module"],
+  "substitutes": [],
+  "summary": "Main control boards that run a machine: motor controllers, appliance boards and logic boards.",
+  "uses": ["Running a salvaged motor at variable speed (treadmill boards are prized)","Harvesting relays, regulators, MOSFETs and chips","Repairing a machine with a matching board"],
+  "identify": "The biggest board in an appliance, usually with relays, a microcontroller and plugs to every sensor and motor. Treadmill boards have big heatsinked MOSFETs or SCRs and drive 90–180V DC motors.",
+  "test": "Look for burnt parts, bulged capacitors and cracked solder. Mains-fed boards can hold charge in big capacitors, so discharge them; then power up and check the 5V and 12V rails.",
+  "decay": {"halfLifeMonths":null,"note":"Lasts dry; damp and corrosion kill boards."},
+  "hazards": ["hv_cap"]
+}

@@ -1,0 +1,18 @@
+{
+  "id": "light_at_night",
+  "name": "Light at night",
+  "keywords": ["light at night","lights at night","light my camp","light the camp","camp lighting","light a room","night lighting","lantern","lights without power"],
+  "summary": "LEDs on 12V are the answer: bright, easy on power, and everywhere. Solar garden lights are complete self-charging systems; set them out by day and bring them in at night. Emergency exit lights hold a battery, charger and LEDs in one box, and 12V LED strips run straight off a car or solar battery.",
+  "parts": [
+    {"fn":"led_light","why":"Bright, efficient light from almost any battery","core":true},
+    {"fn":"solar_panel","why":"Recharges lights by day","core":true},
+    {"fn":"battery_li","why":"Small packs for portable lamps","core":true},
+    {"fn":"battery_pb","why":"Runs 12V strip lights all night"},
+    {"fn":"battery_nimh","why":"Garden lights and exit signs use these"},
+    {"fn":"charge_controller","why":"Protects the battery in a solar lighting setup"},
+    {"fn":"sensor_motion","why":"Turns lights on only when someone’s there"},
+    {"fn":"resistor","why":"Limits current when wiring loose LEDs"}
+  ],
+  "guides": ["build_led_lighting_12v","teardown_solar_garden_light","build_solar_12v_system"],
+  "tips": ["A handful of solar garden lights brought indoors gives enough light to move around and eat by.","Exit signs and emergency lights hold a battery, charger and LEDs. Office buildings have dozens.","A 3W LED strip runs a whole night on a 12V 7Ah UPS or alarm battery.","Never leave candles or fuel lamps burning unattended. There’s no fire service now."]
+}

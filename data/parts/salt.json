@@ -1,0 +1,14 @@
+{
+  "id": "salt",
+  "name": "Salt",
+  "group": "Stored supplies",
+  "demand": 3,
+  "keywords": ["salt","rock salt","road salt","table salt","sea salt","softener salt","water softener salt","pool salt","salt block","salt lick","curing salt","pickling salt","kosher salt","de-icing salt","sodium chloride"],
+  "substitutes": [],
+  "summary": "Sodium chloride in bags and blocks: table salt, water softener salt, road salt and pool salt.",
+  "uses": ["Preserving meat and fish","Pickling and fermenting vegetables","Oral rehydration drinks (with clean water and sugar)","Livestock licks"],
+  "identify": "Groceries and restaurants (table salt), hardware stores and homes with water softeners (20–25 kg bags of pellets), road depots (big piles of rock salt), pool shops and farm stores (salt blocks). Road salt often has grit and anti-caking chemicals; softener and pool salt are usually nearly pure but not sold as food grade.",
+  "test": "Read the bag for sodium chloride and any additives; some softener salt is potassium chloride instead. Food salt is white and dissolves clear; road salt leaves grit.",
+  "decay": {"halfLifeMonths":null,"note":"Keeps forever if dry."},
+  "hazards": []
+}

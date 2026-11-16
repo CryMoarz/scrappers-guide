@@ -1,0 +1,44 @@
+{
+  "id": "build_yagi_antenna",
+  "kind": "build",
+  "title": "Three-element Yagi antenna for VHF and UHF radios",
+  "keywords": ["yagi","directional antenna","beam antenna","2m antenna","vhf antenna","uhf antenna","tape measure yagi","radio range","handheld radio range","antenna gain"],
+  "summary": "A simple directional antenna that roughly triples a handheld radio's effective power in the direction you point it, and cuts noise from other directions. Build it from aluminium rod, tube or steel tape measure on a wooden or plastic boom, cut to lengths worked out for your frequency.",
+  "difficulty": 3,
+  "mins": 180,
+  "tools": ["saw","drill","cutters","desolder","screwdriver","knife","file","multimeter","ladder"],
+  "hazards": ["fall","hv","sharp"],
+  "materials": [
+    {"item":"Elements: aluminium rod or tube 3–10 mm, stiff copper wire, or a 25 mm steel tape measure","qty":"about 3 m for the 2 m band, 1 m for UHF","fn":"tube_frame"},
+    {"item":"Boom: dry wood or plastic pipe, 20–40 mm","qty":"0.5 m longer than the element spacing","fn":"lumber"},
+    {"item":"50 Ω coax with a connector to fit your radio","qty":"3–15 m","fn":"antenna_coax"},
+    {"item":"Radio connector or adapter","qty":"1","fn":"connector","only":["antenna socket","so-239"]},
+    {"item":"Hose clamps, screws or zip ties to fix elements","qty":"6–10","fn":"fasteners","optional":true},
+    {"item":"Mast: wooden pole or steel tube","qty":"3–10 m","fn":"tube_frame","optional":true},
+    {"item":"Tape and sealant for the feed point","qty":"some"},
+    {"item":"SWR meter, for tuning","qty":"1","optional":true}
+  ],
+  "steps": [
+    {"text":"Pick the frequency you use most and work out the element lengths and spacings from the table or formula in the notes."},
+    {"text":"Cut the boom: total spacing plus about 10 cm at each end. Mark where each element goes."},
+    {"text":"Cut the reflector and director to length from rod or tape. Cut the driven element as two equal halves, leaving a 10–20 mm gap between them at the centre.","warn":"Cut tape-measure and sheet edges are sharp. File the ends and cover them with tape."},
+    {"text":"Fix the elements across the boom at the marks, all parallel and centred: reflector at the back, driven element, director at the front. On a wooden or plastic boom they can pass straight through or clamp on top."},
+    {"text":"Connect the coax at the gap: centre conductor to one half of the driven element, braid to the other half. Keep the unshielded ends as short as possible."},
+    {"text":"Coil 5–8 turns of the coax into a loop about 10–15 cm across right next to the feed point and tape it. This choke keeps signal off the outside of the coax."},
+    {"text":"Seal the feed point against rain with tape and sealant; water inside coax ruins it."},
+    {"text":"Tune: with an SWR meter, trim the driven element ends a few millimetres at a time until SWR is lowest at your frequency. Without one, test with a friend several kilometres away and compare with your normal antenna."},
+    {"text":"Mount the antenna on a mast, elements vertical for handheld FM radios, director pointing at the other station. Run the coax down with a few loose loops.","warn":"Keep the mast and antenna well away from overhead power lines: falling into one kills. Work on ladders with a second person."},
+    {"text":"To find a station, turn the antenna slowly and listen for the strongest signal. Height gains more range than anything else."}
+  ],
+  "notes": "## Dimensions\nWavelength λ (mm) = 300,000 ÷ frequency (MHz).\n- Reflector: 0.495 λ\n- Driven element (tip to tip, including gap): 0.473 λ\n- Director: 0.440 λ\n- Reflector to driven element: 0.20 λ\n- Driven element to director: 0.15 λ\n\n| Use | MHz | Reflector | Driven | Director | R–D spacing | D–Dir spacing |\n|---|---|---|---|---|---|---|\n| 2 m amateur | 146 | 1,017 mm | 972 mm | 904 mm | 411 mm | 308 mm |\n| Marine VHF | 156.8 | 947 mm | 905 mm | 842 mm | 383 mm | 287 mm |\n| PMR446 | 446 | 333 mm | 318 mm | 296 mm | 135 mm | 101 mm |\n| FRS/GMRS | 462 | 321 mm | 307 mm | 286 mm | 130 mm | 97 mm |\n\nThick elements (tape measure, wide tube) act a little longer; cut the driven element 1–2% long and trim to tune.\n\n## Matching\nThis antenna's feed impedance is about 20–30 Ω, so straight 50 Ω coax gives an SWR of about 2:1. That's acceptable at handheld powers (5W or less). For a better match, add a hairpin: a U-shaped loop of stiff wire across the feed gap, 3–10 cm long, adjusted with an SWR meter.\n\n## What you gain\nA 3-element Yagi gives about 5 dB over a simple dipole: roughly 3× the power in the direction it points, and less noise from behind. In open country that may add roughly 50–80% to range. Height matters more.\n\n## Height and line of sight\nVHF and UHF travel roughly line of sight. Radio horizon (km) ≈ 4.1 × (√h1 + √h2), heights in metres. Two handhelds at 2 m: about 12 km over flat ground. One antenna raised to 10 m: about 19 km. Hills block signal; get above them.\n\n## Polarisation\nBoth stations must match. Handheld FM radios are vertical, so mount elements vertical. Horizontal is used for long-distance SSB and TV.\n\n## Rules and safety\nIn normal times, licence rules may limit antennas on licence-free radios (PMR446, FRS) and require a licence for amateur bands. Don't stand right in front of a Yagi when transmitting at high power (above about 25W). At handheld power it's not a concern.\n\n## Receive-only uses\nPoint it at a distant repeater, weather broadcast, or emergency channel to pull in weak signals on a scanner.\n\n## Wi-Fi\nAt 2.4 GHz elements are about 6 cm long and need millimetre accuracy. A salvaged satellite dish with a small feed at its focus is easier and gives more gain.\n\n## If you lack a part\n- No aluminium: steel tape measure, stiff copper wire, welding rod, or brazing rod all work.\n- No coax: twin-lead cable fed straight to the gap works at short runs but picks up noise; keep it under a few metres.\n",
+  "tree": {"era":4,"branch":"signal","requires":["build_crystal_radio"]},
+  "devices": ["satellite_dish","rv","telecom_site","cb_radio","two_way_radio","boat","car","wifi_router"],
+  "parts": ["antenna_coax","tube_frame","radio_rf","connector"],
+  "license": "CC-BY-SA-4.0",
+  "refs": [
+    {"lib":"ham","q":"yagi antenna"}
+  ],
+  "sources": [
+    {"title":"Standard 3-element Yagi proportions from amateur radio practice","note":"Dimensions calculated for this guide; the steel tape-measure element idea is a well-known open design."}
+  ]
+}

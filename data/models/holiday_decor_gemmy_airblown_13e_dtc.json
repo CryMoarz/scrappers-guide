@@ -1,0 +1,19 @@
+{
+  "id": "holiday_decor_gemmy_airblown_13e_dtc",
+  "device": "holiday_decor",
+  "brand": "Gemmy",
+  "model": "Airblown inflatable shipped with manual code 13-E-DTC (2021)",
+  "notes": "The manual prints no model number: these parts apply to inflatables shipped with Gemmy's Airblown manual 13-E-DTC (2021), which lists 51 item numbers. Its adapter is DTC model MTR-18W120S150-UL, 12 V 1.5 A; other Gemmy Airblown manuals print other adapters (12 V 0.6 A in the 2021 7-E-DTC, 12.0 V 1000 mA in the 2015 9-E), so read the label before reusing one.",
+  "research": {"checked":"2026-11-12","gaps":["The manual prints no model number; it is identified by its code, 13-E-DTC, and Lowe's document 45417270.","The fan's own voltage and current are not printed, so none is set on it; 12 V is the adapter output.","Left out: where the fan sits (not stated), the LED count (not stated) and the 2018 13-E and 2019 13-E-MTR manuals (different adapter models or no model named).","Item numbers in the manual's list were not matched to a store page.","Production years are not stated; the manual is copyright 2021."],"method":["Gemmy Airblown instruction manual, code 13-E-DTC, (c)2021 Gemmy Industries, Lowe's-hosted PDF, 3 pages: adapter model in caution 5 on page 2, package list with adapter rating on page 3, fan connection in assembly step 2, LED note and troubleshooting on page 1, rips FAQ on page 2.","Other Gemmy manuals read only for the adapter caveat in the notes: 7-E-DTC (2021, model MTR-17131, 12 V 0.6 A) and 9-E (2015, output 12.0 V 1000 mA).","manuals.online returned 403 to the researcher, so it was not used."]},
+  "comps": [
+    {"key":"psu","conf":"documented","spec":"UL-listed power supply made by DTC, model MTR-18W120S150-UL, the one packed with the product; input 120-150 V AC 50/60 Hz, output 12 V 1.5 A","v":12,"a":1.5,"qty":1,"source":"https://pdf.lowes.com/productdocuments/abb73ce7-eddc-4fdc-953d-278d5ac233a8/45417270.pdf"},
+    {"key":"fan","conf":"documented","spec":"Fan that keeps the inflatable inflated; the adapter plugs into the fan's connection (assembly step 2) and the manual warns about blocking its air intake","source":"https://pdf.lowes.com/productdocuments/abb73ce7-eddc-4fdc-953d-278d5ac233a8/45417270.pdf"},
+    {"key":"led_light","conf":"documented","spec":"LED lights inside the inflatable; the manual says they are not replaceable","source":"https://pdf.lowes.com/productdocuments/abb73ce7-eddc-4fdc-953d-278d5ac233a8/45417270.pdf"},
+    {"key":"fabric_tarp","conf":"documented","spec":"Inflatable body; the manual says rips can be sewn by hand or taped with clear packing tape","source":"https://pdf.lowes.com/productdocuments/abb73ce7-eddc-4fdc-953d-278d5ac233a8/45417270.pdf"}
+  ],
+  "sources": [
+    {"title":"Gemmy Airblown Instruction manual, code 13-E-DTC, (c)2021 (Lowe's-hosted PDF, 3 pages)","url":"https://pdf.lowes.com/productdocuments/abb73ce7-eddc-4fdc-953d-278d5ac233a8/45417270.pdf"},
+    {"title":"Gemmy Airblown manual, code 7-E-DTC, (c)2021 (Lowe's-hosted PDF): adapter MTR-17131, output 12 V 0.6 A","url":"https://pdf.lowes.com/productdocuments/997d30fa-af2b-49bd-a4e8-b01b8207444d/45417288.pdf"},
+    {"title":"Gemmy Airblown manual, code 9-E, (c)2015 (Home Depot-hosted PDF): adapter output 12.0 V 1000 mA","url":"https://images.homedepot-static.com/catalog/pdfImages/4c/4c20d163-f7a6-4074-9626-dbf998cc44e3.pdf"}
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "id": "build_evaporative_cooler",
+  "kind": "build",
+  "title": "Evaporative (swamp) cooler",
+  "keywords": ["evaporative cooler","swamp cooler","air cooler","keep cool","12v cooler","bucket cooler","zeer pot","cool room","heat wave"],
+  "summary": "Blow air through wet pads to cool it by evaporation, using a 12V fan, a plastic tub and a small pump or a wick. In hot, dry air it can drop the air passing through by 8–15 °C for under 20W. In humid air it hardly works and just adds damp.",
+  "difficulty": 1,
+  "mins": 90,
+  "tools": ["knife","drill","screwdriver","cutters","crimper","tape","multimeter"],
+  "hazards": ["mold","mains"],
+  "materials": [
+    {"item":"12V fan: car radiator fan, 1–3 computer fans, or a 12V blower","qty":"1–3","fn":"fan"},
+    {"item":"Pad material: cotton towel, humidifier wick, straw, or open-cell foam, 2–5 cm thick","qty":"0.2–0.5 m²","fn":"fabric_tarp","only":["fleece","blanket"]},
+    {"item":"Plastic tub, bucket or cooler box as body and water reservoir, 20–50 L","qty":"1","fn":"tank","only":["tub","bucket","drum"]},
+    {"item":"Small 12V water pump, 1–5 L/min","qty":"1","fn":"pump_water","optional":true},
+    {"item":"Tube with small holes to drip water over the pads","qty":"1 m","fn":"hose_tubing","optional":true},
+    {"item":"Fuse and holder, 3–10A, within 30 cm of battery +","qty":"1","fn":"fuse"},
+    {"item":"Wire 18–14 AWG","qty":"2 m","fn":"wire_copper","only":["extension","awg","cord"]},
+    {"item":"Switch","qty":"1","fn":"switch","optional":true},
+    {"item":"12V battery or 12V power supply","qty":"1","fn":"battery_pb","only":["12v"]},
+    {"item":"Mesh or wire to hold pads in place","qty":"some","optional":true}
+  ],
+  "steps": [
+    {"text":"Check the weather suits it: it works in hot, dry air (humidity under about 40–50%). If the air feels sticky, it won't help much."},
+    {"text":"Cut a hole in the lid of the tub for the fan, blowing out of the box (or into the room, through the pads)."},
+    {"text":"Cut air inlet windows in the sides, above the water line. Cover them with pad material held in place by mesh or wire."},
+    {"text":"Water the pads: run a small 12V pump from the reservoir to a drip tube along the top of the pads. Without a pump, let the bottom of the pads hang in the water so they wick it up."},
+    {"text":"Wire fan and pump in parallel through a switch to the 12V supply, with the fuse within 30 cm of battery positive. Red to + on computer fans; they won't run reversed. Keep all joints above the water and taped.","warn":"Use 12V near water. If you must use a mains fan, keep it above and away from the water, plugged into an outlet with an earth-leakage (RCD/GFCI) breaker."},
+    {"text":"Fill with clean water. Set it where it can draw in fresh, dry air (by an open window or door), and open another window on the far side so damp air can leave."},
+    {"text":"Measure the air temperature coming out against the room's. Wetter pads and slower air give cooler air."},
+    {"text":"Every day or two: drain, rinse and let the pads and tub dry. Stop using it if it smells musty.","warn":"Stale water and damp pads grow mould and bacteria that you then breathe in. Keep it clean and dry it out often."}
+  ],
+  "notes": "## How it works\nEvaporating water soaks up heat: about 680Wh for every litre. Air blown through wet pads gives up heat to evaporate the water and comes out cooler and damper.\n\n## How cool\nOutlet temperature ≈ air temperature − 0.6 to 0.8 × (air temperature − wet-bulb temperature).\n- 35 °C at 20% humidity (wet bulb about 19 °C): out at about 23–25 °C.\n- 35 °C at 60% humidity (wet bulb about 28 °C): out at about 30 °C. Barely worth it.\nA wet-bulb temperature comes from a thermometer with a wet cloth on its bulb, swung in the air for a minute.\n\n## Water use\nA small cooler uses 1–4 L per hour in dry heat. Each litre evaporated removes about 680Wh of heat, far more than its fan uses.\n\n## Power\nComputer fans: 1–3W each. Car radiator fans: 60–120W, more than you need; run them through a resistor or PWM controller at lower speed. Small pumps: 3–10W.\n\n## Variations\n- **Wet sheet:** hang a damp sheet in a doorway or window with a breeze through it.\n- **Zeer pot (pot-in-pot):** two unglazed clay pots, one inside the other, with wet sand between and a wet cloth on top, kept in shade and breeze. It keeps vegetables cooler and fresher for days in dry climates. Keep the sand wet.\n- **Personal cooling:** a wet cloth on the neck and wrists in front of a fan.\n\n## Safety\n- In very humid heat it doesn't cool the air; fans alone and shade are better then, and drink water.\n- Don't add bleach or chemicals to the water; you'd be breathing them.\n- Don't use misting nozzles on stale water; fine mist carries germs into lungs.\n\n## If you lack a part\n- No pump: wick-fed pads work; use a thick towel with its bottom edge in the water.\n- No 12V fan: a hand fan or a natural breeze through a wet cloth still helps.\n",
+  "tree": {"era":4,"branch":"shelter","requires":["skill_dc_wiring"]},
+  "devices": ["desktop_pc","car","humidifier","aquarium","air_purifier","window_ac","server_room","fridge"],
+  "parts": ["fan","pump_water","fabric_tarp","hose_tubing","tank"],
+  "license": "CC-BY-SA-4.0"
+}

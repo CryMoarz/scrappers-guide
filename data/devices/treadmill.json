@@ -1,0 +1,30 @@
+{
+  "id": "treadmill",
+  "name": "Treadmill",
+  "group": "Leisure and fitness",
+  "aliases": ["running machine","walking pad"],
+  "brands": ["NordicTrack","ProForm","Sole","Horizon","Life Fitness","Peloton","Bowflex","Echelon","Xterra"],
+  "prev": 4,
+  "tools": ["screwdriver","socket"],
+  "mins": 40,
+  "hazards": ["heavy"],
+  "comps": [
+    {"key":"motor_dc_large","fn":"motor_dc_large","spec":"90–180V permanent-magnet DC motor, 1.5–3 hp — excellent wind or water generator","v":[90,180],"qty":1,"ext":2,"obs":4,"loc":"Under the front hood"},
+    {"key":"controller_board","fn":"controller_board","spec":"Motor controller board","qty":1,"ext":2,"obs":5,"loc":"Under the hood"},
+    {"key":"belt_pulley","fn":"belt_pulley","spec":"Drive belt and flywheel pulley","qty":1,"ext":2,"obs":4,"loc":"Motor to roller"},
+    {"key":"bearing","fn":"bearing","spec":"Roller bearings","qty":4,"ext":3,"obs":4,"loc":"Front and rear rollers"},
+    {"key":"rod_shaft","fn":"rod_shaft","spec":"Steel rollers and frame tubing","qty":2,"ext":2,"obs":4,"loc":"Deck"},
+    {"key":"linear_actuator","fn":"linear_actuator","spec":"Incline lift motor","qty":1,"ext":2,"obs":5,"loc":"Front frame"}
+  ],
+  "boards": [
+    {"id":"power_motor_controller","qty":1,"loc":"Motor controller under the hood","p":1}
+  ],
+  "buildings": [
+    {"b":"gym","l":5},
+    {"b":"house","l":3},
+    {"b":"hotel","l":4},
+    {"b":"apartment","l":3},
+    {"b":"school","l":2},
+    {"b":"office","l":2}
+  ]
+}

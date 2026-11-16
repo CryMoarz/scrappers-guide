@@ -1,0 +1,9 @@
+{
+  "id": "solar_farm",
+  "name": "Solar farms",
+  "osm": ["power=plant","plant:source=solar"],
+  "exposure": 1,
+  "notes": "Thousands of panels, string inverters, combiner boxes and heavy cable. Panels make power whenever the sun is up and cannot be switched off.",
+  "access": "Fenced",
+  "hazards": ["hv"]
+}

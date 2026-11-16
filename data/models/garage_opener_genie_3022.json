@@ -1,0 +1,19 @@
+{
+  "id": "garage_opener_genie_3022",
+  "device": "garage_opener",
+  "brand": "Genie",
+  "model": "3022",
+  "notes": "ChainMax 1000. Older 3022 units may differ.",
+  "research": {"checked":"2026-11-12","gaps":["Thin record: Genie publishes no part numbers or ratings beyond its product page.","The manual names no model numbers; its replacement-parts lists give descriptions and quantities but no part numbers.","No FCC ID found."],"method":["Motor, radio and light come from the Genie model 3022 product page (geniecompany.com, page copyright 2024).","The encoder comes from the generic Genie belt/chain/screw drive programming, operation and maintenance manual 42327.02080 (04/2024), which the 3022 page links as its Operation & Maintenance Manual (through the geniecompany.com manual page).","The 'DC Chain/Belt Drive Powerhead' list (printed page 24, PDF page 26) and the 'DC ScrewDrive Powerhead' list (printed page 25) each have one optical dual encoder, so the entry holds for the 3022's 140 V DC motor whichever drive list applies.","The PDF has no text layer and has to be looked at as page images.","Because that manual covers current Genie models in general (the DC lists also have an integrated Aladdin Connect module and a motion detector module, and the manual says Aladdin Connect and battery backup come with select models), only the encoder is taken from it.","HPc is Genie's lifting-force comparison, not a motor horsepower rating.","Genie's parts store (store.geniecompany.com) has per-model parts pages for 3022/3024/3042 but returned HTTP 429 to every request, so it wasn't used."]},
+  "comps": [
+    {"key":"motor_ac","fn":"motor_dc_large","conf":"documented","spec":"140 V DC motor, 3/4 HPc, with soft start and soft stop","v":140,"source":"https://www.geniecompany.com/garage-door-opener-/model-3022"},
+    {"key":"radio_rf","conf":"documented","spec":"Auto Seek Dual Frequency receiver: picks up 315 or 390 MHz remotes; Intellicode rolling codes; pairs with up to 28 remotes and keypads","source":"https://www.geniecompany.com/garage-door-opener-/model-3022"},
+    {"key":"led_light","conf":"documented","spec":"Two-bulb light system; 100 W max per bulb if incandescent, Genie LED bulbs recommended","qty":2,"w":100,"source":"https://www.geniecompany.com/garage-door-opener-/model-3022"},
+    {"key":"opto_sensor_encoder","fn":"opto_sensor","spec":"Optical dual encoder, one per powerhead, listed next to the 'motor assembly w/encoder' in the manual's DC chain/belt powerhead parts list (item 3)","qty":1,"ext":2,"obs":4,"conf":"documented","source":"https://3ef5a44a-92ea-43d8-b1f7-c357f8ce6381.usrfiles.com/ugd/3ef5a4_221f0932938e470ab9c9d6a6bad795bb.pdf"}
+  ],
+  "sources": [
+    {"title":"Genie Model 3022 ChainMax 1000 product page (geniecompany.com)","url":"https://www.geniecompany.com/garage-door-opener-/model-3022"},
+    {"title":"Genie belt/chain/screw drive garage door opener programming, operation and maintenance manual 42327.02080, 04/2024 (manufacturer PDF, no text layer)","url":"https://3ef5a44a-92ea-43d8-b1f7-c357f8ce6381.usrfiles.com/ugd/3ef5a4_221f0932938e470ab9c9d6a6bad795bb.pdf"},
+    {"title":"Genie operation and maintenance manual page linked from the 3022 product page (geniecompany.com)","url":"https://www.geniecompany.com/files/en/manual/belt-chain-screw-drive-garage-door-opener"}
+  ]
+}

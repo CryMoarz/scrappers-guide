@@ -1,0 +1,33 @@
+{
+  "id": "safety_entering_buildings",
+  "kind": "safety",
+  "title": "Check a building before you go in",
+  "keywords": ["entering buildings","abandoned building","building safety","structural damage","gas leak","going inside","explore building","scavenging buildings","is it safe","collapse"],
+  "summary": "Most salvage injuries start with walking into the wrong building. Look from outside, read the warning signs, leave anywhere people still live, plan two ways out, and go in pairs with someone who knows when you're due back.",
+  "difficulty": 2,
+  "mins": 15,
+  "tools": ["hands","pry"],
+  "hazards": ["structural","fall","mold","fuel","co_gas","biohazard","sharp","mains","asbestos"],
+  "materials": [
+    {"item":"Torch and spare batteries","fn":"led_light","qty":"1"},
+    {"item":"Whistle","qty":"1"},
+    {"item":"Dust mask or respirator","qty":"1"},
+    {"item":"Gloves and boots with stiff soles","qty":"1 set"},
+    {"item":"Chalk or a marker","qty":"1","optional":true}
+  ],
+  "steps": [
+    {"text":"Watch from a distance first. Smoke, fresh tracks, washing, barricades, signs, tended gardens or voices mean someone lives there or claims it. If you see any of these, leave and look elsewhere.","warn":"This guide is for abandoned places only. Never go into a place someone is using."},
+    {"text":"Walk all the way round the outside. Look for leaning walls, big cracks, a sagging roof line, fire or flood damage, and missing sections. If it looks unsafe, don't go in."},
+    {"text":"Smell at the door. Gas (a rotten-egg smell), fuel, sewage, rot or chemicals mean stay out or air it out first. Switch your torch on before you go in, not inside.","warn":"If you smell gas, don't work switches or make sparks. Leave the door open and come back much later."},
+    {"text":"Tell someone where you are going and when you'll be back. Go in pairs. If the building is doubtful, one stays by the exit."},
+    {"text":"Find two ways out before you go deep inside, and keep them clear behind you."},
+    {"text":"Test the floor ahead with a bar or pole. Walk close to the walls. Avoid soft, stained or sagging spots. Look up for loose ceiling panels, light fittings and hanging cables.","warn":"Rotten floors give way without warning. Stairs and floors above basements are the worst."},
+    {"text":"Treat all wiring as live. A generator or solar system nearby could be feeding it."},
+    {"text":"Watch for needles, broken glass, mould, and animals such as dogs, rats, wasps and snakes. Wear gloves and a mask."},
+    {"text":"Don't climb on piled stock, shelving or rubble, and don't pull at anything that might be holding something up."},
+    {"text":"When you leave, mark the building (and log it in the guide) as untouched, partial, cleared or dangerous, so nobody wastes time or gets hurt there."}
+  ],
+  "notes": "## The rule\n\nNo part is worth getting trapped, hurt or killed for. If a building feels wrong, walk away. There is always another building.\n\n## Warning signs and what to do\n\n| You see or smell | It may mean | Do |\n|---|---|---|\n| Diagonal cracks, jammed doors, leaning walls | Building is moving | Stay out |\n| Charring, melted fittings, crumbling concrete | Fire weakened the structure | Stay out if you can |\n| Stains, soft floors, mould | Water damage and rot | Test every step; mask on |\n| Rotten-egg smell | Gas leak | No sparks; leave the door open; come back later |\n| Petrol or chemical smell | Spill or leaking store | Air it out; no flames |\n| Generator noise, lights on | Someone is there, or wiring is live | Leave |\n| Fresh tracks, cooking smells, barricades | People living there | Leave |\n\n## Going in pairs\n\nOne person inside, one outside, is safer than two people deep inside. Agree a time. If the person inside doesn't come out or answer, the person outside goes for help rather than rushing in.\n\n## Common mistakes\n\n- Going in alone, or at dusk.\n- Trusting stairs and landings.\n- Going into basements of damaged buildings.\n- Pulling stock off tall shelving.\n- Not telling anyone where you went.",
+  "tree": {"era":1,"branch":"salvage"},
+  "license": "CC-BY-SA-4.0"
+}

@@ -1,0 +1,46 @@
+{
+  "id": "fluorescent_fixture",
+  "name": "Fluorescent light fixtures",
+  "group": "Building systems",
+  "aliases": ["fluorescent tube light","strip light","troffer","shop light","t8 fixture","t12 fixture","tube light","2x4 light","2x2 light"],
+  "brands": ["Lithonia Lighting","Cooper Lighting","Hubbell","Juno","Sylvania","GE"],
+  "era": "1950s–2010s",
+  "prev": 5,
+  "tools": ["screwdriver","cutters","ladder"],
+  "mins": 15,
+  "kg": 6,
+  "hazards": ["mercury","glass","fall","pcb"],
+  "comps": [
+    {"key":"led_light","fn":"led_light","spec":"Fluorescent tubes, 60–150 cm (T5, T8 or T12) — need a ballast; fragile and contain mercury","w":[14,80],"qty":2,"ext":1,"obs":4,"loc":"In the fixture; spare boxes in janitor closets"},
+    {"key":"inductor","fn":"inductor","spec":"Magnetic ballast (older fixtures): iron core and copper windings, 1–2 kg — pre-1979 ballasts without a \"No PCBs\" label may hold PCB oil; leave leaking ones alone","qty":1,"ext":2,"obs":5,"loc":"Under the centre cover plate","kg":1.5},
+    {"key":"plastic_sheet","fn":"plastic_sheet","spec":"Prismatic acrylic or polystyrene diffuser panel, about 60 × 120 cm — translucent glazing for a cold frame","qty":1,"ext":1,"obs":5,"loc":"Face of ceiling troffers"},
+    {"key":"sheet_metal","fn":"sheet_metal","spec":"Painted steel housing and reflector; polished aluminium louvres in some troffers","qty":1,"ext":2,"obs":5,"loc":"The fixture body","kg":3,"p":0.5},
+    {"key":"switch","fn":"switch","spec":"Glow-switch starters (older fixtures)","qty":1,"ext":1,"obs":5,"loc":"Small twist-out cans beside the tube"}
+  ],
+  "boards": [
+    {"id":"electronic_ballast","qty":1,"loc":"Electronic ballast under the cover plate (newer fixtures)","p":0.6}
+  ],
+  "buildings": [
+    {"b":"office","l":5},
+    {"b":"school","l":5},
+    {"b":"warehouse","l":5},
+    {"b":"factory","l":5},
+    {"b":"garage_res","l":4},
+    {"b":"car_repair","l":4},
+    {"b":"church","l":4},
+    {"b":"gym","l":4},
+    {"b":"supermarket","l":4},
+    {"b":"department","l":4},
+    {"b":"hospital","l":4},
+    {"b":"clinic","l":4},
+    {"b":"nursing_home","l":4},
+    {"b":"self_storage","l":4},
+    {"b":"parking","l":4},
+    {"b":"bus_depot","l":4},
+    {"b":"house","l":3},
+    {"b":"hotel","l":3},
+    {"b":"train_station","l":3},
+    {"b":"recycling","l":3},
+    {"b":"shop_small","l":3}
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "id": "mercury",
+  "label": "Mercury",
+  "severity": 3,
+  "summary": "Mercury is a heavy silver liquid metal whose vapour damages the brain, nerves and kidneys. It is in fluorescent tubes and energy-saving bulbs (a few milligrams each), old thermostats and tilt switches (a few grams), and old thermometers, barometers and blood-pressure gauges. Heating it makes it far more dangerous.",
+  "signs": ["A glass tilt switch with a silver liquid bead inside an old round dial thermostat","Fluorescent tubes, compact fluorescent bulbs and UV lamps","Old glass thermometers and barometers with silver liquid","Shiny silver beads on a floor or in a crack","Labels marked Hg"],
+  "do": ["Handle tubes and switches gently and keep them whole","If a bulb breaks, open windows and leave the room for at least 15 minutes","Pick up beads and fragments with stiff card and sticky tape","Seal the pickings in a glass jar with a lid and label it","Store mercury items sealed, in a shed or outdoors","For more than one thermometer's worth, or mercury in carpet or floor cracks, close off the room, keep it aired to the outside, and keep children and pregnant women out"],
+  "dont": ["Don't vacuum or sweep a spill: it spreads vapour","Don't heat mercury or anything containing it","Don't pour it down a drain or onto the ground","Don't let children play with the beads","Don't wash clothes or shoes that touched mercury, or walk the spill through the house: bag them with the waste"],
+  "ppe": ["Nitrile gloves","Good ventilation"],
+  "firstAid": ["On skin: wash with soap and water","Breathed vapour from a heated or large spill: get to fresh air; coughing, chest pain or shaking afterwards needs medical care","Swallowed a little liquid mercury: don't make them sick; get medical advice; little is absorbed from the gut, but don't wait if they feel unwell"],
+  "refs": [
+    {"lib":"wikimed","q":"Mercury poisoning"},
+    {"lib":"wikipedia","q":"Mercury poisoning"}
+  ]
+}

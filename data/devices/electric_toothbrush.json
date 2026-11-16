@@ -1,0 +1,37 @@
+{
+  "id": "electric_toothbrush",
+  "name": "Electric toothbrushes and shavers",
+  "group": "Household and furniture",
+  "aliases": ["sonic toothbrush","electric shaver","electric razor","beard trimmer","hair clippers","sonicare","norelco"],
+  "brands": ["Oral-B","Philips Sonicare","Braun","Philips Norelco","Remington","Panasonic","Wahl","Andis","Oster","Conair"],
+  "prev": 5,
+  "tools": ["screwdriver","pliers","knife"],
+  "mins": 10,
+  "kg": 0.2,
+  "repairs": {"records":949,"fixed":0.37,"end_of_life":0.43},
+  "hazards": ["li_fire","sharp"],
+  "comps": [
+    {"key":"battery_li","fn":"battery_li","spec":"One 3.6–3.7V lithium cell (often 14500 size, some 18650) in newer models","v":[3.6,3.7],"qty":1,"ext":3,"obs":5,"loc":"Sealed inside the handle"},
+    {"key":"battery_nimh","fn":"battery_nimh","spec":"One or two 1.2V NiMH cells in older and budget models","v":1.2,"qty":1,"ext":3,"obs":5,"loc":"Sealed inside the handle"},
+    {"key":"motor_dc_small","fn":"motor_dc_small","spec":"Small 1.2–3.7V DC motor (shavers, clippers, rotating brushes)","v":[1.2,3.7],"qty":1,"ext":2,"obs":5,"loc":"Top of the handle"},
+    {"key":"magnet_strong","fn":"magnet_strong","spec":"Neodymium magnets in the resonant drive (sonic toothbrushes)","qty":2,"ext":3,"obs":5,"loc":"Top of the handle"},
+    {"key":"charger","fn":"charger","spec":"Inductive charging stand with a coil (toothbrushes) or a small adapter","qty":1,"ext":1,"obs":5,"loc":"Bathroom counter"}
+  ],
+  "boards": [],
+  "buildings": [
+    {"b":"house","l":5},
+    {"b":"apartment","l":5},
+    {"b":"pharmacy","l":4},
+    {"b":"department","l":4},
+    {"b":"supermarket","l":3},
+    {"b":"nursing_home","l":3},
+    {"b":"recycling","l":3},
+    {"b":"hotel","l":2},
+    {"b":"clinic","l":2},
+    {"b":"salon","l":4}
+  ],
+  "notes": "Handles are sealed and often welded shut: cut or pry carefully so you don't puncture the cell.",
+  "sources": [
+    {"title":"Open Repair Alliance, Open Repair Data v0.3 (community repair events, 2012 to July 2026; CC BY-SA 4.0): 949 repairs recorded as Hair & beauty item (electric toothbrush subset)","url":"https://github.com/openrepair/data"}
+  ]
+}

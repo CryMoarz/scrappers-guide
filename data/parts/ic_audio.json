@@ -1,0 +1,14 @@
+{
+  "id": "ic_audio",
+  "name": "Audio amplifier ICs",
+  "group": "Electronic components",
+  "demand": 1,
+  "keywords": ["audio amp","audio amplifier","amplifier ic","amp chip","lm386","tda2030","tda7297","tpa3116","tda7294","tda2003","pam8403","tpa3110","lm1875","class d","class-d","amplifier","amplifier board"],
+  "substitutes": ["bjt"],
+  "summary": "Amplifier chips that drive speakers, from tiny 0.5W parts to 100W class-D boards.",
+  "uses": ["Building a radio or PA amplifier","Driving a loud alarm or siren","Repairing speakers and stereos"],
+  "identify": "Chips on heatsinks near the speaker wires in stereos, TVs, computer speakers, car radios and Bluetooth speakers, marked LM386, TDA2030, TDA7297, TPA3116 or PAM8403.",
+  "test": "Easiest to test in place: play sound from a phone into it and listen. A hot chip with no sound, or a loud hum, means it’s dead.",
+  "decay": {"halfLifeMonths":null,"note":"Lasts."},
+  "hazards": []
+}

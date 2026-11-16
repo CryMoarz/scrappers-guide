@@ -1,0 +1,25 @@
+{
+  "id": "led_bulb_ge_led10dasw9",
+  "device": "led_bulb",
+  "brand": "GE",
+  "model": "LED10DASW9",
+  "notes": "A 60 W-equivalent A19 rated 10.5 W and 800 lumens in a 2017 teardown; a retailer lists the 4-pack LED10DASW9C-4PK (E26 base) at the same figures. A GU24-base variant, LED10DASW9QGU24, is also sold (listed at 10 W); the parts here are from the bulb in the teardown.",
+  "research": {"checked":"2026-11-12","gaps":["The teardown gives no values for the capacitors, inductor, transformer or diodes and no part numbers for the diodes, transistor, bridge or varistor, so none are claimed.","The fuse resistor is given as 5 ohm; no current rating is stated, so no amps are set.","The teardown names the bulb LED10DASW9 and an A19 base but not the base type; E26 comes only from the retail listing of the 4-pack SKU LED10DASW9C-4PK, and the GU24 listing is a different SKU.","The varistor is given as 270v at the AC input with no AC or DC rating, so no voltage field is set.","The inside of the GU24 variant was not checked; its listing does not describe it.","The retail listing's 90 CRI and 15,000 hours are for the 4-pack SKU only and are not in the teardown, so they are left out.","Only one 2017 hobby teardown covers this model; no GE spec sheet or service document turned up."],"method":["Teardown: Patent Refinery page on the GE LED10DASW9 bulb, dated 2017.07.24; every part claim was checked against its text.","Candela Corp listing for LED10DASW9C-4PK: 10.5 W, A19, E26, 800 lumens, 2700K; the page has a login wall for pricing only.","Replacement Light Bulbs listing for LED10DASW9QGU24: 10 W, 800 lumens, GU24 base; the bare model number LED10DASW9 does not appear on it.","The bulbs.com listing returned HTTP 403 to the researcher and was not used."]},
+  "comps": [
+    {"key":"led_light","conf":"documented","spec":"16 upward-facing LEDs on a PCB riveted to an aluminium heat sink disk","source":"https://sites.google.com/patentrefinery.com/home/teardowns/led-bulb-teardowns/ge-led-bulb"},
+    {"key":"b:led_driver_mains:fuse","conf":"documented","spec":"5 ohm fuse resistor at the AC input","loc":"AC input","source":"https://sites.google.com/patentrefinery.com/home/teardowns/led-bulb-teardowns/ge-led-bulb"},
+    {"key":"b:led_driver_mains:bridge_rect","conf":"documented","spec":"Diode bridge on the power board","source":"https://sites.google.com/patentrefinery.com/home/teardowns/led-bulb-teardowns/ge-led-bulb"},
+    {"key":"b:led_driver_mains:inductor","conf":"documented","spec":"Inductor among the larger through-hole parts on one side of the power board","source":"https://sites.google.com/patentrefinery.com/home/teardowns/led-bulb-teardowns/ge-led-bulb"},
+    {"key":"b:led_driver_mains:cap_elec","conf":"documented","spec":"Large electrolytic output capacitor of the switching regulator","source":"https://sites.google.com/patentrefinery.com/home/teardowns/led-bulb-teardowns/ge-led-bulb"},
+    {"key":"b:led_driver_mains:diode_rect","fn":"diode_rect","spec":"Diode in the switching regulator","qty":1,"ext":3,"obs":5,"loc":"Board","conf":"documented","source":"https://sites.google.com/patentrefinery.com/home/teardowns/led-bulb-teardowns/ge-led-bulb"},
+    {"key":"bjt_switch","fn":"bjt","spec":"NPN switch transistor of the buck-boost switching regulator","qty":1,"ext":3,"obs":4,"conf":"documented","source":"https://sites.google.com/patentrefinery.com/home/teardowns/led-bulb-teardowns/ge-led-bulb"},
+    {"key":"ferrite_xfmr_regulator","fn":"ferrite_xfmr","spec":"Transformer in the switching regulator; its secondary is not used for isolation","qty":1,"ext":3,"obs":4,"loc":"Power board, through-hole side","conf":"documented","source":"https://sites.google.com/patentrefinery.com/home/teardowns/led-bulb-teardowns/ge-led-bulb"},
+    {"key":"surge_varistor","fn":"surge_protect","spec":"270v varistor for transient protection at the AC input","qty":1,"ext":2,"obs":4,"loc":"AC input","conf":"documented","source":"https://sites.google.com/patentrefinery.com/home/teardowns/led-bulb-teardowns/ge-led-bulb"},
+    {"key":"heatsink_base","fn":"heatsink","spec":"Aluminium heat sink inside the A19 base; the LED heat sink assembly is pressed into it","qty":1,"ext":2,"obs":3,"loc":"Inside the A19 base","conf":"documented","source":"https://sites.google.com/patentrefinery.com/home/teardowns/led-bulb-teardowns/ge-led-bulb"}
+  ],
+  "sources": [
+    {"title":"GE LED10DASW9 LED bulb teardown (Patent Refinery, dated 2017.07.24)","url":"https://sites.google.com/patentrefinery.com/home/teardowns/led-bulb-teardowns/ge-led-bulb"},
+    {"title":"Candela Corp product page: LED10DASW9C-4PK, 10.5W LED A19 E26 retail 4-pack listing","url":"https://candelacorp.com/product/LED10DASW9C-4PK"},
+    {"title":"Replacement Light Bulbs listing: GE LED10DASW9QGU24 (GU24 variant)","url":"https://replacementlightbulbs.com/lampled10dasw9qgu24.html"}
+  ]
+}

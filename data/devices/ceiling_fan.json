@@ -1,0 +1,38 @@
+{
+  "id": "ceiling_fan",
+  "name": "Ceiling fan",
+  "group": "Household and furniture",
+  "aliases": ["overhead fan","fan light","ceiling fan light","paddle fan","ceiling fan light combo","fan with light"],
+  "brands": ["Hunter","Harbor Breeze","Hampton Bay","Minka-Aire","Casablanca","Progress Lighting","Craftmade","Monte Carlo","Kichler","Westinghouse"],
+  "prev": 5,
+  "tools": ["screwdriver","pliers","ladder"],
+  "mins": 20,
+  "kg": 6,
+  "hazards": ["fall","mains"],
+  "comps": [
+    {"key":"motor_ac","fn":"motor_ac","spec":"Low-speed capacitor-run motor with an outer rotor, 50–100W","w":[50,100],"qty":1,"ext":2,"obs":4,"loc":"Motor housing","kg":3},
+    {"key":"motor_bldc","fn":"motor_bldc","spec":"Brushless outer-rotor motor with permanent magnets (DC-motor models) — a decent slow-speed generator","w":[15,40],"qty":1,"ext":2,"obs":5,"loc":"Motor housing","p":0.5},
+    {"key":"cap_film","fn":"cap_film","spec":"Speed-control capacitor block, a few µF","qty":1,"ext":1,"obs":5,"loc":"Switch housing under the motor"},
+    {"key":"bearing","fn":"bearing","spec":"Two sealed ball bearings","qty":2,"ext":3,"obs":5,"loc":"Inside the motor"},
+    {"key":"switch","fn":"switch","spec":"Pull-chain speed and light switches","qty":2,"ext":1,"obs":5,"loc":"Switch housing"},
+    {"key":"led_light","fn":"led_light","spec":"Light kit: LED panel or bulb sockets","v":[120,240],"w":[10,60],"ac":true,"qty":1,"ext":1,"obs":4,"loc":"Under the motor"}
+  ],
+  "boards": [
+    {"id":"bldc_controller","qty":1,"loc":"Driver in the canopy or motor (DC-motor models)","p":0.2}
+  ],
+  "buildings": [
+    {"b":"house","l":5},
+    {"b":"apartment","l":4},
+    {"b":"church","l":4},
+    {"b":"hardware","l":4},
+    {"b":"hotel","l":3},
+    {"b":"restaurant","l":3},
+    {"b":"school","l":3},
+    {"b":"nursing_home","l":3},
+    {"b":"gym","l":3},
+    {"b":"campground","l":3},
+    {"b":"farm","l":3},
+    {"b":"office","l":2},
+    {"b":"furniture","l":2}
+  ]
+}

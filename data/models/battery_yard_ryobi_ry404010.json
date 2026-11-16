@@ -1,0 +1,21 @@
+{
+  "id": "battery_yard_ryobi_ry404010",
+  "device": "battery_yard",
+  "brand": "Ryobi",
+  "model": "RY404010 (RY404010VNM, mfg. no. 108661001)",
+  "notes": "40V HP Brushless 730 CFM WHISPER SERIES blower. The same motor, controller, switch, trigger and grounding strap part numbers also apply to RY404010CANVNM (108661004).",
+  "research": {"checked":"2026-11-12","gaps":["The page did not name the battery and charger models, so no battery or charger is claimed here.","The repair sheet also lists a 'Stator Assembly' (318192001) separately from the motor; it does not say what it is, so it is left out, as is the 'Trigger and Cruise Control Assembly' (317856001), which the sheet lists separately from the two switches.","The plate has no separate part number in the list.","No board-level parts documented; no teardown of this blower's controller was found."],"method":["Main source: the TTI repair sheet for RY404010VNM, mfg. no. 108661001, '40 Volt Brushless Blower', dated 3-20-24 (Rev 03), hosted on Home Depot's document server; read as text on 2026-11-12.","Its label list (40V HP BRUSHLESS, RYOBI 40V HP and WHISPER SERIES logo labels) matches the ryobitools.com product title.","An earlier sheet (1-4-22, Rev 05) that also covers RY404010CANVNM (108661004) lists the same motor, controller, switch, trigger and grounding strap part numbers: https://images.thdstatic.com/catalog/pdfImages/98/98b3b581-409f-49aa-a25d-d00cf2147d74.pdf.","The ryobitools.com product page lists the bare tool as RY404010BTL and the kit as RY404100, with a '(2) 4Ah Battery/Charger' option.","The sheet's wiring diagram (page 4) labels the motor controller, motor, signal switch, push switch, ground wire and a battery contact plate."]},
+  "comps": [
+    {"key":"motor_bldc","conf":"documented","spec":"Motor, part no. 742653002, qty 1 (repair sheet key 15); sheet header describes the product as a 40 Volt Brushless Blower","qty":1,"source":"https://images.thdstatic.com/catalog/pdfImages/a3/a3ad2b2f-815e-4dc7-8758-c63be0a8ee82.pdf"},
+    {"key":"controller_board","conf":"documented","spec":"Motor Controller and Inlet Bell Assembly, part no. 318194001, qty 1 (repair sheet key 1)","qty":1,"source":"https://images.thdstatic.com/catalog/pdfImages/a3/a3ad2b2f-815e-4dc7-8758-c63be0a8ee82.pdf"},
+    {"key":"fan_impeller","fn":"fan","spec":"Fan, part no. 543752001 (repair sheet key 11); the list also has an M6 flange lock nut, 678774009 (key 10)","qty":1,"ext":2,"obs":3,"conf":"documented","source":"https://images.thdstatic.com/catalog/pdfImages/a3/a3ad2b2f-815e-4dc7-8758-c63be0a8ee82.pdf"},
+    {"key":"switch_signal","fn":"switch","spec":"Signal Switch, part no. 760750001 (repair sheet key 20)","qty":1,"ext":2,"obs":4,"conf":"documented","source":"https://images.thdstatic.com/catalog/pdfImages/a3/a3ad2b2f-815e-4dc7-8758-c63be0a8ee82.pdf"},
+    {"key":"switch_push","fn":"switch","spec":"Push Switch, part no. 760781001 (repair sheet key 22)","qty":1,"ext":2,"obs":4,"conf":"documented","source":"https://images.thdstatic.com/catalog/pdfImages/a3/a3ad2b2f-815e-4dc7-8758-c63be0a8ee82.pdf"},
+    {"key":"wire_copper_ground","fn":"wire_copper","spec":"Grounding Strap Assembly, part no. 318193001 (repair sheet key 5)","qty":1,"ext":2,"obs":4,"conf":"documented","source":"https://images.thdstatic.com/catalog/pdfImages/a3/a3ad2b2f-815e-4dc7-8758-c63be0a8ee82.pdf"}
+  ],
+  "sources": [
+    {"title":"Ryobi RY404010VNM 40 Volt Brushless Blower repair sheet, mfg. no. 108661001, 3-20-24 Rev 03 (TTI, Home Depot document server)","url":"https://images.thdstatic.com/catalog/pdfImages/a3/a3ad2b2f-815e-4dc7-8758-c63be0a8ee82.pdf"},
+    {"title":"Ryobi RY404010VNM / RY404010CANVNM 40 Volt Brushless Blower repair sheet, 1-4-22 Rev 05 (TTI, Home Depot document server)","url":"https://images.thdstatic.com/catalog/pdfImages/98/98b3b581-409f-49aa-a25d-d00cf2147d74.pdf"},
+    {"title":"Ryobi 40V HP Brushless 730 CFM WHISPER SERIES Blower RY404010BTL product page (ryobitools.com)","url":"https://www.ryobitools.com/products/details/46396036926"}
+  ]
+}

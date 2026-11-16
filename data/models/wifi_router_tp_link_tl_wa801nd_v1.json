@@ -1,0 +1,21 @@
+{
+  "id": "wifi_router_tp_link_tl_wa801nd_v1",
+  "device": "wifi_router",
+  "brand": "TP-Link",
+  "model": "TL-WA801ND v1",
+  "fcc": "TE7WA801ND",
+  "notes": "Chips for hardware version v1; other versions of the TL-WA801ND can differ.",
+  "research": {"gaps":[],"method":["Not yet fact-checked: its parts show as likely until a fact-check confirms them against their sources.","Imported from the OpenWrt Table of Hardware (toh.json, 2026-11-13): the hardware data page for this version, by OpenWrt wiki contributors under CC BY-SA 4.0."]},
+  "comps": [
+    {"key":"ic_mcu_soc","fn":"ic_mcu","spec":"SoC Atheros AR7240, 1 core at 400 MHz","qty":1,"ext":4,"obs":3,"source":"https://openwrt.org/toh/hwdata/tp-link/tp-link_tl-wa801nd_v1","conf":"likely"},
+    {"key":"ic_memory_flash","fn":"ic_memory","spec":"Flash, 4 MB","qty":1,"ext":2,"obs":4,"source":"https://openwrt.org/toh/hwdata/tp-link/tp-link_tl-wa801nd_v1","conf":"likely"},
+    {"key":"ic_memory_ram","fn":"ic_memory","spec":"RAM, 32 MB","qty":1,"ext":3,"obs":3,"source":"https://openwrt.org/toh/hwdata/tp-link/tp-link_tl-wa801nd_v1","conf":"likely"},
+    {"key":"radio_rf","spec":"Wi-Fi: Atheros AR9283 (2.4 GHz b/g/n)","qty":1,"source":"https://openwrt.org/toh/hwdata/tp-link/tp-link_tl-wa801nd_v1","conf":"likely"},
+    {"key":"antenna_coax","spec":"Detachable external antennas","qty":2,"source":"https://openwrt.org/toh/hwdata/tp-link/tp-link_tl-wa801nd_v1","conf":"likely"},
+    {"key":"psu","spec":"Power supply: 12 VDC, 1.0A","v":12,"a":1,"source":"https://openwrt.org/toh/hwdata/tp-link/tp-link_tl-wa801nd_v1","conf":"likely"},
+    {"key":"connector","spec":"Ethernet ports: 1× 100M","qty":1,"source":"https://openwrt.org/toh/hwdata/tp-link/tp-link_tl-wa801nd_v1","conf":"likely"}
+  ],
+  "sources": [
+    {"title":"OpenWrt Table of Hardware: TP-Link TL-WA801ND v1 (OpenWrt wiki contributors, CC BY-SA 4.0)","url":"https://openwrt.org/toh/hwdata/tp-link/tp-link_tl-wa801nd_v1"}
+  ]
+}

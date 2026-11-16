@@ -1,0 +1,14 @@
+{
+  "id": "mosfet",
+  "name": "MOSFETs",
+  "group": "Electronic components",
+  "demand": 1,
+  "keywords": ["mosfet","mosfets","fet","power transistor","irf540","irfz44","irf3205","n-channel","p-channel","switching transistor","irfp250","irfp460","irf640","irf9540","irlz44n","irf3710","p75nf75","ao3400","igbt","logic level mosfet"],
+  "substitutes": ["bjt"],
+  "summary": "Power transistors that switch big DC currents with little drive: the muscles of controllers and inverters.",
+  "uses": ["Switching motors, heaters and lights from a battery","Building or repairing inverters and motor controllers","PWM speed control"],
+  "identify": "Three-legged TO-220 or TO-247 parts on heatsinks in motor controllers, inverters, power supplies and BMS boards, marked IRF, IRFZ, IRFP, STP and similar. IGBTs in welders and induction hobs look the same and do similar work.",
+  "test": "Diode mode across drain and source shows the body diode one way (about 0.5V). Short gate to source to discharge it, then briefly touch the gate from the drain side: drain to source should now conduct. Short every way means dead.",
+  "decay": {"halfLifeMonths":null,"note":"Lasts."},
+  "hazards": []
+}

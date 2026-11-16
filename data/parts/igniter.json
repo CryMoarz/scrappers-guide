@@ -1,0 +1,14 @@
+{
+  "id": "igniter",
+  "name": "Igniters (piezo, spark and hot surface)",
+  "group": "Heat",
+  "demand": 2,
+  "keywords": ["igniter","ignitor","piezo igniter","spark igniter","hot surface igniter","glow bar","spark module","spark generator","bbq igniter","grill igniter","furnace igniter","pilot igniter","lighter","sparker"],
+  "substitutes": ["magnesium","heating_element"],
+  "summary": "Parts that light gas or fuel: piezo clickers, electronic spark modules and glowing hot-surface igniters.",
+  "uses": ["Lighting stoves, grills and heaters without matches","Fire starting with a spare grill clicker","Repairing a gas appliance that won’t light"],
+  "identify": "Piezo igniters are push-button or click units with one wire to a spark tip, in grills, gas lighters and camp stoves. Spark modules are small boxes that tick fast, in gas cookers, water heaters and patio heaters. Hot-surface igniters are brittle grey or black ceramic bars in furnaces and gas dryers; they run on mains and glow hot enough to burn.",
+  "test": "Click a piezo or power a spark module near grounded metal: a blue spark should jump 3–5 mm. A hot-surface igniter should show continuity on a meter and glow orange within seconds on its rated voltage.",
+  "decay": {"halfLifeMonths":null,"note":"Piezos last; hot-surface igniters crack if dropped or touched."},
+  "hazards": ["burn"]
+}

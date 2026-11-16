@@ -1,0 +1,32 @@
+{
+  "id": "printer_3d",
+  "name": "3D printers",
+  "group": "Electronics and office",
+  "aliases": ["fdm printer","resin printer"],
+  "brands": ["Bambu Lab","Prusa Research","Creality","Anycubic","Elegoo","Flashforge","Ultimaker","Formlabs"],
+  "era": "2012–present",
+  "prev": 2,
+  "tools": ["screwdriver"],
+  "mins": 20,
+  "hazards": [],
+  "comps": [
+    {"key":"motor_stepper","fn":"motor_stepper","spec":"NEMA 17 stepper motors","v":[12,24],"a":[0.8,2],"qty":5,"ext":1,"obs":3,"loc":"Each axis and the extruder"},
+    {"key":"rod_shaft","fn":"rod_shaft","spec":"Linear rods or rails","qty":6,"ext":1,"obs":4,"loc":"Frame"},
+    {"key":"bearing","fn":"bearing","spec":"Linear bearings and wheels","qty":8,"ext":1,"obs":4,"loc":"Carriages"},
+    {"key":"belt_pulley","fn":"belt_pulley","spec":"GT2 belts and pulleys","qty":3,"ext":1,"obs":4,"loc":"Axes"},
+    {"key":"heating_element","fn":"heating_element","spec":"Heated bed and hotend heater cartridge","v":[12,24],"w":[30,300],"qty":2,"ext":2,"obs":4,"loc":"Bed and print head"},
+    {"key":"sensor_misc","fn":"sensor_misc","spec":"Thermistors and endstop switches","qty":5,"ext":1,"obs":4,"loc":"Bed, hotend and axes"},
+    {"key":"fan","fn":"fan","spec":"12/24V fans","v":24,"qty":3,"ext":1,"obs":4,"loc":"Print head and electronics"},
+    {"key":"psu","fn":"psu","spec":"12/24V power supply","v":24,"qty":1,"ext":1,"obs":4,"loc":"Frame"}
+  ],
+  "boards": [
+    {"id":"stepper_driver_board","qty":1,"loc":"Mainboard","p":1},
+    {"id":"smps_board","qty":1,"loc":"Power supply","p":1}
+  ],
+  "buildings": [
+    {"b":"makerspace","l":5},
+    {"b":"school","l":4},
+    {"b":"house","l":2},
+    {"b":"office","l":2}
+  ]
+}

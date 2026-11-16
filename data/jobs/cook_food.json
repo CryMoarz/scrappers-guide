@@ -1,0 +1,21 @@
+{
+  "id": "cook_food",
+  "name": "Cook food",
+  "keywords": ["cook food","cooking","cook a meal","cook without power","heat food","warm food","stove","camp stove","make a stove","solar cooker","solar oven"],
+  "summary": "Burn less fuel, not more: a rocket stove made from scrap sheet metal cooks a meal on a handful of twigs. On sunny days a solar oven of glass and reflectors cooks with no fuel at all. Gas BBQ grills sit in nearly every backyard, often with a part-full propane cylinder. Bring food to the boil, then wrap the pot in insulation to finish cooking on stored heat.",
+  "parts": [
+    {"fn":"sheet_metal","why":"Rocket stoves and windscreens from cans, ducting and panels","core":true},
+    {"fn":"propane","why":"Clean, easy fuel for camp stoves and grills","core":true},
+    {"fn":"optics","why":"Reflectors and Fresnel lenses for solar cookers","core":true},
+    {"fn":"insulation","why":"A retained-heat box finishes cooking without fuel","core":true},
+    {"fn":"gas_cylinder","why":"Propane and butane bottles from grills and campers"},
+    {"fn":"igniter","why":"Piezo and spark igniters from grills and gas stoves"},
+    {"fn":"glass_pane","why":"Glazing for a solar oven"},
+    {"fn":"heating_element","why":"Electric cooking, only with plenty of power to spare"}
+  ],
+  "guides": ["build_rocket_stove","build_solar_oven","safety_carbon_monoxide","safety_fuel_handling","skill_fire_starting","build_charcoal_retort"],
+  "tips": ["Never cook with charcoal, gas or a generator inside a tent or closed room. Carbon monoxide kills without warning.","Keep galvanised (zinc-coated) steel out of the hot parts of a stove: heated zinc gives off toxic fumes.","Electric hot plates draw 1000W or more. Cook on fire or sun, and save batteries for light and radio.","Soak beans and grains overnight to cut cooking time and fuel."],
+  "refs": [
+    {"lib":"appropedia","q":"cookstove"}
+  ]
+}

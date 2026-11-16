@@ -1,0 +1,30 @@
+{
+  "id": "teardown_baby_monitor",
+  "kind": "teardown",
+  "title": "Baby monitor: camera, night-vision LEDs, screen, cell and radio pair",
+  "keywords": ["baby monitor teardown","baby cam","night vision LEDs","infrared LED","baby monitor camera","nursery camera","wireless camera","pan tilt stepper"],
+  "summary": "A baby monitor is a small camera with infrared night-vision LEDs and a microphone, plus a handheld screen with a speaker and a lithium cell, linked by their own closed radio. A working pair is worth keeping whole as a cable-free gate or camp camera. Stripping one takes about 15 minutes with a small screwdriver; the main danger is the lithium cell.",
+  "difficulty": 1,
+  "mins": 15,
+  "tools": ["screwdriver","pry","pliers","cutters","multimeter","tape","desolder"],
+  "hazards": ["li_fire"],
+  "materials": [],
+  "steps": [
+    {"text":"Test before you strip. Plug both units into their adapters. If the screen shows the camera picture (or the audio unit lets you hear the other room), the pair works and needs only power. Monitors that link by their own radio, with no app and no account, work this way. Wi-Fi monitors that need an app or a cloud account are normally useless as a link without the internet: strip them."},
+    {"text":"Keep a working pair together (see notes). A camera and a parent unit from different boxes may not link without re-pairing. Strip only dead, mismatched or Wi-Fi units, and keep the adapters either way."},
+    {"text":"Unplug the adapters. Open the parent unit: undo the screws on the back (often 2–4 small Phillips, sometimes under rubber feet) and open the battery door if there is one. Look at the lithium pack.","warn":"A swollen, hot, leaking or dented pack goes outdoors on bare ground (see safety_swollen_lithium)."},
+    {"text":"Unplug the pack's connector and lift it out. It often has a small protection board and a 2- or 3-wire lead. Tape the bare ends. Measure the voltage: about 3.7 V nominal, 4.2 V full (see test_lithium_cell).","warn":"Don't short the leads, squeeze the pack or pierce it."},
+    {"text":"Parent unit: lift out the board. The LCD is held by tape or clips and joined by a flat ribbon. Flip up the small locking flap on the ribbon connector (don't pull the ribbon) and slide the ribbon out. Keep the panel, ribbon and backlight lead together."},
+    {"text":"Lift out the speaker (2 wires, held by glue or a small bracket) and keep its rubber seal."},
+    {"text":"Camera unit: remove the screws on the back and pry the seam open. Lift out the lens board: a tiny camera module with a ring of six or more infrared LEDs around the lens. The microphone is a small round capsule in a rubber sleeve, on a 2-wire lead or soldered to the board. Leave the little flip-over IR filter coil alone."},
+    {"text":"Infrared LEDs: check them before you cut. Power the camera board and point a phone camera at the LEDs: working ones show as a faint purple-white glow that your eye barely sees. Then cut out the ring board, or desolder each LED with its leads."},
+    {"text":"Pan-tilt models: the head holds two tiny geared stepper motors (about 5 V). Undo the gear case screws and lift each motor out with its gears still on. Keep the pinions on the shafts."},
+    {"text":"Radio boards: leave the radio module on its board. It is a closed link for its own pair, and no other radio can use it. If you want the pair to work again, keep the two boards of one pair together in a bag."},
+    {"text":"Adapters: keep both. Read the label (volts and amps) and write it on with a marker. Most are 5–9 V, a few hundred milliamps to 2 A. Keep the small screws and rubber parts in a tub."}
+  ],
+  "notes": "## What's worth keeping and why\n\n- **A working pair, whole.** A camera with night vision and a screen linked by their own radio, about 50–300 m in the open, no internet needed. A gate, door or camp camera. Power the camera from its adapter, or from a 5 V USB power bank or a 12 V supply through a buck converter set to the adapter's voltage. The parent unit runs from its own cell.\n- **Infrared LEDs.** 850–940 nm LEDs give light for a night camera that your eye hardly sees. Run each from 5 V or 12 V through a resistor: a bare LED across a battery burns out. Use them for a light for a night camera or a remote's beam.\n- **Microphone.** A sensitive electret capsule. It needs 2–5 V through a resistor to work.\n- **Speaker.** A small speaker for an alarm or a simple radio.\n- **Lithium cell.** 1,000–3,000 mAh at 3.7 V. Use it in a small power bank or a lamp, with a charger that stops at 4.2 V.\n- **Stepper motors.** Tiny steppers on a gear reduction for dials, valve drivers and pan-tilt heads.\n- **Display.** A small LCD with its driver board. It shows a picture only through its own board, so keep them together.\n\n## Variations\n\n- Audio-only monitors have no camera, only a microphone and speaker on a radio pair. They make a cable-free intercom across a yard or compound.\n- Wi-Fi monitors and smart cameras are cloud-only and need an account. Keep their IR LEDs, steppers, microphone and cell.\n- Some units use a nickel cell instead of lithium. Read the label.\n\n## What to leave\n\n- Cloud-only radio and Wi-Fi boards: no use without the service.\n- Swollen or damaged cells.",
+  "tree": {"era":2,"branch":"salvage","requires":["safety_swollen_lithium"]},
+  "devices": ["baby_monitor"],
+  "parts": ["camera","radio_rf","opto_sensor","display","battery_li","microphone","speaker","motor_stepper"],
+  "license": "CC-BY-SA-4.0"
+}

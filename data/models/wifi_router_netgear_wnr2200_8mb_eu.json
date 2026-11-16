@@ -1,0 +1,21 @@
+{
+  "id": "wifi_router_netgear_wnr2200_8mb_eu",
+  "device": "wifi_router",
+  "brand": "NETGEAR",
+  "model": "WNR2200 8MB (EU)",
+  "fcc": "PY310200131",
+  "notes": "Chips for hardware version 8MB (EU); other versions of the WNR2200 can differ.",
+  "research": {"gaps":[],"method":["Not yet fact-checked: its parts show as likely until a fact-check confirms them against their sources.","Imported from the OpenWrt Table of Hardware (toh.json, 2026-11-13): the hardware data page for this version, by OpenWrt wiki contributors under CC BY-SA 4.0."]},
+  "comps": [
+    {"key":"ic_mcu_soc","fn":"ic_mcu","spec":"SoC Atheros AR7241, 1 core at 360 MHz","qty":1,"ext":4,"obs":3,"source":"https://openwrt.org/toh/hwdata/netgear/netgear_wnr2200_8mb_eu","conf":"likely"},
+    {"key":"ic_memory_flash","fn":"ic_memory","spec":"Flash, 8 MB","qty":1,"ext":2,"obs":4,"source":"https://openwrt.org/toh/hwdata/netgear/netgear_wnr2200_8mb_eu","conf":"likely"},
+    {"key":"ic_memory_ram","fn":"ic_memory","spec":"RAM, 64 MB","qty":1,"ext":3,"obs":3,"source":"https://openwrt.org/toh/hwdata/netgear/netgear_wnr2200_8mb_eu","conf":"likely"},
+    {"key":"radio_rf","spec":"Wi-Fi: Atheros AR9287 (2.4 GHz b/g/n)","qty":1,"source":"https://openwrt.org/toh/hwdata/netgear/netgear_wnr2200_8mb_eu","conf":"likely"},
+    {"key":"psu","spec":"Power supply: 12 VDC, 1.5A via barrel","v":12,"a":1.5,"source":"https://openwrt.org/toh/hwdata/netgear/netgear_wnr2200_8mb_eu","conf":"likely"},
+    {"key":"connector","spec":"Ethernet ports: 5× 100M","qty":5,"source":"https://openwrt.org/toh/hwdata/netgear/netgear_wnr2200_8mb_eu","conf":"likely"},
+    {"key":"connector_usb","fn":"connector","spec":"USB: 1x 2.0","qty":1,"ext":2,"obs":4,"source":"https://openwrt.org/toh/hwdata/netgear/netgear_wnr2200_8mb_eu","conf":"likely"}
+  ],
+  "sources": [
+    {"title":"OpenWrt Table of Hardware: NETGEAR WNR2200 8MB (EU) (OpenWrt wiki contributors, CC BY-SA 4.0)","url":"https://openwrt.org/toh/hwdata/netgear/netgear_wnr2200_8mb_eu"}
+  ]
+}

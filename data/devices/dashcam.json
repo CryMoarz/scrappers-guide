@@ -1,0 +1,39 @@
+{
+  "id": "dashcam",
+  "name": "Dashcams",
+  "group": "Vehicles and mobility",
+  "aliases": ["dash cam","dashboard camera","car camera","car dvr","dash camera","driving recorder"],
+  "brands": ["Garmin","Vantrue","Viofo","BlackVue","Thinkware","Nextbase","Rexing","Aukey"],
+  "era": "2010s–present",
+  "prev": 3,
+  "tools": ["hands","screwdriver"],
+  "mins": 5,
+  "kg": 0.15,
+  "hazards": ["li_fire"],
+  "comps": [
+    {"key":"camera","fn":"camera","spec":"Wide-angle camera, 1080p–4K, records to microSD on 5V USB power — a cheap watch camera for a gate or camp","v":5,"qty":1,"ext":1,"obs":4,"loc":"Behind the rear-view mirror"},
+    {"key":"gps","fn":"gps","spec":"GPS receiver in the body or mount (many models) — tiny module; reuse needs serial wiring skill","qty":1,"ext":4,"obs":5,"loc":"Inside the body or the windscreen mount","p":0.75},
+    {"key":"battery_li","fn":"battery_li","spec":"Small lithium pouch, 3.7V about 200–500 mAh — bakes in hot cars; check for swelling","v":3.7,"ah":[0.2,0.5],"qty":1,"ext":2,"obs":5,"loc":"Inside the body"},
+    {"key":"supercap","fn":"supercap","spec":"Supercapacitor instead of a battery (heat-tolerant models)","qty":1,"ext":2,"obs":5,"loc":"Inside the body","p":0.5},
+    {"key":"ic_memory","fn":"ic_memory","spec":"microSD card, 16–256 GB","qty":1,"ext":1,"obs":4,"loc":"Card slot"},
+    {"key":"dcdc_buck","fn":"dcdc_buck","spec":"12–24V to 5V converter in the lighter plug or hardwire kit","v":5,"a":[1.5,3],"qty":1,"ext":1,"obs":5,"loc":"Power plug or fuse-box lead"},
+    {"key":"display","fn":"display","spec":"Small LCD screen (many models)","qty":1,"ext":2,"obs":5,"loc":"Back","p":0.75},
+    {"key":"sensor_misc","fn":"sensor_misc","spec":"G-sensor (accelerometer)","qty":1,"ext":4,"obs":5,"loc":"Main board"}
+  ],
+  "boards": [],
+  "buildings": [
+    {"b":"parking","l":4},
+    {"b":"auto_wrecker","l":4},
+    {"b":"bus_depot","l":4},
+    {"b":"car_repair","l":3},
+    {"b":"car_dealer","l":3},
+    {"b":"auto_parts","l":3},
+    {"b":"electronics","l":3},
+    {"b":"garage_res","l":3},
+    {"b":"department","l":3},
+    {"b":"police","l":2},
+    {"b":"warehouse","l":2},
+    {"b":"house","l":2},
+    {"b":"self_storage","l":2}
+  ]
+}

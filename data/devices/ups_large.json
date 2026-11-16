@@ -1,0 +1,48 @@
+{
+  "id": "ups_large",
+  "name": "Large UPS and battery room",
+  "group": "Power and solar",
+  "aliases": ["data centre ups","three-phase ups","battery room","ups cabinet","central battery system","industrial ups","modular ups"],
+  "brands": ["Eaton","Schneider Electric","Vertiv","ABB","Socomec","Piller","Mitsubishi Electric"],
+  "prev": 3,
+  "tools": ["socket","screwdriver","cutters","heavy"],
+  "mins": 120,
+  "kg": 1500,
+  "hazards": ["hv","hv_cap","acid","heavy"],
+  "comps": [
+    {"key":"battery_pb","fn":"battery_pb","spec":"12V VRLA blocks, 30–200Ah, in strings of 30–40 (360–480V DC — lethal until the links are removed)","ah":[30,200],"qty":40,"ext":3,"obs":5,"loc":"Battery cabinets or open racks beside the UPS","kg":30},
+    {"key":"battery_li","fn":"battery_li","spec":"Lithium battery modules in racks (newer installations)","v":[360,600],"qty":10,"ext":3,"obs":5,"loc":"Battery cabinets"},
+    {"key":"inverter","fn":"inverter","spec":"Double-conversion inverter, 10–500 kVA, mostly 3-phase — needs its full battery string to run","v":[360,600],"w":[10000,500000],"ac":true,"qty":1,"ext":5,"obs":5,"loc":"Main UPS cabinet"},
+    {"key":"mosfet","fn":"mosfet","spec":"IGBT power modules","qty":6,"ext":3,"obs":5,"loc":"Main cabinet, on heatsinks"},
+    {"key":"capacitor_large","fn":"capacitor_large","spec":"Large DC capacitor banks — discharge before touching","qty":10,"ext":3,"obs":5,"loc":"Main cabinet"},
+    {"key":"transformer_lv","fn":"transformer_lv","spec":"Isolation or output transformer, 100–1,000 kg (older and larger units)","v":[208,480],"w":[10000,500000],"ac":true,"qty":1,"ext":5,"obs":5,"loc":"Bottom of the main cabinet","kg":300},
+    {"key":"inductor","fn":"inductor","spec":"Heavy copper chokes","qty":3,"ext":4,"obs":5,"loc":"Main cabinet","kg":30},
+    {"key":"thyristor","fn":"thyristor","spec":"Static bypass SCRs","qty":6,"ext":3,"obs":5,"loc":"Bypass section"},
+    {"key":"relay","fn":"relay","spec":"Contactors","a":[50,800],"qty":4,"ext":2,"obs":5,"loc":"Main cabinet"},
+    {"key":"breaker","fn":"breaker","spec":"Battery and bypass breakers, 100–1,000A","a":[100,1000],"qty":3,"ext":2,"obs":5,"loc":"Battery cabinets and bypass panel"},
+    {"key":"wire_heavy","fn":"wire_heavy","spec":"Copper busbars and battery cables","qty":1,"ext":2,"obs":5,"loc":"Battery racks and cabinets"},
+    {"key":"heatsink","fn":"heatsink","spec":"Large aluminium heatsinks","qty":4,"ext":2,"obs":5,"loc":"Main cabinet"},
+    {"key":"fan","fn":"fan","spec":"Cooling fans","qty":10,"ext":1,"obs":5,"loc":"Cabinet tops and doors"}
+  ],
+  "boards": [
+    {"id":"mcu_board","qty":1,"loc":"Control panel","p":1},
+    {"id":"smps_board","qty":1,"loc":"Auxiliary supply","p":1}
+  ],
+  "buildings": [
+    {"b":"datacenter","l":5},
+    {"b":"hospital","l":5},
+    {"b":"bank","l":4},
+    {"b":"telecom","l":4},
+    {"b":"airport","l":4},
+    {"b":"office","l":3},
+    {"b":"train_station","l":3},
+    {"b":"police","l":3},
+    {"b":"water_works","l":3},
+    {"b":"factory","l":3},
+    {"b":"stadium","l":2},
+    {"b":"mall","l":2},
+    {"b":"school","l":2},
+    {"b":"substation","l":3}
+  ],
+  "notes": "Open the battery breaker, then remove one inter-block link at a time with insulated tools until every block stands alone at 12V. Substation control buildings hold similar DC battery banks and chargers."
+}

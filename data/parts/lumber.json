@@ -1,0 +1,14 @@
+{
+  "id": "lumber",
+  "name": "Lumber and plywood",
+  "group": "Materials",
+  "demand": 3,
+  "keywords": ["lumber","timber","wood","plywood","osb","pallet","wooden pallet","2x4","plank","joist","wood beam","particle board","mdf","decking","fence board","scrap wood","firewood"],
+  "substitutes": ["tube_frame","sheet_metal"],
+  "summary": "Boards, beams, plywood and pallets for building, repairs and fuel.",
+  "uses": ["Framing shelters, sheds and raised beds","Boarding up windows and doors","Building carts, shelves and workbenches","Clean untreated offcuts for cooking fires"],
+  "identify": "Lumber yards, hardware stores, building sites, pallets behind every warehouse and shop, fences, decks and furniture. Treated lumber is often green or brown-tinged with a stamped tag. Pallets stamped HT are heat-treated; MB means chemically fumigated.",
+  "test": "Push a knife point in: sound wood resists, rotten wood is soft and crumbly. Sight along boards for warping. Never burn treated wood or MB pallets: the smoke is toxic.",
+  "decay": {"halfLifeMonths":null,"note":"Lasts if dry. Wood left wet rots in a few years, faster in heat."},
+  "hazards": ["chemical"]
+}

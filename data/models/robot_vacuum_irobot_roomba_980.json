@@ -1,0 +1,20 @@
+{
+  "id": "robot_vacuum_irobot_roomba_980",
+  "device": "robot_vacuum",
+  "brand": "iRobot",
+  "model": "Roomba 980",
+  "years": "2015",
+  "notes": "Released in September 2015. The replacement battery is listed for Select 600, 800 and 900 models.",
+  "research": {"checked":"2026-11-12","gaps":["It gives no voltage, capacity or cell type."],"method":["IFixit guides for the Roomba 980 show its battery, main board, camera board and front sensor.","The iFixit device page says it was released in September 2015 and that the model number is printed above the left wheel.","Ext and obs ratings are research judgment, not source facts."]},
+  "comps": [
+    {"key":"battery_li","conf":"documented","spec":"Battery pack under the back plate. Guide says remove the two 11.5 mm screws and the back plate, then lift the battery out by the two black tabs at its ends. The guide's replacement battery is listed for Select 600, 800 and 900 models; voltage, capacity and cell type are not given.","source":"https://www.ifixit.com/Guide/iRobot+Roomba+980+Battery+Replacement/99512"},
+    {"key":"controller_board","conf":"documented","spec":"Main board, called 'the motherboard' in the guide; the guide also refers to 'the two computer boards' and connector-clips on the motherboard.","source":"https://www.ifixit.com/Guide/iRobot+Roomba+980+Motherboard+Replacement/100170"},
+    {"key":"controller_board_camera","fn":"controller_board","spec":"Second board, 'the motherboard connected to the camera', removed separately from the main motherboard.","qty":1,"ext":1,"obs":2,"loc":"Under the top plate, lifted off the main board; a black plastic guard sits between the two boards (motherboard guide, steps 14 to 16)","conf":"documented","source":"https://www.ifixit.com/Guide/iRobot+Roomba+980+Motherboard+Replacement/100170"},
+    {"key":"sensor_misc","conf":"documented","spec":"Front sensor on a front sensor panel; the guide says the sensors are mounted to the panel with 3.8 mm silver screws, and a cable runs from the front sensor to the robot. Sensor type is not stated.","source":"https://www.ifixit.com/Guide/iRobot+Roomba+980+Motherboard+Replacement/100170"}
+  ],
+  "sources": [
+    {"title":"iFixit Roomba 980 device page (guide list; model number location)","url":"https://www.ifixit.com/Device/Irobot_Roomba_980"},
+    {"title":"iFixit: iRobot Roomba 980 Battery Replacement (guide 99512)","url":"https://www.ifixit.com/Guide/iRobot+Roomba+980+Battery+Replacement/99512"},
+    {"title":"iFixit: iRobot Roomba 980 Motherboard Replacement (guide 100170)","url":"https://www.ifixit.com/Guide/iRobot+Roomba+980+Motherboard+Replacement/100170"}
+  ]
+}

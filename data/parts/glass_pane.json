@@ -1,0 +1,14 @@
+{
+  "id": "glass_pane",
+  "name": "Glass panes",
+  "group": "Materials",
+  "demand": 1,
+  "keywords": ["glass","glass pane","window glass","window pane","pane","sheet glass","glass sheet","glazing","tempered glass","toughened glass","safety glass","glass door","shower screen"],
+  "substitutes": ["plastic_sheet"],
+  "summary": "Flat glass from windows, doors, shelves, picture frames, oven doors and scanners.",
+  "uses": ["Glazing for shelter windows and cold frames","Covers for solar ovens, stills and water heaters","Greenhouses and seed frames"],
+  "identify": "Windows, glass doors, shower screens, fridge shelves, oven doors, picture frames and scanner beds. Tempered glass has a small etched stamp in one corner, shatters into small cubes and cannot be cut.",
+  "test": "Check the edges for chips: a chipped tempered pane can burst later. Plain glass can be scored and snapped; tempered glass cannot.",
+  "decay": {"halfLifeMonths":null,"note":"Lasts. Stocks fall as storms and vandals break windows."},
+  "hazards": ["glass"]
+}

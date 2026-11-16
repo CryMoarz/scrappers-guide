@@ -1,0 +1,14 @@
+{
+  "id": "ic_555",
+  "name": "555 timers",
+  "group": "Electronic components",
+  "demand": 1,
+  "keywords": ["555","555 timer","ne555","lm555","556","timer ic","timer chip","oscillator ic","ic555","tlc555","7555","astable","monostable","flasher chip"],
+  "substitutes": ["ic_mcu","ic_opamp"],
+  "summary": "The classic timer chip for oscillators, delays, flashers and simple PWM.",
+  "uses": ["Flashers and beacons","Delay timers and alarms","Simple motor speed or LED dimmer (PWM)","Tone generators"],
+  "identify": "8-pin chip marked NE555, LM555 or similar (the 556 is a dual, 14 pins). Found in older alarms, flashers, toys, timers and simple controllers.",
+  "test": "Fit it into a basic flasher circuit: a flashing LED means it works. Out of circuit only obvious damage shows.",
+  "decay": {"halfLifeMonths":null,"note":"Lasts."},
+  "hazards": []
+}

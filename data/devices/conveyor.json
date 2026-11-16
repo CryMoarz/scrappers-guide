@@ -1,0 +1,40 @@
+{
+  "id": "conveyor",
+  "name": "Conveyor system",
+  "group": "Industrial and construction",
+  "aliases": ["conveyor","conveyor belt","roller conveyor","checkout conveyor","baggage belt","sorting line","belt conveyor"],
+  "brands": ["Dorner","Hytrol","Intralox","Interroll","Daifuku"],
+  "prev": 3,
+  "tools": ["socket","wrench","screwdriver","cutters"],
+  "mins": 60,
+  "hazards": ["crush","mains","heavy"],
+  "comps": [
+    {"key":"motor_bldc","fn":"motor_bldc","spec":"24V motor-driven rollers with built-in gearing (zoned roller conveyors)","v":24,"qty":10,"ext":2,"obs":5,"loc":"Every few rollers along powered sections"},
+    {"key":"motor_ac","fn":"motor_ac","spec":"Gear motors, 0.25–2 kW, single or 3-phase","w":[250,2000],"qty":2,"ext":3,"obs":5,"loc":"Drive end of each belt section","kg":15},
+    {"key":"gearbox","fn":"gearbox","spec":"Right-angle gear reducers","qty":2,"ext":3,"obs":5,"loc":"On the drive motors"},
+    {"key":"bearing","fn":"bearing","spec":"Steel or plastic rollers with sealed bearings, dozens per section","qty":50,"ext":1,"obs":5,"loc":"Along the whole line"},
+    {"key":"rod_shaft","fn":"rod_shaft","spec":"Roller axles and drive shafts","qty":20,"ext":1,"obs":5,"loc":"Through each roller"},
+    {"key":"belt_pulley","fn":"belt_pulley","spec":"Rubber or PVC belts with drive and tail pulleys","qty":2,"ext":2,"obs":5,"loc":"Belt sections"},
+    {"key":"chain_sprocket","fn":"chain_sprocket","spec":"Roller chains and sprockets (chain-driven live rollers)","qty":2,"ext":2,"obs":5,"loc":"Under side guards"},
+    {"key":"opto_sensor","fn":"opto_sensor","spec":"Photo-eye sensors and reflectors, 24V","v":24,"qty":6,"ext":1,"obs":5,"loc":"Side frames"},
+    {"key":"psu","fn":"psu","spec":"24V DC power supplies for roller zones","v":24,"qty":2,"ext":1,"obs":5,"loc":"Control panels along the line"},
+    {"key":"relay","fn":"relay","spec":"Motor starters and contactors","a":[9,40],"qty":4,"ext":2,"obs":5,"loc":"Control panels"},
+    {"key":"tube_frame","fn":"tube_frame","spec":"Steel or aluminium side frames and legs","qty":4,"ext":2,"obs":5,"loc":"The structure"},
+    {"key":"switch","fn":"switch","spec":"Emergency stop buttons and pull cords","qty":4,"ext":1,"obs":5,"loc":"Along the line"}
+  ],
+  "boards": [
+    {"id":"vfd_drive","qty":1,"loc":"Control panels (larger lines)","p":0.5},
+    {"id":"smps_board","qty":2,"loc":"24V supplies","p":0.8}
+  ],
+  "buildings": [
+    {"b":"warehouse","l":5},
+    {"b":"factory","l":5},
+    {"b":"airport","l":5},
+    {"b":"supermarket","l":4},
+    {"b":"recycling","l":3},
+    {"b":"hardware","l":3},
+    {"b":"department","l":2},
+    {"b":"farm","l":2}
+  ],
+  "notes": "Supermarket checkout belts hold a small gear motor, a belt and a photo-eye each. Lock out the power before reaching into any conveyor."
+}

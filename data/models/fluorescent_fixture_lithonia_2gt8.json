@@ -1,0 +1,19 @@
+{
+  "id": "fluorescent_fixture_lithonia_2gt8",
+  "device": "fluorescent_fixture",
+  "brand": "Lithonia",
+  "model": "2GT8 (GT8 2 ft x 4 ft static T8 troffer)",
+  "notes": "A recessed 2 x 4 ft troffer for 2, 3 or 4 32 W T8 lamps, set by the ordering code; the lamps are not included. The standard ballast is electronic and non-PCB, and the sheet gives the weight as 24 lb (10.9 kg).",
+  "research": {"checked":"2026-11-12","gaps":["The catalogue number 2GT8 alone does not fix the lamp count (2, 3 or 4 by ordering code), so no lamp qty or ballast count is set.","The ordering table says lamps are not included and names no lamp brand, so the Philips ALTO mercury figure (1.7 mg for an F32T8/TL750) is not claimed: it is a lamp maker's figure, not a fact about this fixture.","The ballast maker, part number and wattage are not given on the sheet.","No steel gauge or wire gauge is stated.","The sheet is titled GT8 2'x4' NY (option NY3 is New York City Local 3), revision 07/09/2014; no other GT8 sheet was compared.","The acuitybrands.com and acuitybrands.ca GT8 pages returned HTTP 403, so the product's current status is not claimed and no maker-hosted copy of the sheet was read."],"method":["Lithonia GT8 2'x4' NY specification sheet (Acuity Brands, Rev. 07/09/2014), Lithonia-branded, read as a copy on assets.usesi.com (catalogue 378507); text layer read and page 1 rendered.","Philips F32T8/TL750 ALTO lamp data sheet on 1000bulbs.com opened: lists 1.7 mg mercury; not used."]},
+  "comps": [
+    {"key":"led_light","conf":"documented","spec":"32 W T8 lamps, 48 in; the fixture takes 2, 3 or 4 of them, set by the ordering code, and the lamps are not included","w":32,"source":"https://assets.usesi.com/product-media/specification-sheets/USESI_378507_specification_sheets.pdf"},
+    {"key":"controller_board_ballast","fn":"controller_board","spec":"Standard ballast is electronic, thermally protected and resetting, Class P, non-PCB, UL listed, CSA certified, universal voltage (MVOLT: 120-277 V, 50-60 Hz). Option GEB10IS: electronic instant start, 10% THD or less. Single 3-lamp and 4-lamp ballast options exist","v":[120,277],"ac":true,"ext":2,"obs":5,"conf":"documented","source":"https://assets.usesi.com/product-media/specification-sheets/USESI_378507_specification_sheets.pdf"},
+    {"key":"sheet_metal","conf":"documented","spec":"Housing formed from cold-rolled steel, five-stage iron-phosphate pretreatment, baked white enamel finish, powder-painted steel door latches","source":"https://assets.usesi.com/product-media/specification-sheets/USESI_378507_specification_sheets.pdf"},
+    {"key":"plastic_sheet","conf":"documented","spec":"Acrylic diffuser, #12 pattern (option A12), 100% UV-stabilised acrylic, in a flush white steel door frame; fixture overall 48 x 24 in","source":"https://assets.usesi.com/product-media/specification-sheets/USESI_378507_specification_sheets.pdf"},
+    {"key":"wire_copper_fixture","fn":"wire_copper","spec":"Fixture wiring: AWM, TFN or THHN wire used throughout, rated for the required temperatures","qty":1,"ext":2,"obs":5,"conf":"documented","source":"https://assets.usesi.com/product-media/specification-sheets/USESI_378507_specification_sheets.pdf"},
+    {"key":"connector_socket","fn":"connector","spec":"Sockets for the T8 lamps (the sheet says the fixture is designed exclusively for T8 lamps, electronic ballasts and sockets)","ext":1,"obs":4,"conf":"documented","source":"https://assets.usesi.com/product-media/specification-sheets/USESI_378507_specification_sheets.pdf"}
+  ],
+  "sources": [
+    {"title":"Lithonia Lighting GT8 2'x4' NY Static T8 Troffer (2GT8) specification sheet, Acuity Brands, Rev. 07/09/2014 (copy on USESI, catalogue 378507)","url":"https://assets.usesi.com/product-media/specification-sheets/USESI_378507_specification_sheets.pdf"}
+  ]
+}

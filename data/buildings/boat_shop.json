@@ -1,0 +1,6 @@
+{
+  "id": "boat_shop",
+  "name": "Boat dealers",
+  "osm": ["shop=boat","amenity=boat_rental"],
+  "exposure": 2
+}

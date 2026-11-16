@@ -1,0 +1,18 @@
+{
+  "id": "ic_mcu",
+  "name": "Microcontrollers",
+  "group": "Electronic components",
+  "demand": 1,
+  "keywords": ["microcontroller","mcu","atmega","attiny","pic","stm32","esp8266","esp32","8051","arduino chip","arduino","rp2040","atmega328","atmega328p","attiny85","pic16","msp430","esp-01","raspberry pi pico"],
+  "substitutes": ["ic_555"],
+  "summary": "Programmable microcontrollers that run appliances, toys, remotes and smart gadgets.",
+  "uses": ["Reprogrammable boards (Arduino, ESP32) for control projects","Timers, alarms and data loggers","Wi-Fi or Bluetooth for a local network (ESP8266, ESP32)"],
+  "identify": "Many-legged chips at the heart of every control board. Easy ones to reuse are on hobby boards (Arduino, ESP32, Raspberry Pi Pico) and in many smart plugs and bulbs (often ESP8266 or ESP32).",
+  "test": "Plug a hobby board into a computer: it should show up as a USB serial device. Chips from appliances usually need special tools to reprogram.",
+  "decay": {"halfLifeMonths":null,"note":"Lasts."},
+  "hazards": [],
+  "refs": [
+    {"lib":"arduino","q":"reuse microcontroller"},
+    {"lib":"electronics","q":"salvage microcontroller"}
+  ]
+}

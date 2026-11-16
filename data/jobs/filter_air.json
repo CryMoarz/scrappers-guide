@@ -1,0 +1,15 @@
+{
+  "id": "filter_air",
+  "name": "Clean the air",
+  "keywords": ["clean the air","clean air","filter air","purify air","air filtration","smoke in the air","wildfire smoke","dusty air","box fan filter"],
+  "summary": "Tape a furnace filter to a box fan and you have a room air cleaner that rivals bought ones. Furnace filters sit in nearly every furnace and on hardware store shelves, and vacuum cleaners and air purifiers hold HEPA filters. HEPA catches dust, smoke and spores; activated carbon catches smells and some fumes.",
+  "parts": [
+    {"fn":"filter_air","why":"HEPA and furnace filters catch dust, smoke and spores","core":true},
+    {"fn":"fan","why":"Moves air through the filter","core":true},
+    {"fn":"carbon","why":"Soaks up smells and some fumes","core":true},
+    {"fn":"foam_rubber","why":"Seals gaps so air goes through the filter, not around it"},
+    {"fn":"solar_panel","why":"Runs a 12V fan filter off-grid","need":{"w":10}}
+  ],
+  "guides": ["safety_carbon_monoxide","safety_asbestos_check"],
+  "tips": ["Use MERV 13 or better furnace filters. Four of them boxed around one fan work even better.","Filters don’t remove carbon monoxide. Only fresh air does.","A well-fitted N95 or P2 mask beats any cloth over your face.","Change filters when they turn grey: clogged filters move little air."]
+}

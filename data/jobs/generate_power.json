@@ -1,0 +1,21 @@
+{
+  "id": "generate_power",
+  "name": "Generate power",
+  "keywords": ["generate power","generate electricity","make electricity","make power","produce electricity","power generation","off grid power","off-grid power","solar power","electricity","power source"],
+  "summary": "Solar panels and a charge controller are the backbone: no fuel, no moving parts, decades of life. Solar road signs and RV roofs carry 12V panels nobody thinks to take. Permanent-magnet DC motors, like the one in a treadmill, turn into generators for wind, water or pedals. Fuel generators work only until the fuel goes stale.",
+  "parts": [
+    {"fn":"solar_panel","why":"The best long-term source: no fuel, no moving parts","core":true,"need":{"w":20}},
+    {"fn":"charge_controller","why":"Charges batteries safely from panels","core":true},
+    {"fn":"motor_dc_large","why":"Treadmill motors and other permanent-magnet motors make good generators","core":true},
+    {"fn":"alternator","why":"Car alternators and generator heads, driven by an engine or water","core":true},
+    {"fn":"wind_turbine_small","why":"Ready-made turbines from boats, RVs and cabins"},
+    {"fn":"dynamo","why":"Hand-crank and bike dynamos for small loads"},
+    {"fn":"engine_small","why":"Drives a generator while fuel lasts"},
+    {"fn":"battery_pb","why":"Stores what you make for when you need it"}
+  ],
+  "guides": ["build_solar_12v_system","test_solar_panel","reference_power_budget","build_treadmill_wind_generator","build_micro_hydro","build_pedal_generator"],
+  "tips": ["Work out your loads first. Power you don’t need is cheaper than power you make.","Sign and RV panels are 12V class and charge a 12V battery through a simple controller. House rooftop panels run 30–50V and need an MPPT controller.","Car alternators need fast spinning (well over 1000 rpm) and battery power to excite them. They’re poor for wind.","Petrol goes stale in months. Plan for generators to stop when the fuel does."],
+  "refs": [
+    {"lib":"energypedia","q":"off grid power"}
+  ]
+}

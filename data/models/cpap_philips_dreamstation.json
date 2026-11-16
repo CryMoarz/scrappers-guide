@@ -1,0 +1,29 @@
+{
+  "id": "cpap_philips_dreamstation",
+  "device": "cpap",
+  "brand": "Philips Respironics",
+  "model": "DreamStation",
+  "fcc": "THO1116426",
+  "notes": "Covers the first-generation DreamStation (CPAP DSX200 series). The heated humidifier (DSXH) is a separate module.",
+  "research": {"checked":"2026-11-12","gaps":["The 2017 internal photos under the same FCC ID are of the DreamStation Go and were not used.","Neither source states the supply's own DC output, so no voltage or current is set on it.","Its heater plate wattage was not found, only the 65 C maximum.","The photos also show two ported packages with no legible markings (a black two-port block at MT2 and a single-port package with a grey hose barb at MT3); no source read says what they are, so no sensor is claimed.","No source read says which motor the DRV8301 drives.","The recall page does not say where in the case the foam sits."],"method":["The FCC user manual covers DreamStation CPAP, CPAP Pro and Auto CPAP.","FCC exhibits for THO1116426 (Bluetooth, original grant 2015-06-17) were read through the fccid.io mirror because apps.fcc.gov returned HTTP 403.","The 2015 internal-photo exhibit shows main board PCA 1116425 (PCB 1116426 Rev 3).","The host user manual exhibit carries a DRAFT watermark; it lists power supply 1118499 in the system contents and, in its specifications, an 80 W supply and a 12 VDC 6.67 A DC power rating for the device; the Philips spec sheet names part 1118499 as the DreamStation 80-watt power supply.","TI's datasheet describes the DRV8301 as a gate driver for three-phase motor drives (BLDC and PMSM motors).","FDA's recall page names DreamStation among the recalled devices and says their PE-PUR foam is used to reduce sound and vibration."]},
+  "comps": [
+    {"key":"psu","conf":"documented","spec":"Philips Respironics 80 W external power supply, part 1118499, for 100-240 VAC 50/60 Hz mains (2.0-1.0 A); the manual rates the device's DC power input at 12 VDC 6.67 A, and a Philips DC cord with battery adapter cable runs it from a 12 VDC battery","w":80,"source":"https://fccid.io/pdf.php?id=2651591"},
+    {"key":"controller_board","conf":"documented","spec":"Main board PCA 1116425 (PCB 1116426 Rev 3): ST STM32F427ZGT6 MCU, TI DRV8301 gate driver, Broadcom BCM20702 Bluetooth chip, SD card connector, accessory connector, Molex connector, buzzer (LS1)","source":"https://fccid.io/pdf.php?id=2651572"},
+    {"key":"ic_mcu_main","fn":"ic_mcu","spec":"ST STM32F427ZGT6 Arm microcontroller (marked 32F427ZGT6), quad flat package on the bottom of the main board","qty":1,"ext":4,"obs":4,"conf":"documented","source":"https://fccid.io/pdf.php?id=2651572"},
+    {"key":"ic_driver_bldc","fn":"ic_driver","spec":"TI DRV8301 three-phase gate driver (marked DRV8301, TI logo) on the bottom of the main board","qty":1,"ext":4,"obs":5,"conf":"documented","source":"https://fccid.io/pdf.php?id=2651572"},
+    {"key":"radio_rf_bluetooth","fn":"radio_rf","spec":"BCM20702 (Broadcom) Bluetooth chip, marked BCM20702, with a printed-trace antenna in the bottom-left corner of the main board","qty":1,"ext":4,"obs":4,"conf":"documented","source":"https://fccid.io/pdf.php?id=2651572"},
+    {"key":"battery_coin_main","fn":"battery_coin","spec":"3 V coin cell with solder tabs in a yellow sleeve at BT1 on the main board","v":3,"qty":1,"ext":2,"obs":4,"conf":"documented","source":"https://fccid.io/pdf.php?id=2651572"},
+    {"key":"filter_air","conf":"documented","spec":"Reusable pollen filter part 1122446; disposable ultra-fine filter part 1122447 (1-pack), 1122518 (2-pack), 1122519 (6-pack)","source":"https://www.documents.philips.com/assets/20170523/52bc2a8255f84a378cdba77c0157173e.pdf"},
+    {"key":"hose_tubing","conf":"documented","spec":"15 mm standard tube PR15 or 15 mm heated tube HT15","source":"https://www.documents.philips.com/assets/20170523/52bc2a8255f84a378cdba77c0157173e.pdf"},
+    {"key":"heating_element","conf":"documented","spec":"DreamStation heated humidifier heater plate, maximum 65 C; 325 ml water at the recommended level; the heated tube is 15 mm by 1.83 m with a 41 C cut-out","source":"https://www.manualslib.com/manual/988840/Philips-Dreamstation.html?page=14"},
+    {"key":"foam_rubber_sound","fn":"foam_rubber","spec":"Polyester-based polyurethane (PE-PUR) foam used to reduce sound and vibration; the subject of the Philips recall listed by FDA","qty":1,"ext":2,"obs":3,"conf":"documented","source":"https://www.fda.gov/medical-devices/respiratory-devices/recalled-philips-ventilators-bipap-machines-and-cpap-machines"}
+  ],
+  "sources": [
+    {"title":"DreamStation CPAP / CPAP Pro / Auto CPAP user manual (draft), FCC exhibit 'user guide host' for THO1116426 (fccid.io mirror, 2015)","url":"https://fccid.io/pdf.php?id=2651591"},
+    {"title":"Philips DreamStation internal photographs, FCC exhibit for THO1116426 (fccid.io mirror, 2015)","url":"https://fccid.io/pdf.php?id=2651572"},
+    {"title":"DreamStation CPAP key content and specifications sheet with ordering part numbers (Philips PDF, edoc EB 11/12/15, MCI 4107064)","url":"https://www.documents.philips.com/assets/20170523/52bc2a8255f84a378cdba77c0157173e.pdf"},
+    {"title":"Philips DreamStation user manual, heated humidifier and heated tubing specifications page (ManualsLib, page 14)","url":"https://www.manualslib.com/manual/988840/Philips-Dreamstation.html?page=14"},
+    {"title":"Recalled Philips Ventilators, BiPAP Machines, and CPAP Machines (U.S. FDA)","url":"https://www.fda.gov/medical-devices/respiratory-devices/recalled-philips-ventilators-bipap-machines-and-cpap-machines"},
+    {"title":"Datasheet: TI DRV8301 three-phase gate driver (SLOS719F, ti.com)","url":"https://www.ti.com/lit/ds/symlink/drv8301.pdf"}
+  ]
+}

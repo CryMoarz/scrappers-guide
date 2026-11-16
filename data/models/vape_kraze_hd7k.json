@@ -1,0 +1,20 @@
+{
+  "id": "vape_kraze_hd7k",
+  "device": "vape",
+  "brand": "Kraze",
+  "model": "HD7K",
+  "notes": "The same unit also goes by names such as Raz TN9000. The microcontroller is on a separate black logic board.",
+  "research": {"checked":"2026-11-11","gaps":["Battery capacity is not stated."],"method":["Rip It Apart teardown (Dispo Adventures, episode 1) of a colour-LCD disposable the post calls the Kraze HD7K in its area of Canada.","The USB-C connector, inhalation sensor and heating coil connector are on the green power board."]},
+  "comps": [
+    {"key":"battery_li","conf":"documented","spec":"13450-size lithium-ion pouch cell, 13 mm diameter by 45 mm long; capacity not stated","source":"https://ripitapart.com/2024/04/20/dispo-adventures-episode-1-reverse-engineering-and-running-windows-95-on-a-disposable-vape-with-a-colour-lcd-screen/"},
+    {"key":"b:li_charger_small:connector","conf":"documented","spec":"USB-C connector on the green power board, with solder pads for the battery","source":"https://ripitapart.com/2024/04/20/dispo-adventures-episode-1-reverse-engineering-and-running-windows-95-on-a-disposable-vape-with-a-colour-lcd-screen/"},
+    {"key":"sensor_misc","conf":"documented","spec":"Inhalation sensor on the green power board; sensor type not stated","source":"https://ripitapart.com/2024/04/20/dispo-adventures-episode-1-reverse-engineering-and-running-windows-95-on-a-disposable-vape-with-a-colour-lcd-screen/"},
+    {"key":"wire_copper","conf":"documented","spec":"Heating coil, connected through a heating coil connector on the green power board","source":"https://ripitapart.com/2024/04/20/dispo-adventures-episode-1-reverse-engineering-and-running-windows-95-on-a-disposable-vape-with-a-colour-lcd-screen/"},
+    {"key":"ic_mcu_n32","fn":"ic_mcu","spec":"Nations Tech N32G031K8Q7-1 microcontroller","qty":1,"ext":4,"obs":5,"conf":"documented","source":"https://ripitapart.com/2024/04/20/dispo-adventures-episode-1-reverse-engineering-and-running-windows-95-on-a-disposable-vape-with-a-colour-lcd-screen/"},
+    {"key":"display_lcd","fn":"display","spec":"Colour LCD, part FXD096QQ08B-F","qty":1,"ext":2,"obs":1,"conf":"documented","source":"https://ripitapart.com/2024/04/20/dispo-adventures-episode-1-reverse-engineering-and-running-windows-95-on-a-disposable-vape-with-a-colour-lcd-screen/"},
+    {"key":"ic_memory_flash","fn":"ic_memory","spec":"Giantech GT25Q80A-UZLI SPI flash, 1 MB","qty":1,"ext":4,"obs":5,"conf":"documented","source":"https://ripitapart.com/2024/04/20/dispo-adventures-episode-1-reverse-engineering-and-running-windows-95-on-a-disposable-vape-with-a-colour-lcd-screen/"}
+  ],
+  "sources": [
+    {"title":"Dispo Adventures, episode 1: teardown and reverse engineering of a colour-LCD disposable vape (Rip It Apart)","url":"https://ripitapart.com/2024/04/20/dispo-adventures-episode-1-reverse-engineering-and-running-windows-95-on-a-disposable-vape-with-a-colour-lcd-screen/"}
+  ]
+}

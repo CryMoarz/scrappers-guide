@@ -1,0 +1,16 @@
+{
+  "id": "audio_amp_board",
+  "name": "Audio amplifier board",
+  "notes": "From TVs, stereos, PA systems and powered speakers.",
+  "comps": [
+    {"key":"ic_audio","fn":"ic_audio","spec":"Amplifier ICs (TDA/LM386-type)","qty":2,"ext":3,"obs":4,"loc":"On a heatsink"},
+    {"key":"bjt","fn":"bjt","spec":"Power transistors (discrete amps)","qty":4,"ext":3,"obs":4,"loc":"On a heatsink"},
+    {"key":"ic_opamp","fn":"ic_opamp","spec":"Preamp op-amps","qty":2,"ext":4,"obs":5,"loc":"Input section"},
+    {"key":"cap_elec","fn":"cap_elec","spec":"Large filter capacitors","qty":4,"ext":2,"obs":4,"loc":"Power section"},
+    {"key":"potentiometer","fn":"potentiometer","spec":"Volume and tone potentiometers","qty":3,"ext":2,"obs":4,"loc":"Front panel"},
+    {"key":"bridge_rect","fn":"bridge_rect","spec":"Bridge rectifier","qty":1,"ext":3,"obs":4,"loc":"Power section"},
+    {"key":"relay","fn":"relay","spec":"Speaker protection relay","v":[12,24],"a":[5,10],"qty":1,"ext":3,"obs":5,"loc":"Output"},
+    {"key":"heatsink","fn":"heatsink","spec":"Heatsink","qty":1,"ext":2,"obs":4,"loc":"Rear"},
+    {"key":"connector","fn":"connector","spec":"Speaker terminals and jacks","qty":4,"ext":2,"obs":4,"loc":"Rear panel"}
+  ]
+}

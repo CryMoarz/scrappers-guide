@@ -1,0 +1,22 @@
+{
+  "id": "wifi_router_d_link_dir_510l_a1",
+  "device": "wifi_router",
+  "brand": "D-Link",
+  "model": "DIR-510L A1",
+  "fcc": "KA2IR510LA1",
+  "notes": "Chips for hardware version A1; other versions of the DIR-510L can differ.",
+  "research": {"gaps":[],"method":["Not yet fact-checked: its parts show as likely until a fact-check confirms them against their sources.","Imported from the OpenWrt Table of Hardware (toh.json, 2026-11-13): the hardware data page for this version, by OpenWrt wiki contributors under CC BY-SA 4.0."]},
+  "comps": [
+    {"key":"ic_mcu_soc","fn":"ic_mcu","spec":"SoC MediaTek MT7620A, 1 core at 580 MHz","qty":1,"ext":4,"obs":3,"source":"https://openwrt.org/toh/hwdata/d-link/d-link_dir-510l","conf":"likely"},
+    {"key":"ic_memory_flash","fn":"ic_memory","spec":"Flash, 16 MB","qty":1,"ext":2,"obs":4,"source":"https://openwrt.org/toh/hwdata/d-link/d-link_dir-510l","conf":"likely"},
+    {"key":"ic_memory_ram","fn":"ic_memory","spec":"RAM, 128 MB","qty":1,"ext":3,"obs":3,"source":"https://openwrt.org/toh/hwdata/d-link/d-link_dir-510l","conf":"likely"},
+    {"key":"radio_rf","spec":"Wi-Fi: MediaTek MT7620A, MediaTek MT7610EN (2.4 GHz b/g/n, 5 GHz a/n/ac)","qty":2,"source":"https://openwrt.org/toh/hwdata/d-link/d-link_dir-510l","conf":"likely"},
+    {"key":"psu","spec":"Power supply: 5 VDC, 1.8 A (µUSB), 4000 mAh Li-ion battery","v":5,"a":1.8,"source":"https://openwrt.org/toh/hwdata/d-link/d-link_dir-510l","conf":"likely"},
+    {"key":"battery_li","fn":"battery_li","spec":"Built-in lithium battery, 4000 mAh","ah":4,"qty":1,"ext":2,"obs":3,"source":"https://openwrt.org/toh/hwdata/d-link/d-link_dir-510l","conf":"likely"},
+    {"key":"connector","spec":"Ethernet ports: 1× 100M","qty":1,"source":"https://openwrt.org/toh/hwdata/d-link/d-link_dir-510l","conf":"likely"},
+    {"key":"connector_usb","fn":"connector","spec":"USB: 2x 2.0, 1x µUSB (charging)","qty":1,"ext":2,"obs":4,"source":"https://openwrt.org/toh/hwdata/d-link/d-link_dir-510l","conf":"likely"}
+  ],
+  "sources": [
+    {"title":"OpenWrt Table of Hardware: D-Link DIR-510L A1 (OpenWrt wiki contributors, CC BY-SA 4.0)","url":"https://openwrt.org/toh/hwdata/d-link/d-link_dir-510l"}
+  ]
+}

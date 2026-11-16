@@ -1,0 +1,36 @@
+{
+  "id": "test_lithium_cell",
+  "kind": "test",
+  "title": "Test salvaged lithium cells",
+  "keywords": ["test 18650","test lithium","battery test","lithium cell","cell voltage","capacity test","self discharge","harvest 18650","laptop cells","vape battery","li-ion test","lifepo4","internal resistance"],
+  "summary": "Sort salvaged lithium cells into keepers and rejects: inspect them, check resting voltage, charge gently while watching for heat, measure what they hold under a known load, and check they keep their charge for a week.",
+  "difficulty": 2,
+  "mins": 30,
+  "tools": ["multimeter","hands","tape","cutters"],
+  "hazards": ["li_fire","burn"],
+  "materials": [
+    {"item":"Lithium charger with a proper cut-off, such as a single-cell charge board or a hobby charger","fn":"charger","qty":"1"},
+    {"item":"Load resistor of about 4 Ω, 10 W or more","fn":"resistor","qty":"1"},
+    {"item":"Cell holder or clip leads","fn":"connector","qty":"1"},
+    {"item":"Metal tray with sand for charging, and a metal box of sand for rejects","qty":"1 each"},
+    {"item":"Marker and notebook for labelling cells","qty":"1"},
+    {"item":"A clock or watch","qty":"1"}
+  ],
+  "steps": [
+    {"text":"Inspect every cell: dents, rust, leaks, crust at the ends, a bulging top, torn or melted wrapping, or a damaged vent at the positive end. Reject any damaged cell.","warn":"Swollen, punctured or leaking cells go straight to the reject box. Follow the swollen lithium guide."},
+    {"text":"Measure the resting voltage on DC volts and write it on the cell."},
+    {"text":"Sort common lithium-ion cells by voltage. Above 3.0 V: probably fine. 2.5–3.0 V: fine to charge. 2.0–2.5 V: suspect. Below 2.0 V: reject.","warn":"Don't charge cells below 2.0 V. Cells left that flat can grow internal shorts and fail violently when charged."},
+    {"text":"Charge on a metal tray of sand where you can watch. Use a charger that stops at 4.2 V (3.65 V for LiFePO4). Charge suspect cells at low current, a tenth of their capacity or less, and feel them every 15 minutes.","warn":"If a cell gets hot, or clearly warmer than the cells charging beside it, unplug it and reject it."},
+    {"text":"Let charged cells rest for an hour, then measure. A good lithium-ion cell reads 4.1–4.2 V."},
+    {"text":"Capacity test: connect the 4 Ω resistor across a full cell and note the time. Measure the voltage every 15 minutes. Disconnect when it reaches 3.0 V under load.","warn":"The resistor gets hot. Lay it on metal or stone, and never leave a discharging cell unattended."},
+    {"text":"Work out capacity: a 4 Ω load draws about 0.9 A on average, so capacity in mAh is roughly 900 × the hours it ran. See the notes for a worked example."},
+    {"text":"Recharge the cell, let it rest, and write down its voltage. Leave it at room temperature for 7 days and measure again. A good cell loses only a few hundredths of a volt. More than about 0.1 V is a reject."},
+    {"text":"Tape any torn wrapping, especially near the positive end.","warn":"The whole metal can of a round cell is negative. Torn wrapping near the positive end can short it."},
+    {"text":"Mark keepers with their capacity and test date. Group cells of similar capacity together for packs. Put rejects in the metal box of sand with their ends taped."}
+  ],
+  "notes": "## Voltages by chemistry\n\n| Chemistry | Full | Nominal | Stop discharging at | Don't charge below |\n|---|---|---|---|---|\n| Lithium-ion (most 18650s, phones, laptops, vapes, power tools) | 4.2 V | 3.6–3.7 V | 3.0 V | 2.0 V |\n| Lithium iron phosphate (LiFePO4) | 3.6–3.65 V | 3.2 V | 2.5 V | about 2.0 V |\n| Lithium primary (camera cells, coin cells, lithium AA) | — | 3 V or 1.5 V | — | Never charge |\n\nA few lithium-ion cells are made to charge to 4.35 V. If you don't know, stop at 4.2 V.\n\n## Working out capacity\n\nCurrent through the 4 Ω load falls as the cell empties: about 1.05 A at 4.2 V and about 0.75 A at 3.0 V. Using 0.9 A as the average is close enough.\n\nExample: a cell runs for 2 hours 30 minutes before reaching 3.0 V under load. 0.9 A × 2.5 h = 2.25 Ah, so about 2,250 mAh.\n\nWhen new, most 18650 cells hold 1,500–3,500 mAh. A salvaged cell that still holds 70–80% of what its label says is a good keeper. Labels claiming 6,000 mAh or more on an 18650 are fake.\n\n## Comparing internal resistance\n\nMeasure the cell's voltage with no load, then again a few seconds after connecting the 4 Ω resistor. Resistance ≈ (voltage drop) ÷ (current, about 1 A). Your clips and wires add to it, so this only compares cells measured the same way. A cell with much higher resistance than its batch-mates is worn and will sag under load.\n\n## Building packs\n\nCells in a pack should match in capacity and resistance, and be at the same voltage (within about 0.05 V) before joining them in parallel. Packs need a BMS (battery management board) to stop overcharge, over-discharge and shorts.\n\n## Common mistakes\n\n- Charging old cells overnight or unattended.\n- Charging with a cheap charger that has no cut-off.\n- Mixing cells of very different capacity in one pack.\n- Trusting printed capacity.\n- Carrying loose cells in a pocket.",
+  "tree": {"era":3,"branch":"power","requires":["safety_swollen_lithium","skill_multimeter"]},
+  "devices": ["laptop","power_bank","vape","cordless_drill","ebike","scooter","hoverboard","power_station","smartphone","rc_drone","robot_vacuum","stick_vacuum"],
+  "parts": ["battery_li","charger","bms","resistor"],
+  "license": "CC-BY-SA-4.0"
+}

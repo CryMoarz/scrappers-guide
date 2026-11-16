@@ -1,0 +1,26 @@
+{
+  "id": "window_ac_frigidaire_fac064k7a1",
+  "device": "window_ac",
+  "brand": "Frigidaire",
+  "model": "FAC064K7A1",
+  "notes": "Window unit, base model FAC064K7A.",
+  "research": {"checked":"2026-11-12","gaps":["It does not state quantities for these parts.","The Compressor Parts page gives no ratings for the compressor or the overload protector.","Cover page also lists 345 next to BTU-COOLING, meaning unclear."],"method":["Source: Frigidaire Factory Parts Catalog, publication 5995348280, dated 06/01, (c)2001 White Consolidated Industries, 12 pages, read on ManualsLib.","ManualsLib's text extraction prints the position numbers, part numbers and descriptions as separate blocks; rows were paired by order, and the counts matched on every page used (compressor parts p. 9, controls p. 5, air handling p. 7).","The catalog names Goldstar as the compressor maker and Sagem for the power PC board.","Qty on extra parts is editorial (one part number listed per position)."]},
+  "comps": [
+    {"key":"compressor","conf":"documented","spec":"Compressor, Goldstar, Frigidaire part 5304420589 (Compressor Parts, pos. 1); mounted with grommets 5303283877 and nuts 5308006948 (3 each)","ac":true,"source":"https://www.manualslib.com/manual/240790/Frigidaire-Fac064k7a1.html?page=9"},
+    {"key":"thermostat_overload","fn":"thermostat","spec":"Compressor overload protector, part 5304417320 (Compressor Parts, pos. 8)","qty":1,"ext":2,"obs":4,"conf":"documented","source":"https://www.manualslib.com/manual/240790/Frigidaire-Fac064k7a1.html?page=9"},
+    {"key":"capacitor_large","conf":"documented","spec":"Capacitor, 370 V, 35+5 microfarad, part 5304420621 (Controls, pos. 13), with strap 5303303086 and cover 5303302855","v":370,"ac":true,"source":"https://www.manualslib.com/manual/240790/Frigidaire-Fac064k7a1.html?page=5"},
+    {"key":"motor_ac","conf":"documented","spec":"Motor-fan, 3 speed, part 309627302 (Air Handling Parts, pos. 8), mounted on grommets 5300105402","ac":true,"source":"https://www.manualslib.com/manual/240790/Frigidaire-Fac064k7a1.html?page=7"},
+    {"key":"fan","conf":"documented","spec":"Fan blade with clamp, part 309624502 (pos. 1), and blower wheel, part 309617101 (pos. 11), with blower clamp 5303012110","source":"https://www.manualslib.com/manual/240790/Frigidaire-Fac064k7a1.html?page=7"},
+    {"key":"hose_tubing","conf":"documented","spec":"Capillary tube, 45 inch long, cut to length, part 5308017120 (pos. 16); evaporator 309604211 (pos. 11), condenser 5303303197 (pos. 12), process tube 5304413857","source":"https://www.manualslib.com/manual/240790/Frigidaire-Fac064k7a1.html?page=9"},
+    {"key":"controller_board_power","fn":"controller_board","spec":"PC board, power (Sagem), part 309350401 (Controls, pos. 71)","qty":1,"ext":2,"obs":3,"conf":"documented","source":"https://www.manualslib.com/manual/240790/Frigidaire-Fac064k7a1.html?page=5"},
+    {"key":"controller_board_input","fn":"controller_board","spec":"PC board, input, part 309350402 (Controls, pos. 72)","qty":1,"ext":2,"obs":3,"conf":"documented","source":"https://www.manualslib.com/manual/240790/Frigidaire-Fac064k7a1.html?page=5"},
+    {"key":"transformer_lv_control","fn":"transformer_lv","spec":"Transformer, 120/12 V, part 309111601 (Controls, pos. 76)","qty":1,"ext":2,"obs":3,"conf":"documented","source":"https://www.manualslib.com/manual/240790/Frigidaire-Fac064k7a1.html?page=5"},
+    {"key":"wire_copper_cord","fn":"wire_copper","spec":"Cord-electric power, 18 AWG, 115 V, part 309343101 (Controls, pos. 17)","v":115,"qty":1,"ext":1,"obs":2,"conf":"documented","source":"https://www.manualslib.com/manual/240790/Frigidaire-Fac064k7a1.html?page=5"}
+  ],
+  "sources": [
+    {"title":"Frigidaire FAC064K7A1 Factory Parts Catalog, publication 5995348280, 06/01 (ManualsLib), page 5: Controls","url":"https://www.manualslib.com/manual/240790/Frigidaire-Fac064k7a1.html?page=5"},
+    {"title":"Frigidaire FAC064K7A1 Factory Parts Catalog, publication 5995348280, 06/01 (ManualsLib), page 7: Air Handling Parts","url":"https://www.manualslib.com/manual/240790/Frigidaire-Fac064k7a1.html?page=7"},
+    {"title":"Frigidaire FAC064K7A1 Factory Parts Catalog, publication 5995348280, 06/01 (ManualsLib), page 9: Compressor Parts","url":"https://www.manualslib.com/manual/240790/Frigidaire-Fac064k7a1.html?page=9"},
+    {"title":"Frigidaire FAC064K7A1 Factory Parts Catalog, publication 5995348280, 06/01 (ManualsLib), page 1: model index","url":"https://www.manualslib.com/manual/240790/Frigidaire-Fac064k7a1.html?page=1"}
+  ]
+}

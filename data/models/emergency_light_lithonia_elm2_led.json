@@ -1,0 +1,20 @@
+{
+  "id": "emergency_light_lithonia_elm2_led",
+  "device": "emergency_light",
+  "brand": "Lithonia Lighting",
+  "model": "ELM2 LED (Quantum twin-head emergency light, 120/277 V)",
+  "notes": "Twin-head LED emergency light for 120/277 V with a 3.6 V nickel-cadmium battery; the HO option has a higher-output ni-cad pack and the SD option adds self-diagnostics. Whole-unit input from the sheet's primary circuit table: max 0.04 A at 120 V, 0.03 A at 277 V, 1.44 W (2.88 W with HO).",
+  "research": {"checked":"2026-11-12","gaps":["The sheet gives the battery as 3.6 V nickel-cadmium with no capacity and no part number.","ELB-B001 (3.6 V, 900 mAh NiCd) appears on a generic-brand Candela Corp listing and a Rexel listing; neither names the ELM2 LED, so the part number and the 900 mAh figure are left out.","Seller pages said to tie ELB-B001 to the ELM2 LED (build.com, HD Supply, PartsSource, Battery Mart, Battery Junction, Stokes Electric) gave 403, 429 or a certificate error, so none is cited.","The primary circuit table is the whole unit's input, not a charger rating, so it is in notes and not on the charger.","The sheet mentions a printed circuit board with an edge connector but names no board parts, so none are claimed.","The sheet prints the flame rating as UL94V-O; read as V-0."],"method":["Lithonia ELM2 LED Quantum thermoplastic emergency light spec sheet (Acuity Brands, Rev. 02/16/17, two pages), read from the Elliott Electric copy (file ELM2LEDM12-LIT-1021-1) with tools/research.js pdf; page 1 rendered and checked.","The Acuity Brands product page returned 403.","Candela Corp and Rexel replacement-battery listings read as text: they show a generic 3.6 V 900 mAh NiCd pack, with no compatibility list."]},
+  "comps": [
+    {"key":"battery_nimh","conf":"documented","spec":"Sealed, maintenance-free nickel-cadmium battery, 3.6 V, 90-minute capacity to the emergency lamps; the HO option has a high-output ni-cad pack","v":3.6,"source":"https://old.elliottelectric.com/Media/ELM2LEDM12-LIT-1021-1-SpecificationSheet.pdf"},
+    {"key":"led_light","conf":"documented","spec":"Two LED lamp heads, each 1.5 W at 3.6 V with 12 white LEDs in series-parallel and a polycarbonate lens (3 W total)","v":3.6,"w":1.5,"qty":2,"source":"https://old.elliottelectric.com/Media/ELM2LEDM12-LIT-1021-1-SpecificationSheet.pdf"},
+    {"key":"charger","conf":"documented","spec":"Current-limiting charger with thermal compensation, regulated charge voltage, filtered input and two-state constant-current charge; AC/LVD reset and low-voltage disconnect guard against deep discharge","source":"https://old.elliottelectric.com/Media/ELM2LEDM12-LIT-1021-1-SpecificationSheet.pdf"},
+    {"key":"switch_test","fn":"switch","spec":"Low-profile test switch with an integrated pilot light; on SD (self-diagnostics) units pressing it starts a 30-second diagnostic test","qty":1,"ext":1,"obs":4,"conf":"documented","source":"https://old.elliottelectric.com/Media/ELM2LEDM12-LIT-1021-1-SpecificationSheet.pdf"},
+    {"key":"led_light_indicator","fn":"led_light","spec":"Bright red status indicator, listed on the sheet with the integrated test switch/pilot light; the SD option has a single multi-colour LED indicator","qty":1,"ext":1,"obs":3,"conf":"documented","source":"https://old.elliottelectric.com/Media/ELM2LEDM12-LIT-1021-1-SpecificationSheet.pdf"},
+    {"key":"plastic_sheet_housing","fn":"plastic_sheet","spec":"White engineering-grade thermoplastic housing, UL 94 V-0 flame rating","qty":1,"ext":1,"obs":1,"conf":"documented","source":"https://old.elliottelectric.com/Media/ELM2LEDM12-LIT-1021-1-SpecificationSheet.pdf"},
+    {"key":"battery_pb","absent":true,"spec":"No lead-acid pack; the battery is nickel-cadmium","conf":"documented","source":"https://old.elliottelectric.com/Media/ELM2LEDM12-LIT-1021-1-SpecificationSheet.pdf"}
+  ],
+  "sources": [
+    {"title":"Lithonia ELM2 LED Quantum thermoplastic emergency light spec sheet, Rev. 02/16/17 (Acuity Brands; copy on Elliott Electric)","url":"https://old.elliottelectric.com/Media/ELM2LEDM12-LIT-1021-1-SpecificationSheet.pdf"}
+  ]
+}

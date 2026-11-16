@@ -1,0 +1,31 @@
+{
+  "id": "golf_cart",
+  "name": "Golf cart",
+  "group": "Vehicles and mobility",
+  "aliases": ["golf buggy","electric golf cart"],
+  "brands": ["Club Car","EZ-GO","Yamaha","Star EV"],
+  "prev": 3,
+  "tools": ["socket","cutters"],
+  "mins": 30,
+  "hazards": ["acid"],
+  "comps": [
+    {"key":"battery_pb","fn":"battery_pb","spec":"Deep-cycle bank, 6×8V or 8×6V (36–48V)","v":[36,48],"ah":[150,245],"qty":6,"ext":2,"obs":4,"loc":"Under the seat"},
+    {"key":"motor_dc_large","fn":"motor_dc_large","spec":"36/48V drive motor","v":48,"qty":1,"ext":3,"obs":4,"loc":"Rear axle"},
+    {"key":"controller_board","fn":"controller_board","spec":"Motor controller","qty":1,"ext":2,"obs":5,"loc":"Under the seat"},
+    {"key":"charger","fn":"charger","spec":"Onboard or plug-in charger","v":[36,48],"a":[13,25],"qty":1,"ext":1,"obs":4,"loc":"Under the seat or in the cart barn"},
+    {"key":"wire_heavy","fn":"wire_heavy","spec":"Battery cables","qty":8,"ext":1,"obs":5,"loc":"Battery bay"},
+    {"key":"led_light","fn":"led_light","spec":"Headlights (some carts)","v":[12,48],"w":[5,35],"qty":2,"ext":1,"obs":4,"loc":"Front","p":0.5}
+  ],
+  "boards": [
+    {"id":"power_motor_controller","qty":1,"loc":"Under the seat","p":1}
+  ],
+  "buildings": [
+    {"b":"golf","l":5},
+    {"b":"farm","l":3},
+    {"b":"campground","l":4},
+    {"b":"hotel","l":2},
+    {"b":"marina","l":2},
+    {"b":"school","l":2},
+    {"b":"warehouse","l":2}
+  ]
+}

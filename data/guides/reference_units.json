@@ -1,0 +1,24 @@
+{
+  "id": "reference_units",
+  "kind": "reference",
+  "title": "Units and conversions",
+  "keywords": ["conversion","units","psi to bar","fahrenheit celsius","gallons litres","btu to watts","horsepower watts","inches mm","energy in fuel","ohms law"],
+  "summary": "The conversions you need when manuals, labels and parts use different units: length, weight, volume, pressure, temperature, power, energy and the electrical basics.",
+  "difficulty": 1,
+  "mins": 5,
+  "tools": [],
+  "hazards": [],
+  "materials": [],
+  "steps": [
+    {"text":"Find the row for what you have and multiply by the factor to get the other unit; divide to go back."},
+    {"text":"Round the answer to what you can actually measure."}
+  ],
+  "notes": "## Multiply to convert\n\n| From | To | Multiply by |\n|---|---|---|\n| Inches | Millimetres | 25.4 |\n| Feet | Metres | 0.3048 |\n| Miles | Kilometres | 1.609 |\n| Pounds | Kilograms | 0.4536 |\n| Ounces (weight) | Grams | 28.35 |\n| US gallons | Litres | 3.785 |\n| Imperial gallons | Litres | 4.546 |\n| US fluid ounces | Millilitres | 29.57 |\n| psi | bar | 0.0689 (1 bar is 14.5 psi or 100 kPa) |\n| Horsepower | Watts | 746 |\n| BTU per hour | Watts | 0.293 (1 W is 3.41 BTU/h) |\n| Kilowatt-hours | Megajoules | 3.6 |\n| Kilocalories | Kilojoules | 4.184 |\n| Pound-feet (torque) | Newton-metres | 1.356 |\n\n## Temperature\n\n°C = (°F − 32) × 5 ÷ 9, and °F = °C × 9 ÷ 5 + 32. Landmarks: water freezes at 0 °C (32 °F) and boils at 100 °C (212 °F) at sea level; body temperature is 37 °C (98.6 °F); −40 is the same on both scales.\n\n## Electrical basics\n\n- Watts = volts × amps. Amps = watts ÷ volts.\n- Volts = amps × ohms (Ohm's law).\n- Watt-hours = volts × amp-hours. 2,000 mAh is 2 Ah; at 3.7 V that is about 7.4 Wh.\n- The same power at 12 V takes 10 times the current it takes at 120 V, which is why low-voltage wiring has to be so much thicker.\n\n## Energy in fuels (approximate)\n\n| Fuel | Energy |\n|---|---|\n| Gasoline | About 34 MJ per litre (9.5 kWh) |\n| Diesel | About 38 MJ per litre (10.7 kWh) |\n| Propane | About 46 MJ per kg (about 25 MJ per litre of liquid) |\n| Dry firewood | About 15–19 MJ per kg |\n\nA small generator turns only about a fifth to a quarter of its fuel's energy into electricity.\n",
+  "tree": {"era":1,"branch":"salvage","requires":[]},
+  "parts": [],
+  "license": "CC-BY-SA-4.0",
+  "sources": [
+    {"title":"NIST Special Publication 811: Guide for the Use of the International System of Units (conversion factors)"},
+    {"title":"US Energy Information Administration: energy content of fuels"}
+  ]
+}

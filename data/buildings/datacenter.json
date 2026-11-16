@@ -1,0 +1,6 @@
+{
+  "id": "datacenter",
+  "name": "Data centres",
+  "osm": ["telecom=data_center","building=data_center"],
+  "exposure": 1
+}

@@ -1,0 +1,20 @@
+{
+  "id": "listen_news",
+  "name": "Listen to news and broadcasts",
+  "keywords": ["listen to news","listen to the news","news","broadcast","emergency broadcast","listen to the radio","radio news","radio station","am radio","shortwave","short wave","weather radio"],
+  "summary": "Any working radio picks up broadcasts: car radios, clock radios and hand-crank emergency radios. AM and shortwave signals travel hundreds or thousands of kilometres after dark, so scan at night. A long wire strung high pulls in far more stations, and a crystal radio built from wire and a diode needs no power at all.",
+  "parts": [
+    {"fn":"radio_rf","why":"Any receiver: car, clock, crank and shortwave radios","core":true},
+    {"fn":"antenna_coax","why":"A better antenna brings in more stations","core":true},
+    {"fn":"wire_copper","why":"Long wire antennas, and coils for a crystal radio","core":true},
+    {"fn":"dynamo","why":"Hand-crank radios run without batteries"},
+    {"fn":"diode_schottky","why":"Detector diode for a crystal radio"},
+    {"fn":"inductor","why":"Tuning coil for a crystal radio"},
+    {"fn":"speaker","why":"Lets a group listen together"}
+  ],
+  "guides": ["build_crystal_radio"],
+  "tips": ["A car radio works as long as the battery does. Keep an eye on the battery so you can still start the car.","Write down the frequency and time of any station you hear, and check back at the same time.","A crystal radio needs a long antenna and a good earth, like a metal stake or a buried water pipe."],
+  "refs": [
+    {"lib":"ham","q":"shortwave"}
+  ]
+}

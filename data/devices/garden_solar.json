@@ -1,0 +1,23 @@
+{
+  "id": "garden_solar",
+  "name": "Solar garden lights",
+  "group": "Power and solar",
+  "aliases": ["solar pathway light","solar stake light"],
+  "brands": ["Brightech","Malibu","Hampton Bay","Kichler"],
+  "prev": 5,
+  "tools": ["hands","screwdriver"],
+  "mins": 2,
+  "hazards": [],
+  "comps": [
+    {"key":"solar_panel","fn":"solar_panel","spec":"Tiny 2–6V solar cell","w":[0.1,1],"v":[2,6],"qty":1,"ext":1,"obs":4,"loc":"Top cap"},
+    {"key":"battery_nimh","fn":"battery_nimh","spec":"AA or AAA NiMH cell","v":1.2,"ah":[0.3,1.2],"qty":1,"ext":1,"obs":4,"loc":"Under the cap"},
+    {"key":"led_light","fn":"led_light","spec":"LED","v":[1.2,3.7],"w":[0.05,2],"qty":1,"ext":1,"obs":4,"loc":"Cap"},
+    {"key":"charger","fn":"charger","spec":"Tiny charge and LED driver circuit","v":1.2,"a":[0.02,0.15],"qty":1,"ext":1,"obs":5,"loc":"Cap"}
+  ],
+  "buildings": [
+    {"b":"house","l":5},
+    {"b":"hardware","l":5},
+    {"b":"department","l":4},
+    {"b":"church","l":2}
+  ]
+}

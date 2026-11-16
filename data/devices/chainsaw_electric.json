@@ -1,0 +1,18 @@
+{
+  "id": "chainsaw_electric",
+  "name": "Chainsaw, electric or battery",
+  "variantOf": "chainsaw",
+  "aliases": ["electric chainsaw","battery chainsaw","cordless chainsaw","corded chainsaw","mini chainsaw"],
+  "brands": ["Greenworks","Ryobi","Worx","Black+Decker","Sun Joe","EGO","Makita","DeWalt","Oregon","Milwaukee"],
+  "prev": 4,
+  "hazards": ["li_fire"],
+  "comps": [
+    {"key":"motor_universal","fn":"motor_universal","spec":"Universal motor, 1.5–2.4 kW, mains (corded models)","w":[1500,2400],"qty":1,"ext":2,"obs":4,"loc":"Body","p":0.5},
+    {"key":"motor_bldc","fn":"motor_bldc","spec":"Brushless motor, 36–80V (cordless models)","v":[36,80],"qty":1,"ext":2,"obs":4,"loc":"Body","p":0.5},
+    {"key":"battery_li","fn":"battery_li","spec":"36–80V tool battery packs (cordless models; often taken with the saw)","v":[36,80],"qty":1,"ext":1,"obs":2,"loc":"Battery slot or charger on the shelf"}
+  ],
+  "boards": [
+    {"id":"bldc_controller","qty":1,"loc":"Motor controller (cordless models)","p":0.6},
+    {"id":"battery_bms","qty":1,"loc":"Inside the battery pack (cordless models)","p":0.6}
+  ]
+}

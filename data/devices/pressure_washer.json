@@ -1,0 +1,40 @@
+{
+  "id": "pressure_washer",
+  "name": "Pressure washer",
+  "group": "Tools and yard",
+  "aliases": ["power washer","jet washer","pressure cleaner","surface cleaner","gas pressure washer"],
+  "brands": ["Karcher","Generac","Simpson","Sun Joe","Ryobi","Greenworks","DeWalt","Briggs & Stratton","Vevor"],
+  "prev": 4,
+  "tools": ["socket","wrench"],
+  "mins": 20,
+  "kg": 30,
+  "repairs": {"records":1583,"fixed":0.46,"end_of_life":0.3},
+  "hazards": ["fuel","hydraulic"],
+  "comps": [
+    {"key":"engine_small","fn":"engine_small","spec":"Petrol engine, 4–7 hp, horizontal shaft (gas models)","w":[2980,5220],"qty":1,"ext":2,"obs":2,"loc":"Frame","kg":15,"p":0.5},
+    {"key":"motor_universal","fn":"motor_universal","spec":"Mains universal or induction motor, 1.5–2.5 kW (electric models)","w":[1500,2500],"qty":1,"ext":2,"obs":4,"loc":"Inside the housing","p":0.5},
+    {"key":"pump_water","fn":"pump_water","spec":"High-pressure axial or plunger pump, about 100–250 bar — sprays, but moves little volume","qty":1,"ext":2,"obs":4,"loc":"Bolted to the engine or motor shaft"},
+    {"key":"hose_tubing","fn":"hose_tubing","spec":"Braided high-pressure hose, 6–15 m, plus garden hose fittings","qty":1,"ext":1,"obs":4,"loc":"Hose reel or hook"},
+    {"key":"bearing","fn":"bearing","spec":"Wheels with axle","qty":2,"ext":1,"obs":4,"loc":"Frame"},
+    {"key":"tube_frame","fn":"tube_frame","spec":"Steel tube frame and handle","qty":1,"ext":2,"obs":5,"loc":"Frame"},
+    {"key":"fuel_liquid","fn":"fuel_liquid","spec":"Petrol left in the tank (gas models)","qty":1,"ext":1,"obs":3,"loc":"Tank on the engine","p":0.5},
+    {"key":"oil_lube","fn":"oil_lube","spec":"Pump and engine oil","qty":1,"ext":1,"obs":5,"loc":"Pump crankcase and engine sump"}
+  ],
+  "buildings": [
+    {"b":"hardware","l":5},
+    {"b":"tool_rental","l":5},
+    {"b":"garage_res","l":4},
+    {"b":"farm","l":4},
+    {"b":"car_dealer","l":4},
+    {"b":"house","l":3},
+    {"b":"car_repair","l":3},
+    {"b":"marina","l":3},
+    {"b":"farm_supply","l":3},
+    {"b":"bus_depot","l":3},
+    {"b":"gas_station","l":2}
+  ],
+  "notes": "Release the pressure in the hose and gun before disconnecting: a high-pressure jet can inject water under the skin.",
+  "sources": [
+    {"title":"Open Repair Alliance, Open Repair Data v0.3 (community repair events, 2012 to July 2026; CC BY-SA 4.0): 1,583 repairs recorded as Power tool (pressure washer subset)","url":"https://github.com/openrepair/data"}
+  ]
+}

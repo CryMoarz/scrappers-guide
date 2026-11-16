@@ -1,0 +1,14 @@
+{
+  "id": "gas_spring",
+  "name": "Gas springs and struts",
+  "group": "Mechanical",
+  "demand": 1,
+  "keywords": ["gas spring","gas strut","strut","lift support","gas lift","hatch strut","tailgate strut","bonnet strut","lid stay","chair cylinder"],
+  "substitutes": ["spring","linear_actuator"],
+  "summary": "Sealed gas-filled struts that push with a steady force. They hold high pressure: never cut, drill or heat one.",
+  "uses": ["Holding lids, hatches and shutters open","Lift-assist for heavy doors and trapdoors","Height adjustment and soft closing"],
+  "identify": "A smooth steel tube with a thinner polished rod and end fittings. Look on car tailgates and bonnets, toolboxes, storage beds, cabinet doors and the column of every office chair. The force is often printed in newtons (N).",
+  "test": "Push the rod in by hand and let go: a good strut pushes back firmly and smoothly. A weak one stays in or moves too easily.",
+  "decay": {"halfLifeMonths":120,"note":"Seals leak slowly; most lose force over 5–15 years."},
+  "hazards": ["compressed_gas"]
+}

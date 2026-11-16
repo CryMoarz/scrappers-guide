@@ -1,0 +1,6 @@
+{
+  "id": "office",
+  "name": "Office buildings",
+  "osm": ["building=office","office=*","amenity=post_office","amenity=courthouse","amenity=townhall","shop=travel_agency","shop=copyshop","craft=printing","amenity=coworking_space"],
+  "exposure": 2
+}

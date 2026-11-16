@@ -1,0 +1,28 @@
+{
+  "id": "skill_read_nameplate",
+  "kind": "skill",
+  "title": "Read a rating plate",
+  "keywords": ["nameplate","rating plate","data plate","label","specs","volts amps watts","va","hz","rpm","hp","duty cycle","ip rating","what do the numbers mean","wh","mah"],
+  "summary": "Rating plates tell you what a device needs, what it can deliver and what is inside it. Learn to read volts, amps, watts, VA, frequency, phase, speed, power, duty cycle, protection ratings, battery and solar figures, and refrigerant data.",
+  "difficulty": 1,
+  "mins": 15,
+  "tools": ["hands"],
+  "hazards": ["mains"],
+  "steps": [
+    {"text":"Find the plate. On motors it is on the side of the case. On appliances it is on the back or base, inside the door, or under the lid. On transformers it is on the tape over the coil. On batteries it is on the top or side. Wipe it with a damp cloth to read it."},
+    {"text":"Supply: V is voltage. A wavy line or AC means alternating current; a straight line (sometimes over a dashed line) or DC means direct current. Hz (50 or 60) is mains frequency. 1~ or 1PH means single-phase; 3~ or 3PH means three-phase, which most homes don't have."},
+    {"text":"Load: A is current. W is real power. VA is volts × amps and is the figure to size wires, fuses and supplies by for motors and transformers. For heaters and DC loads, watts ≈ volts × amps."},
+    {"text":"Motors: rpm is the speed at full load. HP or kW is the power at the shaft (1 HP ≈ 746 W). FLA is full-load current. LRA is the much bigger current while starting, which matters on an inverter or generator."},
+    {"text":"Duty: S1 or continuous means it can run all day. S2 with a time, or a percentage such as 20%, means it must rest. A welder rated 20% at 100 A can weld 2 minutes in every 10 at that current.","warn":"Run past its duty rating and it overheats, which can start a fire."},
+    {"text":"Protection: in an IP rating such as IP65, the first digit is dust (6 = dust-tight) and the second is water (5 = water jets, 7 = brief dunking). A square inside a square means double insulated: no earth wire needed. Insulation class A, B, F or H says how hot the windings may run."},
+    {"text":"Batteries: V is the nominal voltage. Ah or mAh is the charge it holds. Watt-hours (Wh = Ah × V) is the energy, and the fair way to compare packs. CCA on a car battery is starting current, not capacity."},
+    {"text":"Solar panels: Pmax is watts. Vmp and Imp are voltage and current at best output. Voc and Isc are the voltage with nothing connected and the current with the leads shorted. The solar panel test guide uses these."},
+    {"text":"Fridges and AC units: the plate lists the refrigerant (such as R-600a or R-410A) and the charge in grams or ounces. Note whether it is flammable before you start work."},
+    {"text":"Power supplies and chargers: input range (100–240 V~ works on any mains), output volts and amps, and a polarity symbol showing whether the centre of a barrel plug is + or −.","warn":"Reversed polarity or the wrong voltage can destroy a device or start a battery fire."},
+    {"text":"Write the key numbers on tape on the device before you carry it. A load must never draw more than the supply's rated amps or watts."}
+  ],
+  "notes": "## Units and conversions\n\n| Unit | Meaning | Rule of thumb |\n|---|---|---|\n| W (watt) | Power | W = V × A |\n| Wh, kWh | Energy | Wh = W × hours; 1 kWh = 1,000 Wh |\n| VA | Volts × amps | Always equal to or more than watts |\n| Ah, mAh | Charge | 1 Ah = 1,000 mAh; Wh = Ah × V |\n| HP | Horsepower | 1 HP ≈ 746 W |\n| Hz | Mains frequency | 50 in most of the world, 60 in the Americas and some other places |\n\n## Sizing examples\n\n- A 12 V 100 Ah lead-acid battery holds about 1,200 Wh. A 60 W load could in theory run 20 hours, but using only about half keeps the battery alive, so plan on about 10 hours.\n- A power bank labelled 20,000 mAh at 3.7 V holds about 74 Wh, not 20,000 mAh at 5 V.\n- A motor that runs on 500 W may need two or three times that, or more, for a moment when starting. Size inverters and generators for the start, not just the running power.\n\n## Frequency\n\nA 60 Hz motor on 50 Hz runs about a sixth slower and can overheat. A 50 Hz motor on 60 Hz runs about a fifth faster. Clocks and timers with synchronous motors keep the wrong time on the wrong frequency.\n\n## Common mistakes\n\n- Plugging a 120 V device into 230 V.\n- Comparing mAh between packs of different voltage. Compare Wh.\n- Reading the output rating as the input rating, or the other way round.\n- Ignoring duty cycle on welders, compressors and small motors.\n- Getting barrel plug polarity wrong.",
+  "tree": {"era":2,"branch":"power"},
+  "parts": ["motor_ac","transformer_lv","solar_panel","battery_pb","battery_li","psu","compressor","inverter","charger","engine_small"],
+  "license": "CC-BY-SA-4.0"
+}

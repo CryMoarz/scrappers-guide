@@ -1,0 +1,25 @@
+# Every push and pull request: every record valid, every reference resolves, every test passes,
+# on each Node version people run it with (20 has no built-in SQLite, so it tests the file store).
+name: Check
+on:
+  push:
+  pull_request:
+permissions:
+  contents: read
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        node: [20, 22, 24, 26]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node }}
+      - run: node tools/validate.js
+      # The app tests load the built app. The committed one is the last release's, so build
+      # this commit's (unsigned, here only) or a source change breaks them until the next release.
+      - run: node tools/build.js
+      - run: node --test test/*.test.js

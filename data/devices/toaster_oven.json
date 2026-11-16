@@ -1,0 +1,42 @@
+{
+  "id": "toaster_oven",
+  "name": "Toasters, toaster ovens and air fryers",
+  "group": "Kitchen and appliances",
+  "aliases": ["toaster","air fryer","countertop oven","mini oven","convection oven","countertop toaster","combo oven"],
+  "brands": ["Breville","Cuisinart","Black+Decker","Hamilton Beach","Oster","Ninja","Panasonic","Toshiba"],
+  "prev": 5,
+  "tools": ["screwdriver","security_bits"],
+  "mins": 15,
+  "kg": 4,
+  "repairs": {"records":377,"fixed":0.42,"end_of_life":0.25},
+  "hazards": ["sharp"],
+  "comps": [
+    {"key":"heating_element","fn":"heating_element","spec":"Sheathed, quartz or nichrome-ribbon elements, 800–1,800W in total","w":[800,1800],"qty":3,"ext":2,"obs":4,"loc":"Top and bottom of the cavity"},
+    {"key":"glass_pane","fn":"glass_pane","spec":"Tempered glass door — a window for a solar oven or cold frame","qty":1,"ext":1,"obs":5,"loc":"Front door (toaster ovens)"},
+    {"key":"fan","fn":"fan","spec":"Convection fan with a small shaded-pole motor (convection ovens and air fryers)","v":[120,240],"w":[10,50],"ac":true,"qty":1,"ext":2,"obs":4,"loc":"Back or top of the cavity"},
+    {"key":"thermostat","fn":"thermostat","spec":"Adjustable thermostat, about 65–230 °C","qty":1,"ext":2,"obs":4,"loc":"Behind the temperature knob"},
+    {"key":"switch","fn":"switch","spec":"Wind-up clockwork timer switch","qty":1,"ext":2,"obs":5,"loc":"Behind the timer knob"},
+    {"key":"solenoid_actuator","fn":"solenoid_actuator","spec":"Carriage-hold electromagnet (pop-up toasters)","qty":1,"ext":2,"obs":5,"loc":"Base, beside the lever"},
+    {"key":"sheet_metal","fn":"sheet_metal","spec":"Chromed wire racks and a steel baking tray — grill grates for a fire","qty":2,"ext":1,"obs":4,"loc":"Inside the cavity"}
+  ],
+  "boards": [
+    {"id":"mcu_board","qty":1,"loc":"Digital models and air fryers","p":0.4}
+  ],
+  "buildings": [
+    {"b":"house","l":5},
+    {"b":"apartment","l":5},
+    {"b":"appliance","l":4},
+    {"b":"department","l":4},
+    {"b":"office","l":3},
+    {"b":"hotel","l":3},
+    {"b":"restaurant","l":3},
+    {"b":"church","l":3},
+    {"b":"school","l":2},
+    {"b":"nursing_home","l":2},
+    {"b":"campground","l":2},
+    {"b":"self_storage","l":2}
+  ],
+  "sources": [
+    {"title":"Open Repair Alliance, Open Repair Data v0.3 (community repair events, 2012 to July 2026; CC BY-SA 4.0): 377 repairs recorded as Toaster oven / mini oven (subset)","url":"https://github.com/openrepair/data"}
+  ]
+}

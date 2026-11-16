@@ -1,0 +1,27 @@
+{
+  "id": "hoverboard_hover_1_ttn_titan",
+  "device": "hoverboard",
+  "brand": "Hover-1",
+  "model": "TTN (Titan)",
+  "notes": "Hover-1 Titan, model HY-TTN.",
+  "research": {"checked":"2026-11-11","gaps":["The manual lists FCC ID 2AANZMODB and BT ID D042773 instead of 2AANZTTN, so the FCC link is a lead, not a confirmed match.","The manual gives 8 mph as the top speed in its specifications but 7 mph in its speed limits section, and 265 lbs versus 264 lbs for the maximum weight.","The manual does not say the motors are brushless or give their power."],"method":["The Hover-1 Titan operation manual (model HY-TTN, manufacturer DGL Group, Ltd.) and the FCC record for 2AANZTTN (grantee DGL Group LTD., product code TTN, described as HOVER-1 - TITAN HOVERBOARD) both identify this unit.","Not source facts."]},
+  "comps": [
+    {"key":"battery_li","conf":"documented","spec":"36V lithium-ion battery, 4Ah. The manual's specifications list 'Battery Capacity: 4Ah (20 Cell)'. The manual says the battery is built into the Titan and says not to remove it.","v":36,"ah":4,"source":"https://cdn.shopify.com/s/files/1/2653/9652/files/HY-TTN-Manual-12232022.pdf"},
+    {"key":"motor_bldc","conf":"documented","spec":"Motors (plural) located within the wheels, operated by the control system. Motor type, count per wheel and power are not stated in this source.","source":"https://cdn.shopify.com/s/files/1/2653/9652/files/HY-TTN-Manual-12232022.pdf"},
+    {"key":"sensor_misc","conf":"documented","spec":"Digital electronic gyroscopes and acceleration sensors that control balance and motion.","source":"https://cdn.shopify.com/s/files/1/2653/9652/files/HY-TTN-Manual-12232022.pdf"},
+    {"key":"led_light","conf":"documented","spec":"LED Light, listed as feature 7 in the features list. The Hover-1 app can change the LED lighting colors and sync the colors to music.","source":"https://cdn.shopify.com/s/files/1/2653/9652/files/HY-TTN-Manual-12232022.pdf"},
+    {"key":"speaker","conf":"documented","spec":"Built-in wireless Bluetooth speaker. Music streams from a paired phone or other device.","source":"https://cdn.shopify.com/s/files/1/2653/9652/files/HY-TTN-Manual-12232022.pdf"},
+    {"key":"charger","conf":"documented","spec":"Charger and charging cable included in the package. Charger input AC 100V-240V, 50/60 Hz. The charger light is red while charging and green when full. Full charge takes up to 5 hours. Output voltage is not stated.","source":"https://cdn.shopify.com/s/files/1/2653/9652/files/HY-TTN-Manual-12232022.pdf"},
+    {"key":"controller_board_motherboard","fn":"controller_board","spec":"Green board that the iFixit guide calls the gyroscope/motherboard. The guide is titled 'Left Gyroscope Replacement' and step 1 says the left side is the side with the charge port. Step 4 unplugs the battery from it at the yellow connector. Its motor-control role is not stated.","qty":1,"ext":2,"obs":2,"loc":"left side, per the guide title and step 1","conf":"documented","source":"https://www.ifixit.com/Guide/Hover-1+Titan+Left+Gyroscope+Replacement/114319"},
+    {"key":"connector_battery","fn":"connector","spec":"Yellow connector between the battery and the gyroscope/motherboard. The battery guide says to hold this connector to unplug the battery.","qty":1,"ext":1,"obs":2,"loc":"between the battery and the gyroscope/motherboard board","conf":"documented","source":"https://www.ifixit.com/Guide/Hover-1+Titan+Battery+Replacement/114323"},
+    {"key":"connector_charge_port","fn":"connector","spec":"Charging port that takes a 3-pin charging cable. The manual says not to force the charger into the port.","qty":1,"ext":1,"obs":2,"loc":"bottom of the unit (features list)","conf":"documented","source":"https://cdn.shopify.com/s/files/1/2653/9652/files/HY-TTN-Manual-12232022.pdf"},
+    {"key":"switch_power","fn":"switch","spec":"Power button. One press turns the unit on or off. The features list places it on the bottom; the controls section says rear.","qty":1,"ext":1,"obs":2,"loc":"bottom of the unit (features list)","conf":"documented","source":"https://cdn.shopify.com/s/files/1/2653/9652/files/HY-TTN-Manual-12232022.pdf"},
+    {"key":"sensor_foot_mat","fn":"sensor_misc","spec":"Four sensors under the foot mats. The manual does not state the sensor type.","qty":4,"ext":2,"obs":2,"loc":"under the foot mats","conf":"documented","source":"https://cdn.shopify.com/s/files/1/2653/9652/files/HY-TTN-Manual-12232022.pdf"}
+  ],
+  "sources": [
+    {"title":"Hover-1 Titan (HY-TTN) operation manual, PDF on the seller's Shopify CDN","url":"https://cdn.shopify.com/s/files/1/2653/9652/files/HY-TTN-Manual-12232022.pdf"},
+    {"title":"FCC ID 2AANZTTN record on fccid.io (grantee DGL Group LTD., product code TTN, grant 07/01/2024)","url":"https://fccid.io/2AANZTTN"},
+    {"title":"iFixit: Hover-1 Titan Battery Replacement guide","url":"https://www.ifixit.com/Guide/Hover-1+Titan+Battery+Replacement/114323"},
+    {"title":"iFixit: Hover-1 Titan Left Gyroscope Replacement guide (gyroscope/motherboard)","url":"https://www.ifixit.com/Guide/Hover-1+Titan+Left+Gyroscope+Replacement/114319"}
+  ]
+}

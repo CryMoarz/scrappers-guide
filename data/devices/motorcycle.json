@@ -1,0 +1,38 @@
+{
+  "id": "motorcycle",
+  "name": "Motorcycle or moped",
+  "group": "Vehicles and mobility",
+  "aliases": ["motorbike","motorcycle","dirt bike","moped","motor scooter","sport bike"],
+  "brands": ["Honda","Yamaha","Kawasaki","Suzuki","Harley-Davidson","BMW","Ducati","KTM","Triumph","Royal Enfield"],
+  "prev": 3,
+  "tools": ["socket","wrench","pliers"],
+  "mins": 45,
+  "kg": 180,
+  "hazards": ["fuel","heavy","acid"],
+  "comps": [
+    {"key":"chain_sprocket","fn":"chain_sprocket","spec":"Roller drive chain with front and rear sprockets (most bikes; some use a belt or shaft)","qty":1,"ext":2,"obs":4,"loc":"Left side, engine to rear wheel"},
+    {"key":"alternator","fn":"alternator","spec":"Stator and regulator-rectifier, about 200–500W at 12V","v":12,"w":[200,500],"qty":1,"ext":3,"obs":5,"loc":"Behind the left engine cover"},
+    {"key":"hall_reed","fn":"hall_reed","spec":"Hall-effect speed and gear-position sensors (most modern bikes)","qty":2,"ext":2,"obs":5,"loc":"Gearbox and front wheel"},
+    {"key":"engine_small","fn":"engine_small","spec":"Petrol engine, 50–1,800 cc, air or liquid cooled","w":[2000,120000],"qty":1,"ext":4,"obs":2,"loc":"Frame","kg":40},
+    {"key":"battery_pb","fn":"battery_pb","spec":"12V battery, 4–20Ah (some are lithium)","v":12,"ah":[4,20],"qty":1,"ext":1,"obs":2,"loc":"Under the seat","p":0.5},
+    {"key":"motor_dc_small","fn":"motor_dc_small","spec":"12V starter motor","v":12,"qty":1,"ext":3,"obs":5,"loc":"Behind the cylinders"},
+    {"key":"fuel_liquid","fn":"fuel_liquid","spec":"Petrol in the tank, 5–20 L","qty":1,"ext":1,"obs":2,"loc":"Tank in front of the seat"},
+    {"key":"oil_lube","fn":"oil_lube","spec":"Engine oil, 1–4 L","qty":1,"ext":1,"obs":4,"loc":"Engine sump"},
+    {"key":"cable_steel","fn":"cable_steel","spec":"Throttle and clutch cables","qty":2,"ext":1,"obs":5,"loc":"Handlebars to engine"},
+    {"key":"led_light","fn":"led_light","spec":"12V headlight, tail light and indicators","v":12,"qty":4,"ext":1,"obs":3,"loc":"Front and rear"},
+    {"key":"speaker","fn":"speaker","spec":"12V horn","v":12,"qty":1,"ext":1,"obs":5,"loc":"Under the headlight"},
+    {"key":"bearing","fn":"bearing","spec":"Wheel and steering head bearings","qty":4,"ext":3,"obs":4,"loc":"Wheels and steering head"}
+  ],
+  "buildings": [
+    {"b":"garage_res","l":4},
+    {"b":"car_dealer","l":4},
+    {"b":"house","l":3},
+    {"b":"parking","l":3},
+    {"b":"car_repair","l":3},
+    {"b":"auto_wrecker","l":3},
+    {"b":"self_storage","l":3},
+    {"b":"police","l":3},
+    {"b":"apartment","l":2}
+  ],
+  "notes": "A working bike gets ridden away, not stripped. Dead ones in garages and storage units still give a stator, chain and battery."
+}

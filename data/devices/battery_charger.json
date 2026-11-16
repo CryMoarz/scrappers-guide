@@ -1,0 +1,27 @@
+{
+  "id": "battery_charger",
+  "name": "Car battery chargers and maintainers",
+  "group": "Power and solar",
+  "aliases": ["trickle charger","battery maintainer"],
+  "brands": ["NOCO","Schumacher","Battery Tender","CTEK","Clore Automotive","Midtronics","Vevor"],
+  "prev": 3,
+  "tools": ["screwdriver"],
+  "mins": 15,
+  "hazards": [],
+  "comps": [
+    {"key":"charger","fn":"charger","spec":"6/12V lead-acid charger","v":12,"qty":1,"ext":1,"obs":3,"loc":"The whole unit"},
+    {"key":"wire_heavy","fn":"wire_heavy","spec":"Clamp leads","qty":2,"ext":1,"obs":3,"loc":"Leads"}
+  ],
+  "boards": [
+    {"id":"linear_psu","qty":1,"loc":"Older transformer chargers","p":0.5},
+    {"id":"smps_board","qty":1,"loc":"Newer smart chargers","p":0.5}
+  ],
+  "buildings": [
+    {"b":"garage_res","l":5},
+    {"b":"auto_parts","l":5},
+    {"b":"hardware","l":5},
+    {"b":"car_repair","l":5},
+    {"b":"farm","l":4},
+    {"b":"house","l":3}
+  ]
+}

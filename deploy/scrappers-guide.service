@@ -1,0 +1,24 @@
+# systemd unit for a Raspberry Pi, a cyberdeck or any small Linux box.
+#   sudo cp deploy/scrappers-guide.service /etc/systemd/system/
+#   (edit User, WorkingDirectory, ExecStart and the environment below)
+#   sudo systemctl daemon-reload && sudo systemctl enable --now scrappers-guide
+[Unit]
+Description=Scrapper's Digital Guide (hub or node)
+After=network.target
+
+[Service]
+Type=simple
+User=pi
+WorkingDirectory=/opt/scrappers-guide
+ExecStart=/usr/bin/node server/hub.js
+Environment=SDG_HOST=0.0.0.0
+Environment=SDG_PORT=8787
+Environment=SDG_MODE=node
+Environment=SDG_UPSTREAM=
+Restart=on-failure
+RestartSec=10
+# Keep writes small and slow on SD cards.
+Nice=5
+
+[Install]
+WantedBy=multi-user.target

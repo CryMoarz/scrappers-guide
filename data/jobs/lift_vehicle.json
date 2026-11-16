@@ -1,0 +1,14 @@
+{
+  "id": "lift_vehicle",
+  "name": "Lift a vehicle",
+  "keywords": ["lift a vehicle","lift a car","lift a truck","raise a car","jack up a car","jack up","change a tyre","change a tire","get under a car"],
+  "summary": "Every car has a jack, usually a scissor jack in the spare tyre well, and trucks often carry a bottle jack. Car repair shops hold floor jacks and stands nobody thinks to take. Never trust a jack alone: crib the vehicle with solid wood blocks as it rises.",
+  "parts": [
+    {"fn":"hydraulic","why":"Bottle and floor jacks lift a vehicle","core":true},
+    {"fn":"lumber","why":"Cribbing blocks hold the load safely","core":true},
+    {"fn":"tube_frame","why":"A length of pipe over the wrench breaks stuck wheel nuts"},
+    {"fn":"rod_shaft","why":"Steel bars for levers"}
+  ],
+  "guides": ["safety_lifting"],
+  "tips": ["Never get under a vehicle held only by a jack. Use stands or stacked hardwood blocks.","Chock the wheels and work on firm, level ground. Put a board under the jack on soft ground.","Loosen wheel nuts before lifting, while the ground stops the wheel turning.","Lift only at the marked jack points. Other spots can bend or slip."]
+}

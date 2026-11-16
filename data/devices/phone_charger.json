@@ -1,0 +1,28 @@
+{
+  "id": "phone_charger",
+  "name": "USB chargers and wall adapters",
+  "group": "Electronics and office",
+  "aliases": ["usb wall charger","usb c charger"],
+  "brands": ["Anker","Apple","Belkin","Samsung","Google","Aukey","Ugreen","Mophie"],
+  "prev": 5,
+  "tools": ["hands","pry"],
+  "mins": 5,
+  "hazards": [],
+  "comps": [
+    {"key":"psu","fn":"psu","spec":"5V USB supply (higher on fast chargers)","v":5,"qty":1,"ext":1,"obs":2,"loc":"The whole unit"}
+  ],
+  "boards": [
+    {"id":"smps_small","qty":1,"loc":"Inside the case","p":1}
+  ],
+  "buildings": [
+    {"b":"house","l":5},
+    {"b":"apartment","l":5},
+    {"b":"office","l":5},
+    {"b":"hotel","l":5},
+    {"b":"school","l":4},
+    {"b":"electronics","l":4},
+    {"b":"convenience","l":4},
+    {"b":"gas_station","l":4},
+    {"b":"recycling","l":4}
+  ]
+}

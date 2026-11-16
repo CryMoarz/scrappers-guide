@@ -1,0 +1,40 @@
+{
+  "id": "mattress",
+  "name": "Mattresses and box springs",
+  "group": "Household and furniture",
+  "aliases": ["bed","box spring","innerspring mattress","memory foam mattress","futon","sofa bed","bed base","foam mattress","pillow top mattress"],
+  "brands": ["Tempur-Pedic","Sealy","Serta","Simmons","Stearns & Foster","Beautyrest","Casper"],
+  "prev": 5,
+  "tools": ["knife","cutters","pliers"],
+  "mins": 30,
+  "kg": 30,
+  "hazards": ["sharp","fiberglass","mold"],
+  "comps": [
+    {"key":"spring","fn":"spring","spec":"Hundreds of steel coil springs (open or pocketed), about 1.4–2.5 mm wire","qty":300,"ext":2,"obs":5,"loc":"Core of innerspring mattresses"},
+    {"key":"rod_shaft","fn":"rod_shaft","spec":"Heavy steel border rod, about 4–5 mm, around the spring unit","qty":2,"ext":2,"obs":5,"loc":"Top and bottom edges of the spring unit"},
+    {"key":"foam_rubber","fn":"foam_rubber","spec":"Polyurethane and memory foam layers, 5–25 cm — padding, cushions and insulation","qty":1,"ext":1,"obs":5,"loc":"Top layers; the whole core in foam mattresses","kg":10},
+    {"key":"fabric_tarp","fn":"fabric_tarp","spec":"Quilted ticking and polypropylene dust cover","qty":1,"ext":1,"obs":5,"loc":"Outer cover"},
+    {"key":"insulation","fn":"insulation","spec":"Felt and fibre insulator pads","qty":2,"ext":1,"obs":5,"loc":"Over the springs"},
+    {"key":"lumber","fn":"lumber","spec":"Pine frame and slats in the box spring","qty":1,"ext":2,"obs":5,"loc":"Box spring","kg":10},
+    {"key":"spring_grid","fn":"spring","spec":"Wire grid and torsion springs in the box spring","qty":1,"ext":2,"obs":5,"loc":"Box spring, on the wooden frame"}
+  ],
+  "boards": [],
+  "buildings": [
+    {"b":"house","l":5},
+    {"b":"apartment","l":5},
+    {"b":"hotel","l":5},
+    {"b":"furniture","l":5},
+    {"b":"nursing_home","l":5},
+    {"b":"hospital","l":4},
+    {"b":"fire_station","l":4},
+    {"b":"self_storage","l":4},
+    {"b":"campground","l":3},
+    {"b":"school","l":3},
+    {"b":"rv_dealer","l":3},
+    {"b":"recycling","l":3},
+    {"b":"department","l":3},
+    {"b":"church","l":2},
+    {"b":"warehouse","l":2}
+  ],
+  "notes": "Many cheap foam mattresses have a glass-fibre fire barrier inside the cover: don't cut or wash that inner cover, and don't sleep on a torn one. Damp mattresses grow mould; leave them."
+}

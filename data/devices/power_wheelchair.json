@@ -1,0 +1,38 @@
+{
+  "id": "power_wheelchair",
+  "name": "Power wheelchair",
+  "group": "Medical and mobility",
+  "aliases": ["electric wheelchair","power chair","powerchair","motorised wheelchair","jazzy","joystick wheelchair"],
+  "brands": ["Pride Mobility","Invacare","Permobil","Quantum Rehab","Sunrise Medical","Drive Medical","Golden Technologies"],
+  "prev": 3,
+  "tools": ["socket","hex","screwdriver","wrench"],
+  "mins": 40,
+  "kg": 120,
+  "hazards": ["heavy"],
+  "comps": [
+    {"key":"battery_pb","fn":"battery_pb","spec":"Two 12V AGM or gel deep-cycle batteries, about 35–75Ah, wired for 24V","ah":[35,75],"qty":2,"ext":2,"obs":4,"loc":"Battery box under the seat","kg":20},
+    {"key":"motor_dc_large","fn":"motor_dc_large","spec":"Two 24V gear motors, about 200–450W each, with right-angle gearboxes — strong slow drives for a winch or hand cart","v":24,"w":[200,450],"qty":2,"ext":3,"obs":5,"loc":"One at each drive wheel","kg":9},
+    {"key":"solenoid_actuator","fn":"solenoid_actuator","spec":"Electromagnetic brakes on each motor","v":24,"qty":2,"ext":2,"obs":5,"loc":"Back end of each motor"},
+    {"key":"hall_reed","fn":"hall_reed","spec":"Joystick with Hall-effect or inductive position sensors","qty":1,"ext":3,"obs":5,"loc":"Joystick module on the armrest"},
+    {"key":"linear_actuator","fn":"linear_actuator","spec":"24V tilt, recline, seat-lift or leg-rest actuators (rehab chairs)","v":24,"qty":2,"ext":2,"obs":5,"loc":"Under the seat"},
+    {"key":"charger","fn":"charger","spec":"24V off-board charger, 5–10A","v":24,"a":[5,10],"qty":1,"ext":1,"obs":4,"loc":"Plugs into the joystick or a side port"},
+    {"key":"breaker","fn":"breaker","spec":"Main inline fuse or resettable breaker","qty":1,"ext":2,"obs":5,"loc":"Battery box"},
+    {"key":"foam_rubber","fn":"foam_rubber","spec":"Pressure-relief cushion (foam or gel) and back padding","qty":2,"ext":1,"obs":5,"loc":"Seat"},
+    {"key":"tube_frame","fn":"tube_frame","spec":"Steel or aluminium frame","qty":1,"ext":3,"obs":5,"loc":"Base","kg":20},
+    {"key":"bearing","fn":"bearing","spec":"Drive wheels and casters with sealed bearings","qty":6,"ext":1,"obs":4,"loc":"Wheels"}
+  ],
+  "boards": [
+    {"id":"power_motor_controller","qty":1,"loc":"Power module under the seat","p":1}
+  ],
+  "buildings": [
+    {"b":"nursing_home","l":5},
+    {"b":"hospital","l":4},
+    {"b":"house","l":3},
+    {"b":"clinic","l":3},
+    {"b":"apartment","l":2},
+    {"b":"pharmacy","l":2},
+    {"b":"school","l":2},
+    {"b":"self_storage","l":2}
+  ],
+  "notes": "Only from storage or abandoned stock: never take a chair someone uses. The batteries and motors together make a ready 24V power and drive kit."
+}

@@ -1,0 +1,31 @@
+{
+  "id": "teardown_fridge_compressor",
+  "kind": "teardown",
+  "title": "Refrigerator: what to take, and the compressor kept sealed",
+  "keywords": ["fridge teardown","refrigerator teardown","fridge compressor","remove compressor","crimp refrigerant line","pinch off","fridge parts","door gasket magnet"],
+  "summary": "A working fridge is worth more than its parts. If it is dead, take the fans, door-seal magnets, thermostat, lamp, shelves and insulation freely. The compressor sits in a sealed refrigerant system: never cut a charged line. The safe way out is with both lines crimped shut so the gas stays inside.",
+  "difficulty": 4,
+  "mins": 60,
+  "tools": ["screwdriver","socket","pliers","tubing_cutter","knife","multimeter","heavy"],
+  "hazards": ["refrigerant","heavy","crush","mains","sharp"],
+  "materials": [],
+  "steps": [
+    {"text":"Decide first. If the fridge might still work, keep it whole: it can run on a solar and battery system, or serve unpowered as an insulated box."},
+    {"text":"Read the rating plate (inside the cabinet or on the back). Note the refrigerant: R600a or R290 is flammable; R134a is not flammable; R12 is an old ozone-damaging gas.","warn":"With R600a or R290, keep every flame, spark and cigarette well away for the whole job."},
+    {"text":"Unplug it and cut the plug off. Empty it, tape the doors shut and move it outdoors or to a well-ventilated space with a helper. Keep it upright.","warn":"Fridges weigh 50–120 kg and tip easily. Two people; don't stand downhill of it."},
+    {"text":"Take the easy parts: shelves and wire racks, the lamp, the fans behind the freezer back panel and at the bottom rear, the thermostat or control board, and the door handles."},
+    {"text":"Pull the rubber gaskets off the doors (they press into a groove or are held by screws under the lip). Slit each gasket along its edge to pull out the flexible magnetic strip."},
+    {"text":"Pull the start relay and overload off the compressor's side (they push onto 3 pins). Keep them taped to the compressor; it needs them to start."},
+    {"text":"Do not cut, saw, unbraze or heat any refrigerant line. If you need the compressor out, crimp first. Find the 2 lines that connect it to the rest of the system (ignore the short sealed stub).","warn":"Cutting a charged line sprays refrigerant and oil: frostbite, eye injury, and fire with flammable gas."},
+    {"text":"Crimp each line flat in two places about 3 cm apart, 10 cm or more from the compressor. A pinch-off tool seals reliably; heavy locking pliers can work on small fridge tubing but may leak. Fold each crimped end over and crimp again.","warn":"Wear goggles and gloves. If you hear hissing, stop, step back and let it vent outdoors."},
+    {"text":"Cut each line between its two crimps with a tubing cutter. Both the compressor and the rest of the system stay sealed.","warn":"If a crimp lets go you will hear hissing and may get an oil spray. Step back and let it vent outdoors, away from flames."},
+    {"text":"Brush soapy water on each cut end. Bubbles mean a leaking crimp: crimp again a few centimetres further back from the cut end and test again."},
+    {"text":"Undo the 4 nuts or clips on the compressor's rubber mounts and lift it out. It weighs about 7–12 kg. Carry it upright so the oil stays in it."},
+    {"text":"If you leave the fridge standing, take the doors or latches off.","warn":"Children can climb into an abandoned fridge and suffocate. Always remove the doors."}
+  ],
+  "notes": "## What you can't do without recovery gear\n\nBe plain about this. Without a refrigerant recovery machine, gauges, a vacuum pump and brazing gear, you can't safely:\n\n- empty the refrigerant from the system,\n- open the compressor to use it as an air pump or vacuum pump,\n- repair, refill or rebuild a fridge or freezer system.\n\nReleasing refrigerant on purpose causes frostbite and eye injuries, can displace air in small rooms, can catch fire (R600a, R290), and old gases (R12, R22) make toxic fumes in a flame and damage the ozone layer. The crimped, sealed compressor is something to store and trade to someone who has the gear, not something to cut open.\n\n## What's worth keeping and why\n\n- **The working fridge.** Best of all. A modern fridge uses about 1–2 kWh a day; a chest freezer run as a fridge uses much less (see reference_power_budget).\n- **The cabinet.** Even dead, a fridge is a well-insulated box. Laid on its back as a chest it holds cold better because cold air doesn't fall out when opened. Use it as a cool box with ice, or partly buried as a root store.\n- **Door-seal magnets.** Long flexible magnetic strips: door catches, screen and curtain seals, notice boards.\n- **Fans.** Older fridges have mains shaded-pole fans; newer ones often have 12 V DC fans.\n- **Thermostat or control board.** A mechanical fridge thermostat can control a homemade cooler or a fermentation box.\n- **Shelves and racks.** Grill grates, drying racks, oven racks for a solar oven.\n- **Insulation.** Rigid foam from the walls: cut it out for insulating boxes and shelters. Older foam may hold trapped CFC gas; don't burn it.\n\n## Variations\n\n- Many home fridges use R600a (isobutane, flammable) in a small charge: most European ones since the late 1990s, and a growing share elsewhere since the 2010s. Many from the 1990s–2010s, especially in North America, use R134a. Pre-1990s units may use R12.\n- Some small bar fridges and camping coolers have no compressor at all: they use a Peltier module or an absorption system. Absorption fridges hold ammonia and hydrogen under pressure: don't open them.\n- Fridges with ice makers have a water inlet solenoid valve at the bottom rear.\n\n## What to leave\n\n- The condenser coil and evaporator (part of the sealed system).\n- The compressor, if you have no way to crimp the lines safely.",
+  "tree": {"era":4,"branch":"salvage","requires":["safety_refrigerant","safety_lifting"]},
+  "devices": ["fridge"],
+  "parts": ["compressor","fan","magnet_ferrite","relay","thermostat","insulation","cooler_box","led_light"],
+  "license": "CC-BY-SA-4.0"
+}

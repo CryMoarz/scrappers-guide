@@ -1,0 +1,45 @@
+{
+  "id": "build_hand_cart",
+  "kind": "build",
+  "title": "Two-wheel hand cart",
+  "keywords": ["hand cart","garden cart","wagon","trolley","carry loads","bike trailer","game cart","wheelbarrow","haul","transport"],
+  "summary": "Build a two-wheel pull cart from salvaged wheels, steel tube or timber, and bolts. One person can move 100–200 kg on a decent track with far less effort than carrying. Balance the load over the axle and support bicycle hub axles on both sides.",
+  "difficulty": 3,
+  "mins": 300,
+  "tools": ["saw","drill","wrench","socket","grinder","file","hex","clamps","screwdriver"],
+  "hazards": ["crush","heavy","sharp"],
+  "materials": [
+    {"item":"Wheels, matched pair: 20–29 inch bike wheels, wheelbarrow, mower, or mobility-scooter wheels (pneumatic is best)","qty":"2","fn":"bearing","only":["wheels with","wheel and"]},
+    {"item":"Axle: solid steel rod or long bolt, 16 mm for 100 kg, 20 mm for 200 kg (unless using bike hubs)","qty":"1","fn":"rod_shaft","only":["axle"]},
+    {"item":"Steel or aluminium tube or angle 25–40 mm for the frame and handle (or 50 × 50 mm timber)","qty":"7–9 m","fn":"tube_frame","only":["tube frame","25 mm","handle tube"]},
+    {"item":"Deck: plywood 12–18 mm or steel mesh","qty":"about 0.6 × 1.0 m","fn":"lumber"},
+    {"item":"Steel plate for bike-hub dropouts or axle brackets, 3–5 mm","qty":"4 small pieces","fn":"sheet_metal"},
+    {"item":"Bolts M8–M10 with washers and lock nuts","qty":"20–30","fn":"fasteners"},
+    {"item":"Straps or rope for tie-downs","qty":"4","fn":"rope_webbing","only":["strap","rope"]},
+    {"item":"Tarp to cover the load","qty":"1","fn":"fabric_tarp","optional":true},
+    {"item":"Grease for wheel bearings","qty":"some","fn":"oil_lube","optional":true}
+  ],
+  "steps": [
+    {"text":"Decide the load, width and handle. Keep it no wider than about 80 cm for trails and doorways. Plan for 100–150 kg on bike wheels, 200+ kg on wheelbarrow, mower or scooter wheels."},
+    {"text":"Check the wheels: they should spin freely without wobble or grinding, tyres hold air, spokes all tight. Grease or replace bearings that grind."},
+    {"text":"Bike wheels: keep the hub axles and make a slotted dropout plate for each side of each hub, so every hub is held at both ends like in a bike frame. Other wheels: use one through-axle with washers and locking nuts or pins.","warn":"A bike hub axle held on one side only bends and fails under load."},
+    {"text":"Cut the frame: a rectangle with cross members every 30–40 cm. File every cut edge smooth.","warn":"Wear eye protection and gloves when grinding or cutting: sparks and razor-sharp burrs."},
+    {"text":"Place the axle or dropouts slightly behind the middle of the deck, so that when loaded about 5–10% of the weight rests on the handle."},
+    {"text":"Bolt the joints with washers and lock nuts. Add a diagonal brace or a triangular plate at each corner so the frame can't fold into a parallelogram."},
+    {"text":"Fit the deck. Add sides 20–40 cm high if you'll carry loose items."},
+    {"text":"Fit the handle at the front: a single pull bar 1–1.2 m long, or a T-bar so two people can pull. Pad the grip."},
+    {"text":"Add a stand or two short legs at the front so the cart sits level when parked."},
+    {"text":"Fit tie-down points at each corner."},
+    {"text":"Test with half the planned load over 100 m of rough ground. Check bolts, wheels and frame for bending, then try the full load.","warn":"A loaded cart running downhill can knock you over and run you down. On slopes keep the cart below you and hold it back, or drag a brake."},
+    {"text":"Load heavy items low and over the axle, light items at the ends. Check tyre pressure and bolts before each long trip."}
+  ],
+  "notes": "## Balance\nHandle force ≈ load × (distance from axle to load's centre) ÷ (distance from axle to the handle grip). With 150 kg centred 10 cm ahead of the axle and the grip 1.5 m from the axle: 150 × 0.1 ÷ 1.5 = 10 kg on the handle. Load too far back and the handle flips up; too far forward and you carry the load yourself.\n\n## Wheels\n| Wheel | Load per wheel | Notes |\n|---|---|---|\n| 26–29 inch mountain or hybrid bike | about 50–80 kg | Rolls easily over rough ground; weak sideways, so take turns gently |\n| 20 inch bike | about 50–70 kg | Stronger, lower |\n| Wheelbarrow (pneumatic, 14–16 inch) | 100–150 kg | Tough; slower rolling |\n| Mobility scooter or mower | 75–150 kg | Small; good on hard surfaces |\n\nBig wheels roll over rocks and ruts; small wheels get stuck.\n\n## Axle size\nWith a wheel 5 cm out from its support, the load on each wheel bends the axle. Mild steel rod: 16 mm carries about 50 kg per wheel comfortably, 20 mm about 100 kg per wheel, with a safety margin for bumps. Keep wheels close to the frame. Don't let threads sit inside a wheel bearing.\n\n## Variations\n- **Bike trailer:** the same cart with a hitch arm to the bike's seat post or rear axle. Keep trailer loads under about 40 kg on a normal bike, and brake early.\n- **Shopping cart:** swap its small casters for bigger pneumatic wheels and it handles rough ground.\n- **Travois or sled:** two poles or a sheet dragged on the ground, when there are no wheels.\n\n## Punctures\nNo patches? Stuff the tyre tightly with rope, rags or foam to make a solid tyre. It rides harder but won't go flat.\n\n## If you lack a part\n- No tube: timber frame with bolts through, and steel angle for the axle brackets.\n- No bolts: lash joints tightly with wire or rope, and re-tighten often.\n",
+  "tree": {"era":2,"branch":"machines","requires":["safety_lifting","skill_knots_and_lashing"]},
+  "devices": ["bicycle","shopping_cart","mobility_scooter","gas_mower","riding_mower","trampoline","hospital_bed","treadmill","power_wheelchair"],
+  "parts": ["bearing","rod_shaft","tube_frame","lumber","fasteners","rope_webbing"],
+  "license": "CC-BY-SA-4.0",
+  "refs": [
+    {"lib":"appropedia","q":"cart"},
+    {"lib":"bicycles","q":"trailer"}
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "id": "alternator",
+  "name": "Alternators and generator heads",
+  "group": "Power generation",
+  "demand": 4,
+  "keywords": ["alternator","generator","dynamo","generate power","power generation","wind turbine","car alternator","truck alternator","generator head","alternator rectifier","permanent magnet alternator","pma"],
+  "substitutes": ["motor_dc_large","motor_bldc"],
+  "summary": "Machines that turn spinning into electricity: car and truck alternators, and AC generator heads.",
+  "uses": ["Wind, water or pedal generators (car alternators need gearing: about 1,500+ rpm)","Charging a 12V battery bank from an engine","Replacing the head on a broken generator"],
+  "identify": "Car alternators are finned aluminium cases with a belt pulley, bolted to the engine; most have a built-in regulator and rectifier and give 13.5–14.5V DC. Generator heads are the round end of a portable or standby generator and give 120V or 230V AC, enough to kill.",
+  "test": "Spin it by hand: the bearings should be smooth and quiet. Connected to a battery, with the field (warning light) terminal fed, a drill-driven car alternator should push the battery above 13.5V.",
+  "decay": {"halfLifeMonths":null,"note":"Lasts. Brushes and bearings wear but can be replaced."},
+  "hazards": ["mains"]
+}

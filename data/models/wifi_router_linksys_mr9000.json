@@ -1,0 +1,21 @@
+{
+  "id": "wifi_router_linksys_mr9000",
+  "device": "wifi_router",
+  "brand": "Linksys",
+  "model": "MR9000",
+  "fcc": "FCC-IDQ87-03433",
+  "notes": "Hardware versions of the MR9000 can differ.",
+  "research": {"gaps":[],"method":["Not yet fact-checked: its parts show as likely until a fact-check confirms them against their sources.","Imported from the OpenWrt Table of Hardware (toh.json, 2026-11-13): the hardware data page for this version, by OpenWrt wiki contributors under CC BY-SA 4.0."]},
+  "comps": [
+    {"key":"ic_mcu_soc","fn":"ic_mcu","spec":"SoC Qualcomm Atheros IPQ4019, 4 cores at 717 MHz","qty":1,"ext":4,"obs":3,"source":"https://openwrt.org/toh/hwdata/linksys/linksys_mr9000","conf":"likely"},
+    {"key":"ic_memory_flash","fn":"ic_memory","spec":"Flash, 256 MB","qty":1,"ext":2,"obs":4,"source":"https://openwrt.org/toh/hwdata/linksys/linksys_mr9000","conf":"likely"},
+    {"key":"ic_memory_ram","fn":"ic_memory","spec":"RAM, 512 MB","qty":1,"ext":3,"obs":3,"source":"https://openwrt.org/toh/hwdata/linksys/linksys_mr9000","conf":"likely"},
+    {"key":"radio_rf","spec":"Wi-Fi: Qualcomm Atheros IPQ4019, Qualcomm Atheros QCA9984 (2.4 GHz b/g/n, 5 GHz a/n/ac)","qty":2,"source":"https://openwrt.org/toh/hwdata/linksys/linksys_mr9000","conf":"likely"},
+    {"key":"psu","spec":"Power supply: 12 VDC, 2A via barrel","v":12,"a":2,"source":"https://openwrt.org/toh/hwdata/linksys/linksys_mr9000","conf":"likely"},
+    {"key":"connector","spec":"Ethernet ports: 5× gigabit","qty":5,"source":"https://openwrt.org/toh/hwdata/linksys/linksys_mr9000","conf":"likely"},
+    {"key":"connector_usb","fn":"connector","spec":"USB: 1x 3.0","qty":1,"ext":2,"obs":4,"source":"https://openwrt.org/toh/hwdata/linksys/linksys_mr9000","conf":"likely"}
+  ],
+  "sources": [
+    {"title":"OpenWrt Table of Hardware: Linksys MR9000 (OpenWrt wiki contributors, CC BY-SA 4.0)","url":"https://openwrt.org/toh/hwdata/linksys/linksys_mr9000"}
+  ]
+}

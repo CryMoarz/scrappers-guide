@@ -1,0 +1,14 @@
+{
+  "id": "sensor_misc",
+  "name": "Other sensors",
+  "group": "Signal and control",
+  "demand": 1,
+  "keywords": ["sensor","sensors","thermistor","temperature sensor","pressure sensor","humidity","level sensor","encoder","ds18b20","dht11","dht22","ntc thermistor","10k thermistor","bme280","load cell","flow sensor","flow meter","pressure switch","gas sensor","mq-2","carbon monoxide","co alarm","co detector","accelerometer","rotary encoder"],
+  "substitutes": ["sensor_motion"],
+  "summary": "Sensors for temperature, pressure, humidity, flow, gas, weight and position.",
+  "uses": ["Thermometers and thermostats for builds","Tank level and flow monitoring","Weighing with load cells","Gas and carbon monoxide alarms"],
+  "identify": "Thermistors on wires in fridges, kettles and battery packs; pressure switches on pumps and boilers; humidity sensors in weather stations; load cells in scales; encoders on motors and knobs; gas sensors in CO and gas alarms.",
+  "test": "A thermistor’s resistance changes as your fingers warm it. Others are easiest to test powered in their own device.",
+  "decay": {"halfLifeMonths":null,"note":"Lasts; CO and gas sensors wear out after 5–10 years."},
+  "hazards": []
+}

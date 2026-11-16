@@ -1,0 +1,42 @@
+{
+  "id": "led_billboard",
+  "name": "LED billboard and digital sign",
+  "group": "Retail and public",
+  "aliases": ["digital billboard","led sign","video wall","electronic sign","message sign","price sign","scrolling sign","marquee sign"],
+  "brands": ["Daktronics","Trans-Lux","Watchfire","Vevor"],
+  "era": "2005–present",
+  "prev": 3,
+  "tools": ["screwdriver","socket","cutters","ladder"],
+  "mins": 60,
+  "kg": 2000,
+  "hazards": ["mains","fall","heavy"],
+  "comps": [
+    {"key":"psu","fn":"psu","spec":"5V 40–60A switch-mode supplies, dozens per sign — good for USB charging banks","v":5,"a":[40,60],"qty":20,"ext":2,"obs":5,"loc":"Inside each cabinet, behind the service doors"},
+    {"key":"led_light","fn":"led_light","spec":"LED tiles, each with hundreds of LEDs and driver chips, 5V","v":5,"qty":100,"ext":2,"obs":5,"loc":"Sign face; tiles release from the back"},
+    {"key":"fan","fn":"fan","spec":"120 mm cabinet fans, mains or 12V","v":12,"qty":10,"ext":1,"obs":5,"loc":"Cabinet backs"},
+    {"key":"controller_board","fn":"controller_board","spec":"Receiving cards and sending controller","qty":10,"ext":1,"obs":5,"loc":"One per cabinet, plus a main controller"},
+    {"key":"radio_rf","fn":"radio_rf","spec":"Cellular modem and antenna","qty":1,"ext":2,"obs":5,"loc":"Main controller box"},
+    {"key":"opto_sensor","fn":"opto_sensor","spec":"Ambient light sensor","qty":1,"ext":2,"obs":5,"loc":"Top edge of the sign"},
+    {"key":"wire_copper","fn":"wire_copper","spec":"Power leads and data ribbon cables","qty":1,"ext":1,"obs":5,"loc":"Inside the cabinets"},
+    {"key":"wire_heavy","fn":"wire_heavy","spec":"Mains feed and distribution cable","qty":1,"ext":3,"obs":5,"loc":"Base of the structure to the cabinets"},
+    {"key":"breaker","fn":"breaker","spec":"Breaker panel feeding the cabinets","qty":1,"ext":2,"obs":5,"loc":"Box at the base or on the catwalk"},
+    {"key":"compressor","fn":"compressor","spec":"Small cabinet air conditioners (some large signs)","v":[120,240],"w":[200,1000],"ac":true,"qty":2,"ext":4,"obs":5,"loc":"Rear of the sign","p":0.5}
+  ],
+  "boards": [
+    {"id":"smps_board","qty":20,"loc":"Inside each 5V supply","p":1}
+  ],
+  "buildings": [
+    {"b":"roadside","l":5},
+    {"b":"stadium","l":5},
+    {"b":"gas_station","l":3},
+    {"b":"mall","l":3},
+    {"b":"cinema","l":3},
+    {"b":"car_dealer","l":3},
+    {"b":"airport","l":3},
+    {"b":"train_station","l":3},
+    {"b":"church","l":2},
+    {"b":"school","l":2},
+    {"b":"bus_depot","l":2}
+  ],
+  "notes": "Small LED price and message signs at gas stations, churches and schools hold the same parts at ground level."
+}

@@ -1,0 +1,14 @@
+{
+  "id": "motor_universal",
+  "name": "Universal motors (AC/DC brushed)",
+  "group": "Motion",
+  "demand": 1,
+  "keywords": ["motor","universal motor","high speed motor","vacuum motor","tool motor","brushed ac motor","blender motor","corded drill motor","grinder motor","mixer motor","washing machine motor"],
+  "substitutes": ["motor_ac","motor_dc_small"],
+  "summary": "Brushed motors that run on AC or DC: high-speed motors in drills, blenders, vacuums and saws.",
+  "uses": ["Replacing a dead tool or appliance motor","Grinders, sanders and blowers","Running from a generator or inverter"],
+  "identify": "Two carbon brushes rubbing on a copper commutator, in corded drills, angle grinders, blenders, food processors, vacuum cleaners, circular saws and some front-loading washers. They whine loudly at speed.",
+  "test": "Check the brushes for length and the commutator for burns, then measure continuity through brushes and field.",
+  "decay": {"halfLifeMonths":null,"note":"Lasts; brushes are the wear part."},
+  "hazards": ["mains"]
+}

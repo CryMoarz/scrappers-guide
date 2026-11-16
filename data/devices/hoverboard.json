@@ -1,0 +1,38 @@
+{
+  "id": "hoverboard",
+  "name": "Hoverboard (self-balancing scooter)",
+  "group": "Vehicles and mobility",
+  "aliases": ["hoverboard","self-balancing scooter","balance board","swegway","smart wheel","gyro scooter"],
+  "brands": ["Segway","Razor","Jetson","Gotrax","Hover-1","Swagtron"],
+  "era": "2015–present",
+  "prev": 4,
+  "tools": ["screwdriver","socket"],
+  "mins": 20,
+  "kg": 11,
+  "hazards": ["li_fire"],
+  "comps": [
+    {"key":"motor_bldc","fn":"motor_bldc","spec":"36V brushless hub motors, about 250–350W each, with tyres — good for carts and small wind or water generators","v":36,"w":[250,350],"qty":2,"ext":2,"obs":4,"loc":"Each wheel","kg":3.5},
+    {"key":"hall_reed","fn":"hall_reed","spec":"Three Hall sensors per hub motor","qty":6,"ext":4,"obs":5,"loc":"On the stator, under the hub side cover"},
+    {"key":"magnet_strong","fn":"magnet_strong","spec":"Neodymium arc magnets glued around each hub","qty":60,"ext":4,"obs":5,"loc":"Inside each wheel hub"},
+    {"key":"battery_li","fn":"battery_li","spec":"36V pack, 10 cells in series (often 18650s), about 4–4.4Ah — damaged packs catch fire","v":36,"ah":[4,4.4],"qty":1,"ext":2,"obs":3,"loc":"Centre of the body"},
+    {"key":"charger","fn":"charger","spec":"42V charger brick","v":42,"qty":1,"ext":1,"obs":3,"loc":"With the owner"},
+    {"key":"sensor_misc","fn":"sensor_misc","spec":"Gyro and accelerometer boards","qty":2,"ext":2,"obs":5,"loc":"Under each foot pad"},
+    {"key":"led_light","fn":"led_light","spec":"LED strips and headlights","w":[0.5,5],"qty":4,"ext":1,"obs":4,"loc":"Front and sides"},
+    {"key":"speaker","fn":"speaker","spec":"Small Bluetooth speaker (some models)","w":[1,5],"qty":1,"ext":2,"obs":5,"loc":"Body","p":0.5}
+  ],
+  "boards": [
+    {"id":"bldc_controller","qty":1,"loc":"Main board driving both motors (some use two boards)","p":1},
+    {"id":"battery_bms","qty":1,"loc":"On the battery pack","p":1}
+  ],
+  "buildings": [
+    {"b":"house","l":4},
+    {"b":"apartment","l":3},
+    {"b":"garage_res","l":3},
+    {"b":"toy_store","l":4},
+    {"b":"department","l":3},
+    {"b":"electronics","l":3},
+    {"b":"mall","l":2},
+    {"b":"self_storage","l":2},
+    {"b":"recycling","l":2}
+  ]
+}

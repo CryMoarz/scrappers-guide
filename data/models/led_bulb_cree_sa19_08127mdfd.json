@@ -1,0 +1,25 @@
+{
+  "id": "led_bulb_cree_sa19_08127mdfd",
+  "device": "led_bulb",
+  "brand": "Cree",
+  "model": "SA19-08127MDFD-12DE26",
+  "notes": "The 2700K soft-white 60 W-equivalent A19 (9.5 W, 815 lumens, E26 base), sold as a 4-pack under the product number SA19-08127MDFD-12DE26-1-14012S0. The parts come from one 2017 teardown, and the power board is embedded in potting compound inside the base.",
+  "research": {"checked":"2026-11-12","gaps":["Controller naming conflict: the teardown names a Silergy SSL5251, Silergy's page lists SSL5251T (obsolete), and a Wurth Elektronik reference page lists the SSL5251 under NXP; the part is named as the teardown gives it.","The teardown gives no values for the inductors, capacitors or diodes and no part numbers for the MOSFET, bridge or fuse, so none are claimed.","The spec sheet is on a third-party CloudFront bucket; its text is Cree's (copyright Cree, Inc., Cree contact details) but no copy was found on cree.com.","The spec sheet lists the code with the pack suffix -1-14012S0 (ordering number A19-60W-27K-M4); the teardown gives the code without it.","The potting compound is not listed as a part."],"method":["Teardown: Patent Refinery page on the Cree SA19-08127MDFD-12DE26 bulb, dated 2017.08.21; every part claim was checked against its text.","Ratings and ordering codes: Cree A19 Series LED Lamps product specification, Rev. V10 09/14/2016, read as text with node tools/research.js pdf; it lists the 60 W soft white code at 9.5 W, 2700K, 815 lumens, E26 base.","Silergy product page for SSL5251T (names the part as a mains dimmable buck-boost LED driver IC, marks it obsolete) and the datasheet it links to (Rev. 2.1, 26 January 2016), which opens and is for SSL5251T.","Wurth Elektronik ICREF page for the NXP SSL5251 demo board UM10930, read for the maker-name conflict only.","The Home Depot listing, Electronics360 teardowns, Digi-Key, Octopart and the ENERGY STAR data API refused the researcher (HTTP 403) and were not used."]},
+  "comps": [
+    {"key":"led_light","conf":"documented","spec":"14 upward-facing LEDs on an aluminium-backed PCB, crimped to an aluminium heat sink disk","source":"https://sites.google.com/patentrefinery.com/home/teardowns/led-bulb-teardowns/cree-led-bulb"},
+    {"key":"b:led_driver_mains:fuse","conf":"documented","spec":"Fuse at the AC input","loc":"AC input","source":"https://sites.google.com/patentrefinery.com/home/teardowns/led-bulb-teardowns/cree-led-bulb"},
+    {"key":"b:led_driver_mains:bridge_rect","conf":"documented","spec":"Diode bridge on the power board","source":"https://sites.google.com/patentrefinery.com/home/teardowns/led-bulb-teardowns/cree-led-bulb"},
+    {"key":"b:led_driver_mains:dcdc_buck","conf":"documented","spec":"Controller IC named in the teardown as Silergy SSL5251, in an 8-pin package, in a non-isolated buck-boost converter","source":"https://sites.google.com/patentrefinery.com/home/teardowns/led-bulb-teardowns/cree-led-bulb"},
+    {"key":"b:led_driver_mains:inductor","conf":"documented","spec":"Inductor among the larger through-hole parts on one side of the power board","source":"https://sites.google.com/patentrefinery.com/home/teardowns/led-bulb-teardowns/cree-led-bulb"},
+    {"key":"b:led_driver_mains:cap_elec","conf":"documented","spec":"Output electrolytic capacitor on the surface-mount side of the power board","source":"https://sites.google.com/patentrefinery.com/home/teardowns/led-bulb-teardowns/cree-led-bulb"},
+    {"key":"mosfet_hv","fn":"mosfet","spec":"High-voltage power MOSFET that limits the voltage applied to the controller IC","qty":1,"ext":4,"obs":4,"conf":"documented","source":"https://sites.google.com/patentrefinery.com/home/teardowns/led-bulb-teardowns/cree-led-bulb"},
+    {"key":"surge_varistor","fn":"surge_protect","spec":"270v varistor for transient protection at the AC input","qty":1,"ext":2,"obs":4,"loc":"AC input","conf":"documented","source":"https://sites.google.com/patentrefinery.com/home/teardowns/led-bulb-teardowns/cree-led-bulb"},
+    {"key":"heatsink_base","fn":"heatsink","spec":"Aluminium heat sink inside the A19 base; the LED heat sink and PCB assembly is pressed into it","qty":1,"ext":2,"obs":3,"loc":"Inside the A19 base","conf":"documented","source":"https://sites.google.com/patentrefinery.com/home/teardowns/led-bulb-teardowns/cree-led-bulb"}
+  ],
+  "sources": [
+    {"title":"Cree SA19-08127MDFD-12DE26 LED bulb teardown (Patent Refinery, dated 2017.08.21)","url":"https://sites.google.com/patentrefinery.com/home/teardowns/led-bulb-teardowns/cree-led-bulb"},
+    {"title":"Cree A19 Series LED Lamps product specification, Rev. V10 09/14/2016 (copy on a CloudFront mirror)","url":"https://d2a7t4o9z5arn6.cloudfront.net/GoodMart/pdfs/cree/cree_A19.pdf"},
+    {"title":"Silergy product page for SSL5251T, mains dimmable buck-boost LED driver IC (obsolete; links to its datasheet)","url":"https://www.silergy.com/productsview/SSL5251T"},
+    {"title":"Wurth Elektronik ICREF page for the NXP SSL5251 demo board UM10930 (lists NXP as manufacturer)","url":"https://www.we-online.com/en/components/icref/nxp/SSL5251-UM10930-Buck-Boost"}
+  ]
+}

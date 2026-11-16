@@ -1,0 +1,6 @@
+{
+  "id": "rv_dealer",
+  "name": "RV dealers",
+  "osm": ["shop=caravan"],
+  "exposure": 2
+}

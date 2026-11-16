@@ -1,0 +1,14 @@
+{
+  "id": "psu",
+  "name": "Power supplies and adapters",
+  "group": "Power conversion",
+  "demand": 3,
+  "keywords": ["power supply","psu","adapter","power brick","12v supply","24v supply","dc supply","atx","atx psu","computer power supply","laptop charger","laptop adapter","wall wart","smps","switching power supply","switch mode","led driver","19v adapter","5v supply","bench supply"],
+  "substitutes": ["transformer_lv","charger"],
+  "summary": "Mains power supplies and adapters: wall warts, laptop bricks, ATX and LED supplies.",
+  "uses": ["Powering 5, 12, 19 or 24V gear from a generator or inverter","Bench supply for testing and charging","Spare adapters for radios and routers"],
+  "identify": "Wall plugs and bricks in every drawer, metal-cased LED supplies in signs and shop lighting, ATX supplies in desktop PCs, and open boards in printers and TVs. The label gives input and output volts and amps. Big capacitors inside stay charged after unplugging.",
+  "test": "Plug in and measure the output: within about 5% of the label is good. An ATX supply starts when its green wire is joined to a black one.",
+  "decay": {"halfLifeMonths":null,"note":"Lasts; capacitors slowly age."},
+  "hazards": ["mains","hv_cap"]
+}

@@ -1,0 +1,31 @@
+{
+  "id": "cordless_drill",
+  "name": "Cordless drill or driver",
+  "group": "Tools and yard",
+  "aliases": ["drill driver","impact driver"],
+  "brands": ["DeWalt","Milwaukee","Makita","Ryobi","Bosch","Black+Decker","Craftsman","Kobalt","Ridgid"],
+  "prev": 5,
+  "tools": ["screwdriver"],
+  "mins": 10,
+  "hazards": [],
+  "comps": [
+    {"key":"motor_dc_small","fn":"motor_dc_small","spec":"12–20V brushed or brushless motor","v":[12,20],"qty":1,"ext":2,"obs":2,"loc":"Body, behind the chuck"},
+    {"key":"gearbox","fn":"gearbox","spec":"Planetary gearbox with clutch","qty":1,"ext":2,"obs":3,"loc":"In front of the motor"},
+    {"key":"battery_li","fn":"battery_li","spec":"Battery pack, 12–20V","v":[12,20],"qty":1,"ext":1,"obs":1,"loc":"Slides into the handle"},
+    {"key":"switch","fn":"switch","spec":"Variable-speed trigger","qty":1,"ext":2,"obs":4,"loc":"Handle"},
+    {"key":"charger","fn":"charger","spec":"Charger","v":[12,21],"a":[1.5,4],"qty":1,"ext":1,"obs":2,"loc":"Often stored separately"},
+    {"key":"mosfet","fn":"mosfet","spec":"Speed-control MOSFET inside the trigger switch","qty":1,"ext":3,"obs":5,"loc":"Trigger switch module"}
+  ],
+  "buildings": [
+    {"b":"hardware","l":5},
+    {"b":"garage_res","l":5},
+    {"b":"house","l":4},
+    {"b":"tool_rental","l":5},
+    {"b":"warehouse","l":4},
+    {"b":"factory","l":3},
+    {"b":"farm","l":3},
+    {"b":"school","l":2},
+    {"b":"construction","l":4},
+    {"b":"car_repair","l":4}
+  ]
+}

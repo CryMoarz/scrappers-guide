@@ -1,0 +1,22 @@
+{
+  "id": "telecom_site",
+  "name": "Cell tower or telecom cabinet",
+  "group": "Power and solar",
+  "aliases": ["cell site","base station"],
+  "brands": ["Ericsson","Nokia","Samsung","Huawei","ZTE","CommScope","Vertiv"],
+  "prev": 3,
+  "tools": ["socket","cutters","heavy"],
+  "mins": 60,
+  "hazards": ["heavy","acid"],
+  "comps": [
+    {"key":"battery_pb","fn":"battery_pb","spec":"-48V VRLA battery strings (many 12V 100Ah+ blocks)","ah":100,"qty":8,"ext":3,"obs":5,"loc":"Equipment shelter or battery cabinet"},
+    {"key":"psu","fn":"psu","spec":"-48V rectifier modules","v":48,"qty":4,"ext":2,"obs":5,"loc":"Power cabinet"},
+    {"key":"antenna_coax","fn":"antenna_coax","spec":"High-gain antennas and low-loss coax","qty":3,"ext":4,"obs":4,"loc":"Tower and cable runs"},
+    {"key":"fan","fn":"fan","spec":"48V DC cabinet cooling fans","v":48,"qty":4,"ext":2,"obs":5,"loc":"Cabinet doors"},
+    {"key":"wire_heavy","fn":"wire_heavy","spec":"Heavy DC cabling and busbars","qty":1,"ext":2,"obs":5,"loc":"Power cabinet"},
+    {"key":"engine_small","fn":"engine_small","spec":"Standby generator (some sites)","w":[10000,45000],"qty":1,"ext":5,"obs":4,"loc":"Pad beside the shelter","p":0.5}
+  ],
+  "buildings": [
+    {"b":"telecom","l":5}
+  ]
+}

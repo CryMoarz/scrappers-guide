@@ -1,0 +1,24 @@
+{
+  "id": "aquarium",
+  "name": "Aquarium and pond equipment",
+  "group": "Leisure and fitness",
+  "aliases": ["fish tank","pond pump"],
+  "brands": ["Fluval","Tetra","Aqueon","Marineland","Hagen","Seachem","Vevor","Lifegard Aquatics","Eheim"],
+  "prev": 3,
+  "tools": ["hands"],
+  "mins": 5,
+  "hazards": [],
+  "comps": [
+    {"key":"pump_water","fn":"pump_water","spec":"Submersible water pumps","v":[120,240],"w":[3,150],"ac":true,"qty":1,"ext":1,"obs":4,"loc":"In the tank or pond"},
+    {"key":"compressor","fn":"compressor","spec":"Small diaphragm air pumps","v":[120,240],"w":[2,35],"ac":true,"qty":1,"ext":1,"obs":5,"loc":"Beside the tank"},
+    {"key":"heating_element","fn":"heating_element","spec":"Submersible heater","v":[120,240],"w":[25,300],"ac":true,"qty":1,"ext":1,"obs":4,"loc":"In the tank"},
+    {"key":"led_light","fn":"led_light","spec":"LED lighting","v":[12,24],"w":[5,60],"qty":1,"ext":1,"obs":4,"loc":"Hood"}
+  ],
+  "buildings": [
+    {"b":"house","l":3},
+    {"b":"pet_shop","l":5},
+    {"b":"school","l":2},
+    {"b":"restaurant","l":2},
+    {"b":"office","l":1}
+  ]
+}

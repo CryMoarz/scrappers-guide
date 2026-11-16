@@ -1,0 +1,14 @@
+{
+  "id": "charge_controller",
+  "name": "Solar charge controllers",
+  "group": "Power conversion",
+  "demand": 5,
+  "keywords": ["charge controller","solar controller","mppt","pwm controller","solar charge controller","solar regulator","pwm charge controller","mppt controller","charge regulator"],
+  "substitutes": ["charger"],
+  "summary": "Boxes that manage charging a battery from solar panels: PWM and MPPT types.",
+  "uses": ["The core of any solar battery system","Low-voltage cutoff to protect a battery from loads","Dump-load control for a wind turbine (some models)"],
+  "identify": "A box with three pairs of terminals (panel, battery, load) and often a small screen or LEDs. Find them in RVs, boats and cabins, and on solar street lights, road signs, fence energisers and telecom sites. Ratings run 10–60A at 12, 24 or 48V.",
+  "test": "Connect the battery first, then the panel: in sun it should show charging and the battery voltage should rise. Check the load output switches off when the battery runs low.",
+  "decay": {"halfLifeMonths":null,"note":"Lasts. Units left outdoors corrode at the terminals."},
+  "hazards": []
+}

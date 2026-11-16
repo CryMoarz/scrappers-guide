@@ -1,0 +1,35 @@
+{
+  "id": "safety_lifting",
+  "kind": "safety",
+  "title": "Lift and move heavy things without getting hurt",
+  "keywords": ["lifting","heavy lifting","move heavy","back injury","team lift","lever","rollers","hand truck","dolly","moving appliances","stairs","carry heavy"],
+  "summary": "Back injuries and crushed fingers end more scavenging trips than anything else. Strip the load, use levers, rollers, ramps and a second person, and never let a heavy load get ahead of you.",
+  "difficulty": 1,
+  "mins": 15,
+  "tools": ["hands","pry","jack","heavy"],
+  "hazards": ["heavy","crush","fall"],
+  "materials": [
+    {"item":"Ratchet straps or rope","fn":"rope_webbing","qty":"2"},
+    {"item":"Hand truck or furniture dolly","qty":"1","optional":true},
+    {"item":"Short lengths of round pipe for rollers","fn":"tube_frame","qty":"3","optional":true},
+    {"item":"Wooden blocks and strong planks for packing and ramps","fn":"lumber","qty":"several"}
+  ],
+  "steps": [
+    {"text":"Size it up. Tip one corner to feel the weight. If you can't lift a corner easily, it's a job for two people or a machine."},
+    {"text":"Make it lighter. Take off doors, drawers, panels and anything you don't need. Take the concrete weights out of a washing machine. Often the useful part is a fraction of the weight."},
+    {"text":"Plan the route: open the doors, clear the floor, check stairs, ramps and the vehicle. Decide where you'll set it down and where you can rest on the way."},
+    {"text":"Lift close and low: feet apart, one slightly forward, knees bent, back straight, a firm grip. Lift smoothly with your legs and keep the load against your body.","warn":"Don't twist with a load. Turn by moving your feet."},
+    {"text":"With two people, one calls the moves: \"ready, lift\", \"stop\", \"down\". Go at the pace of the weaker person."},
+    {"text":"On stairs, the person below takes more weight and is in the line of a fall. Put the stronger person there, go one step at a time, and keep talking.","warn":"If the load starts to slide, the person below steps aside. Nobody tries to stop it with their body."},
+    {"text":"To raise something off the floor, lever one edge up a little with a pry bar and slide a wooden block under it. Repeat, building up a stack of blocks, until it is high enough.","warn":"Keep your fingers out from under the load. Push blocks in with another block or your foot."},
+    {"text":"To move it along the floor, set it on three round pipes and push. Move the pipe that comes out at the back round to the front."},
+    {"text":"For tall loads like fridges and washers, strap the load to a hand truck before tipping it back."},
+    {"text":"To load a vehicle, use a ramp of strong planks and a strap, or a jack or winch. Strap everything down before you drive."},
+    {"text":"Stop when you're tired. Most lifting injuries happen at the end of the day."}
+  ],
+  "notes": "## Rules of thumb\n\n- A fit adult can lift about 20–25 kg close to the body at waist height. Reaching, twisting, lifting from the floor or above the shoulder, and tiredness all cut that a lot.\n- Two people can lift less than double what one can, because they can't both hold it ideally.\n- If you need to strain, stop and get help or a tool.\n\n## Common salvage weights\n\n| Item | Rough weight |\n|---|---|\n| Microwave oven transformer | 6–9 kg |\n| Car battery | 15–25 kg |\n| Golf cart battery | about 30 kg |\n| Treadmill | about 80 kg |\n| Fridge or washing machine | 50 kg or more |\n| Vending machine | several hundred kilograms |\n\n## Levers\n\nA lever multiplies your push by the ratio of the two arms. A 1 m bar with the pivot block 10 cm from the load gives about 9 times your push at the load. Lift a little, block it, reposition.\n\n## Common mistakes\n\n- Lifting with a rounded back.\n- Gloves with no grip.\n- Walking backwards down stairs with nobody guiding.\n- Trying to catch a falling load.\n- Carrying a load you can't see past.",
+  "tree": {"era":1,"branch":"salvage"},
+  "devices": ["fridge","washer","treadmill","vending","floor_scrubber","generator","standby_generator","ups_large","battery_yard","window_ac","microwave_tx","dryer"],
+  "parts": ["battery_pb","motor_dc_large","transformer_hv","compressor","engine_small","transformer_lv"],
+  "license": "CC-BY-SA-4.0"
+}

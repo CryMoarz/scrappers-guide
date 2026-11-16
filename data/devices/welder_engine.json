@@ -1,0 +1,29 @@
+{
+  "id": "welder_engine",
+  "name": "Engine-driven welder-generator",
+  "variantOf": "welder",
+  "aliases": ["welder generator","engine drive welder","welder genset","bobcat welder"],
+  "brands": ["Lincoln Electric","Miller","Hobart","ESAB","Vevor"],
+  "prev": 2,
+  "tools": ["socket","wrench","heavy"],
+  "mins": 60,
+  "kg": 250,
+  "hazards": ["fuel","co_gas","heavy","acid"],
+  "comps": [
+    {"key":"alternator","fn":"alternator","spec":"Welding alternator with 120/240V auxiliary outlets, several kW — a full generator","v":240,"qty":1,"ext":4,"obs":5,"loc":"Coupled to the engine","kg":50},
+    {"key":"engine_small","fn":"engine_small","spec":"Petrol or diesel engine, 10–25 hp","w":[7460,18650],"qty":1,"ext":3,"obs":4,"loc":"Inside the enclosure","kg":60},
+    {"key":"battery_pb","fn":"battery_pb","spec":"12V starting battery","v":12,"qty":1,"ext":1,"obs":4,"loc":"Inside the enclosure"},
+    {"key":"fuel_liquid","fn":"fuel_liquid","spec":"Fuel in the base tank, 20–50 L","qty":1,"ext":1,"obs":4,"loc":"Base of the frame"},
+    {"key":"oil_lube","fn":"oil_lube","spec":"Engine oil","qty":1,"ext":1,"obs":5,"loc":"Engine sump"}
+  ],
+  "buildings": [
+    {"b":"construction","l":5},
+    {"b":"farm","l":4},
+    {"b":"tool_rental","l":4},
+    {"b":"factory","l":3},
+    {"b":"water_works","l":3},
+    {"b":"car_repair","l":2},
+    {"b":"bus_depot","l":2}
+  ],
+  "notes": "Often mounted on service truck beds. Most people see a welder, not a generator. Run it outdoors only."
+}

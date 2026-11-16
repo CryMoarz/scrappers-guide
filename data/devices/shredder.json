@@ -1,0 +1,30 @@
+{
+  "id": "shredder",
+  "name": "Paper shredder",
+  "group": "Electronics and office",
+  "aliases": ["document shredder","cross cut shredder"],
+  "brands": ["Fellowes","Aurora","Swingline","Bonsaii","Royal Sovereign","Rexel"],
+  "prev": 4,
+  "tools": ["screwdriver"],
+  "mins": 15,
+  "repairs": {"records":2329,"fixed":0.62,"end_of_life":0.27},
+  "hazards": ["sharp"],
+  "comps": [
+    {"key":"motor_ac","fn":"motor_ac","spec":"High-torque motor","v":[120,240],"w":[100,600],"ac":true,"qty":1,"ext":2,"obs":5,"loc":"Head unit"},
+    {"key":"gearbox","fn":"gearbox","spec":"Heavy reduction gearbox with high torque output","qty":1,"ext":2,"obs":5,"loc":"Head unit"},
+    {"key":"thermostat","fn":"thermostat","spec":"Motor thermal cutoff","qty":1,"ext":2,"obs":5,"loc":"On the motor"},
+    {"key":"switch","fn":"switch","spec":"Paper sensor and safety switches","qty":2,"ext":2,"obs":5,"loc":"Feed slot"},
+    {"key":"fuse","fn":"fuse","spec":"Thermal fuse","a":[2,10],"qty":1,"ext":2,"obs":5,"loc":"On the motor"}
+  ],
+  "buildings": [
+    {"b":"office","l":5},
+    {"b":"school","l":4},
+    {"b":"bank","l":5},
+    {"b":"house","l":3},
+    {"b":"hospital","l":3},
+    {"b":"shop_small","l":1}
+  ],
+  "sources": [
+    {"title":"Open Repair Alliance, Open Repair Data v0.3 (community repair events, 2012 to July 2026; CC BY-SA 4.0): 2,329 repairs recorded as Paper shredder","url":"https://github.com/openrepair/data"}
+  ]
+}

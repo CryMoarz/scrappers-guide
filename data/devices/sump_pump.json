@@ -1,0 +1,21 @@
+{
+  "id": "sump_pump",
+  "name": "Sump pump",
+  "group": "Building systems",
+  "aliases": ["basement pump","battery backup sump pump"],
+  "brands": ["Zoeller","Wayne","Superior Pump","Liberty Pumps","Little Giant","Franklin Electric","Simer","Vevor"],
+  "prev": 3,
+  "tools": ["hands","pliers"],
+  "mins": 15,
+  "hazards": [],
+  "comps": [
+    {"key":"pump_water","fn":"pump_water","spec":"Submersible pump, about 1/3 hp 120V","v":120,"qty":1,"ext":2,"obs":4,"loc":"Basement pit"},
+    {"key":"switch","fn":"switch","spec":"Float switch","qty":1,"ext":1,"obs":5,"loc":"Attached to the pump"},
+    {"key":"battery_pb","fn":"battery_pb","spec":"Backup 12V deep-cycle battery (backup systems)","v":12,"qty":1,"ext":1,"obs":4,"loc":"Beside the pit"},
+    {"key":"backup_pump","fn":"pump_water","spec":"12V DC backup pump","v":12,"qty":1,"ext":2,"obs":5,"loc":"In the pit beside the main pump"}
+  ],
+  "buildings": [
+    {"b":"house","l":5},
+    {"b":"hardware","l":4}
+  ]
+}

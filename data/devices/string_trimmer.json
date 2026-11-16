@@ -1,0 +1,39 @@
+{
+  "id": "string_trimmer",
+  "name": "String trimmer or brush cutter",
+  "group": "Tools and yard",
+  "aliases": ["weed eater","weed whacker","strimmer","line trimmer","brush cutter","weed trimmer","grass trimmer","gas trimmer"],
+  "brands": ["Stihl","Husqvarna","Echo","Ryobi","Greenworks","Craftsman","DeWalt","EGO","Makita","Black+Decker"],
+  "prev": 4,
+  "tools": ["screwdriver","socket"],
+  "mins": 10,
+  "kg": 5,
+  "hazards": ["fuel","li_fire"],
+  "comps": [
+    {"key":"engine_small","fn":"engine_small","spec":"2- or 4-stroke petrol engine, 25–40 cc (gas models)","w":[700,1800],"qty":1,"ext":2,"obs":3,"loc":"Rear of the shaft","kg":2,"p":0.5},
+    {"key":"motor_bldc","fn":"motor_bldc","spec":"Brushless motor, 18–80V (battery models)","v":[18,80],"qty":1,"ext":2,"obs":4,"loc":"Head or rear housing","p":0.5},
+    {"key":"battery_li","fn":"battery_li","spec":"Tool battery pack (battery models; often taken with the tool)","v":[18,80],"ah":[2,6],"qty":1,"ext":1,"obs":2,"loc":"Battery slot"},
+    {"key":"tube_frame","fn":"tube_frame","spec":"Aluminium shaft tube, about 25 mm across, 1.5 m long","qty":1,"ext":1,"obs":5,"loc":"The shaft"},
+    {"key":"rod_shaft","fn":"rod_shaft","spec":"Steel drive shaft or flexible cable inside the tube","qty":1,"ext":2,"obs":5,"loc":"Inside the shaft tube"},
+    {"key":"gearbox","fn":"gearbox","spec":"Right-angle head gearbox (straight-shaft models)","qty":1,"ext":2,"obs":5,"loc":"Cutting head","p":0.5},
+    {"key":"rope_webbing","fn":"rope_webbing","spec":"Nylon trimmer line, 2–3 mm, spools of 50–200 m — stiff but strong cord","qty":1,"ext":1,"obs":5,"loc":"Spool in the head; spare spools on the shelf"},
+    {"key":"fuel_liquid","fn":"fuel_liquid","spec":"Petrol-oil mix (gas models)","qty":1,"ext":1,"obs":3,"loc":"Small tank on the engine","p":0.5}
+  ],
+  "boards": [
+    {"id":"bldc_controller","qty":1,"loc":"Motor controller (battery models)","p":0.4}
+  ],
+  "buildings": [
+    {"b":"garage_res","l":5},
+    {"b":"hardware","l":5},
+    {"b":"house","l":4},
+    {"b":"farm","l":4},
+    {"b":"golf","l":4},
+    {"b":"garden_centre","l":4},
+    {"b":"farm_supply","l":4},
+    {"b":"tool_rental","l":3},
+    {"b":"self_storage","l":3},
+    {"b":"school","l":2},
+    {"b":"church","l":2},
+    {"b":"campground","l":2}
+  ]
+}

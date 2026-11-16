@@ -1,0 +1,35 @@
+{
+  "id": "tablet_apple_ipad_air_2_a1566",
+  "device": "tablet",
+  "brand": "Apple",
+  "model": "iPad Air 2 Wi-Fi (A1566)",
+  "years": "2014-2017",
+  "notes": "Covers the Wi-Fi-only A1566 (October 2014 to March 2017), not the cellular model. The battery is glued in and the front glass is fused to the LCD, so opening the tablet risks the screen; the boxed 10 W USB adapter is not a part of the tablet and is not listed.",
+  "research": {"checked":"2026-11-12","gaps":["Battery: Apple's spec page, EveryMac and iFixit's device page give 27.3 Wh; iFixit's teardown (step 17) gives 27.62 Wh. The spec uses Apple's figure.","Wi-Fi module: the teardown text names it a Murata 339S02541; a reader comment on the guide questions that and is not used as evidence.","Left out, no function stated or no template part type fits: Parade DP675 LCD driver, TI TPS65143A LCD bias chip, Broadcom BCM5976 digitizer controller, TI TI48WHXDP 343S0583, Fairchild FDMC 6683 and FDMC 6676BZ.","FCC ID BCGA1566 was only seen in search snippets and no FCC exhibit was opened, so the fcc field is empty.","The teardown unit has 16 GB of flash; other storage sizes were not checked.","Core count: iFixit calls the A8X a rumored triple-core, another site says dual-core. Not claimed.","No datasheet links: none was opened for the A8X, RAM, flash, NFC controller, Murata module, Bosch sensors, LPC18B1 or the Cirrus Logic codec."],"method":["iFixit iPad Air 2 Teardown (guide 30592), read through the API and on the page: model number at step 2, microphones at step 13, chips at steps 15 and 16, battery at step 17, magnets at step 18.","Apple iPad Air 2 technical specifications (support.apple.com/kb/SP708): display, cameras, battery, Bluetooth 4.2, Touch ID.","EveryMac page for the A1566: model number, 10 W USB power adapter, introduced October 16, 2014, discontinued March 21, 2017.","iFixit device page for the iPad Air 2: A1566 (Wi-Fi) and a 27.3 Wh battery.","fccid.io, fcc.report and apps.fcc.gov refused the researcher's requests (HTTP 403); not retried."]},
+  "comps": [
+    {"key":"b:phone_board:ic_mcu","conf":"documented","spec":"Apple APL1012 A8X 64-bit applications processor","source":"https://www.ifixit.com/Teardown/iPad+Air+2+Teardown/30592"},
+    {"key":"ic_mcu_m8","fn":"ic_mcu","spec":"NXP LPC18B1UK ARM Cortex-M3 microcontroller, the Apple M8 motion coprocessor","qty":1,"ext":3,"obs":4,"conf":"documented","source":"https://www.ifixit.com/Teardown/iPad+Air+2+Teardown/30592"},
+    {"key":"b:phone_board:ic_memory","conf":"documented","spec":"SK hynix H2JTDG8UD1BMR NAND flash, 128 Gb (16 GB)","source":"https://www.ifixit.com/Teardown/iPad+Air+2+Teardown/30592"},
+    {"key":"ic_memory_ram","fn":"ic_memory","spec":"Elpida/Micron F8164A3MD RAM, two 1 GB chips (2 GB total)","qty":2,"ext":4,"obs":4,"conf":"documented","source":"https://www.ifixit.com/Teardown/iPad+Air+2+Teardown/30592"},
+    {"key":"b:phone_board:radio_rf","conf":"documented","spec":"Murata 339S02541 Wi-Fi module","source":"https://www.ifixit.com/Teardown/iPad+Air+2+Teardown/30592"},
+    {"key":"radio_rf_nfc","fn":"radio_rf","spec":"NXP 65V10 NFC controller","qty":1,"ext":2,"obs":3,"conf":"documented","source":"https://www.ifixit.com/Teardown/iPad+Air+2+Teardown/30592"},
+    {"key":"b:phone_board:sensor_misc","conf":"documented","spec":"Bosch Sensortec BMA280 accelerometer and BMP280 barometer","source":"https://www.ifixit.com/Teardown/iPad+Air+2+Teardown/30592"},
+    {"key":"sensor_misc_touch_id","fn":"sensor_misc","spec":"NXP 8416A1 Touch ID fingerprint sensor, the one IC on the home-button assembly","qty":1,"ext":3,"obs":4,"loc":"Home-button assembly","conf":"documented","source":"https://www.ifixit.com/Teardown/iPad+Air+2+Teardown/30592"},
+    {"key":"b:phone_board:microphone","conf":"documented","spec":"Two microphones, marked M1300 5743 M1 334 and M1300 5723 M1 334; the first sits on the power-button cable assembly and the second on the volume-button cable","qty":2,"loc":"On the button cables","source":"https://www.ifixit.com/Teardown/iPad+Air+2+Teardown/30592"},
+    {"key":"ic_audio_codec","fn":"ic_audio","spec":"Apple (Cirrus Logic) 338S1213 audio codec","qty":1,"ext":3,"obs":4,"conf":"documented","source":"https://www.ifixit.com/Teardown/iPad+Air+2+Teardown/30592"},
+    {"key":"ic_audio_amp","fn":"ic_audio","spec":"Maxim Integrated MAX98721BEWV boosted class amplifier","qty":1,"ext":3,"obs":4,"conf":"documented","source":"https://www.ifixit.com/Teardown/iPad+Air+2+Teardown/30592"},
+    {"key":"b:phone_board:connector","conf":"documented","spec":"Lightning connector cable, soldered to the logic board in the teardown","source":"https://www.ifixit.com/Teardown/iPad+Air+2+Teardown/30592"},
+    {"key":"battery_li","conf":"documented","spec":"Built-in rechargeable lithium-polymer battery, 27.3 Wh by Apple's specification (iFixit's teardown reads 27.62 Wh)","source":"https://support.apple.com/kb/SP708"},
+    {"key":"display","conf":"documented","spec":"9.7-inch LED-backlit IPS Multi-Touch display, 2048 x 1536 at 264 ppi","source":"https://support.apple.com/kb/SP708"},
+    {"key":"camera","conf":"documented","spec":"8 MP iSight rear camera, f/2.4","source":"https://support.apple.com/kb/SP708"},
+    {"key":"camera_front","fn":"camera","spec":"1.2 MP FaceTime HD front camera, f/2.2","qty":1,"ext":2,"obs":3,"conf":"documented","source":"https://support.apple.com/kb/SP708"},
+    {"key":"speaker","conf":"documented","spec":"Small speaker units, removed in the teardown","source":"https://www.ifixit.com/Teardown/iPad+Air+2+Teardown/30592"},
+    {"key":"magnet_strong","conf":"documented","spec":"Smart Cover magnets, the only parts left in the rear case after the teardown","source":"https://www.ifixit.com/Teardown/iPad+Air+2+Teardown/30592"}
+  ],
+  "sources": [
+    {"title":"iFixit: iPad Air 2 Teardown (guide 30592; model number at step 2, chips at steps 15 and 16, battery at step 17, magnets at step 18)","url":"https://www.ifixit.com/Teardown/iPad+Air+2+Teardown/30592"},
+    {"title":"Apple: iPad Air 2 technical specifications (support.apple.com/kb/SP708)","url":"https://support.apple.com/kb/SP708"},
+    {"title":"EveryMac: Apple iPad Air 2 (Wi-Fi only, A1566) specifications","url":"https://everymac.com/systems/apple/ipad/specs/apple-ipad-air-2-a1566-wi-fi-only-specs.html"},
+    {"title":"iFixit: iPad Air 2 device page (lists A1566 and a 27.3 Wh battery)","url":"https://www.ifixit.com/Device/iPad_Air_2"}
+  ]
+}

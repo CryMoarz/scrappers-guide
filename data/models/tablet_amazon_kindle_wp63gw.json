@@ -1,0 +1,26 @@
+{
+  "id": "tablet_amazon_kindle_wp63gw",
+  "device": "tablet",
+  "brand": "Amazon",
+  "model": "Kindle 7th Generation (WP63GW)",
+  "fcc": "2ABO9-0725",
+  "notes": "The touch-screen basic Kindle, model WP63GW (FCC approval 17 September 2014). The battery is held by strong adhesive on the back of the display midframe, and the touch grid is infrared, on two boards along the display edges; TechInfoDepot warns that this model has more than one revision, so the chips may differ.",
+  "research": {"checked":"2026-11-12","gaps":["Wi-Fi chip: iFixit's chip list prints AR6803G-BL3B; TechInfoDepot reads AR6003G-BL3B and calls it the 802.11bgn Wi-Fi chip. The spec gives both readings; which is right is not settled.","RAM size (256 MiB) and the FCC ID come from TechInfoDepot only, whose header warns of multiple revisions of this device.","The FCC exhibits and internal photos were not opened (fccid.io returned HTTP 403 to the researcher).","No sale year is stated by the sources opened; the FCC approval date is the only date, so the years field is empty.","The teardown lists '24.000 430F' with no function. Left out.","The TechInfoDepot replacement-battery code (CS-ABD063SL) is a replacement listing, not an OEM part number. Not used.","No datasheet link for the MSP430G2: the teardown names the series only, and TI's MSP430G2553 page is for one variant not shown to be in this unit.","No datasheet links were opened for the Elpida RAM, SanDisk eMMC, MAX77696A, NN1001 or the Atheros chip."],"method":["iFixit Kindle 7th Generation Teardown (guide 29802), read through the API and on the page: model number and micro-USB port at step 2, battery at step 5, chip list at step 6, touch boards at steps 7 and 8.","TechInfoDepot wiki page for the Amazon Kindle 7 Gen (WP63GW), loaded without a bot check: FCC ID, FCC approval date, RAM maker and size, Wi-Fi chip reading.","NXP i.MX 6SoloLite datasheet (IMX6SLCEC, Rev. 6, 11/2018), pages 1 to 3 read with the project's PDF tool: Table 1 lists MCIMX6L7DVN10AB at 1 GHz.","TI product page for the MSP430G2553 opened (MSP430G2x53 family, Rev. J datasheet) but not used as a source."]},
+  "comps": [
+    {"key":"b:phone_board:ic_mcu","conf":"documented","spec":"Freescale (now NXP) i.MX 6SoloLite applications processor, MCIMX6L7DVN10AB","source":"https://www.ifixit.com/Teardown/Kindle+7th+Generation+Teardown/29802"},
+    {"key":"ic_mcu_touch","fn":"ic_mcu","spec":"Texas Instruments MSP430G2 ultra-low-power microcontroller on the infrared touch receiver board","qty":1,"ext":3,"obs":4,"loc":"Infrared touch receiver board along the right and bottom edges of the display","conf":"documented","source":"https://www.ifixit.com/Teardown/Kindle+7th+Generation+Teardown/29802"},
+    {"key":"b:phone_board:ic_memory","conf":"documented","spec":"SanDisk SDIN7DP2-4G iNAND Ultra eMMC, 4 GB NAND flash","source":"https://www.ifixit.com/Teardown/Kindle+7th+Generation+Teardown/29802"},
+    {"key":"ic_memory_ram","fn":"ic_memory","spec":"Elpida (now Micron) B2432BCPE-8D-F DDR2 mobile RAM, 256 MiB","qty":1,"ext":3,"obs":4,"conf":"documented","source":"https://techinfodepot.shoutwiki.com/wiki/Amazon_Kindle_7_Gen_(WP63GW)"},
+    {"key":"b:phone_board:radio_rf","conf":"documented","spec":"Atheros chip, AR6803G-BL3B in iFixit's chip list (TechInfoDepot reads AR6003G-BL3B and calls it the 802.11bgn Wi-Fi chip)","source":"https://www.ifixit.com/Teardown/Kindle+7th+Generation+Teardown/29802"},
+    {"key":"b:phone_board:dcdc_buck","conf":"documented","spec":"Maxim Integrated MAX77696A power-management IC","source":"https://www.ifixit.com/Teardown/Kindle+7th+Generation+Teardown/29802"},
+    {"key":"battery_li","conf":"documented","spec":"Lithium-ion polymer battery, 3.7 V, 890 mAh (3.29 Wh), glued to the display midframe","v":3.7,"ah":0.89,"loc":"Back of the display midframe","source":"https://www.ifixit.com/Teardown/Kindle+7th+Generation+Teardown/29802"},
+    {"key":"display","conf":"documented","spec":"6-inch Pearl e-paper panel, 167 ppi, with a touch grid","source":"https://www.ifixit.com/Teardown/Kindle+7th+Generation+Teardown/29802"},
+    {"key":"sensor_misc_touch_ctrl","fn":"sensor_misc","spec":"Neonode zForce NN1001 single-chip optical touch controller","qty":1,"ext":3,"obs":4,"loc":"Infrared touch receiver board","conf":"documented","source":"https://www.ifixit.com/Teardown/Kindle+7th+Generation+Teardown/29802"},
+    {"key":"b:phone_board:connector","conf":"documented","spec":"Micro-USB port on the bottom edge","source":"https://www.ifixit.com/Teardown/Kindle+7th+Generation+Teardown/29802"}
+  ],
+  "sources": [
+    {"title":"iFixit: Kindle 7th Generation Teardown (guide 29802; model WP63GW at step 2, battery at step 5, chip list at step 6, touch boards at step 8)","url":"https://www.ifixit.com/Teardown/Kindle+7th+Generation+Teardown/29802"},
+    {"title":"TechInfoDepot: Amazon Kindle 7 Gen (WP63GW) (wiki page; FCC ID 2ABO9-0725, RAM size, Wi-Fi chip reading)","url":"https://techinfodepot.shoutwiki.com/wiki/Amazon_Kindle_7_Gen_(WP63GW)"},
+    {"title":"Datasheet: i.MX 6SoloLite Applications Processors, NXP document IMX6SLCEC Rev. 6 (11/2018); Table 1 lists MCIMX6L7DVN10AB at 1 GHz","url":"https://nxp.com/docs/en/data-sheet/IMX6SLCEC.pdf"}
+  ]
+}

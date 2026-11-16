@@ -1,0 +1,38 @@
+{
+  "id": "baby_monitor",
+  "name": "Baby monitors",
+  "group": "Electronics and office",
+  "aliases": ["baby cam","nursery monitor","video baby monitor","audio baby monitor","baby camera"],
+  "brands": ["Infant Optics","Motorola","Hubble","Owlet","Nanit","VTech","Eufy","Summer Infant","Angelcare"],
+  "era": "1990s–present",
+  "prev": 4,
+  "tools": ["screwdriver"],
+  "mins": 10,
+  "kg": 0.5,
+  "hazards": ["li_fire"],
+  "comps": [
+    {"key":"camera","fn":"camera","spec":"Night-vision camera with a private radio link to its own screen — no internet needed; works as a gate or camp camera","qty":1,"ext":1,"obs":5,"loc":"Baby unit"},
+    {"key":"radio_rf","fn":"radio_rf","spec":"Closed 2.4 GHz digital link (DECT or 900 MHz on audio models), about 50–300 m — talks only to its own pair","qty":2,"ext":2,"obs":5,"loc":"Both units"},
+    {"key":"opto_sensor","fn":"opto_sensor","spec":"Infrared LEDs for night vision (850–940 nm)","qty":6,"ext":2,"obs":5,"loc":"Around the camera lens"},
+    {"key":"display","fn":"display","spec":"Parent-unit LCD, 2.4–5 in","qty":1,"ext":2,"obs":5,"loc":"Parent unit"},
+    {"key":"battery_li","fn":"battery_li","spec":"3.7V lithium pack, about 1,000–3,000 mAh","v":3.7,"ah":[1,3],"qty":1,"ext":1,"obs":4,"loc":"Back of the parent unit"},
+    {"key":"microphone","fn":"microphone","spec":"Sensitive microphone","qty":1,"ext":2,"obs":5,"loc":"Baby unit"},
+    {"key":"speaker","fn":"speaker","spec":"Small speaker","w":[0.25,1],"qty":1,"ext":2,"obs":5,"loc":"Parent unit"},
+    {"key":"motor_stepper","fn":"motor_stepper","spec":"Tiny stepper motors for pan and tilt (pan-tilt models)","v":5,"qty":2,"ext":2,"obs":5,"loc":"Camera head","p":0.5}
+  ],
+  "boards": [
+    {"id":"smps_small","qty":1,"loc":"Inside the plug-in adapters","p":1},
+    {"id":"li_charger_small","qty":1,"loc":"Parent unit charging circuit","p":0.6}
+  ],
+  "buildings": [
+    {"b":"house","l":4},
+    {"b":"apartment","l":4},
+    {"b":"department","l":4},
+    {"b":"self_storage","l":3},
+    {"b":"toy_store","l":3},
+    {"b":"electronics","l":3},
+    {"b":"church","l":3},
+    {"b":"school","l":2},
+    {"b":"supermarket","l":2}
+  ]
+}

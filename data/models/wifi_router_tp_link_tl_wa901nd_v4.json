@@ -1,0 +1,21 @@
+{
+  "id": "wifi_router_tp_link_tl_wa901nd_v4",
+  "device": "wifi_router",
+  "brand": "TP-Link",
+  "model": "TL-WA901ND v4",
+  "fcc": "TE7WA901NDV4",
+  "notes": "Chips for hardware version v4; other versions of the TL-WA901ND can differ.",
+  "research": {"gaps":[],"method":["Not yet fact-checked: its parts show as likely until a fact-check confirms them against their sources.","Imported from the OpenWrt Table of Hardware (toh.json, 2026-11-13): the hardware data page for this version, by OpenWrt wiki contributors under CC BY-SA 4.0."]},
+  "comps": [
+    {"key":"ic_mcu_soc","fn":"ic_mcu","spec":"SoC Qualcomm Atheros TP9343, 1 core at 750 MHz","qty":1,"ext":4,"obs":3,"source":"https://openwrt.org/toh/hwdata/tp-link/tp-link_tl-wa901nd_v4","conf":"likely"},
+    {"key":"ic_memory_flash","fn":"ic_memory","spec":"Flash, 4 MB","qty":1,"ext":2,"obs":4,"source":"https://openwrt.org/toh/hwdata/tp-link/tp-link_tl-wa901nd_v4","conf":"likely"},
+    {"key":"ic_memory_ram","fn":"ic_memory","spec":"RAM, 32 MB","qty":1,"ext":3,"obs":3,"source":"https://openwrt.org/toh/hwdata/tp-link/tp-link_tl-wa901nd_v4","conf":"likely"},
+    {"key":"radio_rf","spec":"Wi-Fi: Atheros AR9380 (2.4 GHz b/g/n)","qty":1,"source":"https://openwrt.org/toh/hwdata/tp-link/tp-link_tl-wa901nd_v4","conf":"likely"},
+    {"key":"antenna_coax","spec":"Detachable external antennas","qty":3,"source":"https://openwrt.org/toh/hwdata/tp-link/tp-link_tl-wa901nd_v4","conf":"likely"},
+    {"key":"psu","spec":"Power supply: 12 VDC, 1.0A, PoE","v":12,"a":1,"source":"https://openwrt.org/toh/hwdata/tp-link/tp-link_tl-wa901nd_v4","conf":"likely"},
+    {"key":"connector","spec":"Ethernet ports: 1× 100M","qty":1,"source":"https://openwrt.org/toh/hwdata/tp-link/tp-link_tl-wa901nd_v4","conf":"likely"}
+  ],
+  "sources": [
+    {"title":"OpenWrt Table of Hardware: TP-Link TL-WA901ND v4 (OpenWrt wiki contributors, CC BY-SA 4.0)","url":"https://openwrt.org/toh/hwdata/tp-link/tp-link_tl-wa901nd_v4"}
+  ]
+}

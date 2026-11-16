@@ -1,0 +1,32 @@
+{
+  "id": "vacuum",
+  "name": "Corded vacuum cleaner",
+  "group": "Kitchen and appliances",
+  "aliases": ["upright vacuum","canister vacuum"],
+  "brands": ["Hoover","Miele","Dyson","Shark","Kenmore","Bissell","Electrolux","Eureka","Oreck"],
+  "prev": 5,
+  "tools": ["screwdriver"],
+  "mins": 15,
+  "repairs": {"records":34840,"fixed":0.57,"end_of_life":0.22,"faults":[{"what":"power cord, plug or cord reel","share":0.21},{"what":"motor, drive belt or carbon brushes","share":0.15},{"what":"internal battery or power supply","share":0.14},{"what":"circuit board or other internal component","share":0.12}]},
+  "hazards": [],
+  "comps": [
+    {"key":"motor_universal","fn":"motor_universal","spec":"High-speed universal motor","v":[120,240],"w":[600,2000],"ac":true,"qty":1,"ext":2,"obs":4,"loc":"Body"},
+    {"key":"wire_copper","fn":"wire_copper","spec":"Long power cord, 7–10 m","qty":1,"ext":1,"obs":4,"loc":"Body"},
+    {"key":"belt_pulley","fn":"belt_pulley","spec":"Brush roll belt","qty":1,"ext":1,"obs":4,"loc":"Floor head"},
+    {"key":"switch","fn":"switch","spec":"Power switch","qty":1,"ext":1,"obs":4,"loc":"Handle"}
+  ],
+  "buildings": [
+    {"b":"house","l":5},
+    {"b":"apartment","l":5},
+    {"b":"hotel","l":5},
+    {"b":"office","l":4},
+    {"b":"school","l":4},
+    {"b":"church","l":4},
+    {"b":"hospital","l":3},
+    {"b":"salon","l":2},
+    {"b":"shop_small","l":2}
+  ],
+  "sources": [
+    {"title":"Open Repair Alliance, Open Repair Data v0.3 (community repair events, 2012 to July 2026; CC BY-SA 4.0): 34,840 repairs recorded as Vacuum","url":"https://github.com/openrepair/data"}
+  ]
+}

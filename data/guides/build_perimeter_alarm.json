@@ -1,0 +1,42 @@
+{
+  "id": "build_perimeter_alarm",
+  "kind": "build",
+  "title": "Perimeter and door alarm (sound or light only)",
+  "keywords": ["alarm","perimeter alarm","door alarm","intruder alert","trip alarm","reed switch alarm","camp alarm","early warning","motion alert","pir alarm"],
+  "summary": "A battery alarm that sounds a buzzer or turns on a light when a door opens, a light tripline is pulled or a motion sensor sees movement, and keeps sounding until you reset it. It alerts only: nothing in this build may harm anyone.",
+  "difficulty": 2,
+  "mins": 120,
+  "tools": ["cutters","desolder","multimeter","screwdriver","pliers","drill","tape","knife"],
+  "hazards": ["fall"],
+  "materials": [
+    {"item":"Reed switches with magnets (door and window contacts)","qty":"1 per door or line","fn":"hall_reed"},
+    {"item":"PIR motion sensor with relay output (12V alarm type)","qty":"1","fn":"sensor_motion","optional":true},
+    {"item":"12V relay, SPDT or DPDT","qty":"1","fn":"relay","only":["12v"]},
+    {"item":"N-channel MOSFET (or an NPN transistor with a 10 kΩ base resistor)","qty":"1","fn":"mosfet"},
+    {"item":"100 kΩ resistor","qty":"1","fn":"resistor"},
+    {"item":"Diode across the relay coil (1N4001–1N4007 type)","qty":"1","fn":"diode_rect"},
+    {"item":"12V buzzer or small siren","qty":"1","fn":"speaker","only":["sounder","siren","horn"]},
+    {"item":"Push button (normally closed) to reset and a toggle switch to arm","qty":"1 each","fn":"switch"},
+    {"item":"12V battery: 7–9Ah alarm battery or 8 × AA","qty":"1","fn":"battery_pb","only":["12v"]},
+    {"item":"1A fuse at the battery","qty":"1","fn":"fuse"},
+    {"item":"Thin two-core wire: alarm, phone or speaker cable","qty":"10–100 m","fn":"wire_copper","only":["twin","speaker cable","signal cable"]},
+    {"item":"Light cord or fishing line for a tripline","qty":"10–50 m","fn":"rope_webbing","optional":true},
+    {"item":"12V LED or lamp as a silent alert","qty":"1","fn":"led_light","optional":true}
+  ],
+  "steps": [
+    {"text":"Decide what to watch (doors, windows, a path, a yard) and where the alert should be: usually where you sleep. A quiet buzzer or a light inside is often better than a loud siren that tells everyone where you are."},
+    {"text":"Test every reed switch with the multimeter on continuity: it should close when the magnet is within about 1 cm and open when the magnet moves away."},
+    {"text":"Build the latch board from the circuit in the notes: MOSFET, relay, 100 kΩ resistor, coil diode, buzzer, reset button and arm switch."},
+    {"text":"Wire all sensors in one series loop back to the board. Every contact is closed when all is quiet. Any opening, or a cut wire, sets off the alarm."},
+    {"text":"Fit door and window contacts: switch on the frame, magnet on the moving door, lined up and no more than about 1 cm apart when closed."},
+    {"text":"For a path, make a tripline: a light cord tied to a magnet that sits on a reed switch, so a pull lifts the magnet away. Run the cord at knee height and anchor it so it pulls free easily.","warn":"Alert only. Don't string lines at ankle or neck height, across stairs or in the dark where someone could fall. Mark lines so your own people know where they are."},
+    {"text":"For open ground, mount a 12V alarm PIR, power it from the battery and put its normally-closed relay contacts in the loop."},
+    {"text":"Power: fuse within 30 cm of the battery positive, 1A. Measure standby current; it should be well under 1 mA."},
+    {"text":"Test every day: arm, open each door, pull each line, walk past each sensor. Reset with the button. Fix any sensor that doesn't trigger."}
+  ],
+  "notes": "## Latch circuit\n- 100 kΩ from +12V to the MOSFET gate.\n- Sensor loop (all contacts in series) from the gate to 0V. While the loop is closed it holds the gate at 0V.\n- Relay coil and buzzer in parallel. Their top ends go to +12V through the reset button (normally closed). Their bottom ends go to the MOSFET drain.\n- Diode across the relay coil, stripe (cathode) to the + side.\n- MOSFET source to 0V.\n- Relay normally-open contact from the MOSFET drain to 0V. Once the relay pulls in, this contact keeps it on even if the door shuts again.\n- Arm switch across the sensor loop: closed = disarmed.\n- Optional: 1 µF from gate to 0V ignores very short glitches.\n\nHow it works: when any contact opens, the 100 kΩ pulls the gate up to 12V, the MOSFET turns on, the relay and buzzer turn on, and the relay latches. Pressing reset breaks the coil supply and clears it.\n\n## Battery life\nStandby: 12V ÷ 100 kΩ ≈ 0.12 mA. A 7Ah battery would last years on standby. Alarm: relay 30–80 mA plus buzzer 20–200 mA, many hours of sounding.\n\n## Without a MOSFET\nUse an NPN transistor: 10 kΩ from +12V to the base instead of 100 kΩ. Standby rises to about 1.2 mA (still months on a 7Ah battery).\n\n## Without a relay\nLeave out the latch. The buzzer sounds only while a contact is open. Fine for doors you can hear.\n\n## No-power alert\nA line of tin cans with a few pebbles in each, hung on a cord, rattles when the cord is touched. It needs no battery and harms no one.\n\n## Remote alert\nPut the buzzer on the far end of a long two-core wire, or let the alarm key a two-way radio's push-to-talk through the relay so the alert reaches someone on watch.\n\n## Troubleshooting\n- Sounds at once when armed: a contact is open or a joint is broken. Check the loop with the multimeter, section by section.\n- False alarms in wind: tripline too tight, or a door rattling. Add slack and the 1 µF capacitor.\n- Weak buzzer: battery low.\n\n## Where to find parts\nAlarm panels hold the battery, siren and often spare door contacts and PIRs. Smoke alarms have piezo sounders. Cars have relays, horns and wiring.\n",
+  "tree": {"era":4,"branch":"signal","requires":["skill_soldering","build_led_lighting_12v"]},
+  "devices": ["alarm_panel","smoke_alarm","garage_opener","fire_panel","car","ups","motion_light","two_way_radio"],
+  "parts": ["hall_reed","sensor_motion","relay","speaker","mosfet"],
+  "license": "CC-BY-SA-4.0"
+}

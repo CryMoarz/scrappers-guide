@@ -1,0 +1,19 @@
+{
+  "id": "hard_drive_western_digital_wd80efzx",
+  "device": "hard_drive",
+  "brand": "Western Digital",
+  "model": "WD80EFZX",
+  "notes": "Helium-filled WD80EFZX, which the teardown calls an older WD Red model for NAS; the teardown gives no capacity (a retailer listing says 8 TB). The counts below are from one used drive taken apart in 2021 and may differ on other production runs.",
+  "research": {"checked":"2026-11-12","gaps":["Spindle speed, cache and the motor claim are left out: they rested on a retailer's spec table, which is not plainly WD's own datasheet, and the WD brochure it links (2879-800002.pdf) returned 404.","Speed conflict: the retailer and a review page (aphnetworks.com) say 5400 RPM class, while the draft recorded a 7,200 RPM review snippet that could not be found. Neither is WD's own document, so no speed is claimed.","Search results also showed the WD80EFZX sold under both WD Red and WD Red Plus names; not opened, not claimed.","Platter material, magnet size, pivot bearing and the spindle motor's electrical rating are not claimed.","The article does not name or mark the board's chip, so no chip or datasheet is claimed."],"method":["Gigazine English article (13 Feb 2021) on a teardown of a used WD80EFZX, read twice: it names the drive WD80EFZX and calls it an old WD Red model positioned for NAS; platters and heads, magnets, voice coil, filters, board and chip checked against its text.","Disctech product page for the WD80EFZX read: it gives the 8TB capacity (the only place one appears); its 5400 RPM class and 128 MB cache were not used.","The WD brochure linked from the Disctech page returned 404 and a manualmachine.com copy of WD's spec sheet returned 403, so neither was used."]},
+  "comps": [
+    {"key":"optics","conf":"documented","spec":"Seven double-sided platters, 14 heads in total (teardown of one used drive)","qty":7,"source":"https://gigazine.net/gsc_news/en/20210213-wd-hdd-tear-down"},
+    {"key":"magnet_strong","conf":"documented","spec":"Two magnets in the head positioning assembly, one above the other, with the voice coil and the head and arm parts sandwiched between them; the teardown calls the part a very strong magnet","qty":2,"source":"https://gigazine.net/gsc_news/en/20210213-wd-hdd-tear-down"},
+    {"key":"wire_copper","conf":"documented","spec":"Voice coil that controls the position of the head arm, sandwiched between the magnets (teardown)","source":"https://gigazine.net/gsc_news/en/20210213-wd-hdd-tear-down"},
+    {"key":"controller_board","conf":"documented","spec":"One circuit board on the back of the drive, held by screws; the chip in its centre has a heat-dissipation sheet that exposed the silicon when peeled off (teardown)","qty":1,"source":"https://gigazine.net/gsc_news/en/20210213-wd-hdd-tear-down"},
+    {"key":"filter_air_dust","fn":"filter_air","spec":"The drive had two filters (teardown): one removes dust and dirt inside, and the lid has a filter-like part that held something like activated carbon","qty":2,"ext":2,"obs":4,"conf":"documented","source":"https://gigazine.net/gsc_news/en/20210213-wd-hdd-tear-down"}
+  ],
+  "sources": [
+    {"title":"Gigazine (English), teardown of a helium-filled WD80EFZX WD Red drive, 13 Feb 2021","url":"https://gigazine.net/gsc_news/en/20210213-wd-hdd-tear-down"},
+    {"title":"WD80EFZX 8TB SATA hard drive, Disctech product page (retailer listing, gives the 8TB capacity)","url":"https://www.disctech.com/Western-Digital-WD80EFZX-8TB-SATA-Hard-Drive"}
+  ]
+}

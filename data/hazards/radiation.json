@@ -1,0 +1,15 @@
+{
+  "id": "radiation",
+  "label": "Tiny radioactive source",
+  "severity": 1,
+  "summary": "Ionisation smoke alarms hold a tiny americium-241 source inside a small metal chamber. Sealed in its housing it is harmless; opening, scraping, eating or breathing it in is the problem. Radioactive sources from hospitals, labs, factories and industrial gauges are far stronger and can kill: leave them alone.",
+  "signs": ["Smoke alarm labelled ionisation, with a radiation symbol or the words Americium 241","A small metal can or cage on the alarm's circuit board","Old glow-in-the-dark watch and instrument dials, mostly from before about 1970, may use radium paint","Heavy lead or steel containers, capsules, pellets or machine heads marked with the radiation symbol, from hospitals, labs, factories, oil wells or road-building density gauges: these are deadly, not tiny"],
+  "do": ["Take the buzzer and battery and leave the chamber sealed","If you must remove the chamber, keep it in one piece in a closed tin away from living space","Wash hands after handling smoke alarm insides"],
+  "dont": ["Don't open, crush, scrape or heat the chamber","Don't keep piles of them where people sleep or eat","Don't scrape or sand old luminous paint","Don't let children play with them","Don't touch, open, cut or carry off anything like that: get away, keep everyone out, and mark the spot"],
+  "ppe": ["Gloves if a chamber is damaged","Wash hands afterwards"],
+  "firstAid": ["Touched a damaged source: wash hands well with soap and water","If someone swallowed a source or breathed dust from one, get medical advice; the risk is small but real","Nausea, vomiting, or burns and blisters that appeared without a fire after handling a metal object: suspect radiation; get away from the object, wash, and get medical help"],
+  "refs": [
+    {"lib":"wikimed","q":"Americium-241"},
+    {"lib":"wikipedia","q":"Americium-241"}
+  ]
+}

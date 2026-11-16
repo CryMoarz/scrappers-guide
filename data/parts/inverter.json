@@ -1,0 +1,14 @@
+{
+  "id": "inverter",
+  "name": "Inverters (DC to AC)",
+  "group": "Power conversion",
+  "demand": 5,
+  "keywords": ["inverter","dc to ac","ac power","120v","mains power","power inverter","car inverter","pure sine","pure sine wave","modified sine","sine wave inverter","12v to 120v","12v to 230v","12v to 240v","230v","240v"],
+  "substitutes": ["alternator"],
+  "summary": "Inverters turn battery DC (12, 24 or 48V) into mains AC to run normal appliances.",
+  "uses": ["Running mains tools, chargers and lights from batteries","The heart of a solar power system","Backup power for medical devices and fridges (pure sine is best)"],
+  "identify": "Finned car and RV inverters with a cigarette plug or battery leads; bigger units in RVs, boats, cabins, solar sheds and telecom huts. Every UPS holds an inverter and a battery. Labels say pure or modified sine and give watts.",
+  "test": "Connect to a charged battery with thick cables and run a small load like a lamp. A beeping alarm usually means low battery or overload. The output is lethal mains voltage, and big units hold charge after switch-off.",
+  "decay": {"halfLifeMonths":null,"note":"Lasts dry; capacitors slowly age."},
+  "hazards": ["mains","hv_cap"]
+}

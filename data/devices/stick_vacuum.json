@@ -1,0 +1,29 @@
+{
+  "id": "stick_vacuum",
+  "name": "Cordless stick vacuum",
+  "group": "Kitchen and appliances",
+  "aliases": ["cordless vacuum","v8 vacuum"],
+  "brands": ["Dyson","Shark","Bissell","Hoover","Tineco","Black+Decker","Eureka","Samsung","LG"],
+  "era": "2015–present",
+  "prev": 4,
+  "tools": ["screwdriver"],
+  "mins": 15,
+  "hazards": ["li_fire"],
+  "comps": [
+    {"key":"battery_li","fn":"battery_li","spec":"18–25V pack of cylindrical cells","v":[18,25],"qty":1,"ext":1,"obs":3,"loc":"Handle"},
+    {"key":"motor_bldc","fn":"motor_bldc","spec":"High-speed brushless motor","v":[18,25],"w":[100,450],"qty":1,"ext":2,"obs":4,"loc":"Body"},
+    {"key":"charger","fn":"charger","spec":"Charging dock or adapter","v":[21,30.5],"a":[0.5,1.2],"qty":1,"ext":1,"obs":3,"loc":"Wall mount"}
+  ],
+  "boards": [
+    {"id":"bldc_controller","qty":1,"loc":"Motor housing","p":1},
+    {"id":"battery_bms","qty":1,"loc":"On the battery pack","p":1}
+  ],
+  "buildings": [
+    {"b":"house","l":5},
+    {"b":"apartment","l":5},
+    {"b":"office","l":2},
+    {"b":"hotel","l":2},
+    {"b":"department","l":3},
+    {"b":"electronics","l":3}
+  ]
+}

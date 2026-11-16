@@ -1,0 +1,15 @@
+{
+  "id": "signal_help",
+  "name": "Signal for help",
+  "keywords": ["signal for help","signal help","call for help","get rescued","rescue signal","distress signal","sos","attract attention","signal mirror","flag down"],
+  "summary": "Be seen and heard from far away. A mirror, or even a CD, flashes sunlight many kilometres; aim it through the centre hole. Car horns and alarm sirens run on 12V and carry far, and LED strobes show at night. Signals in threes (fires, flashes, blasts) mean distress almost everywhere.",
+  "parts": [
+    {"fn":"optics","why":"Mirrors flash sunlight farther than any lamp","core":true},
+    {"fn":"led_light","why":"Bright LEDs and strobes for night signals","core":true},
+    {"fn":"speaker","why":"Car horns, sirens and buzzers carry far","core":true},
+    {"fn":"radio_rf","why":"Call on channels people listen to"},
+    {"fn":"fabric_tarp","why":"Bright tarps laid out as ground signals"},
+    {"fn":"battery_pb","why":"Powers horns and lights"}
+  ],
+  "tips": ["A CD or DVD makes a signal mirror: sight the target through the hole and tilt until the light spot lands on it.","Never point a laser at aircraft or vehicles. It can blind the pilot or driver.","Big shapes show from the air: lay out an X or SOS several metres long in a colour that stands out.","Green leaves on a fire make white smoke by day; a bright flame shows best at night."]
+}

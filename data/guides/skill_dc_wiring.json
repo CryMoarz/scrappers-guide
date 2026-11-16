@@ -1,0 +1,45 @@
+{
+  "id": "skill_dc_wiring",
+  "kind": "skill",
+  "title": "Wiring 12 V and 24 V DC systems: fuses, wire size, polarity and connections",
+  "keywords": ["12v wiring","24v wiring","dc wiring","fuse sizing","battery wiring","crimping","polarity","solar wiring","off grid wiring","battery cable"],
+  "summary": "How to wire batteries, solar controllers, inverters, lights and pumps at 12 V or 24 V without melting wires or starting fires: plan the circuit, size the wire, fuse every positive wire at its source, crimp good connections, and check polarity before switching on.",
+  "difficulty": 2,
+  "mins": 60,
+  "tools": ["cutters","crimper","knife","multimeter","screwdriver","wrench","pliers","tape"],
+  "hazards": ["burn","acid","li_fire"],
+  "materials": [
+    {"item":"Wire in red and black, sized for the current and run length","fn":"wire_copper","qty":"as needed"},
+    {"item":"Battery cable for main feeds and inverters","fn":"wire_heavy","optional":true},
+    {"item":"Fuses and holders: one main fuse plus one per circuit","fn":"fuse"},
+    {"item":"Crimp terminals and connectors matched to wire size","fn":"connector"},
+    {"item":"Main switch or DC-rated circuit breaker","fn":"breaker","optional":true},
+    {"item":"Heat-shrink tubing","optional":true},
+    {"item":"Bus bar or terminal block for the negative return","fn":"connector","optional":true}
+  ],
+  "steps": [
+    {"text":"Draw the system before you cut anything: battery, main fuse, main switch, fuse block, each load, and each charging source. Mark positive and negative."},
+    {"text":"Work out each circuit's current: amps = watts ÷ volts. A 60 W pump on 12 V draws 5 A; on 24 V, 2.5 A."},
+    {"text":"Choose the wire for the current and the length out and back (see reference_wire_gauge). Aim for no more than 3% voltage drop; 1–2% on battery, charger and inverter cables."},
+    {"text":"Choose each fuse: at least 1.25 times the load's normal current, and never more than the wire can safely carry. The fuse protects the wire."},
+    {"text":"Put the main fuse in the battery positive cable as close to the battery as you can, ideally within 20 cm, then the main switch. Every other positive wire gets its own fuse where it leaves the battery or fuse block.","warn":"An unfused battery cable that shorts glows red hot within seconds and sets fire to anything around it."},
+    {"text":"Disconnect the battery while you work. Take off rings, watches and metal bracelets. Tape the handles of spanners used near terminals.","warn":"A ring across battery terminals heats up instantly and can burn a finger to the bone."},
+    {"text":"Strip the insulation to the length of the terminal barrel. Don't nick or cut strands; a wire missing strands carries less current and runs hot."},
+    {"text":"Crimp with the right size terminal: red for small wire (about 0.5–1.5 mm²), blue for medium (1.5–2.5 mm²), yellow for larger (4–6 mm²). Use a ratchet crimper. Pull hard on every crimp: it must not move. Cover with heat-shrink."},
+    {"text":"Solder only where nothing vibrates, or on top of a good crimp. Solder wicks up the strands and makes a stiff point that cracks when shaken."},
+    {"text":"Route and fix the wires: clip them every 30 cm or so, use grommets through metal, keep clear of hot and moving parts, and leave a little slack at each end."},
+    {"text":"Use red for positive and black for negative. If you only have one colour, mark every negative with tape."},
+    {"text":"Before connecting any load, check polarity with the meter at the load end. Red probe on the positive wire should read a positive voltage.","warn":"Reversed polarity destroys many electronics instantly, and some batteries and chargers can catch fire."},
+    {"text":"Connect the battery last: positive first, then negative. When taking a system apart, remove the negative first. Make the final connection away from a lead-acid battery's vent caps.","warn":"Lead-acid batteries give off hydrogen. A spark at the terminal can make the battery explode."},
+    {"text":"Test under full load for an hour. Feel every connection and fuse holder: warm means loose or too thin. Measure the voltage at the battery and at the load; the difference is your voltage drop."}
+  ],
+  "notes": "## Quick rules\n\n- Power (W) = volts (V) × amps (A). Energy (Wh) = watts × hours.\n- Same power, double the voltage, half the current. Half the current lets you use much thinner wire for the same drop. Choose 24 V for systems over about 1 kW or with long runs.\n- Fuse every positive wire at the source end. One fuse per circuit.\n- The fuse protects the wire, not the load.\n- Fuse at least 1.25 × the load's normal current, and no more than the wire's safe current.\n\n## Fuse and breaker types\n\n| Type | Typical range | Use |\n|---|---|---|\n| Blade (car type) | 1–40 A | Branch circuits, lights, pumps, chargers |\n| Bolt-down strip (MIDI, ANL type) | 30–300 A and up | Main feeds, inverters |\n| High-interrupt fuses (Class T type) | large | Large lithium banks that can push thousands of amps into a short |\n| DC-rated circuit breakers | 5–200 A | Resettable branch protection and main switch |\n\nUse only switches and breakers rated for DC at your voltage. A DC arc does not go out by itself the way an AC arc does; a mains switch or AC-only breaker can arc and burn on DC.\n\n## Solar connection order\n\nConnect the battery to the charge controller first, then the panels. Most controllers sense the battery to set themselves up. Disconnect the panels first. Cover panels with a tarp while wiring: they make voltage whenever light hits them.\n\n## Connectors\n\n- **Ring terminals** on battery posts and bus bars. No more than 3–4 rings stacked on one post; use a bus bar instead.\n- **Anderson-style plugs** for removable batteries and loads.\n- **MC4-type plugs** on solar panel leads.\n- **Car accessory sockets** are poor connections; keep them under about 10 A.\n- **Wago-type lever connectors and screw terminal blocks** are fine inside a box for small currents.\n\n## Negative returns\n\nIn a vehicle, the steel body is the negative return; bolt negatives to clean bare metal. In a house or cabin system, run a separate negative wire to a negative bus bar, the same size as the positive.\n\n## Wire colours\n\nRed is positive and black is negative in most 12 V work. Some boat and older vehicle wiring uses yellow for negative. When in doubt, measure.",
+  "tree": {"era":3,"branch":"power","requires":["skill_multimeter"]},
+  "devices": ["solar_home","rv","boat"],
+  "parts": ["wire_copper","wire_heavy","fuse","breaker","connector","battery_pb","battery_li","charge_controller","switch"],
+  "license": "CC-BY-SA-4.0",
+  "refs": [
+    {"lib":"electronics","q":"wire gauge fuse"},
+    {"lib":"khan","q":"electric circuits"}
+  ]
+}

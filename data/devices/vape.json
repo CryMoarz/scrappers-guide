@@ -1,0 +1,30 @@
+{
+  "id": "vape",
+  "name": "Disposable vapes",
+  "group": "Power and solar",
+  "aliases": ["disposable e-cigarette","pod vape"],
+  "brands": ["Elf Bar","Geek Bar","Puff Bar","Vuse","Juul","Hyde","Mr. Fog","Esco Bars"],
+  "era": "2019–present",
+  "prev": 5,
+  "tools": ["hands","pliers"],
+  "mins": 3,
+  "hazards": ["li_fire","chemical"],
+  "comps": [
+    {"key":"battery_li","fn":"battery_li","spec":"Small lithium cell, about 400–1,000 mAh (rechargeable on many models)","ah":[0.4,1],"qty":1,"ext":1,"obs":5,"loc":"Inside the body","p":0.75},
+    {"key":"led_light","fn":"led_light","spec":"Tiny indicator LED","v":[3,4.2],"w":[0.02,0.1],"qty":1,"ext":1,"obs":5,"loc":"Base"},
+    {"key":"sensor_misc","fn":"sensor_misc","spec":"Airflow pressure switch","qty":1,"ext":1,"obs":5,"loc":"Base"},
+    {"key":"wire_copper","fn":"wire_copper","spec":"Fine wire and heating coil","qty":1,"ext":1,"obs":5,"loc":"Top"}
+  ],
+  "boards": [
+    {"id":"li_charger_small","qty":1,"loc":"Rechargeable models","p":0.6}
+  ],
+  "buildings": [
+    {"b":"convenience","l":5},
+    {"b":"gas_station","l":5},
+    {"b":"house","l":3},
+    {"b":"apartment","l":4},
+    {"b":"school","l":3},
+    {"b":"recycling","l":4},
+    {"b":"parking","l":3}
+  ]
+}

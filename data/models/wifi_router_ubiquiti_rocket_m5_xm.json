@@ -1,0 +1,21 @@
+{
+  "id": "wifi_router_ubiquiti_rocket_m5_xm",
+  "device": "wifi_router",
+  "brand": "Ubiquiti",
+  "model": "Rocket M5 XM",
+  "fcc": "SWX-RM5",
+  "notes": "Chips for hardware version XM; other versions of the Rocket M5 can differ.",
+  "research": {"gaps":[],"method":["Not yet fact-checked: its parts show as likely until a fact-check confirms them against their sources.","Imported from the OpenWrt Table of Hardware (toh.json, 2026-11-13): the hardware data page for this version, by OpenWrt wiki contributors under CC BY-SA 4.0."]},
+  "comps": [
+    {"key":"ic_mcu_soc","fn":"ic_mcu","spec":"SoC Atheros AR7241, 1 core at 400 MHz","qty":1,"ext":4,"obs":3,"source":"https://openwrt.org/toh/hwdata/ubiquiti/ubiquiti_rocket_m5_xm","conf":"likely"},
+    {"key":"ic_memory_flash","fn":"ic_memory","spec":"Flash, 8 MB","qty":1,"ext":2,"obs":4,"source":"https://openwrt.org/toh/hwdata/ubiquiti/ubiquiti_rocket_m5_xm","conf":"likely"},
+    {"key":"ic_memory_ram","fn":"ic_memory","spec":"RAM, 64 MB","qty":1,"ext":3,"obs":3,"source":"https://openwrt.org/toh/hwdata/ubiquiti/ubiquiti_rocket_m5_xm","conf":"likely"},
+    {"key":"radio_rf","spec":"Wi-Fi: Atheros AR9281-AL1E (5 GHz a/n)","qty":1,"source":"https://openwrt.org/toh/hwdata/ubiquiti/ubiquiti_rocket_m5_xm","conf":"likely"},
+    {"key":"antenna_coax","spec":"Detachable external antennas","qty":2,"source":"https://openwrt.org/toh/hwdata/ubiquiti/ubiquiti_rocket_m5_xm","conf":"likely"},
+    {"key":"psu","spec":"Power supply: Passive PoE 24 VDC, 1.0A","v":24,"a":1,"source":"https://openwrt.org/toh/hwdata/ubiquiti/ubiquiti_rocket_m5_xm","conf":"likely"},
+    {"key":"connector","spec":"Ethernet ports: 1× 100M","qty":1,"source":"https://openwrt.org/toh/hwdata/ubiquiti/ubiquiti_rocket_m5_xm","conf":"likely"}
+  ],
+  "sources": [
+    {"title":"OpenWrt Table of Hardware: Ubiquiti Rocket M5 XM (OpenWrt wiki contributors, CC BY-SA 4.0)","url":"https://openwrt.org/toh/hwdata/ubiquiti/ubiquiti_rocket_m5_xm"}
+  ]
+}

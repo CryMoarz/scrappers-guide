@@ -1,0 +1,20 @@
+{
+  "id": "flat_tv_samsung_ln32c350d1dxza",
+  "device": "flat_tv",
+  "brand": "Samsung",
+  "model": "LN32C350D1DXZA",
+  "notes": "Covers the Samsung LN32C350D1DXZA LCD TV. Part numbers come from the parts table of Samsung's fast-track troubleshooting guide (rev. 1/11/12); match them to the labels on the boards.",
+  "research": {"checked":"2026-11-12","gaps":["The guide's parts table has no number for the T-CON PCB and no ohm or watt rating or count for the speaker.","No backlight component is claimed: the guide does not state the backlight type, and a B&H listing that calls the panel CCFL was refused to the researcher (HTTP 403).","The guide calls the board with connector CN802 the 'IP Board' in its wiring diagram, labels the power board 'SMPS' in its photo and 'Power PCB' in its table, and never says outright they are one board.","A5V, B5V and B13V are pin names on CN802 and the voltages are 'approximate'; no rating table, current or wattage is given.","The CN401 pins (A3.3V, B5V) are on the function and IR connector, not the power board, so they are not claimed.","The guide gives no production year (its dates are a firmware date and a 1/11/12 revision), so no years are given.","A third-party spec page gives 2 speakers, 10 W RMS and 1 W standby for LN32C350; none of it is tied to a part number in the guide, so it is not claimed."],"method":["Samsung LN32C350D1DXZA Fast Track Troubleshooting Manual (rev. 1/11/12, 4-page PDF on the Internet Archive), read as text with the research tool; pages 1 and 2 rendered at 130 dpi to check the parts table rows and the CN802 pin list.","PDF page 1: parts table. PDF page 2: wiring diagram, CN802 and CN401 pin lists, power-on sequence.","B&H and Crutchfield product pages were refused to the researcher (HTTP 403) and not used. No FCC filing was used for this model."]},
+  "comps": [
+    {"key":"psu","conf":"documented","spec":"Power PCB, Samsung part BN44-00369A. The guide's wiring diagram shows connector CN802 on the IP board, with pin names A5V (standby supply, pin 1), B5V (pin 3) and B13V (pins 9 and 11)","v":[5,13],"source":"https://archive.org/download/Samsung_LN32C350D1DXZA_fast_track_guide/Samsung_LN32C350D1DXZA_fast_track_guide.pdf"},
+    {"key":"controller_board","conf":"documented","spec":"Main PCB, Samsung part BN94-02649A","qty":1,"source":"https://archive.org/download/Samsung_LN32C350D1DXZA_fast_track_guide/Samsung_LN32C350D1DXZA_fast_track_guide.pdf"},
+    {"key":"controller_board_function_ir","fn":"controller_board","conf":"documented","spec":"Function and IR PCB, Samsung part BN96-13063B","qty":1,"ext":2,"obs":3,"source":"https://archive.org/download/Samsung_LN32C350D1DXZA_fast_track_guide/Samsung_LN32C350D1DXZA_fast_track_guide.pdf"},
+    {"key":"controller_board_tcon","fn":"controller_board","conf":"documented","spec":"T-CON PCB, listed in the parts table without a part number and marked 'under shield' in the guide's photo","qty":1,"ext":3,"obs":3,"source":"https://archive.org/download/Samsung_LN32C350D1DXZA_fast_track_guide/Samsung_LN32C350D1DXZA_fast_track_guide.pdf"},
+    {"key":"display_panel","fn":"display","conf":"documented","spec":"LCD panel, Samsung part BN07-00867A (listed as 'Panel')","qty":1,"ext":2,"obs":2,"source":"https://archive.org/download/Samsung_LN32C350D1DXZA_fast_track_guide/Samsung_LN32C350D1DXZA_fast_track_guide.pdf"},
+    {"key":"speaker","conf":"documented","spec":"Speaker, Samsung part BN96-12859A (listed as 'Speaker')","source":"https://archive.org/download/Samsung_LN32C350D1DXZA_fast_track_guide/Samsung_LN32C350D1DXZA_fast_track_guide.pdf"},
+    {"key":"tuner_main","fn":"radio_rf","conf":"documented","spec":"TV tuner, Samsung part BN40-00140B (listed as 'Tuner')","qty":1,"ext":2,"obs":3,"source":"https://archive.org/download/Samsung_LN32C350D1DXZA_fast_track_guide/Samsung_LN32C350D1DXZA_fast_track_guide.pdf"}
+  ],
+  "sources": [
+    {"title":"Samsung LN32C350D1DXZA Fast Track Troubleshooting Manual (rev. 1/11/12; Internet Archive copy, 4-page PDF with parts table)","url":"https://archive.org/download/Samsung_LN32C350D1DXZA_fast_track_guide/Samsung_LN32C350D1DXZA_fast_track_guide.pdf"}
+  ]
+}

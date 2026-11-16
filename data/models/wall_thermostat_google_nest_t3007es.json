@@ -1,0 +1,24 @@
+{
+  "id": "wall_thermostat_google_nest_t3007es",
+  "device": "wall_thermostat",
+  "brand": "Google Nest",
+  "model": "Learning Thermostat, 3rd gen, T3007ES (stainless steel)",
+  "notes": "Third-generation Nest Learning Thermostat; T3007ES is the stainless steel finish, and Google's 3rd gen specs cover all its finishes. The 3.7 V, 380 mAh battery rating is from iFixit's replacement battery listing, not from Google.",
+  "research": {"checked":"2026-11-12","gaps":["No teardown of the 3rd gen was found (iFixit lists none; its teardowns are of the 2nd gen), so no board, chip or sensor part number is claimed.","FCC ID ZQAT30 (Google, model T30) exists, but its page does not name the 3rd gen or T3007ES and the exhibits were not readable, so the fcc field is left empty.","Google's page covers five models and lists no model numbers; the 3rd gen section was read on its own. T3007ES comes from Gearbrain and iFixit's 3rd gen device page, not from Google.","3.7 V and 380 mAh are from iFixit's replacement battery listing (2nd and 3rd gen), not Google, which gives no voltage or capacity.","Google names the sensors by function only, so no sensor or radio chip is claimed.","No relay or switching part is claimed: no readable source shows one."],"method":["Google Nest Help 'Nest thermostat technical specifications' (answer 9230098): the 'Nest Learning Thermostat (3rd gen)' section only, for voltage requirement, battery, screen, sensors and radios; the Nest Thermostat E and 2nd gen sections differ and were not used.","iFixit part listing 'Nest Thermostat (Gen 2/3) Battery', part TL284443, for the battery rating.","Gearbrain device page for the 3rd gen stainless steel model and iFixit's 3rd gen device page, for the model number T3007ES.","Google's store product page returned an empty placeholder and was not used."]},
+  "comps": [
+    {"key":"thermostat","conf":"documented","spec":"Nest Learning Thermostat 3rd gen: voltage requirement 20 to 30 V AC","v":[20,30],"ac":true,"source":"https://support.google.com/googlenest/answer/9230098"},
+    {"key":"display","conf":"documented","spec":"24-bit colour LCD, 2.08 in (5.3 cm) diameter, 480 x 480 px at 229 PPI","source":"https://support.google.com/googlenest/answer/9230098"},
+    {"key":"radio_rf","conf":"documented","spec":"Wi-Fi 802.11 a/b/g/n on 2.4 GHz and 5 GHz, 802.15.4 on 2.4 GHz, and Bluetooth Low Energy","source":"https://support.google.com/googlenest/answer/9230098"},
+    {"key":"battery_li_built_in","fn":"battery_li","spec":"Built-in rechargeable lithium-ion battery (Google's page). iFixit's replacement battery, part TL284443, is listed for the 2nd and 3rd gen Nest Thermostat at 3.7 V, 380 mAh","v":3.7,"ah":0.38,"qty":1,"ext":3,"obs":3,"conf":"documented","source":"https://www.ifixit.com/Parts/Nest_Learning_Thermostat_3rd_Generation/Batteries"},
+    {"key":"sensor_misc_humidity","fn":"sensor_misc","spec":"Humidity sensor (listed on Google's 3rd gen spec page)","qty":1,"ext":2,"obs":4,"conf":"documented","source":"https://support.google.com/googlenest/answer/9230098"},
+    {"key":"sensor_motion_proximity","fn":"sensor_motion","spec":"Proximity sensor and motion sensor, listed separately on Google's 3rd gen spec page","qty":1,"ext":2,"obs":4,"conf":"documented","source":"https://support.google.com/googlenest/answer/9230098"},
+    {"key":"opto_sensor_ambient","fn":"opto_sensor","spec":"Ambient light sensor (listed on Google's 3rd gen spec page)","qty":1,"ext":2,"obs":4,"conf":"documented","source":"https://support.google.com/googlenest/answer/9230098"},
+    {"key":"hall_reed_ring","fn":"hall_reed","spec":"Magnetic sensor for the position of the thermostat ring (Google's 3rd gen spec page)","qty":1,"ext":3,"obs":4,"conf":"documented","source":"https://support.google.com/googlenest/answer/9230098"}
+  ],
+  "sources": [
+    {"title":"Nest thermostat technical specifications (Google Nest Help, answer 9230098; 3rd gen section)","url":"https://support.google.com/googlenest/answer/9230098"},
+    {"title":"Nest Thermostat (Gen 2/3) Battery, part TL284443 (iFixit parts listing)","url":"https://www.ifixit.com/Parts/Nest_Learning_Thermostat_3rd_Generation/Batteries"},
+    {"title":"Google Nest Learning Thermostat (3rd Gen) - Stainless Steel, model T3007ES (Gearbrain device page)","url":"https://www.gearbrain.com/devices/FF66F53D609311E9AB5F50465DEA1580.html"},
+    {"title":"Nest Learning Thermostat 3rd Generation (iFixit device page, model numbers)","url":"https://www.ifixit.com/Device/Nest_Learning_Thermostat_3rd_Generation"}
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "id": "two_way_radio_baofeng_uv_5r",
+  "device": "two_way_radio",
+  "brand": "Baofeng",
+  "model": "UV-5R",
+  "notes": "Board versions changed over production, so chip entries may not match every UV-5R.",
+  "research": {"checked":"2026-11-12","gaps":["No service manual or parts list found.","Reference oscillator conflict: hamskey says the RDA1846 has a 24 MHz oscillator, the RadioReference wiki says these radios have a 26 MHz reference oscillator, so no crystal is claimed.","That manual prints no model name and is tied to the UV-5R only by the Archive item title.","Fccid.io lists ZP5BF-5R (Fujian Nan'an Baofeng, model BF-5R, granted 2012-05-21, 1.3 W at 136-174 MHz, 1.78 W at 400-480 MHz) but does not name the UV-5R, so no FCC ID is set."],"method":["Hamskey.com (KD8CEC, 18 Dec 2017) names the MCU MB95F013K and the RF chip RDA1846 (marked 1846) on its unit, with no board version or year given.","Elazary.com (Lior Elazary KK6BWA, Feb-Mar 2013) interfaced with the RDA5802 FM radio receiver chip (the article's index also has an RDA1846 page).","A 2020 1bitsquared forum teardown (esden) found a chip-on-board (COB) under the LCD without identifying it.","The RadioReference wiki names the AT1846S as the transceiver chip of UV-5R/UV-82 type radios.","Ratings: the Chinese Radio Documentation Project guide (Lennart Lidberg, 2012, CC BY-SA 3.0; Internet Archive) gives supply voltage 7.4, 4 W / 1 W and 1000 mW audio (appendix C, PDF pp.69-70), the SMA connectors and box contents (PDF p.11), charging (p.12) and the speaker and microphone (p.15).","A scanned English user manual on the Internet Archive gives the rechargeable Li-ion 7.4 V / 1800 mAh battery (spec table, PDF p.18).","Its cover reads VHF/UHF FM Transceiver, and Baofeng is named in the safety text.","Its spec table matches the guide's appendix C apart from the weight.","Its exhibits, fcc.report and apps.fcc.gov returned bot checks or access denied, and the All About Circuits teardown is behind a Cloudflare check."]},
+  "comps": [
+    {"key":"radio_rf","conf":"documented","spec":"Dual-band handheld, 136-174 and 400-480 MHz Tx/Rx (65-108 MHz FM broadcast Rx only), RF power 4 W high / 1 W low, supply voltage 7.4","v":7.4,"w":4,"source":"https://archive.org/download/baofeng-dfae6b/UV-5R.pdf"},
+    {"key":"b:radio_transceiver_board:ic_mcu","conf":"documented","spec":"Main controller MCU MB95F013K","source":"http://www.hamskey.com/2017/12/disassembly-of-baofeng-uv-5r-hack-uv-5r.html"},
+    {"key":"radio_rf_transceiver_ic","fn":"radio_rf","spec":"RF controller chip RDA1846 (marked 1846), covers VHF and UHF","qty":1,"ext":4,"obs":5,"conf":"documented","source":"http://www.hamskey.com/2017/12/disassembly-of-baofeng-uv-5r-hack-uv-5r.html"},
+    {"key":"radio_rf_fm_receiver","fn":"radio_rf","spec":"RDA5802 FM broadcast receiver chip","qty":1,"ext":4,"obs":5,"conf":"documented","source":"https://elazary.com/index.php?Itemid=17&catid=14%3Abaofeng-uv5r&id=49%3Ahacking-the-baofeng-uv5r&limitstart=4&option=com_content&view=article"},
+    {"key":"b:radio_transceiver_board:connector","conf":"documented","spec":"Male SMA antenna connector on the radio","source":"https://archive.org/download/baofeng-dfae6b/UV-5R.pdf"},
+    {"key":"antenna_coax","conf":"documented","spec":"Antenna supplied in the box, female SMA connector","source":"https://archive.org/download/baofeng-dfae6b/UV-5R.pdf"},
+    {"key":"battery_li","conf":"documented","spec":"Rechargeable lithium-ion pack, 7.4 V 1800 mAh","v":7.4,"ah":1.8,"source":"https://archive.org/download/bao-feng-uv-5-r-manual/BaoFeng_UV-5R_Manual_text.pdf"},
+    {"key":"charger","conf":"documented","spec":"Desk charger with plug-in wall adapter, supplied in the box; red LED while charging, green when full","source":"https://archive.org/download/baofeng-dfae6b/UV-5R.pdf"},
+    {"key":"speaker","conf":"documented","spec":"Speaker and microphone on the radio body; receiver audio output 1000 mW","source":"https://archive.org/download/baofeng-dfae6b/UV-5R.pdf"}
+  ],
+  "sources": [
+    {"title":"Baofeng UV-5R: The (Chinese) Radio Documentation Project, Lennart Lidberg, 2012, CC BY-SA 3.0 (Internet Archive)","url":"https://archive.org/download/baofeng-dfae6b/UV-5R.pdf"},
+    {"title":"Baofeng UV-5R user manual, scanned English edition with text layer (Internet Archive)","url":"https://archive.org/download/bao-feng-uv-5-r-manual/BaoFeng_UV-5R_Manual_text.pdf"},
+    {"title":"Disassembly of Baofeng UV-5R, hamskey.com (KD8CEC), December 2017","url":"http://www.hamskey.com/2017/12/disassembly-of-baofeng-uv-5r-hack-uv-5r.html"},
+    {"title":"Hacking the Baofeng UV5R - interfacing with the RDA5802, elazary.com (Lior Elazary KK6BWA), 2013","url":"https://elazary.com/index.php?Itemid=17&catid=14%3Abaofeng-uv5r&id=49%3Ahacking-the-baofeng-uv5r&limitstart=4&option=com_content&view=article"},
+    {"title":"FCC ID ZP5BF-5R grant summary (fccid.io), cited in the notes only","url":"https://fccid.io/ZP5BF-5R"},
+    {"title":"Baofeng UV-5R teardown, 1bitsquared forum (esden), August 2020","url":"https://forum.1bitsquared.com/t/baofeng-uv-5r-teardown/150"},
+    {"title":"Baofeng UV-5R, RadioReference wiki","url":"https://wiki.radioreference.com/index.php/Baofeng_UV-5R"}
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "id": "teardown_cordless_drill",
+  "kind": "teardown",
+  "title": "Cordless drill: motor, gearbox, trigger, chuck and battery",
+  "keywords": ["cordless drill teardown","drill motor","drill gearbox","drill battery pack","drill chuck removal","trigger speed controller","power tool battery","nicd pack"],
+  "summary": "A dead cordless drill gives a 12–20 V motor with a planetary gearbox and clutch, a trigger with a built-in speed controller, a keyless chuck, and a battery pack of lithium-ion or nickel cells. Often the drill is fine and only the battery is dead: check before you strip it.",
+  "difficulty": 2,
+  "mins": 15,
+  "tools": ["screwdriver","security_bits","hex","hammer","pliers","cutters","multimeter","tape"],
+  "hazards": ["li_fire","chemical","sharp"],
+  "materials": [],
+  "steps": [
+    {"text":"Take the battery off. Look at it: swollen, cracked or hot packs go outdoors on bare ground (see safety_swollen_lithium)."},
+    {"text":"Check whether the drill works before stripping it: connect a charged pack or a supply of the same voltage. A working drill with a dead pack is worth more whole (see notes)."},
+    {"text":"Lay the drill on its side and remove every screw from the clamshell (Torx or Phillips; some are security Torx). Lift the top half off slowly and photograph how the parts sit."},
+    {"text":"Lift out the motor, gearbox and trigger together. Unplug or desolder the motor leads from the trigger only if you need them apart."},
+    {"text":"Keep the trigger switch module whole: it holds the forward/reverse switch and the speed-control MOSFET. With the motor, it is a ready-made variable-speed drive."},
+    {"text":"Pull the motor out of the back of the gearbox. The small pinion gear stays on the motor shaft."},
+    {"text":"Chuck: open the jaws fully and look inside. There is usually a screw with a left-hand thread: turn it clockwise to undo it. Then grip a hex key in the jaws and strike the key sharply anticlockwise with a hammer to unscrew the chuck.","warn":"Wear eye protection when striking hardened steel."},
+    {"text":"Battery pack: undo the screws or crack the glued seam, away from the cells. Cut the leads one at a time and tape them. Separate cells as in teardown_laptop_battery.","warn":"A short across a power tool pack can deliver tens of amps: enough to melt wire and start a fire."},
+    {"text":"Measure the cells. Lithium-ion: 3.6–3.7 V nominal each. Nickel cells (NiCd or NiMH): 1.2 V nominal each."},
+    {"text":"Keep the charger with the battery parts. It holds a small mains power supply and a charge board."}
+  ],
+  "notes": "## What's worth keeping and why\n\n- **Motor and gearbox.** A strong, high-speed DC motor with a planetary gearbox and clutch: a winch drive, a pump drive, a grain mill or a hand-crank generator (turn the chuck, take power from the motor leads).\n- **Trigger module.** A variable-speed controller rated for tens of amps at 12–20 V. Reuse it for any similar motor.\n- **Chuck.** Fits onto other motors with the same shaft thread, or onto a hand brace.\n- **Battery cells.** Lithium-ion packs hold 3 cells (10.8–12 V) or 5 cells (18–20 V) of 18650 or 21700 size, sometimes doubled in parallel. Older packs hold 10–15 NiCd or NiMH cells.\n\n## Keeping a drill running without its battery\n\n- 12 V drills run from a 12 V lead-acid battery through a fused lead. Disconnect the charger first: a battery on charge can sit at 14–15 V. Build a dummy pack from a dead pack's shell with two wires out.\n- 18–20 V drills need 18–20 V: five lithium-ion cells in series, or a suitable supply. Don't feed them 24 V.\n- Brushless drills need their own controller board, usually in the handle. Keep the board and motor together.\n\n## Variations\n\n- Nickel-cadmium packs (older, heavy, labelled NiCd or Ni-Cd) contain cadmium, which is toxic. Don't burn or crush them; keep them whole or recycle them.\n- Many lithium-ion packs have a protection board inside; some leave protection to the tool.\n- Impact drivers and drill-drivers share batteries and motors with their brand's other tools.\n\n## What to leave\n\n- The plastic clamshell, unless you need the switch or belt clip.\n- Lithium cells under 2.0 V; nickel cells that leak white or green crust.",
+  "tree": {"era":2,"branch":"salvage","requires":["safety_swollen_lithium"]},
+  "devices": ["cordless_drill"],
+  "parts": ["motor_dc_small","gearbox","switch","mosfet","battery_li","battery_nimh","charger"],
+  "license": "CC-BY-SA-4.0"
+}

@@ -1,0 +1,32 @@
+{
+  "id": "outboard_motor",
+  "name": "Outboard motor",
+  "group": "Vehicles and mobility",
+  "aliases": ["outboard","boat motor","outboard engine","kicker motor","long shaft outboard","tiller motor"],
+  "brands": ["Mercury","Yamaha","Suzuki","Honda","Evinrude","Tohatsu","Mariner","Parsun"],
+  "prev": 2,
+  "tools": ["socket","wrench","pliers"],
+  "mins": 40,
+  "kg": 50,
+  "hazards": ["fuel","heavy"],
+  "comps": [
+    {"key":"engine_small","fn":"engine_small","spec":"2- or 4-stroke petrol engine, 2–300 hp; 2–20 hp units one person can carry","w":[1490,223800],"qty":1,"ext":2,"obs":3,"loc":"Powerhead under the cowl","kg":30},
+    {"key":"gearbox","fn":"gearbox","spec":"Lower unit with bevel gears, forward-neutral-reverse","qty":1,"ext":3,"obs":5,"loc":"Below the waterline, above the propeller"},
+    {"key":"alternator","fn":"alternator","spec":"Flywheel charging stator, about 5–60A at 12V (larger motors)","v":12,"a":[5,60],"qty":1,"ext":3,"obs":5,"loc":"Under the flywheel"},
+    {"key":"hydraulic","fn":"hydraulic","spec":"Power trim and tilt: 12V motor-pump and rams (about 40 hp and up)","v":12,"qty":1,"ext":3,"obs":5,"loc":"Between the transom brackets"},
+    {"key":"motor_dc_small","fn":"motor_dc_small","spec":"12V starter motor (electric-start models)","v":12,"qty":1,"ext":3,"obs":5,"loc":"Side of the powerhead","p":0.5},
+    {"key":"pump_water","fn":"pump_water","spec":"Cooling water pump with rubber impeller","qty":1,"ext":3,"obs":5,"loc":"Top of the lower unit"},
+    {"key":"fuel_liquid","fn":"fuel_liquid","spec":"Portable fuel tank, 12–25 L, often left in the boat","qty":1,"ext":1,"obs":3,"loc":"Boat floor near the stern"},
+    {"key":"hose_tubing","fn":"hose_tubing","spec":"Fuel line with primer bulb","qty":1,"ext":1,"obs":4,"loc":"Tank to motor"},
+    {"key":"oil_lube","fn":"oil_lube","spec":"Gear oil in the lower unit; 2-stroke oil jugs in the boat","qty":1,"ext":1,"obs":4,"loc":"Lower unit and boat lockers"}
+  ],
+  "buildings": [
+    {"b":"marina","l":5},
+    {"b":"boat_shop","l":5},
+    {"b":"garage_res","l":2},
+    {"b":"house","l":2},
+    {"b":"self_storage","l":2},
+    {"b":"campground","l":2},
+    {"b":"fire_station","l":2}
+  ]
+}

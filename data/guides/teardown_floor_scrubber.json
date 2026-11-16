@@ -1,0 +1,29 @@
+{
+  "id": "teardown_floor_scrubber",
+  "kind": "teardown",
+  "title": "Floor scrubber: deep-cycle battery bank and DC motors",
+  "keywords": ["floor scrubber teardown","floor scrubber battery","deep cycle battery","golf cart battery","6v battery","scrubber motor","auto scrubber","floor cleaning machine"],
+  "summary": "Supermarkets, schools, hospitals and warehouses keep battery floor scrubbers that nobody thinks to loot. Under the seat or tank sit 4–6 deep-cycle batteries making a 24–36 V bank, plus 24–36 V DC motors, a vacuum motor, a pump, an on-board charger and tanks. The batteries are heavy and full of acid: lift them properly.",
+  "difficulty": 2,
+  "mins": 40,
+  "tools": ["socket","wrench","pliers","cutters","screwdriver","multimeter","tape","heavy"],
+  "hazards": ["heavy","acid","lead","burn","crush"],
+  "materials": [],
+  "steps": [
+    {"text":"Turn the key off and take it out. Find the big battery connector (a grey or red plug on thick cables, usually near the batteries or the seat) and pull it apart.","warn":"A 24–36 V bank can push hundreds of amps into a short. Take off rings and watches; a spanner across terminals can weld itself and burn you."},
+    {"text":"Drain both tanks through their drain hoses: the dirty recovery tank and the clean solution tank. Dump dirty water away from drinking water sources.","warn":"The recovery tank holds dirty water and cleaning chemicals. Wear gloves."},
+    {"text":"Open the battery compartment: on ride-ons tip the seat and tank forward on its hinge and prop it; on walk-behinds lift the recovery tank off.","warn":"Prop a tilted tank or seat with its stay or a block. A falling tank can crush hands."},
+    {"text":"Photograph the battery wiring so you know the series order. Count the batteries and read their labels (6 V, 8 V or 12 V)."},
+    {"text":"Wrap your spanner handle with tape. Undo the main negative cable first, then the links between batteries, one at a time. Tape every loose cable end as it comes off."},
+    {"text":"Lift the batteries out with a battery strap or lifting handles, two people for 6 V deep-cycle batteries (25–35 kg each). Keep flooded batteries upright.","warn":"Bend your knees and keep your back straight. Flooded batteries spill acid if tipped."},
+    {"text":"Check each battery: resting volts (6 V battery: 6.3 V or more is full; 12 V: 12.6 V or more). Flooded types: unscrew the caps and check the plates are covered. See test_lead_acid and safety_lead_acid.","warn":"Batteries give off explosive hydrogen when charging. No sparks or flames near the caps."},
+    {"text":"Unbolt the on-board charger and keep it with its mains cord and output leads."},
+    {"text":"Take the brush motors from the brush deck (lift or remove the deck, then undo the motor bolts), the vacuum motor under the recovery tank, the solution pump and the solenoid valve."},
+    {"text":"Keep the main contactor, the key switch, the heavy battery cables with their lugs, the hoses and the squeegee rubber."}
+  ],
+  "notes": "## What's worth keeping and why\n\n- **Deep-cycle batteries.** The prize. Usually 4–6 flooded or AGM batteries: four 6 V batteries make 24 V, six make 36 V. A 6 V deep-cycle battery is commonly 180–240 Ah, so a 24 V bank stores several kilowatt-hours. Many scrubbers sit plugged in, so their banks are often in good shape. Rewire them as 12 V or 24 V for a solar system (see build_battery_bank_lead_acid).\n- **On-board charger.** Set for the bank voltage, with a lead-acid charge profile. Keep it to charge the same bank from a generator or mains.\n- **Brush motors.** 24–36 V DC motors of a few hundred watts with a gearbox on many models: slow, high-torque drives for a winch, a mill or a mixer.\n- **Vacuum motor.** A powerful 24–36 V fan: blower for a forge or rocket stove, a dust extractor.\n- **Solution pump and valve.** 24–36 V DC water pump and solenoid valve.\n- **Tanks.** Polyethylene tanks of about 40–100 litres. Use them for washing or irrigation water: detergent residue makes them a poor choice for drinking water.\n- **Cables, contactor, key switch.** Heavy-duty DC wiring parts.\n\n## Variations\n\n- Walk-behind scrubbers usually have 2–4 batteries (24 V). Ride-ons have 4–6 or more (24–36 V), and big ones can be heavier still.\n- Some newer machines use lithium battery packs. Treat those like any large lithium pack (see safety_swollen_lithium).\n- Floor burnishers and sweepers in the same buildings have similar banks.\n\n## What to leave\n\n- The plastic body and brushes (unless you need a stiff scrub brush).\n- Batteries with cracked or bulging cases.",
+  "tree": {"era":3,"branch":"salvage","requires":["safety_lifting","safety_lead_acid"]},
+  "devices": ["floor_scrubber"],
+  "parts": ["battery_pb","charger","motor_dc_large","motor_dc_small","pump_water","controller_board","wire_heavy","tank","hose_tubing","relay"],
+  "license": "CC-BY-SA-4.0"
+}

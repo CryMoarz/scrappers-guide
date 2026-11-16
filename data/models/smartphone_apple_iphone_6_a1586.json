@@ -1,0 +1,36 @@
+{
+  "id": "smartphone_apple_iphone_6_a1586",
+  "device": "smartphone",
+  "brand": "Apple",
+  "model": "iPhone 6 (A1586)",
+  "years": "2014",
+  "notes": "Model A1586 (iPhone 6).",
+  "research": {"checked":"2026-11-11","gaps":["Storage conflict: the unit's NAND is 16 GB, while the TechInsights record gives A1586 as a 32 GB iPhone 6.","The page presumes 1 GB RAM."],"method":["IFixit's teardown names this unit as model A1586 and lists its chips and modules.","The teardown page lists 16, 64 or 128 GB storage, and the TechInsights record gives an official release of 10/17/2014."]},
+  "comps": [
+    {"key":"b:phone_board:ic_mcu","conf":"documented","spec":"Apple A8 APL1011 SoC, 64-bit application processor","source":"https://www.ifixit.com/Teardown/iPhone+6+Teardown/29213"},
+    {"key":"b:phone_board:ic_memory","conf":"documented","spec":"SanDisk SDMFLBCB2 128 Gb (16 GB) NAND Flash in the teardown unit; SK Hynix RAM marked H9CKNNN8KTMRWR-NTH (page presumes 1 GB LPDDR3)","source":"https://www.ifixit.com/Teardown/iPhone+6+Teardown/29213"},
+    {"key":"b:phone_board:radio_rf","conf":"documented","spec":"Qualcomm MDM9625M LTE modem; Qualcomm WTR1625L RF transceiver; Murata 339S0228 Wi-Fi module","source":"https://www.ifixit.com/Teardown/iPhone+6+Teardown/29213"},
+    {"key":"b:phone_board:dcdc_buck","conf":"documented","spec":"Apple/Dialog 338S1251-AZ power management IC","source":"https://www.ifixit.com/Teardown/iPhone+6+Teardown/29213"},
+    {"key":"b:phone_board:sensor_misc","conf":"documented","spec":"InvenSense MP67B 6-axis gyroscope and accelerometer combo","source":"https://www.ifixit.com/Teardown/iPhone+6+Teardown/29213"},
+    {"key":"battery_li","conf":"documented","spec":"1810 mAh, 3.82 V lithium-ion polymer battery","v":3.82,"ah":1.81,"source":"https://www.ifixit.com/Teardown/iPhone+6+Teardown/29213"},
+    {"key":"camera","conf":"documented","spec":"8 MP iSight rear camera, 1.5µ pixels, phase-detection autofocus","source":"https://www.ifixit.com/Teardown/iPhone+6+Teardown/29213"},
+    {"key":"display","conf":"documented","spec":"4.7-inch 1334x750 pixels (326 ppi) Retina HD display","source":"https://www.ifixit.com/Teardown/iPhone+6+Teardown/29213"},
+    {"key":"speaker","conf":"documented","spec":"Earpiece speaker resides on the front panel assembly; separately, the page says this model has a new design for the speaker assembly, likely a minor update from the iPhone 5s speaker","source":"https://www.ifixit.com/Teardown/iPhone+6+Teardown/29213"},
+    {"key":"motor_dc_small","conf":"documented","spec":"Vibrator assembly; the page guesses, from appearances, a linear oscillating design (unconfirmed)","source":"https://www.ifixit.com/Teardown/iPhone+6+Teardown/29213"},
+    {"key":"ic_mcu_m8","fn":"ic_mcu","spec":"NXP LPC18B1UK ARM Cortex-M3 microcontroller, the M8 motion coprocessor","qty":1,"ext":2,"obs":3,"conf":"documented","source":"https://www.ifixit.com/Teardown/iPhone+6+Teardown/29213"},
+    {"key":"dcdc_pm8019","fn":"dcdc_buck","spec":"Qualcomm PM8019 power management IC","qty":1,"ext":2,"obs":3,"conf":"documented","source":"https://www.ifixit.com/Teardown/iPhone+6+Teardown/29213"},
+    {"key":"radio_wfr1620","fn":"radio_rf","spec":"Qualcomm WFR1620 receive-only companion chip","qty":1,"ext":2,"obs":3,"conf":"documented","source":"https://www.ifixit.com/Teardown/iPhone+6+Teardown/29213"},
+    {"key":"radio_qfe1100","fn":"radio_rf","spec":"Qualcomm QFE1100 envelope tracking IC","qty":1,"ext":2,"obs":3,"conf":"documented","source":"https://www.ifixit.com/Teardown/iPhone+6+Teardown/29213"},
+    {"key":"radio_rf5159","fn":"radio_rf","spec":"RF Micro Devices RF5159 antenna switch module","qty":1,"ext":2,"obs":3,"conf":"documented","source":"https://www.ifixit.com/Teardown/iPhone+6+Teardown/29213"},
+    {"key":"radio_pa","fn":"radio_rf","spec":"Five RF amplifier parts: Skyworks 77802-23 (low band LTE PAD), Avago A8020 (high band PAD), Avago A8010 (ultra high band PA + FBARs), Skyworks 77803-20 (mid band LTE PAD), Skyworks 77356-8 (mid band PAD)","qty":5,"ext":2,"obs":3,"conf":"documented","source":"https://www.ifixit.com/Teardown/iPhone+6+Teardown/29213"},
+    {"key":"radio_nfc","fn":"radio_rf","spec":"NXP 65V10 NFC module + Secure Element","v":65,"qty":1,"ext":2,"obs":3,"conf":"documented","source":"https://www.ifixit.com/Teardown/iPhone+6+Teardown/29213"},
+    {"key":"ic_audio_codec","fn":"ic_audio","spec":"Cirrus Logic 338S1201 audio codec","qty":1,"ext":2,"obs":3,"conf":"documented","source":"https://www.ifixit.com/Teardown/iPhone+6+Teardown/29213"},
+    {"key":"connector_lightning","fn":"connector","spec":"Headphone jack and Lightning connector, named together on the page","qty":1,"ext":2,"obs":3,"conf":"documented","source":"https://www.ifixit.com/Teardown/iPhone+6+Teardown/29213"},
+    {"key":"sensor_touch_id","fn":"sensor_misc","spec":"Touch ID home button fingerprint sensor","qty":1,"ext":2,"obs":3,"loc":"home button","conf":"documented","source":"https://www.ifixit.com/Teardown/iPhone+6+Teardown/29213"},
+    {"key":"camera_front","fn":"camera","spec":"1.2 MP FaceTime front camera; the front-facing camera sits on the front panel assembly","qty":1,"ext":2,"obs":3,"loc":"front panel assembly","conf":"documented","source":"https://www.ifixit.com/Teardown/iPhone+6+Teardown/29213"}
+  ],
+  "sources": [
+    {"title":"iFixit iPhone 6 Teardown (page names model A1586; steps 1-21 list chips and modules)","url":"https://www.ifixit.com/Teardown/iPhone+6+Teardown/29213"},
+    {"title":"TechInsights quick survey teardown record, iPhone 6 A1586 (device model and official release date)","url":"https://www.techinsights.com/ja/node/29645"}
+  ]
+}

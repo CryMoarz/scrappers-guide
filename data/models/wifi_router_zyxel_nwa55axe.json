@@ -1,0 +1,21 @@
+{
+  "id": "wifi_router_zyxel_nwa55axe",
+  "device": "wifi_router",
+  "brand": "ZyXEL",
+  "model": "NWA55AXE",
+  "fcc": "I8811AXAP22AO",
+  "notes": "Hardware versions of the NWA55AXE can differ.",
+  "research": {"gaps":[],"method":["Not yet fact-checked: its parts show as likely until a fact-check confirms them against their sources.","Imported from the OpenWrt Table of Hardware (toh.json, 2026-11-13): the hardware data page for this version, by OpenWrt wiki contributors under CC BY-SA 4.0."]},
+  "comps": [
+    {"key":"ic_mcu_soc","fn":"ic_mcu","spec":"SoC MediaTek MT7621AT, 2 cores at 880 MHz","qty":1,"ext":4,"obs":3,"source":"https://openwrt.org/toh/hwdata/zyxel/zyxel_nwa55axe","conf":"likely"},
+    {"key":"ic_memory_flash","fn":"ic_memory","spec":"Flash, 128 MB NAND","qty":1,"ext":2,"obs":4,"source":"https://openwrt.org/toh/hwdata/zyxel/zyxel_nwa55axe","conf":"likely"},
+    {"key":"ic_memory_ram","fn":"ic_memory","spec":"RAM, 256 MB","qty":1,"ext":3,"obs":3,"source":"https://openwrt.org/toh/hwdata/zyxel/zyxel_nwa55axe","conf":"likely"},
+    {"key":"radio_rf","spec":"Wi-Fi: MediaTek MT7915 (2.4 GHz b/g/n/ax, 5 GHz a/n/ac/ax)","qty":1,"source":"https://openwrt.org/toh/hwdata/zyxel/zyxel_nwa55axe","conf":"likely"},
+    {"key":"antenna_coax","spec":"Detachable external antennas","qty":2,"source":"https://openwrt.org/toh/hwdata/zyxel/zyxel_nwa55axe","conf":"likely"},
+    {"key":"psu","spec":"Power supply: 802.3at PoE","source":"https://openwrt.org/toh/hwdata/zyxel/zyxel_nwa55axe","conf":"likely"},
+    {"key":"connector","spec":"Ethernet ports: 1× gigabit","qty":1,"source":"https://openwrt.org/toh/hwdata/zyxel/zyxel_nwa55axe","conf":"likely"}
+  ],
+  "sources": [
+    {"title":"OpenWrt Table of Hardware: ZyXEL NWA55AXE (OpenWrt wiki contributors, CC BY-SA 4.0)","url":"https://openwrt.org/toh/hwdata/zyxel/zyxel_nwa55axe"}
+  ]
+}

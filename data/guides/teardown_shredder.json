@@ -1,0 +1,29 @@
+{
+  "id": "teardown_shredder",
+  "kind": "teardown",
+  "title": "Paper shredder: gear motor, gearbox, switches and cutters",
+  "keywords": ["paper shredder teardown","shredder motor","shredder gearbox","cross cut shredder","shredder cutters","document shredder","high torque gear motor","shredder switch"],
+  "summary": "A paper shredder holds a high-torque mains motor driving a heavy reduction gearbox, a set of cutter shafts, paper-sensing switches and a thermal fuse. It takes about 30 minutes with a screwdriver. The cutters are razor sharp even when the shredder is off, and the motor may have a capacitor that holds a charge.",
+  "difficulty": 2,
+  "mins": 30,
+  "tools": ["screwdriver","security_bits","pliers","cutters","pry","multimeter","tape"],
+  "hazards": ["sharp","mains","hv_cap","crush"],
+  "materials": [],
+  "steps": [
+    {"text":"Unplug the shredder. Lift the head off the bin and empty the bin outdoors, because paper dust is gritty. Keep fingers out of the feed slot: the cutters can slice skin even with the power off.","warn":"Cutter edges are hardened steel. Never put your fingers in the slot, even unplugged."},
+    {"text":"Turn the head over and remove the screws holding the base plate. Some are under rubber feet or deep in wells."},
+    {"text":"Lift off the base or cover and photograph the wiring. Note where the mains cord, rocker switch, motor leads and sensor leads go."},
+    {"text":"Look for a large cylindrical capacitor beside the motor. Measure across it with the meter on DC volts, then discharge it with an insulated resistor lead and measure again (see safety_discharge_capacitor).","warn":"A motor capacitor can hold a mains-level shock for minutes after unplugging. Never short it with a screwdriver."},
+    {"text":"Take out the paper sensors: the feed-slot sensor is either a micro-switch with a small lever or a pair of little light-sensing parts, and there are micro-switches that sense the bin or head position. Unscrew them and cut their leads 5 cm back."},
+    {"text":"Take the power switch (usually auto / off / reverse) and the mains cord out as a set, cutting the wires 5 cm back."},
+    {"text":"Thermal fuse and cutout: find the small metal button or the fuse can taped onto the motor winding. Test it with the meter on continuity or low ohms. Good ones read near zero. If you keep the motor, leave it on the winding."},
+    {"text":"Motor and gearbox: the motor usually bolts to the gear case with 2–4 screws, its pinion meshing with the first gear. Remove those screws and slide the motor off. Photograph the gear train and keep the gears in order."},
+    {"text":"Cutter block: the two cutter shafts and their stacks of discs sit in side plates held by a few screws. Wear thick or cut-resistant gloves, lift the block out whole and keep it as one unit.","warn":"The discs have small hooked teeth that catch skin and sleeves. Handle the stack by its shafts."},
+    {"text":"Test the motor: on ohms, a mains induction motor shows a low resistance across its winding pairs (common, run and start). Turn the shaft by hand: it should be smooth. A burnt smell means a cooked winding."}
+  ],
+  "notes": "## What's worth keeping and why\n\n- **Motor and gearbox.** A strong, slow-turning drive for a grain mill, a small winch, a hoist, a stirrer or a food-waste shredder. A typical shredder motor is 100–600 W at mains voltage, usually an induction motor with a run or start capacitor, or sometimes a universal (brushed) motor.\n- **Short-duty ratings.** Shredders are built to run a few minutes then rest. Don't run them continuously under load.\n- **Cutters.** Hardened steel discs: useful as blade stock and scrapers, or kept as a block to shred cardboard and light garden waste.\n- **Switches and fuse.** Sensing micro-switches, a reversing switch and a thermal fuse are handy small parts.\n\n## Using the motor\n\n- It needs mains voltage, so run it from a generator or an inverter of at least 1 kW to cover the starting surge, which can be 3–5 times the running power.\n- Keep its capacitor wired as it was. Without it an induction motor hums and won't start.\n\n## Variations\n\n- Light-duty shredders have small plastic gears that strip first. Look for steel gears.\n- Cross-cut and micro-cut shredders have finer cutters and a more powerful motor than strip-cut ones.\n- Some shredders have a DC motor with a bridge rectifier in place of the induction motor.\n\n## What to leave\n\n- The plastic bin and case.\n- The circuit board unless you want its small parts.",
+  "tree": {"era":3,"branch":"salvage","requires":["safety_mains_isolation","safety_discharge_capacitor"]},
+  "devices": ["shredder"],
+  "parts": ["motor_ac","gearbox","thermostat","switch","fuse"],
+  "license": "CC-BY-SA-4.0"
+}

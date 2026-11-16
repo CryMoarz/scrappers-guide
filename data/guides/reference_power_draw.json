@@ -1,0 +1,43 @@
+{
+  "id": "reference_power_draw",
+  "kind": "reference",
+  "title": "What things draw, and how long a battery runs them",
+  "keywords": ["watts","start-up surge","inverter","battery runtime","amp-hours","fridge","CPAP","sump pump"],
+  "summary": "Typical running watts and start-up surges for common loads, plus plain steps to work out how long a battery will run them. Includes a worked example for a 12 V 100 Ah battery, lead-acid against lithium.",
+  "difficulty": 1,
+  "mins": 5,
+  "tools": [],
+  "hazards": ["mains"],
+  "materials": [],
+  "steps": [
+    {"text":"Read the label: watts, or volts × amps."},
+    {"text":"To size an inverter, add the running watts of everything on at once, then the single biggest start surge."},
+    {"text":"Work out runtime with the steps below, and keep a margin: real batteries give less when cold, old or worked hard."}
+  ],
+  "notes": "## Typical loads\nNameplate watts are the most a load can draw (DOE). Real draw is often lower. Read the label. If it lists only amps, watts = volts x amps (DOE).\n\n| Load | Running | Start surge |\n|---|---|---|\n| Fridge-freezer | 700 to 750 W nameplate (Generac, DTE). About 70 W averaged over a day (DOE: 588 kWh a year) | 2,200 W in Generac's example. 3 times in DTE's guide |\n| Chest freezer | About 25 W averaged (ENERGY STAR: 215 kWh a year) | Plan 3 times (DTE, fridge/freezer) |\n| CPAP, built-in humidifier | 53 W typical, 104 W peak (ResMed AirSense 10). Philips DreamStation: 80 W supply | None listed |\n| CPAP, no humidifier | No manufacturer figure confirmed. Read the label | None listed |\n| Laptop | 50 W (DOE) | 1 times (DTE, computers) |\n| Phone charging | 10 W (DR Power). Fast charge: 20 W adapter (Apple) | None listed |\n| LED bulb, 800 lumens | 5.9 to 10.5 W (DOE FEMP) | None listed |\n| Wi-Fi router | 5.7 W average (NRDC, 2013) | None listed |\n| TV, 55 in LED | 110 W typical, 140 W max (Samsung RU7100) | 1 times (DTE, TV) |\n| Microwave | 750 to 1,100 W (DOE). Up to 1,500 W (DTE) | 1 times (DTE) |\n| Kettle | 1,500 W, 12.5 A at 120 V (KitchenAid KEK1701) | Heating element. DTE lists heaters at 1 times |\n| Coffee maker | 900 to 1,200 W (DOE) | 1 times (DTE) |\n| Sump pump, 1/2 hp | 1,000 W (DTE) | 3 times, 3,000 W (DTE) |\n| Well pump | 1/3 hp 750 W, 1/2 hp 1,000 W (DTE). Deep well 250 to 1,100 W (DOE) | 3 times (DTE) |\n| Furnace blower | 1/4 hp 400 W, 1/3 hp 450 W, 1/2 hp 600 W (DTE). DOE: 750 W | 3 times (DTE) |\n| Window AC | Watts = BTU/h / CEER. A 12,000 BTU/h unit at CEER 14.7 (ENERGY STAR v5.0 minimum, louvered type) is about 820 W. At CEER 10, about 1,200 W | Plan 2 to 3 times (DR Power: AC needs extra at start. DTE: central AC 3 times) |\n| Corded 1/2 in drill | 7 A, 840 W max (Milwaukee 1007-1) | Up to 2 times (DR Power) |\n| Circular saw, 7-1/4 in | 15 A, 1,800 W max (DeWalt DWE575) | Up to 2 times (DR Power) |\n\n## Surges and inverter size\n- Motors (fridge, freezer, pumps, blower, AC) draw extra for 2 to 3 seconds at start (Generac). DOE puts motor current at about 3 times in the first second.\n- Add the running watts of everything on at once. Then add the single biggest start surge (Generac).\n- Example: Victron's Phoenix 12/1200 inverter gives 1,000 W continuous at 25 °C and 2,200 W peak. Its peak just covers a 2,200 W fridge start. It cannot run a 1,500 W kettle, which is over its 1,000 W continuous rating.\n- At 12 V, a 2,200 W surge is 2,200 / 12 = about 183 A, before losses. Use heavy cable and a proper fuse.\n- Start motors one at a time.\n- Heating loads (kettle, coffee maker, microwave) have no surge but are big continuous loads.\n\n## Runtime math, step by step\n1. **Energy:** watt-hours = volts x amp-hours. A 12 V 100 Ah battery holds 12 x 100 = 1,200 Wh.\n2. **Usable share:** lead-acid about 50 %. Lithium (LiFePO4) about 80 %. Victron's own figures use 50 % for AGM and 80 % for lithium. Its lithium cycle life is 2,500 cycles at 80 % depth and 5,000 at 50 %.\n3. **Lead-acid loses more under load.** Capacity is rated at 20 hours. At 5 hours an AGM gives 85 %, at 1 hour 65 %. Constant-power inverter loads and cold make it worse (Victron).\n4. **Inverter loss:** Victron's 12 V Phoenix inverters peak at 87 to 92 % efficiency, and idle at 4 to 12 W. Plan on 10 to 15 % loss, more at light loads.\n5. **Hours** = usable Wh x (1 - loss) / load watts.\n\n**Worked example:** 12 V 100 Ah battery, 60 W AC load, 15 % inverter loss.\n\n| Battery | Usable | After inverter | Runtime at 60 W |\n|---|---|---|---|\n| Lead-acid, 50 % | 600 Wh | 510 Wh | 8.5 h |\n| Lithium, 80 % | 960 Wh | 816 Wh | 13.6 h |\n\nA 12 V load run direct, with no inverter: 600 / 60 = 10 h on lead-acid, 960 / 60 = 16 h on lithium. Battery current is 60 W / 12 V = 5 A direct, or about 5.9 A through the inverter.\n",
+  "tree": {"era":3,"branch":"power","requires":[]},
+  "parts": ["battery_pb","battery_li","psu"],
+  "license": "CC-BY-SA-4.0",
+  "sources": [
+    {"title":"Virginia Cooperative Extension: Estimating Appliance and Home Electronic Energy Use (DOE building science series; DOE wattage table)","url":"http://pubs.ext.vt.edu/2901/2901-9014/2901-9014.html"},
+    {"title":"DTE Energy: Appliance Usage Guide (running watts and starting factors)","url":"https://www.dteenergy.com/content/dam/dteenergy/deg/website/residential/service-and-price/protection/Appliance-Usage-Guide-GenerLink-Worksheet.pdf"},
+    {"title":"Generac Support: What Does Surge/Starting Wattage Mean?","url":"https://support.generac.com/articles/Knowledge/What-Does-Surge-Starting-Wattage-Mean"},
+    {"title":"DR Power (Generac): Generator Wattage Worksheet","url":"https://dam.generac.com/ImConvServlet/imconv/b807fd2cc096c5464d1d28bc6f16d391f505a6b5/original"},
+    {"title":"DOE EERE: Refrigerator, Refrigerator-Freezer and Freezer Energy Conservation Standards RFI FAQ (average annual kWh)","url":"https://www.energy.gov/eere/buildings/articles/refrigerator-freezer-ec-rfi-faq"},
+    {"title":"ENERGY STAR: Freezers (certified chest freezer about 215 kWh a year)","url":"https://www.energystar.gov/products/freezers"},
+    {"title":"ResMed: AirSense 10 user guide, technical specifications","url":"https://ap.resmed.com/hubfs/Himalayas%20-%20B2C/SG/Sleepcare/PDF/airsense-10-device-with-humidifier_user-guide_amer_eng.pdf"},
+    {"title":"Philips: DreamStation Heated Humidifier user manual (80 W power supply)","url":"https://www.philips.com/c-dam/b2bhc/master/landing-pages/src/update/replacement-devices/dreamstation/en-us/philips-dreamstation-humidifier-user-manual.pdf"},
+    {"title":"Apple Support: Fast charge your iPhone","url":"https://support.apple.com/en-us/102574"},
+    {"title":"DOE FEMP: Purchasing Energy-Efficient Light Bulbs","url":"https://www.energy.gov/cmei/femp/purchasing-energy-efficient-light-bulbs"},
+    {"title":"NRDC: Small Network Equipment Energy Consumption in U.S. Homes (June 2013)","url":"https://www.nrdc.org/sites/default/files/residential-network-IP.pdf"},
+    {"title":"Samsung: 55-inch Series 7 RU7100 specification sheet","url":"https://images.samsung.com/is/content/samsung/p5/au/tvs/specs/RU7100-55.pdf"},
+    {"title":"KitchenAid: KEK1701 1.7 L electric kettle (1500 W, 120 V, 12.5 A)","url":"https://www.whirlpoolportal.com/whrnarstorefront/c/1-7-Liter-Electric-Kettle/p/KEK1701JP"},
+    {"title":"ENERGY STAR: Room Air Conditioners Version 5.0 specification (CEER in Btu/Wh)","url":"https://www.energystar.gov/sites/default/files/2024-08/ENERGY%20STAR%20Version%205.0%20Room%20Air%20Conditioners%20Specification%20and%20Partner%20Commitments.pdf"},
+    {"title":"Milwaukee Tool: 1/2 in D-Handle Drill 1007-1 (7.0 A)","url":"https://www.milwaukeetool.com/products/power-tools/corded/1007-1"},
+    {"title":"DeWalt: DWE575 7-1/4 in lightweight circular saw (15 A)","url":"https://www.dewalt.com/product/dwe575/7-14-lightweight-circular-saw"},
+    {"title":"Victron Energy: Phoenix Inverter VE.Direct 250VA-1600VA datasheet","url":"https://www.victronenergy.com/upload/documents/Datasheet-Inverter-VE.Direct-250VA-1600VA-EN.pdf"},
+    {"title":"Victron Energy: GEL and AGM Batteries datasheet (capacity vs discharge time, temperature)","url":"https://www.victronenergy.com/upload/documents/Datasheet-GEL-and-AGM-Batteries-EN.pdf"},
+    {"title":"Victron Energy: 12,8 and 25,6 V Lithium Iron Phosphate Batteries Smart datasheet (cycle life by depth of discharge)","url":"https://www.victronenergy.com/upload/documents/Datasheet-12,8-&-25,6-Volt-lithium-iron-phosphate-batteries-Smart-EN.pdf"},
+    {"title":"Victron Energy blog: Lithium SuperPack batteries (usable energy at 80 % lithium, 50 % AGM)","url":"https://www.victronenergy.com/blog/2019/02/26/lithium-superpack-batteries-an-all-in-one-solution/"}
+  ]
+}

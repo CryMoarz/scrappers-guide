@@ -1,0 +1,14 @@
+{
+  "id": "heavy",
+  "label": "Heavy",
+  "severity": 3,
+  "summary": "Too heavy for one person to move safely. Back injuries and crushed hands and feet are the most common salvage injuries, and without medical care they can end your ability to work.",
+  "signs": ["Anything over about 25 kg: appliances, batteries, motors, transformers, engines","Heavy for its size: transformers, lead-acid batteries, compressors, cast iron","Tall or top-heavy items like vending machines, shelving and fridges","Loads you can't see past or get a good grip on"],
+  "do": ["Test the weight by tipping one corner before you commit","Strip off what you don't need and carry only the useful part","Use a second person, a hand truck, rollers, a pry bar or a ramp","Clear the path and decide where the load will go before you lift","Bend your knees, keep the load close and your back straight","Move your feet to turn; don't twist","Strap loads down before driving"],
+  "dont": ["Don't lift heavy things when you're exhausted or rushing","Don't lift above shoulder height or reach out with a load","Don't carry heavy loads down stairs alone","Don't put fingers or feet under a load being lowered","Don't try to catch something that is falling: step away"],
+  "ppe": ["Boots with toe protection","Grippy work gloves"],
+  "firstAid": ["Free a trapped person as quickly as you safely can, then get medical help","Crushed fingers or toes: cool them, raise them, and check for a broken bone","Back strain: keep moving gently and stay as active as you can; avoid heavy lifting for a few days, but don't lie in bed, which slows recovery","Numb or weak legs, or loss of bladder or bowel control after a back injury, needs urgent medical care","Long crush injuries can damage the kidneys hours later, even if the person seems fine"],
+  "refs": [
+    {"lib":"wikipedia","q":"Manual handling of loads"}
+  ]
+}

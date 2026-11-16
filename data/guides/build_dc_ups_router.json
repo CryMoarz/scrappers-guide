@@ -1,0 +1,40 @@
+{
+  "id": "build_dc_ups_router",
+  "kind": "build",
+  "title": "DC backup power for a router, radio or modem",
+  "keywords": ["dc ups","router backup","modem battery","mini ups","12v ups","keep wifi on","battery backup","uninterruptible power","radio backup power"],
+  "summary": "Keep a 12V router, modem, radio or camera running through outages by floating a lead-acid battery on a charger and feeding the device from the battery through a converter. It skips the DC-to-AC-to-DC losses of an office UPS, so it runs several times longer from the same battery.",
+  "difficulty": 2,
+  "mins": 90,
+  "tools": ["screwdriver","cutters","crimper","multimeter","desolder","tape","pliers"],
+  "hazards": ["mains","acid","burn"],
+  "materials": [
+    {"item":"12V sealed lead-acid battery (AGM), 7–100Ah","qty":"1","fn":"battery_pb","only":["12v"]},
+    {"item":"Charger with float mode (13.5–13.8V), or an adjustable 12V power supply trimmed up to about 14V","qty":"1","fn":"psu","only":["12v power supply","12/24v power supply"]},
+    {"item":"Schottky diode, 5A or more, to stop the battery feeding back into the supply","qty":"1","fn":"diode_schottky","only":["dual schottky"]},
+    {"item":"Current-limit resistor 0.5–1 Ω, 10W, if using a plain power supply","qty":"1","fn":"resistor","optional":true},
+    {"item":"Buck (or buck-boost) converter set to the device's voltage","qty":"1 per device","fn":"dcdc_buck"},
+    {"item":"Fuses and holders: one at the battery, one per output","qty":"2+","fn":"fuse"},
+    {"item":"Wire 16–14 AWG (1.5–2.5 mm²)","qty":"2–3 m","fn":"wire_copper","only":["extension","awg","cord"]},
+    {"item":"DC barrel plugs or connectors matching each device","qty":"1 per device","fn":"connector","only":["dc jack","dc lead"]},
+    {"item":"Low-voltage cut-off (relay plus comparator, or a cut-off board)","qty":"1","fn":"relay","optional":true},
+    {"item":"Panel voltmeter","qty":"1","optional":true}
+  ],
+  "steps": [
+    {"text":"Read each device's power label: input volts and amps (for example 12V 1.5A). Measure actual draw with the multimeter if you can; most routers use 5–12W."},
+    {"text":"Size the battery: runtime (hours) ≈ battery Ah × 12V × 0.5 ÷ device watts. A 7Ah battery runs a 10W router about 4 hours; a 100Ah battery about 60 hours."},
+    {"text":"Choose the charger. A battery maintainer or charger with a float setting is easiest. A plain 12V supply with a trim pot (common in CCTV supplies) can be turned up to about 14V."},
+    {"text":"Check the supply's voltage with no load and adjust it to about 14.0V before connecting a battery. After the diode, the battery floats at about 13.5–13.7V.","warn":"Use an enclosed supply and never open its mains side. If its case is cracked or the cord damaged, don't use it."},
+    {"text":"Wire the charge path: supply + → Schottky diode → current-limit resistor (if using a plain supply) → fuse → battery +. Supply − → battery −. The fuse goes within 30 cm of battery positive.","warn":"Remove rings and watches; a short across battery terminals arcs and burns."},
+    {"text":"Wire the output: battery + → output fuse → buck converter input; converter output to the device's plug. Set the converter's output voltage with nothing connected (12.0V for a 12V device), then plug the device in."},
+    {"text":"Check polarity on the device's plug: most have positive in the centre, but read the symbol on the label. Measure the plug before connecting.","warn":"Reversed polarity can kill a router instantly."},
+    {"text":"Test: unplug the charger from the wall. The device must keep running without a flicker. Measure battery voltage and current, then plug the charger back in and check it charges."},
+    {"text":"Fit a low-voltage cut-off set to about 11.5–11.8V, or check the battery during long outages and switch off before it goes flat."},
+    {"text":"Keep sealed (AGM) batteries indoors only; flooded batteries give off hydrogen and need ventilation. Check the battery voltage monthly; replace when runtime drops by half.","warn":"Charging lead-acid batteries give off explosive hydrogen. Never charge a flooded battery in a closed room or near flames."}
+  ],
+  "notes": "## Why not an office UPS\nAn office UPS converts battery DC to mains AC, then the device's plug pack converts it back to DC. Each step wastes power, and the UPS's inverter itself can use 10–30W just being on. For a 10W router, that can cut runtime by a factor of 2–4.\n\n## Runtime maths\nRuntime (h) = battery Ah × 12V × usable fraction ÷ load W. Use 0.5 for lead-acid you want to last.\n- Router + modem 15W, 7Ah battery: 7 × 12 × 0.5 ÷ 15 ≈ 2.8 h.\n- Same on 40Ah: ≈ 16 h. On 100Ah: ≈ 40 h.\n\n## Charge-current limit\nA flat battery can pull far more current than a small supply can give. Proper chargers limit it. With a plain supply, add a series resistor: current ≈ (supply V − battery V) ÷ R. At 13.8V into a battery at 11.8V through 1 Ω: 2A, falling to near zero as it fills. Resistor heat = I² × R = 4W at first; use 10W.\n\n## The diode\nThe Schottky diode stops the battery feeding back into the supply when mains fails. It drops about 0.3–0.5V, so set the supply that much higher (about 14.0V) to float the battery at 13.6V.\n\n## Why a converter on the output\nA floating battery sits at 13.5–13.8V and falls to about 11.5V when nearly empty. Many 12V devices are fine across that range, but some aren't. A buck converter holds 12.0V until the battery falls below about 12.5V, then follows the battery down. A buck-boost converter holds 12V all the way.\n\nOther voltages: 5V (USB, small radios), 9V, 19V (laptops: use a boost converter). Power over Ethernet devices need an injector at 24 or 48V; a boost converter can feed it.\n\n## ATX computer supplies\nThe 12V rail sits at about 12.0V: enough to keep a battery partly charged but not full. Some need a load on the 5V rail to start. A dedicated charger is better.\n\n## Low-voltage cut-off\nThe comparator and relay section of build_battery_tester works: set it to about 11.5–11.8V. Add a manual reset so it doesn't cycle as the battery recovers.\n\n## If you lack a part\n- No diode: a charger with a proper battery output already blocks reverse flow. Check by unplugging it from the wall and measuring current on its leads.\n- No converter: feed 12V devices straight from the battery, and add one or two ordinary silicon diodes in series (about 0.7V drop each) if the device complains at 13.8V.\n",
+  "tree": {"era":4,"branch":"signal","requires":["skill_dc_wiring","test_lead_acid"]},
+  "devices": ["ups","alarm_panel","cctv","wifi_router","fire_panel","emergency_light","telecom_site","car_usb_charger"],
+  "parts": ["battery_pb","psu","diode_schottky","dcdc_buck","fuse"],
+  "license": "CC-BY-SA-4.0"
+}

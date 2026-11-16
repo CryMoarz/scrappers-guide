@@ -1,0 +1,24 @@
+{
+  "id": "chest_freezer_danby_dcf070b1wm",
+  "device": "chest_freezer",
+  "brand": "Danby",
+  "model": "DCF070B1WM",
+  "notes": "The relay/PTC starter (QP2-4.7H or JPQII-4.7) and the overload protector (DRB21R61A1 or BT62-120) have alternates, so a given unit may carry either. The product has been discontinued.",
+  "research": {"checked":"2026-11-12","gaps":["The parts web page shows the same part numbers and names except the compressor and compressor base, and gives no ratings.","The product spec PDF lists a mechanical thermostat and gives refrigerant R600a with 'Amount of Refrigerant 53' and no unit, so the charge is not recorded.","No interior lamp or lid switch is listed in the part list; that is not a stated absence, so those template parts are left alone."],"method":["Danby Diplomat 7.0 cu. ft. chest freezer: the Danby Appliance Parts page uses the Diplomat name, and danby.com's product page says the product has been discontinued.","Main source is Danby's own schematic / part list spreadsheet (XLSX, linked as 'Schematic / Part List' from the Danby Appliance Parts page): factory model BD1-200, effective date 9/9/2019, revision 0.","Part numbers, quantities and specification column read from the spreadsheet cells on 2026-11-12.","Ext/obs on extra parts are editorial."]},
+  "comps": [
+    {"key":"compressor","conf":"documented","spec":"Compressor UKT60YAX, 110-120 V, 60 Hz, R600a; Danby part 2400100006, qty 1, on compressor base 20105050013","v":[110,120],"ac":true,"source":"https://cdnns.danby.com/4973611/DCF070B1WM.xlsx"},
+    {"key":"thermostat","conf":"documented","spec":"Thermostat, WPF*EX / WDF*-L* type, AC 250 V, 6(4) A, 50/60 Hz; Danby part 2400200004, knob 20122010167, panel 2207100321","v":250,"a":6,"ac":true,"source":"https://cdnns.danby.com/4973611/DCF070B1WM.xlsx"},
+    {"key":"relay_ptc_starter","fn":"relay","spec":"Relay/PTC starter QP2-4.7H or JPQII-4.7; Danby part 3990100452","qty":1,"ext":1,"obs":4,"conf":"documented","source":"https://cdnns.danby.com/4973611/DCF070B1WM.xlsx"},
+    {"key":"thermostat_overload","fn":"thermostat","spec":"Overload protector DRB21R61A1 or BT62-120; Danby part 3990100453","qty":1,"ext":1,"obs":4,"conf":"documented","source":"https://cdnns.danby.com/4973611/DCF070B1WM.xlsx"},
+    {"key":"capacitor_large","fn":"capacitor_large","spec":"Capacitor, MKP, CBB65D, AC 250 V, 6 uF; Danby part 3990100454","v":250,"ac":true,"qty":1,"ext":1,"obs":3,"conf":"documented","source":"https://cdnns.danby.com/4973611/DCF070B1WM.xlsx"},
+    {"key":"led_light_indicator","fn":"led_light","spec":"Green indicator light; Danby part 3050500011","qty":1,"ext":2,"obs":4,"conf":"documented","source":"https://cdnns.danby.com/4973611/DCF070B1WM.xlsx"},
+    {"key":"wire_copper","conf":"documented","spec":"Power supply cord DTII-3P-15, SJT, 3-conductor; Danby part 2500100019","source":"https://cdnns.danby.com/4973611/DCF070B1WM.xlsx"},
+    {"key":"cooler_box","conf":"documented","spec":"Chest cabinet, 7.0 cu. ft. (197 L); interior 30.81 x 15.75 x 26.81 in; product weight 70.11 lb (31.80 kg); garage-ready 0-110 F","source":"https://www.danby.com/en-us/products/freezers-en-us/dcf070b1wm/?o=pdf"}
+  ],
+  "sources": [
+    {"title":"DCF070B1WM schematic / part list spreadsheet (Danby XLSX, factory model BD1-200, effective 9/9/2019, rev. 0)","url":"https://cdnns.danby.com/4973611/DCF070B1WM.xlsx"},
+    {"title":"DCF070B1WM parts page (Danby Appliance Parts, links the part list)","url":"https://www.danbyapplianceparts.com/product-category/freezers/dcf070b1wm"},
+    {"title":"DCF070B1WM product specifications PDF (danby.com)","url":"https://www.danby.com/en-us/products/freezers-en-us/dcf070b1wm/?o=pdf"},
+    {"title":"DCF070B1WM product page (danby.com, marked discontinued)","url":"https://www.danby.com/en-us/products/freezers-en-us/dcf070b1wm/"}
+  ]
+}

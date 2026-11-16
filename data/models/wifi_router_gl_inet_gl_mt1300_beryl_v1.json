@@ -1,0 +1,21 @@
+{
+  "id": "wifi_router_gl_inet_gl_mt1300_beryl_v1",
+  "device": "wifi_router",
+  "brand": "GL.iNet",
+  "model": "GL-MT1300 (Beryl) v1",
+  "fcc": "2AFIW-MT1300",
+  "notes": "Chips for hardware version v1; other versions of the GL-MT1300 (Beryl) can differ.",
+  "research": {"gaps":[],"method":["Not yet fact-checked: its parts show as likely until a fact-check confirms them against their sources.","Imported from the OpenWrt Table of Hardware (toh.json, 2026-11-13): the hardware data page for this version, by OpenWrt wiki contributors under CC BY-SA 4.0."]},
+  "comps": [
+    {"key":"ic_mcu_soc","fn":"ic_mcu","spec":"SoC MediaTek MT7621AT, 2 cores at 880 MHz","qty":1,"ext":4,"obs":3,"source":"https://openwrt.org/toh/hwdata/gl.inet/gl.inet_gl-mt1300","conf":"likely"},
+    {"key":"ic_memory_flash","fn":"ic_memory","spec":"Flash, 32, microSD","qty":1,"ext":2,"obs":4,"source":"https://openwrt.org/toh/hwdata/gl.inet/gl.inet_gl-mt1300","conf":"likely"},
+    {"key":"ic_memory_ram","fn":"ic_memory","spec":"RAM, 256 MB","qty":1,"ext":3,"obs":3,"source":"https://openwrt.org/toh/hwdata/gl.inet/gl.inet_gl-mt1300","conf":"likely"},
+    {"key":"radio_rf","spec":"Wi-Fi: MediaTek MT7615DN (2.4 GHz b/g/n, 5 GHz a/n/ac)","qty":1,"source":"https://openwrt.org/toh/hwdata/gl.inet/gl.inet_gl-mt1300","conf":"likely"},
+    {"key":"psu","spec":"Power supply: 5VDC, 3.0A via USB Type-C","v":5,"a":3,"source":"https://openwrt.org/toh/hwdata/gl.inet/gl.inet_gl-mt1300","conf":"likely"},
+    {"key":"connector","spec":"Ethernet ports: 3× gigabit","qty":3,"source":"https://openwrt.org/toh/hwdata/gl.inet/gl.inet_gl-mt1300","conf":"likely"},
+    {"key":"connector_usb","fn":"connector","spec":"USB: 1x 3.0","qty":1,"ext":2,"obs":4,"source":"https://openwrt.org/toh/hwdata/gl.inet/gl.inet_gl-mt1300","conf":"likely"}
+  ],
+  "sources": [
+    {"title":"OpenWrt Table of Hardware: GL.iNet GL-MT1300 (Beryl) v1 (OpenWrt wiki contributors, CC BY-SA 4.0)","url":"https://openwrt.org/toh/hwdata/gl.inet/gl.inet_gl-mt1300"}
+  ]
+}

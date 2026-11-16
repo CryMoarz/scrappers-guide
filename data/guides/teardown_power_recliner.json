@@ -1,0 +1,29 @@
+{
+  "id": "teardown_power_recliner",
+  "kind": "teardown",
+  "title": "Power recliners, adjustable beds and hospital beds: linear actuators",
+  "keywords": ["power recliner teardown","recliner actuator","linear actuator salvage","adjustable bed motor","hospital bed actuator","standing desk motor","24v actuator","29v power supply"],
+  "summary": "Power recliners, adjustable beds and hospital beds hide strong 24–29 V linear actuators with built-in end stops, plus a power supply, hand controls and sometimes a backup battery. Unplug, lower it fully, and prop the frame before pulling any pin.",
+  "difficulty": 2,
+  "mins": 20,
+  "tools": ["screwdriver","socket","wrench","pliers","hex","knife","heavy"],
+  "hazards": ["crush","heavy","spring","mains","sharp"],
+  "materials": [],
+  "steps": [
+    {"text":"If it still has power, run it to the fully closed or flat position first. Then unplug the power supply from the wall."},
+    {"text":"Take out any backup batteries: a box of AA cells on a lead under the frame (recliners) or a battery in the control box (hospital beds)."},
+    {"text":"With a helper, tip the chair onto its front or back, or lift the bed mattress off, so you can see under the frame.","warn":"The mechanism can move under its own weight or spring load. Keep hands out of the scissor links and hinges."},
+    {"text":"Cut away the dust cloth stapled underneath with a knife.","warn":"Staples and cut staple ends are sharp. Wear gloves."},
+    {"text":"Find the actuator: a tube with a motor box at one end, pinned to the frame at both ends. Unplug its cable from the control box or power supply."},
+    {"text":"Prop the mechanism with a block of wood so it can't drop. Then remove the pins at each end of the actuator: pull the clips and push the pins out, or undo the bolts.","warn":"When the last pin comes out the frame can fall. Never put a hand where the frame could close on it."},
+    {"text":"Take the power supply (a brick on the floor or a box under the frame), the hand control or remote, and all the cables and plugs."},
+    {"text":"Hospital beds: the control box holds a motor driver board, a power supply and often a 24 V battery. Keep it whole with its plugs."},
+    {"text":"Standing desks: each leg column is a telescoping actuator with a motor at the top or bottom. Keep the columns with the control box."},
+    {"text":"Test an actuator: connect it to 24 V DC (two 12 V batteries in series). It runs until its internal end switch stops it. Swap the two wires to reverse it. Most also run slowly on 12 V."}
+  ],
+  "notes": "## What's worth keeping and why\n\n- **Linear actuators.** A DC motor, gearbox and lead screw in a sealed tube, with end-stop switches built in, so you just apply voltage and swap polarity to reverse. Push forces are commonly in the thousands of newtons (several hundred kilograms). Uses: hatch and gate openers, a chicken-coop door, a solar panel tracker, a press, lifting a heavy lid.\n- **Power supply.** Usually 24–29 V DC at 1–2 A or more. Runs the actuators, or charges a 24 V battery with care, or steps down to 12 V.\n- **Hand controls.** Ready-made up/down switches that reverse a DC motor.\n- **Backup batteries.** AA cells (recliners) or 24 V sealed lead-acid (hospital beds).\n- **Frame steel, springs, foam.** Heavy steel links and springs; good foam cushions.\n\n## Controlling an actuator\n\nA double-pole double-throw switch (or two relays) swaps polarity to drive it both ways. A timer, a light sensor or a thermostat can then open and close a vent, door or hatch. Fuse the supply line: a stalled actuator draws several amps.\n\n## Variations\n\n- Recliners: 1–2 actuators. Adjustable beds: 2–4 plus sometimes small vibration motors. Hospital beds: 3–5 actuators, a control box and a lead-acid backup battery. Patient lifts: one big actuator and a battery pack.\n- Some recliners and lift chairs use one large actuator under the seat that lifts the whole chair: these are the strongest.\n- A few use a 24 V transformer supply instead of a switching power supply. Both work.\n\n## What to leave\n\n- The upholstery, unless you need fabric or foam.\n- Frame parts riveted together, unless you need the steel.",
+  "tree": {"era":2,"branch":"salvage","requires":["safety_mains_isolation"]},
+  "devices": ["power_furniture","hospital_bed"],
+  "parts": ["linear_actuator","psu","switch","battery_nimh","battery_pb","foam_rubber","spring"],
+  "license": "CC-BY-SA-4.0"
+}

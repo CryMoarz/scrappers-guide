@@ -1,0 +1,28 @@
+{
+  "id": "motion_light",
+  "name": "Motion-sensor floodlights",
+  "group": "Building systems",
+  "aliases": ["security floodlight","pir light"],
+  "brands": ["Ring","Eufy","Lithonia Lighting","Hubbell","Feit Electric","Hampton Bay","Halo"],
+  "prev": 4,
+  "tools": ["screwdriver"],
+  "mins": 10,
+  "hazards": [],
+  "comps": [
+    {"key":"led_light","fn":"led_light","spec":"LED floodlight heads","v":[120,240],"w":[10,50],"ac":true,"qty":2,"ext":2,"obs":4,"loc":"Light heads"}
+  ],
+  "boards": [
+    {"id":"pir_board","qty":1,"loc":"Sensor head","p":1},
+    {"id":"led_driver_mains","qty":1,"loc":"Light housing","p":0.8}
+  ],
+  "buildings": [
+    {"b":"house","l":5},
+    {"b":"garage_res","l":5},
+    {"b":"warehouse","l":4},
+    {"b":"church","l":3},
+    {"b":"gas_station","l":3},
+    {"b":"school","l":3},
+    {"b":"hardware","l":4},
+    {"b":"shop_small","l":2}
+  ]
+}

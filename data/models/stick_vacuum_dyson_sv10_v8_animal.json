@@ -1,0 +1,20 @@
+{
+  "id": "stick_vacuum_dyson_sv10_v8_animal",
+  "device": "stick_vacuum",
+  "brand": "Dyson",
+  "model": "SV10 (V8 Animal)",
+  "notes": "The SV10 battery procedure also applies to the V8 Animal when it uses the same SV10 battery style. The charger is Dyson-only.",
+  "research": {"checked":"2026-11-11","gaps":["The guides and the manual page give no voltage, capacity, cell count, motor type or part numbers.","A third-party comment lists 21.6 V and 4000 mAh, which is not a documented spec, so it was not used."],"method":["The iFixit device page and the V8 Animal battery guide (130540) name the V8 Animal.","The iFixit SV10 battery guide (224767) names the SV10 marking.","Readable sources document a lithium-ion battery, a Dyson-only charger, and a bin filter and an intake filter.","Qty, ext and obs are editorial values, not source claims."]},
+  "comps": [
+    {"key":"battery_li","conf":"documented","spec":"Lithium-ion battery. The guide's parts list names only 'Dyson V8 Battery', with no part number, voltage, capacity or cell count. Step 2 says to check the bottom label near the battery for the SV10 marking.","source":"https://www.ifixit.com/Guide/Dyson+V8+Battery+Replacement/224767"},
+    {"key":"charger","conf":"documented","spec":"Dyson charger for the SV10. The manual says only Dyson chargers may be used, and gives 5 hours to fully charge.","source":"https://www.manualslib.com/manual/1171478/Dyson-Sv10.html"},
+    {"key":"filter_air_bin","fn":"filter_air","spec":"Bin filter. The iFixit device page lists a replacement guide for it (guide 130420). No part number or size is given.","qty":1,"ext":1,"obs":3,"loc":"Not stated in the source","conf":"documented","source":"https://www.ifixit.com/Device/Dyson_V8_Animal"},
+    {"key":"filter_air_intake","fn":"filter_air","spec":"Intake filter. The iFixit device page lists a replacement guide for it (guide 130541). No part number or size is given.","qty":1,"ext":1,"obs":3,"loc":"Not stated in the source","conf":"documented","source":"https://www.ifixit.com/Device/Dyson_V8_Animal"}
+  ],
+  "sources": [
+    {"title":"iFixit guide: Dyson V8 Animal battery replacement (130540)","url":"https://www.ifixit.com/Guide/Dyson+V8+Animal+Battery+Replacement/130540"},
+    {"title":"iFixit guide: Dyson V8 battery replacement, SV10 (224767)","url":"https://www.ifixit.com/Guide/Dyson+V8+Battery+Replacement/224767"},
+    {"title":"iFixit device page: Dyson V8 Animal (guide list and specs)","url":"https://www.ifixit.com/Device/Dyson_V8_Animal"},
+    {"title":"Dyson SV10 operating manual (ManualsLib)","url":"https://www.manualslib.com/manual/1171478/Dyson-Sv10.html"}
+  ]
+}

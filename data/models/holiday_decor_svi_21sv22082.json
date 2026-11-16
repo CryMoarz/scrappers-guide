@@ -1,0 +1,17 @@
+{
+  "id": "holiday_decor_svi_21sv22082",
+  "device": "holiday_decor",
+  "brand": "SVI (Seasonal Visions International)",
+  "model": "21SV22082 (12 Foot Skeleton)",
+  "notes": "Parts are from SVI's instruction sheet 21SV22082 for the 12 Foot Skeleton; its cover prints Home Depot SKUs 1005309103 (USA) and 1001519440 (Canada). It runs from a 120 V adapter (output 5.9 V 1.5 A) or four 1.5 V C batteries; the power button and battery compartment are on the underside of the pelvis.",
+  "research": {"checked":"2026-11-12","gaps":["The sheet prints SVI and (c) Seasonal Visions International, not Home Accents Holiday. The homedepot.ca listing for SKU 1001519440 timed out twice at check, so the Home Accents Holiday brand, which came from a search snippet, is left out.","The Shopify CDN copy names no uploader; its title, item code, SVI contact details and copyright line show it is SVI's own instruction sheet.","The LCD eye hardware and the cable (part U) have no ratings or part numbers; the number of eyes is not given.","The sheet gives no production year, so years is left out. 'Giant-sized' and 'LifeEyes' came from the search snippet and are not used."],"method":["SVI 12 Foot Skeleton easy assembly and operation instructions, code 21SV22082, 4 pages, Shopify CDN copy: parts list and adapter spec on page 1, battery compartment note on page 3, operation, battery and settings on page 4 (page image checked).","The cover prints Home Depot SKUs 1005309103 (USA) and 1001519440 (Canada).","Home Depot US product pages and a manual-aggregator page returned 403 to the researcher; the homedepot.ca listing timed out."]},
+  "comps": [
+    {"key":"psu","conf":"documented","spec":"Power adapter, one in the parts list; input 120 V AC 50/60 Hz, output 5.9 V 1.5 A","v":5.9,"a":1.5,"qty":1,"source":"https://cdn.shopify.com/s/files/1/0760/5495/4302/files/21SV22082_12Foot_Skeleton.pdf"},
+    {"key":"battery_primary_c_cells","fn":"battery_primary","spec":"Battery compartment that takes four 1.5 V C batteries (not included); the adapter supplies the power if both are fitted","v":1.5,"qty":4,"ext":1,"obs":3,"loc":"Battery compartment, underside of the pelvis","conf":"documented","source":"https://cdn.shopify.com/s/files/1/0760/5495/4302/files/21SV22082_12Foot_Skeleton.pdf"},
+    {"key":"display_lcd_eyes","fn":"display","spec":"LCD eyes, controlled by the pelvis button: On lights them, Timer lights them for 6 hours at a time and turns them off for 18 hours, Off deactivates them","ext":2,"obs":3,"conf":"documented","source":"https://cdn.shopify.com/s/files/1/0760/5495/4302/files/21SV22082_12Foot_Skeleton.pdf"},
+    {"key":"switch_pelvis_button","fn":"switch","spec":"Push button under the pelvis: first press turns the skeleton on, second press selects the Timer setting, third press turns it off","qty":1,"ext":1,"obs":3,"loc":"Underside of the pelvis","conf":"documented","source":"https://cdn.shopify.com/s/files/1/0760/5495/4302/files/21SV22082_12Foot_Skeleton.pdf"}
+  ],
+  "sources": [
+    {"title":"SVI 12 Foot Skeleton easy assembly and operation instructions, code 21SV22082 (Shopify CDN copy, 4 pages)","url":"https://cdn.shopify.com/s/files/1/0760/5495/4302/files/21SV22082_12Foot_Skeleton.pdf"}
+  ]
+}

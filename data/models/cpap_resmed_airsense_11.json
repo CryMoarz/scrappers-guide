@@ -1,0 +1,23 @@
+{
+  "id": "cpap_resmed_airsense_11",
+  "device": "cpap",
+  "brand": "ResMed",
+  "model": "AirSense 11",
+  "fcc": "2ACHL-AIR11M1",
+  "notes": "Covers AirSense 11 AutoSet, CPAP and Elite (product codes 39485-39490). The radio below is for the LTE Cat-M1 variant, not the 4G/3G variant.",
+  "research": {"checked":"2026-11-12","gaps":["The 2ACHL-AIR114G filing was not checked and may use a different modem.","The MCU at U2001 shows an Arm logo and an ST logo, but the part number is too blurred to read, so it isn't claimed.","The ISSI chip next to it is not legible either.","The main PCBA also carries a two-port package near silkscreen A3003 and a single-port ported package at A3001/A3002, with no legible markings; the sensor claim below uses the user guide's flow-path list instead.","No heater wattage or blower part was found."],"method":["FCC exhibits for the LTE Cat-M1 filing 2ACHL-AIR11M1 (granted 2021-11-18) were read through the fccid.io mirror because apps.fcc.gov and fcc.report returned HTTP 403.","The internal-photo exhibit (ResMed 'Pacific project', 27 Aug 2021) covers product codes 39485-39490 (AirSense 11 AutoSet, CPAP, Elite) and shows the main PCBA top and bottom.","Pages 4-5 are the Cinterion EXS62-W module's own test-lab photos.","The user guide exhibit lists a second FCC ID, 2ACHL-AIR114G, for the 4G/3G variant.","ResMed's own document server refused the research fetcher (HTTP 403), so it was skipped."]},
+  "comps": [
+    {"key":"psu","conf":"documented","spec":"Air 11 65 W external AC adaptor: AC input 100-240 V 50-60 Hz 2.0 A, DC output 24 V 2.71 A, Class II; whole device typical draw 56.1 W, peak 73.2 W; an Air11 DC/DC converter is listed among the accessories","v":24,"a":2.71,"w":65,"source":"https://fccid.io/pdf.php?id=5545096"},
+    {"key":"heating_element","conf":"documented","spec":"Stainless-steel humidifier hot plate for the HumidAir 11 tub: maximum plate temperature 68 C, heater cut-out 74 C; tub holds 380 mL","source":"https://fccid.io/pdf.php?id=5545096"},
+    {"key":"hose_tubing","conf":"documented","spec":"Air tubing options: ClimateLineAir 11 heated tube 2.0 m, 15 mm inner diameter, 41 C cut-out; SlimLine 1.8 m, 15 mm; Standard 2.0 m, 19 mm; 22 mm conical air outlet","source":"https://fccid.io/pdf.php?id=5545096"},
+    {"key":"filter_air","conf":"documented","spec":"Air11 inlet filter: standard polyester non-woven (over 75% average arrestance, EN779) or hypoallergenic blended synthetic fibre in a polypropylene carrier (over 80%, EN13274-7); not washable","source":"https://fccid.io/pdf.php?id=5545096"},
+    {"key":"sensor_misc","conf":"documented","spec":"Flow sensor and pressure sensor, both named in the user guide's pneumatic flow-path list (flow sensor, blower, pressure sensor)","source":"https://fccid.io/pdf.php?id=5545096"},
+    {"key":"controller_board","conf":"documented","spec":"Main FG PCBA, bare board P/N R390-7480 Rev1.0: ST-logo Arm MCU at U2001, ISSI chip at U2003, SD card socket, +24V input pads, power inductors and electrolytic capacitors, flex lead R390-7420 rev2.0","source":"https://fccid.io/pdf.php?id=5545098"},
+    {"key":"radio_rf_cellular","fn":"radio_rf","spec":"Cinterion EXS62-W cellular module (module FCC ID QIPEXS62-W) soldered to the bottom of the main PCBA; a Taoglas PCS.26.C antenna sits on the top side of the board","qty":1,"ext":3,"obs":4,"conf":"documented","source":"https://fccid.io/pdf.php?id=5545098"},
+    {"key":"battery_coin_main","fn":"battery_coin","spec":"VARTA coin cell marked CR, with solder tabs, on the bottom of the main PCBA","qty":1,"ext":2,"obs":4,"conf":"documented","source":"https://fccid.io/pdf.php?id=5545098"}
+  ],
+  "sources": [
+    {"title":"AirSense 11 user guide AMER ENG CAT M1 v2, FCC exhibit for 2ACHL-AIR11M1 (fccid.io mirror)","url":"https://fccid.io/pdf.php?id=5545096"},
+    {"title":"AirSense 11 internal photographs v2 (ResMed, Pacific project, Aug 2021), FCC exhibit for 2ACHL-AIR11M1 (fccid.io mirror)","url":"https://fccid.io/pdf.php?id=5545098"}
+  ]
+}

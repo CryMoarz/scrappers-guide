@@ -1,0 +1,38 @@
+{
+  "id": "camping_gear",
+  "name": "Camping gear",
+  "group": "Leisure and fitness",
+  "aliases": ["camping equipment","tent","camp stove","lantern","sleeping bag","backpacking gear","outdoor gear","camping stove","camp kitchen"],
+  "brands": ["Coleman","REI","Big Agnes","Kelty","Eureka","MSR","Jetboil","Igloo","Stanley","Vevor"],
+  "prev": 4,
+  "tools": ["hands"],
+  "mins": 5,
+  "kg": 20,
+  "hazards": ["compressed_gas"],
+  "comps": [
+    {"key":"fabric_tarp","fn":"fabric_tarp","spec":"Tents, flysheets and tarps: coated nylon or polyester","qty":2,"ext":1,"obs":3,"loc":"Bags on garage shelves and in the attic"},
+    {"key":"tube_frame","fn":"tube_frame","spec":"Aluminium or fibreglass tent poles","qty":6,"ext":1,"obs":4,"loc":"In the tent bag"},
+    {"key":"rope_webbing","fn":"rope_webbing","spec":"Guy lines, paracord and ratchet straps","qty":1,"ext":1,"obs":3,"loc":"Tent bags and gear bins"},
+    {"key":"foam_rubber","fn":"foam_rubber","spec":"Closed-cell foam sleeping pads","qty":2,"ext":1,"obs":3,"loc":"Rolled up with the sleeping bags"},
+    {"key":"filter_water","fn":"filter_water","spec":"Pump, squeeze or gravity water filters, about 0.1–0.2 micron","qty":1,"ext":1,"obs":2,"loc":"Backpacks and gear bins"},
+    {"key":"propane","fn":"propane","spec":"Small propane or butane canisters for stoves and lanterns, often half-full spares","qty":3,"ext":1,"obs":3,"loc":"Gear bins and garage shelves"},
+    {"key":"igniter","fn":"igniter","spec":"Piezo igniters on stoves and lanterns","qty":2,"ext":2,"obs":5,"loc":"Stove and lantern burners"},
+    {"key":"cooler_box","fn":"cooler_box","spec":"Hard coolers, 20–60 L","qty":1,"ext":1,"obs":3,"loc":"Garage floor"},
+    {"key":"tank","fn":"tank","spec":"Collapsible or hard water jugs, 10–20 L","qty":2,"ext":1,"obs":3,"loc":"Gear bins"},
+    {"key":"led_light","fn":"led_light","spec":"LED lanterns and headlamps (AA/AAA or rechargeable)","v":[3,6],"w":[1,10],"qty":3,"ext":1,"obs":2,"loc":"Gear bins and drawers"},
+    {"key":"solar_panel","fn":"solar_panel","spec":"Folding solar chargers, 5–30W (some)","w":[5,30],"qty":1,"ext":1,"obs":3,"loc":"Gear bins","p":0.5}
+  ],
+  "buildings": [
+    {"b":"garage_res","l":5},
+    {"b":"self_storage","l":5},
+    {"b":"house","l":4},
+    {"b":"department","l":4},
+    {"b":"campground","l":4},
+    {"b":"hardware","l":3},
+    {"b":"supermarket","l":2},
+    {"b":"rv_dealer","l":2},
+    {"b":"church","l":2},
+    {"b":"shop_small","l":3}
+  ],
+  "notes": "Stores are emptied fast; the same gear sits forgotten in garage rafters, attics and storage units."
+}

@@ -1,0 +1,34 @@
+{
+  "id": "egg_incubator",
+  "name": "Egg incubator",
+  "group": "Farm and outdoor",
+  "aliases": ["incubator","egg incubator","chick incubator","hatcher","poultry incubator","hatching machine"],
+  "brands": ["Brinsea","Hova-Bator","Little Giant","GQF","Rcom","Vevor"],
+  "prev": 2,
+  "tools": ["screwdriver"],
+  "mins": 10,
+  "kg": 5,
+  "hazards": [],
+  "comps": [
+    {"key":"thermostat","fn":"thermostat","spec":"Digital temperature controller with probe, holds within about 0.1–0.5 °C","qty":1,"ext":1,"obs":5,"loc":"Lid or front panel"},
+    {"key":"heating_element","fn":"heating_element","spec":"Heater, 25–150W, mains or 12V","v":12,"w":[25,150],"qty":1,"ext":1,"obs":5,"loc":"Lid or rear wall"},
+    {"key":"fan","fn":"fan","spec":"Small circulation fan, 12V or mains","v":12,"qty":1,"ext":1,"obs":5,"loc":"Beside the heater"},
+    {"key":"motor_sync","fn":"motor_sync","spec":"Egg-turner gear motor, about 1–5 rpm","v":[120,240],"ac":true,"qty":1,"ext":1,"obs":5,"loc":"Under the egg tray"},
+    {"key":"sensor_misc","fn":"sensor_misc","spec":"Humidity sensor (digital models)","qty":1,"ext":2,"obs":5,"loc":"Inside the chamber","p":0.5},
+    {"key":"cooler_box","fn":"cooler_box","spec":"Foam or double-walled plastic cabinet","qty":1,"ext":1,"obs":5,"loc":"The body"},
+    {"key":"plastic_sheet","fn":"plastic_sheet","spec":"Clear viewing window","qty":1,"ext":1,"obs":5,"loc":"Lid"},
+    {"key":"psu","fn":"psu","spec":"12V adapter (12V models)","v":12,"qty":1,"ext":1,"obs":4,"loc":"Plug-in brick"}
+  ],
+  "boards": [
+    {"id":"mcu_board","qty":1,"loc":"Controller","p":0.7}
+  ],
+  "buildings": [
+    {"b":"farm_supply","l":5},
+    {"b":"farm","l":4},
+    {"b":"pet_shop","l":3},
+    {"b":"school","l":3},
+    {"b":"house","l":2},
+    {"b":"garden_centre","l":2}
+  ],
+  "notes": "The thermostat and heater make a precise warm box for hatching eggs, raising seedlings, proving dough or culturing yoghurt."
+}

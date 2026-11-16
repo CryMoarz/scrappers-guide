@@ -1,0 +1,20 @@
+{
+  "id": "wifi_router_tp_link_eap615_wall_v1",
+  "device": "wifi_router",
+  "brand": "TP-Link",
+  "model": "EAP615-Wall v1",
+  "fcc": "2AXJ4EAP615WALL",
+  "notes": "Chips for hardware version v1; other versions of the EAP615-Wall can differ.",
+  "research": {"gaps":[],"method":["Not yet fact-checked: its parts show as likely until a fact-check confirms them against their sources.","Imported from the OpenWrt Table of Hardware (toh.json, 2026-11-13): the hardware data page for this version, by OpenWrt wiki contributors under CC BY-SA 4.0."]},
+  "comps": [
+    {"key":"ic_mcu_soc","fn":"ic_mcu","spec":"SoC MediaTek MT7621AT, 2 cores at 880 MHz","qty":1,"ext":4,"obs":3,"source":"https://openwrt.org/toh/hwdata/tp-link/tp-link_eap615-wall","conf":"likely"},
+    {"key":"ic_memory_flash","fn":"ic_memory","spec":"Flash, 16 MB","qty":1,"ext":2,"obs":4,"source":"https://openwrt.org/toh/hwdata/tp-link/tp-link_eap615-wall","conf":"likely"},
+    {"key":"ic_memory_ram","fn":"ic_memory","spec":"RAM, 128 MB","qty":1,"ext":3,"obs":3,"source":"https://openwrt.org/toh/hwdata/tp-link/tp-link_eap615-wall","conf":"likely"},
+    {"key":"radio_rf","spec":"Wi-Fi: MediaTek MT7905DAN, MediaTek MT7975DN (2.4 GHz b/g/n/ax, 5 GHz a/n/ac/ax)","qty":2,"source":"https://openwrt.org/toh/hwdata/tp-link/tp-link_eap615-wall","conf":"likely"},
+    {"key":"psu","spec":"Power supply: PoE 802.3at","source":"https://openwrt.org/toh/hwdata/tp-link/tp-link_eap615-wall","conf":"likely"},
+    {"key":"connector","spec":"Ethernet ports: 4× gigabit","qty":4,"source":"https://openwrt.org/toh/hwdata/tp-link/tp-link_eap615-wall","conf":"likely"}
+  ],
+  "sources": [
+    {"title":"OpenWrt Table of Hardware: TP-Link EAP615-Wall v1 (OpenWrt wiki contributors, CC BY-SA 4.0)","url":"https://openwrt.org/toh/hwdata/tp-link/tp-link_eap615-wall"}
+  ]
+}

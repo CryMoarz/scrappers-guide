@@ -1,0 +1,28 @@
+{
+  "id": "semi",
+  "name": "Semi truck",
+  "group": "Vehicles and mobility",
+  "aliases": ["tractor trailer","18 wheeler"],
+  "brands": ["Freightliner","Peterbilt","Kenworth","Volvo","Mack","Western Star"],
+  "prev": 3,
+  "tools": ["socket","cutters"],
+  "mins": 60,
+  "hazards": ["acid","fuel","heavy"],
+  "comps": [
+    {"key":"battery_pb","fn":"battery_pb","spec":"2–4 group 31 12V batteries","v":12,"qty":3,"ext":2,"obs":3,"loc":"Battery box behind the cab steps"},
+    {"key":"alternator","fn":"alternator","spec":"High-output alternator","v":[12,14],"a":[130,300],"w":[1800,4200],"qty":1,"ext":3,"obs":3,"loc":"Engine"},
+    {"key":"radio_rf","fn":"radio_rf","spec":"CB radio","qty":1,"ext":1,"obs":3,"loc":"Cab"},
+    {"key":"inverter","fn":"inverter","spec":"Cab power inverter (many trucks)","v":12,"w":[1000,2500],"ac":true,"qty":1,"ext":2,"obs":4,"loc":"Cab"},
+    {"key":"led_light","fn":"led_light","spec":"LED marker and work lights","v":[12,24],"w":[1,40],"qty":10,"ext":1,"obs":3,"loc":"Exterior"},
+    {"key":"compressor","fn":"compressor","spec":"Air brake compressor","qty":1,"ext":5,"obs":4,"loc":"Engine"},
+    {"key":"wire_heavy","fn":"wire_heavy","spec":"Heavy battery cables","qty":4,"ext":2,"obs":4,"loc":"Battery box"},
+    {"key":"fuse","fn":"fuse","spec":"Blade fuses and circuit breakers","a":[5,30],"qty":30,"ext":1,"obs":3,"loc":"Dash fuse panel"}
+  ],
+  "buildings": [
+    {"b":"gas_station","l":4},
+    {"b":"warehouse","l":5},
+    {"b":"parking","l":4},
+    {"b":"factory","l":3},
+    {"b":"auto_wrecker","l":3}
+  ]
+}

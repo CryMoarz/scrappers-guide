@@ -1,0 +1,33 @@
+{
+  "id": "laptop_lenovo_thinkpad_t480",
+  "device": "laptop",
+  "brand": "Lenovo",
+  "model": "ThinkPad T480 (20L5, 20L6)",
+  "notes": "Covers machine types 20L5 and 20L6.",
+  "research": {"checked":"2026-11-11","gaps":["The pages read give no chemistries, wattages or part numbers.","It gives no release date, so years is left out.","Not recorded: memory, storage and keyboard (no matching part type), and coin-cell chemistry and adapter wattage (not stated in the sources read)."],"method":["Lenovo's T480 Hardware Maintenance Manual names machine types 20L5 and 20L6 in its About this manual section (PDF p.5), and its FRU tables and removal pages are the source of the parts below.","Notebookcheck's series page names 20L5 and 20L6 in its model numbers and lists 14-inch 1920x1080 displays for most configurations, a 720p webcam, USB Type-C charging and a 48-Wh ancillary battery."]},
+  "comps": [
+    {"key":"battery_li","conf":"documented","spec":"Removable battery; checkout measures voltage between battery terminals 1 (+) and 7 (-); manual says only batteries made for this system by Lenovo or an authorized builder are supported","source":"https://download.lenovo.com/pccbbs/mobiles_pdf/t480_hmm_en.pdf#page=35"},
+    {"key":"b:motherboard:battery_coin","conf":"documented","spec":"Coin-cell battery, FRU 1100; access requires removing the removable battery (1010) and base cover (1030) first; manual gives no chemistry or size","source":"https://download.lenovo.com/pccbbs/mobiles_pdf/t480_hmm_en.pdf#page=83"},
+    {"key":"psu","conf":"documented","spec":"USB-C type ac power adapter shipped with the computer; manual gives no voltage or wattage","source":"https://download.lenovo.com/pccbbs/mobiles_pdf/t480_hmm_en.pdf#page=35"},
+    {"key":"display","conf":"documented","spec":"LCD panel, LCD FRU 3; listed as neither a self-service nor an optional-service CRU","source":"https://download.lenovo.com/pccbbs/mobiles_pdf/t480_hmm_en.pdf#page=59"},
+    {"key":"camera","conf":"documented","spec":"Camera/microphone module; manual lists a conventional camera/microphone module and an infrared camera/microphone module, each on some models (LCD FRUs 6 and 7)","source":"https://download.lenovo.com/pccbbs/mobiles_pdf/t480_hmm_en.pdf#page=59"},
+    {"key":"speaker","conf":"documented","spec":"Speaker assembly, FRU 1110; its removal uses four M2 x 4.6 mm nylon-coated screws at 0.181 Nm","source":"https://download.lenovo.com/pccbbs/mobiles_pdf/t480_hmm_en.pdf#page=85"},
+    {"key":"fan","conf":"documented","spec":"Thermal fan assembly, FRU 1150; access requires removing the removable battery (1010) and base cover (1030) first","source":"https://download.lenovo.com/pccbbs/mobiles_pdf/t480_hmm_en.pdf#page=88"},
+    {"key":"battery_li_builtin","fn":"battery_li","spec":"Built-in battery, FRU 1120; manual says to disable it before servicing","qty":1,"ext":3,"obs":3,"loc":"Behind the base cover","conf":"documented","source":"https://download.lenovo.com/pccbbs/mobiles_pdf/t480_hmm_en.pdf#page=85"},
+    {"key":"radio_rf_wlan_bt","fn":"radio_rf","spec":"Wireless-LAN/Bluetooth card; listed as an optional-service CRU in the major FRU table","qty":1,"ext":3,"obs":3,"conf":"documented","source":"https://download.lenovo.com/pccbbs/mobiles_pdf/t480_hmm_en.pdf#page=58"},
+    {"key":"radio_rf_wwan","fn":"radio_rf","spec":"Wireless-WAN card, section 1060; orange cable to MAIN, blue to AUX, green to GPS connector if one is supplied","qty":1,"ext":3,"obs":3,"loc":"Behind the base cover","conf":"documented","source":"https://download.lenovo.com/pccbbs/mobiles_pdf/t480_hmm_en.pdf#page=79"},
+    {"key":"antenna_coax_wlan_wwan","fn":"antenna_coax","spec":"Wireless-LAN antenna and wireless-WAN antenna (LCD FRU 8, on some models)","qty":1,"ext":2,"obs":2,"loc":"Inside the LCD unit","conf":"documented","source":"https://download.lenovo.com/pccbbs/mobiles_pdf/t480_hmm_en.pdf#page=59"},
+    {"key":"microphone_module","fn":"microphone","spec":"Conventional or infrared camera/microphone module (LCD FRUs 6 and 7, on some models); manual does not say how many microphones","qty":1,"ext":2,"obs":2,"loc":"Inside the LCD unit","conf":"documented","source":"https://download.lenovo.com/pccbbs/mobiles_pdf/t480_hmm_en.pdf#page=59"}
+  ],
+  "sources": [
+    {"title":"Lenovo T480 Hardware Maintenance Manual, PDF p.5 (About this manual: machine types 20L5 and 20L6)","url":"https://download.lenovo.com/pccbbs/mobiles_pdf/t480_hmm_en.pdf#page=5"},
+    {"title":"Lenovo T480 Hardware Maintenance Manual, PDF p.35 (ac adapter, removable battery checkout)","url":"https://download.lenovo.com/pccbbs/mobiles_pdf/t480_hmm_en.pdf#page=35"},
+    {"title":"Lenovo T480 Hardware Maintenance Manual, PDF p.58 (major FRU table)","url":"https://download.lenovo.com/pccbbs/mobiles_pdf/t480_hmm_en.pdf#page=58"},
+    {"title":"Lenovo T480 Hardware Maintenance Manual, PDF p.59 (LCD FRU table)","url":"https://download.lenovo.com/pccbbs/mobiles_pdf/t480_hmm_en.pdf#page=59"},
+    {"title":"Lenovo T480 Hardware Maintenance Manual, PDF p.79 (wireless-WAN and wireless-LAN modules)","url":"https://download.lenovo.com/pccbbs/mobiles_pdf/t480_hmm_en.pdf#page=79"},
+    {"title":"Lenovo T480 Hardware Maintenance Manual, PDF p.83 (coin-cell battery)","url":"https://download.lenovo.com/pccbbs/mobiles_pdf/t480_hmm_en.pdf#page=83"},
+    {"title":"Lenovo T480 Hardware Maintenance Manual, PDF p.85 (speaker assembly, built-in battery)","url":"https://download.lenovo.com/pccbbs/mobiles_pdf/t480_hmm_en.pdf#page=85"},
+    {"title":"Lenovo T480 Hardware Maintenance Manual, PDF p.88 (thermal fan assembly)","url":"https://download.lenovo.com/pccbbs/mobiles_pdf/t480_hmm_en.pdf#page=88"},
+    {"title":"Notebookcheck, Lenovo ThinkPad T480 series","url":"https://www.notebookcheck.net/Lenovo-ThinkPad-T480-Series.299710.0.html"}
+  ]
+}

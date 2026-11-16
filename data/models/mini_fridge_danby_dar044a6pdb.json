@@ -1,0 +1,28 @@
+{
+  "id": "mini_fridge_danby_dar044a6pdb",
+  "device": "mini_fridge",
+  "brand": "Danby",
+  "model": "DAR044A6PDB",
+  "notes": "Danby 4.4 cu ft retro compact in pearl white; the spec sheet gives R600a refrigerant and the owner's manual warns that it is flammable and the tubing must not be punctured. The parts list also covers the DAR044XA6PDB and lists the door gasket (black) as 1.05.35.03.515; the product page calls the thermostat mechanical, and the FTC label for the DAR044A6 family shows 268 kWh a year of estimated electricity use.",
+  "research": {"checked":"2026-11-12","gaps":["The spec sheet prints 'Amount of Refrigerant 22' with no unit, so no charge is recorded.","The parts list gives no voltage or amps for the parts claimed; the manual says the serial rating plate has the voltage and frequency.","The parts list covers DAR044A6PDB and DAR044XA6PDB together and does not say which one a given unit is.","The parts list names the transformer YLB-1213 without ratings or what it feeds.","The parts list gives the door gasket number (1.05.35.03.515) and the manual calls the gasket magnetic, so the two are not joined in one claim.","The parts list notes column marks many rows special order: a stock note, not a claim about the unit.","Document dates (parts list effective 2016-06-16 with a 2018 part-number update; manual 2019-03-18) are not production years."],"method":["Danby Schematic / Part List (XLSX, cdnns.danby.com; header 'DAR044A6PDB / DAR044XA6PDB', factory model BC-126CCA): one sheet, 68 numbered rows, read as sheet XML.","Danby spec sheet PDF (danby.com): capacity, R600a, interior size.","danby.com product page: mechanical thermostat, interior white LED light, automatic defrost.","Danby owner's manual EFSOM (2019-03-18): magnetic gasket, flammable refrigerant warning, thermostat dial on the inner ceiling.","FTC Energy Guide label (file dated 2022-11-11): 268 kWh a year, shared by five DAR044A6 models including the PDB.","Danby Appliance Parts page for DAR044A6PDB: lists the same part numbers as the sheet, a cross-check only.","No site refused; no bot checks on Danby domains."]},
+  "comps": [
+    {"key":"compressor","conf":"documented","spec":"Compressor model DG40BY1, Danby part 1.03.01.01.324","qty":1,"source":"https://cdnns.danby.com/4973611/DAR044A6PDB.xlsx"},
+    {"key":"thermostat","conf":"documented","spec":"Thermostat WDF18D-102-024E (also written WDF18D-L3(E)); Danby part 1.03.02.01.101, with knob 1.25.02.15.06.049","qty":1,"source":"https://cdnns.danby.com/4973611/DAR044A6PDB.xlsx"},
+    {"key":"relay_ptc_olp","fn":"relay","spec":"PTC and overload protector combination ZHB60-120P4.7; Danby part 1.03.01.01.324J","qty":1,"ext":1,"obs":4,"conf":"documented","source":"https://cdnns.danby.com/4973611/DAR044A6PDB.xlsx"},
+    {"key":"magnet_ferrite","conf":"documented","spec":"Magnetic door gasket (the door seal)","qty":1,"source":"https://cdnns.danby.com/4973611/DAR044A6MDB_DAR044A6PDB_DAR044A6DDB_DAR044A6LDB_DAR044A6MDB-6_EFSOM_20190318.pdf"},
+    {"key":"cooler_box","conf":"documented","spec":"Cabinet, 4.4 cu ft (124 L); interior 17.48 x 16.73 x 28.9 in","source":"https://www.danby.com/en-us/products/compact-refrigerators-en-us/dar044a6pdb/?o=pdf"},
+    {"key":"led_light","fn":"led_light","spec":"LED light panel, 10000K, part 1.01.03.03.073R; LED light cover 1.02.11.03.076","qty":1,"ext":2,"obs":4,"conf":"documented","source":"https://cdnns.danby.com/4973611/DAR044A6PDB.xlsx"},
+    {"key":"switch_light","fn":"switch","spec":"Light switch HC-050K.4, part 1.01.03.02.035R","qty":1,"ext":1,"obs":4,"conf":"documented","source":"https://cdnns.danby.com/4973611/DAR044A6PDB.xlsx"},
+    {"key":"transformer_lv_1","fn":"transformer_lv","spec":"Transformer YLB-1213, part 1.01.07.01.024","qty":1,"ext":2,"obs":3,"conf":"documented","source":"https://cdnns.danby.com/4973611/DAR044A6PDB.xlsx"},
+    {"key":"wire_copper_cord","fn":"wire_copper","spec":"Power supply cord assembly, part 1.01.01.01.204R, E465601 XYP-204 SJT 18AWG x 3C","qty":1,"ext":1,"obs":4,"conf":"documented","source":"https://cdnns.danby.com/4973611/DAR044A6PDB.xlsx"},
+    {"key":"glass_pane_shelf","fn":"glass_pane","spec":"Glass shelf, tempered glass/ABS, part 1.05.31.11.048 (parts list quantity 2)","qty":2,"ext":1,"obs":4,"conf":"documented","source":"https://cdnns.danby.com/4973611/DAR044A6PDB.xlsx"}
+  ],
+  "sources": [
+    {"title":"DAR044A6PDB Schematic / Part List (Danby XLSX, factory model BC-126CCA, effective 2016-06-16, part numbers updated Nov 2018)","url":"https://cdnns.danby.com/4973611/DAR044A6PDB.xlsx"},
+    {"title":"DAR044A6PDB product specifications (Danby PDF, 4.4 cu ft Retro Compact Fridge in Pearl White)","url":"https://www.danby.com/en-us/products/compact-refrigerators-en-us/dar044a6pdb/?o=pdf"},
+    {"title":"DAR044A6PDB product page (danby.com)","url":"https://www.danby.com/en-us/products/compact-refrigerators-en-us/dar044a6pdb/"},
+    {"title":"Compact Refrigerator Owner's Manual, models DAR044A6MDB, DAR044A6PDB, DAR044A6DDB, DAR044A6LDB, DAR044A6MDB-6 (Danby EFSOM, 2019-03-18)","url":"https://cdnns.danby.com/4973611/DAR044A6MDB_DAR044A6PDB_DAR044A6DDB_DAR044A6LDB_DAR044A6MDB-6_EFSOM_20190318.pdf"},
+    {"title":"Energy Guide label, DAR044A6 family (Danby, FTC label file dated 2022-11-11)","url":"https://cdnns.danby.com/4973611/DAR044A6MDB%20%20MDB-6%20%20PDB%20%20DDB%20%20LDB%20Energy%20Card_20221111.230066.pdf"},
+    {"title":"DAR044A6PDB parts page (Danby Appliance Parts, cross-check of part numbers)","url":"https://www.danbyapplianceparts.com/product-category/compact-refrigerators/dar044a6pdb/"}
+  ]
+}

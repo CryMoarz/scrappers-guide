@@ -1,0 +1,14 @@
+{
+  "id": "battery_nimh",
+  "name": "NiMH and NiCd cells",
+  "group": "Power storage",
+  "demand": 4,
+  "keywords": ["battery","batteries","nimh","nicd","aa","aaa","rechargeable","ni-mh","ni-cd","nicad","aa battery","aaa battery","sub-c","c cell","d cell","nickel battery","1.2v"],
+  "substitutes": ["battery_li","battery_pb"],
+  "summary": "Rechargeable nickel cells: AA and AAA NiMH, and older NiCd packs in drills, phones and toys.",
+  "uses": ["Torches, radios and remotes","Solar garden lights and small solar kits","Rebuilding old drill and tool packs"],
+  "identify": "AA, AAA, C, D or sub-C cells marked NiMH or Ni-Cd and 1.2V. Packs of sub-C cells hide in older cordless drills, cordless phones, emergency lights, RC toys and solar garden lights. NiCd holds toxic cadmium: don’t burn or crush it.",
+  "test": "A charged cell reads 1.3–1.4V and a flat one about 1.0–1.2V. Cells left flat for months often come back after two or three full charge cycles.",
+  "decay": {"halfLifeMonths":15,"note":"They self-discharge within months but usually recover with a few full charges; NiCd packs last longer."},
+  "hazards": ["chemical"]
+}

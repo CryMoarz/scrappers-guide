@@ -1,0 +1,31 @@
+{
+  "id": "teardown_flatbed_scanner",
+  "kind": "teardown",
+  "title": "Flatbed scanner: stepper motor, guide rod, belt, glass and mirrors",
+  "keywords": ["flatbed scanner teardown","scanner stepper motor","scanner guide rod","scanner glass","scanner led bar","scanner mirror","all in one printer scanner","ccd scanner"],
+  "summary": "A flatbed scanner holds a stepper motor, a smooth steel guide rod, a long toothed belt, a sheet of glass, an LED light bar and, in many models, first-surface mirrors and a small lens. It takes about 20 minutes with a screwdriver. The glass cuts, and older scanners use a thin glass tube lamp that holds a trace of mercury.",
+  "difficulty": 2,
+  "mins": 20,
+  "tools": ["screwdriver","pliers","pry","cutters","knife","multimeter","tape"],
+  "hazards": ["glass","sharp","mercury","hv"],
+  "materials": [],
+  "steps": [
+    {"text":"Unplug the USB lead and the power adapter. If the scanner is the lid of an all-in-one printer, take the printer part separately (see teardown_inkjet) and treat the scanner as its own unit."},
+    {"text":"Lift the lid and pull it straight up off its hinges. They are usually just slotted. Keep the lid, hinges and the white mat."},
+    {"text":"Turn the scanner over and remove every screw. Look under rubber feet and labels. If there is a transport lock, a slider or a screw at one end of the glass, unlock it so the head moves freely."},
+    {"text":"Pry the top frame off, working round the seam with a flat blade to release the clips. The glass is held in the top frame by tape or small tabs. Lift the frame and glass off together and lay them face down on a soft cloth. Then take the glass out.","warn":"The glass is a large thin sheet that snaps across if flexed. Wear gloves, carry it by the edges, and tape any crack before you move it."},
+    {"text":"Look at the scan head: a long white strip of LEDs, or on older and better scanners a thin glass tube lamp beside the lens. Leave a tube lamp whole.","warn":"A broken tube lamp releases a little mercury, and its inverter board gives a painful high-voltage jolt when powered. Keep it unplugged. If a tube breaks, ventilate and bag the pieces."},
+    {"text":"Unplug the flat ribbon cable between the head and the main board: lift the small latch on the connector, then slide the ribbon out. Unplug the motor lead and any sensor leads."},
+    {"text":"Release the belt. It loops round a small pinion on the motor and an idler at the other end, tensioned by a spring or a sliding mount. Squeeze the spring or slide the idler, and slip the belt off the pinion.","warn":"Small tension springs fly off in the face. Hold them with pliers and keep your eyes clear."},
+    {"text":"Slide the head to one end of its rod. Undo any clip at the ends of the guide rod and pull the rod out through the carriage; some scanners also run on a plastic rail that comes off by hand. Keep the rod, the belt and the head."},
+    {"text":"Motor: undo the 2–4 screws that hold the stepper and its gear block to the frame, unplug it and lift it out. Keep the gears with it."},
+    {"text":"Open the head: unscrew or unclip the cover. On a lens scanner you will see 2–4 mirrors, a lens in a small barrel and a sensor board. Don't touch mirror faces or the lens: lift each by its edges and wrap it in tissue. Unclip the LED bar (2–3 screws or clips) and keep its leads. A simple contact-sensor scanner has just a thin light bar and a sensor strip, with no mirrors."},
+    {"text":"Main board: keep it whole if it has a stepper driver chip; otherwise take off the little forked optical home-position sensor, the lid switch and the buttons, cutting the leads 10 cm back."},
+    {"text":"Test the stepper: with the meter on ohms, find the two coil pairs; each usually reads a few ohms to a few tens of ohms (see test_motor). Turn the shaft by hand: it should feel evenly notchy, not gritty."}
+  ],
+  "notes": "## What's worth keeping and why\n\n- **Stepper motor.** A small bipolar stepper, usually 5–24 V, with a gear block. Drive it from a stepper driver module for a camera slider, a small plotter, a solar tracker or the axis of a light CNC build.\n- **Guide rod.** A smooth, hard 6–10 mm steel rod 25–40 cm long: a slide rail with a bearing on it, a shaft or a pin.\n- **Belt and gears.** A closed toothed belt, usually 60–80 cm long. Its tooth pitch varies, so match it to your pulleys before you plan with it.\n- **LED bar.** A white or RGB LED strip, usually 3–5 V. Test with a coin cell and a resistor, or the meter's diode mode. Drive it from 5 V through a resistor.\n- **Mirrors and lens.** Scanner mirrors are first-surface mirrors (the coating is on the front), so they give no double image. Use them for signalling, a periscope or a small optical bench. The lens makes a small bench magnifier.\n- **Glass.** Usually ordinary float glass, not tempered: good for a picture frame, a cold frame or a small window. Don't use it as an oven window.\n- **Sensor.** Some contact or CCD image sensors are interesting, but they are fragile and need a controller board: keep the head and board together.\n\n## Variations\n\n- Flatbeds with a document feeder have extra rollers and a feed motor.\n- Contact-image-sensor scanners have no mirrors or lens: a thin LED bar and a long sensor strip travel together.\n- Larger or older scanners may have an internal power supply: don't open it unless you have made it dead and discharged any capacitors (see safety_discharge_capacitor).\n\n## What to leave\n\n- The lid foam and plastic case.\n- The main board unless it has a stepper driver.",
+  "tree": {"era":2,"branch":"salvage","requires":["safety_mains_isolation"]},
+  "devices": ["flatbed_scanner"],
+  "parts": ["motor_stepper","rod_shaft","belt_pulley","led_light","optics","sensor_misc"],
+  "license": "CC-BY-SA-4.0"
+}

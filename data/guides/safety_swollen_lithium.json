@@ -1,0 +1,35 @@
+{
+  "id": "safety_swollen_lithium",
+  "kind": "safety",
+  "title": "Deal with swollen or damaged lithium batteries",
+  "keywords": ["swollen battery","puffy battery","bulging battery","damaged lithium","lithium fire","battery smoke","hot battery","punctured battery","dispose lithium","store lithium","lithium storage","battery disposal"],
+  "summary": "How to spot a lithium cell or pack that could catch fire, get it out of a device and away from people, store it so a fire can't spread, and what to do with it when there is no recycling.",
+  "difficulty": 2,
+  "mins": 20,
+  "tools": ["hands","screwdriver","security_bits","tape","multimeter"],
+  "hazards": ["li_fire","chemical","burn"],
+  "materials": [
+    {"item":"Metal box, steel bucket or metal can with a loose-fitting lid","qty":"1"},
+    {"item":"Dry sand or dry dirt","qty":"enough to bury the cells"},
+    {"item":"Electrical tape","qty":"1 roll"},
+    {"item":"Plastic card or dental floss for easing out glued pouch cells","qty":"1","optional":true},
+    {"item":"Shovel or long tongs","qty":"1"}
+  ],
+  "steps": [
+    {"text":"Look at every lithium device or pack before you charge or open it. Check for swelling, a case or screen that bulges or lifts, dents, punctures, leaks, rust, scorch marks, melted plastic or a sweet chemical smell.","warn":"A phone, tablet or laptop with a lifted screen or back cover usually has a swelling battery."},
+    {"text":"Feel for heat with the back of your hand. If a cell or device is hot while not charging or working, or is hissing or smoking, don't open it. Carry it out on a shovel or metal tray and put it on bare earth, sand or concrete at least 3 m from anything that burns.","warn":"Hot, hissing or smoking cells can burst into flame. Turn your face away and don't breathe the smoke."},
+    {"text":"Never charge a damaged cell. Unplug any charger and switch the device off."},
+    {"text":"Take swollen packs out of devices outdoors, on a non-flammable surface, with sand and the shovel close by. Undo screws and lift covers gently. If a pouch cell is glued in, ease it out slowly with a plastic card or dental floss slid underneath. If it won't come, store the whole device instead.","warn":"Never pry a pouch cell with metal tools or a knife. A puncture can start a fire within seconds."},
+    {"text":"Tape over the terminals or the connector so nothing can short them."},
+    {"text":"Put a layer of sand in the metal container, lay the cell on it, and cover it with more sand. Put the lid on loosely. Keep the container outdoors or in an empty shed, off wooden floors, away from fuel and from where people sleep.","warn":"Don't seal it airtight. Gas from a venting cell needs somewhere to go."},
+    {"text":"Check it after an hour, then daily for a few days. A cell that stays cool is calmer but still damaged. Never use or charge it again."},
+    {"text":"If one catches fire, keep away from the smoke and stay upwind. Let a single small cell burn out on bare ground, or bury it with sand or dirt from a distance. For a bigger pack, pour on lots of water from a distance to cool the cells around it. Watch for flare-ups for at least an hour.","warn":"Lithium smoke is toxic. Keep children and animals away. Burned packs can reignite hours later."},
+    {"text":"With no recycling, keep dead and damaged cells in the sand-filled metal container, outdoors, away from water sources and gardens, until a recycler exists.","warn":"Don't burn them, throw them in a rubbish fire, or bury them near a well or stream."},
+    {"text":"Store healthy spare cells at 40–60% charge, in a cool dry place, with terminals covered, in a metal box. Check them every few months."}
+  ],
+  "notes": "## Why lithium cells catch fire\n\nInside a lithium cell, a very thin separator keeps the two electrodes apart. Crushing, puncturing, overcharging, overheating or long deep discharge can damage it. Then the cell shorts inside, heats itself, and vents flammable, toxic gas that catches fire. This is called thermal runaway. In a pack, one hot cell can set off the next.\n\nSwelling is gas building up inside a pouch cell as it breaks down. It means the cell is failing even if it still works.\n\n## What counts as damaged\n\n| Sign | What it means | What to do |\n|---|---|---|\n| Swollen, puffy, lifting covers | Gas inside; the cell is breaking down | Retire it; store in sand |\n| Dents, crushed corners, punctures | Separator may be damaged | Retire it |\n| Hot when idle | Internal short | Move it outside now |\n| Leaks, crust, sweet smell | Seal broken; electrolyte escaping | Retire it; wear gloves |\n| Melted plastic, from a burnt building or a very hot vehicle | Heat damage | Retire it |\n| Torn wrapper on a round cell | The whole metal can is negative; a tear near the top can short | Re-wrap with tape if otherwise healthy |\n| Below about 2 V after long storage | May have internal damage | Don't recharge; see the lithium cell test |\n\n## Storage\n\n- 40–60% charge is gentlest for storage. For common lithium-ion cells that is about 3.7–3.8 V.\n- Keep them cool. Hot vehicles, lofts and direct sun shorten their life and raise fire risk.\n- Never charge below freezing (0 °C).\n- Cover the terminals. Never carry loose cells in a pocket or bag with coins or keys.\n\n## Lithium metal cells\n\nNon-rechargeable lithium cells (camera cells, coin cells, lithium AA) contain lithium metal. Never try to charge them. If one burns, smother it with dry sand or dirt.\n\n## Common mistakes\n\n- Charging a puffy phone \"just once more\".\n- Keeping dead packs in a cardboard box inside the shelter.\n- Levering a glued battery out with a screwdriver.\n- Sealing damaged cells in an airtight jar or bag.\n- Dropping cells in salt water to \"discharge\" them. It corrodes them, makes gas, and doesn't reliably drain them. Don't.",
+  "tree": {"era":2,"branch":"salvage","requires":["safety_entering_buildings"]},
+  "devices": ["vape","power_bank","laptop","smartphone","tablet","cordless_drill","ebike","scooter","hoverboard","power_station","rc_drone","robot_vacuum","stick_vacuum","electric_toothbrush"],
+  "parts": ["battery_li","bms"],
+  "license": "CC-BY-SA-4.0"
+}

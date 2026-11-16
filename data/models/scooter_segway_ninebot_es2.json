@@ -1,0 +1,22 @@
+{
+  "id": "scooter_segway_ninebot_es2",
+  "device": "scooter",
+  "brand": "Segway-Ninebot",
+  "model": "KickScooter ES2",
+  "fcc": "2ALS8-NT9527",
+  "notes": "The FCC ID is listed for models ES1, ES2 and ES4.",
+  "research": {"checked":"2026-11-11","gaps":["Neither page states the battery cell chemistry or cell count, so the battery_li slot here is the catalogue's battery part, not a stated chemistry.","Ninebot's online ES-series spec table lists a different nominal motor power for the ES2, so treat 250 W with caution."],"method":["The ManualsLib page titled Ninebot ES2 Manual (a third-party copy; its Specifications table has a single column headed ES2) backs every part below.","The ManualsLib page for the Segway Ninebot KickScooter ES series manual (Certifications, page 11) lists FCC ID 2ALS8-NT9527 and IC 22636-NT9527 for model ES1/ES2/ES4.","The 250 W motor figure is the max-power value printed in that ES2 manual copy only.","Qty, ext and obs ratings are editorial, not source facts."]},
+  "comps": [
+    {"key":"motor_bldc","conf":"documented","spec":"The manual's warnings refer to a hub motor (it can be hot after riding). Specifications table: Max. Power 250 W, the only motor row; nominal power is not listed. Brushless type and motor count not stated.","w":250,"source":"https://www.manualslib.com/manual/3779950/Ninebot-Es2.html"},
+    {"key":"battery_li","conf":"documented","spec":"Specifications table: Nominal Voltage 36 VDC; Nominal Capacity 187 Wh; Max. Charging Voltage 42 VDC; Number of Batteries 1 (a footnote says a second pack can be installed, which changes some parameters). Cell chemistry and cell count not stated.","source":"https://www.manualslib.com/manual/3779950/Ninebot-Es2.html"},
+    {"key":"b:battery_bms:bms","conf":"documented","spec":"Specifications table row 'Battery Management System': over-heating, short circuit, over-current and over-charge protection. Board or IC part number not stated.","source":"https://www.manualslib.com/manual/3779950/Ninebot-Es2.html"},
+    {"key":"charger","conf":"documented","spec":"Specifications table: Input Voltage 100-240 VAC; Output Voltage 42 VDC; Output Current 1.7 A; Output Power 71 W; Duration of Charging 3.5 h. Charging section: the LED on the charger changes from red (charging) to green (trickle charge).","v":42,"a":1.7,"w":71,"source":"https://www.manualslib.com/manual/3779950/Ninebot-Es2.html"},
+    {"key":"led_light_headlight","fn":"led_light","spec":"Headlight: when the scooter is powered on, a single click turns the headlight on or off. LED or bulb type not stated.","qty":1,"ext":1,"obs":1,"conf":"documented","source":"https://www.manualslib.com/manual/3779950/Ninebot-Es2.html"},
+    {"key":"led_light_brake","fn":"led_light","spec":"Brake light: Features table lists 'Brake Light' as 'LED rear light'.","qty":1,"ext":1,"obs":1,"loc":"rear of the scooter; exact position not stated","conf":"documented","source":"https://www.manualslib.com/manual/3779950/Ninebot-Es2.html"},
+    {"key":"display_dashboard","fn":"display","spec":"Dashboard display: speedometer shows current speed and error codes when faults are detected; battery indicator is 5 bars, each about 20% power; Bluetooth icon blinks when ready to connect and stays solid when connected to a mobile device.","qty":1,"ext":1,"obs":1,"loc":"dashboard (Product Overview); exact position not stated","conf":"documented","source":"https://www.manualslib.com/manual/3779950/Ninebot-Es2.html"}
+  ],
+  "sources": [
+    {"title":"ManualsLib: Ninebot ES2 Manual (third-party copy; ES2 Specifications, Features, Product Overview and Charging sections)","url":"https://www.manualslib.com/manual/3779950/Ninebot-Es2.html"},
+    {"title":"ManualsLib: Segway Ninebot KickScooter ES series manual, Certifications page (FCC ID 2ALS8-NT9527 and IC 22636-NT9527 for ES1/ES2/ES4)","url":"https://manualslib.mx/manual/350987/Segway-Ninebot-Kickscooter-Es-Serie.html?page=11"}
+  ]
+}

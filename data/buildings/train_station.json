@@ -1,0 +1,7 @@
+{
+  "id": "train_station",
+  "name": "Train and transit stations",
+  "osm": ["railway=station","public_transport=station"],
+  "exposure": 3,
+  "notes": "Lighting, signage, ticket machines, emergency batteries and lifts."
+}

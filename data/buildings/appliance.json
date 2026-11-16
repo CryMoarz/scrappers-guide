@@ -1,0 +1,6 @@
+{
+  "id": "appliance",
+  "name": "Appliance stores",
+  "osm": ["shop=appliance"],
+  "exposure": 3
+}

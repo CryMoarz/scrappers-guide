@@ -1,0 +1,24 @@
+{
+  "id": "hoverboard_hover_1_hy_chr",
+  "device": "hoverboard",
+  "brand": "Hover-1",
+  "model": "HY-CHR",
+  "notes": "Covers the various HY-CHR models.",
+  "research": {"checked":"2026-11-11","gaps":["The driver motor power is not stated.","There are no replacement guides for the charging port or power button, which appear only as steps in the disassembly guide."],"method":["The iFixit Hover-1 Chrome device page gives model number HY-CHR (black label on the bottom) and says the page covers \"the various HY-CHR models\"; the manual is titled 'Hover-1 CHROME (HY-CHR)' and is read from a third-party manual mirror (manualslib.tech).","The manual gives a 25.2 V, 4.0 Ah lithium-ion battery, a COMING DATA CO LTD CP2910 charger (AC 100-130V input), two driver motors, a Bluetooth V4.0 speaker, gyroscopes and acceleration sensors, and, separately, four sensors under the foot mats.","IFixit lists replacement guides for the battery, Bluetooth speaker, LED headlights, left gyroscope sensor board and outer shell.","Not source facts."]},
+  "comps": [
+    {"key":"battery_li","conf":"documented","spec":"Rechargeable lithium-ion battery. Battery voltage 25.2 V. Battery capacity 4.0 Ah. Cell count not stated.","v":25.2,"ah":4,"source":"https://www.manualslib.tech/guide/645373/hover-1-chrome-hy-chr-hoverboard-manual.html"},
+    {"key":"charger","conf":"documented","spec":"Charger manufacturer COMING DATA CO LTD, model CP2910. Power requirement AC 100-130V, 50-60 Hz. Output voltage and current not stated.","v":[100,130],"source":"https://www.manualslib.tech/guide/645373/hover-1-chrome-hy-chr-hoverboard-manual.html"},
+    {"key":"motor_bldc","conf":"documented","spec":"Two driver motors, controlled independently or with both feet. Motor power in watts and motor type not stated.","source":"https://www.manualslib.tech/guide/645373/hover-1-chrome-hy-chr-hoverboard-manual.html"},
+    {"key":"speaker","conf":"documented","spec":"Bluetooth speaker, V4.0, with stereo sound quality. Power output not stated.","source":"https://www.manualslib.tech/guide/645373/hover-1-chrome-hy-chr-hoverboard-manual.html"},
+    {"key":"led_light","conf":"documented","spec":"LED headlights on the front, on an LED board with a right side (next to the power button) and a left side; the LEDs are not symmetrical. The guide unplugs the LEDs (step 3) and, on the left side, disconnects a red wire attached to them (step 5). LED count and electrical data not stated.","source":"https://www.ifixit.com/Guide/Hover-1+Chrome+LED+Headlights+Replacement/114516"},
+    {"key":"sensor_misc","conf":"documented","spec":"Digital electronic gyroscopes and acceleration sensors control balance and motion. Separately, the manual says there are four sensors under the foot mats (sensor type not stated).","source":"https://www.manualslib.tech/guide/645373/hover-1-chrome-hy-chr-hoverboard-manual.html"},
+    {"key":"connector_charge","fn":"connector","spec":"Charging port. The disassembly guide says 'Unplug the charging port.' in Step 3.","qty":1,"ext":1,"obs":2,"loc":"unplugged in Step 3, after the shell with the speaker grille is lifted","conf":"documented","source":"https://www.ifixit.com/Guide/Hover-1+Chrome+Disassembly/114340"},
+    {"key":"switch_power","fn":"switch","spec":"Power button. The disassembly guide says 'Unplug the power button' in Step 3.","qty":1,"ext":1,"obs":2,"loc":"unplugged in Step 3, after the shell with the speaker grille is lifted","conf":"documented","source":"https://www.ifixit.com/Guide/Hover-1+Chrome+Disassembly/114340"}
+  ],
+  "sources": [
+    {"title":"iFixit: Hover-1 Chrome device page (states model HY-CHR on the bottom label)","url":"https://www.ifixit.com/Device/Hover-1_Chrome"},
+    {"title":"Hover-1 CHROME (HY-CHR) Hoverboard Manual (battery, charger, motors, speaker, sensors)","url":"https://www.manualslib.tech/guide/645373/hover-1-chrome-hy-chr-hoverboard-manual.html"},
+    {"title":"iFixit: Hover-1 Chrome LED Headlights Replacement guide","url":"https://www.ifixit.com/Guide/Hover-1+Chrome+LED+Headlights+Replacement/114516"},
+    {"title":"iFixit: Hover-1 Chrome Disassembly guide (charging port, power button)","url":"https://www.ifixit.com/Guide/Hover-1+Chrome+Disassembly/114340"}
+  ]
+}

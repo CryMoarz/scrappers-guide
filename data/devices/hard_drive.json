@@ -1,0 +1,41 @@
+{
+  "id": "hard_drive",
+  "name": "Hard disk drives",
+  "group": "Electronics and office",
+  "aliases": ["hdd","hard disk","external hard drive","backup drive","disk drive","portable hard drive"],
+  "brands": ["Western Digital","Seagate","Toshiba","HGST","Hitachi"],
+  "era": "1990s–present",
+  "prev": 5,
+  "tools": ["screwdriver","security_bits"],
+  "mins": 10,
+  "kg": 0.6,
+  "repairs": {"records":479,"fixed":0.43,"end_of_life":0.26},
+  "hazards": ["magnet_pinch","glass"],
+  "comps": [
+    {"key":"magnet_strong","fn":"magnet_strong","spec":"Pair of curved neodymium magnets on steel plates — very strong; they pinch skin and chip if they snap together","qty":2,"ext":2,"obs":4,"loc":"Under the head arm, held by one or two screws"},
+    {"key":"optics","fn":"optics","spec":"Mirror-polished platters (aluminium, or glass in many laptop drives) — good signal mirrors","qty":2,"ext":2,"obs":5,"loc":"Stacked on the spindle"},
+    {"key":"motor_bldc","fn":"motor_bldc","spec":"Three-phase brushless spindle motor, 5,400–7,200 RPM","v":[5,12],"qty":1,"ext":3,"obs":5,"loc":"Under the platters"},
+    {"key":"bearing","fn":"bearing","spec":"Head-arm pivot ball-bearing cartridge","qty":1,"ext":3,"obs":5,"loc":"Pivot of the head arm"},
+    {"key":"wire_copper","fn":"wire_copper","spec":"Flat voice coil on the head arm","qty":1,"ext":2,"obs":5,"loc":"Between the magnets"},
+    {"key":"controller_board","fn":"controller_board","spec":"Logic board with motor driver, processor and cache chip","qty":1,"ext":1,"obs":5,"loc":"Underside, held by small Torx screws"}
+  ],
+  "boards": [],
+  "buildings": [
+    {"b":"office","l":5},
+    {"b":"datacenter","l":5},
+    {"b":"recycling","l":5},
+    {"b":"electronics","l":4},
+    {"b":"school","l":4},
+    {"b":"house","l":4},
+    {"b":"bank","l":3},
+    {"b":"hospital","l":3},
+    {"b":"clinic","l":3},
+    {"b":"self_storage","l":3},
+    {"b":"police","l":3},
+    {"b":"makerspace","l":3}
+  ],
+  "notes": "Torx T6–T9 bits open most drives; one screw often hides under the label. Desktop (3.5 in) drives have the biggest magnets. External drives add a 12V or 5V adapter and a USB board.",
+  "sources": [
+    {"title":"Open Repair Alliance, Open Repair Data v0.3 (community repair events, 2012 to July 2026; CC BY-SA 4.0): 479 repairs recorded as PC accessory (hard drive subset)","url":"https://github.com/openrepair/data"}
+  ]
+}

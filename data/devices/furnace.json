@@ -1,0 +1,32 @@
+{
+  "id": "furnace",
+  "name": "Furnace (forced air)",
+  "group": "Building systems",
+  "aliases": ["gas furnace","electric furnace"],
+  "brands": ["Carrier","Trane","Lennox","Rheem","Goodman","York","Ruud","American Standard","Bryant","Amana"],
+  "prev": 5,
+  "tools": ["screwdriver","socket"],
+  "mins": 30,
+  "hazards": [],
+  "comps": [
+    {"key":"motor_ac","fn":"motor_ac","spec":"Blower motor (PSC or variable-speed ECM)","v":[120,240],"w":[250,750],"ac":true,"qty":1,"ext":2,"obs":3,"loc":"Bottom compartment"},
+    {"key":"transformer_lv","fn":"transformer_lv","spec":"24V AC control transformer","v":24,"ac":true,"qty":1,"ext":1,"obs":4,"loc":"Junction box near the controls"},
+    {"key":"fan","fn":"fan","spec":"Squirrel-cage blower wheel","qty":1,"ext":2,"obs":3,"loc":"On the blower motor"},
+    {"key":"relay","fn":"relay","spec":"Control relays","v":24,"a":[10,20],"qty":2,"ext":2,"obs":4,"loc":"Control board"},
+    {"key":"capacitor_large","fn":"capacitor_large","spec":"Blower run capacitor","qty":1,"ext":1,"obs":4,"loc":"Blower housing"},
+    {"key":"valve_solenoid","fn":"valve_solenoid","spec":"Gas valve","v":24,"ac":true,"qty":1,"ext":2,"obs":4,"loc":"Burner compartment"},
+    {"key":"sensor_misc","fn":"sensor_misc","spec":"Flame sensor and pressure switch","qty":2,"ext":2,"obs":5,"loc":"Burner area"}
+  ],
+  "boards": [
+    {"id":"mcu_board","qty":1,"loc":"Furnace control board","p":1}
+  ],
+  "buildings": [
+    {"b":"house","l":5},
+    {"b":"apartment","l":4},
+    {"b":"office","l":4},
+    {"b":"school","l":4},
+    {"b":"church","l":5},
+    {"b":"warehouse","l":3},
+    {"b":"hardware","l":2}
+  ]
+}

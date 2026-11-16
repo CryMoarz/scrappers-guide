@@ -1,0 +1,35 @@
+{
+  "id": "wifi_router",
+  "name": "Wi-Fi routers and modems",
+  "group": "Electronics and office",
+  "aliases": ["cable modem","mesh wifi"],
+  "brands": ["TP-Link","Netgear","ASUS","Linksys","eero","Ubiquiti","Motorola","Arris"],
+  "prev": 5,
+  "tools": ["screwdriver","pry"],
+  "mins": 10,
+  "hazards": [],
+  "comps": [
+    {"key":"radio_rf","fn":"radio_rf","spec":"2.4/5 GHz Wi-Fi radios","qty":2,"ext":3,"obs":4,"loc":"Main board, under shields"},
+    {"key":"antenna_coax","fn":"antenna_coax","spec":"Antennas with pigtail coax","qty":2,"ext":1,"obs":4,"loc":"External or stuck inside the case"},
+    {"key":"psu","fn":"psu","spec":"12V adapter","v":12,"qty":1,"ext":1,"obs":3,"loc":"Plugged in nearby"},
+    {"key":"dcdc_buck","fn":"dcdc_buck","spec":"On-board buck converters","v":[1,5],"a":[1,3],"qty":2,"ext":4,"obs":5,"loc":"Power section of the board"},
+    {"key":"led_light","fn":"led_light","spec":"Status LEDs","v":[3,5],"w":[0.05,0.5],"qty":6,"ext":2,"obs":4,"loc":"Front edge"},
+    {"key":"connector","fn":"connector","spec":"Ethernet jacks and DC jack","qty":5,"ext":3,"obs":4,"loc":"Rear edge"}
+  ],
+  "buildings": [
+    {"b":"house","l":5},
+    {"b":"apartment","l":5},
+    {"b":"office","l":5},
+    {"b":"school","l":5},
+    {"b":"hotel","l":5},
+    {"b":"restaurant","l":4},
+    {"b":"church","l":3},
+    {"b":"bank","l":4},
+    {"b":"recycling","l":3},
+    {"b":"salon","l":2},
+    {"b":"shop_small","l":3}
+  ],
+  "refs": [
+    {"lib":"openwrt","q":"Table of Hardware","note":"Whether a router can run OpenWrt, and how to install it"}
+  ]
+}

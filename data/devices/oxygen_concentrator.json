@@ -1,0 +1,27 @@
+{
+  "id": "oxygen_concentrator",
+  "name": "Oxygen concentrator",
+  "group": "Commercial",
+  "aliases": ["oxygen machine","o2 concentrator"],
+  "brands": ["Inogen","Philips Respironics","Invacare","Drive DeVilbiss","Caire","Yuwell"],
+  "prev": 3,
+  "tools": ["screwdriver"],
+  "mins": 30,
+  "hazards": [],
+  "comps": [
+    {"key":"compressor","fn":"compressor","spec":"Oil-free piston compressor","v":[120,240],"w":[250,450],"ac":true,"qty":1,"ext":2,"obs":5,"loc":"Inside the case"},
+    {"key":"valve_solenoid","fn":"valve_solenoid","spec":"Solenoid valves","v":[12,24],"qty":2,"ext":2,"obs":5,"loc":"Valve block"},
+    {"key":"fan","fn":"fan","spec":"Cooling fans","qty":2,"ext":1,"obs":5,"loc":"Case"},
+    {"key":"sensor_misc","fn":"sensor_misc","spec":"Flow and pressure sensors","qty":2,"ext":2,"obs":5,"loc":"Board"}
+  ],
+  "boards": [
+    {"id":"mcu_board","qty":1,"loc":"Main board","p":1},
+    {"id":"smps_board","qty":1,"loc":"Power supply","p":1}
+  ],
+  "buildings": [
+    {"b":"hospital","l":4},
+    {"b":"nursing_home","l":5},
+    {"b":"house","l":3},
+    {"b":"pharmacy","l":3}
+  ]
+}

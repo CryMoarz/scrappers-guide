@@ -1,0 +1,22 @@
+{
+  "id": "wifi_router_asus_wl_600g",
+  "device": "wifi_router",
+  "brand": "ASUS",
+  "model": "WL-600g",
+  "fcc": "MSQWL600G",
+  "notes": "Hardware versions of the WL-600g can differ.",
+  "research": {"gaps":[],"method":["Not yet fact-checked: its parts show as likely until a fact-check confirms them against their sources.","Imported from the OpenWrt Table of Hardware (toh.json, 2026-11-13): the hardware data page for this version, by OpenWrt wiki contributors under CC BY-SA 4.0."]},
+  "comps": [
+    {"key":"ic_mcu_soc","fn":"ic_mcu","spec":"SoC Broadcom BCM6348, 1 core at 256 MHz","qty":1,"ext":4,"obs":3,"source":"https://openwrt.org/toh/hwdata/asus/asus_wl-600g","conf":"likely"},
+    {"key":"ic_memory_flash","fn":"ic_memory","spec":"Flash, 4 MB","qty":1,"ext":2,"obs":4,"source":"https://openwrt.org/toh/hwdata/asus/asus_wl-600g","conf":"likely"},
+    {"key":"ic_memory_ram","fn":"ic_memory","spec":"RAM, 16 MB","qty":1,"ext":3,"obs":3,"source":"https://openwrt.org/toh/hwdata/asus/asus_wl-600g","conf":"likely"},
+    {"key":"radio_rf","spec":"Wi-Fi: Broadcom BCM4318 (2.4 GHz b/g)","qty":1,"source":"https://openwrt.org/toh/hwdata/asus/asus_wl-600g","conf":"likely"},
+    {"key":"antenna_coax","spec":"Detachable external antennas","qty":1,"source":"https://openwrt.org/toh/hwdata/asus/asus_wl-600g","conf":"likely"},
+    {"key":"psu","spec":"Power supply: 12 VDC, 1.25A","v":12,"a":1.25,"source":"https://openwrt.org/toh/hwdata/asus/asus_wl-600g","conf":"likely"},
+    {"key":"connector","spec":"Ethernet ports: 4× 100M","qty":4,"source":"https://openwrt.org/toh/hwdata/asus/asus_wl-600g","conf":"likely"},
+    {"key":"connector_usb","fn":"connector","spec":"USB: 2x 2.0","qty":1,"ext":2,"obs":4,"source":"https://openwrt.org/toh/hwdata/asus/asus_wl-600g","conf":"likely"}
+  ],
+  "sources": [
+    {"title":"OpenWrt Table of Hardware: ASUS WL-600g (OpenWrt wiki contributors, CC BY-SA 4.0)","url":"https://openwrt.org/toh/hwdata/asus/asus_wl-600g"}
+  ]
+}

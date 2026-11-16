@@ -1,0 +1,29 @@
+{
+  "id": "teardown_cordless_phone",
+  "kind": "teardown",
+  "title": "Cordless phone: NiMH cells, speaker, microphone, screen and adapters",
+  "keywords": ["cordless phone teardown","dect handset","handset battery","nimh aaa cells","phone speaker microphone","answering machine","home phone","phone charger cradle"],
+  "summary": "A cordless home phone is a base and one or more handsets, each with a pair of NiMH AAA cells, a speaker, a microphone, a small LCD and a radio that only talks to its own base, plus plug-in adapters and charging cradles. Five to ten minutes with a small screwdriver. The dangers are small: leaking cells and the old heavy plug-in adapters.",
+  "difficulty": 1,
+  "mins": 10,
+  "tools": ["screwdriver","pry","pliers","cutters","multimeter","tape"],
+  "hazards": ["chemical","mains"],
+  "materials": [],
+  "steps": [
+    {"text":"Test it before you strip it. Plug the base in and put the handset on its cradle. If it switches on and links to the base, keep the set whole: base and handset make a short-range voice link, and handsets of some models can call each other (intercom) with no phone line. See notes."},
+    {"text":"Unplug the adapter from the wall, and unplug the phone line from the wall jack and from the base, before you open anything. Take the handset off the cradle.","warn":"A live phone line carries about 50 V DC and rings at around 90 V AC: enough for a nasty shock. Unplug it at the wall jack, not only at the base."},
+    {"text":"Open the battery door on the handset and take out the cells. Most handsets hold 2 AAA NiMH cells (2.4 V). Older ones use NiCd cells (labelled NiCd or Ni-Cd) or a flat pack on a plug.","warn":"Leaking cells leave white or green crust that burns skin and eyes. Wear gloves, keep hands off your face and wash up afterwards."},
+    {"text":"Test each cell: a good NiMH cell reads 1.2–1.4 V. A cell near zero volts may recover on a slow charge; a cell that is hot, swollen or leaking is finished. Read the capacity (mAh) on the label. Keep NiCd cells whole: they hold cadmium."},
+    {"text":"Open the handset. Take out the screws, usually under the battery door and in the belt-clip slot. Then work a flat blade or plastic tool along the seam from the bottom to release the clips."},
+    {"text":"Lift out the board. The earpiece speaker is held by a bracket or foam, with 2 wires or contacts. The microphone is a small round capsule in a rubber boot near the bottom: pop it out and keep the boot. Cut wires leaving about 5 cm."},
+    {"text":"The LCD is a small glass screen held by clips, often on rubber contact strips. Lift it out gently by its frame and keep the strips with it. Don't touch the glass."},
+    {"text":"Keep each handset's board, and the base's board, whole and together. The radio and antenna are a matched pair with the base and can't be reused with other radios."},
+    {"text":"Base: take out the screws underneath and lift the board out. Older bases carry a small speaker, a ringer and a tape or memory chip for the answering machine. Keep the board with the radio and antenna attached."},
+    {"text":"Plug-in adapters and charging cradles: read each label (volts, amps, and AC or DC output) and write it on with a marker. Older adapters are heavy iron transformers with an AC output. Newer ones are small DC switch-mode supplies. Keep cradles whole: each is a small trickle charger for 2 NiMH AAA cells.","warn":"Don't open wall adapters. They carry mains inside even when they look harmless."}
+  ],
+  "notes": "## What's worth keeping and why\n\n- **NiMH cells.** AAA rechargeables, 1.2 V each, usually 400–800 mAh. Good ones go in flashlights and radios. Charge them only with a NiMH charger, never a lithium one.\n- **A working set.** Base and handset make a private cable-free voice link across a house or yard, about 50–300 m depending on walls. A second handset gives you a handset-to-handset intercom on models that allow it. Keep the adapter that powers the base.\n- **Speaker and microphone.** A small speaker and an electret microphone make a tiny intercom, a listening post or an alarm. The microphone needs 2–5 V through a resistor to work.\n- **LCD.** A small display for a project, but only with the board it came with. Keep them together.\n- **Adapters.** Typically 5–9 V at a few hundred milliamps. Check the label: an AC adapter will damage anything that needs DC.\n- **Cradles.** A charger for 2 NiMH AAA cells at about 100–200 mA.\n\n## Variations\n\n- US phones are usually DECT 6.0 (1.9 GHz). European DECT uses 1.88 GHz. Older sets use 900 MHz, 2.4 GHz or 5.8 GHz.\n- Phones with an answering machine have a small tape or flash memory chip in the base. Neither is worth much.\n- Some handsets hold a flat battery pack (3.6 V NiMH) instead of two AAA cells. Treat it as a NiMH cell pack.\n\n## What to leave\n\n- The rubber keypad and plastic shells.\n- Leaking cells with heavy crust.",
+  "tree": {"era":2,"branch":"salvage","requires":["skill_multimeter"]},
+  "devices": ["cordless_phone"],
+  "parts": ["battery_nimh","radio_rf","psu","speaker","microphone","display","charger"],
+  "license": "CC-BY-SA-4.0"
+}

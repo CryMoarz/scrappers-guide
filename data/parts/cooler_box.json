@@ -1,0 +1,14 @@
+{
+  "id": "cooler_box",
+  "name": "Insulated boxes and coolers",
+  "group": "Containers and pressure",
+  "demand": 3,
+  "keywords": ["cooler","cool box","coolbox","ice chest","ice box","esky","cool bag","insulated bag","insulated box","polystyrene box","styrofoam box","styrofoam cooler","insulated container","vaccine box"],
+  "substitutes": ["insulation"],
+  "summary": "Insulated boxes and bags that keep things cold or hot for hours to days.",
+  "uses": ["Keeping food and medicine cool with ice","Body for a Peltier or ice-box fridge","Hay-box (retained heat) cooking","Dry, sealed storage"],
+  "identify": "Camping and fishing coolers, polystyrene shipping boxes at pharmacies, labs, hospitals and fish markets, insulated delivery bags, and dead fridges and chest freezers (a dead chest freezer is a superb cooler). Remove or break the latch on any dead fridge so a child can’t get trapped.",
+  "test": "Check the lid seals all round and the walls aren’t cracked. A good cooler holds ice for a day or more.",
+  "decay": {"halfLifeMonths":null,"note":"Lasts. Lid seals harden over years."},
+  "hazards": []
+}

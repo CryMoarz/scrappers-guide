@@ -1,0 +1,20 @@
+{
+  "id": "space_heater_lasko_754200",
+  "device": "space_heater",
+  "brand": "Lasko",
+  "model": "754200",
+  "notes": "Covers Lasko model 754200 as described in its Rev. B 3/10 manual: a 120 V ceramic heater with a thermostat knob and a power knob (Off, Fan Only, Low Heat, High Heat). Parts Town's page for this model lists two knobs, 7542001 (switch knob) and 7542002 (thermostat knob).",
+  "research": {"checked":"2026-11-12","gaps":["The manual says only 'ceramic heater'; no element type is given, so PTC is not claimed.","1500 W is stated for the High Heat setting of the whole heater, not for the element itself; the manual gives no Low Heat wattage and retailer snippets disagreed (900 W and 750 W), so none is claimed.","The 120 V figure is stated for the wall outlet and plug, not for any part, so v is not set; ac is set only on the cord.","The thermal overload protector has no stated type, rating or count, so qty and ratings are left out.","The manual never names a tip-over switch, so none is claimed.","Fan motor type and rating and cord wire gauge are not stated, so the fan carries no ac flag.","The manual says there are no user-serviceable parts."],"method":["Lasko operating manual for model 754200, Rev. B 3/10, bilingual English and Spanish, 4 pages, PDF on Home Depot's image server. Read in full; the operation, thermostat and safety-feature text is on PDF pages 2 and 3, and the maker's name, model and Rev. code are in the text.","Parts Town page for model 754200: lists two knobs (7542001, 7542002) and no other parts.","Not read by the researcher: the Lasko product page (HTTP 429), the Appliance Factory Parts page (HTTP 403) and the Farnell copy of the manual (Rev. C 5/13)."]},
+  "comps": [
+    {"key":"heating_element","conf":"documented","spec":"Heating element of a heater the manual calls a ceramic heater. The 1500 W is the whole heater's High Heat setting, not a separate element rating.","w":1500,"source":"https://images.homedepot-static.com/catalog/pdfImages/55/557a6854-3395-490d-a44f-79cfc7ed6283.pdf"},
+    {"key":"fan","conf":"documented","spec":"Fan that runs alone on the Fan Only (no heat) setting of the power knob.","source":"https://images.homedepot-static.com/catalog/pdfImages/55/557a6854-3395-490d-a44f-79cfc7ed6283.pdf"},
+    {"key":"thermostat","conf":"documented","spec":"Adjustable thermostat knob. The heater cycles on and off to hold the set temperature.","source":"https://images.homedepot-static.com/catalog/pdfImages/55/557a6854-3395-490d-a44f-79cfc7ed6283.pdf"},
+    {"key":"thermostat_fuse","fn":"thermostat","spec":"Built-in thermal overload protector that shuts the heater off if it overheats.","ext":2,"obs":4,"conf":"documented","source":"https://images.homedepot-static.com/catalog/pdfImages/55/557a6854-3395-490d-a44f-79cfc7ed6283.pdf"},
+    {"key":"switch","conf":"documented","spec":"Power knob with Off (0), Fan Only, Low Heat (1) and High Heat (2) positions.","source":"https://images.homedepot-static.com/catalog/pdfImages/55/557a6854-3395-490d-a44f-79cfc7ed6283.pdf"},
+    {"key":"wire_copper","conf":"documented","spec":"Cord set with a polarized plug (one blade wider than the other).","ac":true,"source":"https://images.homedepot-static.com/catalog/pdfImages/55/557a6854-3395-490d-a44f-79cfc7ed6283.pdf"}
+  ],
+  "sources": [
+    {"title":"Lasko Model 754200 Ceramic Heater with Adjustable Thermostat, operating manual, Rev. B 3/10 (bilingual English and Spanish, PDF hosted by Home Depot)","url":"https://images.homedepot-static.com/catalog/pdfImages/55/557a6854-3395-490d-a44f-79cfc7ed6283.pdf"},
+    {"title":"Parts Town parts page for Lasko model 754200 (two knobs)","url":"https://www.partstown.com/m/lasko/754200"}
+  ]
+}

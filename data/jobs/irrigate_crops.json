@@ -1,0 +1,20 @@
+{
+  "id": "irrigate_crops",
+  "name": "Irrigate crops",
+  "keywords": ["irrigate crops","irrigation","drip irrigation","water the garden","water my garden","water crops","water plants","garden watering","watering"],
+  "summary": "Drip lines put water at the roots and use a fraction of what sprinklers waste. A tank raised a metre or two feeds drip lines by gravity with no pump at all. Farm stores, garden centres and golf course maintenance sheds hold tube, fittings, timers and valves that nobody loots.",
+  "parts": [
+    {"fn":"hose_tubing","why":"Drip line, hose and fittings","core":true},
+    {"fn":"tank","why":"A raised tank for gravity feed","core":true},
+    {"fn":"pump_water","why":"Fills the tank from a well, creek or rain store","core":true},
+    {"fn":"valve_solenoid","why":"Valves and timers to water each bed"},
+    {"fn":"solar_panel","why":"Runs a pump directly while the sun shines","need":{"w":20}},
+    {"fn":"filter_water","why":"A screen filter stops drippers clogging"}
+  ],
+  "guides": ["build_solar_water_pump","build_rainwater_collection"],
+  "tips": ["Each metre of height gives about 0.1 bar of pressure. Gravity drip needs only a metre or two.","Water early morning or evening so less evaporates.","Mulch the soil to keep moisture in.","Irrigation valves usually run on 24V AC. A furnace or thermostat transformer drives them."],
+  "refs": [
+    {"lib":"gardening","q":"irrigation"},
+    {"lib":"appropedia","q":"drip irrigation"}
+  ]
+}

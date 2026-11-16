@@ -1,0 +1,14 @@
+{
+  "id": "tube_frame",
+  "name": "Steel and aluminium tube",
+  "group": "Materials",
+  "demand": 2,
+  "keywords": ["steel tube","aluminium tube","aluminum tube","metal tube","square tube","round tube","rectangular tube","box section","steel pipe","scaffold tube","conduit","emt","angle iron","metal frame","tent pole"],
+  "substitutes": ["rod_shaft","lumber"],
+  "summary": "Round and square steel or aluminium tube and angle from furniture, frames, racks and fences.",
+  "uses": ["Frames for carts, shelters, racks and solar mounts","Masts for antennas and small wind turbines","Handles, levers and pry bars","Axles and rollers at a pinch"],
+  "identify": "Bed frames, treadmills, gym machines, shelving, scaffolding, trampolines, fence posts, tent poles and electrical conduit (EMT). Aluminium is light and not magnetic; steel is heavier and magnetic.",
+  "test": "Look for cracks at welds and bends, and dents that kink the tube. Flex long pieces gently: crackling or bubbled paint means rust inside.",
+  "decay": {"halfLifeMonths":null,"note":"Lasts; thin steel tube rusts from the inside if water sits in it."},
+  "hazards": ["sharp"]
+}

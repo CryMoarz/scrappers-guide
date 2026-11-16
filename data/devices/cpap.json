@@ -1,0 +1,37 @@
+{
+  "id": "cpap",
+  "name": "CPAP machine",
+  "group": "Medical and mobility",
+  "aliases": ["bipap","apap","sleep apnea machine","breathing machine","sleep machine","airsense","dreamstation","sleep apnea device"],
+  "brands": ["ResMed","Philips Respironics","Fisher & Paykel","DeVilbiss","React Health","Lowenstein","Somnetics"],
+  "era": "1990s–present",
+  "prev": 4,
+  "tools": ["screwdriver","security_bits"],
+  "mins": 15,
+  "kg": 1.5,
+  "hazards": [],
+  "comps": [
+    {"key":"fan","fn":"fan","spec":"Sealed blower (motor and impeller) — a strong, quiet 12–24V air supply for a forge or rocket stove","v":[12,24],"qty":1,"ext":2,"obs":5,"loc":"Centre of the case, in a foam-lined box"},
+    {"key":"motor_bldc","fn":"motor_bldc","spec":"High-speed brushless motor inside the blower","v":[12,24],"w":[10,40],"qty":1,"ext":3,"obs":5,"loc":"Inside the blower unit"},
+    {"key":"psu","fn":"psu","spec":"Power brick, 12–24V DC, 60–90W; many machines also run from a 12V or 24V battery with the right lead","w":[60,90],"qty":1,"ext":1,"obs":5,"loc":"Plugged into the back"},
+    {"key":"heating_element","fn":"heating_element","spec":"Humidifier hot plate, about 50–80W (heated models)","w":[50,80],"qty":1,"ext":2,"obs":5,"loc":"Under the water tub","p":0.5},
+    {"key":"sensor_misc","fn":"sensor_misc","spec":"Flow and pressure sensors","qty":2,"ext":3,"obs":5,"loc":"Main board, on the air path"},
+    {"key":"hose_tubing","fn":"hose_tubing","spec":"22 mm smooth-bore air hose, about 1.8 m","qty":1,"ext":1,"obs":5,"loc":"Front outlet"},
+    {"key":"filter_air","fn":"filter_air","spec":"Fine-particle intake filters; spare packs are often stored with it","qty":2,"ext":1,"obs":5,"loc":"Behind the rear grille"},
+    {"key":"controller_board","fn":"controller_board","spec":"Main board with blower driver and microcontroller","qty":1,"ext":2,"obs":5,"loc":"Inside the case"}
+  ],
+  "boards": [
+    {"id":"smps_board","qty":1,"loc":"Inside the power brick","p":0.9}
+  ],
+  "buildings": [
+    {"b":"nursing_home","l":5},
+    {"b":"house","l":4},
+    {"b":"apartment","l":4},
+    {"b":"clinic","l":4},
+    {"b":"hospital","l":4},
+    {"b":"pharmacy","l":3},
+    {"b":"self_storage","l":2},
+    {"b":"recycling","l":2}
+  ],
+  "notes": "Leave a machine with anyone who still needs it. Spares in storage, closets and closed clinics are fair game."
+}

@@ -1,0 +1,16 @@
+{
+  "id": "welder_transformer",
+  "name": "Welder, transformer type",
+  "variantOf": "welder",
+  "aliases": ["buzz box","transformer welder","ac welder","idealarc"],
+  "brands": ["Lincoln Electric","Miller","Hobart","Forney","Vevor"],
+  "era": "1950s–present",
+  "prev": 3,
+  "kg": 40,
+  "hazards": ["mains","heavy"],
+  "comps": [
+    {"key":"transformer_lv","fn":"transformer_lv","spec":"Large welding transformer, copper or aluminium windings, 15–50 kg — rewindable, very high current","v":[50,80],"a":[70,250],"w":[3000,10000],"ac":true,"qty":1,"ext":2,"obs":4,"loc":"Most of the case","kg":30},
+    {"key":"bridge_rect","fn":"bridge_rect","spec":"Heavy rectifier stack (DC and MIG sets)","qty":1,"ext":2,"obs":5,"loc":"On a heatsink near the output"},
+    {"key":"inductor","fn":"inductor","spec":"Output choke (MIG sets)","qty":1,"ext":2,"obs":5,"loc":"Below the transformer","kg":6}
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "id": "window_ac_haier_esa415j",
+  "device": "window_ac",
+  "brand": "Haier",
+  "model": "ESA415J",
+  "research": {"checked":"2026-11-12","gaps":["Haier service part numbers are not given on the pages read.","These values rest on that inferred alignment.","The wiring diagram gives no ratings."],"method":["Haier window air conditioner, 14,500 BTU/h, 115 V 60 Hz.","The product-code page says the A in the model code stands for Energy Star and 4 for R410A.","Source: Haier ESA415J Service Manual (Order No. AC0909S006V0, (c)2008, Qingdao Haier Air Conditioner General Corp.), read on ManualsLib.","The specifications page (p. 4) extracts as a list of row labels, a units list and a values list.","Fact-check alignment: the 31 table rows match 30 units plus the compressor model, and 25 entries in the values list plus six merged-cell values that the extraction places in the units list (power supply, compressor model, running capacitor, indoor fan type, fan speed, air volume), all in row order.","On that alignment the compressor rows read Rotary, 44A321AK-5EKD and 60μF/250V, the refrigerant rows R410A and 33.1 oz, and the cooling rows 1350 W, 12 A and EER 10.7 (14500 / 1350 agrees with the 10.7).","The wiring diagram (p. 23), titled ESA415J, labels a transformer, a fan motor with L/M/H leads, two capacitors, a compressor (S, C, R), an ambient temperature sensor and a heat protector, with a note that dotted parts may not be used depending on the compressor.","Ext/obs and qty on extra parts are editorial."]},
+  "comps": [
+    {"key":"compressor","conf":"documented","spec":"Rotary compressor, model 44A321AK-5EKD; R410A, charge 33.1 oz (specifications table)","ac":true,"source":"https://www.manualslib.com/manual/820318/Haier-Esa415j.html?page=4"},
+    {"key":"capacitor_large","conf":"documented","spec":"Running capacitor for the compressor, 60 uF / 250 V (specifications table)","v":250,"ac":true,"source":"https://www.manualslib.com/manual/820318/Haier-Esa415j.html?page=4"},
+    {"key":"fan","conf":"documented","spec":"Centrifugal and axial fans; fan speeds 1060/1020/980 r/min, air volume 380/340/310 CFM (specifications table)","source":"https://www.manualslib.com/manual/820318/Haier-Esa415j.html?page=4"},
+    {"key":"motor_ac","conf":"documented","spec":"Fan motor with leads marked L, M and H (wiring diagram)","ac":true,"source":"https://www.manualslib.com/manual/820318/Haier-Esa415j.html?page=23"},
+    {"key":"thermostat","conf":"documented","spec":"Ambient temperature sensor (wiring diagram)","source":"https://www.manualslib.com/manual/820318/Haier-Esa415j.html?page=23"},
+    {"key":"transformer_lv_control","fn":"transformer_lv","spec":"Transformer shown on the wiring diagram","qty":1,"ext":2,"obs":3,"conf":"documented","source":"https://www.manualslib.com/manual/820318/Haier-Esa415j.html?page=23"}
+  ],
+  "sources": [
+    {"title":"Haier ESA415J Service Manual, Order No. AC0909S006V0, (c)2008 (ManualsLib), page 4: Specifications","url":"https://www.manualslib.com/manual/820318/Haier-Esa415j.html?page=4"},
+    {"title":"Haier ESA415J Service Manual, Order No. AC0909S006V0, (c)2008 (ManualsLib), page 23: Wiring Diagram","url":"https://www.manualslib.com/manual/820318/Haier-Esa415j.html?page=23"},
+    {"title":"Haier ESA415J Service Manual (ManualsLib), page 3: Product Code Illumination","url":"https://www.manualslib.com/manual/820318/Haier-Esa415j.html?page=3"},
+    {"title":"Haier ESA415J Service Manual (ManualsLib), page 1: cover with order number and copyright","url":"https://www.manualslib.com/manual/820318/Haier-Esa415j.html?page=1"}
+  ]
+}

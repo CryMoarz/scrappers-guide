@@ -1,0 +1,20 @@
+{
+  "id": "wifi_router_netgear_wax206",
+  "device": "wifi_router",
+  "brand": "NETGEAR",
+  "model": "WAX206",
+  "fcc": "PY321100533",
+  "notes": "Hardware versions of the WAX206 can differ.",
+  "research": {"gaps":[],"method":["Not yet fact-checked: its parts show as likely until a fact-check confirms them against their sources.","Imported from the OpenWrt Table of Hardware (toh.json, 2026-11-13): the hardware data page for this version, by OpenWrt wiki contributors under CC BY-SA 4.0."]},
+  "comps": [
+    {"key":"ic_mcu_soc","fn":"ic_mcu","spec":"SoC MediaTek MT7622BV, 2 cores at 1350 MHz","qty":1,"ext":4,"obs":3,"source":"https://openwrt.org/toh/hwdata/netgear/netgear_wax206","conf":"likely"},
+    {"key":"ic_memory_flash","fn":"ic_memory","spec":"Flash, 256 MB NAND","qty":1,"ext":2,"obs":4,"source":"https://openwrt.org/toh/hwdata/netgear/netgear_wax206","conf":"likely"},
+    {"key":"ic_memory_ram","fn":"ic_memory","spec":"RAM, 512 MB","qty":1,"ext":3,"obs":3,"source":"https://openwrt.org/toh/hwdata/netgear/netgear_wax206","conf":"likely"},
+    {"key":"radio_rf","spec":"Wi-Fi: MediaTek MT7622BV, MediaTek MT7915AN, MediaTek MT7975AN (2.4 GHz b/g/n, 5 GHz a/n/ac/ax)","qty":3,"source":"https://openwrt.org/toh/hwdata/netgear/netgear_wax206","conf":"likely"},
+    {"key":"psu","spec":"Power supply: 12 VDC, 2.5A via barrel","v":12,"a":2.5,"source":"https://openwrt.org/toh/hwdata/netgear/netgear_wax206","conf":"likely"},
+    {"key":"connector","spec":"Ethernet ports: 1× 2.5G, 4× gigabit","qty":5,"source":"https://openwrt.org/toh/hwdata/netgear/netgear_wax206","conf":"likely"}
+  ],
+  "sources": [
+    {"title":"OpenWrt Table of Hardware: NETGEAR WAX206 (OpenWrt wiki contributors, CC BY-SA 4.0)","url":"https://openwrt.org/toh/hwdata/netgear/netgear_wax206"}
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "id": "police",
+  "name": "Police stations",
+  "osm": ["amenity=police"],
+  "exposure": 2,
+  "notes": "Radios, backup power and vehicles. Often secured.",
+  "access": "Usually locked and reinforced"
+}

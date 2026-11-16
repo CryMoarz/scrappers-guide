@@ -1,0 +1,34 @@
+{
+  "id": "two_way_radio_vertex_standard_vx_231",
+  "device": "two_way_radio",
+  "brand": "Vertex Standard",
+  "model": "VX-231",
+  "notes": "The VX-231 is named only in the EU specification, as VX-231-EG6B-5, 400-470 MHz. Every board part here is fitted to all builds, including the EU one.",
+  "research": {"checked":"2026-11-12","gaps":["XF1001 changes part number for EU from lot 7 (HF-734A instead of TF4-67EA1), but stays 67.65 MHz.","The CPU's Vertex part number is garbled in the PDF text.","The manual names the battery packs without their chemistry.","The charger and AC adapter are named only in the EU specification.","FCC: fccid.io shows K6610854720 as a Yaesu Musen 450-512 MHz portable UHF transceiver, but no page read ties that ID to the VX-231 by name, so no FCC ID is set."],"method":["Source: Vertex Standard VX-230 Series UHF FM transceiver service manual EC085U90C (2009, 38 pages), Internet Archive item captured from manualzilla, read as text from the PDF; the block diagram (p.5) was rendered and viewed.","The manual covers the main unit in five builds: VTX and EXP Type D (450-512 / 450-520 MHz), VTX and EXP Type A (400-470 MHz) and EU (CS2009406).","Page refs: specifications p.2, exploded view p.3 (speaker), block diagram p.5 (Q1003 and Q1020 feed the CONT_5V and CONT_3.5V lines; X1001 sits on the CPU's crystal pins), circuit description pp.7-8, parts list pp.25-36 (fuse and jacks p.30; Q1003, Q1005, Q1010, Q1015, Q1018, Q1020 and MC1001 p.31.","Q1026, Q1027, Q1032, Q1033, Q1042 p.32; crystals, volume pot and rotary switch p.36).","The parts layout prints TAR5S50U (5V0) and TAR5S35U (3V5): those are the package markings in Toshiba's TAR5S15U-TAR5S50U datasheet, which calls the series LDO regulators.","A Two Way Radio Center listing says the FNB-V103LI is a lithium-ion battery that fits the VX-231.","FCC exhibits were behind bot checks."]},
+  "comps": [
+    {"key":"radio_rf","conf":"documented","spec":"UHF FM transceiver, 16 channels, output 5 W / 1 W, power supply 7.4 V DC +/-10%; the manual names the VX-231 for its EU version, 400-470 MHz (other builds in the series cover 450-512 and 450-520 MHz)","v":7.4,"w":5,"source":"https://archive.org/download/manualzilla-id-7404060/7404060.pdf"},
+    {"key":"b:radio_transceiver_board:mosfet","conf":"documented","spec":"Final amplifier Q1010 Renesas RQA0011DNS (up to 5 W); final driver Q1015 RQA0004PXDQS","source":"https://archive.org/download/manualzilla-id-7404060/7404060.pdf"},
+    {"key":"b:radio_transceiver_board:bjt","conf":"documented","spec":"VCO Q1032 2SC4227, buffers Q1027 2SC5005 and Q1018 2SC5227, IF amp Q1033 2SC5226","source":"https://archive.org/download/manualzilla-id-7404060/7404060.pdf"},
+    {"key":"b:radio_transceiver_board:ic_mcu","conf":"documented","spec":"CPU Q1026 UPD78F1142GB","source":"https://archive.org/download/manualzilla-id-7404060/7404060.pdf"},
+    {"key":"ic_mcu_pll","fn":"ic_mcu","spec":"PLL IC Q1042 MB15E03SL (parts list MB15E03SLPFV1-G-EF-6E1)","qty":1,"ext":4,"obs":4,"conf":"documented","source":"https://archive.org/download/manualzilla-id-7404060/7404060.pdf"},
+    {"key":"b:radio_transceiver_board:ic_audio","conf":"documented","spec":"Audio amplifier Q1005 NJM2070M driving the speaker; the radio's rated audio output is 500 mW at 4 ohm, 5% THD","source":"https://archive.org/download/manualzilla-id-7404060/7404060.pdf"},
+    {"key":"b:radio_transceiver_board:crystal","conf":"documented","spec":"X1002 TCXO 16.8 MHz, HKE3149A (Vertex H9501060); XF1001 crystal filter 67.65 MHz","source":"https://archive.org/download/manualzilla-id-7404060/7404060.pdf"},
+    {"key":"crystal_cpu","fn":"crystal","spec":"X1001 crystal 3.6864 MHz (Vertex H0103307)","qty":1,"ext":3,"obs":4,"conf":"documented","source":"https://archive.org/download/manualzilla-id-7404060/7404060.pdf"},
+    {"key":"b:radio_transceiver_board:reg_linear","conf":"documented","spec":"Q1003 Toshiba TAR5S50U and Q1020 TAR5S35U LDO regulators, feeding the CONT_5V and CONT_3.5V lines in the block diagram (datasheet outputs 5.0 V and 3.5 V)","v":[3.5,5],"source":"https://archive.org/download/manualzilla-id-7404060/7404060.pdf"},
+    {"key":"b:radio_transceiver_board:potentiometer","conf":"documented","spec":"VR1001 AF volume pot with switch, RK0971111 20KA/SW (Vertex J60800256)","source":"https://archive.org/download/manualzilla-id-7404060/7404060.pdf"},
+    {"key":"b:radio_transceiver_board:connector","conf":"documented","spec":"J1002 connector HSJ1594-010055 (external microphone jack, Vertex P1090896); J1001 spring connector R0152490","source":"https://archive.org/download/manualzilla-id-7404060/7404060.pdf"},
+    {"key":"switch_rotary","fn":"switch","spec":"S1004 rotary switch EC10SP16-85A0 (Vertex Q9000764)","qty":1,"ext":3,"obs":4,"conf":"documented","source":"https://archive.org/download/manualzilla-id-7404060/7404060.pdf"},
+    {"key":"fuse_board","fn":"fuse","spec":"F1001 chip fuse 3.15 A, FHC16 322ADTP (Vertex Q0000118)","qty":1,"ext":4,"obs":5,"a":3.15,"conf":"documented","source":"https://archive.org/download/manualzilla-id-7404060/7404060.pdf"},
+    {"key":"microphone_element","fn":"microphone","spec":"MC1001 mic element PF0-1055P (Vertex M3290045)","qty":1,"ext":3,"obs":4,"conf":"documented","source":"https://archive.org/download/manualzilla-id-7404060/7404060.pdf"},
+    {"key":"speaker","conf":"documented","spec":"Speaker M4090192B, 14 ohm / 1 W","w":1,"source":"https://archive.org/download/manualzilla-id-7404060/7404060.pdf"},
+    {"key":"battery_li","conf":"documented","spec":"Battery pack FNB-V103LI, 1150 mAh, or FNB-V104LI, 2000 mAh","ah":1.15,"source":"https://archive.org/download/manualzilla-id-7404060/7404060.pdf"},
+    {"key":"charger","conf":"documented","spec":"CD-34 desktop charger with PA-42C/U AC adapter (named in the EU specification)","source":"https://archive.org/download/manualzilla-id-7404060/7404060.pdf"}
+  ],
+  "sources": [
+    {"title":"Vertex Standard VX-230 Series UHF FM transceiver service manual EC085U90C, 2009 (Internet Archive)","url":"https://archive.org/download/manualzilla-id-7404060/7404060.pdf"},
+    {"title":"Datasheet: RQA0011DNS (Renesas PDF, Rev. 8.00, 2012)","url":"https://www.renesas.com/en/document/dst/rqa0011dns-datasheet"},
+    {"title":"Datasheet: TAR5S15U to TAR5S50U point regulators (Toshiba PDF)","url":"https://toshiba.semicon-storage.com/info/docget.jsp?did=764&prodName=TAR5S50U"},
+    {"title":"Vertex Standard FNB-V103LI battery listing (Two Way Radio Center), cited in the notes for the battery chemistry","url":"https://twowayradiocenter.com/vertex-standard-fnb-v103li"},
+    {"title":"FCC ID K6610854720 grant summary (fccid.io), cited in the notes only","url":"https://fccid.io/K6610854720"}
+  ]
+}

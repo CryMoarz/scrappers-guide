@@ -1,0 +1,21 @@
+{
+  "id": "wifi_router_d_link_dwr_118_a1",
+  "device": "wifi_router",
+  "brand": "D-Link",
+  "model": "DWR-118 A1",
+  "fcc": "KA2WR118A1",
+  "notes": "Chips for hardware version A1; other versions of the DWR-118 can differ.",
+  "research": {"gaps":[],"method":["Not yet fact-checked: its parts show as likely until a fact-check confirms them against their sources.","Imported from the OpenWrt Table of Hardware (toh.json, 2026-11-13): the hardware data page for this version, by OpenWrt wiki contributors under CC BY-SA 4.0."]},
+  "comps": [
+    {"key":"ic_mcu_soc","fn":"ic_mcu","spec":"SoC MediaTek MT7620A, 1 core at 580 MHz","qty":1,"ext":4,"obs":3,"source":"https://openwrt.org/toh/hwdata/d-link/d-link_dwr-118_a1","conf":"likely"},
+    {"key":"ic_memory_flash","fn":"ic_memory","spec":"Flash, 8 MB","qty":1,"ext":2,"obs":4,"source":"https://openwrt.org/toh/hwdata/d-link/d-link_dwr-118_a1","conf":"likely"},
+    {"key":"ic_memory_ram","fn":"ic_memory","spec":"RAM, 64 MB","qty":1,"ext":3,"obs":3,"source":"https://openwrt.org/toh/hwdata/d-link/d-link_dwr-118_a1","conf":"likely"},
+    {"key":"radio_rf","spec":"Wi-Fi: MediaTek MT7620A, MediaTek MT7610EN (2.4 GHz b/g/n, 5 GHz a/n/ac)","qty":2,"source":"https://openwrt.org/toh/hwdata/d-link/d-link_dwr-118_a1","conf":"likely"},
+    {"key":"psu","spec":"Power supply: 12 VDC, 1.5A via barrel","v":12,"a":1.5,"source":"https://openwrt.org/toh/hwdata/d-link/d-link_dwr-118_a1","conf":"likely"},
+    {"key":"connector","spec":"Ethernet ports: 2× gigabit, 3× 100M","qty":5,"source":"https://openwrt.org/toh/hwdata/d-link/d-link_dwr-118_a1","conf":"likely"},
+    {"key":"connector_usb","fn":"connector","spec":"USB: 1x 2.0","qty":1,"ext":2,"obs":4,"source":"https://openwrt.org/toh/hwdata/d-link/d-link_dwr-118_a1","conf":"likely"}
+  ],
+  "sources": [
+    {"title":"OpenWrt Table of Hardware: D-Link DWR-118 A1 (OpenWrt wiki contributors, CC BY-SA 4.0)","url":"https://openwrt.org/toh/hwdata/d-link/d-link_dwr-118_a1"}
+  ]
+}

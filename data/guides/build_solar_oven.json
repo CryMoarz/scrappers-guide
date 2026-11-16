@@ -1,0 +1,46 @@
+{
+  "id": "build_solar_oven",
+  "kind": "build",
+  "title": "Solar box oven",
+  "keywords": ["solar oven","solar cooker","box cooker","cook with sun","sun oven","solar cooking","fuel-free cooking"],
+  "summary": "An insulated, glazed box with a reflector lid that reaches 90–150 °C in strong sun. It cooks rice, beans, stews and bread slowly (2–5 hours) without fuel or smoke. Made from scrap timber or cardboard, a glass shelf or window, foil and insulation.",
+  "difficulty": 1,
+  "mins": 120,
+  "tools": ["knife","saw","drill","screwdriver","tape","hammer","clamps"],
+  "hazards": ["burn","glass","fiberglass"],
+  "materials": [
+    {"item":"Glass pane: fridge shelf, oven door glass, window or picture frame, about 50 × 50 cm","qty":"1 (2 for double glazing)","fn":"glass_pane"},
+    {"item":"Outer box: plywood, boards or double-wall cardboard, about 60 × 60 × 35 cm","qty":"1","fn":"lumber"},
+    {"item":"Inner box or tray: thin sheet metal, or cardboard lined with foil","qty":"1","fn":"sheet_metal","only":["shell","housing","tray"]},
+    {"item":"Insulation for the gap between boxes: wool, crumpled paper, rock wool, fibreglass sealed in","qty":"enough for a 5–10 cm gap","fn":"insulation"},
+    {"item":"Reflector: mirror, polished aluminium sheet, foil on card, or reflective film","qty":"1–4 panels","fn":"optics","only":["parabolic"]},
+    {"item":"Heat-resistant seal for the glass: rubber or silicone strip","qty":"2 m","fn":"foam_rubber","optional":true},
+    {"item":"Matt black heat-proof paint, or soot","qty":"small tin","optional":true},
+    {"item":"Dark, thin-walled pots with lids","qty":"1–2"},
+    {"item":"Oven thermometer","qty":"1","optional":true},
+    {"item":"Screws, hinges and a prop stick for the reflector","qty":"some","fn":"fasteners","optional":true}
+  ],
+  "steps": [
+    {"text":"Build the outer box. The opening should match your glass, roughly 50 × 50 cm; depth 30–40 cm."},
+    {"text":"Make the inner box 5–10 cm smaller on every side, so it sits inside with a gap all round and below. Line it with metal or foil. Paint the floor matt black, or leave it shiny and use black pots.","warn":"Use paint that's safe when hot, or none. Ordinary paints give off fumes at 100+ °C."},
+    {"text":"Fill the gap with insulation and pack it firmly, then set the inner box in place. Keep foam plastic away from surfaces that get hot; it softens and smells above about 90 °C.","warn":"If you use fibreglass, wear gloves, sleeves and a mask, and seal it in so fibres can't reach the cooking space."},
+    {"text":"Make a lid frame that holds the glass tightly over the inner box. Seal the edge with a rubber strip so hot air can't escape. Two panes with a 1–2 cm gap work better in wind or cool weather.","warn":"Handle glass with gloves and set it firmly in the frame so it can't slip and shatter."},
+    {"text":"Cover a board the size of the glass with mirror, polished metal or foil (smooth, shiny side out). Hinge it to the back edge as a reflector lid with a prop stick to hold its angle."},
+    {"text":"Optional: add three more reflectors on the other sides, flared out 20–30°, to gather more light."},
+    {"text":"Test: put a thermometer inside, face the box at the sun, and set the reflector so it throws a bright patch onto the floor of the box. In strong sun it should reach 90–150 °C within 1–2 hours."},
+    {"text":"Cook: food in dark lidded pots, in small amounts. Start by mid-morning. Turn the box to follow the sun every 30–60 minutes. Allow about twice your normal cooking time.","warn":"Glass, pots and the inside reach over 100 °C. Use thick cloth or gloves. Don't stare into the reflector; the glare hurts eyes."},
+    {"text":"If cloud comes and the oven can't keep food above 60 °C, finish cooking on a fire or eat it soon. Don't leave cooked food sitting warm for hours."}
+  ],
+  "notes": "## How it works\nSunlight passes through the glass and is absorbed by dark surfaces. The heat can't easily escape back through glass, and insulation stops it leaking through the walls. Reflectors add more light.\n\n## How much heat\nFull sun is about 1,000W per m². A 0.25 m² opening plus reflector gathers roughly 350–450W, of which 30–50% reaches the food: about 100–200W, like a small hotplate on low. That's why it's slow but steady.\n\n## Times in good sun\n- Rice, lentils: 1.5–2.5 hours.\n- Beans (soaked), stews, root vegetables: 3–5 hours.\n- Bread: 1–2 hours in a dark tin.\n- Meat: 2–4 hours. Keep pieces small.\n\n## Making it work better\n- Seal the lid well; most heat escapes as warm air.\n- Preheat the empty oven for 30 minutes.\n- Use several small pots rather than one big one.\n- Raise pots on a small rack so hot air flows under them.\n- Point the box at where the sun will be in 30 minutes, not where it is now.\n\n## Water\nA solar oven can heat water close to boiling, but you can't easily see whether it boiled. If you rely on it for drinking water, use a thermometer (hold it at 70 °C or more for at least 10 minutes) or boil it on a fire. When in doubt, also disinfect.\n\n## Variations\n- **Panel cooker:** a shiny fold-out reflector around a black pot inside a heat-proof clear bag or bowl. Simpler, 80–120 °C.\n- **Curved dish cookers** focus light to a point and can boil water fast, but they can burn skin and eyes in seconds. Not recommended without experience.\n\n## If you lack a part\n- No glass: clear oven bag or two layers of clear plastic film stretched tight (works, but cooler and it ages in sun). Avoid plastics that soften at the temperatures inside.\n- No reflector: still works in strong summer sun, 20–30 °C cooler.\n",
+  "tree": {"era":1,"branch":"fire","requires":["skill_fire_starting"]},
+  "devices": ["fridge","commercial_fridge","toaster_oven","flat_tv","water_heater","range_hood"],
+  "parts": ["glass_pane","insulation","optics","sheet_metal"],
+  "license": "CC-BY-SA-4.0",
+  "refs": [
+    {"lib":"appropedia","q":"solar cooker"},
+    {"lib":"energypedia","q":"solar cooker"}
+  ],
+  "sources": [
+    {"title":"Box solar cooker designs promoted by solar cooking organisations","note":"General box-cooker principle, described in our own words."}
+  ]
+}

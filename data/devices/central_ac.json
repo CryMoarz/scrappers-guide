@@ -1,0 +1,43 @@
+{
+  "id": "central_ac",
+  "name": "Central air conditioner or heat pump (outdoor unit)",
+  "group": "Heating, cooling and water",
+  "aliases": ["ac condenser","condensing unit","outdoor ac unit","heat pump","central air","split system","ac unit","hvac condenser"],
+  "brands": ["Carrier","Trane","Lennox","Rheem","Goodman","York","Ruud","Daikin","American Standard","Bryant"],
+  "prev": 4,
+  "tools": ["screwdriver","socket","wrench","cutters","tubing_cutter"],
+  "mins": 60,
+  "kg": 80,
+  "hazards": ["refrigerant","heavy","sharp","hv_cap","mains"],
+  "comps": [
+    {"key":"relay","fn":"relay","spec":"Contactor with a 24V AC coil and 30–40A contacts — switches pumps and heaters; derate it heavily for DC","v":24,"ac":true,"a":[30,40],"qty":1,"ext":1,"obs":4,"loc":"Control box behind the side panel"},
+    {"key":"capacitor_large","fn":"capacitor_large","spec":"Dual run capacitor, roughly 30–60 + 5 µF at 370–440V — can bite; short its terminals with an insulated screwdriver first","v":[370,440],"qty":1,"ext":1,"obs":4,"loc":"Control box"},
+    {"key":"motor_ac","fn":"motor_ac","spec":"Condenser fan motor, 1/6–1/3 hp, 240V, about 800–1,100 RPM","v":240,"qty":1,"ext":2,"obs":4,"loc":"Under the top grille","kg":5},
+    {"key":"fan","fn":"fan","spec":"Large propeller blade, 45–70 cm","qty":1,"ext":2,"obs":4,"loc":"On the fan motor shaft"},
+    {"key":"compressor","fn":"compressor","spec":"Scroll or piston compressor, 1.5–5 tons — have the refrigerant recovered first","v":[208,240],"w":[1500,5000],"ac":true,"qty":1,"ext":4,"obs":3,"loc":"Centre of the base","kg":30},
+    {"key":"hose_tubing","fn":"hose_tubing","spec":"Copper refrigerant lines and coil with aluminium fins — often already stripped for scrap","qty":1,"ext":3,"obs":2,"loc":"Around the cabinet; lines run to the house"},
+    {"key":"breaker","fn":"breaker","spec":"Outdoor disconnect box: pull-out block or fused switch, 30–60A","a":[30,60],"qty":1,"ext":2,"obs":4,"loc":"On the wall beside the unit"},
+    {"key":"valve_solenoid","fn":"valve_solenoid","spec":"Reversing valve with a 24V coil (heat pumps)","v":24,"qty":1,"ext":4,"obs":5,"loc":"Brazed into the lines near the compressor"},
+    {"key":"sensor_misc","fn":"sensor_misc","spec":"Pressure switches and thermistors (newer units)","qty":2,"ext":2,"obs":5,"loc":"On the copper lines","p":0.5},
+    {"key":"sheet_metal","fn":"sheet_metal","spec":"Galvanised steel cabinet panels, louvres and fan grille","qty":4,"ext":2,"obs":4,"loc":"Outer cabinet","kg":3}
+  ],
+  "boards": [
+    {"id":"mcu_board","qty":1,"loc":"Defrost control board (heat pumps)","p":0.4},
+    {"id":"inverter_compressor_board","qty":1,"loc":"Inverter (variable-speed) models only","p":0.15}
+  ],
+  "buildings": [
+    {"b":"house","l":5},
+    {"b":"church","l":4},
+    {"b":"clinic","l":4},
+    {"b":"apartment","l":3},
+    {"b":"school","l":3},
+    {"b":"office","l":3},
+    {"b":"bank","l":3},
+    {"b":"nursing_home","l":3},
+    {"b":"pharmacy","l":3},
+    {"b":"convenience","l":3},
+    {"b":"gas_station","l":3},
+    {"b":"recycling","l":3},
+    {"b":"self_storage","l":2}
+  ]
+}

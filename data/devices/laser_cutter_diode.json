@@ -1,0 +1,26 @@
+{
+  "id": "laser_cutter_diode",
+  "name": "Diode laser engraver",
+  "variantOf": "laser_cutter",
+  "aliases": ["diode laser","blue laser engraver","laser engraver","diode laser cutter","desktop laser"],
+  "brands": ["xTool","Ortur","Sculpfun","Atomstack","Creality","Longer"],
+  "era": "2018–present",
+  "prev": 3,
+  "mins": 15,
+  "kg": 6,
+  "comps": [
+    {"key":"laser_diode","fn":"laser_diode","spec":"Blue laser diode module, 5–20W optical — burns skin and blinds instantly, even reflected","w":[5,20],"qty":1,"ext":1,"obs":4,"loc":"Head on the gantry"},
+    {"key":"optics","fn":"optics","spec":"Small focusing lens","qty":1,"ext":1,"obs":5,"loc":"End of the laser module"},
+    {"key":"hall_reed","absent":true},
+    {"key":"switch","fn":"switch","spec":"Limit microswitches (some models have none)","qty":2,"ext":1,"obs":5,"loc":"Ends of the X and Y axes","p":0.5},
+    {"key":"fan","fn":"fan","spec":"12/24V module cooling fans","v":24,"qty":2,"ext":1,"obs":4,"loc":"Laser module and controller"}
+  ],
+  "buildings": [
+    {"b":"house","l":3},
+    {"b":"makerspace","l":5},
+    {"b":"garage_res","l":3},
+    {"b":"school","l":3},
+    {"b":"electronics","l":2},
+    {"b":"self_storage","l":2}
+  ]
+}

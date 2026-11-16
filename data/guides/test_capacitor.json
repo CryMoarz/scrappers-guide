@@ -1,0 +1,30 @@
+{
+  "id": "test_capacitor",
+  "kind": "test",
+  "title": "Test a capacitor",
+  "keywords": ["test capacitor","bad capacitor","bulging capacitor","capacitor test","run capacitor","start capacitor","electrolytic","esr","microfarad","uf","capacitance","dual capacitor"],
+  "summary": "Spot failed capacitors by eye, discharge them safely, and check their value and leakage with a meter. Covers small electrolytics on circuit boards and the motor run and start capacitors that kill air conditioners, pumps and fans.",
+  "difficulty": 2,
+  "mins": 15,
+  "tools": ["multimeter","desolder","pliers","cutters"],
+  "hazards": ["hv_cap","burn","mains"],
+  "materials": [
+    {"item":"Resistor discharge tool","fn":"resistor","qty":"1"}
+  ],
+  "steps": [
+    {"text":"Discharge the capacitor with a resistor tool and check it on DC volts before touching it.","warn":"Never test a capacitor that might be charged. Follow the capacitor discharge guide."},
+    {"text":"Look for damage: domed or split tops, bulging bottoms, brown crust or wet residue around the legs, a capacitor pushed up off the board, or a cracked or swollen run capacitor case. Any of these means replace it."},
+    {"text":"Read the label: capacitance (µF, nF or pF), voltage, and tolerance (such as ±5% or ±10%). Dual run capacitors have two values and three terminals marked C (common), FAN and HERM (compressor)."},
+    {"text":"Free at least one leg from the circuit before measuring. Other parts on the board change the reading.","warn":"Desoldering irons run at over 300 °C. Rest the iron in a stand."},
+    {"text":"Set the meter to capacitance (a capacitor symbol, or F). Touch the probes to the terminals, red to + on electrolytics, and wait for the reading to settle."},
+    {"text":"Compare the reading with the label. Run capacitors should be within their printed tolerance, usually ±5–6%. Small electrolytics are often ±20%. Below that, the capacitor is drying out."},
+    {"text":"No capacitance setting? Use ohms. On a discharged electrolytic, the reading should start low and climb steadily to very high or OL as the meter charges it. Stuck near zero means shorted. OL at once on a large capacitor means open."},
+    {"text":"On metal-can run capacitors, measure from each terminal to the can. It should read OL."},
+    {"text":"Discharge again after testing, and label good ones with their measured value."}
+  ],
+  "notes": "## Reading values\n\n- 1 µF (microfarad) = 1,000 nF (nanofarads) = 1,000,000 pF (picofarads).\n- Small ceramic and film capacitors use a three-digit code: two digits then the number of zeros, in pF. 104 = 10 followed by 4 zeros = 100,000 pF = 100 nF = 0.1 µF. 473 = 47 nF.\n- A letter after the code gives tolerance: J = ±5%, K = ±10%, M = ±20%.\n\n## Choosing a replacement\n\n- Voltage rating: the same or higher, never lower.\n- Capacitance: the same, or close to it. For motor run capacitors, match the µF within a few percent.\n- Type: run capacitors must be run-rated; start capacitors are only for short bursts and fail if left in circuit.\n- Electrolytics have a polarity. Fitted backwards and powered, they can burst.\n\n## ESR\n\nElectrolytic capacitors can show the right capacitance and still fail, because their internal resistance (ESR) has risen. A normal meter can't measure ESR; an ESR meter can. Bulging tops and symptoms such as a power supply that whines, flickers or won't start point to high ESR.\n\n## Supercapacitors\n\nMost meters can't measure capacitors of a farad or more. Test a supercapacitor by charging it slowly through a resistor to below its rated voltage, then checking it holds the voltage over a few hours.\n\n## Common mistakes\n\n- Measuring in circuit.\n- Testing a charged capacitor and blowing the meter.\n- Fitting a replacement with a lower voltage rating.\n- Fitting an electrolytic backwards.",
+  "tree": {"era":3,"branch":"power","requires":["safety_discharge_capacitor","skill_multimeter"]},
+  "devices": ["microwave","ups","flat_tv","desktop_pc","window_ac","crt_tv","central_ac","mini_split","pool_pump","well_pump","ceiling_fan","washer","dehumidifier"],
+  "parts": ["cap_elec","cap_film","capacitor_large","supercap"],
+  "license": "CC-BY-SA-4.0"
+}

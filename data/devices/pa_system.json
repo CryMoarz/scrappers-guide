@@ -1,0 +1,31 @@
+{
+  "id": "pa_system",
+  "name": "PA systems and amplifiers",
+  "group": "Electronics and office",
+  "aliases": ["public address system","sound system"],
+  "brands": ["Bose","Yamaha","QSC","Behringer","Peavey","Mackie","JBL","Electro-Voice","Shure"],
+  "prev": 3,
+  "tools": ["screwdriver"],
+  "mins": 20,
+  "hazards": [],
+  "comps": [
+    {"key":"speaker","fn":"speaker","spec":"Large speakers and horn drivers","w":[30,500],"qty":4,"ext":2,"obs":4,"loc":"Ceilings, walls, stage"},
+    {"key":"transformer_lv","fn":"transformer_lv","spec":"Heavy amplifier transformers","v":[24,60],"w":[150,1000],"ac":true,"qty":1,"ext":2,"obs":5,"loc":"Amplifier rack"},
+    {"key":"microphone","fn":"microphone","spec":"Microphones","qty":2,"ext":1,"obs":4,"loc":"Stage or podium"},
+    {"key":"magnet_ferrite","fn":"magnet_ferrite","spec":"Large speaker magnets","qty":4,"ext":2,"obs":4,"loc":"Back of each speaker"}
+  ],
+  "boards": [
+    {"id":"audio_amp_board","qty":2,"loc":"Amplifiers","p":1},
+    {"id":"linear_psu","qty":1,"loc":"Older amplifiers","p":0.5}
+  ],
+  "buildings": [
+    {"b":"church","l":5},
+    {"b":"school","l":5},
+    {"b":"gym","l":4},
+    {"b":"hotel","l":3},
+    {"b":"restaurant","l":3},
+    {"b":"supermarket","l":3},
+    {"b":"office","l":2},
+    {"b":"shop_small","l":2}
+  ]
+}

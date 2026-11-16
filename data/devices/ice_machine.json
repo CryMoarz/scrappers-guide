@@ -1,0 +1,43 @@
+{
+  "id": "ice_machine",
+  "name": "Commercial ice machine",
+  "group": "Commercial",
+  "aliases": ["ice maker","ice machine","commercial ice maker","ice bin","nugget ice machine","cube ice machine"],
+  "brands": ["Hoshizaki","Manitowoc","Scotsman","Ice-O-Matic","Follett","Kold-Draft","Vevor"],
+  "prev": 4,
+  "tools": ["screwdriver","socket"],
+  "mins": 45,
+  "kg": 90,
+  "hazards": ["refrigerant","heavy","mold"],
+  "comps": [
+    {"key":"cooler_box","fn":"cooler_box","spec":"Insulated ice storage bin, holds 100–300 kg of ice — a big ready-made cooler","qty":1,"ext":2,"obs":5,"loc":"Under the ice-making head","kg":40},
+    {"key":"filter_water","fn":"filter_water","spec":"Inline sediment and carbon cartridges; sealed spares are often stored nearby","qty":2,"ext":1,"obs":5,"loc":"On the wall behind the machine, on the water supply line"},
+    {"key":"compressor","fn":"compressor","spec":"Hermetic refrigeration compressor, about 1/3–1 hp","v":[120,240],"w":[250,750],"ac":true,"qty":1,"ext":4,"obs":3,"loc":"Base of the head unit","kg":20},
+    {"key":"pump_water","fn":"pump_water","spec":"Small mains water recirculating pump","v":[120,240],"w":[20,60],"ac":true,"qty":1,"ext":2,"obs":5,"loc":"Water trough inside the head"},
+    {"key":"valve_solenoid","fn":"valve_solenoid","spec":"Water inlet, purge and hot-gas solenoid valves","v":[120,240],"ac":true,"qty":3,"ext":2,"obs":5,"loc":"Back of the head unit"},
+    {"key":"hall_reed","fn":"hall_reed","spec":"Reed switch and magnet that sense the water curtain or bin level (many cube machines)","qty":1,"ext":2,"obs":5,"loc":"Behind the evaporator curtain"},
+    {"key":"motor_ac","fn":"motor_ac","spec":"Auger gear motor (flake and nugget machines)","v":[120,240],"w":[120,370],"ac":true,"qty":1,"ext":3,"obs":5,"loc":"Below the evaporator"},
+    {"key":"fan","fn":"fan","spec":"Condenser fan motor (air-cooled units)","v":[120,240],"w":[10,50],"ac":true,"qty":1,"ext":2,"obs":4,"loc":"Behind the front or side grille"},
+    {"key":"sensor_misc","fn":"sensor_misc","spec":"Thermistors and ice-thickness probe","qty":2,"ext":2,"obs":5,"loc":"Evaporator"},
+    {"key":"hose_tubing","fn":"hose_tubing","spec":"Food-grade water tubing and copper refrigerant lines","qty":1,"ext":2,"obs":4,"loc":"Throughout the head"}
+  ],
+  "boards": [
+    {"id":"mcu_board","qty":1,"loc":"Control box behind the front panel","p":0.9}
+  ],
+  "buildings": [
+    {"b":"restaurant","l":5},
+    {"b":"hotel","l":5},
+    {"b":"hospital","l":4},
+    {"b":"stadium","l":4},
+    {"b":"marina","l":4},
+    {"b":"gas_station","l":3},
+    {"b":"convenience","l":3},
+    {"b":"supermarket","l":3},
+    {"b":"nursing_home","l":3},
+    {"b":"cinema","l":3},
+    {"b":"golf","l":3},
+    {"b":"school","l":3},
+    {"b":"mall","l":3}
+  ],
+  "notes": "Wet inside: expect mould in the bin and water path. Clean the bin before using it as a cooler."
+}

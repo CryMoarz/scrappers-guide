@@ -1,0 +1,6 @@
+{
+  "id": "car_dealer",
+  "name": "Car dealerships",
+  "osm": ["shop=car","amenity=car_rental","shop=motorcycle"],
+  "exposure": 3
+}

@@ -1,0 +1,7 @@
+{
+  "id": "roadside",
+  "name": "Roadside equipment",
+  "osm": ["highway=traffic_signals","highway=street_lamp","advertising=billboard"],
+  "exposure": 1,
+  "notes": "Traffic signal cabinets with backup batteries, LED signal heads, streetlights with photocells and solar units, digital billboards."
+}

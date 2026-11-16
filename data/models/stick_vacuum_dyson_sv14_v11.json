@@ -1,0 +1,17 @@
+{
+  "id": "stick_vacuum_dyson_sv14_v11",
+  "device": "stick_vacuum",
+  "brand": "Dyson",
+  "model": "SV14 (V11)",
+  "notes": "Covers the V11, V11 Extra and SV14 models.",
+  "research": {"checked":"2026-11-11","gaps":["The main circuit board and trigger parts, sourced to the iFixit Dyson V11 Trigger Replacement guide, were removed because that guide names the V11 Torque Drive and never the SV14.","No readable source here states the motor type or the years."],"method":["The ManualsLib manual titled Dyson V11, V11 Extra, SV14 names the charger, the docking station and the filter unit (pleated paper element, foam element, washing section).","A third-party replacement-battery listing names the SV14 with a screw-in style battery, 25.2 V, 4200 mAh, and battery part numbers 299820 and 970145-02."]},
+  "comps": [
+    {"key":"battery_li","conf":"documented","spec":"25.2 V lithium-ion screw-in style battery. A seller's replacement listing gives 4200 mAh and lists battery part numbers 299820 and 970145-02 among those compatible with the SV14 and V11.","v":25.2,"ah":4.2,"source":"https://laptopbatteryexpress.com/299820-Battery-for-Dyson-V11-SV14-p/dys-sv14.htm"},
+    {"key":"charger","conf":"documented","spec":"Charger and docking station, both named in the manual's charging and docking station sections","source":"https://www.manualslib.com/manual/3738020/Dyson-V11.html"},
+    {"key":"filter_air_unit","fn":"filter_air","spec":"Filter unit with a pleated paper element and a foam element; the manual has a section on washing it","qty":1,"ext":1,"obs":2,"loc":"Not stated in the source text","conf":"documented","source":"https://www.manualslib.com/manual/3738020/Dyson-V11.html"}
+  ],
+  "sources": [
+    {"title":"Dyson V11, V11 Extra, SV14 Manual (ManualsLib)","url":"https://www.manualslib.com/manual/3738020/Dyson-V11.html"},
+    {"title":"299820 Battery for Dyson SV14 (screw-in) listing (laptopbatteryexpress.com)","url":"https://laptopbatteryexpress.com/299820-Battery-for-Dyson-V11-SV14-p/dys-sv14.htm"}
+  ]
+}

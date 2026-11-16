@@ -1,0 +1,21 @@
+{
+  "id": "wifi_router_gl_inet_gl_b1300_convexa_b",
+  "device": "wifi_router",
+  "brand": "GL.iNet",
+  "model": "GL-B1300 (Convexa-B)",
+  "fcc": "2AFIW-B1300",
+  "notes": "Hardware versions of the GL-B1300 (Convexa-B) can differ.",
+  "research": {"gaps":[],"method":["Not yet fact-checked: its parts show as likely until a fact-check confirms them against their sources.","Imported from the OpenWrt Table of Hardware (toh.json, 2026-11-13): the hardware data page for this version, by OpenWrt wiki contributors under CC BY-SA 4.0."]},
+  "comps": [
+    {"key":"ic_mcu_soc","fn":"ic_mcu","spec":"SoC Qualcomm Atheros IPQ4028, 4 cores at 717 MHz","qty":1,"ext":4,"obs":3,"source":"https://openwrt.org/toh/hwdata/gl.inet/gl.inet_gl-b1300","conf":"likely"},
+    {"key":"ic_memory_flash","fn":"ic_memory","spec":"Flash, 32 MB","qty":1,"ext":2,"obs":4,"source":"https://openwrt.org/toh/hwdata/gl.inet/gl.inet_gl-b1300","conf":"likely"},
+    {"key":"ic_memory_ram","fn":"ic_memory","spec":"RAM, 256 MB","qty":1,"ext":3,"obs":3,"source":"https://openwrt.org/toh/hwdata/gl.inet/gl.inet_gl-b1300","conf":"likely"},
+    {"key":"radio_rf","spec":"Wi-Fi: Qualcomm Atheros IPQ4028 (2.4 GHz b/g/n, 5 GHz a/n/ac)","qty":1,"source":"https://openwrt.org/toh/hwdata/gl.inet/gl.inet_gl-b1300","conf":"likely"},
+    {"key":"psu","spec":"Power supply: 12 VDC, 1.5A via barrel, or 802.3at PoE","v":12,"a":1.5,"source":"https://openwrt.org/toh/hwdata/gl.inet/gl.inet_gl-b1300","conf":"likely"},
+    {"key":"connector","spec":"Ethernet ports: 3× gigabit","qty":3,"source":"https://openwrt.org/toh/hwdata/gl.inet/gl.inet_gl-b1300","conf":"likely"},
+    {"key":"connector_usb","fn":"connector","spec":"USB: 1x 3.0, 1x Header","qty":1,"ext":2,"obs":4,"source":"https://openwrt.org/toh/hwdata/gl.inet/gl.inet_gl-b1300","conf":"likely"}
+  ],
+  "sources": [
+    {"title":"OpenWrt Table of Hardware: GL.iNet GL-B1300 (Convexa-B) (OpenWrt wiki contributors, CC BY-SA 4.0)","url":"https://openwrt.org/toh/hwdata/gl.inet/gl.inet_gl-b1300"}
+  ]
+}

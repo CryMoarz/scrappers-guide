@@ -1,0 +1,14 @@
+{
+  "id": "bjt",
+  "name": "Bipolar transistors",
+  "group": "Electronic components",
+  "demand": 1,
+  "keywords": ["transistor","transistors","bjt","npn","pnp","2n2222","2n3904","2n3055","bc547","tip120","tip31","2n3906","2n2907","bc557","s8050","13003","mje13005","tip41","darlington","power transistor"],
+  "substitutes": ["mosfet"],
+  "summary": "Bipolar transistors: small-signal NPN and PNP types and power transistors for switching and amplifying.",
+  "uses": ["Switching relays, LEDs and small motors","Simple amplifiers and oscillators","Replacing failed parts in old gear"],
+  "identify": "Three-legged parts: small black TO-92s, TO-220s with a metal tab, or round TO-3 metal cans, marked 2N3904, BC547, TIP120, 13003 and similar. Power types sit on heatsinks in amplifiers, chargers and older power supplies.",
+  "test": "On diode mode, an NPN reads about 0.5–0.7V from base to emitter and base to collector, and open the other way. Collector to emitter should be open both ways.",
+  "decay": {"halfLifeMonths":null,"note":"Lasts."},
+  "hazards": []
+}

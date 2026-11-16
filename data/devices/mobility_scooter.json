@@ -1,0 +1,42 @@
+{
+  "id": "mobility_scooter",
+  "name": "Mobility scooter",
+  "group": "Medical and mobility",
+  "aliases": ["handicap scooter","power scooter","electric mobility scooter","store mobility cart","electric shopping cart","senior scooter","4 wheel scooter"],
+  "brands": ["Pride Mobility","Drive Medical","Invacare","Golden Technologies","Shoprider","Merits"],
+  "prev": 3,
+  "tools": ["socket","screwdriver","wrench","hex"],
+  "mins": 30,
+  "kg": 60,
+  "hazards": ["heavy"],
+  "comps": [
+    {"key":"battery_pb","fn":"battery_pb","spec":"Two 12V sealed AGM or gel batteries, 12–50Ah, wired for 24V","ah":[12,50],"qty":2,"ext":1,"obs":4,"loc":"Under the seat or in a battery box","kg":10},
+    {"key":"motor_dc_large","fn":"motor_dc_large","spec":"24V permanent-magnet DC motor, about 250–800W, on a transaxle — a good low-voltage generator or winch motor","v":24,"w":[250,800],"qty":1,"ext":3,"obs":5,"loc":"Rear axle","kg":6},
+    {"key":"gearbox","fn":"gearbox","spec":"Transaxle with reduction gearing and differential","qty":1,"ext":3,"obs":5,"loc":"Rear axle","kg":8},
+    {"key":"solenoid_actuator","fn":"solenoid_actuator","spec":"24V electromagnetic parking brake","v":24,"qty":1,"ext":2,"obs":5,"loc":"End of the motor"},
+    {"key":"charger","fn":"charger","spec":"24V lead-acid charger, 2–8A, on board or separate","v":24,"a":[2,8],"qty":1,"ext":1,"obs":4,"loc":"Under the shroud or plugged in nearby"},
+    {"key":"breaker","fn":"breaker","spec":"Resettable main circuit breaker, about 40–60A DC","a":[40,60],"qty":1,"ext":2,"obs":5,"loc":"Near the batteries"},
+    {"key":"potentiometer","fn":"potentiometer","spec":"Wig-wag throttle potentiometer (a Hall sensor on some newer models)","qty":1,"ext":2,"obs":5,"loc":"Tiller head","p":0.25},
+    {"key":"led_light","fn":"led_light","spec":"Headlight and indicators (many models)","v":24,"w":[1,15],"qty":2,"ext":1,"obs":4,"loc":"Tiller and rear","p":0.75},
+    {"key":"bearing","fn":"bearing","spec":"Wheels with sealed ball bearings","qty":4,"ext":1,"obs":4,"loc":"Wheels"},
+    {"key":"tube_frame","fn":"tube_frame","spec":"Steel chassis and seat post","qty":1,"ext":3,"obs":5,"loc":"Base","kg":15},
+    {"key":"foam_rubber","fn":"foam_rubber","spec":"Padded swivel seat","qty":1,"ext":1,"obs":5,"loc":"Top"}
+  ],
+  "boards": [
+    {"id":"power_motor_controller","qty":1,"loc":"Controller under the rear shroud","p":1}
+  ],
+  "buildings": [
+    {"b":"nursing_home","l":5},
+    {"b":"supermarket","l":4},
+    {"b":"department","l":4},
+    {"b":"house","l":3},
+    {"b":"apartment","l":3},
+    {"b":"hospital","l":3},
+    {"b":"mall","l":3},
+    {"b":"pharmacy","l":3},
+    {"b":"clinic","l":2},
+    {"b":"church","l":2},
+    {"b":"self_storage","l":2}
+  ],
+  "notes": "Only from abandoned stock, store fleets or storage: leave any scooter someone still relies on. Batteries left flat for months may be dead; test before carrying."
+}

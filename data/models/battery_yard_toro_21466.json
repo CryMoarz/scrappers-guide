@@ -1,0 +1,27 @@
+{
+  "id": "battery_yard_toro_21466",
+  "device": "battery_yard",
+  "brand": "Toro",
+  "model": "21466",
+  "notes": "Flex-Force Power System 60V MAX 22 in. Recycler walk mower with Personal Pace self-propel, sold with a 6.0 Ah battery and a charger (21466T is the same mower without battery or charger; 21468 ships with the 7.5 Ah pack).",
+  "research": {"checked":"2026-11-12","gaps":["The catalog does not say what the module contains.","Toro's 60v WPM Service Manual (Form 3429-828 Rev A, https://toro.com/getpub/169620) also calls the motor a 60 volt 2 kW brushless DC motor and says the battery and charger each have an internal non-serviceable fuse and the charger can cool a hot battery with an internal fan, but its spec table na...","No board-level parts documented; no teardown of the 88660 pack naming its cells was found.","The hood also carries 2 magnets (114-5896) of unstated type, left out."],"method":["Sources: Toro parts catalog Form 3441-857 Rev C (model 21466, serial 400000000 and up, (c) 2023), operator's manual Form 3441-853 Rev B (covers 21466, 21466T and 21468, (c) 2021) and the toro.com product page; the PDFs were read as text on 2026-11-12.","The parts catalog lists both a 'Motor Module 60V' (140-4125, Blade Drive Assembly page) and the bare 'Motor-2Kw' (140-4119, Motor and Lower Shroud page).","The 2 kW figure is from the catalog's part description, not a separate rating table.","The toro.com product page gives the motor type as Brushless DC and calls the included battery 'L324 (6.0Ah, 324Wh)'; the operator's manual gives the same 6.0 Ah / 324 Wh for pack model 88660."]},
+  "comps": [
+    {"key":"battery_li","conf":"documented","spec":"Toro Flex-Force lithium-ion pack model 88660, 6.0 Ah, 324 Wh; maker's rating 60 V maximum, 54 V nominal; the manual says it is provided with the 21466","v":60,"ah":6,"source":"https://www.toro.com/getpub/199993"},
+    {"key":"charger","conf":"documented","spec":"Toro 60V MAX lithium-ion charger model 88602 (2 A); input 120 V AC 50/60 Hz max 2.0 A, output 60V MAX DC 2.0 A","v":60,"a":2,"source":"https://www.toro.com/getpub/199993"},
+    {"key":"motor_bldc","conf":"documented","spec":"Motor-2Kw, part no. 140-4119, qty 1 (Motor and Lower Shroud Assembly ref. 2); the Blade Drive Assembly page lists Motor Module 60V, part no. 140-4125","w":2000,"qty":1,"source":"https://www.toro.com/getpub/230306"},
+    {"key":"controller_board","conf":"documented","spec":"Controller-Motor, part no. 140-4164, qty 1 (Motor and Lower Shroud Assembly ref. 10)","qty":1,"source":"https://www.toro.com/getpub/230306"},
+    {"key":"connector_battery","fn":"connector","spec":"Battery Receiver ASM, part no. 139-6632 (Motor and Lower Shroud Assembly ref. 7)","qty":1,"ext":2,"obs":3,"conf":"documented","source":"https://www.toro.com/getpub/230306"},
+    {"key":"switch_bail","fn":"switch","spec":"Bail Switch ASM, part no. 133-1918, with extension spring 104-6478 (ref. 15 and 15:4)","qty":1,"ext":2,"obs":3,"conf":"documented","source":"https://www.toro.com/getpub/230306"},
+    {"key":"switch_power","fn":"switch","spec":"Switch-Starter ASM, part no. 140-4145 (Starter Switch Assembly ref. 2)","qty":1,"ext":1,"obs":3,"conf":"documented","source":"https://www.toro.com/getpub/230306"},
+    {"key":"wire_copper_harness","fn":"wire_copper","spec":"Harness-Wire, part no. 139-6637 (Motor and Lower Shroud Assembly ref. 16)","qty":1,"ext":1,"obs":3,"conf":"documented","source":"https://www.toro.com/getpub/230306"},
+    {"key":"gearbox_drive","fn":"gearbox","spec":"Transmission-Rwd (rear-wheel self-propel transmission), part no. 139-6561, with two 15-tooth pinion gears 131-5399","qty":1,"ext":3,"obs":3,"conf":"documented","source":"https://www.toro.com/getpub/230306"},
+    {"key":"belt_pulley_drive","fn":"belt_pulley","spec":"V-Belt, part no. 140-4041 (Rear Wheel and HOC Assembly ref. 15, listed with the Rwd transmission and Rwd belt cover)","qty":1,"ext":2,"obs":3,"conf":"documented","source":"https://www.toro.com/getpub/230306"},
+    {"key":"bearing_wheel","fn":"bearing","spec":"Bearing-Ball, part no. 104-8699 (Rear Wheel and HOC Assembly ref. 11)","qty":2,"ext":3,"obs":4,"conf":"documented","source":"https://www.toro.com/getpub/230306"}
+  ],
+  "sources": [
+    {"title":"Toro Flex-Force 60V MAX 22in Recycler Lawn Mower Model 21466 parts catalog, Form 3441-857 Rev C (toro.com, 2023)","url":"https://www.toro.com/getpub/230306"},
+    {"title":"Toro 60V MAX 22in Recycler Lawn Mower 21466/21466T/21468 operator's manual, Form 3441-853 Rev B (toro.com, 2021)","url":"https://www.toro.com/getpub/199993"},
+    {"title":"Toro 21466 product page, 60V Max 22 in. Recycler w/Personal Pace Lawn Mower - 6.0Ah Battery Included (toro.com)","url":"https://www.toro.com/en/product/21466"},
+    {"title":"Toro 60v WPM Service Manual, Form 3429-828 Rev A (toro.com, 2019; spec table for models 20363/20366)","url":"https://toro.com/getpub/169620"}
+  ]
+}

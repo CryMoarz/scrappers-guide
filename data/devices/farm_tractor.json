@@ -1,0 +1,36 @@
+{
+  "id": "farm_tractor",
+  "name": "Farm tractor",
+  "group": "Farm and outdoor",
+  "aliases": ["tractor","compact tractor","utility tractor","farm tractor","farmall","ferguson"],
+  "brands": ["John Deere","Kubota","New Holland","Massey Ferguson","Case IH","Mahindra","Yanmar","Branson"],
+  "prev": 3,
+  "tools": ["socket","wrench","heavy"],
+  "mins": 90,
+  "kg": 2500,
+  "hazards": ["heavy","fuel","hydraulic","crush","acid"],
+  "comps": [
+    {"key":"hydraulic","fn":"hydraulic","spec":"Gear pump, control valves and lift cylinders for the three-point hitch and loader","qty":3,"ext":3,"obs":5,"loc":"Rear hitch, loader arms and under the seat","kg":25},
+    {"key":"hose_tubing","fn":"hose_tubing","spec":"High-pressure hydraulic hoses with quick couplers","qty":6,"ext":2,"obs":5,"loc":"Rear remotes and loader"},
+    {"key":"oil_lube","fn":"oil_lube","spec":"Shared hydraulic and transmission fluid, 30–150 L, plus engine oil","qty":1,"ext":2,"obs":4,"loc":"Transmission case; drain plug underneath"},
+    {"key":"fuel_liquid","fn":"fuel_liquid","spec":"Diesel in the tank, 40–300 L; diesel keeps far longer than petrol","qty":1,"ext":2,"obs":3,"loc":"Tank beside or under the cab"},
+    {"key":"rod_shaft","fn":"rod_shaft","spec":"Rear PTO shaft, 540 or 1,000 rpm — drives a PTO generator, pump or saw","qty":1,"ext":2,"obs":5,"loc":"Rear of the tractor"},
+    {"key":"battery_pb","fn":"battery_pb","spec":"12V heavy-duty starting battery, sometimes two","v":12,"qty":1,"ext":2,"obs":3,"loc":"Under the hood or a side step"},
+    {"key":"alternator","fn":"alternator","spec":"12V alternator, 40–120A","v":12,"a":[40,120],"qty":1,"ext":3,"obs":3,"loc":"Front of the engine"},
+    {"key":"motor_dc_small","fn":"motor_dc_small","spec":"12V starter motor","v":12,"qty":1,"ext":3,"obs":5,"loc":"Side of the engine"},
+    {"key":"gps","fn":"gps","spec":"GPS receiver and guidance display (newer large tractors)","qty":1,"ext":2,"obs":5,"loc":"Dome on the cab roof; display in the cab"},
+    {"key":"led_light","fn":"led_light","spec":"12V work lights","v":12,"qty":6,"ext":1,"obs":3,"loc":"Cab roof and fenders"},
+    {"key":"wire_heavy","fn":"wire_heavy","spec":"Battery cables","qty":2,"ext":1,"obs":4,"loc":"Battery box"}
+  ],
+  "buildings": [
+    {"b":"farm","l":5},
+    {"b":"farm_supply","l":4},
+    {"b":"golf","l":3},
+    {"b":"construction","l":2},
+    {"b":"stadium","l":2},
+    {"b":"water_works","l":2},
+    {"b":"garden_centre","l":2},
+    {"b":"campground","l":2}
+  ],
+  "notes": "A running diesel tractor is a power plant: the PTO turns generators and pumps. Lower implements to the ground before working on hydraulics."
+}

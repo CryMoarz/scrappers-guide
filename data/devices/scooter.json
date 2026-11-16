@@ -1,0 +1,29 @@
+{
+  "id": "scooter",
+  "name": "E-scooter",
+  "group": "Vehicles and mobility",
+  "aliases": ["electric scooter","kick scooter","e scooter","commuter scooter"],
+  "brands": ["Segway","Xiaomi","Gotrax","Hiboy","Razor","Apollo","Unagi","Hover-1"],
+  "prev": 4,
+  "tools": ["screwdriver"],
+  "mins": 20,
+  "hazards": ["li_fire"],
+  "comps": [
+    {"key":"battery_li","fn":"battery_li","spec":"36V pack of 18650 cells","v":36,"qty":1,"ext":2,"obs":3,"loc":"Deck"},
+    {"key":"motor_bldc","fn":"motor_bldc","spec":"Brushless hub motors (1–2)","v":[36,48],"w":[250,1000],"qty":2,"ext":3,"obs":4,"loc":"Wheels"},
+    {"key":"controller_board","fn":"controller_board","spec":"Motor controller","qty":1,"ext":2,"obs":5,"loc":"Deck"},
+    {"key":"charger","fn":"charger","spec":"Charger brick","v":42,"a":[1.5,2],"qty":1,"ext":1,"obs":3,"loc":"With the owner"}
+  ],
+  "boards": [
+    {"id":"bldc_controller","qty":1,"loc":"Deck","p":1},
+    {"id":"battery_bms","qty":1,"loc":"On the battery pack","p":1}
+  ],
+  "buildings": [
+    {"b":"house","l":4},
+    {"b":"apartment","l":4},
+    {"b":"school","l":2},
+    {"b":"department","l":3},
+    {"b":"electronics","l":3},
+    {"b":"toy_store","l":4}
+  ]
+}

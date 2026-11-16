@@ -1,0 +1,14 @@
+{
+  "id": "heatsink",
+  "name": "Heatsinks",
+  "group": "Electronic components",
+  "demand": 1,
+  "keywords": ["heatsink","heat sink","cooling fin","aluminium heatsink","aluminum heatsink","cpu cooler","heat pipe","heatpipe","cooling block","finned heatsink"],
+  "substitutes": [],
+  "summary": "Finned aluminium or copper blocks that pull heat away from chips, transistors and LEDs.",
+  "uses": ["Cooling MOSFETs, regulators and LEDs in builds","The hot side of a Peltier cooler","Heat pipes for small heat-moving projects"],
+  "identify": "Finned blocks on CPUs, power supplies, amplifiers, inverters, motor controllers and LED lamps. CPU coolers with copper heat pipes and a fan are the best finds.",
+  "test": "Look for bent fins and clean the contact face. Use thermal paste or a pad between the part and the sink.",
+  "decay": {"halfLifeMonths":null,"note":"Lasts."},
+  "hazards": ["sharp"]
+}

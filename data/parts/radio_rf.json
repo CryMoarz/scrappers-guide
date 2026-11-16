@@ -1,0 +1,14 @@
+{
+  "id": "radio_rf",
+  "name": "Radios and RF modules",
+  "group": "Signal and control",
+  "demand": 4,
+  "keywords": ["radio","transceiver","cb","vhf","uhf","rf","receiver","walkie","communications","comms","ham radio","amateur radio","shortwave","am radio","fm radio","scanner","frs","gmrs","pmr446","handheld radio","two-way radio","433mhz","lora","nrf24l01"],
+  "substitutes": ["antenna_coax"],
+  "summary": "Radios and RF modules: receivers, two-way radios, scanners and small data links.",
+  "uses": ["Talking with other groups (handhelds, CB, ham)","Listening for news and weather","Remote alarms and sensors (433 MHz modules)"],
+  "identify": "Handheld two-way radios at shops, security desks and schools; CB rigs in trucks; ham gear in hobbyists’ homes; scanners and shortwave receivers; small 433 MHz modules in gate remotes, doorbells and weather stations.",
+  "test": "Power it and listen on a busy channel or the FM band. With two radios, check they hear each other at range.",
+  "decay": {"halfLifeMonths":null,"note":"Lasts."},
+  "hazards": []
+}

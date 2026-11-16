@@ -1,0 +1,31 @@
+{
+  "id": "teardown_treadmill",
+  "kind": "teardown",
+  "title": "Treadmill: get the big DC motor and controller out",
+  "keywords": ["treadmill teardown","treadmill motor","pmdc motor","treadmill controller","wind generator motor","treadmill incline motor","running machine"],
+  "summary": "Pull the 1.5–3 hp permanent-magnet DC motor, its controller, the flywheel, belt, rollers, bearings, incline actuator and steel frame from a treadmill. The motor is one of the best generators a scavenger can find. Two people make the job safe.",
+  "difficulty": 2,
+  "mins": 45,
+  "tools": ["screwdriver","socket","hex","wrench","pliers","multimeter","heavy"],
+  "hazards": ["heavy","crush","hv_cap","mains"],
+  "materials": [],
+  "steps": [
+    {"text":"Unplug it and cut the plug off. On folding models, lower the deck flat and strap or tie it so it can't swing up or down while you work.","warn":"A folding deck can drop or spring up. Keep hands out of the hinge and gas strut area."},
+    {"text":"Remove the motor hood at the front: usually 4–8 screws along the sides and front edge. Lift it off."},
+    {"text":"Find the controller board under the hood. On mains-powered treadmills it holds large capacitors charged from the mains. Wait 5 minutes, then measure DC volts across the largest capacitors. If you see more than about 30 V, discharge them with a resistor tool (see safety_discharge_capacitor) and measure again.","warn":"Mains treadmill controllers can hold about 170 V DC (120 V countries) or 340 V DC (230 V countries)."},
+    {"text":"Photograph the wiring. Label the two motor wires (often red and black, or marked A+ and A-) and unplug them from the controller."},
+    {"text":"Slacken the drive belt: loosen the motor mounting bolts or the tension bolt so the motor slides toward the roller, then roll the belt off the pulleys."},
+    {"text":"Undo the motor mounting bolts (usually 2–4) and lift the motor out with its flywheel. It weighs about 8–15 kg.","warn":"Lift with your legs and keep fingers clear of the frame edges when the motor comes free."},
+    {"text":"Leave the flywheel on unless you need it off. On many motors it screws onto a reverse (left-hand) thread: it loosens by turning clockwise. Check before forcing it."},
+    {"text":"Undo the screws holding the controller board and lift it out whole with its heatsink. Keep its wiring loom."},
+    {"text":"Remove the incline actuator: support the deck, then pull the pins or bolts at both ends of the actuator. Note the label: many run on mains AC, some on DC.","warn":"The deck can drop when the last pin comes out. Prop it first."},
+    {"text":"Loosen the two belt-tension bolts at the back end of the side rails (usually hex keys), slide the running belt off, and unbolt the front and rear rollers. Each roller has a bearing at each end."},
+    {"text":"Unscrew the deck board from the frame. With a helper, unbolt the side rails and uprights if you want the steel tube.","warn":"Treadmills weigh 60–120 kg. Never carry or tip the frame alone."},
+    {"text":"Test the motor before you carry it far: spin the shaft by hand with the meter on DC volts across the two motor wires. A good motor gives a few volts that rise as you spin faster."}
+  ],
+  "notes": "## What's worth keeping and why\n\n- **The motor.** A permanent-magnet DC motor rated about 90–180 V and 1.5–3 hp. Spun by wind or water it works as a generator. Divide the rated volts on its label by the rated RPM to get volts per RPM; typical motors give about 1 V per 25–45 RPM, so roughly 400–700 RPM charges a 12 V battery. That makes it one of the easiest generators to build with (see build_treadmill_wind_generator and test_motor). It also makes a good variable-speed motor for a lathe, grinder or saw where mains power exists, run from its own controller.\n- **Flywheel.** A heavy pulley with a fan. Keep it on if you will belt-drive the motor; it smooths out gusts.\n- **Controller board.** A ready-made mains-to-DC speed controller for the motor, plus a bridge rectifier, power transistors, a heatsink and big capacitors.\n- **Rollers and bearings.** Steel rollers with sealed bearings make axles, conveyor rollers and cart wheels.\n- **Incline actuator.** A strong screw jack for lifting and pushing.\n- **Running belt.** Tough reinforced belt: hinges, gaskets, wear pads, a short conveyor.\n- **Deck board.** A large, flat, waxed board: a shelf, a table top or a bench.\n- **Frame.** Steel tube for carts, racks and turbine towers.\n- **Console.** Small speakers, buttons, wiring. On many models the safety key is a magnet that works a reed switch in the console.\n\n## Variations\n\n- Older and budget machines use a brushed DC motor like the one above. Some newer machines use AC or brushless motors with an inverter board; those need different handling and are less useful as simple generators.\n- Folding treadmills use a gas strut to lift the deck; it is under pressure. Leave it intact or release it with care.\n- Motor voltage and power are on the motor's label. Higher voltage motors give more volts at low RPM.\n\n## What to leave\n\n- The plastic hood and console shell, unless you need sheet plastic.\n- Don't open the motor unless the brushes need replacing (see repair_motor_brushes). The magnets are glued in and hard to remove.",
+  "tree": {"era":3,"branch":"salvage","requires":["safety_lifting","safety_mains_isolation"]},
+  "devices": ["treadmill"],
+  "parts": ["motor_dc_large","controller_board","belt_pulley","bearing","rod_shaft","linear_actuator","tube_frame"],
+  "license": "CC-BY-SA-4.0"
+}

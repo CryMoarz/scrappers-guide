@@ -1,0 +1,29 @@
+{
+  "id": "teardown_laser_cutter_diode",
+  "kind": "teardown",
+  "title": "Diode laser engraver: motors, rails, power supply and the laser module (power off throughout)",
+  "keywords": ["diode laser teardown","laser engraver","laser module","blue laser 445nm","desktop laser cutter","stepper motors and rails","grbl controller","laser safety"],
+  "summary": "A desktop diode laser engraver gives you stepper motors, linear rails or aluminium extrusions, timing belts, bearings, fans, a 24 V power supply, a control board and the laser module with its lens. Allow about 30 minutes. The danger is the laser: a 5-20 W blue beam damages eyes in a fraction of a second, even from a reflection, so the laser is never powered during the job.",
+  "difficulty": 2,
+  "mins": 30,
+  "tools": ["screwdriver","hex","pliers","cutters","multimeter","tape"],
+  "hazards": ["laser","burn","mains","hv_cap"],
+  "materials": [],
+  "steps": [
+    {"text":"Make it dead and keep it dead. Pull the plug at the wall, then the power lead from the machine. If it has a safety key, take it out and put it in your pocket. This whole job is done with the power off: never power the machine to see if the laser works. This guide is for blue diode engravers. A machine with a long glass tube and a box of high-voltage electronics is a CO2 laser: leave it alone.","warn":"Never power a laser with its cover or shield off. A 5-20 W blue beam can blind permanently in a fraction of a second, even bounced off a screwdriver or a shiny rail."},
+    {"text":"Disconnect the laser first, before you do anything else. Find the cable from the controller to the laser module on the moving head, unplug it at the controller end and tape over the plug. With that cable off, the laser can't fire. Then cap the lens with a thick piece of cardboard or several layers of black tape."},
+    {"text":"Take the laser module off the carriage: undo the thumbscrews or the 2-4 screws, and keep the module's cable and plug with it. The module is a finned heatsink with a fan, a driver board and the lens in one housing. Don't unscrew the lens or open the housing. Put it in a box with the lens capped, the cable taped up and a label: LASER, 5-20 W blue, do not power. Keep any laser safety glasses and the orange cover that came with the machine in the same box.","warn":"A module plugged into a power supply by someone who doesn't know what it is will fire. Label it."},
+    {"text":"Photograph the machine, then unplug and label each cable at the controller: X and Y motors, limit switches, fans, power in. Cut the cable ties."},
+    {"text":"Take the stepper motors. Each is held by four screws and often has a belt pulley with a grub screw (loosen it with a hex key). Keep the plug on its cable. Test by hand: twist two wires of one coil together and turn the shaft: it should feel stiffer and notchy; no change means an open coil."},
+    {"text":"Take the belts, rails and wheels. Slide the timing belts off or release their clamps. Unscrew the linear rails or V-slot extrusions and slide the V-wheels and bearings off. Keep the T-nuts and screws in a tin. Spin each bearing by hand: it should be smooth and quiet."},
+    {"text":"Take the limit switches or homing sensors with their cables and plugs, and the fans (12 or 24 V). Leave the laser module's own fan with the module."},
+    {"text":"Power supply: usually an external 24 V brick with a mains lead. Unplug it from the machine and keep it whole. If it is inside the case, unplug it, wait 10 minutes and unscrew it as one piece. Read the label for volts and amps. Don't open it.","warn":"A mains power supply can hold a dangerous charge for days. Don't open it unless you have discharged it (see safety_discharge_capacitor)."},
+    {"text":"Keep the control board whole with its connectors: it is usually a GRBL-type board with stepper driver chips. Wrap it in anti-static material or foil and keep it dry."},
+    {"text":"Test the power supply if you want to know it works: plug it into the mains on its own with nothing on its output and measure the output with your meter. It should read within a few percent of its label. Don't connect it to anything else, and don't test the laser."}
+  ],
+  "notes": "## What's worth keeping and why\n\n- **Stepper motors.** Two or more NEMA 17 motors (sometimes 23): 24 V, 1-4 A, with plugs. A plotter, a small CNC router, a camera slider or a 3D printer all need them. They also run as small generators.\n- **Rails, extrusions, V-wheels, bearings, belts and pulleys.** A frame and motion system in one: build a gantry, a sliding door, a cart.\n- **24 V power supply.** Runs 24 V LED strips, fans, small pumps, a winch motor on 24 V.\n- **Fans.** 12/24 V cooling fans.\n- **Limit switches.** Microswitches or optical/Hall sensors.\n- **The laser module.** Best left alone unless you know how to use a laser safely. A diode laser needs its own current-limited driver, a running fan, a closed enclosure and the right glasses (rated for 445-455 nm). Never hand-hold it, point it at anything shiny or let it shine out of the enclosure. Fires start in seconds.\n- **The lens.** Keep it with the module. A small focusing lens is a good magnifier and can start a fire with sunlight (see optics).\n\n## What to leave\n\n- CO2 laser tubes and their power supplies (15,000-25,000 V).\n- Fibre lasers and any machine with a laser class sticker that you can't identify.\n- Cracked glass or acrylic covers; the orange acrylic cover is a safety part, don't cut it up.",
+  "tree": {"era":3,"branch":"salvage","requires":["safety_mains_isolation"]},
+  "devices": ["laser_cutter_diode"],
+  "parts": ["laser_diode","optics","motor_stepper","belt_pulley","bearing","rod_shaft","psu","fan","switch"],
+  "license": "CC-BY-SA-4.0"
+}

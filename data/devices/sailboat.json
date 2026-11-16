@@ -1,0 +1,41 @@
+{
+  "id": "sailboat",
+  "name": "Sailboat",
+  "group": "Vehicles and mobility",
+  "aliases": ["sailing boat","yacht","sailing yacht","sloop","dinghy","catamaran","day sailer"],
+  "brands": ["Beneteau","Jeanneau","Catalina","Hunter","Bavaria","O'Day","Hobie"],
+  "prev": 2,
+  "tools": ["socket","wrench","pliers","cutters","knife"],
+  "mins": 60,
+  "kg": 1500,
+  "hazards": ["fall","acid","mold"],
+  "comps": [
+    {"key":"fabric_tarp","fn":"fabric_tarp","spec":"Polyester or laminate sails, 10–60 m² — tough, UV-resistant fabric for tarps and shelters","qty":2,"ext":1,"obs":4,"loc":"Furled on the boom and forestay, or bagged below"},
+    {"key":"rope_webbing","fn":"rope_webbing","spec":"Halyards, sheets and docklines: braided polyester rope, 8–14 mm, often 100 m+ in total","qty":1,"ext":1,"obs":4,"loc":"Mast, cockpit and lockers"},
+    {"key":"belt_pulley","fn":"belt_pulley","spec":"Blocks and sheaves — pulleys for hoisting and hauling","qty":10,"ext":1,"obs":5,"loc":"Deck, boom and mast"},
+    {"key":"winch","fn":"winch","spec":"Manual sheet winches with handles, self-tailing on larger boats","qty":2,"ext":2,"obs":5,"loc":"Cockpit coamings and mast","kg":5},
+    {"key":"cable_steel","fn":"cable_steel","spec":"Stainless standing rigging, 1×19 wire, 4–10 mm","qty":6,"ext":3,"obs":5,"loc":"Shrouds and stays from mast to deck"},
+    {"key":"tube_frame","fn":"tube_frame","spec":"Aluminium mast and boom, 6–15 m","qty":2,"ext":4,"obs":5,"loc":"Mast step and gooseneck","kg":40},
+    {"key":"chain_sprocket","fn":"chain_sprocket","spec":"Galvanised anchor chain, 10–50 m, with anchor (larger boats)","qty":1,"ext":1,"obs":4,"loc":"Anchor locker in the bow","kg":30},
+    {"key":"battery_pb","fn":"battery_pb","spec":"12V deep-cycle house batteries","v":12,"qty":2,"ext":2,"obs":3,"loc":"Under a bunk or cockpit locker"},
+    {"key":"solar_panel","fn":"solar_panel","spec":"Small panels on the stern arch or bimini (cruising boats)","w":[20,100],"qty":1,"ext":2,"obs":3,"loc":"Stern"},
+    {"key":"wind_turbine_small","fn":"wind_turbine_small","spec":"Small 12V marine wind generator (some cruising boats)","v":12,"qty":1,"ext":3,"obs":4,"loc":"Pole on the stern","p":0.5},
+    {"key":"radio_rf","fn":"radio_rf","spec":"VHF marine radio","qty":1,"ext":2,"obs":3,"loc":"Chart table"},
+    {"key":"gps","fn":"gps","spec":"GPS chartplotter or handheld GPS","qty":1,"ext":2,"obs":3,"loc":"Cockpit or chart table"},
+    {"key":"sensor_misc","fn":"sensor_misc","spec":"Magnetic compass, bulkhead or binnacle","qty":1,"ext":2,"obs":4,"loc":"Cockpit"},
+    {"key":"pump_water","fn":"pump_water","spec":"Manual and 12V bilge pumps, 12V freshwater pump","v":12,"qty":2,"ext":2,"obs":4,"loc":"Bilge and under the galley"},
+    {"key":"tank","fn":"tank","spec":"Freshwater tank, 40–400 L","qty":1,"ext":3,"obs":5,"loc":"Under bunks or the cabin sole"},
+    {"key":"propane","fn":"propane","spec":"Small propane cylinder for the galley stove (cruising boats)","qty":1,"ext":1,"obs":3,"loc":"Vented locker in the cockpit"}
+  ],
+  "boards": [
+    {"id":"radio_transceiver_board","qty":1,"loc":"Inside the VHF radio (dead radios only)","p":0.8}
+  ],
+  "buildings": [
+    {"b":"marina","l":5},
+    {"b":"boat_shop","l":4},
+    {"b":"self_storage","l":2},
+    {"b":"house","l":2},
+    {"b":"campground","l":2}
+  ],
+  "notes": "Boats on the hard in winter storage are full of gear. Climbing on a boat on stands is risky: check the stands first."
+}

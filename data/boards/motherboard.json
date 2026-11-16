@@ -1,0 +1,17 @@
+{
+  "id": "motherboard",
+  "name": "Computer motherboard",
+  "notes": "Mostly surface-mount; the voltage regulators and crystals are the useful parts.",
+  "comps": [
+    {"key":"dcdc_buck","fn":"dcdc_buck","spec":"Multiphase buck regulators","v":[0.7,1.5],"a":[50,300],"qty":4,"ext":3,"obs":5,"loc":"Around the CPU socket"},
+    {"key":"mosfet","fn":"mosfet","spec":"Low-voltage MOSFETs","qty":8,"ext":4,"obs":5,"loc":"Around the CPU socket"},
+    {"key":"inductor","fn":"inductor","spec":"Ferrite chokes","qty":6,"ext":3,"obs":5,"loc":"Around the CPU socket"},
+    {"key":"cap_elec","fn":"cap_elec","spec":"Polymer and electrolytic capacitors","qty":20,"ext":2,"obs":4,"loc":"Throughout"},
+    {"key":"crystal","fn":"crystal","spec":"Clock crystals, including 32.768 kHz","qty":2,"ext":3,"obs":5,"loc":"Near the chipset and RTC battery"},
+    {"key":"ic_memory","fn":"ic_memory","spec":"BIOS flash chip","qty":1,"ext":3,"obs":5,"loc":"Often socketed"},
+    {"key":"battery_coin","fn":"battery_coin","spec":"CR2032 coin cell (not rechargeable)","v":3,"ah":0.22,"qty":1,"ext":1,"obs":4,"loc":"Round holder"},
+    {"key":"reg_linear","fn":"reg_linear","spec":"Linear regulators","qty":3,"ext":3,"obs":5,"loc":"Throughout"},
+    {"key":"connector","fn":"connector","spec":"Headers, USB and power connectors","qty":10,"ext":3,"obs":4,"loc":"Edges"},
+    {"key":"heatsink","fn":"heatsink","spec":"Chipset and VRM heatsinks","qty":2,"ext":2,"obs":4,"loc":"Bolted on"}
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "id": "pos_terminal_star_cb_2002",
+  "device": "pos_terminal",
+  "brand": "Star Micronics",
+  "model": "CB-2002 (UN and FN versions)",
+  "notes": "Star EMEA's PC point-of-sale cash drawer, driven from the peripheral drive circuit of a Star or Epson POS printer; the product page lists a UN version (8 upright note slots) and an FN version (4 flat note clips), both with 8 coin slots, while the datasheet gives 8 note and 8 coin slots plus an external voucher or cheque slot. It measures 410 x 415 x 114 mm and weighs 7 kg.",
+  "research": {"checked":"2026-11-12","gaps":["Neither Star page nor the datasheet says 'solenoid' or gives a coil rating, so the drawer release is described by the stated drive input (24 V, 1 A, 30-100 ms pulse); the solenoid_actuator type is the record's mapping.","Slot counts differ between sources: the datasheet gives 8 note and 8 coin slots plus an external voucher or cheque slot; the product page gives UN 8 upright note slots and FN 4 flat note clips, both with 8 coin slots.","Colours differ between the two Star sources and are not claimed.","The material is not stated on Star's pages, so none is claimed.","Both sources are Star EMEA; US versions were not checked.","The 3-position key lock and the cash tray are not rated in any source and the template has no lock type, so neither is claimed as a part."],"method":["Star EMEA CB-2002 product page, read through WebFetch for the versions and slot counts, DC 24 V 1 A, compulsion switch, key lock, dimensions and weight.","Star CB-2002 and CB-92 II specifications sheet (Star EMEA, UK 8.08), copy on hospitality.jarltech.com, read with the research tool's pdf command for input voltage and current, pulse time, the 6-pin modular plug and cable; the copy carries Star EMEA's own name and web address.","APG Vasario spec sheets (apgsolutions.com) returned HTTP 403 to the researcher and were not used."]},
+  "comps": [
+    {"key":"solenoid_actuator","fn":"solenoid_actuator","spec":"Drawer release, driven by a pulse from the peripheral drive circuit of a Star or Epson POS printer; the datasheet gives the drawer's input as DC 24 V, 1 A with a pulse time of 30-100 ms","v":24,"a":1,"qty":1,"ext":2,"obs":5,"conf":"documented","source":"https://hospitality.jarltech.com/sites/default/files/documents/product/datasheet/en/starcb2002.pdf"},
+    {"key":"switch_compulsion","fn":"switch","spec":"Compulsion switch, listed on the CB-2002 product page","qty":1,"ext":2,"obs":3,"conf":"documented","source":"https://star-emea.com/products/cb2002-cash-drawer/"},
+    {"key":"wire_copper","spec":"Drawer cable: 6-pin modular plug on a shielded cable with a separate ground wire, linking the drawer to the printer's peripheral drive circuit","qty":1,"ext":1,"obs":4,"conf":"documented","source":"https://hospitality.jarltech.com/sites/default/files/documents/product/datasheet/en/starcb2002.pdf"}
+  ],
+  "sources": [
+    {"title":"CB-2002 cash drawer product page (Star Micronics EMEA)","url":"https://star-emea.com/products/cb2002-cash-drawer/"},
+    {"title":"CB-2002 and CB-92 II cash drawer specifications (Star EMEA, UK 8.08), copy on hospitality.jarltech.com","url":"https://hospitality.jarltech.com/sites/default/files/documents/product/datasheet/en/starcb2002.pdf"}
+  ]
+}

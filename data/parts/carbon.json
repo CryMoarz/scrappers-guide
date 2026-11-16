@@ -1,0 +1,14 @@
+{
+  "id": "carbon",
+  "name": "Activated carbon",
+  "group": "Water and air treatment",
+  "demand": 2,
+  "keywords": ["activated carbon","activated charcoal","carbon","carbon granules","gac","charcoal filter","aquarium carbon","carbon media"],
+  "substitutes": ["filter_water","filter_air"],
+  "summary": "Activated carbon granules, blocks and pads that soak up chemicals, tastes and smells. It does not kill germs.",
+  "uses": ["Filling a homemade water filter after a sediment stage","Removing chlorine taste and many chemicals from water","Odour and fume filters for air"],
+  "identify": "Black granules or a solid black block inside water filter cartridges, pitcher and fridge filters, and aquarium filters; black felt pads in range hoods and air purifiers. Pet shops sell loose bags. Barbecue charcoal is not activated and works poorly.",
+  "test": "Rinse granules in clean water: they should stop clouding the water after a few rinses. Used carbon looks like new, so assume carbon from a used filter is spent.",
+  "decay": {"halfLifeMonths":null,"note":"Lasts sealed. Open carbon slowly soaks up moisture and smells from the air."},
+  "hazards": []
+}

@@ -1,0 +1,17 @@
+{
+  "id": "cordless_drill_makita_xfd131",
+  "device": "cordless_drill",
+  "brand": "Makita",
+  "model": "XFD131",
+  "notes": "The battery and charger are in the kit.",
+  "research": {"checked":"2026-11-11","method":["Product page lists a brushless motor, a mechanical 2-speed transmission, max torque 440 in.lbs./50N•m, a 1/2\" chuck."]},
+  "comps": [
+    {"key":"motor_dc_small","conf":"documented","spec":"Brushless motor, 18V LXT platform; max torque 440 in.lbs./50N•m","v":18,"source":"https://makitatools.com/products/details/XFD131"},
+    {"key":"gearbox","conf":"documented","spec":"Mechanical 2-speed transmission, 0-500 & 0-1,900 RPM","source":"https://makitatools.com/products/details/XFD131"},
+    {"key":"battery_li","conf":"documented","spec":"Included in kit: (1) 18V LXT 3.0Ah Battery (BL1830B)","v":18,"ah":3,"source":"https://makitatools.com/products/details/XFD131"},
+    {"key":"charger","conf":"documented","spec":"Included in kit: (1) 18V LXT Charger (DC18SD)","v":18,"source":"https://makitatools.com/products/details/XFD131"}
+  ],
+  "sources": [
+    {"title":"Makita XFD131 product page (makitatools.com)","url":"https://makitatools.com/products/details/XFD131"}
+  ]
+}

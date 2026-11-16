@@ -1,0 +1,20 @@
+{
+  "id": "garage_opener_chamberlain_rjo20",
+  "device": "garage_opener",
+  "brand": "Chamberlain",
+  "model": "RJO20",
+  "notes": "Wall-mount opener for sectional doors with torsion assemblies only. The parts list has no backup battery.",
+  "research": {"checked":"2026-11-12","gaps":["The manual does not say whether the motor is AC or DC and gives no motor or input current rating.","The motor is filed under the template's motor_ac slot; the slot is not a source claim.","The manual does not say where the radio receiver sits.","The logic board is therefore filed as a controller board, not as the remote receiver.","The head-unit parts list has no light socket.","On p. 16 the install step allows incandescent or CFL bulbs, while the warning box beside it says incandescent only.","The parts list also has a power door lock 041A6102 and a cable tension monitor 041A6104, left out because the manual doesn't say what's inside them."],"method":["The description is from the manual cover.","Source: owner's manual, copyright 2018 The Chamberlain Group (footer 114A5146; the parts list names the owner's manual as 114A5140), a copy on Home Depot's image server; read as text, and repair-parts pages 39-40 checked as rendered images.","It says to use a 120 VAC 60 Hz outlet.","Remotes, keypads and MyQ accessories are programmed to the MyQ Control Panel, and the manual says the opener's own learn button will not program accessories (p. 29).","The opener light is a separate remote light that plugs into a 120 V outlet and mounts on the ceiling (p. 16).","The LiftMaster 8500W has its own record."]},
+  "comps": [
+    {"key":"motor_ac","conf":"documented","spec":"Motor with bracket, part 041A6095","source":"https://images.homedepot-static.com/catalog/pdfImages/3a/3aaea4b1-a19d-4b2e-a7a7-682bb05f8db3.pdf"},
+    {"key":"transformer_lv","conf":"documented","spec":"Transformer, part 041C0168","source":"https://images.homedepot-static.com/catalog/pdfImages/3a/3aaea4b1-a19d-4b2e-a7a7-682bb05f8db3.pdf"},
+    {"key":"controller_board","fn":"controller_board","spec":"Logic board complete with plate, part 041DJ002; the opener is compatible only with MyQ accessories","qty":1,"ext":2,"obs":4,"conf":"documented","source":"https://images.homedepot-static.com/catalog/pdfImages/3a/3aaea4b1-a19d-4b2e-a7a7-682bb05f8db3.pdf"},
+    {"key":"sensor_motion","conf":"documented","spec":"Safety reversing sensor kit 041A5034 (sending and receiving sensors with 2-conductor wire); brackets 041A5266-3","source":"https://images.homedepot-static.com/catalog/pdfImages/3a/3aaea4b1-a19d-4b2e-a7a7-682bb05f8db3.pdf"},
+    {"key":"led_light","conf":"documented","spec":"Remote light unit 041A6287 (ceiling-mounted, corded) with lens 041D0096-1; two A19 incandescent or CFL bulbs, 100 W max each, 200 W total; manual advises against LED bulbs","w":200,"source":"https://images.homedepot-static.com/catalog/pdfImages/3a/3aaea4b1-a19d-4b2e-a7a7-682bb05f8db3.pdf"},
+    {"key":"sensor_misc_travel","fn":"sensor_misc","spec":"Travel module, part 041B8661","qty":1,"ext":2,"obs":4,"conf":"documented","source":"https://images.homedepot-static.com/catalog/pdfImages/3a/3aaea4b1-a19d-4b2e-a7a7-682bb05f8db3.pdf"},
+    {"key":"wire_copper_cord","fn":"wire_copper","spec":"Power cord, part 041B0122; 2-conductor white and white/red wire 041A4494-1","qty":1,"ext":1,"obs":3,"conf":"documented","source":"https://images.homedepot-static.com/catalog/pdfImages/3a/3aaea4b1-a19d-4b2e-a7a7-682bb05f8db3.pdf"}
+  ],
+  "sources": [
+    {"title":"Chamberlain RJO20 Wall Mount Garage Door Opener owner's manual (copyright 2018, footer 114A5146; PDF on Home Depot's image server)","url":"https://images.homedepot-static.com/catalog/pdfImages/3a/3aaea4b1-a19d-4b2e-a7a7-682bb05f8db3.pdf"}
+  ]
+}

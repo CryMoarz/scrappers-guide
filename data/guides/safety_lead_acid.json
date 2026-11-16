@@ -1,0 +1,35 @@
+{
+  "id": "safety_lead_acid",
+  "kind": "safety",
+  "title": "Handle lead-acid batteries safely",
+  "keywords": ["lead acid","car battery","battery acid","deep cycle","golf cart battery","forklift battery","agm","gel battery","flooded battery","hydrogen","battery terminal","jump start","battery spill"],
+  "summary": "Move, connect, charge and store lead-acid batteries without acid burns, short-circuit burns, hydrogen explosions or back injuries. Covers car, golf cart, forklift, floor scrubber, UPS and solar batteries.",
+  "difficulty": 2,
+  "mins": 20,
+  "tools": ["socket","wrench","pliers","multimeter","tape","heavy"],
+  "hazards": ["acid","heavy","lead","burn"],
+  "materials": [
+    {"item":"Baking soda","qty":"1 box"},
+    {"item":"Clean water","fn":"water_stored","qty":"10 L"},
+    {"item":"Distilled water, or clean rainwater caught straight into a clean plastic container, for topping up flooded batteries","qty":"1–2 L","optional":true},
+    {"item":"Wire brush for terminals","qty":"1","optional":true},
+    {"item":"Ratchet strap for transport","fn":"rope_webbing","qty":"1"}
+  ],
+  "steps": [
+    {"text":"Put on glasses and gloves. Check the battery before you touch it: cracks, bulges, leaks, white crust, a wet top.","warn":"A cracked or bulging battery can pour acid when tipped. Keep it upright."},
+    {"text":"Wrap the handle of your wrench in tape, leaving only the jaws bare.","warn":"A wrench across the terminals of a big battery can weld itself on, glow red and burst the battery."},
+    {"text":"On a vehicle or machine, switch everything off. Undo the negative (−, black) lead first, then the positive (+, red). When reconnecting, positive first and negative last.","warn":"If you undo the positive while the negative is still on, a wrench touching the frame makes a dead short."},
+    {"text":"Lift with both hands by the handles or a strap, knees bent, battery close to your body. Car batteries weigh about 15–25 kg, golf cart batteries about 30 kg. Forklift batteries weigh hundreds of kilograms or more and need machinery.","warn":"Don't hug a battery to your chest or let it tilt. Acid can slop out of the vents."},
+    {"text":"Carry it upright, strapped down, with the terminals covered by a cap, a rag or tape, away from metal tools."},
+    {"text":"Charge in a ventilated place, away from sleeping areas, sparks and flames. Connect the charger to the battery before switching the charger on. Switch off before unclipping.","warn":"Charging makes hydrogen. A spark at the terminals can blow the top off the battery."},
+    {"text":"On flooded batteries with removable caps, check the level after charging. Top up with distilled water to the fill mark, or to just cover the plates. Never add acid.","warn":"Don't overfill. Acid will bubble out during the next charge."},
+    {"text":"Clean crust off terminals with a paste of baking soda and water and a brush, then rinse with clean water. Keep the paste out of the cells."},
+    {"text":"Store batteries fully charged in a cool place, and top up the charge every month or two.","warn":"A flat battery can freeze and crack a few degrees below zero. A fully charged one survives hard frost."},
+    {"text":"Neutralise any spill with baking soda until it stops fizzing, soak it up with dirt or sawdust, and rinse. Keep dead batteries upright on a tray outdoors, away from water sources."}
+  ],
+  "notes": "## What's inside\n\nA 12 V lead-acid battery is six cells of about 2.1 V each, so about 12.6–12.7 V when full. Lead plates sit in dilute sulphuric acid.\n\n| Type | How to tell | Notes |\n|---|---|---|\n| Flooded (wet) | Removable caps on top | Can be topped up with distilled water. Must stay upright |\n| AGM | Sealed, often marked AGM | Acid held in glass mat. Don't open. Tolerates tipping better |\n| Gel | Sealed, marked gel | Needs a slightly lower charge voltage. Don't open |\n\nMost 12 V batteries charge at roughly 14.4 V and float at about 13.5 V. Gel types use a little less. Check the label if there is one.\n\n## Short circuits\n\nA car battery can push hundreds of amps through a short. That is enough to melt a wrench, a ring or a watch strap in seconds. A ring shorted across a terminal can burn a finger to the bone. Take jewellery off.\n\n## Hydrogen\n\nHydrogen burns or explodes when it makes up about 4% or more of the air. It collects in the cells and under the lid during and just after charging. That is why the last jump-start clamp goes on bare engine metal away from the battery, not on the battery's negative post.\n\n## Freezing\n\n| State of charge | Roughly freezes at |\n|---|---|\n| Full | well below −40 °C |\n| Half | about −20 to −25 °C |\n| Flat | not far below 0 °C, about −10 °C or warmer |\n\nNever charge a frozen battery. Let it thaw first, and check for cracks.\n\n## Common mistakes\n\n- Charging a frozen or bulging battery.\n- Topping up with tap water or salty water instead of distilled water.\n- Leaving a battery flat after use. It sulphates and loses capacity fast.\n- Wearing a ring or watch while working on terminals.\n- Mixing old and new batteries in one bank.",
+  "tree": {"era":2,"branch":"salvage","requires":["safety_entering_buildings"]},
+  "devices": ["car","golf_cart","forklift","floor_scrubber","ups","ups_large","battery_yard","emergency_light","alarm_panel","mobility_scooter","power_wheelchair","telecom_site","solar_home","rv","boat","semi","riding_mower","motorcycle"],
+  "parts": ["battery_pb","charger"],
+  "license": "CC-BY-SA-4.0"
+}

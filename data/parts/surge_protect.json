@@ -1,0 +1,14 @@
+{
+  "id": "surge_protect",
+  "name": "Surge and inrush protection (MOVs, NTCs)",
+  "group": "Electronic components",
+  "demand": 1,
+  "keywords": ["mov","varistor","surge","surge protector","ntc","inrush","inrush limiter","tvs diode","transient suppressor","gas discharge tube","gdt","10d471","14d471","5d-11","p6ke","smbj","surge strip"],
+  "substitutes": ["fuse"],
+  "summary": "Parts that soak up voltage spikes and inrush: MOVs, NTC thermistors, TVS diodes and gas tubes.",
+  "uses": ["Protecting a power system from lightning spikes","Soft-starting power supplies","Repairing blown power supplies (MOVs often fail)"],
+  "identify": "Blue or orange disc MOVs (marked 10D471, 14D561) across the mains input, and black or green NTC discs (5D-11) in series with it, in surge strips, power supplies, TVs and appliances.",
+  "test": "A MOV should read open on a meter; a burnt or cracked one is dead. NTCs read a few ohms when cold.",
+  "decay": {"halfLifeMonths":null,"note":"Lasts until a big surge uses it up."},
+  "hazards": []
+}

@@ -1,0 +1,26 @@
+{
+  "id": "reference_electronics_codes",
+  "kind": "reference",
+  "title": "Component codes: resistors, capacitors, polarity and fuses",
+  "keywords": ["resistor colour code","resistor color code","capacitor code","104 capacitor","smd code","polarity","fuse marking","blade fuse colours","diode band","led polarity"],
+  "summary": "How to read the values printed or painted on resistors, capacitors and fuses, and which way round polarised parts go. Use it before you trust or reuse a salvaged part.",
+  "difficulty": 1,
+  "mins": 5,
+  "tools": ["multimeter"],
+  "hazards": ["hv_cap"],
+  "materials": [],
+  "steps": [
+    {"text":"Clean the part and read it under a bright light with a magnifier. Burnt or faded bands are common: measure the resistor out of circuit instead."},
+    {"text":"Check a capacitor’s voltage rating is above anything you will put across it, and that the can isn’t bulging or crusty."},
+    {"text":"Check polarity before soldering a part in: reversed electrolytic and tantalum capacitors can burst."},
+    {"text":"Replace a fuse only with one of the same current and speed, and a voltage rating at least as high.","warn":"Never fit a bigger fuse, a wire or foil: the fuse is what stops a fault becoming a fire."}
+  ],
+  "notes": "## Resistor colour bands\n\nHold the resistor with the bands bunched at the left; the tolerance band (often gold or silver) is on the right, sometimes after a gap. Four bands: digit, digit, multiplier, tolerance. Five bands: three digits, multiplier, tolerance.\n\n| Colour | Digit | Multiplier | Tolerance |\n|---|---|---|---|\n| Black | 0 | ×1 | |\n| Brown | 1 | ×10 | ±1% |\n| Red | 2 | ×100 | ±2% |\n| Orange | 3 | ×1 k | |\n| Yellow | 4 | ×10 k | |\n| Green | 5 | ×100 k | ±0.5% |\n| Blue | 6 | ×1 M | ±0.25% |\n| Violet | 7 | ×10 M | ±0.1% |\n| Grey | 8 | ×100 M | ±0.05% (newer parts ±0.01%) |\n| White | 9 | ×1 G | |\n| Gold | | ×0.1 | ±5% |\n| Silver | | ×0.01 | ±10% |\n\nExamples: brown, black, red, gold is 1, 0 and ×100: 1 kΩ ±5%. Yellow, violet, orange is 47 kΩ.\n\n## Surface-mount resistor codes\n\n- **Three digits**: two digits, then the number of zeros. 103 is 10 kΩ, 472 is 4.7 kΩ.\n- **Four digits** (1% parts): three digits, then the number of zeros. 1002 is 10 kΩ.\n- **R marks the decimal point**: 4R7 is 4.7 Ω, R10 is 0.1 Ω (a current-sense resistor).\n- **Two digits and a letter** (EIA-96, such as 01C): look it up in an EIA-96 table; 01C is 10 kΩ.\n- **0 or 000** is a zero-ohm link: just a jumper.\n\n## Capacitor codes\n\n- Electrolytic cans and big film capacitors print the value and voltage: 470 µF 25 V.\n- Small ceramic and film capacitors use three digits in picofarads, the third being the number of zeros: 104 is 100,000 pF (100 nF or 0.1 µF), 103 is 10 nF, 222 is 2.2 nF, 470 is 47 pF.\n- A letter after the digits is the tolerance: J ±5%, K ±10%, M ±20%, Z +80/−20%.\n- A digit-and-letter code is the voltage: 1H 50 V, 2A 100 V, 2E 250 V, 2G 400 V, 2J 630 V.\n- **X2 and Y2** mark mains safety capacitors. Keep them for mains jobs, and never replace one with an ordinary capacitor.\n\n## Which way round\n\n| Part | Marking |\n|---|---|\n| Electrolytic capacitor | The stripe with − signs is negative; the longer leg is positive |\n| Tantalum capacitor | The stripe or bar is **positive**: the opposite of an electrolytic |\n| Diode | The band is the cathode (−) end; current flows towards the band |\n| LED | The longer leg is +; the flat edge on the rim is − |\n| Chip | Pin 1 is next to the dot or notch; pins count anticlockwise seen from above |\n\n## Fuses\n\n- **Sizes**: 5 × 20 mm glass in electronics; 6.3 × 32 mm (¼ × 1¼ in) in older equipment and appliances; blade fuses in vehicles.\n- **Markings**: F is fast, T is time-delay (slow-blow, for motors and transformers); then the current; L or H is low or high breaking capacity (ceramic bodies are usually H); then the voltage. T3.15AH250V is slow-blow, 3.15 A, high breaking capacity, 250 V.\n- **Thermal fuses** in kettles, heaters, hair dryers and motors are small cans or tubes marked with a temperature (such as 152 °C). They don't reset.\n\nStandard, mini and low-profile blade fuses (maxi fuses use other colours):\n\n| Blade fuse colour | Amps |\n|---|---|\n| Violet | 3 |\n| Tan | 5 |\n| Brown | 7.5 |\n| Red | 10 |\n| Blue | 15 |\n| Yellow | 20 |\n| Clear | 25 |\n| Green | 30 |\n| Orange | 40 |\n",
+  "tree": {"era":3,"branch":"salvage","requires":["skill_multimeter"]},
+  "parts": ["resistor","cap_elec","cap_film","fuse","led_light","diode_rect"],
+  "license": "CC-BY-SA-4.0",
+  "sources": [
+    {"title":"IEC 60062: marking codes for resistors and capacitors (colour code, letter and digit codes)"},
+    {"title":"IEC 60127 (miniature fuses) and ISO 8820 (road vehicle blade fuses): ratings and markings"}
+  ]
+}

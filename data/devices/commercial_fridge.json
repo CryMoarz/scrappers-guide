@@ -1,0 +1,31 @@
+{
+  "id": "commercial_fridge",
+  "name": "Commercial display coolers",
+  "group": "Commercial",
+  "aliases": ["drinks cooler","reach-in cooler","glass door cooler","display fridge"],
+  "brands": ["True","Beverage-Air","Hoshizaki","Turbo Air","Master-Bilt","Traulsen","Vevor"],
+  "prev": 4,
+  "tools": ["screwdriver","socket","heavy"],
+  "mins": 60,
+  "hazards": ["refrigerant","heavy"],
+  "comps": [
+    {"key":"compressor","fn":"compressor","spec":"Large compressors","v":[120,240],"w":[250,1100],"ac":true,"qty":1,"ext":5,"obs":4,"loc":"Rooftop or machine room"},
+    {"key":"fan","fn":"fan","spec":"EC fan motors","v":[120,240],"w":[5,25],"ac":true,"qty":8,"ext":2,"obs":4,"loc":"Evaporators and condensers"},
+    {"key":"led_light","fn":"led_light","spec":"LED case lighting","v":[12,24],"w":[5,30],"qty":10,"ext":1,"obs":4,"loc":"Shelves and doors"},
+    {"key":"hose_tubing","fn":"hose_tubing","spec":"Copper refrigerant lines","qty":1,"ext":3,"obs":4,"loc":"Throughout"},
+    {"key":"valve_solenoid","fn":"valve_solenoid","spec":"Refrigerant solenoid valves","v":[120,240],"ac":true,"qty":4,"ext":3,"obs":5,"loc":"Lines near the evaporators"},
+    {"key":"heating_element","fn":"heating_element","spec":"Defrost and door-frame heaters","v":[120,240],"w":[20,800],"ac":true,"qty":4,"ext":3,"obs":5,"loc":"Evaporators and door frames"}
+  ],
+  "boards": [
+    {"id":"mcu_board","qty":2,"loc":"Case controllers","p":1}
+  ],
+  "buildings": [
+    {"b":"supermarket","l":5},
+    {"b":"restaurant","l":4},
+    {"b":"convenience","l":4},
+    {"b":"gas_station","l":4},
+    {"b":"hospital","l":3},
+    {"b":"school","l":3},
+    {"b":"shop_small","l":2}
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "id": "vape_hyde_edge_recharge",
+  "device": "vape",
+  "brand": "Hyde",
+  "model": "Edge Recharge",
+  "notes": "The unit may be a counterfeit, so its parts may not match a genuine one.",
+  "research": {"checked":"2026-11-11","gaps":["The charge IC identification is the author's reading of the topmark."],"method":["One teardown blog post of a rechargeable pen the author calls a Hyde Edge Recharge.","Cell, charge IC, LEDs, pressure sensor and heater are described."]},
+  "comps": [
+    {"key":"battery_li","conf":"documented","spec":"600 mA·hr lithium cell per the author; recharged over USB Micro-B (author measured 406 mA·hr going in)","source":"https://softsolder.com/2022/07/29/hyde-edge-recharge-vape-pen-teardown/"},
+    {"key":"b:li_charger_small:charger","conf":"documented","spec":"SOT23 IC, topmark LTH7, identified by the author as an LTC4054-4.2 standalone charge controller","source":"https://softsolder.com/2022/07/29/hyde-edge-recharge-vape-pen-teardown/"},
+    {"key":"b:li_charger_small:connector","conf":"documented","spec":"USB Micro-B jack for charging","source":"https://softsolder.com/2022/07/29/hyde-edge-recharge-vape-pen-teardown/"},
+    {"key":"b:li_charger_small:led_light","conf":"documented","spec":"Two LEDs, red during charge and white during each puff","source":"https://softsolder.com/2022/07/29/hyde-edge-recharge-vape-pen-teardown/"},
+    {"key":"sensor_misc","conf":"documented","spec":"Pressure sensor under a black felt disk, activates the coil on each puff","source":"https://softsolder.com/2022/07/29/hyde-edge-recharge-vape-pen-teardown/"},
+    {"key":"wire_copper","conf":"documented","spec":"Heater coil in the draw tube, fed by two red wires","source":"https://softsolder.com/2022/07/29/hyde-edge-recharge-vape-pen-teardown/"}
+  ],
+  "sources": [
+    {"title":"Teardown of a Hyde Edge Recharge vape pen (softsolder.com blog)","url":"https://softsolder.com/2022/07/29/hyde-edge-recharge-vape-pen-teardown/"}
+  ]
+}

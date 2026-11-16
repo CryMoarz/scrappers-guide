@@ -1,0 +1,22 @@
+{
+  "id": "office_chair_herman_miller_aeron",
+  "device": "office_chair",
+  "brand": "Herman Miller",
+  "model": "Aeron Chair (sizes A, B and C)",
+  "notes": "Sizes A, B and C are rated 300, 350 and 400 lb on the store page; the page names the chair only \"Aeron Chair\" and does not say whether it is the classic or the remastered version. The seat and back are an 8Z Pellicle suspension, so the base, casters and pneumatic cylinder are the parts to take.",
+  "research": {"checked":"2026-11-12","gaps":["Version: the page does not label the chair classic or remastered. Its FAQ dates the remaster to 2016 and says it added Mineral, Nightfall and Jasper colours and Quiet Roll casters; the page lists both but ties neither to a version. Model named as the page names it; no years given.","EMEA summary (June 2020): epoxy glass 2%, foam 2%, steel 16%, plastic 45%, aluminium 33%, which add to 98%. It does not say whether the shares are by weight or volume, or whether they apply outside EMEA. It says the Aeron has been remastered.","No source read gives the cylinder's class, stroke or maker; reseller listings were not used.","No tilt spring is named; the store page names only a Harmonic 2 tilt mechanism, so no spring is claimed.","Caster count is not given; the steel, aluminium and plastic shares are not tied to named parts."],"method":["Herman Miller store product page for the Aeron Chair, item 100069173 (WebFetch, both halves of the page text): materials line (base, casters, seat and back, tilt), weight capacity by size, FAQ on the pneumatic cylinder, seat height lever and 2016 remaster.","Aeron Environmental Product Summary, EMEA (one-page PDF, last updated June 2020), read with research tool pdf and the page rendered: materials content shares.","The researcher also read a Classic Aeron EPD, an ESD stool cylinder sheet and reseller listings; no claim rests on them and they were not re-checked."]},
+  "comps": [
+    {"key":"gas_spring","conf":"documented","spec":"Pneumatic cylinder, named in the store page FAQ with the tilt mechanism and adjustment controls; the seat height lever is described as pneumatic and sits beneath the right side of the seat","source":"https://store.hermanmiller.com/office-chairs-aeron/aeron-chair/100069173.html"},
+    {"key":"bearing","conf":"documented","spec":"2.5-inch casters, carpet or hard-floor type, with quiet roll technology","source":"https://store.hermanmiller.com/office-chairs-aeron/aeron-chair/100069173.html"},
+    {"key":"tube_frame","conf":"documented","spec":"Die-cast aluminium or polymer chassis and base, finished matte, polished or powder-coated","source":"https://store.hermanmiller.com/office-chairs-aeron/aeron-chair/100069173.html"},
+    {"key":"tube_frame_steel","fn":"tube_frame","spec":"Steel, 16% of the materials content in the EMEA environmental summary","ext":2,"obs":4,"conf":"documented","source":"https://cdn.shopify.com/s/files/1/0706/5924/4299/files/1624627733Aeron_Environmental_Summary.pdf"},
+    {"key":"aluminium_parts","fn":"tube_frame","spec":"Aluminium, 33% of the materials content in the EMEA environmental summary","ext":2,"obs":3,"conf":"documented","source":"https://cdn.shopify.com/s/files/1/0706/5924/4299/files/1624627733Aeron_Environmental_Summary.pdf"},
+    {"key":"foam_rubber","conf":"documented","spec":"Foam, 2% of the materials content in the EMEA environmental summary; its design story says the Aeron gives comfort without the standard use of foam, fabric or leather","source":"https://cdn.shopify.com/s/files/1/0706/5924/4299/files/1624627733Aeron_Environmental_Summary.pdf"},
+    {"key":"fabric_tarp","conf":"documented","spec":"8Z Pellicle elastomeric suspension seat and backrest","source":"https://store.hermanmiller.com/office-chairs-aeron/aeron-chair/100069173.html"},
+    {"key":"plastic_mixed","fn":"plastic_sheet","spec":"Mixed plastic, 45% of the materials content in the EMEA environmental summary","ext":2,"obs":4,"conf":"documented","source":"https://cdn.shopify.com/s/files/1/0706/5924/4299/files/1624627733Aeron_Environmental_Summary.pdf"}
+  ],
+  "sources": [
+    {"title":"Herman Miller, Aeron Chair product page, item 100069173 (spec table, FAQ), store.hermanmiller.com","url":"https://store.hermanmiller.com/office-chairs-aeron/aeron-chair/100069173.html"},
+    {"title":"Aeron Environmental Product Summary, EMEA (one page, last updated June 2020, PDF)","url":"https://cdn.shopify.com/s/files/1/0706/5924/4299/files/1624627733Aeron_Environmental_Summary.pdf"}
+  ]
+}

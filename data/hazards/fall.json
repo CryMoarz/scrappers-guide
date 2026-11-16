@@ -1,0 +1,14 @@
+{
+  "id": "fall",
+  "label": "Fall from height",
+  "severity": 4,
+  "summary": "Falls from ladders, roofs, shelving, mezzanines and loading docks, and through skylights, fragile roof sheets, rotten floors and open shafts. A fall of 2 m can kill, and a broken leg far from help can be just as deadly.",
+  "signs": ["Any work above about 2 m","Fragile roofs: cement sheets, plastic roof lights and skylights","Open lift shafts, missing railings, hatches and pits","Wet, icy, mossy or dusty surfaces","Wind, darkness or tiredness"],
+  "do": ["Stand a ladder on firm, level ground, about 1 out for every 4 up","Have someone foot the ladder, or tie it at the top","Keep three points of contact: two feet and a hand, or two hands and a foot","Let the ladder stick out about 1 m above the edge you step onto","Haul tools and parts up on a rope instead of carrying them","Stay off fragile roofs and skylights entirely"],
+  "dont": ["Don't stand on the top three rungs of a leaning ladder, or the top two steps of a stepladder","Don't lean or reach out sideways from a ladder","Don't step on skylights, plastic roof lights or cement roof sheets","Don't work at height alone, in wind, or in the dark","Don't use shelving, chairs or boxes as ladders","Don't raise, carry or use a ladder, especially a metal one, within about 3 m of overhead power lines"],
+  "ppe": ["Boots with good grip","Hard hat","A harness and anchor, if you have them and know how to use them"],
+  "firstAid": ["Don't move someone who fell from height unless they are in danger where they lie, or they are unconscious and might choke: then roll them onto their side, keeping head, neck and body in line","Keep the head and neck still if they have neck or back pain, numbness or weakness, or are unconscious or confused","Check breathing; start CPR if they aren't breathing normally","Splint suspected broken bones and get medical help","A head injury with confusion, vomiting or drowsiness needs urgent medical care"],
+  "refs": [
+    {"lib":"wikipedia","q":"Fall prevention"}
+  ]
+}

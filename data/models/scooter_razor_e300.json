@@ -1,0 +1,22 @@
+{
+  "id": "scooter_razor_e300",
+  "device": "scooter",
+  "brand": "Razor",
+  "model": "E300 (also E300S)",
+  "notes": "The battery is sealed lead-acid (2x 12V/7Ah).",
+  "research": {"checked":"2026-11-11","gaps":["The template's 18650 lithium pack is marked absent.","The parts list gives a 24V/250W motor, but it is left out: the manuals do not state the motor type, and the catalogue's motor key is for brushless hub motors while this scooter is chain-driven.","Charger output and model years are not stated."],"method":["Two Razor E300/E300S owner's manuals agree on the parts list and charger, and both say the battery is sealed lead-acid (parts list: 2x 12V/7Ah)."]},
+  "comps": [
+    {"key":"battery_li","absent":true,"source":"https://cdn.shopify.com/s/files/1/1163/1976/files/E300Manual.pdf"},
+    {"key":"battery_pb_pack","fn":"battery_pb","spec":"Battery listed as 2x 12V/7Ah (parts list item 21). The manual says the product uses sealed lead-acid batteries that must be recycled.","v":12,"ah":7,"qty":2,"ext":2,"obs":2,"loc":"Parts list also names a battery tray (item 11) and battery bracket (item 22); the text does not describe how the battery is mounted","conf":"documented","source":"https://cdn.shopify.com/s/files/1/1163/1976/files/E300Manual.pdf"},
+    {"key":"controller_board","spec":"Control Module, item 10 on the parts list. Troubleshooting says to replace the Control Module when the motor does not engage and makes no clicking sound.","conf":"documented","source":"https://cdn.shopify.com/s/files/1/0668/4452/4778/files/E300-E300S_US_MAN_210429.pdf"},
+    {"key":"charger","spec":"Charger supplied in the box. Its light is green at the wall outlet (standby), red while charging and green when charging is complete. Initial charge 12 hours; recharge up to 12 hours.","conf":"documented","source":"https://cdn.shopify.com/s/files/1/0668/4452/4778/files/E300-E300S_US_MAN_210429.pdf"},
+    {"key":"switch_power","fn":"switch","spec":"On/Off switch, item 13 on the parts list. The manual says to switch it off when the unit is not in use, since leaving it on for a long time can leave the battery unable to hold a charge.","qty":1,"ext":1,"obs":2,"loc":"On the scooter; location only in the page 4 diagram, not in the text","conf":"documented","source":"https://cdn.shopify.com/s/files/1/0668/4452/4778/files/E300-E300S_US_MAN_210429.pdf"},
+    {"key":"breaker_reset","fn":"breaker","spec":"Reset button, item 12 on the parts list. It trips when the motor is overloaded, for example by a heavy rider or a steep hill. The manual says to wait a few seconds and then press it.","qty":1,"ext":1,"obs":3,"loc":"On the scooter; location only in the page 4 diagram, not in the text","conf":"documented","source":"https://cdn.shopify.com/s/files/1/0668/4452/4778/files/E300-E300S_US_MAN_210429.pdf"},
+    {"key":"connector_charge","fn":"connector","spec":"Charger port, item 14 on the parts list. The charger plugs into it.","qty":1,"ext":1,"obs":2,"loc":"On the scooter; location only in the page 4 diagram, not in the text","conf":"documented","source":"https://cdn.shopify.com/s/files/1/0668/4452/4778/files/E300-E300S_US_MAN_210429.pdf"},
+    {"key":"chain_sprocket_chain","fn":"chain_sprocket","spec":"Chain, item 19 on the parts list, with a chain tensioner (item 18) and chain guard (item 20).","qty":1,"ext":2,"obs":1,"loc":"Rear wheel drive: the Chain and Rear Tire Replacement section installs the chain on the rear wheel sprocket","conf":"documented","source":"https://cdn.shopify.com/s/files/1/0668/4452/4778/files/E300-E300S_US_MAN_210429.pdf"}
+  ],
+  "sources": [
+    {"title":"Razor E300/E300S owner's manual, US (E300-E300S_US_MAN_210429), read as text","url":"https://cdn.shopify.com/s/files/1/0668/4452/4778/files/E300-E300S_US_MAN_210429.pdf"},
+    {"title":"Razor E300/E300S owner's manual, second copy (E300Manual.pdf), read as text","url":"https://cdn.shopify.com/s/files/1/1163/1976/files/E300Manual.pdf"}
+  ]
+}

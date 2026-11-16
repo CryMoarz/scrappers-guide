@@ -1,0 +1,14 @@
+{
+  "id": "charger",
+  "name": "Battery chargers and charge circuits",
+  "group": "Power conversion",
+  "demand": 5,
+  "keywords": ["charger","charging","battery charger","charge circuit","tp4056","charge ic","car battery charger","trickle charger","float charger","usb charger","phone charger","drill charger","lithium charger","smart charger","cn3065","mcp73831"],
+  "substitutes": ["charge_controller","psu"],
+  "summary": "Battery chargers and charging circuits for lead-acid, lithium and NiMH, from wall plugs to workshop units.",
+  "uses": ["Recharging batteries from mains, a generator or an inverter","USB charging for phones and lights","Charge boards for DIY packs (TP4056)"],
+  "identify": "Wall chargers for tools, phones and radios; car battery and float chargers in garages; built-in chargers in UPS units, golf carts, scooters and floor scrubbers. The label gives output voltage, current and chemistry.",
+  "test": "Measure the open output: lithium chargers show about 4.2V per cell, lead-acid ones 13–15V for 12V. Connect a battery and check that current flows and the battery voltage climbs.",
+  "decay": {"halfLifeMonths":null,"note":"Lasts, though capacitors slowly age."},
+  "hazards": ["mains"]
+}

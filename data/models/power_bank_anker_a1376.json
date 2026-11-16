@@ -1,0 +1,18 @@
+{
+  "id": "power_bank_anker_a1376",
+  "device": "power_bank",
+  "brand": "Anker",
+  "model": "A1376 (PowerCore+ 26800 PD 45W)",
+  "notes": "PowerCore+ 26800 PD 45W (A1376).",
+  "research": {"checked":"2026-11-11","method":["Japanese quick start guide for the A1376 (file Battery_A1376_QSG_WEB_20240514-JP), linked from Anker's service page as the PowerCore+ 26800 PD 45W 取扱説明書 (A1376), gives the battery capacity, PD input and output ratings, and a green LED in low-current mode."]},
+  "comps": [
+    {"key":"battery_li","conf":"documented","spec":"Battery capacity 26800mAh, 3.63V / 97.28Wh (product spec table).","v":3.63,"ah":26.8,"source":"https://salesforce-knowledge-download.s3.us-west-2.amazonaws.com/000017828/en_US/000017828.pdf"},
+    {"key":"charger","conf":"documented","spec":"PD input 5V 3A, 9V 3A, 15V 3A, 20V 2.25A; PD output 5V 3A, 9V 3A, 15V 3A, 20V 2.25A (product spec table).","source":"https://salesforce-knowledge-download.s3.us-west-2.amazonaws.com/000017828/en_US/000017828.pdf"},
+    {"key":"b:li_charger_small:connector","conf":"documented","spec":"Product spec table lists PD input, standard output 5V 3A (2.4A max per port) and PD output.","v":5,"source":"https://salesforce-knowledge-download.s3.us-west-2.amazonaws.com/000017828/en_US/000017828.pdf"},
+    {"key":"b:li_charger_small:led_light","conf":"documented","spec":"LED light turns green when low-current mode is entered (press the power button twice, or hold it for 2 seconds). A further press of the power button exits the mode.","source":"https://salesforce-knowledge-download.s3.us-west-2.amazonaws.com/000017828/en_US/000017828.pdf"}
+  ],
+  "sources": [
+    {"title":"Anker A1376 quick start guide, Japanese (file Battery_A1376_QSG_WEB_20240514-JP): product spec table and LED instructions","url":"https://salesforce-knowledge-download.s3.us-west-2.amazonaws.com/000017828/en_US/000017828.pdf"},
+    {"title":"Anker service page: PowerCore+ 26800 PD 45W 取扱説明書 (A1376), product name and model","url":"https://service.anker.com/article-description/PowerCore-26800-PD-45W-%E5%8F%96%E6%89%B1%E8%AA%AC%E6%98%8E%E6%9B%B8-A1376"}
+  ]
+}

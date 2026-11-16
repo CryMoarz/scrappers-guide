@@ -1,0 +1,14 @@
+{
+  "id": "implosion",
+  "label": "Tube implosion risk",
+  "severity": 4,
+  "summary": "A CRT picture tube holds a strong vacuum behind thick glass. A crack, a knock to the thin neck, or a hard blow to the face can make it implode and throw glass. The tube also stores a high-voltage charge on its anode.",
+  "signs": ["Deep, heavy TVs and computer monitors, mostly made before about 2010","A thin glass neck at the back of the tube with a socket on the end","A rubber suction cup on the side of the tube with a thick lead going to it: the anode connection","Old oscilloscopes, arcade machines and rear-projection TVs"],
+  "do": ["Leave the tube in one piece unless you have a real use for what's around it","Lift by the cabinet or the tube's mounting ears, never the neck","Set the set face-down on a blanket to work on it","Discharge the anode before touching anything near the tube: slide an insulated probe or long screwdriver, wired to the tube's metal ground strap, under the suction cup; do it again before each touch, as the tube can recharge itself","Keep people and pets clear while you work"],
+  "dont": ["Don't knock, lever against or put weight on the neck","Don't drop it, or carry a big one alone","Don't smash a tube to get rid of it","Don't try to let the vacuum out yourself","Don't remove or loosen the metal band around the front of the tube: it holds the glass together"],
+  "ppe": ["Goggles or a face shield","Gloves and long sleeves","Closed shoes"],
+  "firstAid": ["Glass in an eye: don't rub. Rinse out loose specks with clean water; if glass is stuck in the eye or the eye is cut, don't rinse or pull it out: tape a paper cup over it without pressing and get medical help","Cuts: press firmly with a clean pad for 10 minutes; deep or gaping cuts need medical care","Shock from the anode: follow the first aid for stored high voltage"],
+  "refs": [
+    {"lib":"wikipedia","q":"Cathode-ray tube"}
+  ]
+}

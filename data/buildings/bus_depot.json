@@ -1,0 +1,7 @@
+{
+  "id": "bus_depot",
+  "name": "Bus and transport depots",
+  "osm": ["amenity=bus_station","landuse=depot"],
+  "exposure": 2,
+  "notes": "Fleet batteries, alternators, workshop tools, compressors and fuel."
+}

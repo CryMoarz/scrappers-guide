@@ -1,0 +1,14 @@
+{
+  "id": "potentiometer",
+  "name": "Potentiometers and trimmers",
+  "group": "Electronic components",
+  "demand": 1,
+  "keywords": ["potentiometer","pot","pots","variable resistor","rheostat","volume knob","volume control","10k pot","b10k","b100k","slide pot","fader","trimmer pot","trimpot","trim pot"],
+  "substitutes": ["resistor"],
+  "summary": "Knobs and trimmers that set a resistance: volume, speed, brightness and adjustment.",
+  "uses": ["Speed and brightness controls","Setting voltages on DIY converters","Replacing worn knobs in radios and amps"],
+  "identify": "Knob shafts on radios, amps, dimmers, fans and tools; small blue or brass trimmers on power and DC-DC boards. Marked with a value like B10K or 103.",
+  "test": "The outer pins should read the marked value, and the middle pin to one end should change smoothly as you turn it.",
+  "decay": {"halfLifeMonths":null,"note":"Lasts."},
+  "hazards": []
+}

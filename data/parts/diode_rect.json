@@ -1,0 +1,14 @@
+{
+  "id": "diode_rect",
+  "name": "Rectifier and signal diodes",
+  "group": "Electronic components",
+  "demand": 1,
+  "keywords": ["diode","diodes","rectifier diode","1n4007","1n4001","1n4148","fast recovery","signal diode","rectifier","1n4002","1n5408","uf4007","fr107","blocking diode"],
+  "substitutes": ["diode_schottky","bridge_rect"],
+  "summary": "General diodes that let current flow one way: power rectifiers and small signal diodes.",
+  "uses": ["Blocking reverse current from a solar panel or battery","Rectifying AC to DC","Simple reverse-polarity protection"],
+  "identify": "Black cylinders with a grey or white band (1N4007, 1N5408) or tiny glass ones with a black band (1N4148), on every power supply, charger and appliance board.",
+  "test": "On diode mode: about 0.5–0.7V forward and open in reverse. Zero both ways means shorted; open both ways means dead.",
+  "decay": {"halfLifeMonths":null,"note":"Lasts."},
+  "hazards": []
+}

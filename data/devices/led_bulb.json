@@ -1,0 +1,32 @@
+{
+  "id": "led_bulb",
+  "name": "LED light bulbs",
+  "group": "Electronics and office",
+  "aliases": ["a19 bulb","smart bulb"],
+  "brands": ["Philips","GE","Cree","Sylvania","Feit Electric","TCP","Sengled"],
+  "era": "2012–present",
+  "prev": 5,
+  "tools": ["hands","pry"],
+  "mins": 5,
+  "hazards": [],
+  "comps": [
+    {"key":"led_light","fn":"led_light","spec":"LED chips on an aluminium board","w":[4,15],"qty":1,"ext":2,"obs":3,"loc":"Under the diffuser dome"}
+  ],
+  "boards": [
+    {"id":"led_driver_mains","qty":1,"loc":"Inside the base","p":1}
+  ],
+  "buildings": [
+    {"b":"house","l":5},
+    {"b":"apartment","l":5},
+    {"b":"office","l":5},
+    {"b":"hotel","l":5},
+    {"b":"school","l":4},
+    {"b":"hardware","l":5},
+    {"b":"department","l":5},
+    {"b":"church","l":4},
+    {"b":"restaurant","l":4},
+    {"b":"supermarket","l":4},
+    {"b":"salon","l":3},
+    {"b":"shop_small","l":4}
+  ]
+}

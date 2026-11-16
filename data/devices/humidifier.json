@@ -1,0 +1,37 @@
+{
+  "id": "humidifier",
+  "name": "Humidifier",
+  "group": "Heating, cooling and water",
+  "aliases": ["ultrasonic humidifier","cool mist humidifier","vaporizer","evaporative humidifier","warm mist humidifier","room humidifier","steam humidifier"],
+  "brands": ["Vicks","Levoit","Honeywell","Hamilton Beach","Pure Enrichment","Aircare","Bionaire"],
+  "prev": 4,
+  "tools": ["screwdriver"],
+  "mins": 10,
+  "kg": 2,
+  "hazards": ["mold"],
+  "comps": [
+    {"key":"tank","fn":"tank","spec":"Water tank, 2–6 litres with a screw cap","qty":1,"ext":1,"obs":4,"loc":"Top or side"},
+    {"key":"hall_reed","fn":"hall_reed","spec":"Low-water float with a magnet and reed switch (many ultrasonic models)","qty":1,"ext":2,"obs":5,"loc":"Water well in the base","p":0.5},
+    {"key":"fan","fn":"fan","spec":"Small 12–24V DC fan that pushes the mist out","v":[12,24],"qty":1,"ext":1,"obs":5,"loc":"Base"},
+    {"key":"heating_element","fn":"heating_element","spec":"Heater, about 200–400W (warm-mist and steam models)","w":[200,400],"qty":1,"ext":2,"obs":5,"loc":"Base","p":0.5},
+    {"key":"psu","fn":"psu","spec":"Plug-in adapter or internal supply, often 24–48V for the mist driver","v":[24,48],"qty":1,"ext":1,"obs":5,"loc":"Base or wall plug"},
+    {"key":"controller_board","fn":"controller_board","spec":"Mist driver board with a power transistor and a piezo disc (about 1.7 MHz)","qty":1,"ext":2,"obs":5,"loc":"Base"}
+  ],
+  "boards": [
+    {"id":"smps_small","qty":1,"loc":"Plug-in adapter or built-in supply","p":0.5}
+  ],
+  "buildings": [
+    {"b":"house","l":4},
+    {"b":"apartment","l":4},
+    {"b":"pharmacy","l":4},
+    {"b":"department","l":4},
+    {"b":"nursing_home","l":3},
+    {"b":"supermarket","l":3},
+    {"b":"clinic","l":2},
+    {"b":"hospital","l":2},
+    {"b":"office","l":2},
+    {"b":"school","l":2},
+    {"b":"self_storage","l":2},
+    {"b":"salon","l":2}
+  ]
+}

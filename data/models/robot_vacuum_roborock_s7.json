@@ -1,0 +1,24 @@
+{
+  "id": "robot_vacuum_roborock_s7",
+  "device": "robot_vacuum",
+  "brand": "Roborock",
+  "model": "S7",
+  "notes": "The dock charger is CDZ11RR or CDZ12RR.",
+  "research": {"checked":"2026-11-11","gaps":["The underside label code was not read."],"method":["The official S7 manual lists the robot as roborock S7.","The iFixit teardown covers the LiDAR, battery connector, side brush motor and main brush.","Qty, ext and obs ratings are research judgment, not source facts."]},
+  "comps": [
+    {"key":"battery_li","conf":"documented","spec":"5200mAh Li-ion battery, per the GearBrain product listing.","ah":5.2,"source":"https://the.gearbrain.com/devices/FCC2F387ACE411EBB1EE519701403E77.html"},
+    {"key":"robot_brush_motors","conf":"documented","spec":"Side brush motor. Teardown step 4 says to remove the screws and then the side panel; the side brush and bottom panel come off earlier (step 3).","source":"https://www.ifixit.com/Teardown/Roborock+S7:+Teardown/177326"},
+    {"key":"charger","conf":"documented","spec":"Dock charger model CDZ11RR or CDZ12RR. Dock rated input 100-240VAC, rated output 20VDC 1.2A.","v":20,"a":1.2,"source":"https://support.roborock.com/hc/en-us/article_attachments/900007303346"},
+    {"key":"sensor_misc","conf":"documented","spec":"Cliff sensors, labelled in the manual's robot and sensors diagram. Infrared type not stated.","source":"https://support.roborock.com/hc/en-us/article_attachments/900007303346"},
+    {"key":"connector_battery","fn":"connector","spec":"Battery connector, disconnected after the battery is lifted up and over from left to right (teardown step 3). The guide warns that people have torn connectors off by pulling the cable instead of pressing on and pulling the connector.","qty":1,"ext":1,"obs":2,"loc":"At the battery, after the bottom panel is removed (teardown step 3)","conf":"documented","source":"https://www.ifixit.com/Teardown/Roborock+S7:+Teardown/177326"},
+    {"key":"sensor_lidar","fn":"sensor_misc","spec":"LiDAR unit. Teardown step 2: remove the rubber caps and the 2 screws, remove the LiDAR cage, then the LiDAR screws and the LiDAR. There are 3 LiDAR iterations depending on robot version: one noticeably smaller and cable-connected, the other 2 connected by a connector.","qty":1,"ext":2,"obs":2,"loc":"After the top cover (step 1) and the LiDAR cage (step 2) are removed","conf":"documented","source":"https://www.ifixit.com/Teardown/Roborock+S7:+Teardown/177326"},
+    {"key":"sensor_carpet","fn":"sensor_misc","spec":"Carpet sensor, labelled in the manual's robot and sensors diagram. Type not stated.","qty":1,"ext":2,"obs":2,"loc":"Shown on the robot in the product overview diagram (manual page 15)","conf":"documented","source":"https://support.roborock.com/hc/en-us/article_attachments/900007303346"},
+    {"key":"sensor_wall","fn":"sensor_misc","spec":"Wall sensor, labelled in the manual's robot and sensors diagram. Type not stated.","qty":1,"ext":2,"obs":2,"loc":"Shown on the robot in the product overview diagram (manual page 15)","conf":"documented","source":"https://support.roborock.com/hc/en-us/article_attachments/900007303346"},
+    {"key":"sensor_dock_locator","fn":"sensor_misc","spec":"Dock locator, labelled in the manual's robot and sensors diagram. Type not stated.","qty":1,"ext":2,"obs":2,"loc":"Shown on the robot in the product overview diagram (manual page 15)","conf":"documented","source":"https://support.roborock.com/hc/en-us/article_attachments/900007303346"}
+  ],
+  "sources": [
+    {"title":"iFixit: Roborock S7 teardown (LiDAR, battery, side brush and main brush steps)","url":"https://www.ifixit.com/Teardown/Roborock+S7:+Teardown/177326"},
+    {"title":"Roborock S7 user manual (FCC page with product model, product overview diagram, basic parameters)","url":"https://support.roborock.com/hc/en-us/article_attachments/900007303346"},
+    {"title":"GearBrain: Roborock S7 listing (model number S7, 5200mAh Li-ion battery)","url":"https://the.gearbrain.com/devices/FCC2F387ACE411EBB1EE519701403E77.html"}
+  ]
+}

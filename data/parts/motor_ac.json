@@ -1,0 +1,14 @@
+{
+  "id": "motor_ac",
+  "name": "AC induction motors",
+  "group": "Motion",
+  "demand": 1,
+  "keywords": ["motor","ac motor","induction motor","120v motor","240v motor","blower motor","mains motor","shaded pole motor","psc motor","capacitor motor","split phase motor","single phase motor","three phase motor","3 phase motor","pool pump motor","well pump motor","furnace blower motor","washing machine motor"],
+  "substitutes": ["motor_universal"],
+  "summary": "Mains-powered induction motors: tough brushless motors in pumps, fans, washers and compressors.",
+  "uses": ["Running pumps, saws, grinders and fans from a generator or inverter","Spare motor for a well or pool pump","Induction generator (with capacitors and know-how)"],
+  "identify": "Heavy steel-cased motors with a nameplate giving volts, amps, rpm and hp, often with a capacitor attached. In older top-loading washers, furnace blowers, pool and well pumps, bench grinders, table saws and compressors.",
+  "test": "Discharge any attached capacitor first. The windings should read a few ohms between leads and open to the case, and the shaft should spin freely with no grinding.",
+  "decay": {"halfLifeMonths":null,"note":"Lasts."},
+  "hazards": ["mains"]
+}

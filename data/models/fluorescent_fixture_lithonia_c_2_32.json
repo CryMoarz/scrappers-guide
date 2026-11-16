@@ -1,0 +1,17 @@
+{
+  "id": "fluorescent_fixture_lithonia_c_2_32",
+  "device": "fluorescent_fixture",
+  "brand": "Lithonia",
+  "model": "C 2 32 MVOLT GEB10IS (C-series general-purpose strip, 4 ft, two lamps)",
+  "notes": "A 4 ft strip light for two 32 W T8 lamps (not included) with the GEB10IS electronic instant-start ballast; the sheet names retail, light industrial and warehouse use. This record covers only the two-lamp, 48 in version; the series also comes in other lengths and with one lamp.",
+  "research": {"checked":"2026-11-12","gaps":["The sheet (Rev. 02/02/11) was read as a copy on globalindustrial.com; its Lithonia logo and Acuity Brands footer identify it, but no maker-hosted copy was found (acuitybrands.com pages returned HTTP 403).","The ballast maker and part number are not named; the ordering code offers several ballast options and GEB10IS is the one in the example code.","The energy table lists 55 W for a two-lamp F32 setup with no ordering code, and 59 W for C 2 32 MVOLT GEB10IS with F32T8/735 lamps; both are system watts with lamps, so no w is set on the ballast.","Lamps are not included and no lamp brand is named, so the Philips ALTO mercury figure is not claimed.","The sheet prints the frequency as 50-60 mhz, apparently a typo for Hz, so no frequency is claimed.","The fixture depth is printed as 2-/16 in (5.2 cm) and is not claimed; steel gauge is given only as code-gauge, no lens is described and no weight is stated."],"method":["Lithonia C General-Purpose Strip specification sheet (Acuity Brands, Rev. 02/02/11), Lithonia-branded, copy on globalindustrial.com; both pages rendered and text read. The research.js PDF reader got HTTP 403 for it, but WebFetch downloaded the file.","Philips F32T8/TL750 ALTO lamp data sheet on 1000bulbs.com opened: lists 1.7 mg mercury; not used."]},
+  "comps": [
+    {"key":"led_light","conf":"documented","spec":"32 W T8 lamps, 48 in, two per fixture (the 2 in the code C 2 32); the lamps are not included","w":32,"qty":2,"source":"https://www.globalindustrial.com/site/images/universal/lithonia/C.pdf"},
+    {"key":"controller_board_ballast","fn":"controller_board","spec":"Electronic ballast, GEB10IS option: 10% THD or less, instant start; MVOLT 120-277 V; thermally protected and resetting, Class P, UL listed and CSA certified; ballast factor 0.88 in the sheet's energy table; maker and part number not named","v":[120,277],"ac":true,"qty":1,"ext":2,"obs":5,"conf":"documented","source":"https://www.globalindustrial.com/site/images/universal/lithonia/C.pdf"},
+    {"key":"sheet_metal","conf":"documented","spec":"Heavy-duty steel channel (code-gauge) with iron-phosphate pretreatment and baked white enamel; channel cover held by a captive quarter-turn latch; an endplate/channel connector comes with each fixture","source":"https://www.globalindustrial.com/site/images/universal/lithonia/C.pdf"},
+    {"key":"wire_copper_fixture","fn":"wire_copper","spec":"Fixture wiring: AWM, TFN and THHN wire used throughout, rated for the required temperatures","qty":1,"ext":2,"obs":5,"conf":"documented","source":"https://www.globalindustrial.com/site/images/universal/lithonia/C.pdf"}
+  ],
+  "sources": [
+    {"title":"Lithonia Lighting C General-Purpose Strip (C 2 32 MVOLT GEB10IS) specification sheet, Acuity Brands, Rev. 02/02/11 (copy on globalindustrial.com)","url":"https://www.globalindustrial.com/site/images/universal/lithonia/C.pdf"}
+  ]
+}

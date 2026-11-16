@@ -1,0 +1,20 @@
+{
+  "id": "ceiling_fan_home_decorators_axon_52",
+  "device": "ceiling_fan",
+  "brand": "Home Decorators Collection",
+  "model": "Axon 52 in (UL model 52-AXON; models 59205 and 59209)",
+  "fcc": "RGB-52AXOND",
+  "notes": "A 52-inch remote-control Axon with a separate receiver, a 12 V A23 battery in the remote, four blades and a light kit with three colour-temperature settings. The guide's warning names a Dawnsun fan speed control part, AP-8RDL, without saying which part that is, and its speed table is blank, so the motor type and rating are unknown.",
+  "research": {"checked":"2026-11-12","gaps":["The guide's specification table is a template with blank values (xx), so no watts, CFM or airflow are claimed.","The guide lists a fan-motor assembly (part E) but gives no motor type or rating, so no motor part is claimed.","Fan speed control part AP-8RDL (Dawnsun Electronic Co., Ltd.) is named in a safety warning but not called the receiver (part J), so it is not given as the receiver's part number.","The guide refers to wood only in the care text (polish for the wood), not as a blade material, so no wood blade part is claimed.","The light source (LED or bulbs) and its wattage are not stated; only the colour temperatures are given.","FCC product code 52AXOND (grant lists 304 MHz) is tied to this fan because the filed user manual exhibit is this guide (UL 52-AXON, models 59205 and 59209). The frequency is not claimed because the guide does not state it.","No year is printed."],"method":["Home Decorators Collection AXON 52-inch ceiling fan use and care guide (UL model 52-AXON, models 59205 and 59209), read as user manual exhibit UM-4342710 of FCC ID RGB-52AXOND on fccid.io (15 pages) with research.js pdf; pages 5 and 9 were also rendered and read.","PDF page 1: model and UL numbers. Page 2: fan speed control part warning. Page 3: blank specification table. Page 5: package contents.","PDF page 9: remote and receiver dip switches, A23 12 V battery. Page 10: receiver wiring. Page 13: remote operation, dimmer and colour temperatures. Page 14: care and bearings.","FCC grant page for RGB-52AXOND on fccid.io (King of Fans, Inc.; 52 inch Axon; product code 52AXOND; communications receiver used with a Part 15 transmitter) was read; the internal photos exhibit was not used.","No sites refused."]},
+  "comps": [
+    {"key":"radio_rf_receiver","fn":"radio_rf","spec":"Receiver (part J) with four DIP switches set to match the remote, covered by a silicone rubber stopper; a molded adaptor plug connects it to the fan motor leads, and its black or red and white wires go to the house supply","qty":1,"ext":2,"obs":4,"conf":"documented","source":"https://fccid.io/RGB-52AXOND/User-Manual/UM-4342710.pdf"},
+    {"key":"radio_rf_transmitter","fn":"radio_rf","spec":"Hand-held remote control (part K) with DIP switches inside its battery compartment, set to match the receiver; the factory setting is up","qty":1,"ext":1,"obs":4,"conf":"documented","source":"https://fccid.io/RGB-52AXOND/User-Manual/UM-4342710.pdf"},
+    {"key":"battery_primary_remote","fn":"battery_primary","spec":"A23 12 V battery for the remote control (part M)","v":12,"qty":1,"ext":1,"obs":3,"conf":"documented","source":"https://fccid.io/RGB-52AXOND/User-Manual/UM-4342710.pdf"},
+    {"key":"led_light","conf":"documented","spec":"Light kit made of a light kit pan, a fitter assembly and a shatter-resistant bowl, one of each; press and hold the light button to dim; three colour-temperature options, 2700 K, 3000 K (default) and 5000 K","source":"https://fccid.io/RGB-52AXOND/User-Manual/UM-4342710.pdf"},
+    {"key":"bearing","conf":"documented","spec":"Permanently lubricated sealed ball bearings in the motor","source":"https://fccid.io/RGB-52AXOND/User-Manual/UM-4342710.pdf"}
+  ],
+  "sources": [
+    {"title":"Home Decorators Collection AXON 52-inch ceiling fan use and care guide, UL 52-AXON (FCC user manual exhibit UM-4342710, grantee King of Fans, Inc.)","url":"https://fccid.io/RGB-52AXOND/User-Manual/UM-4342710.pdf"},
+    {"title":"FCC ID RGB-52AXOND grant record and exhibit list (King of Fans, Inc.), fccid.io","url":"https://fccid.io/RGB-52AXOND"}
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "id": "streetlight_mains",
+  "name": "Streetlight, mains-fed (LED or sodium)",
+  "variantOf": "streetlight",
+  "aliases": ["sodium light","hps light","cobra head","high pressure sodium light","led roadway fixture"],
+  "brands": ["Philips","GE","Cree","Acuity Brands","Hubbell","Lithonia Lighting"],
+  "prev": 5,
+  "hazards": ["mains","mercury"],
+  "comps": [
+    {"key":"led_light","fn":"led_light","spec":"LED module, 50–200W (newer heads); older heads have a high-pressure sodium lamp, which holds a little mercury","w":[50,200],"qty":1,"ext":2,"obs":5,"loc":"Head at the top of the pole"},
+    {"key":"opto_sensor","fn":"opto_sensor","spec":"Twist-lock dusk-to-dawn photocell","qty":1,"ext":1,"obs":5,"loc":"Socket on top of the head"},
+    {"key":"inductor","fn":"inductor","spec":"Magnetic ballast for sodium lamps: copper-wound iron choke, 3–6 kg","qty":1,"ext":2,"obs":5,"loc":"Inside the head (sodium heads)","kg":4},
+    {"key":"capacitor_large","fn":"capacitor_large","spec":"Ballast capacitor (sodium heads)","qty":1,"ext":2,"obs":5,"loc":"Inside the head"},
+    {"key":"wire_copper","fn":"wire_copper","spec":"Copper feed cable in the pole and underground — often stolen for scrap","qty":1,"ext":3,"obs":3,"loc":"Inside the pole and buried between poles"},
+    {"key":"fuse","fn":"fuse","spec":"In-line fuse holder","a":[3,10],"qty":1,"ext":1,"obs":5,"loc":"Hand-hole at the pole base"}
+  ],
+  "boards": [
+    {"id":"led_driver_mains","qty":1,"loc":"Driver in the head (LED heads)","p":0.6}
+  ]
+}

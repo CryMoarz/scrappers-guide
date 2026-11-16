@@ -1,0 +1,45 @@
+{
+  "id": "gps_unit",
+  "name": "GPS units (car and handheld)",
+  "group": "Vehicles and mobility",
+  "aliases": ["sat nav","satnav","gps navigator","car gps","handheld gps","hiking gps","golf gps","chartplotter","car navigation","gps receiver"],
+  "brands": ["Garmin","TomTom","Magellan","Bushnell","Cobra","Lowrance","Humminbird"],
+  "era": "2000s–present",
+  "prev": 3,
+  "tools": ["hands","screwdriver","security_bits"],
+  "mins": 5,
+  "kg": 0.3,
+  "repairs": {"records":413,"fixed":0.45,"end_of_life":0.29},
+  "hazards": ["li_fire"],
+  "comps": [
+    {"key":"gps","fn":"gps","spec":"Standalone GPS receiver with maps on board — no phone, signal or internet needed; handhelds run on AA cells","qty":1,"ext":1,"obs":4,"loc":"The whole unit: check gloveboxes and drawers"},
+    {"key":"battery_li","fn":"battery_li","spec":"3.7V lithium pouch, about 800–1,500 mAh (car units) — old ones are often swollen","v":3.7,"ah":[0.8,1.5],"qty":1,"ext":2,"obs":5,"loc":"Behind the screen"},
+    {"key":"display","fn":"display","spec":"Touchscreen LCD, 3.5–7 in","qty":1,"ext":3,"obs":5,"loc":"Front"},
+    {"key":"antenna_coax","fn":"antenna_coax","spec":"Ceramic patch antenna; some have a socket for an external antenna","qty":1,"ext":2,"obs":5,"loc":"Top edge, inside","p":0.5},
+    {"key":"dcdc_buck","fn":"dcdc_buck","spec":"12–24V to 5V converter in the car power lead or mount","v":5,"a":[1,2],"qty":1,"ext":1,"obs":5,"loc":"Cigarette-lighter plug"},
+    {"key":"ic_memory","fn":"ic_memory","spec":"microSD card or internal flash holding the maps","qty":1,"ext":1,"obs":5,"loc":"Card slot"},
+    {"key":"speaker","fn":"speaker","spec":"Small speaker","w":[0.5,2],"qty":1,"ext":2,"obs":5,"loc":"Back"}
+  ],
+  "boards": [],
+  "buildings": [
+    {"b":"auto_wrecker","l":4},
+    {"b":"parking","l":3},
+    {"b":"garage_res","l":3},
+    {"b":"house","l":3},
+    {"b":"recycling","l":3},
+    {"b":"self_storage","l":3},
+    {"b":"rv_dealer","l":3},
+    {"b":"boat_shop","l":3},
+    {"b":"marina","l":3},
+    {"b":"campground","l":3},
+    {"b":"electronics","l":3},
+    {"b":"car_dealer","l":2},
+    {"b":"department","l":2},
+    {"b":"golf","l":2},
+    {"b":"auto_parts","l":2}
+  ],
+  "notes": "Roads rarely move: an old car sat nav still routes well. Lift the unit off its suction mount and take the 12V lead with it.",
+  "sources": [
+    {"title":"Open Repair Alliance, Open Repair Data v0.3 (community repair events, 2012 to July 2026; CC BY-SA 4.0): 413 repairs recorded as Sat-nav / GPS (subset of Tablet and others)","url":"https://github.com/openrepair/data"}
+  ]
+}

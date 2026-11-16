@@ -1,0 +1,43 @@
+{
+  "id": "mini_split",
+  "name": "Ductless mini-split heat pump",
+  "group": "Heating, cooling and water",
+  "aliases": ["mini split","ductless ac","ductless heat pump","split ac","wall-mounted ac","inverter ac","minisplit","multi zone heat pump"],
+  "brands": ["Mitsubishi Electric","Daikin","Fujitsu","LG","Gree","Pioneer","MrCool"],
+  "era": "2000s–present",
+  "prev": 3,
+  "tools": ["screwdriver","socket","wrench","cutters","ladder"],
+  "mins": 60,
+  "kg": 45,
+  "hazards": ["refrigerant","hv_cap","heavy","sharp","mains"],
+  "comps": [
+    {"key":"motor_bldc","fn":"motor_bldc","spec":"Outdoor fan motor: brushless DC with a built-in driver, fed from the 280–340V DC bus","v":[280,340],"qty":1,"ext":2,"obs":5,"loc":"Behind the outdoor fan grille","kg":3},
+    {"key":"motor_bldc_indoor","fn":"motor_bldc","spec":"Indoor blower motor, brushless DC","v":[280,340],"w":[20,60],"qty":1,"ext":2,"obs":5,"loc":"End of the indoor unit"},
+    {"key":"motor_stepper","fn":"motor_stepper","spec":"Small 12V unipolar stepper motors that swing the louvres","v":12,"qty":2,"ext":1,"obs":5,"loc":"Ends of the indoor louvre"},
+    {"key":"fan","fn":"fan","spec":"Cross-flow blower wheel (indoor) and propeller blade (outdoor)","qty":2,"ext":2,"obs":4,"loc":"Both units"},
+    {"key":"compressor","fn":"compressor","spec":"Inverter rotary compressor with a permanent-magnet motor — have the refrigerant recovered first","v":[280,340],"w":[500,3000],"qty":1,"ext":4,"obs":4,"loc":"Outdoor unit base","kg":15},
+    {"key":"valve_solenoid","fn":"valve_solenoid","spec":"Stepper-driven electronic expansion valve and reversing-valve coil","qty":2,"ext":4,"obs":5,"loc":"Outdoor unit, on the copper lines"},
+    {"key":"hose_tubing","fn":"hose_tubing","spec":"Copper line set, 3–15 m, plus the coils","qty":1,"ext":3,"obs":3,"loc":"Between the units and inside each"},
+    {"key":"sensor_misc","fn":"sensor_misc","spec":"Thermistors on the coils, pipes and air intake","qty":4,"ext":1,"obs":5,"loc":"Clipped to pipes and coils"},
+    {"key":"opto_sensor","fn":"opto_sensor","spec":"Infrared remote receiver and handheld IR remote","qty":1,"ext":1,"obs":5,"loc":"Indoor unit front; the remote is nearby"},
+    {"key":"breaker","fn":"breaker","spec":"Outdoor disconnect switch, 20–60A","a":[20,60],"qty":1,"ext":2,"obs":4,"loc":"Wall beside the outdoor unit"}
+  ],
+  "boards": [
+    {"id":"inverter_compressor_board","qty":1,"loc":"Outdoor unit control box","p":0.9},
+    {"id":"mcu_board","qty":1,"loc":"Indoor unit control board","p":1}
+  ],
+  "buildings": [
+    {"b":"house","l":3},
+    {"b":"apartment","l":3},
+    {"b":"hotel","l":3},
+    {"b":"office","l":3},
+    {"b":"clinic","l":3},
+    {"b":"church","l":3},
+    {"b":"school","l":3},
+    {"b":"nursing_home","l":3},
+    {"b":"restaurant","l":2},
+    {"b":"gym","l":2},
+    {"b":"garage_res","l":2},
+    {"b":"campground","l":2}
+  ]
+}

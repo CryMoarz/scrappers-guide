@@ -1,0 +1,47 @@
+{
+  "id": "pos_terminal",
+  "name": "Point-of-sale terminal and cash register",
+  "group": "Retail and public",
+  "aliases": ["cash register","till","checkout","pos","card reader","receipt printer","card terminal","cash drawer"],
+  "brands": ["Square","Clover","Verifone","Ingenico","PAX","Lightspeed","Elo"],
+  "prev": 5,
+  "tools": ["screwdriver"],
+  "mins": 15,
+  "kg": 10,
+  "hazards": [],
+  "comps": [
+    {"key":"solenoid_actuator","fn":"solenoid_actuator","spec":"Cash drawer release solenoid, 12–24V","v":[12,24],"qty":1,"ext":2,"obs":5,"loc":"Under the cash drawer, at the back"},
+    {"key":"spring","fn":"spring","spec":"Cash drawer ejector springs","qty":2,"ext":1,"obs":5,"loc":"Cash drawer"},
+    {"key":"motor_stepper","fn":"motor_stepper","spec":"Small stepper motor and gear train","v":24,"qty":1,"ext":2,"obs":5,"loc":"Thermal receipt printer"},
+    {"key":"laser_diode","fn":"laser_diode","spec":"Low-power red laser diode with a moving mirror (laser barcode scanners; newer ones use cameras)","qty":1,"ext":3,"obs":5,"loc":"Handheld or in-counter scanner"},
+    {"key":"display","fn":"display","spec":"10–15 in touchscreen LCD plus a small customer display","qty":2,"ext":2,"obs":4,"loc":"Stand on the counter"},
+    {"key":"psu","fn":"psu","spec":"12/24V power bricks for the printer and terminal","v":24,"qty":2,"ext":1,"obs":4,"loc":"Under the counter"},
+    {"key":"battery_li","fn":"battery_li","spec":"Single-cell Li-ion in wireless card readers","v":3.7,"ah":[0.5,2.6],"qty":1,"ext":2,"obs":4,"loc":"Card reader"},
+    {"key":"battery_coin","fn":"battery_coin","spec":"CR2032 clock cell","v":3,"ah":0.22,"qty":1,"ext":1,"obs":4,"loc":"Terminal main board"},
+    {"key":"wire_copper","fn":"wire_copper","spec":"USB, serial and power cables","qty":5,"ext":1,"obs":4,"loc":"Under the counter"}
+  ],
+  "boards": [
+    {"id":"motherboard","qty":1,"loc":"Terminal base","p":0.7},
+    {"id":"smps_small","qty":1,"loc":"Power bricks","p":0.8}
+  ],
+  "buildings": [
+    {"b":"supermarket","l":5},
+    {"b":"convenience","l":5},
+    {"b":"department","l":5},
+    {"b":"restaurant","l":5},
+    {"b":"pharmacy","l":5},
+    {"b":"hardware","l":5},
+    {"b":"gas_station","l":5},
+    {"b":"mall","l":5},
+    {"b":"electronics","l":4},
+    {"b":"auto_parts","l":4},
+    {"b":"bike_shop","l":4},
+    {"b":"pet_shop","l":4},
+    {"b":"garden_centre","l":4},
+    {"b":"cinema","l":4},
+    {"b":"toy_store","l":4},
+    {"b":"pool_supply","l":4},
+    {"b":"salon","l":4},
+    {"b":"shop_small","l":5}
+  ]
+}

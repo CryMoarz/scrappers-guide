@@ -1,0 +1,28 @@
+name: Bug in the app or hub
+description: Something in the app, the hub, the NOMAD app or the LoRa bridge doesn't work.
+labels: ["bug"]
+body:
+  - type: dropdown
+    id: where
+    attributes:
+      label: Where
+      options:
+        - The app (the HTML file)
+        - A hub or node
+        - On Project NOMAD
+        - LoRa bridge
+        - AI tools (MCP)
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: Version
+      description: Shown at the bottom of the Scrap tab, or in /api/v1/info.
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened, and what you expected
+      description: Steps to make it happen again help a lot.
+    validations:
+      required: true

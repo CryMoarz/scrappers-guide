@@ -1,0 +1,28 @@
+{
+  "id": "teardown_hard_drive",
+  "kind": "teardown",
+  "title": "Hard drive: neodymium magnets, platters and spindle motor",
+  "keywords": ["hard drive teardown","hdd magnet","hard disk magnet","neodymium magnet","platter mirror","signal mirror","spindle motor","voice coil magnet"],
+  "summary": "Every spinning hard drive holds one or two powerful neodymium magnets on steel plates, mirror-polished platters and a small brushless spindle motor. You need small Torx drivers. The magnets snap together hard and the glass platters in many drives shatter.",
+  "difficulty": 2,
+  "mins": 15,
+  "tools": ["screwdriver","security_bits","pry","pliers","clamps"],
+  "hazards": ["magnet_pinch","glass","sharp"],
+  "materials": [],
+  "steps": [
+    {"text":"Take the drive out of the computer or enclosure. Solid-state drives (no moving parts, often very light) have no magnets: skip them."},
+    {"text":"Remove every screw on the lid. Most drives use small Torx screws (T6–T9). Look for a hidden screw under the label: press around the label and over any \"warranty\" sticker with a fingernail to find the hole."},
+    {"text":"Pry the lid off from a corner with a flat blade. It may also be held by a foil seal around the edge: cut it with a knife."},
+    {"text":"Find the voice-coil magnet in the corner by the arm. Undo its 1–2 screws and lever the top magnet plate up with a flat screwdriver.","warn":"The magnet grabs anything steel. Keep fingers off the gap, keep magnets away from pacemakers, and slide them apart, don't pull."},
+    {"text":"Undo the pivot screw of the arm and swing the arm off the platters. Lift out the lower magnet plate the same way as the top."},
+    {"text":"Undo the small screws in the ring clamp on the spindle hub, lift the clamp, then lift off each platter and its spacer.","warn":"Many laptop and some desktop platters are glass. They shatter into sharp splinters if dropped or bent. Hold them by the edges."},
+    {"text":"Leave the magnet on its steel plate unless you need it bare. To free it, clamp the plate and bend it slowly; the magnet pops off.","warn":"Wear eye protection. Neodymium magnets are brittle and chip or shatter if they snap together."},
+    {"text":"The spindle motor is pressed into the base casting. Keep the whole base, or drive the motor out with a punch from the underside."},
+    {"text":"Store magnets in pairs, stuck together through a spacer of wood or card, away from electronics."}
+  ],
+  "notes": "## What's worth keeping and why\n\n- **Voice-coil magnets.** Curved neodymium magnets, one or two per drive, bonded to steel plates. The plates focus the field: a plate magnet holds tools to a bench, picks nails and filings out of dirt, or makes a strong door catch. Bare magnets go into small generators and magnetometers.\n- **Platters.** Aluminium or glass discs with a mirror finish. A platter is an excellent signal mirror: aim the flash through the centre hole at your target. Also small reflectors.\n- **Spindle motor.** A small 3-phase brushless motor. Run it from a brushless motor driver, or spin it to make a little 3-phase AC (needs a rectifier).\n- **Arm bearing.** A tiny precision bearing pair.\n- **Screws.** Small Torx screws for small projects.\n\n## Variations\n\n- Desktop drives (3.5 inch) usually have two big magnet plates and aluminium platters. Laptop drives (2.5 inch) have smaller magnets and glass platters more often.\n- Some drives use a single magnet with a plain steel top plate.\n- Helium-filled drives have the lid welded on; cut around the edge with a grinder or skip them.\n\n## Magnet safety\n\n- Two drive magnets can crush skin between them. Keep them apart with spacers.\n- Keep them away from watches, cards, phones, compasses and medical implants.\n- Don't heat them: neodymium magnets lose strength above about 80 °C.\n\n## What to leave\n\n- The circuit board on the underside holds the motor driver chip and little else of use.\n- The small filter pads inside.",
+  "tree": {"era":2,"branch":"salvage","requires":["safety_entering_buildings"]},
+  "devices": ["hard_drive","desktop_pc"],
+  "parts": ["magnet_strong","motor_bldc","optics","bearing"],
+  "license": "CC-BY-SA-4.0"
+}

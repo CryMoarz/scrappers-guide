@@ -1,0 +1,16 @@
+{
+  "id": "smoke_alarm_kidde_p3010l",
+  "device": "smoke_alarm",
+  "brand": "Kidde",
+  "model": "P3010L",
+  "notes": "Photoelectric 10-year sealed-lithium smoke alarm.",
+  "research": {"checked":"2026-11-11","method":["Kidde's page lists ordering part number 21009663."]},
+  "comps": [
+    {"key":"battery_primary","conf":"documented","spec":"Sealed-in lithium battery powers the alarm for 10 years; no battery replacement required","source":"https://www.kidde.com/home-safety/en/us/products/fire-safety/smoke-alarms/p3010l"},
+    {"key":"speaker","conf":"documented","spec":"Audio alarm rated 85 dB at 10 ft","source":"https://www.kidde.com/home-safety/en/us/products/fire-safety/smoke-alarms/p3010l"},
+    {"key":"sensor_misc","conf":"documented","spec":"Photoelectric sensor (the only sensor listed in the specifications)","source":"https://www.kidde.com/home-safety/en/us/products/fire-safety/smoke-alarms/p3010l"}
+  ],
+  "sources": [
+    {"title":"Kidde P3010L product page, specifications table and features (kidde.com)","url":"https://www.kidde.com/home-safety/en/us/products/fire-safety/smoke-alarms/p3010l"}
+  ]
+}

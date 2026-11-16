@@ -1,0 +1,6 @@
+{
+  "id": "marina",
+  "name": "Marinas and boat launches",
+  "osm": ["leisure=marina","leisure=slipway"],
+  "exposure": 2
+}

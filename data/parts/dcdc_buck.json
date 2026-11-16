@@ -1,0 +1,14 @@
+{
+  "id": "dcdc_buck",
+  "name": "DC-DC step-down (buck) converters",
+  "group": "Electronic components",
+  "demand": 2,
+  "keywords": ["buck","buck converter","step down","step-down","stepdown","dc-dc","dc dc","dc to dc","lm2596","mp1584","xl4015","12v to 5v","voltage converter","buck module","step down module","lm2576","xl4016","mp2307","12v to 3.3v","24v to 12v"],
+  "substitutes": ["reg_linear"],
+  "summary": "Small switching boards that drop a DC voltage efficiently: 24V to 12V, 12V to 5V.",
+  "uses": ["USB charging from a 12V battery","Running 5V or 3.3V electronics from solar","Matching a device to a different battery voltage"],
+  "identify": "Small boards with a coil, a chip and capacitors, often with a brass trimmer. Inside car USB chargers, routers, TVs, printers and e-bike displays; modules are marked LM2596, MP1584 or XL4015.",
+  "test": "Feed 12V in and measure the output: it should match the setting and stay steady under load. A chip that runs hot with no load is failing.",
+  "decay": {"halfLifeMonths":null,"note":"Lasts."},
+  "hazards": []
+}

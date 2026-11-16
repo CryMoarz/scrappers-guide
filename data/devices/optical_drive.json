@@ -1,0 +1,34 @@
+{
+  "id": "optical_drive",
+  "name": "CD and DVD drives and players",
+  "group": "Electronics and office",
+  "aliases": ["blu-ray player","dvd burner"],
+  "brands": ["LG","Samsung","ASUS","Lite-On","Pioneer","Sony","Panasonic"],
+  "era": "1990s–2010s mostly",
+  "prev": 4,
+  "tools": ["screwdriver"],
+  "mins": 15,
+  "hazards": [],
+  "comps": [
+    {"key":"motor_stepper","fn":"motor_stepper","spec":"Tiny stepper motor with lead screw (laser sled)","v":5,"qty":1,"ext":2,"obs":5,"loc":"Under the laser pickup"},
+    {"key":"motor_bldc","fn":"motor_bldc","spec":"Spindle motor","v":[5,12],"qty":1,"ext":2,"obs":5,"loc":"Under the disc clamp"},
+    {"key":"motor_dc_small","fn":"motor_dc_small","spec":"Tray motor","v":5,"qty":1,"ext":2,"obs":4,"loc":"Front corner"},
+    {"key":"laser_diode","fn":"laser_diode","spec":"Laser diode (DVD burners are the most powerful)","qty":1,"ext":3,"obs":5,"loc":"Inside the pickup head"},
+    {"key":"optics","fn":"optics","spec":"Focusing lens and small mirrors","qty":2,"ext":3,"obs":5,"loc":"Pickup head"},
+    {"key":"magnet_strong","fn":"magnet_strong","spec":"Tiny neodymium magnets around the lens","qty":2,"ext":3,"obs":5,"loc":"Pickup head"},
+    {"key":"rod_shaft","fn":"rod_shaft","spec":"Steel guide rods","qty":2,"ext":1,"obs":5,"loc":"Either side of the sled"},
+    {"key":"belt_pulley","fn":"belt_pulley","spec":"Tray belt and gears","qty":1,"ext":1,"obs":4,"loc":"Front"}
+  ],
+  "boards": [
+    {"id":"motor_driver_board","qty":1,"loc":"Drive control board","p":1}
+  ],
+  "buildings": [
+    {"b":"house","l":4},
+    {"b":"office","l":4},
+    {"b":"school","l":4},
+    {"b":"recycling","l":5},
+    {"b":"electronics","l":3},
+    {"b":"hotel","l":2},
+    {"b":"church","l":3}
+  ]
+}

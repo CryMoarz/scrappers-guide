@@ -1,0 +1,14 @@
+{
+  "id": "magnesium",
+  "name": "Magnesium",
+  "group": "Heat",
+  "demand": 2,
+  "keywords": ["magnesium","anode rod","fire starter","firestarter","magnesium rod","magnesium block","magnesium shavings","sacrificial anode","anode"],
+  "substitutes": [],
+  "summary": "Magnesium metal: anode rods in water heaters and fire-starting blocks.",
+  "uses": ["Shavings as an emergency fire starter (lit with a spark)","Sacrificial anode to protect tanks and boats from rust"],
+  "identify": "The anode rod in most tank water heaters: a long pale grey rod screwed into the top, often pitted. Camping shops sell magnesium blocks; some old wheels, engine castings and laptop frames are magnesium alloy. Some anode rods are aluminium or zinc instead.",
+  "test": "Scrape a small pile of shavings and hit them with a spark or flame: magnesium flares bright white, aluminium won’t. Burning magnesium is extremely hot and water makes it worse: smother it with dry sand.",
+  "decay": {"halfLifeMonths":null,"note":"Lasts."},
+  "hazards": ["burn"]
+}

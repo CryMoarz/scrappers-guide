@@ -1,0 +1,14 @@
+{
+  "id": "ferrite_xfmr",
+  "name": "Ferrite switching transformers",
+  "group": "Electronic components",
+  "demand": 1,
+  "keywords": ["ferrite transformer","switching transformer","smps transformer","high frequency transformer","ferrite core transformer","ee core","pulse transformer","gate drive transformer","smps flyback"],
+  "substitutes": ["transformer_lv","inductor"],
+  "summary": "Small high-frequency transformers on ferrite cores from switching power supplies and inverters.",
+  "uses": ["Rewinding for custom converter or inverter builds","Repairing a switch-mode supply","Source of ferrite cores and fine wire"],
+  "identify": "Small transformers with E-shaped black ferrite cores, often wrapped in yellow tape, on every switch-mode power supply, phone charger, LED driver, inverter and TV.",
+  "test": "Each winding should show continuity (low ohms), with no connection between windings or to the core.",
+  "decay": {"halfLifeMonths":null,"note":"Lasts."},
+  "hazards": []
+}

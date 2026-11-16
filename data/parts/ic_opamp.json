@@ -1,0 +1,14 @@
+{
+  "id": "ic_opamp",
+  "name": "Op-amps and comparators",
+  "group": "Electronic components",
+  "demand": 1,
+  "keywords": ["op amp","op-amp","opamp","comparator","lm358","lm324","lm393","tl072","tl074","ne5532","lm741","741","lm339","lm2903","op07","comparator ic"],
+  "substitutes": ["ic_555"],
+  "summary": "Op-amps and comparators: building blocks of sensors, alarms and audio circuits.",
+  "uses": ["Battery voltage alarms and cutoffs (comparators)","Sensor amplifiers","Audio preamps and filters"],
+  "identify": "8 or 14-pin chips marked LM358, LM324, LM393, TL072 or NE5532 on chargers, power supplies, audio gear and sensor boards.",
+  "test": "Test in a simple circuit, such as a comparator fed two different voltages. Otherwise only heat or burn marks show a dead one.",
+  "decay": {"halfLifeMonths":null,"note":"Lasts."},
+  "hazards": []
+}

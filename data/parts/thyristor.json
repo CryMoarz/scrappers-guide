@@ -1,0 +1,14 @@
+{
+  "id": "thyristor",
+  "name": "Triacs and SCRs",
+  "group": "Electronic components",
+  "demand": 1,
+  "keywords": ["triac","scr","thyristor","bta16","bt136","dimmer","speed controller","bt137","bta12","bta41","bt151","mcr100","db3","diac","triac dimmer","motor speed control"],
+  "substitutes": ["relay"],
+  "summary": "Triacs and SCRs that switch and dim AC loads, in dimmers, speed controllers and appliances.",
+  "uses": ["Dimming lights and controlling heaters","Motor speed controllers for tools","Solid-state switching of AC loads"],
+  "identify": "Three-legged TO-220 parts marked BTA16, BT136, BT137 or BTA41, often on heatsinks, in dimmers, drills, washing machines, fans and heaters; SCRs also in battery chargers and treadmill controllers.",
+  "test": "The two main terminals should read open both ways on a meter. A short means it’s dead.",
+  "decay": {"halfLifeMonths":null,"note":"Lasts."},
+  "hazards": []
+}

@@ -1,0 +1,30 @@
+{
+  "id": "teardown_inkjet",
+  "kind": "teardown",
+  "title": "Inkjet printer: motors, rods, belts and encoders",
+  "keywords": ["printer teardown","inkjet teardown","scavenge printer","printer motor","printer stepper","encoder strip","printer power supply","all in one printer"],
+  "summary": "Offices and schools are full of dead inkjet printers. Each holds two or more DC or stepper motors, a polished steel guide rod, timing belts and pulleys, an optical encoder, gears, springs and a 24–32 V power supply. About 15 minutes with a screwdriver.",
+  "difficulty": 1,
+  "mins": 15,
+  "tools": ["screwdriver","pliers","cutters","knife"],
+  "hazards": ["mains","sharp"],
+  "materials": [],
+  "steps": [
+    {"text":"Unplug the printer and leave it 5 minutes. Pull the ink cartridges out and bag them: ink stains everything.","warn":"An internal power supply board can hold a mains-level charge for a few minutes after unplugging."},
+    {"text":"Take off the paper trays. Find the screws: under rubber feet, behind the cartridge door, at the back and under the scanner lid. Remove them all."},
+    {"text":"All-in-one models: lift off the scanner lid and scanner bed first. It holds a light bar, a small motor, a belt and a rod of its own."},
+    {"text":"Pop the outer shell off. Start at the back and work forward, pressing clips in with a flat screwdriver.","warn":"Plastic clips snap into sharp shards and the frame has sheet-steel edges. Wear gloves."},
+    {"text":"Unplug the ribbon cables from the main board and remove the board. Remove the power supply: an internal board or a brick behind a cover."},
+    {"text":"Remove the encoder strip: a clear plastic strip with fine lines running along the carriage. One end hooks onto a small tension spring; unhook it gently.","warn":"The spring flicks when released. Keep your face back."},
+    {"text":"Release the belt: push the idler pulley at the far end toward the motor against its spring, and slip the belt off. Slide the carriage off the guide rod."},
+    {"text":"Remove the guide rod: undo the clips or screws at each end and slide it out."},
+    {"text":"Undo the carriage motor (2–3 screws, at one end of the rail) and the paper-feed motor (side frame). Keep any encoder disc and sensor with each motor."},
+    {"text":"Take the paper-feed rollers on their steel shafts, the gear trains, springs and any small switches."},
+    {"text":"Leave the ink sponge pads in the base: they are soaked with ink."}
+  ],
+  "notes": "## What's worth keeping and why\n\n- **DC motors with encoders.** Small brushed motors, usually rated around 24–32 V, that also run slower on 12 V. With the encoder disc and sensor, a motor knows how far it has turned: the base for a closed-loop drive.\n- **Stepper motors.** Older and larger printers use steppers for paper feed: precise positioning for trackers and small machines.\n- **Guide rod.** Polished, hardened steel rod, about 6–10 mm across. Axles, slides, hinge pins.\n- **Timing belt and pulleys.** Toothed belt for linear motion without slip.\n- **Encoder strip and sensor.** An optical sensor that reads fine lines; also works as a simple slot sensor.\n- **Power supply.** Usually 24–32 V DC at under 2 A; some printers give two outputs. Good for driving the motors you just pulled, or step down to 12 V or 5 V with a buck converter.\n- **Rubber rollers, gears, springs, screws.**\n\n## Variations\n\n- Small home printers use plastic frames and mostly DC motors. Larger office and wide-format printers have steel frames, larger steppers and heavier rods.\n- Laser printers and copiers are a different job: heavier, with a fuser that gets very hot and a toner dust mess. See copier.\n- Scanner units in all-in-ones carry a CIS light bar (LEDs) and a small stepper or DC motor.\n\n## What to leave\n\n- Ink cartridges, the print head and the waste ink pads.\n- Small plastic parts with no clear use.",
+  "tree": {"era":2,"branch":"salvage","requires":["safety_entering_buildings"]},
+  "devices": ["inkjet"],
+  "parts": ["motor_dc_small","motor_stepper","rod_shaft","belt_pulley","opto_sensor","psu","gearbox","spring","sensor_misc"],
+  "license": "CC-BY-SA-4.0"
+}

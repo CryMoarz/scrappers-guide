@@ -1,0 +1,15 @@
+{
+  "id": "pir_board",
+  "name": "PIR motion sensor board",
+  "notes": "Ready-made motion detection: often reusable as is.",
+  "comps": [
+    {"key":"sensor_motion","fn":"sensor_motion","spec":"Pyroelectric sensor","qty":1,"ext":2,"obs":4,"loc":"Behind the dome"},
+    {"key":"optics","fn":"optics","spec":"Fresnel lens dome","qty":1,"ext":1,"obs":5,"loc":"Front"},
+    {"key":"ic_opamp","fn":"ic_opamp","spec":"PIR controller or quad op-amp (BISS0001/LM324-type)","qty":1,"ext":3,"obs":5,"loc":"Board"},
+    {"key":"relay","fn":"relay","spec":"Mains relay","v":[5,24],"a":[5,10],"qty":1,"ext":3,"obs":4,"loc":"Board"},
+    {"key":"opto_sensor","fn":"opto_sensor","spec":"Dusk photocell","qty":1,"ext":2,"obs":5,"loc":"Facing out"},
+    {"key":"potentiometer","fn":"potentiometer","spec":"Time and sensitivity trimmers","qty":2,"ext":2,"obs":5,"loc":"Adjust knobs"},
+    {"key":"diode_zener","fn":"diode_zener","spec":"Zener regulator","qty":1,"ext":2,"obs":5,"loc":"Power section"},
+    {"key":"cap_elec","fn":"cap_elec","spec":"Capacitors","qty":3,"ext":2,"obs":5,"loc":"Board"}
+  ]
+}

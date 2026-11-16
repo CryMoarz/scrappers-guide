@@ -1,0 +1,30 @@
+{
+  "id": "power_furniture",
+  "name": "Power recliners, adjustable beds and standing desks",
+  "group": "Kitchen and appliances",
+  "aliases": ["lift chair","sit stand desk"],
+  "brands": ["La-Z-Boy","Flexsteel","Ashley","Sleep Number","Tempur-Pedic","Ergomotion","Flexispot"],
+  "prev": 3,
+  "tools": ["screwdriver","socket"],
+  "mins": 20,
+  "hazards": [],
+  "comps": [
+    {"key":"linear_actuator","fn":"linear_actuator","spec":"24–29V DC linear actuators","v":[24,29],"qty":2,"ext":2,"obs":5,"loc":"Under the frame"},
+    {"key":"psu","fn":"psu","spec":"29V power supply","v":29,"qty":1,"ext":1,"obs":5,"loc":"Floor, plugged in"},
+    {"key":"switch","fn":"switch","spec":"Hand controls","qty":1,"ext":1,"obs":5,"loc":"Armrest or remote"},
+    {"key":"battery_nimh","fn":"battery_nimh","spec":"AA backup pack (some recliners)","ah":[1.8,2.5],"qty":1,"ext":1,"obs":5,"loc":"Under the frame","p":0.5}
+  ],
+  "boards": [
+    {"id":"smps_board","qty":1,"loc":"Inside the 29V power supply","p":1}
+  ],
+  "buildings": [
+    {"b":"house","l":4},
+    {"b":"apartment","l":3},
+    {"b":"office","l":4},
+    {"b":"furniture","l":5},
+    {"b":"hospital","l":3},
+    {"b":"nursing_home","l":5},
+    {"b":"hotel","l":2},
+    {"b":"salon","l":2}
+  ]
+}

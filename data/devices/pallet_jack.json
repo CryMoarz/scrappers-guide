@@ -1,0 +1,32 @@
+{
+  "id": "pallet_jack",
+  "name": "Pallet jack (hand pallet truck)",
+  "group": "Commercial",
+  "aliases": ["pallet jack","pallet truck","hand pallet truck","pump truck","pallet mover","manual pallet jack","low profile pallet jack"],
+  "brands": ["Vestil","Uline","Vevor","Global Industrial","Blue Giant"],
+  "prev": 4,
+  "tools": ["hammer","pliers","socket"],
+  "mins": 30,
+  "kg": 75,
+  "hazards": ["heavy","crush"],
+  "comps": [
+    {"key":"hydraulic","fn":"hydraulic","spec":"Hand-pump hydraulic unit with a short cylinder, lifts 2,000–2,500 kg; holds a few hundred ml of oil","qty":1,"ext":3,"obs":5,"loc":"Base of the handle","kg":10},
+    {"key":"bearing","fn":"bearing","spec":"Polyurethane load rollers and steer wheels with sealed bearings","qty":6,"ext":2,"obs":4,"loc":"Fork tips and under the pump"},
+    {"key":"tube_frame","fn":"tube_frame","spec":"Steel handle tube and formed steel fork channels, about 1.1 m long","qty":1,"ext":3,"obs":5,"loc":"Whole frame"},
+    {"key":"rod_shaft","fn":"rod_shaft","spec":"Steel pushrods, axles and pivot pins","qty":6,"ext":2,"obs":5,"loc":"Inside the forks and at the pivots"},
+    {"key":"spring","fn":"spring","spec":"Handle return spring","qty":1,"ext":2,"obs":5,"loc":"Handle pivot"}
+  ],
+  "buildings": [
+    {"b":"warehouse","l":5},
+    {"b":"supermarket","l":4},
+    {"b":"factory","l":4},
+    {"b":"hardware","l":4},
+    {"b":"farm_supply","l":4},
+    {"b":"garden_centre","l":4},
+    {"b":"department","l":3},
+    {"b":"mall","l":3},
+    {"b":"airport","l":3},
+    {"b":"pet_shop","l":2}
+  ],
+  "notes": "The whole jack moves a tonne by hand on flat floors. The pump unit works as a small hydraulic press."
+}

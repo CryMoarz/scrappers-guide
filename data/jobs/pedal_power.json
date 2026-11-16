@@ -1,0 +1,20 @@
+{
+  "id": "pedal_power",
+  "name": "Pedal power",
+  "keywords": ["pedal power","pedal powered","pedal generator","bike generator","bicycle generator","exercise bike generator","human power","human powered","crank generator"],
+  "summary": "Many self-powered gym bikes and ellipticals already hold a generator to run their console; that’s a pedal generator half built. Otherwise, put a bike on a stand and drive a treadmill motor from the back tyre. A fit person makes about 75–100W for an hour: enough for phones, lights and radios, not a fridge.",
+  "parts": [
+    {"fn":"alternator","why":"Generators already inside self-powered exercise bikes","core":true},
+    {"fn":"motor_dc_large","why":"A treadmill motor driven from the back tyre","core":true},
+    {"fn":"dynamo","why":"Bike dynamos and hand cranks for small loads","core":true},
+    {"fn":"motor_dc_small","why":"24V scooter motors suit bike speeds"},
+    {"fn":"belt_pulley","why":"Gears pedal speed up to generator speed"},
+    {"fn":"diode_schottky","why":"Stops the battery spinning the motor"},
+    {"fn":"battery_pb","why":"Stores the power you make"}
+  ],
+  "guides": ["build_pedal_generator","teardown_treadmill"],
+  "tips": ["Pedal into a battery, never straight into your devices: the output swings with every stroke.","An hour of hard pedalling charges several phones or runs LED lights for a night.","Gym ellipticals and bikes often hide a generator and a load resistor. Look under the cover."],
+  "refs": [
+    {"lib":"lowtech","q":"pedal power"}
+  ]
+}

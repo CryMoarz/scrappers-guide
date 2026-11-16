@@ -1,0 +1,45 @@
+{
+  "id": "commercial_laundry",
+  "name": "Commercial washers and dryers",
+  "group": "Commercial",
+  "aliases": ["commercial washer","washer-extractor","coin laundry","industrial dryer","tumble dryer","laundromat machines","laundromat washer"],
+  "brands": ["Speed Queen","Wascomat","Huebsch","Dexter","Electrolux","Alliance Laundry","Continental Girbau","Unimac","IPSO","Primus"],
+  "prev": 3,
+  "tools": ["socket","screwdriver","wrench","heavy"],
+  "mins": 90,
+  "kg": 300,
+  "hazards": ["heavy","mains","fuel"],
+  "comps": [
+    {"key":"motor_ac","fn":"motor_ac","spec":"Washer drive motors, 1–7.5 kW, mostly 3-phase on an inverter drive","w":[1000,7500],"qty":4,"ext":3,"obs":5,"loc":"Rear of each washer","kg":30},
+    {"key":"motor_ac_dryer","fn":"motor_ac","spec":"Dryer drum and blower motors, 0.3–1 kW","w":[300,1000],"qty":4,"ext":2,"obs":5,"loc":"Rear of each dryer"},
+    {"key":"fan","fn":"fan","spec":"Dryer blower impellers","qty":4,"ext":2,"obs":5,"loc":"Dryer exhaust"},
+    {"key":"belt_pulley","fn":"belt_pulley","spec":"Large drive belts and pulleys","qty":8,"ext":1,"obs":5,"loc":"Behind rear panels"},
+    {"key":"bearing","fn":"bearing","spec":"Large drum bearings and dryer support rollers","qty":8,"ext":4,"obs":5,"loc":"Drum shafts and dryer bases"},
+    {"key":"igniter","fn":"igniter","spec":"Hot-surface or spark igniters (gas dryers)","qty":4,"ext":2,"obs":5,"loc":"Burner box"},
+    {"key":"thermocouple","fn":"thermocouple","spec":"Flame sensors (gas dryers)","qty":4,"ext":2,"obs":5,"loc":"Burner box"},
+    {"key":"heating_element","fn":"heating_element","spec":"Electric dryer elements, 5–15 kW (electric models)","w":[5000,15000],"qty":2,"ext":2,"obs":5,"loc":"Heater box","p":0.5},
+    {"key":"valve_solenoid","fn":"valve_solenoid","spec":"Water inlet valves and gas valves","v":[24,240],"ac":true,"qty":8,"ext":2,"obs":5,"loc":"Rear connections and burner box"},
+    {"key":"solenoid_actuator","fn":"solenoid_actuator","spec":"Coin acceptor and door lock solenoids","qty":8,"ext":2,"obs":5,"loc":"Front panels"},
+    {"key":"thermostat","fn":"thermostat","spec":"High-limit thermostats","qty":4,"ext":1,"obs":5,"loc":"Dryer exhaust and burner"},
+    {"key":"spring","fn":"spring","spec":"Heavy suspension springs and dampers (soft-mount washers)","qty":4,"ext":3,"obs":5,"loc":"Under the drum"},
+    {"key":"sheet_metal","fn":"sheet_metal","spec":"Stainless steel drums and panels","qty":4,"ext":3,"obs":5,"loc":"Drums and cabinets"},
+    {"key":"hose_tubing","fn":"hose_tubing","spec":"Inlet hoses and drain pipes","qty":6,"ext":1,"obs":4,"loc":"Rear"}
+  ],
+  "boards": [
+    {"id":"mcu_board","qty":4,"loc":"Machine controllers","p":1},
+    {"id":"vfd_drive","qty":2,"loc":"Washer motor drives","p":0.6}
+  ],
+  "buildings": [
+    {"b":"laundromat","l":5},
+    {"b":"hotel","l":5},
+    {"b":"nursing_home","l":5},
+    {"b":"hospital","l":4},
+    {"b":"fire_station","l":3},
+    {"b":"apartment","l":3},
+    {"b":"campground","l":3},
+    {"b":"gym","l":2},
+    {"b":"stadium","l":2},
+    {"b":"school","l":2}
+  ],
+  "notes": "Shut the gas at the meter before opening gas dryers. A hand-turned washer drum still agitates clothes with no power."
+}

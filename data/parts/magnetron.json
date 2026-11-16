@@ -1,0 +1,14 @@
+{
+  "id": "magnetron",
+  "name": "Magnetrons",
+  "group": "Signal and control",
+  "demand": 1,
+  "keywords": ["magnetron","microwave tube","2m246","2m214","microwave emitter"],
+  "substitutes": ["magnet_ferrite"],
+  "summary": "The vacuum tube that makes the microwaves in an oven: a copper anode block with cooling fins, two ferrite ring magnets and a heated cathode.",
+  "uses": ["Two strong ferrite ring magnets","Copper anode block and aluminium cooling fins","Not useful as a working tube outside an oven: leave it unpowered"],
+  "identify": "Finned metal block about 9 × 9 cm bolted to the waveguide, with a domed antenna on one face and two spade terminals on a filter box.",
+  "test": "Filament continuity: under 1 ohm between the two terminals. Each terminal to the case should read open.",
+  "decay": {"halfLifeMonths":null,"note":"Lasts indefinitely; the magnets keep their strength."},
+  "hazards": ["beryllium","hv"]
+}

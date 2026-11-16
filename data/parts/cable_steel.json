@@ -1,0 +1,14 @@
+{
+  "id": "cable_steel",
+  "name": "Steel cable and wire rope",
+  "group": "Mechanical",
+  "demand": 2,
+  "keywords": ["steel cable","wire rope","cable","aircraft cable","guy wire","garage door cable","winch cable","brake cable","bowden cable","throttle cable","galvanised cable","galvanized cable"],
+  "substitutes": ["rope_webbing"],
+  "summary": "Braided steel cable for pulling, lifting and bracing: winch lines, garage door cables, guy wires and control cables.",
+  "uses": ["Winch and pulley lines","Bracing masts and antennas","Security tethers and fence tensioners","Brake and throttle cables reused as remote controls"],
+  "identify": "Twisted steel strands, often galvanised, from 1 mm bike brake cable to 10 mm winch line. Find it on garage doors, cranes, guyed masts, boat rigging and gym machines, which hold long coated cable with pulleys. Garage door cables are under spring tension: deal with the spring first.",
+  "test": "Run a rag along it: snags mean broken strands, which spike through gloves. Reject cable with kinks, crushed spots or heavy rust, because it fails without warning.",
+  "decay": {"halfLifeMonths":null,"note":"Lasts; rust and salt air weaken it over years."},
+  "hazards": ["sharp"]
+}

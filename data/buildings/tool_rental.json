@@ -1,0 +1,6 @@
+{
+  "id": "tool_rental",
+  "name": "Tool and equipment rental",
+  "osm": ["shop=tool_hire","shop=rental"],
+  "exposure": 2
+}

@@ -1,0 +1,6 @@
+{
+  "id": "apartment",
+  "name": "Apartment buildings",
+  "osm": ["building=apartments"],
+  "exposure": 3
+}

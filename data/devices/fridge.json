@@ -1,0 +1,35 @@
+{
+  "id": "fridge",
+  "name": "Refrigerator",
+  "group": "Kitchen and appliances",
+  "aliases": ["icebox","french door fridge"],
+  "brands": ["Whirlpool","GE","Samsung","LG","Frigidaire","Kenmore","Maytag","KitchenAid","Bosch","Electrolux"],
+  "prev": 5,
+  "tools": ["screwdriver","socket"],
+  "mins": 40,
+  "hazards": ["refrigerant","heavy"],
+  "comps": [
+    {"key":"compressor","fn":"compressor","spec":"Hermetic compressor — have refrigerant recovered first","v":[120,240],"w":[100,250],"ac":true,"qty":1,"ext":4,"obs":2,"loc":"Bottom rear"},
+    {"key":"fan","fn":"fan","spec":"Evaporator and condenser fans (12V DC or 120V)","v":12,"qty":2,"ext":2,"obs":3,"loc":"Freezer back wall; rear base"},
+    {"key":"led_light","fn":"led_light","spec":"Interior LED or bulb","w":[1,40],"qty":1,"ext":1,"obs":3,"loc":"Inside the cabinet"},
+    {"key":"magnet_ferrite","fn":"magnet_ferrite","spec":"Flexible magnetic strip in the door gaskets","qty":2,"ext":1,"obs":5,"loc":"Inside the rubber door seals"},
+    {"key":"sensor_misc","fn":"sensor_misc","spec":"Thermistors","qty":2,"ext":2,"obs":5,"loc":"Inside the compartments"},
+    {"key":"hose_tubing","fn":"hose_tubing","spec":"Copper and aluminium refrigerant tubing","qty":1,"ext":3,"obs":3,"loc":"Rear coil and lines"},
+    {"key":"valve_solenoid","fn":"valve_solenoid","spec":"Water inlet solenoid valve (ice maker models)","v":[120,240],"ac":true,"qty":1,"ext":2,"obs":4,"loc":"Bottom rear corner","p":0.5},
+    {"key":"relay","fn":"relay","spec":"Compressor start relay","v":[120,240],"ac":true,"qty":1,"ext":2,"obs":4,"loc":"Clipped to the compressor"}
+  ],
+  "boards": [
+    {"id":"mcu_board","qty":1,"loc":"Behind the top hinge cover or rear panel","p":0.7}
+  ],
+  "buildings": [
+    {"b":"house","l":5},
+    {"b":"apartment","l":5},
+    {"b":"restaurant","l":4},
+    {"b":"office","l":3},
+    {"b":"hotel","l":3},
+    {"b":"school","l":3},
+    {"b":"church","l":2},
+    {"b":"appliance","l":4},
+    {"b":"recycling","l":3}
+  ]
+}

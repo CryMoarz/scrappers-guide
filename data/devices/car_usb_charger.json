@@ -1,0 +1,25 @@
+{
+  "id": "car_usb_charger",
+  "name": "Car USB chargers and 12V adapters",
+  "group": "Vehicles and mobility",
+  "aliases": ["cigarette lighter charger","usb car charger"],
+  "brands": ["Anker","Belkin","Ventev","Scosche","Baseus","Aukey","RAVPower","Motorola"],
+  "prev": 5,
+  "tools": ["hands","screwdriver"],
+  "mins": 3,
+  "hazards": [],
+  "comps": [
+    {"key":"dcdc_buck","fn":"dcdc_buck","spec":"12V to 5V buck converter","v":5,"a":[1,3],"qty":1,"ext":2,"obs":4,"loc":"Inside the plug"},
+    {"key":"fuse","fn":"fuse","spec":"Small glass fuse in the tip","a":[2,10],"qty":1,"ext":1,"obs":5,"loc":"Unscrew the tip"},
+    {"key":"connector","fn":"connector","spec":"USB sockets","qty":2,"ext":3,"obs":4,"loc":"Top"}
+  ],
+  "buildings": [
+    {"b":"parking","l":4},
+    {"b":"auto_wrecker","l":4},
+    {"b":"gas_station","l":5},
+    {"b":"convenience","l":5},
+    {"b":"auto_parts","l":5},
+    {"b":"car_repair","l":3},
+    {"b":"house","l":3}
+  ]
+}

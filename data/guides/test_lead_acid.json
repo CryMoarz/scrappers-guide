@@ -1,0 +1,34 @@
+{
+  "id": "test_lead_acid",
+  "kind": "test",
+  "title": "Test a lead-acid battery",
+  "keywords": ["test car battery","battery voltage","lead acid test","hydrometer","specific gravity","load test","dead battery","sulphated","sulfated","deep cycle test","agm test","golf cart battery test","battery health"],
+  "summary": "Find out whether a salvaged lead-acid battery is worth carrying: inspect it, read its resting voltage, check each cell with a hydrometer if it has caps, charge it, then see whether it holds up under load and keeps its charge for a few days.",
+  "difficulty": 2,
+  "mins": 30,
+  "tools": ["multimeter","socket","wrench","hands"],
+  "hazards": ["acid","heavy","lead","burn"],
+  "materials": [
+    {"item":"12 V load such as a car headlight bulb (about 55–60 W) with two wires and clips","qty":"1"},
+    {"item":"Battery charger","fn":"charger","qty":"1"},
+    {"item":"Battery hydrometer, for batteries with removable caps","qty":"1","optional":true},
+    {"item":"Baking soda and clean water for spills","qty":"some"}
+  ],
+  "steps": [
+    {"text":"Put on glasses and gloves. Inspect: cracks, bulges, leaks, melted or loose terminals, a warped case. Reject cracked or bulging batteries.","warn":"The outside of an old battery may be coated in acid."},
+    {"text":"Look for a date code or sticker. Batteries more than about 5 years old are often near the end even if they read well."},
+    {"text":"Measure the resting voltage on DC volts. If the battery has sat for hours, compare it with the table in the notes to judge its charge."},
+    {"text":"On flooded batteries with caps, check the acid covers the plates. Test each cell with the hydrometer. All cells should read within about 0.05 of each other. One low cell means a bad cell.","warn":"Acid drips from the hydrometer. Hold it over the battery and squeeze the bulb slowly."},
+    {"text":"Charge it fully with a proper charger in a ventilated place. A battery that gets hot, or bubbles hard in one cell only, is failing.","warn":"Charging makes hydrogen: no sparks or flames. Never charge a frozen battery."},
+    {"text":"Let it rest at least 12 hours after charging, then measure. A good 12 V battery reads 12.6 V or more (AGM types a little higher). Below about 10.5 V after charging usually means a shorted cell."},
+    {"text":"Load test: connect the headlight bulb and watch the voltage. A healthy, fully charged battery stays above about 12 V for the first 15 minutes. If it falls below about 11.5 V within a few minutes, it has little capacity left.","warn":"Bulbs get very hot. Lay it on metal or stone, away from the battery top."},
+    {"text":"For a car starting battery, a real engine start is a good test: the voltage at the battery should stay above about 9.6–10 V while cranking."},
+    {"text":"Hold test: leave it disconnected for 3–7 days and measure again. A good battery stays above about 12.5 V. One that falls fast has internal leakage."},
+    {"text":"Write the date, resting voltage and load result on the battery with a marker. Store keepers charged."}
+  ],
+  "notes": "## Resting voltage (12 V battery, about 25 °C, rested several hours)\n\n| Voltage | Rough charge |\n|---|---|\n| 12.6 V or more | 100% |\n| 12.4 V | about 75% |\n| 12.2 V | about 50% |\n| 12.0 V | about 25% |\n| 11.9 V or less | flat |\n\nFor a 6 V battery, halve these. For 24 V, double them. Each cell is about 2.1 V when full. Different sources and battery types vary a little.\n\n## Hydrometer readings (flooded batteries)\n\n| Specific gravity | Rough charge |\n|---|---|\n| 1.265 | 100% |\n| 1.225 | 75% |\n| 1.190 | 50% |\n| 1.155 | 25% |\n| 1.120 | flat |\n\nSome batteries use slightly stronger acid and read higher when full. The difference between cells matters more than the exact number.\n\n## Surface charge\n\nRight after charging or driving, a battery reads higher than its true charge. Let it rest 12 hours, or switch on headlights for a minute or two, then rest it a few minutes before measuring.\n\n## What kills lead-acid batteries\n\n- Sitting flat. Hard sulphate crystals form on the plates within weeks to months. A battery left flat for months rarely recovers fully.\n- Freezing when flat. The case cracks and the plates buckle.\n- Overcharging. It boils off water and wears the plates.\n- Age and deep cycling. Starting batteries wear out fast if run flat repeatedly.\n\n## Common mistakes\n\n- Testing right after charging.\n- Judging by voltage alone: a worn battery can show 12.6 V with no load and collapse under load.\n- Putting a weak battery in a bank with good ones. It drags the whole bank down.",
+  "tree": {"era":3,"branch":"power","requires":["safety_lead_acid","skill_multimeter"]},
+  "devices": ["car","golf_cart","forklift","floor_scrubber","ups","ups_large","battery_yard","emergency_light","alarm_panel","mobility_scooter","power_wheelchair","telecom_site","solar_home","rv","boat","motorcycle","riding_mower"],
+  "parts": ["battery_pb","charger"],
+  "license": "CC-BY-SA-4.0"
+}

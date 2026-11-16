@@ -1,0 +1,6 @@
+{
+  "id": "supermarket",
+  "name": "Supermarkets and wholesale clubs",
+  "osm": ["shop=supermarket","shop=wholesale","shop=greengrocer","shop=butcher","shop=seafood","shop=grocery","shop=health_food","shop=cheese","amenity=marketplace"],
+  "exposure": 5
+}

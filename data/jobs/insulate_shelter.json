@@ -1,0 +1,16 @@
+{
+  "id": "insulate_shelter",
+  "name": "Insulate a shelter",
+  "keywords": ["insulate a shelter","insulate shelter","insulate a room","insulate","keep heat in","hold heat","draught proof","draft proof","stop draughts","stop drafts","weatherstrip"],
+  "summary": "Stop moving air first: draughts steal more heat than thin walls. Then insulate the room you actually live in, floor included. Walk-in cooler panels are thick foam sandwich walls that bolt up into a ready-made insulated room, and foam from mattresses, cooler boxes and packaging all helps.",
+  "parts": [
+    {"fn":"insulation","why":"Batts, foam boards and loose fill","core":true},
+    {"fn":"foam_rubber","why":"Mattress foam, door seals and floor pads","core":true},
+    {"fn":"plastic_sheet","why":"Window film and vapour barriers","core":true},
+    {"fn":"fabric_tarp","why":"Heavy curtains and door flaps"},
+    {"fn":"lumber","why":"Frames to hold insulation in place"},
+    {"fn":"cooler_box","why":"Foam walls from coolers and insulated boxes"}
+  ],
+  "guides": ["safety_asbestos_check","safety_entering_buildings"],
+  "tips": ["Old grey-brown pebbly loft insulation (vermiculite) may hold asbestos. Leave it alone.","Clear plastic taped tight over a window frame adds an insulating air gap.","Glass fibre insulation itches and irritates lungs. Wear a mask, gloves and long sleeves.","Cold ground pulls heat out fast. Insulate the floor too.","Keep a little ventilation: a sealed room with people in it gets damp and mouldy."]
+}

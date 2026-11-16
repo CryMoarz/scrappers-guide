@@ -1,0 +1,14 @@
+{
+  "id": "diode_zener",
+  "name": "Zener diodes",
+  "group": "Electronic components",
+  "demand": 1,
+  "keywords": ["zener","zener diode","1n4733","1n4742","bzx55","bzx79","zener regulator","voltage clamp"],
+  "substitutes": ["tl431"],
+  "summary": "Diodes that hold a fixed voltage in reverse, used as simple references and clamps.",
+  "uses": ["Simple voltage reference or regulator for small loads","Over-voltage clamp to protect a circuit","Setting a battery cutoff point with a transistor"],
+  "identify": "Small glass or black diodes marked with a voltage (5V1, 12V) or a code like 1N4733 or BZX55C, on power supplies, chargers and control boards.",
+  "test": "Forward it reads about 0.7V like any diode. To find the zener voltage, feed it from a higher supply through a 1 kΩ resistor and measure across it.",
+  "decay": {"halfLifeMonths":null,"note":"Lasts."},
+  "hazards": []
+}

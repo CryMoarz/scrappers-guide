@@ -1,0 +1,29 @@
+{
+  "id": "commercial_kitchen",
+  "name": "Commercial kitchen equipment",
+  "group": "Commercial",
+  "aliases": ["restaurant equipment","food service equipment"],
+  "brands": ["Hobart","Vulcan","Blodgett","Middleby","Hoshizaki","True","Traulsen","Garland","Vollrath","Waring"],
+  "prev": 4,
+  "tools": ["screwdriver","socket"],
+  "mins": 40,
+  "hazards": ["heavy"],
+  "comps": [
+    {"key":"heating_element","fn":"heating_element","spec":"Large heating elements (fryers, ovens, warmers)","v":[120,240],"w":[500,6000],"ac":true,"qty":4,"ext":2,"obs":4,"loc":"Each appliance"},
+    {"key":"motor_ac","fn":"motor_ac","spec":"Heavy-duty mixer and slicer motors with gearboxes","v":[120,240],"w":[250,2240],"ac":true,"qty":2,"ext":3,"obs":4,"loc":"Mixers and slicers"},
+    {"key":"thermostat","fn":"thermostat","spec":"Commercial thermostats","qty":4,"ext":2,"obs":5,"loc":"Each appliance"},
+    {"key":"valve_solenoid","fn":"valve_solenoid","spec":"Gas valves","v":[24,120],"ac":true,"qty":3,"ext":2,"obs":4,"loc":"Each gas appliance"},
+    {"key":"fan","fn":"fan","spec":"Hood exhaust fan","v":[120,480],"w":[370,2240],"ac":true,"qty":1,"ext":4,"obs":4,"loc":"Ceiling hood"}
+  ],
+  "boards": [
+    {"id":"mcu_board","qty":2,"loc":"Appliance controls","p":0.7}
+  ],
+  "buildings": [
+    {"b":"restaurant","l":5},
+    {"b":"school","l":4},
+    {"b":"hospital","l":4},
+    {"b":"hotel","l":5},
+    {"b":"church","l":3},
+    {"b":"supermarket","l":3}
+  ]
+}

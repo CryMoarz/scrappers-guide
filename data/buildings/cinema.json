@@ -1,0 +1,7 @@
+{
+  "id": "cinema",
+  "name": "Cinemas, theatres and venues",
+  "osm": ["amenity=cinema","amenity=theatre","amenity=arts_centre","amenity=nightclub","amenity=events_venue","leisure=amusement_arcade","amenity=casino","amenity=karaoke_box","amenity=music_venue","leisure=escape_game","amenity=conference_centre"],
+  "exposure": 2,
+  "notes": "Projectors, big amplifiers and speakers, stage lighting, exit signs and emergency lights."
+}

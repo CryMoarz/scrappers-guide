@@ -1,0 +1,38 @@
+{
+  "id": "satellite_dish",
+  "name": "Satellite TV dish and receiver",
+  "group": "Communications",
+  "aliases": ["sat dish","dish antenna","lnb","satellite receiver","satellite tv","directv receiver","ku band dish"],
+  "brands": ["DirecTV","Dish Network","Winegard","Channel Master"],
+  "era": "1990s–present",
+  "prev": 4,
+  "tools": ["socket","wrench","screwdriver","ladder"],
+  "mins": 20,
+  "kg": 6,
+  "hazards": ["fall","burn"],
+  "comps": [
+    {"key":"tube_frame","fn":"tube_frame","spec":"Steel mast and J-mount, about 4–5 cm tube — a ready mount for a radio antenna","qty":1,"ext":2,"obs":5,"loc":"Roof edge, wall or a post in the yard"},
+    {"key":"antenna_coax","fn":"antenna_coax","spec":"LNB and RG-6 coax (75 ohm), often 10–30 m — fine for receiving antennas and long low-power runs","qty":1,"ext":1,"obs":5,"loc":"From the dish into the house"},
+    {"key":"optics","fn":"optics","spec":"Offset parabolic reflector, 45–100 cm, steel or aluminium — lined with foil or mirror film it focuses sunlight hot enough to burn; cover it when not in use","qty":1,"ext":2,"obs":5,"loc":"The dish"},
+    {"key":"magnet_strong","fn":"magnet_strong","spec":"Neodymium magnets in the receiver's hard drive (DVR models)","qty":2,"ext":2,"obs":5,"loc":"Receiver box under the TV","p":0.5},
+    {"key":"fan","fn":"fan","spec":"Small cooling fan in DVR receivers","v":[5,12],"qty":1,"ext":1,"obs":5,"loc":"Receiver box"}
+  ],
+  "boards": [
+    {"id":"smps_board","qty":1,"loc":"Receiver box power supply","p":0.8}
+  ],
+  "buildings": [
+    {"b":"house","l":4},
+    {"b":"farm","l":4},
+    {"b":"apartment","l":3},
+    {"b":"hotel","l":3},
+    {"b":"restaurant","l":3},
+    {"b":"rv_dealer","l":3},
+    {"b":"campground","l":3},
+    {"b":"church","l":2},
+    {"b":"school","l":2},
+    {"b":"nursing_home","l":2},
+    {"b":"fire_station","l":2},
+    {"b":"gas_station","l":2},
+    {"b":"recycling","l":2}
+  ]
+}

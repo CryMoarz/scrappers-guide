@@ -1,0 +1,13 @@
+{
+  "id": "li_charger_small",
+  "name": "USB charge and boost board",
+  "notes": "From power banks, vapes, toys and small gadgets.",
+  "comps": [
+    {"key":"charger","fn":"charger","spec":"Single-cell charge IC (TP4056-type)","v":4.2,"a":1,"qty":1,"ext":4,"obs":4,"loc":"Board"},
+    {"key":"dcdc_boost","fn":"dcdc_boost","spec":"Boost converter to 5V","v":5,"qty":1,"ext":4,"obs":4,"loc":"Board"},
+    {"key":"inductor","fn":"inductor","spec":"Inductor","qty":1,"ext":3,"obs":5,"loc":"Board"},
+    {"key":"mosfet","fn":"mosfet","spec":"Small MOSFET","qty":1,"ext":4,"obs":5,"loc":"Board"},
+    {"key":"led_light","fn":"led_light","spec":"Indicator LEDs","v":[3,5],"w":[0.01,0.1],"qty":4,"ext":2,"obs":4,"loc":"Board edge"},
+    {"key":"connector","fn":"connector","spec":"USB ports","qty":2,"ext":3,"obs":4,"loc":"Board edge"}
+  ]
+}

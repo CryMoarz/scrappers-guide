@@ -1,0 +1,7 @@
+{
+  "id": "garden_centre",
+  "name": "Garden centres and nurseries",
+  "osm": ["shop=garden_centre"],
+  "exposure": 3,
+  "notes": "Pumps, hoses, solar lights, fountains, fertiliser, seed and greenhouse plastic."
+}

@@ -1,0 +1,6 @@
+{
+  "id": "nursing_home",
+  "name": "Nursing homes",
+  "osm": ["amenity=nursing_home","social_facility=nursing_home","amenity=social_facility"],
+  "exposure": 2
+}

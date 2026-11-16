@@ -1,0 +1,27 @@
+{
+  "id": "reference_wire_gauge",
+  "kind": "reference",
+  "title": "Wire size: current, voltage drop and AWG to mm²",
+  "keywords": ["wire gauge","awg","wire size","mm2","cable size","voltage drop","ampacity","12v wire size","wire thickness","cable chart"],
+  "summary": "Tables for picking copper wire: safe current by size, AWG to metric conversion, resistance, and how long a 12 V run can be before voltage drop wastes power. Pick the thicker of the size for heat and the size for voltage drop.",
+  "difficulty": 1,
+  "mins": 10,
+  "tools": ["knife","cutters"],
+  "hazards": ["burn"],
+  "materials": [],
+  "steps": [
+    {"text":"Work out the current: amps = watts ÷ volts."},
+    {"text":"Measure the run: the one-way distance from battery to load, in metres."},
+    {"text":"Find the smallest wire whose safe current (table 1) is above your fuse rating."},
+    {"text":"Find the smallest wire that keeps voltage drop at 3% or less over your run (table 3). For 24 V double the lengths; for 48 V multiply by 4."},
+    {"text":"Use whichever of the two is thicker. Fuse the wire to protect it (see skill_dc_wiring)."},
+    {"text":"Unmarked wire: strip a little and measure the bare copper diameter, or count strands and estimate the area. Compare with table 1."}
+  ],
+  "notes": "## Table 1: copper wire sizes\n\nSafe current is conservative: a wire in a bundle, in a wall or in a cable, with ordinary PVC insulation. A single wire in open air with heat-rated insulation can carry more (up to roughly 1.5–2 times for thick cable), which is why some charts show bigger numbers. For 12 V and 24 V work, voltage drop usually limits you first.\n\n| AWG | Area (mm²) | Metric size that can replace it | Bare diameter (mm) | Resistance (ohms per km) | Safe current (A) | Typical use |\n|---|---|---|---|---|---|---|\n| 22 | 0.33 | 0.5 mm² | 0.64 | 53 | 3 | Signals, sensors, single LEDs |\n| 20 | 0.52 | 0.75 mm² | 0.81 | 33 | 5 | Small fans, USB leads |\n| 18 | 0.82 | 1.0 mm² | 1.02 | 21 | 7 | Lamp cord, small 12 V loads |\n| 16 | 1.31 | 1.5 mm² | 1.29 | 13.2 | 10 | Light extension cords, 12 V lighting runs |\n| 14 | 2.08 | 2.5 mm² | 1.63 | 8.3 | 15 | Mains 15 A circuits, 12 V pumps and fridges |\n| 12 | 3.31 | 4 mm² | 2.05 | 5.2 | 20 | Mains 20 A circuits, solar panel leads |\n| 10 | 5.26 | 6 mm² | 2.59 | 3.3 | 30 | Solar arrays, charge controllers |\n| 8 | 8.37 | 10 mm² | 3.26 | 2.1 | 40 | Small inverters, battery links |\n| 6 | 13.3 | 16 mm² | 4.11 | 1.30 | 55 | Medium inverters, battery links |\n| 4 | 21.2 | 25 mm² | 5.19 | 0.82 | 70 | Inverters, bank interconnects |\n| 2 | 33.6 | 35 mm² | 6.54 | 0.51 | 95 | Large inverters, starter cables |\n| 1/0 | 53.5 | 50–70 mm² | 8.25 | 0.32 | 125 | Large inverters and banks |\n| 2/0 | 67.4 | 70 mm² | 9.27 | 0.26 | 145 | Large inverters and banks |\n| 4/0 | 107 | 120 mm² | 11.68 | 0.16 | 195 | Very large banks, forklift cables |\n\nSmaller AWG numbers mean thicker wire. Every 3 AWG steps doubles the copper area.\n\n## Table 2: metric sizes\n\n| mm² | Resistance (ohms per km) | Close AWG |\n|---|---|---|\n| 0.5 | 34.5 | 20 |\n| 0.75 | 23 | 18 |\n| 1.0 | 17.2 | 17 |\n| 1.5 | 11.5 | 15–16 |\n| 2.5 | 6.9 | 13–14 |\n| 4 | 4.3 | 11–12 |\n| 6 | 2.9 | 9–10 |\n| 10 | 1.7 | 7–8 |\n| 16 | 1.08 | 5–6 |\n| 25 | 0.69 | 3–4 |\n| 35 | 0.49 | 2 |\n| 50 | 0.35 | 1/0 |\n| 70 | 0.25 | 2/0 |\n| 95 | 0.18 | 3/0–4/0 |\n\nResistance in ohms per km for copper is about 17.2 ÷ area in mm².\n\n## Table 3: longest one-way run at 12 V for 3% drop (metres)\n\n3% of 12 V is 0.36 V. The current goes out and back, so these lengths are the distance from battery to load.\n\n| Current | 16 AWG | 14 AWG | 12 AWG | 10 AWG | 8 AWG | 6 AWG | 4 AWG | 2 AWG | 1/0 | 2/0 |\n|---|---|---|---|---|---|---|---|---|---|---|\n| 5 A | 2.7 | 4.3 | 6.9 | 11 | 17 | 28 | 44 | 70 | 112 | 141 |\n| 10 A | 1.4 | 2.2 | 3.5 | 5.5 | 8.7 | 14 | 22 | 35 | 56 | 70 |\n| 20 A | 0.7 | 1.1 | 1.7 | 2.7 | 4.4 | 6.9 | 11 | 18 | 28 | 35 |\n| 30 A | 0.5 | 0.7 | 1.2 | 1.8 | 2.9 | 4.6 | 7.4 | 12 | 19 | 24 |\n| 50 A | | 0.4 | 0.7 | 1.1 | 1.7 | 2.8 | 4.4 | 7.0 | 11 | 14 |\n| 100 A | | | 0.3 | 0.5 | 0.9 | 1.4 | 2.2 | 3.5 | 5.6 | 7.0 |\n\n- A blank cell means the wire is far too thin for that current.\n- At 24 V the same wire runs twice as far; at 48 V four times as far.\n- For 10% drop (acceptable for some resistive heaters, not for charging), multiply by about 3.3.\n- For battery, charger and inverter cables aim for 1–2%: divide the lengths by 3 or 1.5.\n\nFormula, if you need a size not shown: longest one-way run in metres = allowed drop in volts × 1,000 ÷ (2 × amps × ohms per km).\n\n## Aluminium wire\n\nAluminium needs about 1.6 times the area of copper for the same resistance: go two AWG sizes thicker, or one or two metric sizes up. Use terminals rated for aluminium and keep the joints tight; aluminium creeps and oxidises, and loose joints overheat.\n\n## Estimating unmarked wire\n\n- Solid wire: measure the bare diameter and find the nearest row in table 1.\n- Stranded wire: count the strands, measure one strand, and work out area = strands × 0.785 × diameter². Compare with the mm² column.\n- Insulation thickness varies a lot: never judge wire by its outside size.",
+  "tree": {"era":3,"branch":"power","requires":["skill_multimeter"]},
+  "parts": ["wire_copper","wire_heavy"],
+  "license": "CC-BY-SA-4.0",
+  "sources": [
+    {"title":"Standard AWG copper conductor dimensions and resistance at 20 °C","note":"Values rounded"}
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "id": "teardown_washer_motor",
+  "kind": "teardown",
+  "title": "Washing machine: direct-drive or belt-drive motor, pump and valves",
+  "keywords": ["washing machine motor","washer motor","direct drive motor","washer generator","washing machine teardown","drain pump","washer stator","washer rotor"],
+  "summary": "Direct-drive washers hide a large brushless motor that makes a good low-speed generator. Belt-drive washers hold a 1/2 hp mains induction motor. Both give a drain pump, inlet solenoid valves, hoses and springs. Heavy, wet and awkward: work with a helper.",
+  "difficulty": 3,
+  "mins": 60,
+  "tools": ["screwdriver","socket","wrench","pliers","multimeter","pry","heavy"],
+  "hazards": ["heavy","mains","hv_cap","spring","crush","magnet_pinch","sharp"],
+  "materials": [],
+  "steps": [
+    {"text":"Unplug the machine and cut the plug off. Turn off the taps and unscrew the inlet hoses."},
+    {"text":"Drain the leftover water. Front loaders: open the small door at the bottom front, put a tray down and unscrew the drain filter slowly. Top loaders: lower the drain hose into a bucket. Expect 2–10 litres of dirty water."},
+    {"text":"Work out the drive type. Take off the back panel (front loaders) or look underneath with a torch (top loaders). A big flat round motor bolted to the centre of the drum, with no belt, is direct drive. A small motor driving a large pulley through a belt is belt drive."},
+    {"text":"Discharge first. Direct-drive machines have a motor control board with capacitors charged from the mains; belt-drive machines may have a run capacitor beside the motor. Measure DC volts across them; discharge anything over about 30 V with a resistor tool and measure again (see safety_discharge_capacitor).","warn":"These capacitors can hold about 170 V or 340 V DC depending on your mains voltage."},
+    {"text":"Direct drive, front loader: hold the rotor still with a wooden wedge or a helper, undo the single large centre bolt, and pull the rotor (the outer bowl with magnets) straight off the shaft.","warn":"The rotor's magnets pull hard toward the stator. Keep fingers off the rim and the gap as it comes free."},
+    {"text":"Then unplug the stator's connector and undo the ring of bolts (usually 6–12) holding the stator (the wound core) to the tub. Lift it off. Keep the bolts with it."},
+    {"text":"Direct drive, top loader: lay the machine on its back or side with a helper, on cardboard. The rotor and stator are on the bottom of the tub. Remove them the same way.","warn":"Washers weigh 60–90 kg and contain concrete weights. Tip and lift with two people, knees bent, back straight."},
+    {"text":"Belt drive: roll the belt off the big pulley, unplug the motor and its capacitor, then undo the motor's mounting bolts or spring clips. The motor weighs about 6–10 kg."},
+    {"text":"Drain pump: take off the bottom front kick panel. The pump sits behind the drain filter. Squeeze the hose clips with pliers, pull the hoses off, undo 2–3 screws and unplug it. Expect more water."},
+    {"text":"Inlet valves: at the top back where the hoses screwed on. Unplug them, pull the hoses off and undo 1–2 screws."},
+    {"text":"Suspension springs at the top hold the drum up. Support the drum on a block before unhooking them with pliers.","warn":"The springs are under tension and snap back. Keep your face and fingers out of their line."},
+    {"text":"Test the direct-drive motor: spin the rotor on its stator by hand while measuring AC volts between any two of the three stator wires. A few volts that rise with speed means it works as a generator."}
+  ],
+  "notes": "## What's worth keeping and why\n\n- **Direct-drive motor (rotor and stator).** A large multi-pole brushless motor with ferrite magnets in the rotor. Spun slowly by wind or water it makes 3-phase AC that a 3-phase bridge rectifier turns into DC. It can reach battery-charging voltage at a few hundred RPM without gearing, which is why people build wind and water turbines on it. Output depends heavily on the model and how the stator is wired; test before building around it.\n- **Belt-drive induction motor.** About 1/2 hp, mains AC. A good motor for a bench grinder, saw, pump or workshop line shaft where mains power exists. Not a simple generator.\n- **Run capacitor.** Keep it with the induction motor; the motor needs it to start.\n- **Drain pump.** Small mains pump, good for moving water short distances. It can't lift water high or run dry for long.\n- **Inlet solenoid valves.** Mains-voltage water valves for automatic watering or tank filling.\n- **Hoses, springs, the stainless drum.** The drum makes a fire pit, a compost sieve or a strong storage bin.\n\n## Variations\n\n- Front loaders since the 2000s often have direct drive. Many others have a small universal or brushless motor driving a belt from under the tub.\n- Some direct-drive stators have a small Hall sensor block for rotor position; keep it if you plan to run the motor as a motor.\n- Older top loaders may have a gearbox (\"transmission\") under the tub, heavy and mostly scrap.\n\n## What to leave\n\n- The concrete counterweights (10–25 kg each). Leave them in place; they're only useful as anchors.\n- The plastic tub, unless you need a large container.\n- The control board, unless you want the relays and small parts.",
+  "tree": {"era":3,"branch":"salvage","requires":["safety_lifting","safety_mains_isolation"]},
+  "devices": ["washer_dd","washer_belt"],
+  "parts": ["motor_bldc","magnet_ferrite","motor_ac","capacitor_large","belt_pulley","pump_water","valve_solenoid","hose_tubing","spring"],
+  "license": "CC-BY-SA-4.0"
+}

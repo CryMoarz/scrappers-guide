@@ -1,0 +1,14 @@
+{
+  "id": "compressor",
+  "name": "Compressors and air pumps",
+  "group": "Fluids",
+  "demand": 2,
+  "keywords": ["compressor","air compressor","air pump","refrigeration","vacuum pump","fridge compressor","refrigerator compressor","ac compressor","tyre inflator","tire inflator","aquarium air pump","diaphragm air pump","air mattress pump"],
+  "substitutes": ["pump_water"],
+  "summary": "Pumps that move or compress gas: fridge and AC compressors, air compressors, tyre inflators and small air pumps.",
+  "uses": ["Running air tools and filling tyres","Spare compressor for a fridge or freezer (needs refrigeration skills)","Vacuum or air supply for projects","Aerating water tanks and ponds"],
+  "identify": "Fridge and freezer compressors are black domes low at the back with copper pipes; AC units hold bigger ones outside. Air compressors have a tank and a pump; 12V tyre inflators live in car boots; aquarium air pumps are small buzzing boxes.",
+  "test": "Air pumps: run them and feel for flow at the outlet. A fridge compressor’s three pins should read a few ohms between each pair and open to the case. Don’t cut charged refrigerant lines, and don’t trust a rusty air tank: it can burst.",
+  "decay": {"halfLifeMonths":null,"note":"Lasts. Sealed fridge compressors keep their oil and gas for years."},
+  "hazards": ["refrigerant","compressed_gas"]
+}

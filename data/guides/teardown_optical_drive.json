@@ -1,0 +1,30 @@
+{
+  "id": "teardown_optical_drive",
+  "kind": "teardown",
+  "title": "CD and DVD drive: steppers, laser diode and tiny magnets",
+  "keywords": ["dvd drive teardown","cd rom teardown","optical drive","dvd burner laser","laser diode","stepper motor","lead screw","cd player"],
+  "summary": "Every dead CD or DVD drive holds a tiny stepper motor with a lead screw, a spindle motor, a tray motor, steel guide rods, small neodymium magnets and a laser diode. Fifteen minutes with a screwdriver. Treat the laser as an eye hazard.",
+  "difficulty": 2,
+  "mins": 15,
+  "tools": ["screwdriver","pliers","cutters","desolder"],
+  "hazards": ["laser","sharp"],
+  "materials": [],
+  "steps": [
+    {"text":"Pull the drive out of the computer or player and unplug every cable."},
+    {"text":"If the tray is shut, push a straightened paperclip into the small hole on the front panel to release it, then pull the tray out by hand."},
+    {"text":"Remove the 4 screws on the bottom or sides and lift off the steel top and bottom covers. Unclip the plastic front bezel.","warn":"Cover edges are sharp. Handle them by the flat faces."},
+    {"text":"Unlatch the ribbon cables and lift out the main circuit board."},
+    {"text":"Lift out the inner frame that holds the laser sled. It is often mounted on rubber grommets; pull it free."},
+    {"text":"Remove the stepper motor: undo its 2 screws. It comes out with its lead screw attached. Keep the small bracket and screw together."},
+    {"text":"Take out the two polished steel guide rods: undo the small clips or screws at each end and slide them out of the sled."},
+    {"text":"Remove the spindle motor (2–3 screws from underneath). The disc clamp in the lid often holds a small magnet as well; pry it out."},
+    {"text":"Remove the tray motor, its rubber belt and gears from the front corner."},
+    {"text":"Pick out the focus lens: it sits on fine wires above the sled. The tiny neodymium magnets are either side of it. Pry them out with a small flat screwdriver."},
+    {"text":"To get the laser diode, desolder its 3 leads from the flex circuit, then work the small metal can out of the sled. It is often glued; heat and gentle pressure help. Twist its leads together straight away to protect it from static.","warn":"Never look into the diode or lens while it has any power. Burner diodes are many times stronger than a laser pointer and CD diodes are invisible infrared."}
+  ],
+  "notes": "## What's worth keeping and why\n\n- **Stepper motor and lead screw.** A ready-made precise linear axis. Good for small positioning jobs, a sun tracker, a tiny plotter or a valve.\n- **Spindle motor.** A small flat brushless motor. Needs a brushless driver to run, or use it as a tiny 3-phase generator.\n- **Tray motor and gears.** A small 5 V brushed DC motor with a gear train. Easy to run from a USB supply.\n- **Guide rods.** Short polished steel rods, about 3–4 mm across. Axles, pins, small shafts.\n- **Neodymium magnets.** Very small but strong. Reed switch triggers, compass work, holding small parts.\n- **Laser diode.** DVD burners carry the strongest red diodes; CD drives carry infrared ones; Blu-ray drives carry violet ones. A diode needs a current-limiting driver: connecting it straight to a battery kills it in a moment. A good diode in a driver makes a signal light or a fire-starting lens experiment at very close range only.\n- **Main board.** Motor driver chips and connectors; little else.\n\n## Variations\n\n- Slim laptop drives have the same parts in miniature and no tray motor.\n- Stand-alone players (DVD players, car CD units) add a power supply board, a display and remote-control receiver.\n- Older CD-ROM drives sometimes use a DC motor and gears for the sled instead of a stepper.\n\n## Laser safety\n\nLight from a burner diode can burn your retina before you blink. Test only with the beam pointed at a wall, with nobody else in the room, and with goggles rated for the wavelength if you have them. Infrared diodes give no visible warning.\n\n## What to leave\n\n- The plastic chassis and the bezel.\n- The photodiode array in the sled is too specialised to be much use.",
+  "tree": {"era":2,"branch":"salvage","requires":["safety_entering_buildings"]},
+  "devices": ["optical_drive"],
+  "parts": ["motor_stepper","motor_bldc","motor_dc_small","laser_diode","optics","magnet_strong","rod_shaft","belt_pulley"],
+  "license": "CC-BY-SA-4.0"
+}

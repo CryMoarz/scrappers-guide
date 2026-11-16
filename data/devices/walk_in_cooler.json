@@ -1,0 +1,39 @@
+{
+  "id": "walk_in_cooler",
+  "name": "Walk-in cooler or freezer",
+  "group": "Commercial",
+  "aliases": ["walk-in","walk-in freezer","walk-in cooler","cold room","cool room","walk in fridge","walk in refrigerator"],
+  "brands": ["Kolpak","Tyler Refrigeration","Master-Bilt","Kysor Warren","Hussmann","True","Beverage-Air","Vevor"],
+  "prev": 3,
+  "tools": ["hex","screwdriver","socket","heavy"],
+  "mins": 120,
+  "hazards": ["refrigerant","heavy","mold"],
+  "comps": [
+    {"key":"insulation","fn":"insulation","spec":"Insulated sandwich panels, 75–100 mm foam between steel skins, cam-locked together — rebuild as an insulated room","qty":12,"ext":3,"obs":5,"loc":"Walls, ceiling and often the floor","kg":30},
+    {"key":"compressor","fn":"compressor","spec":"Condensing unit compressor, about 1–3 hp","v":[208,460],"w":[750,2240],"ac":true,"qty":1,"ext":5,"obs":4,"loc":"On the roof of the box or outside the building","kg":30},
+    {"key":"fan","fn":"fan","spec":"Evaporator and condenser fan motors","v":[120,240],"w":[10,250],"ac":true,"qty":4,"ext":2,"obs":4,"loc":"Evaporator inside the box; condenser outside"},
+    {"key":"heating_element","fn":"heating_element","spec":"Door-frame and defrost heaters (freezers)","v":[120,240],"w":[50,2000],"ac":true,"qty":3,"ext":3,"obs":5,"loc":"Door frame and evaporator coil"},
+    {"key":"valve_solenoid","fn":"valve_solenoid","spec":"Liquid-line refrigerant solenoid valve","v":[120,240],"ac":true,"qty":1,"ext":3,"obs":5,"loc":"Line entering the evaporator"},
+    {"key":"hose_tubing","fn":"hose_tubing","spec":"Copper refrigerant line set","qty":1,"ext":3,"obs":4,"loc":"Between the condensing unit and evaporator"},
+    {"key":"plastic_sheet","fn":"plastic_sheet","spec":"Heavy clear PVC strip curtain, 2–3 mm thick","qty":1,"ext":1,"obs":5,"loc":"Door opening"},
+    {"key":"led_light","fn":"led_light","spec":"Vapour-proof light fixtures","v":[120,240],"w":[10,60],"ac":true,"qty":2,"ext":1,"obs":4,"loc":"Ceiling"},
+    {"key":"thermostat","fn":"thermostat","spec":"Temperature controller and door thermometer","qty":1,"ext":2,"obs":4,"loc":"Outside wall by the door"}
+  ],
+  "boards": [
+    {"id":"mcu_board","qty":1,"loc":"Evaporator or condensing unit controller","p":0.6}
+  ],
+  "buildings": [
+    {"b":"supermarket","l":5},
+    {"b":"restaurant","l":4},
+    {"b":"convenience","l":4},
+    {"b":"hotel","l":4},
+    {"b":"gas_station","l":3},
+    {"b":"hospital","l":3},
+    {"b":"school","l":3},
+    {"b":"stadium","l":3},
+    {"b":"warehouse","l":3},
+    {"b":"farm","l":2},
+    {"b":"mall","l":2}
+  ],
+  "notes": "Even with no power the box is well insulated: winter ice or a small compressor keeps it cold for days. Prop the door open when abandoned or it grows mould."
+}

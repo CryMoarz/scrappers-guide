@@ -1,0 +1,14 @@
+{
+  "id": "wind_turbine_small",
+  "name": "Small wind turbines",
+  "group": "Power generation",
+  "demand": 3,
+  "keywords": ["wind turbine","small wind turbine","wind generator","windmill generator","micro wind","wind charger","marine wind generator"],
+  "substitutes": ["alternator","motor_dc_large","motor_bldc"],
+  "summary": "Complete small wind generators, about 100W to a few kW, from boats, cabins, farms and remote sites.",
+  "uses": ["Charging batteries where wind is steady","Power at night and in winter when solar is weak","Spare alternator, blades and hub for a homemade turbine"],
+  "identify": "Three to five blades on a pole with a tail or a pod, often 1–3 m across, on boats, RVs, farm sheds, remote huts and monitoring stations. Look for a charge controller and a dump-load resistor nearby.",
+  "test": "Lower the mast first; never climb to a spinning rotor. With the output wires apart the hub should spin freely, and with them shorted together it should get much harder to turn.",
+  "decay": {"halfLifeMonths":null,"note":"The generator lasts; bearings, blades and wiring wear when left spinning unattended."},
+  "hazards": ["fall"]
+}

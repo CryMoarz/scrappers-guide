@@ -1,0 +1,14 @@
+{
+  "id": "relay",
+  "name": "Relays and contactors",
+  "group": "Signal and control",
+  "demand": 1,
+  "keywords": ["relay","relays","contactor","switching","12v relay","5v relay","automotive relay","car relay","ssr","solid state relay","latching relay","starter relay"],
+  "substitutes": [],
+  "summary": "Electrically operated switches: small relays, car relays, solid-state relays and big contactors.",
+  "uses": ["Switching heavy loads from a small signal","Low-voltage battery cutoffs and changeover switching","Switching vehicle and RV lights and pumps"],
+  "identify": "Clear or black boxes with four to eight pins on appliance and control boards; cube-shaped car relays (12V, 30–40A); big contactors with chunky terminals in AC units, pumps and control panels. The coil voltage is printed on the side.",
+  "test": "Feed the coil its rated voltage: it should click, and the contacts should switch on a continuity test.",
+  "decay": {"halfLifeMonths":null,"note":"Lasts."},
+  "hazards": []
+}

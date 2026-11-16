@@ -1,0 +1,36 @@
+{
+  "id": "weather_station",
+  "name": "Home weather station",
+  "group": "Farm and outdoor",
+  "aliases": ["rain gauge","anemometer","wind gauge","wireless thermometer","outdoor thermometer","weather monitor","personal weather station"],
+  "brands": ["Davis Instruments","Ambient Weather","AcuRite","La Crosse Technology","Oregon Scientific","Netatmo","Ecowitt"],
+  "era": "2000s–present",
+  "prev": 2,
+  "tools": ["screwdriver","ladder"],
+  "mins": 15,
+  "kg": 2,
+  "hazards": ["fall"],
+  "comps": [
+    {"key":"hall_reed","fn":"hall_reed","spec":"Reed switches or Hall sensors in the tipping-bucket rain gauge and the anemometer (a magnet passes once per tip or turn)","qty":2,"ext":2,"obs":5,"loc":"Base of the rain gauge and the wind cups"},
+    {"key":"magnet_strong","fn":"magnet_strong","spec":"Small magnets on the cup rotor and bucket","qty":2,"ext":2,"obs":5,"loc":"Rain gauge and anemometer"},
+    {"key":"bearing","fn":"bearing","spec":"Small ball bearings in the wind cups and vane","qty":2,"ext":2,"obs":5,"loc":"Anemometer and vane"},
+    {"key":"sensor_misc","fn":"sensor_misc","spec":"Temperature and humidity sensor, barometric sensor and wind-vane position sensor","qty":3,"ext":2,"obs":5,"loc":"Radiation shield outdoors; barometer in the console"},
+    {"key":"solar_panel","fn":"solar_panel","spec":"Small solar cell on the sensor array (some models), about 3–5V","w":[0.5,2],"v":[3,5],"qty":1,"ext":2,"obs":5,"loc":"Top of the outdoor unit","p":0.5},
+    {"key":"radio_rf","fn":"radio_rf","spec":"433 or 915 MHz sensor link","qty":1,"ext":3,"obs":5,"loc":"Outdoor unit and console"},
+    {"key":"display","fn":"display","spec":"LCD console","qty":1,"ext":2,"obs":5,"loc":"Indoors"}
+  ],
+  "boards": [],
+  "buildings": [
+    {"b":"farm","l":4},
+    {"b":"golf","l":4},
+    {"b":"school","l":3},
+    {"b":"marina","l":3},
+    {"b":"house","l":2},
+    {"b":"garden_centre","l":2},
+    {"b":"campground","l":2},
+    {"b":"fire_station","l":2},
+    {"b":"electronics","l":2},
+    {"b":"department","l":2}
+  ],
+  "notes": "The console still shows falling pressure: a steady drop over a few hours warns of a storm."
+}

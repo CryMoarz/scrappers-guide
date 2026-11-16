@@ -1,0 +1,33 @@
+{
+  "id": "laser_cutter",
+  "name": "Laser cutter or engraver",
+  "abstract": true,
+  "group": "Industrial and construction",
+  "aliases": ["laser cutter","laser engraver","laser engraving machine","laser marker","laser marking machine"],
+  "brands": ["xTool","Glowforge","Epilog","Trotec","Universal Laser Systems","Full Spectrum Laser","OMTech","Thunder Laser","Boss Laser"],
+  "prev": 2,
+  "tools": ["screwdriver","hex"],
+  "mins": 30,
+  "hazards": ["laser"],
+  "comps": [
+    {"key":"motor_stepper","fn":"motor_stepper","spec":"NEMA 17 or 23 stepper motors","v":24,"a":[1,4],"qty":2,"ext":1,"obs":4,"loc":"X and Y axes"},
+    {"key":"rod_shaft","fn":"rod_shaft","spec":"Linear rails, rods or aluminium V-slot extrusions","qty":3,"ext":1,"obs":4,"loc":"Gantry"},
+    {"key":"belt_pulley","fn":"belt_pulley","spec":"Timing belts and pulleys","qty":3,"ext":1,"obs":4,"loc":"Gantry"},
+    {"key":"bearing","fn":"bearing","spec":"Linear bearings and V-wheels","qty":8,"ext":1,"obs":4,"loc":"Carriages"},
+    {"key":"hall_reed","fn":"hall_reed","spec":"Homing sensors, often Hall-effect or optical (some are microswitches)","qty":2,"ext":1,"obs":5,"loc":"Ends of the X and Y axes","p":0.5},
+    {"key":"psu","fn":"psu","spec":"24V motion power supply","v":24,"qty":1,"ext":1,"obs":4,"loc":"Electronics bay or brick"},
+    {"key":"fan","fn":"fan","spec":"Cooling and exhaust fans","v":[12,24],"qty":2,"ext":1,"obs":4,"loc":"Electronics bay and rear"}
+  ],
+  "boards": [
+    {"id":"stepper_driver_board","qty":1,"loc":"Controller","p":1}
+  ],
+  "buildings": [
+    {"b":"makerspace","l":5},
+    {"b":"school","l":4},
+    {"b":"factory","l":3},
+    {"b":"office","l":2},
+    {"b":"house","l":2},
+    {"b":"garage_res","l":2}
+  ],
+  "notes": "Pick a variant: CO2 tube machine or diode engraver."
+}

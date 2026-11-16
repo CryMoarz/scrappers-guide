@@ -1,0 +1,21 @@
+{
+  "id": "microwave_tx_sharp_r_310hk",
+  "device": "microwave_tx",
+  "brand": "Sharp",
+  "model": "R-310HK",
+  "notes": "Covers both the R-310HK and R-310HW.",
+  "research": {"checked":"2026-11-11","gaps":["Capacitor and transformer ratings are not taken from this page."],"method":["Sharp R-310HK/R-310HW service manual (manualslib copy), electric parts list: power transformer, HV capacitor, HV rectifier, fan and turntable motors, temperature fuse, interlock switch and C.T. fuse / monitor switch assembly, with part numbers.","Rows were matched by position in the extracted page text (description, part and reference lists have equal length and order), so check the printed page before ordering."]},
+  "comps": [
+    {"key":"transformer_hv","conf":"documented","spec":"Power transformer, part RTRN-A700WRZZ (parts list ref 1-10)","source":"https://www.manualslib.com/manual/2718063/Sharp-R-310hk.html?page=33"},
+    {"key":"capacitor_large","conf":"documented","spec":"High voltage capacitor, part RC-QZA303WRZZ (parts list ref 1-5). Interchangeable alternates RC-QZA288WRZZ and RC-QZA235WRE0 are also listed.","source":"https://www.manualslib.com/manual/2718063/Sharp-R-310hk.html?page=33"},
+    {"key":"fan","conf":"documented","spec":"Fan motor, part RMOTEA346WRE0 (parts list ref 1-6). Interchangeable alternate RMOTEA356WRE0 is also listed.","source":"https://www.manualslib.com/manual/2718063/Sharp-R-310hk.html?page=33"},
+    {"key":"motor_sync","conf":"documented","spec":"Turntable motor, part RMOTDA211WRE0 (parts list ref 1-9). Interchangeable alternate RMOTDA186WRE0 is also listed.","source":"https://www.manualslib.com/manual/2718063/Sharp-R-310hk.html?page=33"},
+    {"key":"switch","conf":"documented","spec":"Secondary interlock switch / door sensing switch, part QSW-MA147WRZZ (parts list ref 1-1).","source":"https://www.manualslib.com/manual/2718063/Sharp-R-310hk.html?page=33"},
+    {"key":"thermostat","conf":"documented","spec":"Temperature fuse 150 deg. C (oven), part QFS-TA014WRE0 (parts list ref 1-7).","source":"https://www.manualslib.com/manual/2718063/Sharp-R-310hk.html?page=33"},
+    {"key":"diode_rect_hv","fn":"diode_rect","spec":"High voltage rectifier assembly, part FH-DZA075WRK0 (parts list ref 1-4). Interchangeable alternates FH-DZA083WRK0 and FH-DZA109WRKZ are also listed.","ext":2,"obs":4,"conf":"documented","source":"https://www.manualslib.com/manual/2718063/Sharp-R-310hk.html?page=33"},
+    {"key":"fuse_ct_monitor","fn":"fuse","spec":"C.T. fuse 150 deg. C / 20 A and monitor switch assembly, part FFS-BA034WRKZ (parts list ref 1-2).","a":20,"ext":2,"obs":3,"conf":"documented","source":"https://www.manualslib.com/manual/2718063/Sharp-R-310hk.html?page=33"}
+  ],
+  "sources": [
+    {"title":"Sharp R-310HK service manual, parts list (manualslib, page 33)","url":"https://www.manualslib.com/manual/2718063/Sharp-R-310hk.html?page=33"}
+  ]
+}

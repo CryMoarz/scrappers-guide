@@ -1,0 +1,43 @@
+{
+  "id": "build_rainwater_collection",
+  "kind": "build",
+  "title": "Rainwater collection from a roof",
+  "keywords": ["rainwater","rain barrel","rainwater harvesting","water tank","gutter","first flush","collect rain","roof water","water butt"],
+  "summary": "Catch rain off a roof into covered tanks, with a first-flush diverter that sends the dirtiest water away and screens that keep out leaves and mosquitoes. A 50 m² roof catches about 40 L for every millimetre of rain, so a 10 mm shower fills a 400 L tank. Rainwater must still be filtered and boiled or disinfected before drinking.",
+  "difficulty": 2,
+  "mins": 240,
+  "tools": ["saw","drill","knife","screwdriver","wrench","file","ladder","heavy"],
+  "hazards": ["fall","heavy","structural","asbestos","chemical"],
+  "materials": [
+    {"item":"Tanks: food-grade drums, IBC totes, or water tanks, opaque and lidded","qty":"200–5,000 L","fn":"tank","only":["food","brine","freshwater"]},
+    {"item":"Gutters: existing, or made from split plastic pipe or bent sheet metal","qty":"roof edge length","fn":"sheet_metal","only":["galvanised"]},
+    {"item":"Pipe: 50–100 mm downpipe or hose from gutter to tank, a 75–100 mm first-flush pipe with end cap and small drip hole, and an overflow pipe as big as the inlet (food-safe if you will drink the water)","qty":"about 5–12 m","fn":"hose_tubing","only":["pe and pvc","1.5–2 in","drop pipe"]},
+    {"item":"Fine mesh (fly screen) for inlets and overflow","qty":"1 m²","fn":"fabric_tarp","only":["tents"]},
+    {"item":"Tap or valve for the tank outlet, food-safe if you will drink the water","qty":"1 per tank","fn":"valve_solenoid","only":["bypass"]},
+    {"item":"Base: compacted gravel, blocks or a strong timber platform","qty":"1","fn":"lumber","only":["sleeper","beam","pallet"]},
+    {"item":"Brackets, screws and sealant","qty":"some","fn":"fasteners","optional":true},
+    {"item":"Tarp for a camp catchment instead of a roof","qty":"1","fn":"fabric_tarp","optional":true}
+  ],
+  "steps": [
+    {"text":"Check the roof. Metal, glazed tile or plastic is good. Avoid tar or bitumen roofs, treated wood shingles, fresh paint, lead flashing and roofs under trees or heavy bird use.","warn":"Old grey corrugated cement roofs may contain asbestos. Don't cut, drill, scrub or walk on them; collect from them only as they are."},
+    {"text":"Work out how much you'll catch and size the tanks with the notes."},
+    {"text":"Fix or make gutters with a slight fall (2–5 mm per metre) towards the outlet. Fit a coarse leaf screen at the top of the downpipe.","warn":"Work from a ladder with someone footing it. Never lean out sideways; move the ladder."},
+    {"text":"Make the first-flush diverter: a vertical pipe teed off the downpipe before the tank. It fills first with the dirtiest water, then the rest flows on to the tank. Size it at about 1 L per m² of roof. A small drip hole or a removable cap at the bottom lets it empty between showers."},
+    {"text":"Prepare the base: level, firm, and big enough for the tank's footprint. Water weighs 1 kg per litre.","warn":"A full 1,000 L tank weighs a tonne. If it's on a stand, the stand must carry that safely, or it can collapse and crush."},
+    {"text":"Clean the tanks. Use only containers that held food, drinks or water. Fit a screened inlet in the lid (mesh 1 mm or finer stops mosquitoes)."},
+    {"text":"Fit the tap 10–15 cm above the tank bottom so sediment stays behind. Seal with washers both sides."},
+    {"text":"Fit an overflow near the top, as big as the inlet, screened at the end, leading away from the tank base and building foundations."},
+    {"text":"Connect downpipe → first flush → tank inlet. Link several tanks with a pipe between their bottoms, or overflow from one into the next."},
+    {"text":"Treat drinking water every time: filter it, then boil it or add plain bleach (2 drops of 5–6% per litre, wait 30 minutes). Use untreated rainwater only for washing and gardens.","warn":"Rainwater from roofs carries bird droppings, dust and germs. It is not safe to drink untreated."},
+    {"text":"After each rain empty the first flush. Every month clean gutters and screens and check for mosquito larvae. Every year empty and clean the tanks."}
+  ],
+  "notes": "## How much you catch\nLitres = roof area (m², measured flat as seen from above) × rain (mm) × 0.8.\n- 50 m² roof, 10 mm shower: 50 × 10 × 0.8 = 400 L.\n- 50 m² roof, 800 mm a year: about 32,000 L a year.\n\n## How big a tank\n- Drinking and cooking: 3–5 L per person per day. Washing: 10–20 L more.\n- Size the tank to carry you through the longest usual dry spell: litres per day × dry days.\n- Several smaller tanks can be moved, cleaned and repaired one at a time.\n\n## First flush\nThe first 0.5–2 mm of rain washes dust, droppings and leaves off the roof. At about 1 L per m² of roof, a 50 m² roof needs a 50 L diverter: about 7 m of 100 mm pipe, or a drum with a float ball that seals the inlet when full. For smaller volumes, a 2 m length of 100 mm pipe holds about 16 L.\n\n## Keeping water good\n- Opaque tanks stop algae. Paint or wrap clear tanks.\n- Keep lids on and screens intact. Mosquito larvae appear within a week in open water.\n- Draw from the tap, not by dipping buckets.\n- Frost can split pipes and taps. Drain exposed parts in winter.\n\n## What filtering and boiling do\n- Settling and cloth or sand filters remove grit, leaves and some germs.\n- Boiling (a rolling boil for 1 minute) or bleach kills germs.\n- Neither removes chemicals from a contaminated roof, such as old paint or nearby smoke. Choose clean surfaces.\n\n## Tarp catchment\nA tarp tied at the corners with one corner lower, draining into a container, catches about 0.8 L per m² for each mm of rain. Good for camps and travel.\n\n## If you lack a part\n- No gutters: hang a sloped tarp or sheet metal strip under the roof edge, or cut a plastic drum in half lengthwise.\n- No tap: siphon with a hose, or fit a short hose with a clamp.\n",
+  "tree": {"era":2,"branch":"water","requires":["build_gravity_water_filter"]},
+  "devices": ["water_cooler","rv","irrigation_system","washer","pool_pump","camping_gear","water_heater","hot_tub"],
+  "parts": ["tank","hose_tubing","valve_solenoid","sheet_metal","fabric_tarp","filter_water"],
+  "license": "CC-BY-SA-4.0",
+  "refs": [
+    {"lib":"appropedia","q":"rainwater harvesting"},
+    {"lib":"water_lib","q":"rainwater"}
+  ]
+}

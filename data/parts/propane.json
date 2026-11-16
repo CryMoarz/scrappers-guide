@@ -1,0 +1,14 @@
+{
+  "id": "propane",
+  "name": "Propane and butane",
+  "group": "Stored supplies",
+  "demand": 5,
+  "keywords": ["propane","butane","isobutane","lpg","lp gas","autogas","camping gas","bbq gas","barbecue gas","butane canister","gas canister","camp stove fuel","lighter gas"],
+  "substitutes": ["fuel_liquid"],
+  "summary": "Liquefied petroleum gas (propane and butane) for cooking, heating, lights, gas fridges and converted engines. Burning it indoors without airflow makes carbon monoxide; leaked gas sinks and pools in low spots.",
+  "uses": ["Cooking on grills and camp stoves","Space and water heating","Gas fridges in campers and cabins","Running engines converted to LPG"],
+  "identify": "Grill bottles, forklift tanks, camper tanks, big tanks at rural homes and farms, exchange cages at shops, and butane canisters in camping and hardware stores. Butane stops working near 0 °C; propane works well below freezing.",
+  "test": "Weigh the cylinder and subtract the stamped empty weight (TW). Shake gently to hear liquid, and check joints with soapy water for leaks.",
+  "decay": {"halfLifeMonths":null,"note":"Keeps indefinitely in a sound cylinder."},
+  "hazards": ["fuel","compressed_gas","co_gas"]
+}

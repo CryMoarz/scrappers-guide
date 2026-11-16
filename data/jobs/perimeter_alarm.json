@@ -1,0 +1,18 @@
+{
+  "id": "perimeter_alarm",
+  "name": "Perimeter alarm",
+  "keywords": ["perimeter alarm","camp alarm","intruder alarm","motion alarm","door alarm","gate alarm","alarm system","early warning","alert system","night watch","warn me if someone comes"],
+  "summary": "An alarm warns you; it never hurts anyone. Motion floodlights and burglar alarm panels already contain PIR sensors, sirens and a battery. Wireless doorbells make a ready-made remote alert: wire a reed switch or microswitch across the button and keep the chime by your bed. Reed switches from door and window contacts tell you when a gate or door opens.",
+  "parts": [
+    {"fn":"sensor_motion","why":"PIR sensors detect people and animals moving","core":true},
+    {"fn":"speaker","why":"Sirens, buzzers and chimes to wake you","core":true},
+    {"fn":"hall_reed","why":"Reed switches sense a door or gate opening","core":true},
+    {"fn":"radio_rf","why":"Wireless doorbells and remote sensors bring the alert to you"},
+    {"fn":"switch","why":"Microswitches trigger when something is moved"},
+    {"fn":"ic_555","why":"Holds the alarm on for a set time"},
+    {"fn":"battery_pb","why":"Runs the system all night"},
+    {"fn":"led_light","why":"A silent light alert instead of a siren"}
+  ],
+  "guides": ["build_perimeter_alarm","teardown_smoke_alarm"],
+  "tips": ["Never rig anything that could hurt a person or animal. The goal is warning, nothing more.","Point PIR sensors away from heaters, direct sun and branches moving in the wind to cut false alarms.","A light by your bed alerts you quietly.","Smoke alarm sounders are loud (about 85 dB) and many run on a 9V battery."]
+}

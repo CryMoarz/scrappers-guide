@@ -1,0 +1,14 @@
+{
+  "id": "bearing",
+  "name": "Bearings and wheels",
+  "group": "Mechanical",
+  "demand": 1,
+  "keywords": ["bearing","bearings","bushing","caster","wheel","wheels","ball bearing","roller bearing","608","6203","6205","pillow block","skateboard bearing","castor","trolley wheel"],
+  "substitutes": [],
+  "summary": "Ball and roller bearings, bushings, castors and wheels from anything that spins or rolls.",
+  "uses": ["Wind and water generator shafts","Carts, trolleys and wagons","Fixing pumps, motors and fans","Pulleys for hauling"],
+  "identify": "Steel rings with balls inside, pressed into motors, fans, skateboard wheels, washing machine drums, treadmill rollers, bikes and car hubs. The size code is stamped on the side (608, 6203, 6205).",
+  "test": "Spin it by hand: it should run smooth and quiet with no grinding or side-to-side play. Rough bearings can sometimes be cleaned and regreased.",
+  "decay": {"halfLifeMonths":null,"note":"Lasts if dry; rust ruins exposed bearings."},
+  "hazards": []
+}

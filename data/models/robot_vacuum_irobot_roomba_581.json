@@ -1,0 +1,20 @@
+{
+  "id": "robot_vacuum_irobot_roomba_581",
+  "device": "robot_vacuum",
+  "brand": "iRobot",
+  "model": "Roomba 581",
+  "years": "2010",
+  "notes": "Roomba 581, introduced in 2010.",
+  "research": {"checked":"2026-11-11","gaps":["The battery is removed in step 3 but the page does not say what kind it is, so no battery part is listed.","The teardown's linked user manual is for model 595 / 657550, not the 581, so it is not used."],"method":["The iFixit teardown names the Roomba 581.","It shows the main board, cliff sensors, IR bump, caster detection piece, speaker and DC barrel jack, with step numbers and asterisk-marked screws.","Qty, ext and obs are editorial ratings."]},
+  "comps": [
+    {"key":"controller_board","conf":"documented","spec":"Main board, removed at step 14; held by five asterisk-marked screws.","source":"https://www.ifixit.com/Teardown/iRobot+Roomba+581+Teardown/201843"},
+    {"key":"sensor_misc","conf":"documented","spec":"Cliff sensors, clipped in place (step 17).","source":"https://www.ifixit.com/Teardown/iRobot+Roomba+581+Teardown/201843"},
+    {"key":"sensor_misc_ir_bump","fn":"sensor_misc","spec":"IR bump, held by two asterisk-marked screws (step 10); three wires connect it to the main board through a connector (steps 6 and 9).","qty":1,"ext":2,"obs":2,"loc":"Steps 6, 9 and 10 of the teardown","conf":"documented","source":"https://www.ifixit.com/Teardown/iRobot+Roomba+581+Teardown/201843"},
+    {"key":"sensor_misc_caster","fn":"sensor_misc","spec":"Caster detection piece, held by two asterisk-marked screws on top; its LED plastic is secured by one asterisk-marked screw (step 16).","qty":1,"ext":2,"obs":2,"loc":"Step 16 of the teardown","conf":"documented","source":"https://www.ifixit.com/Teardown/iRobot+Roomba+581+Teardown/201843"},
+    {"key":"speaker_onboard","fn":"speaker","spec":"Speaker, held by one asterisk-marked screw (step 13).","qty":1,"ext":1,"obs":2,"loc":"Step 13 of the teardown","conf":"documented","source":"https://www.ifixit.com/Teardown/iRobot+Roomba+581+Teardown/201843"},
+    {"key":"connector_dc_barrel_jack","fn":"connector","spec":"DC barrel jack, held by one asterisk-marked screw (step 13).","qty":1,"ext":1,"obs":2,"loc":"Step 13 of the teardown","conf":"documented","source":"https://www.ifixit.com/Teardown/iRobot+Roomba+581+Teardown/201843"}
+  ],
+  "sources": [
+    {"title":"iFixit teardown: iRobot Roomba 581 (guide 201843)","url":"https://www.ifixit.com/Teardown/iRobot+Roomba+581+Teardown/201843"}
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "id": "make_compass",
+  "name": "Make a compass",
+  "keywords": ["make a compass","compass","homemade compass","find north","which way is north","magnetise a needle","magnetize a needle","magnetised needle","magnetized needle"],
+  "summary": "Stroke a steel needle with a strong magnet, then float it on a leaf in still water; it swings to point north-south. Hard drives, optical drives and speakers hide magnets strong enough to do it in a few strokes. Check it against the sun, since the needle can settle either way round.",
+  "parts": [
+    {"fn":"magnet_strong","why":"Hard drive and optical drive magnets magnetise steel quickly","core":true},
+    {"fn":"magnet_ferrite","why":"Speaker and fridge magnets work too, with more strokes","core":true},
+    {"fn":"wire_copper","why":"A coil on a battery also magnetises a needle"}
+  ],
+  "guides": ["build_compass","teardown_hard_drive","teardown_optical_drive"],
+  "tips": ["Stroke one way only, 30–50 times, lifting the magnet clear between strokes.","Read it away from steel, vehicles and magnets. They pull the needle off.","Magnetic north is not true north. The difference is over 10° in some places.","Neodymium magnets snap together hard enough to pinch skin and shatter. Handle them one at a time."]
+}

@@ -1,0 +1,18 @@
+{
+  "id": "move_heavy",
+  "name": "Move heavy things",
+  "keywords": ["move heavy","move something heavy","lift heavy","heavy lifting","pull heavy","drag a heavy load","block and tackle","pull a vehicle out","get a car unstuck"],
+  "summary": "Trade force for distance: pulleys, levers, winches and jacks let one person move what four couldn’t. Pallet jacks sit ignored in every warehouse and roll a tonne or more across a flat floor. Boat trailer and ATV winches hide at marinas and farm stores, and a car wiper or drill motor can drive a homemade winch.",
+  "parts": [
+    {"fn":"winch","why":"Hand and electric winches from trailers, ATVs and trucks","core":true},
+    {"fn":"cable_steel","why":"Strong cable for winches and anchors","core":true},
+    {"fn":"rope_webbing","why":"Ropes and straps for pulling and lashing","core":true},
+    {"fn":"belt_pulley","why":"Pulleys for a block and tackle"},
+    {"fn":"hydraulic","why":"Bottle jacks and cylinders lift tonnes a little at a time"},
+    {"fn":"chain_sprocket","why":"Chain hoists and lifting chain"},
+    {"fn":"bearing","why":"Wheels and casters for dollies"},
+    {"fn":"gearbox","why":"Worm gearboxes hold a load when the motor stops"}
+  ],
+  "guides": ["safety_lifting","build_motor_winch","build_hand_cart"],
+  "tips": ["A block and tackle with four rope sections between the pulleys cuts the pull to about a quarter.","Never stand in line with a loaded rope or cable. If it breaks, it whips back.","Pipe rollers and a long steel bar move engines and machines with no power at all.","Get help, lift with your legs, and never put hands or feet under a raised load."]
+}

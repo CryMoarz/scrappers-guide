@@ -1,0 +1,20 @@
+{
+  "id": "robot_vacuum_roborock_s5_max",
+  "device": "robot_vacuum",
+  "brand": "Roborock",
+  "model": "S5 Max",
+  "notes": "The charging dock is model CDZ11RR or CDZ12RR.",
+  "research": {"checked":"2026-11-11","gaps":["No separate robot model code is used here."],"method":["The iFixit teardown names the Roborock S5 Max and covers the battery and its connector, the side brush motor and the LiDAR; the motherboard is mentioned in the battery step.","The CE user manual's Basic parameters tables give the robot battery as 14.4V/5200mAh lithium and the charging dock as 28W.","Qty, ext and obs are editorial ratings."]},
+  "comps": [
+    {"key":"battery_li","conf":"documented","spec":"Lithium battery rated 14.4V/5200mAh, rated voltage 14.4VDC.","v":14.4,"ah":5.2,"source":"https://www.manualsdir.com/manuals/849814/roborock-s5-max-ce.html?page=29"},
+    {"key":"controller_board","conf":"documented","spec":"Motherboard. The battery connector attaches to it; the battery step warns against tearing the connector off the motherboard.","source":"https://ts.ifixit.com/Guide/Roborock+S5+Max:+Teardown/177443"},
+    {"key":"robot_brush_motors","conf":"documented","spec":"Side brush motor, held by screws. Remove its screws, then lift it out.","source":"https://ts.ifixit.com/Guide/Roborock+S5+Max:+Teardown/177443"},
+    {"key":"charger","conf":"documented","spec":"Charging dock, rated power 28W, model CDZ11RR or CDZ12RR.","w":28,"source":"https://www.manualsdir.com/manuals/849814/roborock-s5-max-ce.html?page=29"},
+    {"key":"sensor_lidar","fn":"sensor_misc","spec":"LiDAR with a LiDAR cage; the cage and the LiDAR each have their own screws. Remove the cage screws, then the cage, then the LiDAR screws, then the LiDAR.","qty":1,"ext":2,"obs":2,"loc":"LiDAR step of the iFixit teardown (guide 177443)","conf":"documented","source":"https://ts.ifixit.com/Guide/Roborock+S5+Max:+Teardown/177443"},
+    {"key":"connector_battery","fn":"connector","spec":"Battery connector. Squeeze the connector to release it. Yanking the battery out can tear the connector off the motherboard.","qty":1,"ext":1,"obs":2,"loc":"Between the battery and the motherboard","conf":"documented","source":"https://ts.ifixit.com/Guide/Roborock+S5+Max:+Teardown/177443"}
+  ],
+  "sources": [
+    {"title":"iFixit: Roborock S5 Max teardown guide (battery, motherboard, side brush motor, LiDAR steps)","url":"https://ts.ifixit.com/Guide/Roborock+S5+Max:+Teardown/177443"},
+    {"title":"Roborock S5 Max CE user manual, Basic parameters (robot and charging dock tables)","url":"https://www.manualsdir.com/manuals/849814/roborock-s5-max-ce.html?page=29"}
+  ]
+}

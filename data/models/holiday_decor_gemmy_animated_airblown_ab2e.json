@@ -1,0 +1,20 @@
+{
+  "id": "holiday_decor_gemmy_animated_airblown_ab2e",
+  "device": "holiday_decor",
+  "brand": "Gemmy",
+  "model": "Animated Airblown inflatable shipped with manual code AB-2-E (2021)",
+  "notes": "The manual prints no model number: these parts apply to inflatables shipped with Gemmy's Animated Airblown manual AB-2-E (2021), which lists 40 item numbers. The 2019 AB-2-E, the 2021 AB-7-E and the 227163-E manuals print the same 5 A 125 V plug fuse and C7 7 W lamp.",
+  "research": {"checked":"2026-11-12","gaps":["No model number is printed; the product is identified by its manual code, AB-2-E, and Lowe's document 45417289.","The fan's own rating is not printed, so no voltage is set on it; the manual gives 120 V 60 Hz for the product.","The lamp count is not printed (the manual speaks of 'either lamp holder contact'), so no quantity is set.","No adapter and no separate animation motor are named; the manual's 'motor' mentions are in troubleshooting and the cold-weather note, so no motor part is claimed.","Production years are not stated; the manual is copyright 2021."],"method":["Gemmy Animated Airblown manual, code AB-2-E, (c)2021 Gemmy Industries, Lowe's-hosted PDF, 3 pages: 120 V 60 Hz and lamp caution on page 1, lamp and fuse replacement on page 2 (page image checked), plug-in step on page 3.","Other manuals read only for the same-ratings sentence in the notes: AB-2-E (c)2019 (Lowe's PDF 11360042), AB-7-E (c)2021 (Lowe's PDF 45417279) and 227163-E (c)2021 (Home Depot-hosted PDF).","Lowe's and Home Depot product pages turned up no model number tied to document 45417289."]},
+  "comps": [
+    {"key":"fan","conf":"documented","spec":"Electric fan that keeps the inflatable inflated; the manual calls it the electric fan and says to keep it and the cord away from direct water","source":"https://pdf.lowes.com/productdocuments/312b2554-2d05-4a2e-9771-51571ca68ec0/45417289.pdf"},
+    {"key":"fuse_plug","fn":"fuse","spec":"Fuse in the attachment plug, behind a sliding access cover on top; the manual says to replace it only with a 5 A max, 125 V fuse, which it says is provided with the product","v":125,"a":5,"ac":true,"qty":1,"ext":1,"obs":4,"loc":"Attachment plug, under the cover on top","conf":"documented","source":"https://pdf.lowes.com/productdocuments/312b2554-2d05-4a2e-9771-51571ca68ec0/45417289.pdf"},
+    {"key":"led_light_c7_lamp","fn":"led_light","spec":"C7 candelabra-base lamp, 7 W max, 120 V, UL classified (replacement lamps are not included); reached by opening the zipper opening and pushing aside the locking tabs of the light cover","v":120,"w":7,"ac":true,"ext":1,"obs":4,"loc":"Under the light cover on the inflatable","conf":"documented","source":"https://pdf.lowes.com/productdocuments/312b2554-2d05-4a2e-9771-51571ca68ec0/45417289.pdf"},
+    {"key":"fabric_tarp","conf":"documented","spec":"Fabric body of the inflatable; the manual says rips can be sewn by hand or taped with clear packing tape","source":"https://pdf.lowes.com/productdocuments/312b2554-2d05-4a2e-9771-51571ca68ec0/45417289.pdf"}
+  ],
+  "sources": [
+    {"title":"Gemmy Animated Airblown manual, code AB-2-E, (c)2021 (Lowe's-hosted PDF, 3 pages)","url":"https://pdf.lowes.com/productdocuments/312b2554-2d05-4a2e-9771-51571ca68ec0/45417289.pdf"},
+    {"title":"Gemmy Animated Airblown manual, code AB-2-E, (c)2019 (Lowe's-hosted PDF): same 5 A fuse and 7 W lamp","url":"https://pdf.lowes.com/productdocuments/6202e3ca-b8c4-4fe7-8afe-23d7d86b9e64/11360042.pdf"},
+    {"title":"Gemmy Animated Airblown manual, code AB-7-E, (c)2021 (Lowe's-hosted PDF): same 5 A fuse and 7 W lamp","url":"https://pdf.lowes.com/productdocuments/bdf4a51a-f484-4c2c-9f06-4cb9a9c0cfee/45417279.pdf"},
+    {"title":"Gemmy animated-type manual, code 227163-E, (c)2021 (Home Depot-hosted PDF): same 5 A fuse and 7 W lamp","url":"https://images.thdstatic.com/catalog/pdfImages/93/935cc3eb-2a98-4a9e-aed0-30d0e9defff1.pdf"}
+  ]
+}

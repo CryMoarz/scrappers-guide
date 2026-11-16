@@ -1,0 +1,30 @@
+{
+  "id": "flatbed_scanner",
+  "name": "Flatbed scanners and all-in-one printer lids",
+  "group": "Electronics and office",
+  "aliases": ["document scanner","photo scanner"],
+  "brands": ["Epson","Canon","HP","Brother","Plustek","Kodak Alaris"],
+  "prev": 4,
+  "tools": ["screwdriver"],
+  "mins": 20,
+  "hazards": ["glass"],
+  "comps": [
+    {"key":"motor_stepper","fn":"motor_stepper","spec":"Stepper motor driving the scan head","v":[5,24],"qty":1,"ext":2,"obs":5,"loc":"Under the glass, one end"},
+    {"key":"rod_shaft","fn":"rod_shaft","spec":"Steel guide rod","qty":1,"ext":1,"obs":5,"loc":"Under the glass"},
+    {"key":"belt_pulley","fn":"belt_pulley","spec":"Long drive belt and gears","qty":1,"ext":1,"obs":5,"loc":"Under the glass"},
+    {"key":"led_light","fn":"led_light","spec":"White LED light bar","v":[3,24],"w":[0.5,3],"qty":1,"ext":2,"obs":5,"loc":"On the scan head"},
+    {"key":"optics","fn":"optics","spec":"Mirrors and lens (CCD scanners)","qty":3,"ext":3,"obs":5,"loc":"Inside the scan head"},
+    {"key":"sensor_misc","fn":"sensor_misc","spec":"Image sensor bar","qty":1,"ext":2,"obs":5,"loc":"Scan head"}
+  ],
+  "boards": [
+    {"id":"stepper_driver_board","qty":1,"loc":"Main board","p":1}
+  ],
+  "buildings": [
+    {"b":"office","l":5},
+    {"b":"school","l":5},
+    {"b":"house","l":3},
+    {"b":"bank","l":4},
+    {"b":"church","l":3},
+    {"b":"recycling","l":4}
+  ]
+}

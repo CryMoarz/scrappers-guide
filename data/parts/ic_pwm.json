@@ -1,0 +1,14 @@
+{
+  "id": "ic_pwm",
+  "name": "PWM and switching controller ICs",
+  "group": "Electronic components",
+  "demand": 1,
+  "keywords": ["pwm","pwm controller","sg3525","tl494","uc3842","uc3843","switching controller","uc3844","uc3845","ka3842","sg3524","ir2153","viper22","pwm chip"],
+  "substitutes": ["ic_555"],
+  "summary": "Controller chips that run switch-mode power supplies, inverters and motor speed controls.",
+  "uses": ["Repairing power supplies and inverters","Building a DC-DC converter or inverter","Motor speed and LED dimming controllers"],
+  "identify": "8 or 16-pin chips near the switching transistors and ferrite transformer of a power supply: UC3842/3843/3845, TL494, SG3525, IR2153. The TL494 is in nearly every older PC power supply.",
+  "test": "Best tested in circuit with an oscilloscope. Without one, look for a cracked or burnt chip and check the voltage on its supply pin.",
+  "decay": {"halfLifeMonths":null,"note":"Lasts."},
+  "hazards": []
+}

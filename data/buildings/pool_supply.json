@@ -1,0 +1,8 @@
+{
+  "id": "pool_supply",
+  "name": "Pool and hot tub suppliers",
+  "osm": ["shop=swimming_pool","leisure=swimming_pool"],
+  "exposure": 2,
+  "notes": "Pool pumps, filters, chlorine and salt systems. Chlorine is valuable for water treatment but dangerous to store.",
+  "hazards": ["chemical"]
+}

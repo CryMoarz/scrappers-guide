@@ -1,0 +1,14 @@
+{
+  "id": "rope_webbing",
+  "name": "Rope, straps and webbing",
+  "group": "Materials",
+  "demand": 3,
+  "keywords": ["rope","paracord","cordage","nylon cord","strap","ratchet strap","tie down","tie-down","webbing","bungee","bungee cord","lashing strap","cargo strap","seat belt","twine","halyard","lifting sling"],
+  "substitutes": ["cable_steel"],
+  "summary": "Rope, cord, ratchet straps, webbing and bungees for lashing, hauling and building.",
+  "uses": ["Lashing loads, shelters and tarps","Hauling and lowering with pulleys","Clotheslines, guy lines and fences","Webbing for slings, carry straps and repairs"],
+  "identify": "Hardware, marine and outdoor stores, truck depots, removal firms and sailing boats. Overlooked sources: car seat belts (very strong webbing), flagpole halyards, window blind cords and trampoline nets.",
+  "test": "Check the full length for cuts, melted or glazed spots, mould and fading: sun-faded synthetic rope has lost much of its strength. Never trust salvaged rope to hold a person.",
+  "decay": {"halfLifeMonths":120,"note":"Stored rope lasts; nylon and polypropylene left in sunlight weaken within a year or two."},
+  "hazards": []
+}

@@ -1,0 +1,15 @@
+{
+  "id": "fluorescent_fixture_advance_icn_2p32_n",
+  "device": "fluorescent_fixture",
+  "brand": "Advance",
+  "model": "ICN-2P32-N (Centium electronic ballast, two F32T8 lamps, 120-277 V)",
+  "notes": "An electronic instant-start ballast for two F32T8 lamps on 120-277 V input. It draws 0.49 A at 120 V and 0.22 A at 277 V and takes 56 W (ANSI input watts) with two lamps; this record covers the ballast only, not the lamps.",
+  "research": {"checked":"2026-11-12","gaps":["The 56 W figure is ANSI input power with two lamps, not the ballast alone, so it sits in notes and no w is set.","Lead lengths are claimed for 120 V only; the 277 V table lists black 28 in, white 45 in, blue 24 in and red 24 in.","The wiring diagram shows two blue leads but the lead table has one blue row, so no lead count is claimed.","The sheet's notes say the ballast shall not contain PCBs; that is a specification clause, not a test result, so it is not claimed.","No weight, lead gauge, internal part or chip is named, so no datasheet is linked.","The sheet names Advance Transformer, and the Signify copy carries the Advance by Signify logo; the record uses Advance.","Revision dates on the Signify copy are 01/30/12 (120 V table) and 03/07/12 (277 V table), with a 05/19 file footer."],"method":["Advance ICN-2P32-N Centium electrical specifications (120 V and 277 V tables, Spanish headings), Signify-hosted PDF at assets.signify.com (file 20220906-icn-2p32-n-ele-ballast-2-f32t8-120-277v.pdf, 5 pages); text layer read and page 1 rendered.","An English copy of the same Advance data on cdn.shopify.com (Philips Lighting Electronics N.A., revised 01/30/2012 and 03/07/2012) shows identical F32T8 rows and lead lengths; it has fewer lamp rows and a different wiring diagram number, and is not cited."]},
+  "comps": [
+    {"key":"controller_board_ballast","fn":"controller_board","spec":"Centium ICN-2P32-N electronic ballast, instant start, lamps in parallel, 120-277 V, 50/60 Hz input. With two F32T8 lamps: 0.49 A input at 120 V and 0.22 A at 277 V, ballast factor 0.89, max THD 10%. Body 9.5 x 1.3 x 1.0 in, mounting length 8.9 in","v":[120,277],"a":[0.22,0.49],"ac":true,"qty":1,"ext":2,"obs":4,"conf":"documented","source":"https://www.assets.signify.com/is/content/Signify/Assets/philips-lighting/mexico/20220906-icn-2p32-n-ele-ballast-2-f32t8-120-277v.pdf"},
+    {"key":"wire_copper_leads","fn":"wire_copper","spec":"Integral color-coded leads on the ballast; at 120 V the lead table gives black 24 in, white 24 in, blue 28 in and red 45 in","ext":1,"obs":4,"conf":"documented","source":"https://www.assets.signify.com/is/content/Signify/Assets/philips-lighting/mexico/20220906-icn-2p32-n-ele-ballast-2-f32t8-120-277v.pdf"}
+  ],
+  "sources": [
+    {"title":"Advance ICN-2P32-N Centium electronic ballast electrical specifications, 120 V and 277 V tables (Spanish headings), Signify-hosted PDF, file dated 2022-09-06; tables revised 01/30/12 and 03/07/12","url":"https://www.assets.signify.com/is/content/Signify/Assets/philips-lighting/mexico/20220906-icn-2p32-n-ele-ballast-2-f32t8-120-277v.pdf"}
+  ]
+}

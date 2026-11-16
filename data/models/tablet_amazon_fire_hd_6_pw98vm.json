@@ -1,0 +1,25 @@
+{
+  "id": "tablet_amazon_fire_hd_6_pw98vm",
+  "device": "tablet",
+  "brand": "Amazon",
+  "model": "Fire HD 6 (PW98VM)",
+  "years": "2014",
+  "notes": "The six-inch Fire HD 6 (iFixit calls it the Kindle Fire HD 6), model PW98VM, released in late 2014. The teardown unit has an 8 GB flash chip (iFixit lists 8 and 16 GB versions), and the battery is glued in hard.",
+  "research": {"checked":"2026-11-12","gaps":["MediaTek MT6397A: the teardown lists it beside the processor without saying what it does, so it is dropped (it had been filed under the power-management key on the family name alone).","Left out, no function stated and no template part type fits: Novatek NT50357, the unlabelled mark M651 X171C1 L146, SlimPort ANX3618 and Cypress CY8CTMA4 63-56LQI.","No FCC ID and no Amazon spec page were found for PW98VM, so the fcc field is empty.","The 16 GB version's flash chip was not checked.","No datasheet links: none was opened for the MediaTek, Toshiba, SK hynix or Maxim chips."],"method":["iFixit Kindle Fire HD 6 Teardown (guide 29815), read through the API and on the page: Wi-Fi, storage and RAM sizes in the intro, battery at step 3, rear camera and speaker at step 4, chip list at step 5, audio amplifier at step 6, display and front camera at step 7.","iFixit device page for the Fire HD 6: model number PW98VM, released in 2014."]},
+  "comps": [
+    {"key":"battery_li","conf":"documented","spec":"Lithium-ion polymer battery, 3.7 V, 3400 mAh (12.6 Wh); glued in and hard to remove","v":3.7,"ah":3.4,"loc":"Up on top of the case","source":"https://www.ifixit.com/Teardown/Kindle+Fire+HD+6+Teardown/29815"},
+    {"key":"display","conf":"documented","spec":"Six-inch 1280 x 800 display, 252 ppi, from LG Display; the glass is fused to the front plastic frame but is not optically bonded to the display components","source":"https://www.ifixit.com/Teardown/Kindle+Fire+HD+6+Teardown/29815"},
+    {"key":"camera","conf":"documented","spec":"2.0 MP rear-facing camera, removable as a module","source":"https://www.ifixit.com/Teardown/Kindle+Fire+HD+6+Teardown/29815"},
+    {"key":"camera_front","fn":"camera","spec":"VGA front-facing camera, inside the display glass assembly","qty":1,"ext":3,"obs":4,"loc":"Display glass assembly","conf":"documented","source":"https://www.ifixit.com/Teardown/Kindle+Fire+HD+6+Teardown/29815"},
+    {"key":"speaker","conf":"documented","spec":"Speaker, removed as a module in the teardown","source":"https://www.ifixit.com/Teardown/Kindle+Fire+HD+6+Teardown/29815"},
+    {"key":"b:phone_board:ic_mcu","conf":"documented","spec":"MediaTek MT8135V applications processor; the tablet has a quad-core CPU, two cores at 1.5 GHz and two at 1.2 GHz","source":"https://www.ifixit.com/Teardown/Kindle+Fire+HD+6+Teardown/29815"},
+    {"key":"b:phone_board:ic_memory","conf":"documented","spec":"Toshiba THGBMBG6D1KBAIL 8 GB eMMC NAND flash","source":"https://www.ifixit.com/Teardown/Kindle+Fire+HD+6+Teardown/29815"},
+    {"key":"ic_memory_ram","fn":"ic_memory","spec":"SK hynix H5TC4G63AFR DDR3L SDRAM, 4 Gb (512 MB) per chip, two chips for 1 GB","qty":2,"ext":3,"obs":4,"conf":"documented","source":"https://www.ifixit.com/Teardown/Kindle+Fire+HD+6+Teardown/29815"},
+    {"key":"b:phone_board:radio_rf","conf":"documented","spec":"MediaTek MT6628TP Wi-Fi/Bluetooth controller; the tablet has single-antenna 802.11b/g/n Wi-Fi","source":"https://www.ifixit.com/Teardown/Kindle+Fire+HD+6+Teardown/29815"},
+    {"key":"ic_audio_amp","fn":"ic_audio","spec":"Maxim Integrated MAX97236 audio amplifier with jack detection","qty":1,"ext":3,"obs":4,"conf":"documented","source":"https://www.ifixit.com/Teardown/Kindle+Fire+HD+6+Teardown/29815"}
+  ],
+  "sources": [
+    {"title":"iFixit: Kindle Fire HD 6 Teardown (guide 29815; battery at step 3, chip list at step 5, display and front camera at step 7)","url":"https://www.ifixit.com/Teardown/Kindle+Fire+HD+6+Teardown/29815"},
+    {"title":"iFixit: Kindle Fire HD 6 device page (model PW98VM; released in 2014)","url":"https://www.ifixit.com/Device/Kindle_Fire_HD_6"}
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "id": "thermocouple",
+  "name": "Thermocouples and flame sensors",
+  "group": "Heat",
+  "demand": 1,
+  "keywords": ["thermocouple","flame sensor","thermopile","flame rod","k-type","k type","type k","pilot thermocouple","flame failure","temperature probe","pyrometer"],
+  "substitutes": ["sensor_misc","thermostat"],
+  "summary": "Two-metal probes that make a tiny voltage when heated: gas safety sensors and high-temperature probes.",
+  "uses": ["Replacing a dead pilot sensor on a gas heater or water heater","Measuring stove, kiln or exhaust temperature with a meter","Thermopiles power some gas valves with no outside power"],
+  "identify": "A copper tube or wire whose tip sits in the pilot flame and whose other end screws into the gas valve, in water heaters, furnaces, gas fires and ovens. K-type probes come with multimeters, ovens and kilns. Newer furnaces use a flame rod: a single metal rod with a ceramic collar.",
+  "test": "Heat the tip in a flame and read millivolts: a gas thermocouple gives roughly 20–35 mV and a thermopile several hundred. A K-type probe reads about 4 mV at 100 °C.",
+  "decay": {"halfLifeMonths":null,"note":"Lasts until the tip burns through; spares in drawers last indefinitely."},
+  "hazards": []
+}

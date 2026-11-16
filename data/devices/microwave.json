@@ -1,0 +1,39 @@
+{
+  "id": "microwave",
+  "name": "Microwave oven",
+  "abstract": true,
+  "group": "Kitchen and appliances",
+  "aliases": ["countertop microwave","over the range microwave"],
+  "brands": ["Panasonic","Sharp","GE","Whirlpool","Samsung","LG","Toshiba","Frigidaire","Hamilton Beach"],
+  "prev": 5,
+  "tools": ["screwdriver","security_bits"],
+  "mins": 20,
+  "hazards": ["hv_cap","beryllium"],
+  "comps": [
+    {"key":"fan","fn":"fan","spec":"Small shaded-pole fan motor, 120V","v":120,"qty":1,"ext":2,"obs":3,"loc":"Rear corner, cooling the magnetron"},
+    {"key":"motor_sync","fn":"motor_sync","spec":"Turntable synchronous gear motor, about 3 RPM","v":[120,240],"ac":true,"qty":1,"ext":2,"obs":3,"loc":"Underneath, centre"},
+    {"key":"switch","fn":"switch","spec":"Door interlock microswitches","qty":3,"ext":2,"obs":4,"loc":"Behind the door latch"},
+    {"key":"thermostat","fn":"thermostat","spec":"Thermal cutoffs","qty":2,"ext":2,"obs":4,"loc":"On the magnetron and cavity"},
+    {"key":"relay","fn":"relay","spec":"Power relays","v":[12,24],"a":[10,20],"qty":2,"ext":3,"obs":4,"loc":"Control board behind the keypad"},
+    {"key":"magnet_ferrite","fn":"magnet_ferrite","spec":"Ring magnets inside the magnetron","qty":2,"ext":3,"obs":3,"loc":"Magnetron, bolted to the waveguide"},
+    {"key":"led_light","fn":"led_light","spec":"Interior lamp","v":[120,240],"w":[2,25],"ac":true,"qty":1,"ext":1,"obs":3,"loc":"Top of the cavity"},
+    {"key":"fuse","fn":"fuse","spec":"Ceramic 15–20A main fuse","a":[15,20],"qty":1,"ext":2,"obs":4,"loc":"Mains input, in a clip holder"},
+    {"key":"magnetron","fn":"magnetron","spec":"Magnetron, about 700–1,200 W output. Contains two ferrite ring magnets; some have a beryllium oxide ceramic: never crush or grind it","w":[700,1200],"qty":1,"ext":3,"obs":3,"loc":"Bolted to the waveguide beside the cavity","kg":1}
+  ],
+  "boards": [
+    {"id":"mcu_board","qty":1,"loc":"Control board behind the keypad","p":1}
+  ],
+  "buildings": [
+    {"b":"house","l":5},
+    {"b":"apartment","l":5},
+    {"b":"office","l":4},
+    {"b":"restaurant","l":3},
+    {"b":"hotel","l":4},
+    {"b":"school","l":3},
+    {"b":"church","l":3},
+    {"b":"appliance","l":4},
+    {"b":"department","l":3},
+    {"b":"recycling","l":3}
+  ],
+  "notes": "Pick a variant. Most units are transformer type; some newer ones use an inverter board instead."
+}

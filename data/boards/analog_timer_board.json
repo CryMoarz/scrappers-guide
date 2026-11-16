@@ -1,0 +1,14 @@
+{
+  "id": "analog_timer_board",
+  "name": "Timer and oscillator board (older or cheap electronics)",
+  "notes": "Classic discrete circuits; 555s are getting rarer as microcontrollers take over, so look in older or budget gear.",
+  "comps": [
+    {"key":"ic_555","fn":"ic_555","spec":"555 timer IC (NE555 or 556)","qty":1,"ext":2,"obs":5,"loc":"8-pin chip, usually through-hole"},
+    {"key":"bjt","fn":"bjt","spec":"Small transistors (2N2222/BC547-type)","qty":3,"ext":2,"obs":5,"loc":"Near the output"},
+    {"key":"cap_elec","fn":"cap_elec","spec":"Timing and filter capacitors","qty":3,"ext":2,"obs":5,"loc":"Around the 555"},
+    {"key":"potentiometer","fn":"potentiometer","spec":"Trimmer potentiometers","qty":1,"ext":2,"obs":5,"loc":"Board"},
+    {"key":"resistor","fn":"resistor","spec":"Resistors","qty":10,"ext":2,"obs":5,"loc":"Throughout"},
+    {"key":"diode_rect","fn":"diode_rect","spec":"Signal diodes (1N4148)","qty":3,"ext":2,"obs":5,"loc":"Throughout"},
+    {"key":"relay","fn":"relay","spec":"Small relay (some boards)","v":[5,12],"a":[5,10],"qty":1,"ext":3,"obs":5,"loc":"Output","p":0.5}
+  ]
+}

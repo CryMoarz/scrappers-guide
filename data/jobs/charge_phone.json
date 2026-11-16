@@ -1,0 +1,18 @@
+{
+  "id": "charge_phone",
+  "name": "Charge a phone",
+  "keywords": ["charge my phone","charge phone","charge a phone","phone charging","charge my tablet","power my phone","dead phone","usb charging","usb power","charge usb","solar power bank","solar phone charger"],
+  "summary": "Phones charge from 5V USB, and a car USB charger turns any 12V battery into exactly that. Lots of cars have one in the glove box or cup holder. A small solar panel and a step-down converter charge a phone in a few hours of sun. Dead vapes and laptop packs hold cells that rebuild into power banks.",
+  "parts": [
+    {"fn":"dcdc_buck","why":"Turns 12V into 5V USB; car chargers are ready-made ones","core":true},
+    {"fn":"solar_panel","why":"Charges directly, or fills a battery","core":true,"need":{"w":5}},
+    {"fn":"battery_li","why":"Power banks, or cells to build one","core":true,"only":["li-ion","lithium-ion","18650","21700","lipo","li-po","power bank","rechargeable"]},
+    {"fn":"battery_pb","why":"One car battery charges dozens of phones"},
+    {"fn":"charger","why":"Single-cell charger boards (TP4056) for homemade power banks"},
+    {"fn":"dcdc_boost","why":"Steps a single 3.7V cell up to 5V"},
+    {"fn":"dynamo","why":"Hand-crank power when there’s no sun"},
+    {"fn":"connector","why":"USB ports and cables"}
+  ],
+  "guides": ["build_usb_charging_station","build_18650_pack","teardown_vape","skill_dc_wiring"],
+  "tips": ["Car USB chargers run on 12–24V. Wire one to any 12V battery through a small fuse.","Airplane mode and low brightness stretch one charge over days.","A 5–10W panel in full sun charges a phone in about 2–4 hours. Cloud slows it a lot.","Charge in the shade: hot phones charge slowly or stop."]
+}

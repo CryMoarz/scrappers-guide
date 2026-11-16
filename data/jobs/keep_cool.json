@@ -1,0 +1,16 @@
+{
+  "id": "keep_cool",
+  "name": "Keep cool",
+  "keywords": ["keep cool","stay cool","cool down","cool a room","cool the shelter","too hot","beat the heat","heat wave","heatwave","air conditioning","evaporative cooler"],
+  "summary": "Block the sun first, then move air. 12V fans from cars, RVs and computers run straight off a solar panel with no battery, so they spin hardest exactly when it’s hottest. In dry climates an evaporative cooler with a small pump and a wet pad cools air a lot for little power. Air conditioners need far more power than scavenged solar usually gives.",
+  "parts": [
+    {"fn":"fan","why":"Moving air is the cheapest cooling there is","core":true},
+    {"fn":"solar_panel","why":"Runs DC fans directly when the sun is hottest","core":true,"need":{"w":10}},
+    {"fn":"fabric_tarp","why":"Shade over roofs, windows and walls","core":true},
+    {"fn":"pump_water","why":"Wets the pad of an evaporative cooler"},
+    {"fn":"insulation","why":"Keeps heat out as well as in"},
+    {"fn":"compressor","why":"Real air conditioning, if you have big power"}
+  ],
+  "guides": ["build_evaporative_cooler"],
+  "tips": ["Evaporative coolers only work in dry air. In humid weather, just move air.","Wet a shirt or cloth and sit in a breeze. It cools you the same way.","Open windows at night; close them and draw curtains by day.","Heat stroke kills. Confusion, hot dry skin or collapse means cool the person fast with water and fanning."]
+}

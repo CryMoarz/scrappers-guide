@@ -1,0 +1,14 @@
+{
+  "id": "plastic_sheet",
+  "name": "Plastic sheet and acrylic",
+  "group": "Materials",
+  "demand": 2,
+  "keywords": ["plastic sheet","acrylic","acrylic sheet","perspex","plexiglass","plexiglas","polycarbonate","lexan","hdpe","hdpe sheet","pvc sheet","corrugated plastic","clear plastic","plastic panel","plastic sheeting","polythene","poly sheeting","vapour barrier"],
+  "substitutes": ["glass_pane","sheet_metal"],
+  "summary": "Clear and solid plastic sheet and film: acrylic, polycarbonate, HDPE, PVC and polythene sheeting.",
+  "uses": ["Windows and greenhouse panels that don’t shatter like glass","Covers for solar water heaters, stills and dehydrators","Rain shields and vapour barriers (polythene film)","Cutting boards, guards and waterproof boxes"],
+  "identify": "Shop sneeze guards, display cases, signs, light diffusers, skylights, greenhouse panels and the big clear panels behind TV and monitor screens; rolls of polythene at building sites. Polycarbonate bends without cracking, acrylic snaps, and HDPE feels waxy like a chopping board.",
+  "test": "Bend a corner gently: polycarbonate flexes, acrylic cracks. Hold it to the light to check for crazing (fine cracks), which spreads under stress.",
+  "decay": {"halfLifeMonths":null,"note":"Lasts indoors. Sunlight yellows and embrittles cheap plastic over a few years."},
+  "hazards": []
+}

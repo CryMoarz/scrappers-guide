@@ -1,0 +1,38 @@
+{
+  "id": "atv",
+  "name": "ATV or side-by-side",
+  "group": "Vehicles and mobility",
+  "aliases": ["quad bike","quad","four-wheeler","atv","side-by-side","utv","utility vehicle","all terrain vehicle"],
+  "brands": ["Polaris","Can-Am","Honda","Yamaha","Kawasaki","Suzuki","CFMoto","Segway","Hisun"],
+  "prev": 3,
+  "tools": ["socket","wrench"],
+  "mins": 45,
+  "kg": 300,
+  "hazards": ["fuel","heavy","acid"],
+  "comps": [
+    {"key":"winch","fn":"winch","spec":"12V electric winch, about 900–1,600 kg pull (many utility models)","v":12,"qty":1,"ext":2,"obs":4,"loc":"Front bumper","kg":10,"p":0.5},
+    {"key":"cable_steel","fn":"cable_steel","spec":"Winch cable, 10–15 m of steel cable or synthetic rope with hook","qty":1,"ext":1,"obs":4,"loc":"On the winch drum"},
+    {"key":"relay","fn":"relay","spec":"Winch contactor","v":12,"a":[200,500],"qty":1,"ext":1,"obs":5,"loc":"Under the front rack"},
+    {"key":"engine_small","fn":"engine_small","spec":"Petrol engine, 250–1,000 cc","w":[9000,75000],"qty":1,"ext":4,"obs":2,"loc":"Under the seat","kg":45},
+    {"key":"battery_pb","fn":"battery_pb","spec":"12V battery, 12–20Ah","v":12,"ah":[12,20],"qty":1,"ext":1,"obs":2,"loc":"Under the seat"},
+    {"key":"alternator","fn":"alternator","spec":"Stator and regulator-rectifier, 12V","v":12,"qty":1,"ext":3,"obs":5,"loc":"Engine side cover"},
+    {"key":"chain_sprocket","fn":"chain_sprocket","spec":"Drive chain and sprockets (sport quads; utility models use shafts)","qty":1,"ext":2,"obs":4,"loc":"Rear axle"},
+    {"key":"fuel_liquid","fn":"fuel_liquid","spec":"Petrol, 10–30 L tank","qty":1,"ext":1,"obs":2,"loc":"Under the seat or front rack"},
+    {"key":"oil_lube","fn":"oil_lube","spec":"Engine and gear oil","qty":1,"ext":1,"obs":4,"loc":"Engine and differentials"},
+    {"key":"led_light","fn":"led_light","spec":"12V LED headlights and light bars","v":12,"qty":4,"ext":1,"obs":3,"loc":"Front and racks"},
+    {"key":"tube_frame","fn":"tube_frame","spec":"Steel tubular cargo racks","qty":2,"ext":2,"obs":5,"loc":"Front and rear"}
+  ],
+  "buildings": [
+    {"b":"farm","l":5},
+    {"b":"farm_supply","l":3},
+    {"b":"garage_res","l":3},
+    {"b":"car_dealer","l":3},
+    {"b":"campground","l":3},
+    {"b":"golf","l":2},
+    {"b":"fire_station","l":2},
+    {"b":"self_storage","l":2},
+    {"b":"house","l":2},
+    {"b":"solar_farm","l":2}
+  ],
+  "notes": "The winch comes off with a few bolts and runs from any 12V battery: one of the best ways to move heavy things alone."
+}

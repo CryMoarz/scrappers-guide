@@ -1,0 +1,38 @@
+{
+  "id": "smartphone_apple_iphone_8_a1863",
+  "device": "smartphone",
+  "brand": "Apple",
+  "model": "iPhone 8 (A1863)",
+  "notes": "A1863 is the Verizon/Sprint/China model. Models A1905 and A1906 (Japan) are also listed for iPhone 8.",
+  "research": {"checked":"2026-11-11","method":["IFixit's iPhone 8 teardown prints the model number A1863 on the box (step 3) and lists the chips found in its unit with part numbers, including 64 GB NAND flash (step 1 lists 64 or 256 GB models).","Apple's spec page lists models A1863 and A1905 and a built-in rechargeable lithium-ion battery.","Apple's model identification table lists A1863, A1905 and A1906 (Japan) under iPhone 8."]},
+  "comps": [
+    {"key":"b:phone_board:ic_mcu","conf":"documented","spec":"Apple A11 Bionic SoC, part 339S00434, with the M11 motion coprocessor embedded (steps 1 and 11)","source":"https://www.ifixit.com/Teardown/iPhone+8+Teardown/97481"},
+    {"key":"b:phone_board:ic_memory","conf":"documented","spec":"2 GB LPDDR4x RAM, SK Hynix H9HKNNNBRMMUUR (step 11); Toshiba TSBL227VC3759 64 GB NAND flash storage (step 12; step 1 lists 64 or 256 GB models)","source":"https://www.ifixit.com/Teardown/iPhone+8+Teardown/97481"},
+    {"key":"b:phone_board:radio_rf","conf":"documented","spec":"Qualcomm Snapdragon X16 LTE modem MDM9655 (step 11); Apple/USI Wi-Fi and Bluetooth module 339S00397 (step 12)","source":"https://www.ifixit.com/Teardown/iPhone+8+Teardown/97481"},
+    {"key":"b:phone_board:dcdc_buck","conf":"documented","spec":"Apple/Dialog Semiconductor power management IC 338S00309 (step 12)","source":"https://www.ifixit.com/Teardown/iPhone+8+Teardown/97481"},
+    {"key":"b:phone_board:charger","conf":"documented","spec":"Texas Instruments SN2501 Li-ion battery charger (step 13)","source":"https://www.ifixit.com/Teardown/iPhone+8+Teardown/97481"},
+    {"key":"b:phone_board:sensor_misc","conf":"documented","spec":"Bosch Sensortec accelerometer/gyroscope, no part number listed; Bosch Sensortec pressure sensor listed as BMPxxx with a question mark, so no full part number (step 13)","source":"https://www.ifixit.com/Teardown/iPhone+8+Teardown/97481"},
+    {"key":"b:phone_board:connector","conf":"documented","spec":"Lightning connector, peach-colored, with a new bracket (steps 9 and 15); no part number stated","source":"https://www.ifixit.com/Teardown/iPhone+8+Teardown/97481"},
+    {"key":"battery_li","conf":"documented","spec":"3.82 V, 1821 mAh, up to 6.96 Wh (step 7); no manufacturer or part number stated","v":3.82,"ah":1.821,"source":"https://www.ifixit.com/Teardown/iPhone+8+Teardown/97481"},
+    {"key":"camera","conf":"documented","spec":"Single 12 MP Wide camera, f/1.8 aperture, optical image stabilization","source":"https://support.apple.com/kb/SP767"},
+    {"key":"display","conf":"documented","spec":"4.7-inch diagonal LCD, 1334 x 750 resolution, 326 ppi","source":"https://support.apple.com/kb/SP767"},
+    {"key":"speaker","conf":"documented","spec":"Speaker (step 14); the same dozen donut speaker holes line the bottom of the phone as on the iPhone 7","source":"https://www.ifixit.com/Teardown/iPhone+8+Teardown/97481"},
+    {"key":"motor_dc_small","conf":"documented","spec":"Taptic Engine (step 9); no part number or voltage stated","source":"https://www.ifixit.com/Teardown/iPhone+8+Teardown/97481"},
+    {"key":"radio_wtr5975","fn":"radio_rf","spec":"Qualcomm WTR5975 gigabit LTE RF transceiver (step 12)","qty":1,"ext":2,"obs":3,"conf":"documented","source":"https://www.ifixit.com/Teardown/iPhone+8+Teardown/97481"},
+    {"key":"radio_pa_sky77366","fn":"radio_rf","spec":"Skyworks SKY77366-17 quad-band GSM power amplifier module (step 11)","qty":1,"ext":2,"obs":3,"conf":"documented","source":"https://www.ifixit.com/Teardown/iPhone+8+Teardown/97481"},
+    {"key":"radio_nfc","fn":"radio_rf","spec":"NXP 80V18 (PN80V) secure NFC module (step 11)","v":80,"qty":1,"ext":2,"obs":3,"conf":"documented","source":"https://www.ifixit.com/Teardown/iPhone+8+Teardown/97481"},
+    {"key":"dcdc_pmd9655","fn":"dcdc_buck","spec":"Qualcomm PMD9655 power management IC (step 12)","qty":1,"ext":2,"obs":3,"conf":"documented","source":"https://www.ifixit.com/Teardown/iPhone+8+Teardown/97481"},
+    {"key":"dcdc_sn61280e","fn":"dcdc_boost","spec":"Texas Instruments SN61280E battery boost converter (step 13)","qty":1,"ext":2,"obs":3,"conf":"documented","source":"https://www.ifixit.com/Teardown/iPhone+8+Teardown/97481"},
+    {"key":"charger_wireless","fn":"charger","spec":"Broadcom BCM59355, likely an iteration of the BCM59350 wireless charging IC (step 12)","qty":1,"ext":2,"obs":3,"conf":"documented","source":"https://www.ifixit.com/Teardown/iPhone+8+Teardown/97481"},
+    {"key":"ic_audio_codec","fn":"ic_audio","spec":"Cirrus Logic 338S00248 audio codec (step 12)","qty":1,"ext":2,"obs":3,"conf":"documented","source":"https://www.ifixit.com/Teardown/iPhone+8+Teardown/97481"},
+    {"key":"ic_audio_amp","fn":"ic_audio","spec":"Audio amplifier, part 338S00286, manufacturer not stated (step 12)","qty":1,"ext":2,"obs":3,"conf":"documented","source":"https://www.ifixit.com/Teardown/iPhone+8+Teardown/97481"},
+    {"key":"camera_front","fn":"camera","spec":"7 MP FaceTime HD camera, f/2.2 aperture","qty":1,"ext":2,"obs":3,"loc":"front panel","conf":"documented","source":"https://support.apple.com/kb/SP767"},
+    {"key":"sensor_touch_id","fn":"sensor_misc","spec":"Solid-state home button with Touch ID sensor and cable (steps 2 and 5)","qty":1,"ext":2,"obs":3,"loc":"home button","conf":"documented","source":"https://www.ifixit.com/Teardown/iPhone+8+Teardown/97481"}
+  ],
+  "sources": [
+    {"title":"iFixit iPhone 8 Teardown (names A1863 at step 3; chips, PMICs, charger, battery steps)","url":"https://www.ifixit.com/Teardown/iPhone+8+Teardown/97481"},
+    {"title":"iFixit iPhone 8 device page (models A1863, A1905, A1906; A1863 labelled Verizon/Sprint/China)","url":"https://ifixit.com/Device/iPhone_8"},
+    {"title":"Apple support: iPhone 8 technical specifications (A1863 listed; A11 Bionic; display; cameras)","url":"https://support.apple.com/kb/SP767"},
+    {"title":"Apple support: iPhone model identification table (A1863 listed under iPhone 8)","url":"https://support.apple.com/en-us/HT201296"}
+  ]
+}

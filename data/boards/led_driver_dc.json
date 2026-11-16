@@ -1,0 +1,12 @@
+{
+  "id": "led_driver_dc",
+  "name": "Low-voltage LED driver",
+  "notes": "Boost or buck drivers for backlights, lamps and signs.",
+  "comps": [
+    {"key":"dcdc_boost","fn":"dcdc_boost","spec":"Boost driver (backlights)","v":[20,60],"a":[0.02,0.4],"qty":1,"ext":4,"obs":5,"loc":"Driver section"},
+    {"key":"dcdc_buck","fn":"dcdc_buck","spec":"Buck driver (lamps)","v":[3,12],"a":[0.3,1.5],"qty":1,"ext":4,"obs":5,"loc":"Driver section"},
+    {"key":"inductor","fn":"inductor","spec":"Inductors","qty":2,"ext":3,"obs":5,"loc":"Driver section"},
+    {"key":"diode_schottky","fn":"diode_schottky","spec":"Schottky diodes","qty":2,"ext":3,"obs":5,"loc":"Driver section"},
+    {"key":"mosfet","fn":"mosfet","spec":"Switching MOSFETs","qty":2,"ext":3,"obs":5,"loc":"Driver section"}
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "id": "build_compass",
+  "kind": "build",
+  "title": "Needle compass from scrap",
+  "keywords": ["compass","make a compass","magnetised needle","find north","navigation","improvised compass","floating needle","direction"],
+  "summary": "Magnetise a steel needle, pin or straightened paper clip with a salvaged magnet, then float it on water or hang it from a thread so it swings to point north and south. Check which end is north against the sun or stars, and keep it away from steel.",
+  "difficulty": 1,
+  "mins": 15,
+  "tools": ["hands","pliers","cutters"],
+  "hazards": ["magnet_pinch","sharp"],
+  "materials": [
+    {"item":"Steel needle, pin, razor blade or straightened paper clip, 3–6 cm","qty":"1"},
+    {"item":"Neodymium magnet (hard drive, optical drive, speaker)","qty":"1","fn":"magnet_strong"},
+    {"item":"Ferrite magnet, if no neodymium is found","qty":"1","fn":"magnet_ferrite","optional":true},
+    {"item":"Float: cork slice, foam, a leaf or a plastic bottle cap","qty":"1","fn":"foam_rubber","optional":true},
+    {"item":"Non-metal bowl or cup of still water","qty":"1"},
+    {"item":"Thread to hang it instead of floating","qty":"30 cm","fn":"rope_webbing","optional":true},
+    {"item":"Insulated wire and a battery, to magnetise with a coil instead","qty":"1 m, one 1.5–9V cell","fn":"wire_copper","optional":true}
+  ],
+  "steps": [
+    {"text":"Check the needle is steel: a magnet should pick it up. Brass, aluminium and many stainless steels won't work."},
+    {"text":"Magnetise it: hold the needle by one end and stroke the magnet from its middle to the far tip, in one direction only, lifting the magnet well clear before the next stroke. 30–50 strokes.","warn":"Neodymium magnets snap together hard enough to pinch skin and shatter. Keep them apart and away from cards, phones and pacemakers."},
+    {"text":"Check it: the needle should now weakly pick up a pin or staple."},
+    {"text":"Lay the needle on the float and set it in still water in a non-metal bowl, away from steel, vehicles, batteries and wires. Or tie the thread at its balance point and let it hang still."},
+    {"text":"Wait for it to settle. It lines up north–south. Turn the bowl gently; it should swing back to the same line."},
+    {"text":"Find which end is north: at midday the sun is due south in the northern hemisphere (due north in the southern). At night, the needle's north end points roughly at the Pole Star. Mark the north end with a scratch, ink or a twist of thread."},
+    {"text":"Use it: read it on the ground away from metal. Re-magnetise every few hours to days as it weakens. Correct for local declination if your map gives it (notes)."}
+  ],
+  "notes": "## How it works\nStroking steel with a magnet lines up tiny magnetic regions in the steel so the whole needle becomes a weak magnet. Floating or hanging it lets it turn freely, and the Earth's magnetic field pulls it into line.\n\n## Declination\nMagnetic north isn't true (map) north. The difference, declination, can be 0–20° or more depending on where you are, and changes slowly over years. Many maps print it at the edge. East declination: true north is that many degrees west of the needle's north. West declination: the opposite.\n\n## Other ways to magnetise\n- **Coil:** wind 20–50 turns of insulated wire around the needle (or a straw holding it) and touch the ends to a battery for one or two seconds. The wire gets hot and drains the battery fast; don't hold it longer.\n- **Stroking on hair or silk** does almost nothing; it makes static, not magnetism.\n\n## Backups without a needle\n- **Shadow stick:** push a stick upright in flat ground, mark the tip of its shadow, wait 15–20 minutes, mark again. A line from the first mark to the second runs roughly west to east.\n- **Sun:** rises roughly east, sets roughly west; at midday it is due south (north of the equator) or due north (south of the equator).\n- **Stars:** the Pole Star sits almost exactly over true north. In the southern sky, the Southern Cross points towards the south celestial pole.\n\n## Troubleshooting\n- Needle won't settle: water moving, bowl too small, or metal nearby.\n- Points a different way each time: too weakly magnetised; stroke it more with a stronger magnet.\n- Points at your knife: steel within about 50 cm pulls it. Move away.\n\n## Where to find magnets\nHard drives (very strong), optical drives, speakers (ferrite), microwave magnetrons (ferrite rings), door catches, toys.\n",
+  "tree": {"era":1,"branch":"signal"},
+  "devices": ["hard_drive","optical_drive","sewing","pa_system","microwave","laptop"],
+  "parts": ["magnet_strong","magnet_ferrite"],
+  "license": "CC-BY-SA-4.0",
+  "refs": [
+    {"lib":"outdoors","q":"compass navigation"}
+  ]
+}

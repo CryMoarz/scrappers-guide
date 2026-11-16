@@ -1,0 +1,41 @@
+{
+  "id": "irrigation_system",
+  "name": "Irrigation and sprinkler system",
+  "group": "Farm and outdoor",
+  "aliases": ["sprinkler system","irrigation","drip irrigation","irrigation pump","sprinkler controller","lawn sprinklers","sprinkler timer","drip line"],
+  "brands": ["Rain Bird","Hunter Industries","Orbit","Toro","Melnor","Rachio","Gardena"],
+  "prev": 4,
+  "tools": ["screwdriver","cutters","saw","wrench"],
+  "mins": 60,
+  "hazards": ["mains"],
+  "comps": [
+    {"key":"valve_solenoid","fn":"valve_solenoid","spec":"24V AC irrigation solenoid valves, 25–50 mm","v":24,"ac":true,"qty":8,"ext":2,"obs":5,"loc":"Green valve boxes in the ground"},
+    {"key":"transformer_lv","fn":"transformer_lv","spec":"24V AC controller transformer","v":24,"ac":true,"qty":1,"ext":1,"obs":5,"loc":"Controller box in the garage or plant room"},
+    {"key":"pump_water","fn":"pump_water","spec":"Booster or well pump, about 0.75–5 kW (farms, golf courses, large sites)","w":[750,5000],"qty":1,"ext":3,"obs":4,"loc":"Pump house by the well, pond or tank","kg":30},
+    {"key":"hose_tubing","fn":"hose_tubing","spec":"PE and PVC pipe, drip line and fittings — lots of it","qty":1,"ext":2,"obs":5,"loc":"Buried shallow across the site"},
+    {"key":"filter_water","fn":"filter_water","spec":"Screen, disc or sand filters on the supply","qty":1,"ext":2,"obs":5,"loc":"Pump station or valve manifold"},
+    {"key":"hall_reed","fn":"hall_reed","spec":"Paddle-wheel flow sensor with a Hall or reed pickup (larger systems)","qty":1,"ext":2,"obs":5,"loc":"Main line after the backflow preventer"},
+    {"key":"sensor_misc","fn":"sensor_misc","spec":"Rain or soil moisture sensor","qty":1,"ext":1,"obs":5,"loc":"Gutter, fence or roof edge"},
+    {"key":"tank","fn":"tank","spec":"Pressure tank (well-fed systems)","qty":1,"ext":2,"obs":5,"loc":"Pump house"},
+    {"key":"relay","fn":"relay","spec":"Pump start relay","v":24,"a":[10,30],"ac":true,"qty":1,"ext":1,"obs":5,"loc":"Beside the controller"},
+    {"key":"wire_copper","fn":"wire_copper","spec":"Multi-core direct-burial valve cable","qty":1,"ext":3,"obs":5,"loc":"Buried along the pipe runs"}
+  ],
+  "boards": [
+    {"id":"mcu_board","qty":1,"loc":"Irrigation controller","p":0.9},
+    {"id":"vfd_drive","qty":1,"loc":"Pump station drive (golf courses and large farms)","p":0.2}
+  ],
+  "buildings": [
+    {"b":"golf","l":5},
+    {"b":"farm","l":5},
+    {"b":"garden_centre","l":4},
+    {"b":"farm_supply","l":4},
+    {"b":"stadium","l":4},
+    {"b":"school","l":3},
+    {"b":"house","l":3},
+    {"b":"hardware","l":3},
+    {"b":"campground","l":2},
+    {"b":"mall","l":2},
+    {"b":"office","l":2}
+  ],
+  "notes": "With a gravity tank, the pipe, drip line and filters still water crops. Most valves also open by hand: a quarter turn of the solenoid or the bleed screw, no power needed."
+}

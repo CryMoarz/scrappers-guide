@@ -1,0 +1,18 @@
+{
+  "id": "start_fire",
+  "name": "Start a fire",
+  "keywords": ["start a fire","start fire","make fire","make a fire","light a fire","fire starting","fire lighting","firelighting","get a fire going","kindle a fire"],
+  "summary": "Many tank water heaters hold a magnesium anode rod; shavings of it catch from a spark and burn hot enough to light damp tinder. Fresnel lenses from old projection TVs and overhead projectors focus sunlight hot enough to light char cloth in seconds. Piezo igniters from grills spark gas, and a battery across fine nichrome wire or steel wool makes it glow red hot.",
+  "parts": [
+    {"fn":"magnesium","why":"Anode rod shavings catch from a spark and burn very hot","core":true},
+    {"fn":"igniter","why":"Piezo and spark igniters from grills, heaters and lighters","core":true},
+    {"fn":"optics","why":"Fresnel lenses and magnifiers focus sunlight onto tinder","core":true},
+    {"fn":"heating_element","why":"Nichrome wire glows red hot on a battery"},
+    {"fn":"battery_pb","why":"Powers a glowing wire from a car battery"}
+  ],
+  "guides": ["teardown_water_heater","skill_fire_starting"],
+  "tips": ["Check the anode: magnesium is light and its shavings flare white. Aluminium anodes won’t light easily.","Scrape a coin-sized pile of fine magnesium shavings, then send sparks into it.","Piezo clickers light gas well but rarely light tinder on their own.","Don’t leave a Fresnel lens lying in the sun: it starts fires by itself.","Never use petrol to start or revive a fire."],
+  "refs": [
+    {"lib":"outdoors","q":"fire starting"}
+  ]
+}

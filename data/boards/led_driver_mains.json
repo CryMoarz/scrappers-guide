@@ -1,0 +1,13 @@
+{
+  "id": "led_driver_mains",
+  "name": "Mains LED driver",
+  "notes": "Inside LED bulbs and fixtures.",
+  "comps": [
+    {"key":"fuse","fn":"fuse","spec":"Fusible resistor or fuse","a":[0.5,2],"qty":1,"ext":3,"obs":5,"loc":"Input"},
+    {"key":"bridge_rect","fn":"bridge_rect","spec":"Small bridge rectifier","qty":1,"ext":3,"obs":5,"loc":"Input"},
+    {"key":"cap_elec","fn":"cap_elec","spec":"Filter capacitor","qty":1,"ext":2,"obs":4,"loc":"Board"},
+    {"key":"dcdc_buck","fn":"dcdc_buck","spec":"Constant-current buck driver IC","v":[50,250],"a":[0.05,0.3],"qty":1,"ext":4,"obs":5,"loc":"Board"},
+    {"key":"inductor","fn":"inductor","spec":"Inductor","qty":1,"ext":3,"obs":5,"loc":"Board"},
+    {"key":"diode_schottky","fn":"diode_schottky","spec":"Fast diode","qty":1,"ext":3,"obs":5,"loc":"Board"}
+  ]
+}

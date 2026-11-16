@@ -1,0 +1,41 @@
+{
+  "id": "stage_lighting",
+  "name": "Stage lighting and rigging",
+  "group": "Leisure and fitness",
+  "aliases": ["stage lights","moving head","par can","spotlight","theatre lights","dj lights","lighting rig","truss","led par light","wash light"],
+  "brands": ["Chauvet DJ","ADJ","Martin Professional","Elation","Robe","Clay Paky","Showtec","Vevor"],
+  "prev": 3,
+  "tools": ["wrench","socket","screwdriver","ladder"],
+  "mins": 30,
+  "hazards": ["fall","heavy","burn","mains"],
+  "comps": [
+    {"key":"winch","fn":"winch","spec":"Electric chain hoists, 250–1,000 kg, mains (larger venues)","qty":2,"ext":2,"obs":5,"loc":"Hanging from the roof steel above the stage","kg":30},
+    {"key":"tube_frame","fn":"tube_frame","spec":"Aluminium box truss sections, 2–3 m, 50 mm tube","qty":6,"ext":2,"obs":5,"loc":"Over the stage and on stands","kg":15},
+    {"key":"cable_steel","fn":"cable_steel","spec":"Steel safety cables with snap hooks, 3–6 mm","qty":12,"ext":1,"obs":5,"loc":"On every hung fixture"},
+    {"key":"fasteners","fn":"fasteners","spec":"Truss clamps, shackles and bolts","qty":20,"ext":1,"obs":5,"loc":"Rigging points and fixtures"},
+    {"key":"led_light","fn":"led_light","spec":"LED PAR cans and wash lights, high-power RGB LEDs","v":[120,240],"w":[20,300],"ac":true,"qty":12,"ext":1,"obs":4,"loc":"Truss and floor"},
+    {"key":"motor_stepper","fn":"motor_stepper","spec":"Stepper motors for pan, tilt, colour and gobo wheels (moving heads)","v":[24,36],"qty":12,"ext":2,"obs":5,"loc":"Inside moving-head fixtures"},
+    {"key":"optics","fn":"optics","spec":"Glass lenses, condensers and dichroic colour filters","qty":6,"ext":2,"obs":5,"loc":"Spotlights and moving heads"},
+    {"key":"thyristor","fn":"thyristor","spec":"Dimmer packs full of triacs or SCRs, 10–20A per channel","a":[10,20],"qty":12,"ext":2,"obs":5,"loc":"Dimmer racks backstage"},
+    {"key":"heating_element","fn":"heating_element","spec":"Fog machine heat exchanger, 700–1,500W","w":[700,1500],"qty":1,"ext":2,"obs":5,"loc":"Fog machine"},
+    {"key":"pump_water","fn":"pump_water","spec":"Small vibratory pump (fog machines)","v":[120,240],"w":[15,50],"ac":true,"qty":1,"ext":2,"obs":5,"loc":"Fog machine"},
+    {"key":"fan","fn":"fan","spec":"Fixture cooling fans","v":[12,24],"qty":6,"ext":1,"obs":5,"loc":"Inside fixtures"},
+    {"key":"wire_copper","fn":"wire_copper","spec":"DMX and heavy mains extension cables, lots","qty":10,"ext":1,"obs":4,"loc":"Cable trunks and runs"}
+  ],
+  "boards": [
+    {"id":"smps_board","qty":4,"loc":"Fixture power supplies","p":0.8},
+    {"id":"led_driver_dc","qty":4,"loc":"LED fixtures","p":0.8},
+    {"id":"stepper_driver_board","qty":2,"loc":"Moving heads","p":0.4}
+  ],
+  "buildings": [
+    {"b":"cinema","l":5},
+    {"b":"stadium","l":5},
+    {"b":"school","l":4},
+    {"b":"church","l":4},
+    {"b":"hotel","l":3},
+    {"b":"restaurant","l":2},
+    {"b":"mall","l":2},
+    {"b":"makerspace","l":2}
+  ],
+  "notes": "Lower trusses with the hoists before working on fixtures. Discharge-lamp fixtures and follow spots run very hot and some hold mercury lamps."
+}

@@ -1,0 +1,14 @@
+{
+  "id": "motor_dc_small",
+  "name": "Small DC motors (under ~36V)",
+  "group": "Motion",
+  "demand": 1,
+  "keywords": ["motor","dc motor","small motor","12v motor","24v motor","gear motor","gearmotor","toy motor","brushed motor","6v motor","wiper motor","window motor","power window motor","seat motor","drill motor","rs-550","rs550","rs-775","775 motor","wheelchair motor","scooter motor","vibration motor","pager motor"],
+  "substitutes": ["motor_bldc","motor_universal","linear_actuator"],
+  "summary": "Small brushed DC motors under about 36V, often with a gearbox: toys, tools, vehicles and printers.",
+  "uses": ["Small generators (hand crank, pedal, water wheel)","Wiper and window motors make strong winches and gate drives","Fans, pumps and robots"],
+  "identify": "Metal cans with two terminals, from tiny toy motors to big wiper motors. In cordless drills, car seats, windows and wipers, toys, printers, massagers, and 24V wheelchair and scooter drives.",
+  "test": "Touch it to a battery: it should spin, and reverse when the wires swap. Spin it by hand with a meter on it to check it works as a generator.",
+  "decay": {"halfLifeMonths":null,"note":"Lasts."},
+  "hazards": []
+}

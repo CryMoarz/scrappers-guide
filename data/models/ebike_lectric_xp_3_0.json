@@ -1,0 +1,28 @@
+{
+  "id": "ebike_lectric_xp_3_0",
+  "device": "ebike",
+  "brand": "Lectric eBikes",
+  "model": "XP 3.0 (also XP Step-Thru 3.0)",
+  "notes": "The exact SKU was not confirmed.",
+  "research": {"checked":"2026-11-11","gaps":["The manual gives no controller rating.","Battery capacity: Freshlycharged gives 374 Wh, against 499 Wh from Electric Bike Report, so 374 Wh is not used.","Brake rotors conflict (manual: mechanical, 160 mm; comparison and reviews: 180 mm, one review says hydraulic), so brakes are left out.","The 50 mm front fork is not added (no fitting part type).","Charger amp rating and any model year are not stated on the pages read, so years is omitted."],"method":["Manual V 1.0 and Lectric's 2.0-vs-3.0 PDF agree on the 500 W motor and 11-28T freewheel.","The 20 A controller is from the comparison PDF only.","Battery 499 Wh is from Electric Bike Report."]},
+  "comps": [
+    {"key":"battery_li","conf":"documented","spec":"48 V lithium-ion pack, 499 Wh; a 672 Wh long-range pack is also offered","v":48,"source":"https://electricbikereport.com/?p=38894"},
+    {"key":"b:battery_bms:bms","conf":"documented","spec":"Electronic Cell Protection (ECP) against deep discharge, overloading, overheating and short circuit; a protective circuit switches the pack off on a fault","source":"https://files.helpdocs.io/djeddasp2e/other/1719506461776/3-0-manual-v-1-0-2.pdf"},
+    {"key":"motor_bldc","conf":"documented","spec":"Rear hub motor, 500 W (1000 W peak), 55 Nm torque","loc":"Rear wheel hub","source":"https://files.helpdocs.io/djeddasp2e/other/1667955037999/2-0-vs-3-0.pdf"},
+    {"key":"controller_board","conf":"documented","spec":"Controller, 20 amp (XP 3.0)","source":"https://files.helpdocs.io/djeddasp2e/other/1667955037999/2-0-vs-3-0.pdf"},
+    {"key":"charger","conf":"documented","spec":"eBike charger in the box; light is red while charging and green when full; normal charge 3-7 hours","source":"https://files.helpdocs.io/djeddasp2e/other/1719506461776/3-0-manual-v-1-0-2.pdf"},
+    {"key":"led_light","conf":"documented","spec":"Integrated front headlight and rear tail light, switched from the display control pad","source":"https://files.helpdocs.io/djeddasp2e/other/1719506461776/3-0-manual-v-1-0-2.pdf"},
+    {"key":"display_lcd","fn":"display","spec":"LCD display with control pad; shows speed, PAS level, battery bar, odometer, trip, voltage and current","qty":1,"ext":2,"obs":2,"loc":"Handlebar","conf":"documented","source":"https://files.helpdocs.io/djeddasp2e/other/1719506461776/3-0-manual-v-1-0-2.pdf"},
+    {"key":"switch_control_pad","fn":"switch","spec":"Display control pad push buttons: plus (+), minus (-) and power","qty":1,"ext":1,"obs":2,"loc":"Left handlebar","conf":"documented","source":"https://files.helpdocs.io/djeddasp2e/other/1719506461776/3-0-manual-v-1-0-2.pdf"},
+    {"key":"sensor_misc_pas","fn":"sensor_misc","spec":"Pedal assist (PAS) sensor and speed sensor; error E003 is PAS Sensor Fault","ext":2,"obs":4,"loc":"Not stated in manual","conf":"documented","source":"https://files.helpdocs.io/djeddasp2e/other/1719506461776/3-0-manual-v-1-0-2.pdf"},
+    {"key":"connector_quick_plug","fn":"connector","spec":"Quick plugs on the display, PAS sensor, motor and throttle cables (error codes E003, E007, E008, E010)","ext":1,"obs":3,"loc":"Cable runs; see manual diagram p.13","conf":"documented","source":"https://files.helpdocs.io/djeddasp2e/other/1719506461776/3-0-manual-v-1-0-2.pdf"},
+    {"key":"chain_sprocket_chainring","fn":"chain_sprocket","spec":"52-tooth chainring on the drive side","qty":1,"ext":2,"obs":2,"loc":"Drive-side crank","conf":"documented","source":"https://files.helpdocs.io/djeddasp2e/other/1719506461776/3-0-manual-v-1-0-2.pdf"},
+    {"key":"chain_sprocket_freewheel","fn":"chain_sprocket","spec":"7-speed freewheel, 11-28 tooth","qty":1,"ext":3,"obs":2,"loc":"Rear wheel","conf":"documented","source":"https://files.helpdocs.io/djeddasp2e/other/1719506461776/3-0-manual-v-1-0-2.pdf"}
+  ],
+  "sources": [
+    {"title":"Lectric XP 3.0 / XP Step-Thru 3.0 owner's manual, V 1.0 (PDF)","url":"https://files.helpdocs.io/djeddasp2e/other/1719506461776/3-0-manual-v-1-0-2.pdf"},
+    {"title":"Lectric XP 2.0 vs XP 3.0 comparison (PDF, Lectric help docs)","url":"https://files.helpdocs.io/djeddasp2e/other/1667955037999/2-0-vs-3-0.pdf"},
+    {"title":"Electric Bike Report: Lectric XP 3.0 review","url":"https://electricbikereport.com/?p=38894"},
+    {"title":"Freshlycharged: Lectric XP 3.0 review","url":"https://freshlycharged.com/reviews/120/lectric-xp-3-0-electric-bike-review-big-upgrades-same-low-price","note":"gives a 374 Wh battery, which conflicts with 499 Wh; cited in notes only, not used for any part claim"}
+  ]
+}

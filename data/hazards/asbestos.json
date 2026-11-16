@@ -1,0 +1,15 @@
+{
+  "id": "asbestos",
+  "label": "Asbestos",
+  "severity": 4,
+  "summary": "A mineral fibre used in buildings, heating systems and brakes, widely until the 1980s and in many countries into the 1990s or later; treat anything built before 2000 as suspect. You can't see or feel the fibres. Breathing them causes lung cancer, mesothelioma and asbestosis 10–50 years later, and every exposure adds to the risk. Intact and left alone it does little harm; broken, cut or crumbling, it releases fibres.",
+  "signs": ["White or grey chalky wrapping on old boiler and heating pipes","Insulation around old boilers, furnaces and water heaters","Textured 'popcorn' or swirled ceilings in older buildings","Old square vinyl floor tiles and the black glue under them","Grey corrugated or flat cement sheets on roofs, walls and sheds","Loose grey-brown or gold pebbly loft insulation (vermiculite), which may contain it","Old fire doors, heat mats, oven seals, brake pads and clutch plates"],
+  "do": ["Assume old building materials contain asbestos unless you know otherwise","Leave damaged material alone and pick another target","If you must pass damaged material, put on a respirator, mist it with water and move through slowly","Work upwind and outdoors when you can","Mist dusty clothes with water, take them off slowly and bag them before you go back to camp; don't shake them out. Wash them on their own, wetting them first, or throw them away: whoever washes them breathes the dust too"],
+  "dont": ["Don't break, drill, sand, saw or scrape suspect material","Don't sweep dust dry, blow it, or use a household vacuum","Don't pull pipe lagging off to get at copper","Don't carry dust into your shelter or vehicle","Don't try asbestos removal: it needs training, sealed enclosures and proper filters"],
+  "ppe": ["A well-fitted P100 (P3, FFP3) respirator; a paper dust mask is not enough","Disposable coveralls, or clothes you can bag","Gloves","A respirator only seals on a clean-shaven face; check it each time by covering the filters and breathing in: it should pull in against your face"],
+  "firstAid": ["There are no symptoms at the time","Leave the area; keep your respirator on while you mist dusty clothing, take it off carefully and bag it, then wash skin and hair","Rinse dust from eyes with clean water","Tell any doctor you ever see that you were exposed; the risk adds up over a lifetime"],
+  "refs": [
+    {"lib":"wikimed","q":"Asbestos"},
+    {"lib":"wikipedia","q":"Asbestos"}
+  ]
+}

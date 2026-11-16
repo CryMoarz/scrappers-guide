@@ -1,0 +1,17 @@
+{
+  "id": "run_mains_tools",
+  "name": "Run mains tools",
+  "keywords": ["run mains tools","run power tools","power my tools","power tools off grid","run a drill","run appliances","ac from battery","ac from a battery","mains from battery","120v from battery","230v from battery"],
+  "summary": "Corded tools are the overlooked half of every hardware store and garage: nobody hoards them, and they run fine from an inverter. Car inverters hide in glove boxes, and an office UPS is an inverter with a charger already built in; feed it a bigger battery and run it well under its rating. Size the inverter for the motor’s start surge, keep cables short and thick, and fuse at the battery.",
+  "parts": [
+    {"fn":"inverter","why":"Turns 12V or 24V DC into mains AC","core":true},
+    {"fn":"battery_pb","why":"A big battery bank feeds the inverter","core":true},
+    {"fn":"wire_heavy","why":"Short, thick cables for high current","core":true},
+    {"fn":"fuse","why":"A fuse at the battery stops a cable fire","core":true},
+    {"fn":"alternator","why":"A running vehicle recharges the battery as you work"},
+    {"fn":"engine_small","why":"Generators run tools directly while fuel lasts"},
+    {"fn":"solar_panel","why":"Recharges the bank between jobs","need":{"w":20}}
+  ],
+  "guides": ["teardown_ups","reference_wire_gauge","reference_power_budget","safety_mains_isolation","skill_dc_wiring"],
+  "tips": ["A 1000W inverter on 12V pulls about 90A. Use cables of at least 25 mm² (4 AWG) and keep them short.","Motors start at 2–3 times their running power. Size the inverter to match.","Drills, grinders and saws run fine on cheap modified sine inverters. Some chargers and timers don’t.","Inverter output can kill just like mains. Treat it the same way.","Small office UPS units overheat on long runs. Give them breaks."]
+}

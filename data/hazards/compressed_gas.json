@@ -1,0 +1,14 @@
+{
+  "id": "compressed_gas",
+  "label": "Compressed gas",
+  "severity": 4,
+  "summary": "Gas cylinders and air tanks hold huge stored energy. A snapped valve can turn a cylinder into a rocket. Some gases (CO2, nitrogen, argon) quietly push the air out of low or closed spaces. Oxygen makes grease and clothing burn fiercely. Propane and acetylene burn and explode.",
+  "signs": ["Steel or aluminium cylinders with a valve on top: welding, medical, propane, CO2, diving and nitrogen","Drink-dispensing CO2 bottles in bars and restaurants, often in cellars and cold rooms","Air compressor tanks","Fire extinguishers and aerosol cans","Hissing, frost on a valve, or a fallen cylinder","Cylinder colours vary by country: read the label, not the paint"],
+  "do": ["Keep cylinders upright and strapped or chained so they can't fall","Keep the valve cap on when moving a cylinder","Open valves slowly, standing to the side of the outlet","Check fittings for leaks with soapy water","Store cylinders outdoors or somewhere ventilated, in shade, away from heat","Air out cellars and cold rooms before going in where gas bottles are kept"],
+  "dont": ["Don't drop a cylinder, roll it by the valve, or hit it","Don't heat a cylinder or leave it in a hot vehicle","Don't put oil or grease on oxygen fittings","Don't cut, drill or weld a cylinder or tank, even an 'empty' one","Don't refill disposable cylinders","Don't rush in to help someone who collapsed in a cellar or closed room: you will collapse too","Don't loosen a regulator, hose or fitting while there is pressure behind it: close the valve and bleed the pressure off first"],
+  "ppe": ["Safety glasses","Gloves; escaping gas can freeze skin"],
+  "firstAid": ["Collapse in a low or closed space: ventilate first and rescue from outside if you can, then start CPR if they aren't breathing","Cold burns: warm gently in lukewarm water and don't rub; blisters or numbness need medical care","Hit by a cylinder or fitting: control bleeding, splint suspected broken bones, and get medical help"],
+  "refs": [
+    {"lib":"wikipedia","q":"Gas cylinder"}
+  ]
+}

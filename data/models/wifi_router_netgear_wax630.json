@@ -1,0 +1,20 @@
+{
+  "id": "wifi_router_netgear_wax630",
+  "device": "wifi_router",
+  "brand": "NETGEAR",
+  "model": "WAX630",
+  "fcc": "PY321100520",
+  "notes": "Hardware versions of the WAX630 can differ.",
+  "research": {"gaps":[],"method":["Not yet fact-checked: its parts show as likely until a fact-check confirms them against their sources.","Imported from the OpenWrt Table of Hardware (toh.json, 2026-11-13): the hardware data page for this version, by OpenWrt wiki contributors under CC BY-SA 4.0."]},
+  "comps": [
+    {"key":"ic_mcu_soc","fn":"ic_mcu","spec":"SoC Qualcomm IPQ8074A, 4 cores at 1651 MHz","qty":1,"ext":4,"obs":3,"source":"https://openwrt.org/toh/hwdata/netgear/netgear_wax630","conf":"likely"},
+    {"key":"ic_memory_flash","fn":"ic_memory","spec":"Flash, 512 MB NAND","qty":1,"ext":2,"obs":4,"source":"https://openwrt.org/toh/hwdata/netgear/netgear_wax630","conf":"likely"},
+    {"key":"ic_memory_ram","fn":"ic_memory","spec":"RAM, 1024 MB","qty":1,"ext":3,"obs":3,"source":"https://openwrt.org/toh/hwdata/netgear/netgear_wax630","conf":"likely"},
+    {"key":"radio_rf","spec":"Wi-Fi: Qualcomm QCN5024, Qualcomm PMP8074 (2.4 GHz b/g/n/ax, 5 GHz a/n/ac/ax)","qty":2,"source":"https://openwrt.org/toh/hwdata/netgear/netgear_wax630","conf":"likely"},
+    {"key":"psu","spec":"Power supply: 12V, 3.5A via barrel, or 802.3bt/at PoE","v":12,"a":3.5,"source":"https://openwrt.org/toh/hwdata/netgear/netgear_wax630","conf":"likely"},
+    {"key":"connector","spec":"Ethernet ports: 1× 2.5G, 1× gigabit","qty":2,"source":"https://openwrt.org/toh/hwdata/netgear/netgear_wax630","conf":"likely"}
+  ],
+  "sources": [
+    {"title":"OpenWrt Table of Hardware: NETGEAR WAX630 (OpenWrt wiki contributors, CC BY-SA 4.0)","url":"https://openwrt.org/toh/hwdata/netgear/netgear_wax630"}
+  ]
+}

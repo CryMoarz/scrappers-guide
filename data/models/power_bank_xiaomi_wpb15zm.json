@@ -1,0 +1,20 @@
+{
+  "id": "power_bank_xiaomi_wpb15zm",
+  "device": "power_bank",
+  "brand": "Xiaomi",
+  "model": "WPB15ZM (Mi Wireless Power Bank Essential)",
+  "notes": "Model WPB15ZM, distribution edition made by Zimi.",
+  "research": {"checked":"2026-11-11","gaps":["No ICs are named."],"method":["Xiaomi's multilingual user manual (Chinese title marks it as the distribution edition, made by Zimi) names model WPB15ZM with a lithium-polymer 10000 mAh / 3.7 V (37 Wh) battery, 10 W max wireless output, a USB-C input and a USB-A output.","The iFixit teardown names the model, describes removing the board (three screws) and the battery (two glue tapes)."]},
+  "comps": [
+    {"key":"battery_li","conf":"documented","spec":"Lithium-polymer battery, 10000 mAh, 3.7 V (37 Wh). Rated capacity 5800 mAh (5 V/2.4 A).","a":2.4,"source":"https://www.mi.by:443/upload/iblock/fa2/g8zpapg3chexb3ddmgfzir806ky0fgvi.pdf"},
+    {"key":"charger","conf":"documented","spec":"Manual's product overview lists a long-life charge and discharge chip alongside the lithium-polymer battery.","source":"https://www.mi.by:443/upload/iblock/fa2/g8zpapg3chexb3ddmgfzir806ky0fgvi.pdf"},
+    {"key":"b:battery_bms:bms","conf":"documented","spec":"Manual states multiple protection designs against overcharge, over-discharge, overheating and short circuit.","source":"https://www.mi.by:443/upload/iblock/fa2/g8zpapg3chexb3ddmgfzir806ky0fgvi.pdf"},
+    {"key":"b:li_charger_small:connector","conf":"documented","spec":"USB-C input rated 5 V 3 A when the USB-A and wireless outputs run together. USB-A output rated 5 V 2.4 A, 9 V 2 A, 12 V 1.5 A max.","source":"https://www.mi.by:443/upload/iblock/fa2/g8zpapg3chexb3ddmgfzir806ky0fgvi.pdf"},
+    {"key":"b:li_charger_small:led_light","conf":"documented","spec":"Four battery-level LEDs (LED1 to LED4) plus a separate wireless charging indicator, per the manual's indicator tables.","source":"https://www.mi.by:443/upload/iblock/fa2/g8zpapg3chexb3ddmgfzir806ky0fgvi.pdf"},
+    {"key":"switch_power_check","fn":"switch","spec":"Battery level check push button, labelled Power Check in the manual. The manual describes a press-and-hold of more than 3 seconds on it.","qty":1,"ext":2,"obs":1,"loc":"Position not stated in the manual text","conf":"documented","source":"https://www.mi.by:443/upload/iblock/fa2/g8zpapg3chexb3ddmgfzir806ky0fgvi.pdf"}
+  ],
+  "sources": [
+    {"title":"iFixit teardown: Mi Wireless Power Bank Essential (WPB15ZM) disassembly, guide 182351","url":"https://www.ifixit.com/Teardown/Mi+Wireless+Power+Bank+Essential+(WPB15ZM)+disassembly/182351"},
+    {"title":"Xiaomi Mi Wireless Power Bank Essential 10000mAh multilingual user manual (PDF, mi.by)","url":"https://www.mi.by:443/upload/iblock/fa2/g8zpapg3chexb3ddmgfzir806ky0fgvi.pdf"}
+  ]
+}

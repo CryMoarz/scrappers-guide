@@ -1,0 +1,30 @@
+{
+  "id": "dehumidifier",
+  "name": "Dehumidifier",
+  "group": "Kitchen and appliances",
+  "aliases": ["basement dehumidifier"],
+  "brands": ["Frigidaire","Hisense","GE","Honeywell","Midea","Keystone","Ivation","Danby","Vevor"],
+  "prev": 3,
+  "tools": ["screwdriver"],
+  "mins": 25,
+  "repairs": {"records":1495,"fixed":0.41,"end_of_life":0.31},
+  "hazards": ["refrigerant"],
+  "comps": [
+    {"key":"compressor","fn":"compressor","spec":"Small rotary compressor","v":[120,240],"w":[250,600],"ac":true,"qty":1,"ext":4,"obs":3,"loc":"Base"},
+    {"key":"fan","fn":"fan","spec":"Fan motor and blade","v":[120,240],"w":[20,70],"ac":true,"qty":1,"ext":2,"obs":3,"loc":"Rear"},
+    {"key":"switch","fn":"switch","spec":"Bucket float switch","qty":1,"ext":2,"obs":5,"loc":"Behind the bucket"},
+    {"key":"sensor_misc","fn":"sensor_misc","spec":"Humidity sensor","qty":1,"ext":2,"obs":5,"loc":"Near the intake"}
+  ],
+  "boards": [
+    {"id":"mcu_board","qty":1,"loc":"Control panel","p":1}
+  ],
+  "buildings": [
+    {"b":"house","l":5},
+    {"b":"apartment","l":3},
+    {"b":"hardware","l":3},
+    {"b":"appliance","l":4}
+  ],
+  "sources": [
+    {"title":"Open Repair Alliance, Open Repair Data v0.3 (community repair events, 2012 to July 2026; CC BY-SA 4.0): 1,495 repairs recorded as Aircon/dehumidifier (dehumidifier subset)","url":"https://github.com/openrepair/data"}
+  ]
+}

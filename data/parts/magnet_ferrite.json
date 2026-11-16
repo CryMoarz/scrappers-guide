@@ -1,0 +1,14 @@
+{
+  "id": "magnet_ferrite",
+  "name": "Ferrite magnets",
+  "group": "Magnets and wire",
+  "demand": 1,
+  "keywords": ["magnet","magnets","ferrite","ceramic magnet","magnetic strip","speaker magnet","ring magnet","fridge magnet","motor magnet","magnetron magnet","microwave magnet"],
+  "substitutes": ["magnet_strong"],
+  "summary": "Dark grey ceramic (ferrite) magnets: cheap, strong enough and everywhere.",
+  "uses": ["Generators and motors (weaker than neodymium)","Holding tools, catches and signs","Magnetising a compass needle","Telling steel from aluminium"],
+  "identify": "Grey-black rings on speakers, curved arcs inside DC motors, rings in microwave magnetrons, and flexible strips in fridge door seals and fridge magnets. They are brittle and chip or snap if dropped.",
+  "test": "Stick it to steel: it should pull firmly. Cracked magnets still work, just weaker.",
+  "decay": {"halfLifeMonths":null,"note":"Lasts."},
+  "hazards": []
+}

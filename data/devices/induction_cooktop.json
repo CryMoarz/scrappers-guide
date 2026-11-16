@@ -1,0 +1,41 @@
+{
+  "id": "induction_cooktop",
+  "name": "Induction cooktop",
+  "group": "Kitchen and appliances",
+  "aliases": ["induction hob","induction burner","induction stove","portable induction plate","induction hot plate","induction plate","induction range"],
+  "brands": ["Breville","NuWave","Cuisinart","Frigidaire","GE","Bosch","Samsung","LG"],
+  "era": "2000s–present",
+  "prev": 3,
+  "tools": ["screwdriver","security_bits"],
+  "mins": 20,
+  "kg": 3,
+  "hazards": ["hv_cap","glass","mains"],
+  "comps": [
+    {"key":"wire_copper","fn":"wire_copper","spec":"Flat pancake work coil of Litz wire, 15–20 cm, with ferrite bars underneath","qty":1,"ext":1,"obs":5,"loc":"Directly under the glass"},
+    {"key":"glass_pane","fn":"glass_pane","spec":"Ceramic glass top, heat-proof — a stove or oven window","qty":1,"ext":2,"obs":5,"loc":"Top"},
+    {"key":"mosfet","fn":"mosfet","spec":"IGBTs, about 1,200V 15–40A","v":1200,"a":[15,40],"qty":2,"ext":3,"obs":5,"loc":"Main board heatsink"},
+    {"key":"bridge_rect","fn":"bridge_rect","spec":"Bridge rectifier, 15–25A","a":[15,25],"qty":1,"ext":3,"obs":5,"loc":"Main board heatsink"},
+    {"key":"cap_film","fn":"cap_film","spec":"Resonant film capacitors, around 0.3 µF 1,200V, and the DC filter capacitor — can hold a charge","v":1200,"qty":2,"ext":2,"obs":5,"loc":"Main board, near the coil leads"},
+    {"key":"inductor","fn":"inductor","spec":"DC-bus choke","qty":1,"ext":2,"obs":5,"loc":"Main board"},
+    {"key":"heatsink","fn":"heatsink","spec":"Finned aluminium heatsink","qty":1,"ext":2,"obs":4,"loc":"Under the fan"},
+    {"key":"fan","fn":"fan","spec":"12–18V DC blower fan","v":[12,18],"qty":1,"ext":1,"obs":4,"loc":"Base, under the board"},
+    {"key":"sensor_misc","fn":"sensor_misc","spec":"NTC thermistor under the glass","qty":1,"ext":2,"obs":5,"loc":"Centre of the coil"},
+    {"key":"fuse","fn":"fuse","spec":"Ceramic fuse, 10–15A","a":[10,15],"qty":1,"ext":2,"obs":5,"loc":"Mains input"}
+  ],
+  "boards": [
+    {"id":"mcu_board","qty":1,"loc":"Keypad and control board","p":1}
+  ],
+  "buildings": [
+    {"b":"appliance","l":4},
+    {"b":"house","l":3},
+    {"b":"apartment","l":3},
+    {"b":"restaurant","l":3},
+    {"b":"hotel","l":3},
+    {"b":"church","l":3},
+    {"b":"rv_dealer","l":3},
+    {"b":"department","l":3},
+    {"b":"school","l":2},
+    {"b":"campground","l":2},
+    {"b":"self_storage","l":2}
+  ]
+}

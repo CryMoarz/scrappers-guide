@@ -1,0 +1,37 @@
+{
+  "id": "fuel_dispenser",
+  "name": "Fuel dispenser and underground tank",
+  "group": "Retail and public",
+  "aliases": ["gas pump","petrol pump","fuel pump","diesel pump","fuel tank","gas station pump","fuel island"],
+  "brands": ["Gilbarco Veeder-Root","Wayne","Tokheim","Bennett","OPW","Franklin Fueling Systems"],
+  "prev": 4,
+  "tools": ["screwdriver","socket","wrench"],
+  "mins": 40,
+  "kg": 300,
+  "hazards": ["fuel","mains","heavy"],
+  "comps": [
+    {"key":"fuel_liquid","fn":"fuel_liquid","spec":"Petrol and diesel in underground tanks, often tens of thousands of litres — reach it through the fill or gauge port with a hand pump; vapours ignite easily, so no sparks or electric pumps","qty":2,"ext":3,"obs":2,"loc":"Underground tanks; fill caps under flush covers in the forecourt"},
+    {"key":"hose_tubing","fn":"hose_tubing","spec":"Fuel-rated rubber hoses, 3–5 m, with nozzles and breakaway couplings","qty":4,"ext":1,"obs":4,"loc":"On each side of the dispenser"},
+    {"key":"pump_water","fn":"pump_water","spec":"Submersible turbine fuel pump, about 0.5–1.5 kW mains, in the tank","w":[500,1500],"qty":1,"ext":4,"obs":5,"loc":"Sump manhole above each tank"},
+    {"key":"motor_ac","fn":"motor_ac","spec":"Pump motor (suction-type dispensers)","v":[120,240],"w":[560,750],"ac":true,"qty":1,"ext":3,"obs":5,"loc":"Hydraulic cabinet at the base"},
+    {"key":"hall_reed","fn":"hall_reed","spec":"Meter pulsers, Hall-effect or optical","qty":2,"ext":3,"obs":5,"loc":"Hydraulic cabinet, on top of each meter"},
+    {"key":"valve_solenoid","fn":"valve_solenoid","spec":"Fuel flow solenoid valves","v":[120,240],"ac":true,"qty":2,"ext":3,"obs":5,"loc":"Hydraulic cabinet"},
+    {"key":"display","fn":"display","spec":"Price and volume displays","qty":2,"ext":2,"obs":4,"loc":"Upper head on each side"}
+  ],
+  "boards": [
+    {"id":"mcu_board","qty":1,"loc":"Upper electronics head","p":1},
+    {"id":"smps_board","qty":1,"loc":"Upper electronics head","p":0.8}
+  ],
+  "buildings": [
+    {"b":"gas_station","l":5},
+    {"b":"marina","l":4},
+    {"b":"bus_depot","l":4},
+    {"b":"farm","l":3},
+    {"b":"airport","l":3},
+    {"b":"supermarket","l":3},
+    {"b":"fire_station","l":3},
+    {"b":"police","l":2},
+    {"b":"warehouse","l":2}
+  ],
+  "notes": "With the grid down the pumps are dead, so the fuel stays in the ground. Petrol goes stale within months; diesel keeps longer. Check for water at the bottom of the tank."
+}

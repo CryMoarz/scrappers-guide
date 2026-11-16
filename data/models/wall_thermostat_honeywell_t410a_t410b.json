@@ -1,0 +1,16 @@
+{
+  "id": "wall_thermostat_honeywell_t410a_t410b",
+  "device": "wall_thermostat",
+  "brand": "Honeywell",
+  "model": "T410A and T410B line voltage electric heat thermostats (do-it-yourself models)",
+  "notes": "Line-voltage thermostat for radiant cable, electric baseboard and resistive-rated fan-forced heaters, rated 22 A at 120 to 240 Vac and 19 A at 277 Vac for 60 Hz noninductive loads (Resideo's product data calls it a resistive rating). The T410A breaks one line and the T410B breaks both.",
+  "research": {"checked":"2026-11-12","gaps":["The copy read is revision 69-1562-1 (2002); Resideo's later 69-1562-02 sheet and product data 68-0145EF-02 give the same ratings and temperature range.","The 2002 instructions name a sensing element without saying what it is, so none is claimed; the product data lists a bimetal element and a snap-acting switch, not added as parts.","The mercury notice is about the old control being replaced; it does not say the T410 contains mercury, so no mercury is claimed.","No production years, SKUs or circuit board are given, and no teardown was found.","The 277 V (19 A) rating is in the spec but not in the volts field, which holds the 120 to 240 V range."],"method":["Honeywell T410A,B installation instructions 69-1562-1 (copyright 2002 Honeywell, Honeywell address and form number on pages 1 and 4), copy on morelectricheating.com; pages 1 to 4 read.","Resideo-hosted 69-1562-02 install sheet and product data 68-0145EF-02 read for comparison; the product data is cited for the resistive wording.","Not used: the Cadet T521 line-voltage model; only its ratings were readable on manualslib."]},
+  "comps": [
+    {"key":"thermostat_line","conf":"documented","spec":"Line-voltage electric heat thermostat: 22 A at 120 to 240 Vac and 19 A at 277 Vac, 60 Hz noninductive loads; temperature range 40 to 80 F. T410A has a single-line break, T410B a double-line break","v":[120,240],"a":22,"ac":true,"source":"https://morelectricheating.com/media/assets/product/documents/T410A-T410B-installation.pdf"},
+    {"key":"switch_line_break","fn":"switch","spec":"Switch that clicks as it makes and breaks contact when the setting knob is turned (check-out steps); T410A breaks one line, T410B breaks both","qty":1,"ext":2,"obs":4,"conf":"documented","source":"https://morelectricheating.com/media/assets/product/documents/T410A-T410B-installation.pdf"}
+  ],
+  "sources": [
+    {"title":"Honeywell T410A,B Line Voltage Electric Heat Thermostats, installation instructions 69-1562-1 (copyright 2002), copy on morelectricheating.com","url":"https://morelectricheating.com/media/assets/product/documents/T410A-T410B-installation.pdf"},
+    {"title":"Resideo T410A,B Electric Heat Thermostats product data 68-0145EF-02 (customer.resideo.com)","url":"https://customer.resideo.com/resources/Techlit/TechLitDocuments/68-0000s/68-0145EF.pdf"}
+  ]
+}

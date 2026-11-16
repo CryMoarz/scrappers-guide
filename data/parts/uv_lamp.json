@@ -1,0 +1,14 @@
+{
+  "id": "uv_lamp",
+  "name": "UV-C lamps",
+  "group": "Water and air treatment",
+  "demand": 2,
+  "keywords": ["uv lamp","uv-c","uvc","uv c","germicidal lamp","germicidal","uv steriliser","uv sterilizer","uv bulb","uv light","uv tube","ultraviolet","254nm","uv clarifier"],
+  "substitutes": ["chlorine","filter_water"],
+  "summary": "Germicidal ultraviolet tubes that kill germs in clear water and air. UV-C burns skin and eyes, and the tubes contain mercury.",
+  "uses": ["Disinfecting clear, filtered water in a flow-through steriliser","Disinfecting surfaces and tools","Pond and aquarium clarifiers"],
+  "identify": "Quartz tubes that look clear rather than white-coated, marked UV-C, germicidal or 254 nm, often inside a steel water chamber. Found in well and RO systems, pond and aquarium filters, lab and hospital gear, and some air purifiers and HVAC units.",
+  "test": "Run it only inside its housing or facing away, and check for the faint blue glow through ordinary glass, which blocks UV-C. Never look at it directly or expose skin. Water must be clear: UV does little through cloudy water.",
+  "decay": {"halfLifeMonths":null,"note":"Unused lamps keep; running lamps lose strength after about a year even if they still glow."},
+  "hazards": ["uv","mercury","glass"]
+}

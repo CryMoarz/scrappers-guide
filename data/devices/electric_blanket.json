@@ -1,0 +1,40 @@
+{
+  "id": "electric_blanket",
+  "name": "Electric blankets and heating pads",
+  "group": "Household and furniture",
+  "aliases": ["heated blanket","heating pad","heated mattress pad","heated throw","12v blanket","car blanket","electric throw","bed warmer"],
+  "brands": ["Sunbeam","Beurer","Biddeford","Serta","Pure Enrichment"],
+  "prev": 4,
+  "tools": ["cutters","knife"],
+  "mins": 10,
+  "kg": 2,
+  "repairs": {"records":1028,"fixed":0.36,"end_of_life":0.51},
+  "hazards": [],
+  "comps": [
+    {"key":"heating_element","fn":"heating_element","spec":"Long flexible heating wire, about 50–200W at mains voltage; 12V car blankets draw about 40–60W straight from a battery","v":12,"qty":1,"ext":2,"obs":5,"loc":"Sewn through the blanket in channels"},
+    {"key":"fabric_tarp","fn":"fabric_tarp","spec":"Fleece or polyester blanket — still warm with the power off","qty":1,"ext":1,"obs":3,"loc":"The blanket itself"},
+    {"key":"thyristor","fn":"thyristor","spec":"Triac or relay switching the heat","qty":1,"ext":3,"obs":5,"loc":"Hand controller"},
+    {"key":"thermostat","fn":"thermostat","spec":"Overheat cutoff or temperature-sensing wire","qty":1,"ext":2,"obs":5,"loc":"Controller and blanket wiring"}
+  ],
+  "boards": [
+    {"id":"mcu_board","qty":1,"loc":"Digital hand controller","p":0.5}
+  ],
+  "buildings": [
+    {"b":"house","l":4},
+    {"b":"apartment","l":4},
+    {"b":"department","l":4},
+    {"b":"pharmacy","l":3},
+    {"b":"self_storage","l":3},
+    {"b":"nursing_home","l":3},
+    {"b":"supermarket","l":2},
+    {"b":"hotel","l":2},
+    {"b":"campground","l":2},
+    {"b":"auto_parts","l":2},
+    {"b":"rv_dealer","l":2},
+    {"b":"furniture","l":2}
+  ],
+  "notes": "A 12V blanket warms a person for a fraction of the power a space heater uses on the whole room.",
+  "sources": [
+    {"title":"Open Repair Alliance, Open Repair Data v0.3 (community repair events, 2012 to July 2026; CC BY-SA 4.0): 1,028 repairs recorded as Small home electrical (electric blanket subset)","url":"https://github.com/openrepair/data"}
+  ]
+}

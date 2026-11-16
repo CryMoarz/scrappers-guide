@@ -1,0 +1,21 @@
+{
+  "id": "wifi_router_linksys_wrt54g_tm_v1_0",
+  "device": "wifi_router",
+  "brand": "Linksys",
+  "model": "WRT54G-TM v1.0",
+  "fcc": "Q87-WT54GV40",
+  "notes": "Chips for hardware version v1.0; other versions of the WRT54G-TM can differ.",
+  "research": {"gaps":[],"method":["Not yet fact-checked: its parts show as likely until a fact-check confirms them against their sources.","Imported from the OpenWrt Table of Hardware (toh.json, 2026-11-13): the hardware data page for this version, by OpenWrt wiki contributors under CC BY-SA 4.0."]},
+  "comps": [
+    {"key":"ic_mcu_soc","fn":"ic_mcu","spec":"SoC Broadcom BCM5352E, 1 core at 200 MHz","qty":1,"ext":4,"obs":3,"source":"https://openwrt.org/toh/hwdata/linksys/linksys_wrt54g-tm_10","conf":"likely"},
+    {"key":"ic_memory_flash","fn":"ic_memory","spec":"Flash, 8 MB","qty":1,"ext":2,"obs":4,"source":"https://openwrt.org/toh/hwdata/linksys/linksys_wrt54g-tm_10","conf":"likely"},
+    {"key":"ic_memory_ram","fn":"ic_memory","spec":"RAM, 32 MB","qty":1,"ext":3,"obs":3,"source":"https://openwrt.org/toh/hwdata/linksys/linksys_wrt54g-tm_10","conf":"likely"},
+    {"key":"radio_rf","spec":"Wi-Fi: Broadcom BCM5352E (2.4 GHz b/g)","qty":1,"source":"https://openwrt.org/toh/hwdata/linksys/linksys_wrt54g-tm_10","conf":"likely"},
+    {"key":"antenna_coax","spec":"Detachable external antennas","qty":2,"source":"https://openwrt.org/toh/hwdata/linksys/linksys_wrt54g-tm_10","conf":"likely"},
+    {"key":"psu","spec":"Power supply: 12 VDC, 1.0A","v":12,"a":1,"source":"https://openwrt.org/toh/hwdata/linksys/linksys_wrt54g-tm_10","conf":"likely"},
+    {"key":"connector","spec":"Ethernet ports: 5× 100M","qty":5,"source":"https://openwrt.org/toh/hwdata/linksys/linksys_wrt54g-tm_10","conf":"likely"}
+  ],
+  "sources": [
+    {"title":"OpenWrt Table of Hardware: Linksys WRT54G-TM v1.0 (OpenWrt wiki contributors, CC BY-SA 4.0)","url":"https://openwrt.org/toh/hwdata/linksys/linksys_wrt54g-tm_10"}
+  ]
+}

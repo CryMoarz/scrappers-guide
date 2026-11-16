@@ -1,0 +1,20 @@
+{
+  "id": "vfd_drive",
+  "name": "Variable frequency drive (VFD) for AC motors",
+  "notes": "Runs 3-phase motors in rooftop HVAC, pumps, conveyors, escalators, commercial washers and CNC spindles. The DC bus capacitors stay charged for minutes after power is cut: wait, then measure before touching. The IGBT module, Hall current sensors and braking resistor are the prizes.",
+  "comps": [
+    {"key":"bridge_rect","fn":"bridge_rect","spec":"Input rectifier module, 600–1600V","v":[600,1600],"qty":1,"ext":3,"obs":5,"loc":"Power section, on the heatsink"},
+    {"key":"capacitor_large","fn":"capacitor_large","spec":"DC bus capacitors, 400–800V — can hold a lethal charge","v":[400,800],"qty":4,"ext":2,"obs":5,"loc":"Power section, tall cans"},
+    {"key":"mosfet","fn":"mosfet","spec":"IGBT power module or six discrete IGBTs","qty":1,"ext":3,"obs":5,"loc":"Bolted to the heatsink"},
+    {"key":"optocoupler","fn":"optocoupler","spec":"Gate-drive optocouplers","qty":6,"ext":4,"obs":5,"loc":"Between the logic and power sections"},
+    {"key":"hall_reed","fn":"hall_reed","spec":"Hall-effect current sensors on the output phases","qty":2,"ext":3,"obs":5,"loc":"Around the output terminals"},
+    {"key":"ic_mcu","fn":"ic_mcu","spec":"Microcontroller or DSP","qty":1,"ext":4,"obs":5,"loc":"Logic board behind the keypad"},
+    {"key":"resistor","fn":"resistor","spec":"Braking resistor, tens to hundreds of watts (many drives) — a good dummy load","qty":1,"ext":2,"obs":5,"loc":"Bolted to the case or mounted outside it"},
+    {"key":"inductor","fn":"inductor","spec":"DC or input choke (larger drives)","qty":1,"ext":3,"obs":5,"loc":"Bottom of the case"},
+    {"key":"ferrite_xfmr","fn":"ferrite_xfmr","spec":"Auxiliary supply transformer","qty":1,"ext":3,"obs":5,"loc":"Power board"},
+    {"key":"relay","fn":"relay","spec":"Fault and run relays, 24V coil","v":24,"qty":2,"ext":3,"obs":5,"loc":"Control terminals"},
+    {"key":"display","fn":"display","spec":"Keypad with LED or LCD display","qty":1,"ext":2,"obs":5,"loc":"Front cover"},
+    {"key":"heatsink","fn":"heatsink","spec":"Large finned aluminium heatsink","qty":1,"ext":2,"obs":5,"loc":"Back of the drive"},
+    {"key":"fan","fn":"fan","spec":"24V DC cooling fan","v":24,"qty":1,"ext":1,"obs":5,"loc":"Bottom or top of the heatsink"}
+  ]
+}

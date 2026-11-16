@@ -1,0 +1,14 @@
+{
+  "id": "gps",
+  "name": "GPS receivers and modules",
+  "group": "Signal and control",
+  "demand": 3,
+  "keywords": ["gps","gnss","gps module","gps receiver","gps antenna","gps puck","glonass","neo-6m","neo-m8n","sat nav","satnav","sat-nav","gps tracker","handheld gps","chartplotter"],
+  "substitutes": [],
+  "summary": "Satellite position receivers: car sat-navs, handhelds, marine plotters, trackers and small modules inside phones and gadgets.",
+  "uses": ["Knowing where you are and planning routes offline","Accurate time without a network","Adding position to a radio, tracker or computer project"],
+  "identify": "Car sat-navs, hiking handhelds, marine chartplotters, fitness watches, dash cams, phones and fleet trackers all have one. Modules are small boards with a square ceramic patch antenna, often marked NEO-6M or similar, with a serial (TX/RX) output.",
+  "test": "Take it outside under open sky and wait: a cold start can take 1–15 minutes to get a fix. A position that holds steady to within about 10 m means it works.",
+  "decay": {"halfLifeMonths":null,"note":"Receivers last. Accuracy depends on the satellites being maintained and may drift if ground control stops."},
+  "hazards": []
+}

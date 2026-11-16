@@ -1,0 +1,27 @@
+{
+  "id": "teardown_solar_garden_light",
+  "kind": "teardown",
+  "title": "Solar garden lights: panel, cell and LED driver",
+  "keywords": ["solar garden light","solar path light","garden light teardown","small solar panel","aa nimh","yx8018","solar lamp","solar stake light"],
+  "summary": "Solar garden lights sit in every garden and garden centre. Each holds a tiny solar panel, an AA or AAA rechargeable cell, an LED and a one-chip charge and boost circuit. Often the best use is the whole light, with a fresh cell. Two minutes each.",
+  "difficulty": 1,
+  "mins": 5,
+  "tools": ["hands","screwdriver","cutters","desolder","multimeter","knife"],
+  "hazards": ["chemical","glass"],
+  "materials": [],
+  "steps": [
+    {"text":"Pull the light out of the ground and twist or pull the top cap off the stake."},
+    {"text":"Undo the battery cover (1–2 small screws) and take out the cell. Read it: NiMH or NiCd, 1.2 V, 200–1,000 mAh."},
+    {"text":"Check the cell. White or green crust on the ends means it leaked: wipe the crust off the holder with vinegar on a cloth and bin the cell. A good cell reads 1.2–1.4 V after a sunny day.","warn":"Leaked crust is caustic. Keep it off skin and out of eyes; wash hands."},
+    {"text":"To test the whole light, put a good cell in, cover the panel with your hand, and the LED should come on. If it does, keep it whole."},
+    {"text":"To strip it: undo the screws or pry the clear lens off the cap. Inside are the panel, a small board with a chip, a tiny inductor (looks like a fat resistor) and the LED.","warn":"Some lights have glass tops or glass panels. Handle cracked glass with gloves."},
+    {"text":"Cut or desolder the panel leads close to the board, keeping as much wire as possible on the panel."},
+    {"text":"Test the panel in full sun: open-circuit volts on the meter (usually 2–6 V), then current on the amp setting (usually 20–150 mA)."},
+    {"text":"Keep the board and LED as a unit: with a 1.2 V cell and a panel it is a complete auto-on night light."}
+  ],
+  "notes": "## What's worth keeping and why\n\n- **The whole light.** An automatic night light that charges itself. Put fresh cells in and use them to mark paths, latrines, steps and tent pegs at night, or bring them indoors after dark and put them back out by day.\n- **AA and AAA rechargeable cells.** NiMH or NiCd, low capacity but rechargeable. The light is also a slow solar charger for one cell.\n- **Panels.** Small, usually well under 0.5 W each. Wire several in series to raise voltage, or in parallel to raise current. Good for trickle-charging small cells, running a sensor, or keeping a small battery topped up. Not enough to charge a phone in useful time.\n- **Driver chip and inductor.** A one-chip boost circuit (often a YX8018-type part) that lights a white LED from a single 1.2 V cell. Reuse it to light an LED from any single cell.\n- **LED.** A small white or warm LED.\n\n## Variations\n\n- Path lights hold one cell and one LED. Bigger \"security\" or wall lights hold 2–3 cells, many LEDs, a motion sensor and a bigger panel (see motion_light).\n- Some newer lights use a small lithium-ion cell (3.7 V). Treat those as lithium.\n- String lights with a solar panel hold the same parts plus a longer LED string.\n\n## Combining panels\n\n| Panels | Wiring | Rough output in full sun |\n|---|---|---|\n| 3 of 2 V | series | about 6 V at the current of one panel |\n| 3 of 2 V | parallel | about 2 V at three times the current |\n| 6 of 2 V | 3 in series, 2 strings in parallel | about 6 V at twice the current |\n\nPut a diode (a small Schottky is best) in series with each string so a shaded string doesn't drain the others or the battery at night.\n\n## What to leave\n\n- Leaking cells. The plastic stakes, unless you need them.",
+  "tree": {"era":2,"branch":"salvage","requires":["safety_entering_buildings"]},
+  "devices": ["garden_solar"],
+  "parts": ["solar_panel","battery_nimh","led_light","charger","dcdc_boost","inductor"],
+  "license": "CC-BY-SA-4.0"
+}

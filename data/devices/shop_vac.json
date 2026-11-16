@@ -1,0 +1,34 @@
+{
+  "id": "shop_vac",
+  "name": "Wet/dry shop vacuum",
+  "group": "Tools and yard",
+  "aliases": ["shop vac","wet dry vac","wet and dry vacuum","workshop vacuum","dust extractor","shopvac","wet vac"],
+  "brands": ["Ridgid","DeWalt","Craftsman","Stanley","Milwaukee","Vacmaster","Vevor"],
+  "prev": 4,
+  "tools": ["screwdriver"],
+  "mins": 10,
+  "kg": 8,
+  "hazards": [],
+  "comps": [
+    {"key":"motor_universal","fn":"motor_universal","spec":"Universal motor with impeller, 1–2 kW — a strong blower from the exhaust port","w":[1000,2000],"qty":1,"ext":2,"obs":4,"loc":"Power head in the lid"},
+    {"key":"tank","fn":"tank","spec":"Plastic or steel drum, 20–60 L, with lid","qty":1,"ext":1,"obs":5,"loc":"The body"},
+    {"key":"filter_air","fn":"filter_air","spec":"Pleated cartridge filter, some HEPA-rated","qty":1,"ext":1,"obs":5,"loc":"Under the lid"},
+    {"key":"hose_tubing","fn":"hose_tubing","spec":"Wide flexible hose, 30–60 mm, 2–4 m","qty":1,"ext":1,"obs":4,"loc":"Clipped to the side"},
+    {"key":"bearing","fn":"bearing","spec":"Swivel casters","qty":4,"ext":1,"obs":5,"loc":"Base"},
+    {"key":"switch","fn":"switch","spec":"Rocker power switch","qty":1,"ext":1,"obs":5,"loc":"Lid"},
+    {"key":"wire_copper","fn":"wire_copper","spec":"Mains cord, 3–6 m","qty":1,"ext":1,"obs":4,"loc":"Lid"}
+  ],
+  "buildings": [
+    {"b":"garage_res","l":5},
+    {"b":"hardware","l":5},
+    {"b":"car_repair","l":4},
+    {"b":"construction","l":4},
+    {"b":"house","l":3},
+    {"b":"makerspace","l":3},
+    {"b":"school","l":3},
+    {"b":"car_dealer","l":3},
+    {"b":"self_storage","l":3},
+    {"b":"tool_rental","l":3},
+    {"b":"marina","l":2}
+  ]
+}

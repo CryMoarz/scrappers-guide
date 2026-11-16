@@ -1,0 +1,18 @@
+{
+  "id": "inverter_compressor_board",
+  "name": "Inverter compressor and fan drive (heat pumps and mini-splits)",
+  "notes": "Runs the variable-speed compressor and fan in inverter air conditioners, heat pumps and some fridges, from rectified mains. The DC bus sits at about 300–400V and its capacitors can stay charged for minutes: wait, then check with a meter before touching.",
+  "comps": [
+    {"key":"fuse","fn":"fuse","spec":"Ceramic input fuse, 15–30A","a":[15,30],"qty":1,"ext":2,"obs":5,"loc":"Mains input"},
+    {"key":"surge_protect","fn":"surge_protect","spec":"MOVs and inrush thermistor","qty":2,"ext":3,"obs":5,"loc":"Mains input"},
+    {"key":"relay","fn":"relay","spec":"Inrush bypass and reversing-valve relays, 10–30A","a":[10,30],"qty":2,"ext":3,"obs":5,"loc":"Mains input and control section"},
+    {"key":"bridge_rect","fn":"bridge_rect","spec":"Large bridge rectifier, 25–50A","a":[25,50],"qty":1,"ext":3,"obs":5,"loc":"On the heatsink"},
+    {"key":"inductor","fn":"inductor","spec":"Heavy PFC choke, 0.5–2 kg of copper or aluminium winding","qty":1,"ext":2,"obs":5,"loc":"Bolted beside the board"},
+    {"key":"cap_bulk","fn":"cap_elec","spec":"Bulk 400–450V capacitors — can hold a dangerous charge; discharge before handling","v":[400,450],"qty":2,"ext":2,"obs":5,"loc":"Tallest parts on the board"},
+    {"key":"mosfet","fn":"mosfet","spec":"IGBT power module (six switches in one block) driving the compressor","qty":1,"ext":3,"obs":5,"loc":"On the heatsink"},
+    {"key":"ic_mcu","fn":"ic_mcu","spec":"Motor-control microcontroller","qty":1,"ext":4,"obs":5,"loc":"Logic section"},
+    {"key":"ferrite_xfmr","fn":"ferrite_xfmr","spec":"Auxiliary switch-mode supply transformer","qty":1,"ext":3,"obs":5,"loc":"Logic section"},
+    {"key":"optocoupler","fn":"optocoupler","spec":"Optocouplers","qty":2,"ext":3,"obs":5,"loc":"Across the isolation gap"},
+    {"key":"heatsink","fn":"heatsink","spec":"Large finned aluminium heatsink","qty":1,"ext":2,"obs":4,"loc":"Behind the board, in the airflow"}
+  ]
+}

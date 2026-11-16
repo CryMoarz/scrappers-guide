@@ -1,0 +1,43 @@
+{
+  "id": "office_chair",
+  "name": "Office chairs",
+  "group": "Household and furniture",
+  "aliases": ["desk chair","swivel chair","task chair","gaming chair","computer chair","ergonomic chair","executive chair"],
+  "brands": ["Herman Miller","Steelcase","HON","Haworth","Knoll","Secretlab"],
+  "prev": 5,
+  "tools": ["wrench","hammer","hex","screwdriver"],
+  "mins": 10,
+  "kg": 15,
+  "hazards": ["compressed_gas","spring"],
+  "comps": [
+    {"key":"gas_spring","fn":"gas_spring","spec":"Gas lift cylinder, about 10–15 cm stroke, carries 100–150 kg — under pressure: never cut, drill or heat it","qty":1,"ext":2,"obs":5,"loc":"Centre column; tap it out of the base with a hammer"},
+    {"key":"bearing","fn":"bearing","spec":"Five swivel casters with axles — wheels for a dolly or hand cart","qty":5,"ext":1,"obs":4,"loc":"Ends of the base legs"},
+    {"key":"spring","fn":"spring","spec":"Heavy tilt-tension coil spring — wind the tension knob all the way off first","qty":1,"ext":3,"obs":5,"loc":"Tilt mechanism under the seat"},
+    {"key":"foam_rubber","fn":"foam_rubber","spec":"Moulded seat and back foam, 5–8 cm","qty":2,"ext":1,"obs":5,"loc":"Seat and back"},
+    {"key":"tube_frame","fn":"tube_frame","spec":"Steel column, tilt plate and arms; aluminium or nylon five-star base","qty":1,"ext":2,"obs":5,"loc":"Frame","kg":3},
+    {"key":"fasteners","fn":"fasteners","spec":"M8 (or 5/16 in) machine bolts and screws","qty":8,"ext":1,"obs":5,"loc":"Seat plate and arms"},
+    {"key":"fabric_tarp","fn":"fabric_tarp","spec":"Mesh or upholstery fabric","qty":1,"ext":1,"obs":5,"loc":"Seat and back"}
+  ],
+  "boards": [],
+  "buildings": [
+    {"b":"office","l":5},
+    {"b":"furniture","l":5},
+    {"b":"school","l":5},
+    {"b":"bank","l":4},
+    {"b":"clinic","l":4},
+    {"b":"hospital","l":4},
+    {"b":"police","l":4},
+    {"b":"house","l":4},
+    {"b":"makerspace","l":4},
+    {"b":"self_storage","l":4},
+    {"b":"apartment","l":3},
+    {"b":"church","l":3},
+    {"b":"fire_station","l":3},
+    {"b":"hotel","l":3},
+    {"b":"recycling","l":3},
+    {"b":"warehouse","l":3},
+    {"b":"car_dealer","l":3},
+    {"b":"department","l":3},
+    {"b":"datacenter","l":2}
+  ]
+}

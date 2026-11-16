@@ -1,0 +1,14 @@
+{
+  "id": "shopping_cart_unarco_m125",
+  "device": "shopping_cart",
+  "brand": "Unarco",
+  "model": "M125 (wire cart)",
+  "notes": "A wire shopping cart with a bucket and a lower rack. The figures come from a 2025 sheet; the weight and dimensions are shipping figures from that sheet.",
+  "research": {"checked":"2026-11-12","gaps":["Wire gauge, tube size, steel grade, finish, casters and wheels are not on the sheet, so none are claimed.","The product page's 'fully welded' wording is not used.","The sheet carries a 2025 copyright line and says specifications are subject to change; no production years are given."],"method":["Unarco M125 spec sheet (PDF, LIT-M125 R1, 2025): read as text and the page rendered to check the table."]},
+  "comps": [
+    {"key":"tube_frame","conf":"documented","spec":"Wire cart (the sheet's own label). Total capacity 17,000 cu in (279 L): bucket 9,373 cu in (154 L) plus lower rack 7,627 cu in (125 L). Shipping weight 58 lb; length 43-3/4 in, width 24-1/2 in, height 41-5/16 in.","source":"https://www.unarco.com/wp-content/uploads/2025/01/Unarco_M125_2.pdf"}
+  ],
+  "sources": [
+    {"title":"Unarco M125 shopping cart model spec sheet, LIT-M125 R1 (Unarco Industries, copyright 2025)","url":"https://www.unarco.com/wp-content/uploads/2025/01/Unarco_M125_2.pdf"}
+  ]
+}

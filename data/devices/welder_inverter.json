@@ -1,0 +1,22 @@
+{
+  "id": "welder_inverter",
+  "name": "Welder, inverter type",
+  "variantOf": "welder",
+  "aliases": ["inverter welder","inverter arc welder","mig inverter"],
+  "brands": ["Miller","Lincoln Electric","Hobart","ESAB","Everlast","Forney","Vevor"],
+  "era": "2000s–present",
+  "prev": 4,
+  "kg": 10,
+  "hazards": ["mains","hv_cap"],
+  "comps": [
+    {"key":"mosfet","fn":"mosfet","spec":"IGBTs or MOSFETs, 600V+, on big heatsinks","v":600,"qty":4,"ext":3,"obs":5,"loc":"Power board"},
+    {"key":"ferrite_xfmr","fn":"ferrite_xfmr","spec":"Large ferrite power transformer","qty":1,"ext":3,"obs":5,"loc":"Centre of the power board"},
+    {"key":"cap_elec","fn":"cap_elec","spec":"Bulk 400V capacitors — discharge before handling","v":400,"qty":4,"ext":2,"obs":5,"loc":"After the input rectifier"},
+    {"key":"bridge_rect","fn":"bridge_rect","spec":"Input bridge rectifier","qty":1,"ext":3,"obs":5,"loc":"On the heatsink"},
+    {"key":"diode_rect","fn":"diode_rect","spec":"Fast output rectifier diodes","qty":4,"ext":3,"obs":5,"loc":"Output heatsink"},
+    {"key":"heatsink","fn":"heatsink","spec":"Finned aluminium heatsinks","qty":2,"ext":2,"obs":4,"loc":"Power board"}
+  ],
+  "boards": [
+    {"id":"smps_small","qty":1,"loc":"Auxiliary supply","p":0.8}
+  ]
+}

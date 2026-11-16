@@ -1,0 +1,7 @@
+{
+  "id": "stadium",
+  "name": "Stadiums and arenas",
+  "osm": ["leisure=stadium","leisure=sports_centre","leisure=ice_rink","leisure=sports_hall"],
+  "exposure": 2,
+  "notes": "Scoreboards, floodlights, PA systems, generators, scrubbers and concession equipment."
+}

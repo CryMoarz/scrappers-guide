@@ -1,0 +1,25 @@
+{
+  "id": "dehumidifier_friedrich_d50d",
+  "device": "dehumidifier",
+  "brand": "Friedrich",
+  "model": "D50D",
+  "notes": "The D50D/D70D parts list and wiring diagram include a water pump. The parts list covers the D50D and D70D.",
+  "research": {"checked":"2026-11-12","gaps":["The manual names Friedrich only; it does not say who built the unit.","The voltage and current are whole-unit figures, so they are not put on any part.","The parts list carries three micro switches (679-041-00 at refs 8 and 26, 679-041-10 at ref 29) without saying which one the bucket float works, so the 'switch' entry lists them all; the troubleshooting table names a broken micro switch as a cause of water overflow.","The 'SENSOR' part (679-041-19) is filed as the humidity sensor because it is listed separately from the 'THERMISTOR SENSOR' and the wiring diagram shows an H.sensor and a T.sensor; that pairing is an interpretation, so the part entries don't state it.","Production years are not stated."],"method":["Source is Friedrich's 'Service & Parts Manual, Dehumidifier, Models D25D, D50D, D70D' (footer 'Dehumidifier-2010 Svc Parts (4-2010)'), hosted as a PDF by the parts retailer Appliance Factory Parts, which adds its own cover sheet as PDF page 1; page numbers below are PDF pages.","Read as text and checked against rendered images of the D50D spec page (PDF p.7), the D50D/D70D wiring diagram (PDF p.10) and the D50D/D70D service parts list (PDF p.14) on 2026-11-12.","D50D figures: 50 pints/day at 80 F / 60% RH, 115 V 60 Hz, 5.9 A running current, R410A 9.32 oz, 16-pint tank.","The manual is dated April 2010."]},
+  "comps": [
+    {"key":"compressor","conf":"documented","spec":"Compressor model 35D052-A2-ABLL, Friedrich part 679-041-25 (compressor ass'y); R410A 9.32 oz","ac":true,"qty":1,"source":"https://www.appliancefactoryparts.com/content/pdfs/194338-1.pdf"},
+    {"key":"capacitor_large_comp","fn":"capacitor_large","spec":"Compressor capacitor 40 uF / 300 V, Friedrich part 679-041-12","v":300,"ac":true,"qty":1,"ext":2,"obs":3,"conf":"documented","source":"https://www.appliancefactoryparts.com/content/pdfs/194338-1.pdf"},
+    {"key":"thermostat_olp","fn":"thermostat","spec":"Compressor protector (OLP) MRA12274-12095","ext":3,"obs":4,"conf":"documented","source":"https://www.appliancefactoryparts.com/content/pdfs/194338-1.pdf"},
+    {"key":"fan","conf":"documented","spec":"Fan motor model LS-16T2-02-N2, 47 W input, two speeds (FAN-L / FAN-H), Friedrich part 679-041-22; blower wheel 679-041-58","w":47,"ac":true,"qty":1,"source":"https://www.appliancefactoryparts.com/content/pdfs/194338-1.pdf"},
+    {"key":"capacitor_large_fan","fn":"capacitor_large","spec":"Plastic fan motor capacitor 6 uF / 250 V, Friedrich part 679-041-14","v":250,"ac":true,"qty":1,"ext":2,"obs":3,"conf":"documented","source":"https://www.appliancefactoryparts.com/content/pdfs/194338-1.pdf"},
+    {"key":"switch","conf":"documented","spec":"Micro switches 679-041-00 (listed at refs 8 and 26) and 679-041-10 (ref 29); bucket float 679-041-63 with float cap 679-041-64","source":"https://www.appliancefactoryparts.com/content/pdfs/194338-1.pdf"},
+    {"key":"sensor_misc","conf":"documented","spec":"Sensor, Friedrich part 679-041-19, listed separately from the thermistor sensor; the D50D/D70D wiring diagram shows an H.sensor and a T.sensor","qty":1,"source":"https://www.appliancefactoryparts.com/content/pdfs/194338-1.pdf"},
+    {"key":"sensor_misc_thermistor","fn":"sensor_misc","spec":"Thermistor sensor, Friedrich part 679-041-18","qty":1,"ext":2,"obs":4,"conf":"documented","source":"https://www.appliancefactoryparts.com/content/pdfs/194338-1.pdf"},
+    {"key":"pump_water_condensate","fn":"pump_water","spec":"Water pump, Friedrich part 679-041-01, with push-button switch for pump 679-041-03, pump hose connector 679-041-04 and quick connector for pump 679-041-02; wiring diagram shows a pump protector","qty":1,"ext":2,"obs":4,"conf":"documented","source":"https://www.appliancefactoryparts.com/content/pdfs/194338-1.pdf"},
+    {"key":"transformer_lv_control","fn":"transformer_lv","spec":"Transformer, Friedrich part 679-041-20","qty":1,"ext":2,"obs":3,"conf":"documented","source":"https://www.appliancefactoryparts.com/content/pdfs/194338-1.pdf"},
+    {"key":"controller_board_main","fn":"controller_board","spec":"Electronic control board, Friedrich part 679-041-15; control panel 679-041-16","qty":1,"ext":2,"obs":3,"conf":"documented","source":"https://www.appliancefactoryparts.com/content/pdfs/194338-1.pdf"},
+    {"key":"b:mcu_board:fuse","conf":"documented","spec":"Fuse marked T3.15AL 125V, drawn on the circuit board with connectors CN1 to CN8 in the D50D/D70D wiring diagram","a":3.15,"v":125,"source":"https://www.appliancefactoryparts.com/content/pdfs/194338-1.pdf"}
+  ],
+  "sources": [
+    {"title":"Friedrich Service & Parts Manual, Dehumidifier models D25D, D50D, D70D ('Dehumidifier-2010 Svc Parts', 4-2010), PDF hosted by Appliance Factory Parts","url":"https://www.appliancefactoryparts.com/content/pdfs/194338-1.pdf"}
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "id": "chest_freezer_danby_dcf072a3wdb_6",
+  "device": "chest_freezer",
+  "brand": "Danby",
+  "model": "DCF072A3WDB-6",
+  "notes": "The part list is only for the -6 variant.",
+  "research": {"checked":"2026-11-12","gaps":["The parts web page lists most of the same part numbers under shorter names (it shows the thermostat as WPF29R-103-022) but has no capacitor row, only the capacitor bracket.","The part list gives no compressor voltage; the indicator lamp is the only part with a stated voltage (115 V), and neither it nor the capacitor is marked AC, so no ac flag is set.","No interior lamp or lid switch is listed; not a stated absence, so those template parts are left alone."],"method":["Danby 7.2 cu. ft. chest freezer; danby.com's product page says the product has been discontinued.","Main source is Danby's own schematic / part list spreadsheet (XLSX, linked as 'Schematic / Part List' from the Danby Appliance Parts page): factory model BD-198A, effective date 23 Aug 2019, revision 00; column C holds 'Updated Part Number, May 2021', given here as 'now ...'.","Read from the spreadsheet cells on 2026-11-12.","The product spec PDF names R600a refrigerant.","Ext/obs on extra parts are editorial.","The same Energy Guide covers DCF072A3BDB, DCF072A3WDB, DCF072A3WDB-3 and DCF072A3WDB-6."]},
+  "comps": [
+    {"key":"compressor","conf":"documented","spec":"Compressor EZ59E1C; Danby part 1.03.01.01.194 (now 1.03.01.01.598), qty 1; four compressor sleeves CTE943-2 listed with it","source":"https://cdnns.danby.com/4973611/DCF072A3WDB-6.xlsx"},
+    {"key":"thermostat","conf":"documented","spec":"Thermostat WPF29R-103-022(E); Danby part 1.03.02.01.016 (now 1.03.02.01.171), knob 1.02.15.06.058","source":"https://cdnns.danby.com/4973611/DCF072A3WDB-6.xlsx"},
+    {"key":"relay_ptc_starter","fn":"relay","spec":"PTC starter QP2-4R7; Danby part 1.03.01.01.194PTC","qty":1,"ext":1,"obs":4,"conf":"documented","source":"https://cdnns.danby.com/4973611/DCF072A3WDB-6.xlsx"},
+    {"key":"thermostat_overload","fn":"thermostat","spec":"OLP (overload protector) DRB18R61A1; Danby part 1.03.01.01.194F (now 1.03.01.01.598J)","qty":1,"ext":1,"obs":4,"conf":"documented","source":"https://cdnns.danby.com/4973611/DCF072A3WDB-6.xlsx"},
+    {"key":"capacitor_large","fn":"capacitor_large","spec":"Capacitor, CBB65 type, 8.0 uF / 250 V; Danby part 1.03.01.01.194C; capacitor bracket 3.5.2.01.0793","v":250,"qty":1,"ext":1,"obs":3,"conf":"documented","source":"https://cdnns.danby.com/4973611/DCF072A3WDB-6.xlsx"},
+    {"key":"led_light_indicator","fn":"led_light","spec":"Green indicator lamp, 115 V (HNXD1); Danby part 1.01.03.01.064R","v":115,"qty":1,"ext":2,"obs":4,"conf":"documented","source":"https://cdnns.danby.com/4973611/DCF072A3WDB-6.xlsx"},
+    {"key":"wire_copper","conf":"documented","spec":"Power supply cord assembly, listed as E465601 or E215500 or E313201; Danby part 1.01.01.01.220R","source":"https://cdnns.danby.com/4973611/DCF072A3WDB-6.xlsx"},
+    {"key":"insulation","conf":"documented","spec":"Foam-insulated cabinet and lid","source":"https://www.danby.com/en-us/products/freezers-en-us/dcf072a3wdb-6/?o=pdf"},
+    {"key":"cooler_box","conf":"documented","spec":"Manual-defrost chest cabinet, capacity 7.2 cu. ft.; Energy Guide estimate 252 kWh per year","source":"https://cdnns.danby.com/4973611/DCF072A3BDB%20%20WDB%20%20WDB-3%20%20WDB-6_Energy%20Card%2020221122.235544.pdf"}
+  ],
+  "sources": [
+    {"title":"DCF072A3WDB-6 schematic / part list spreadsheet (Danby XLSX, factory model BD-198A, effective 23 Aug 2019, part numbers updated May 2021)","url":"https://cdnns.danby.com/4973611/DCF072A3WDB-6.xlsx"},
+    {"title":"DCF072A3WDB-6 parts page (Danby Appliance Parts, links the part list)","url":"https://www.danbyapplianceparts.com/product-category/freezers/dcf072a3wdb-6"},
+    {"title":"DCF072A3WDB-6 product specifications PDF (danby.com)","url":"https://www.danby.com/en-us/products/freezers-en-us/dcf072a3wdb-6/?o=pdf"},
+    {"title":"Energy Guide label for DCF072A3BDB / DCF072A3WDB / -3 / -6 (Danby PDF, 2022)","url":"https://cdnns.danby.com/4973611/DCF072A3BDB%20%20WDB%20%20WDB-3%20%20WDB-6_Energy%20Card%2020221122.235544.pdf"},
+    {"title":"DCF072A3WDB-6 product page (danby.com, marked discontinued)","url":"https://www.danby.com/en-us/products/freezers-en-us/dcf072a3wdb-6/"}
+  ]
+}

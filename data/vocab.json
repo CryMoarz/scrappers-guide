@@ -1,0 +1,484 @@
+{
+  "tools": {
+    "hands": "bare hands",
+    "screwdriver": "screwdrivers",
+    "security_bits": "security bits",
+    "socket": "socket set",
+    "pliers": "pliers",
+    "cutters": "wire cutters",
+    "pry": "pry bar",
+    "saw": "saw",
+    "multimeter": "multimeter",
+    "heavy": "vehicle or a second person",
+    "desolder": "soldering iron or desoldering tool",
+    "hex": "hex keys",
+    "wrench": "wrenches",
+    "drill": "drill",
+    "grinder": "angle grinder",
+    "knife": "utility knife",
+    "bolt_cutters": "bolt cutters",
+    "crimper": "crimper",
+    "jack": "jack or lifting gear",
+    "ladder": "ladder",
+    "clamps": "clamps",
+    "file": "files",
+    "tape": "electrical tape",
+    "tubing_cutter": "tubing cutter",
+    "hammer": "hammer"
+  },
+  "partGroups": [
+    "Power storage",
+    "Power generation",
+    "Power conversion",
+    "Motion",
+    "Mechanical",
+    "Fluids",
+    "Heat",
+    "Light",
+    "Signal and control",
+    "Magnets and wire",
+    "Electronic components",
+    "Water and air treatment",
+    "Materials",
+    "Containers and pressure",
+    "Stored supplies"
+  ],
+  "deviceGroups": [
+    "Kitchen and appliances",
+    "Building systems",
+    "Power and solar",
+    "Electronics and office",
+    "Commercial",
+    "Tools and yard",
+    "Vehicles and mobility",
+    "Leisure and fitness",
+    "Heating, cooling and water",
+    "Medical and mobility",
+    "Communications",
+    "Household and furniture",
+    "Farm and outdoor",
+    "Industrial and construction",
+    "Retail and public"
+  ],
+  "eras": [
+    "Fire",
+    "Salvage",
+    "Low voltage",
+    "Power",
+    "Machines",
+    "Industry"
+  ],
+  "branches": {
+    "fire": "Fire and food",
+    "water": "Water",
+    "shelter": "Shelter and climate",
+    "salvage": "Salvage and safety",
+    "power": "Power",
+    "signal": "Light and signals",
+    "machines": "Machines and mobility",
+    "fabrication": "Fabrication"
+  },
+  "libraries": {
+    "wikipedia": {
+      "name": "Wikipedia",
+      "category": "wikipedia",
+      "match": [
+        "wikipedia_en_all",
+        "wikipedia_en_top",
+        "wikipedia_en_100",
+        "wikipedia_en_simple"
+      ],
+      "web": {
+        "hosts": [
+          "en.wikipedia.org",
+          "en.m.wikipedia.org"
+        ],
+        "strip": "/wiki/"
+      }
+    },
+    "wikimed": {
+      "name": "Medical encyclopedia",
+      "category": "wikipedia",
+      "match": [
+        "wikipedia_en_medicine",
+        "medicine",
+        "mdwiki"
+      ]
+    },
+    "ifixit": {
+      "name": "iFixit repair guides",
+      "category": "ifixit",
+      "match": [
+        "ifixit"
+      ],
+      "web": {
+        "hosts": [
+          "ifixit.com",
+          "www.ifixit.com"
+        ]
+      }
+    },
+    "wikihow": {
+      "name": "wikiHow",
+      "category": "wikihow",
+      "match": [
+        "wikihow"
+      ],
+      "web": {
+        "hosts": [
+          "wikihow.com",
+          "www.wikihow.com"
+        ]
+      }
+    },
+    "electronics": {
+      "name": "Electronics Q&A",
+      "category": "stack_exchange",
+      "match": [
+        "electronics.stackexchange"
+      ],
+      "web": {
+        "hosts": [
+          "electronics.stackexchange.com"
+        ]
+      }
+    },
+    "diy": {
+      "name": "Home improvement Q&A",
+      "category": "stack_exchange",
+      "match": [
+        "diy.stackexchange"
+      ],
+      "web": {
+        "hosts": [
+          "diy.stackexchange.com"
+        ]
+      }
+    },
+    "wikibooks": {
+      "name": "Wikibooks",
+      "category": "wikibooks",
+      "match": [
+        "wikibooks"
+      ],
+      "web": {
+        "hosts": [
+          "en.wikibooks.org"
+        ],
+        "strip": "/wiki/"
+      }
+    },
+    "gutenberg": {
+      "name": "Project Gutenberg",
+      "category": "gutenberg",
+      "match": [
+        "gutenberg"
+      ]
+    },
+    "nomad_conditions": {
+      "name": "NOMAD medical conditions",
+      "nomad": "/conditions/{path}"
+    },
+    "khan": {
+      "name": "Khan Academy",
+      "category": "other",
+      "match": [
+        "khanacademy"
+      ]
+    },
+    "appropedia": {
+      "name": "Appropedia",
+      "match": [
+        "appropedia"
+      ],
+      "web": {
+        "hosts": [
+          "appropedia.org",
+          "www.appropedia.org"
+        ]
+      }
+    },
+    "energypedia": {
+      "name": "energypedia",
+      "match": [
+        "energypedia"
+      ],
+      "web": {
+        "hosts": [
+          "energypedia.info"
+        ],
+        "strip": "/wiki/"
+      }
+    },
+    "survivorlibrary": {
+      "name": "Survivor Library",
+      "match": [
+        "survivorlibrary"
+      ]
+    },
+    "lowtech": {
+      "name": "Low-tech Magazine",
+      "match": [
+        "lowtechmagazine"
+      ]
+    },
+    "cd3wd": {
+      "name": "CD3WD appropriate technology",
+      "match": [
+        "cd3wd"
+      ]
+    },
+    "post_disaster": {
+      "name": "Post Disaster Resource Library",
+      "match": [
+        "zimgit-post-disaster"
+      ]
+    },
+    "water_lib": {
+      "name": "Water Treatment Library",
+      "match": [
+        "zimgit-water"
+      ]
+    },
+    "food_lib": {
+      "name": "Food for Preppers",
+      "match": [
+        "zimgit-food-preparation"
+      ]
+    },
+    "canning": {
+      "name": "USDA Guide to Home Canning",
+      "match": [
+        "usda-2015"
+      ]
+    },
+    "knots_lib": {
+      "name": "Library of Knots",
+      "match": [
+        "zimgit-knots",
+        "wikipedia_en_knots"
+      ]
+    },
+    "medical_lib": {
+      "name": "Medical Library",
+      "match": [
+        "zimgit-medicine"
+      ]
+    },
+    "milmed": {
+      "name": "Military Medicine",
+      "match": [
+        "military-medicine"
+      ]
+    },
+    "medlineplus": {
+      "name": "MedlinePlus",
+      "category": "other",
+      "match": [
+        "medlineplus"
+      ],
+      "web": {
+        "hosts": [
+          "medlineplus.gov",
+          "www.medlineplus.gov"
+        ],
+        "prefix": "medlineplus.gov/"
+      }
+    },
+    "readygov": {
+      "name": "Ready.gov",
+      "category": "other",
+      "match": [
+        "ready.gov"
+      ],
+      "web": {
+        "hosts": [
+          "ready.gov",
+          "www.ready.gov"
+        ],
+        "prefix": "www.ready.gov/"
+      }
+    },
+    "cdc": {
+      "name": "CDC health information",
+      "category": "other",
+      "match": [
+        "wwwnc.cdc.gov"
+      ],
+      "web": {
+        "hosts": [
+          "wwwnc.cdc.gov"
+        ],
+        "prefix": "wwwnc.cdc.gov/"
+      }
+    },
+    "mechanics": {
+      "name": "Vehicle mechanics Q&A",
+      "category": "stack_exchange",
+      "match": [
+        "mechanics.stackexchange"
+      ],
+      "web": {
+        "hosts": [
+          "mechanics.stackexchange.com"
+        ]
+      }
+    },
+    "ham": {
+      "name": "Amateur radio Q&A",
+      "category": "stack_exchange",
+      "match": [
+        "ham.stackexchange"
+      ],
+      "web": {
+        "hosts": [
+          "ham.stackexchange.com"
+        ]
+      }
+    },
+    "outdoors": {
+      "name": "Outdoors Q&A",
+      "category": "stack_exchange",
+      "match": [
+        "outdoors.stackexchange"
+      ],
+      "web": {
+        "hosts": [
+          "outdoors.stackexchange.com"
+        ]
+      }
+    },
+    "bicycles": {
+      "name": "Bicycles Q&A",
+      "category": "stack_exchange",
+      "match": [
+        "bicycles.stackexchange"
+      ],
+      "web": {
+        "hosts": [
+          "bicycles.stackexchange.com"
+        ]
+      }
+    },
+    "engineering": {
+      "name": "Engineering Q&A",
+      "category": "stack_exchange",
+      "match": [
+        "engineering.stackexchange"
+      ],
+      "web": {
+        "hosts": [
+          "engineering.stackexchange.com"
+        ]
+      }
+    },
+    "woodworking": {
+      "name": "Woodworking Q&A",
+      "category": "stack_exchange",
+      "match": [
+        "woodworking.stackexchange"
+      ],
+      "web": {
+        "hosts": [
+          "woodworking.stackexchange.com"
+        ]
+      }
+    },
+    "gardening": {
+      "name": "Gardening Q&A",
+      "category": "stack_exchange",
+      "match": [
+        "gardening.stackexchange"
+      ],
+      "web": {
+        "hosts": [
+          "gardening.stackexchange.com"
+        ]
+      }
+    },
+    "cooking": {
+      "name": "Cooking Q&A",
+      "category": "stack_exchange",
+      "match": [
+        "cooking.stackexchange"
+      ],
+      "web": {
+        "hosts": [
+          "cooking.stackexchange.com"
+        ]
+      }
+    },
+    "libretexts_eng": {
+      "name": "Engineering LibreTexts",
+      "match": [
+        "libretexts.org_en_eng"
+      ]
+    },
+    "homesteading": {
+      "name": "Learning Self-Reliance",
+      "match": [
+        "lrnselfreliance"
+      ]
+    },
+    "arduino": {
+      "name": "Arduino Q&A",
+      "category": "stack_exchange",
+      "match": [
+        "arduino.stackexchange"
+      ],
+      "web": {
+        "hosts": [
+          "arduino.stackexchange.com"
+        ]
+      }
+    },
+    "raspberrypi": {
+      "name": "Raspberry Pi Q&A",
+      "category": "stack_exchange",
+      "match": [
+        "raspberrypi.stackexchange"
+      ],
+      "web": {
+        "hosts": [
+          "raspberrypi.stackexchange.com"
+        ]
+      }
+    },
+    "robotics": {
+      "name": "Robotics Q&A",
+      "category": "stack_exchange",
+      "match": [
+        "robotics.stackexchange"
+      ],
+      "web": {
+        "hosts": [
+          "robotics.stackexchange.com"
+        ]
+      }
+    },
+    "openwrt": {
+      "name": "OpenWrt wiki",
+      "match": [
+        "openwrt.org_en"
+      ],
+      "web": {
+        "hosts": [
+          "openwrt.org"
+        ],
+        "prefix": "openwrt.org/"
+      }
+    },
+    "cpp_docs": {
+      "name": "C++ reference (DevDocs)",
+      "match": [
+        "devdocs_en_cpp"
+      ]
+    },
+    "python_docs": {
+      "name": "Python reference (DevDocs)",
+      "match": [
+        "devdocs_en_python"
+      ]
+    }
+  }
+}

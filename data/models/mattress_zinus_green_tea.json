@@ -1,0 +1,15 @@
+{
+  "id": "mattress_zinus_green_tea",
+  "device": "mattress",
+  "brand": "Zinus",
+  "model": "Original Green Tea Memory Foam",
+  "notes": "Zinus says its newly made mattresses use a carbon-rayon fire sleeve and that it used fibreglass before, with no date given for the change, so treat an older unit as possibly fibreglass. Zinus also says its covers should not be removed.",
+  "research": {"checked":"2026-11-12","gaps":["Zinus's FAQ speaks of all Zinus mattresses and names no model or year, so which sleeve a given Green Tea mattress has is not known.","RTINGS's Original Green Tea 2025 review (foam layers, knitted cover, fibreglass-free statement) showed a membership paywall prompt, so its claims were left out: no layers, cover or height are claimed.","Zinus's own product page returned HTTP 429 and was not read.","Allegation only: a 2022 class action complaint (Gutierrez v. Zinus, E.D. Cal., case 2:22-at-00690) says Zinus box mattresses, including a Green Tea 12-inch, have fibreglass sleeves under a removable cover. Not findings; nothing here rests on it."],"method":["Zinus fibreglass FAQ (zinus.com/fiberglass-faq), read with WebFetch: the fire-safety statements on carbon-rayon and fibreglass and on covers.","The complaint was read with research.js pdf (paragraphs 1-5 and 22) from a classaction.org copy, only to word the allegation above.","No bot check or login on the FAQ or the complaint PDF."]},
+  "comps": [
+    {"key":"insulation_fire_sleeve","fn":"insulation","conf":"documented","spec":"Fire sleeve. Zinus's FAQ, which covers all its mattresses and names no model: newly manufactured mattresses use a carbon-rayon sleeve; earlier ones used fibreglass (no date given for the change). It also says no Zinus cover should be removed and covers are not washable.","ext":2,"obs":5,"source":"https://www.zinus.com/fiberglass-faq"}
+  ],
+  "sources": [
+    {"title":"Zinus fibreglass FAQ (zinus.com), statement on the fire sleeve in Zinus mattresses","url":"https://www.zinus.com/fiberglass-faq"},
+    {"title":"Gutierrez et al. v. Zinus Inc., class action complaint, E.D. Cal., filed 7 July 2022 (classaction.org copy; allegations only)","url":"https://www.classaction.org/media/gutierrez-et-al-v-zinus-inc.pdf"}
+  ]
+}

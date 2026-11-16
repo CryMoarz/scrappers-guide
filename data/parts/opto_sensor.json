@@ -1,0 +1,14 @@
+{
+  "id": "opto_sensor",
+  "name": "Optical sensors and IR parts",
+  "group": "Electronic components",
+  "demand": 1,
+  "keywords": ["photodiode","phototransistor","ir led","infrared led","photocell","ldr","light sensor","slot sensor","optical sensor","ir receiver","tsop1838","vs1838","photoresistor","light dependent resistor","ir emitter","photo interrupter","dusk sensor","dusk to dawn","ir remote"],
+  "substitutes": ["sensor_motion"],
+  "summary": "Light sensors and IR parts: photodiodes, phototransistors, LDRs, IR LEDs and IR receivers.",
+  "uses": ["Dusk-to-dawn switches for lights","Beam-break alarms and counters","Remote control receivers","Shaft speed sensing"],
+  "identify": "IR receivers behind the window of every TV and appliance; slot sensors in printers and mice; LDRs (a squiggly line on the face) in night lights and solar garden lights; IR LEDs in remotes and CCTV cameras.",
+  "test": "An LDR’s resistance drops in light. A lit IR LED shows a faint purple glow through a phone camera.",
+  "decay": {"halfLifeMonths":null,"note":"Lasts."},
+  "hazards": []
+}

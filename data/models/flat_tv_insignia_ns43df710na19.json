@@ -1,0 +1,23 @@
+{
+  "id": "flat_tv_insignia_ns43df710na19",
+  "device": "flat_tv",
+  "brand": "Insignia",
+  "model": "NS-43DF710NA19 (REV A)",
+  "notes": "Covers the Insignia NS-43DF710NA19 REV A TV as listed by repair-part sellers, not by Insignia. A seller warns that this model may have more than one main board, so match the numbers on the original boards before pulling or buying parts.",
+  "research": {"checked":"2026-11-12","gaps":["Every part number comes from ShopJimmy listings (a kit and single parts), not from an Insignia, Sharp or TCL document; numbers are as the seller prints them.","The kit page lists four numbers with no word saying what each part is; the roles come from ShopJimmy's own listings for the same numbers.","Main board: ShopJimmy lists 756TXICB01K011 and says this model may have more than one main board (check XICB01K011 on the sticker). A TVpartstoday title seen in search results reads 756TXICB01K0110; that page returned HTTP 429 and was not opened, so the difference is unresolved.","T-con: the kit prints 'Vizio 55.43T10.C03' with 'Insignia 55.43T10.C03' in its manufacturer field, and the T-con listing is titled 'Vizio ONN'. Recorded as printed.","The kit page warns that many models use variations of each part and they are not always interchangeable.","The LED strip listing also names Sharp LC-43LB601U and gives no LED count or voltage; the Wi-Fi listing leaves the brand cell blank beside NS-43DF710NA19.","No FCC ID, teardown or internal photos were found for this model, and no chip is named, so none is claimed."],"method":["ShopJimmy repair kit page for the NS-43DF710NA19 (Version 1, kit KIT-NS-43DF710NA19-K1), opened with WebFetch: lists four part numbers for REV A.","ShopJimmy listings for the power supply board, main board, Wi-Fi module, T-con and Sharp LED strips (3), each opened with WebFetch; each Known Models table names NS-43DF710NA19 REV A. No bot check or paywall on any of them.","A TVpartstoday listing for the main board returned HTTP 429 (to the researcher and again to the fact-checker) and was not used."]},
+  "comps": [
+    {"key":"psu","conf":"documented","spec":"Power supply board, Insignia part PLTVHQ351XAF4 (visible numbers (X)PLTVHQ351XAF4 and 715G9507-P01-001-003S); the listing names NS-43DF710NA19 REV A","source":"https://shopjimmy.com/insignia-pltvhq351xaf4-power-supply-board"},
+    {"key":"controller_board","conf":"documented","spec":"Main board, part 756TXICB01K011 (visible numbers (X)XICB01K011001X and 715G9566-M01-B00-005K); the listing names NS-43DF710NA19 REV A","qty":1,"source":"https://www.shopjimmy.com/insignia-756txicb01k011-main-board-for-ns-43df710na19-see-note/"},
+    {"key":"controller_board_tcon","fn":"controller_board","conf":"documented","spec":"T-con board 55.43T10.C03, also labelled 55T32-C0F CTRL BD; listing says it fits NS-43DF710NA19 REV A","qty":1,"ext":3,"obs":4,"source":"https://shopjimmy.com/vizio-55-43t10-c03-55t32-c0f-ctrl-bd-t-con-board-for-d43-e2-lwz2vnbt"},
+    {"key":"radio_rf","fn":"radio_rf","conf":"documented","spec":"Wi-Fi module, part 317GWFBT668WNC (also printed DHUR-AZ68); the listing names NS-43DF710NA19 REV A","qty":1,"ext":1,"obs":3,"source":"https://www.shopjimmy.com/insignia-317gwfbt668wnc-dhur-az68-wi-fi-wifi-wireless-lan-module"},
+    {"key":"led_light","conf":"documented","spec":"LED backlight strips, Sharp part GJ-2K18-430-D310-V2, set of 3; listed for NS-43DF710NA19 REV A","qty":3,"source":"https://www.shopjimmy.com/sharp-gj-2k18-430-d310-v2-led-backlight-strips-3"}
+  ],
+  "sources": [
+    {"title":"Insignia NS-43DF710NA19 TV Repair Parts Kit, Version 1 (ShopJimmy listing; four part numbers, REV A)","url":"https://shopjimmy.com/insignia-ns-43df710na19-tv-repair-parts-kit-version-1"},
+    {"title":"Insignia PLTVHQ351XAF4 Power Supply Board (ShopJimmy listing, REV A)","url":"https://shopjimmy.com/insignia-pltvhq351xaf4-power-supply-board"},
+    {"title":"Insignia 756TXICB01K011 Main Board for NS-43DF710NA19 (ShopJimmy listing, REV A)","url":"https://www.shopjimmy.com/insignia-756txicb01k011-main-board-for-ns-43df710na19-see-note/"},
+    {"title":"Vizio ONN 55.43T10.C03 (55T32-C0F CTRL BD) T-Con Board (ShopJimmy listing; known models include Insignia NS-43DF710NA19 REV A)","url":"https://shopjimmy.com/vizio-55-43t10-c03-55t32-c0f-ctrl-bd-t-con-board-for-d43-e2-lwz2vnbt"},
+    {"title":"Insignia 317GWFBT668WNC (DHUR-AZ68) Wi-Fi Wireless LAN Module (ShopJimmy listing, REV A)","url":"https://www.shopjimmy.com/insignia-317gwfbt668wnc-dhur-az68-wi-fi-wifi-wireless-lan-module"},
+    {"title":"Sharp GJ-2K18-430-D310-V2 LED Backlight Strips (3), listed for NS-43DF710NA19 REV A (ShopJimmy listing)","url":"https://www.shopjimmy.com/sharp-gj-2k18-430-d310-v2-led-backlight-strips-3"}
+  ]
+}

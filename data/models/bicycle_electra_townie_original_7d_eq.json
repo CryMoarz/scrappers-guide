@@ -1,0 +1,20 @@
+{
+  "id": "bicycle_electra_townie_original_7d_eq",
+  "device": "bicycle",
+  "brand": "Electra",
+  "model": "Townie Original 7D EQ (step-thru)",
+  "years": "2019",
+  "notes": "Covers the 2019 Townie Original 7D EQ step-thru, from one spec page for that year; other years and the step-over frame may differ.",
+  "research": {"checked":"2026-11-12","gaps":["The front hub is listed only as Shimano Nexus Dynamo 32H w/QR, with no hub model number and no wattage or voltage on the page, so none is claimed.","The 44T chainring is from the features list; the spec rows give only the crankset.","Brakes (linear pull, no maker named) are not listed: the template has no brake part.","The steel uni-crown fork is not listed as a part.","Other model years and the step-over frame were not checked."],"method":["Specs are from the BikeRoar spec page \"Electra Townie Original 7D EQ Step-Thru (2019) Specs\".","The researcher reported that Trek product pages gave no spec text and that 99spokes returned HTTP 403; neither is cited."]},
+  "comps": [
+    {"key":"chain_sprocket","conf":"documented","spec":"Taya Octo 1/2 x 3/32 in nickel-plated chain; forged alloy 170 mm crankset with a 44T chainring; Shimano 7-speed cassette, 14-34T","source":"https://bikeroar.com/products/electra/townie-original-7d-eq-step-thru-2019/specs"},
+    {"key":"derailleur_rear","fn":"chain_sprocket","spec":"Shimano Tourney TX-35 rear derailleur, shifted by a Shimano Revo 7-speed twist shifter","qty":1,"ext":2,"obs":3,"conf":"documented","source":"https://bikeroar.com/products/electra/townie-original-7d-eq-step-thru-2019/specs"},
+    {"key":"dynamo","conf":"documented","spec":"Shimano Nexus Dynamo front hub, listed as 32H with QR","qty":1,"source":"https://bikeroar.com/products/electra/townie-original-7d-eq-step-thru-2019/specs"},
+    {"key":"led_light","conf":"documented","spec":"Spanninga front and rear LED lights, hub-dynamo powered","qty":2,"source":"https://bikeroar.com/products/electra/townie-original-7d-eq-step-thru-2019/specs"},
+    {"key":"foam_rubber","conf":"documented","spec":"Schwalbe Big Ben 26 x 2.15 in tyres with a puncture-resistant Kevlar guard casing","source":"https://bikeroar.com/products/electra/townie-original-7d-eq-step-thru-2019/specs"},
+    {"key":"tube_frame","conf":"documented","spec":"Townie 6061-T6 aluminium frame with Flat Foot Technology, step-thru","source":"https://bikeroar.com/products/electra/townie-original-7d-eq-step-thru-2019/specs"}
+  ],
+  "sources": [
+    {"title":"Electra Townie Original 7D EQ Step-Thru (2019) Specs (BikeRoar spec database)","url":"https://bikeroar.com/products/electra/townie-original-7d-eq-step-thru-2019/specs"}
+  ]
+}

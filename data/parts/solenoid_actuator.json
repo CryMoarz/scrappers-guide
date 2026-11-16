@@ -1,0 +1,14 @@
+{
+  "id": "solenoid_actuator",
+  "name": "Solenoids",
+  "group": "Motion",
+  "demand": 1,
+  "keywords": ["solenoid","plunger","latch","electromagnet","door lock solenoid","pull solenoid","push solenoid","lock actuator","door actuator","central locking","electric strike","maglock"],
+  "substitutes": ["linear_actuator"],
+  "summary": "Electromagnets that pull or push a plunger: door locks, latches, valves and starters.",
+  "uses": ["Remote locks and latches","Bell strikers and alarm triggers","Electromagnets for holding steel"],
+  "identify": "A coil around a sliding steel plunger: in car door locks, vending machines, washer door locks, pinball machines and electric door strikes. The coil voltage is often on the label.",
+  "test": "Feed the rated DC voltage: the plunger should snap in. The coil should show continuity.",
+  "decay": {"halfLifeMonths":null,"note":"Lasts."},
+  "hazards": []
+}

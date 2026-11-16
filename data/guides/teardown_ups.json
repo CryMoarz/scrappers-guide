@@ -1,0 +1,28 @@
+{
+  "id": "teardown_ups",
+  "kind": "teardown",
+  "title": "Office UPS: batteries, inverter and transformer",
+  "keywords": ["ups teardown","battery backup","uninterruptible power supply","ups battery","sealed lead acid","12v 7ah","ups inverter"],
+  "summary": "Office UPS units hold one to four 12 V sealed lead-acid batteries, an inverter that makes mains AC, a charger, a heavy transformer and a fan. Turn it off and unplug the battery before opening: it makes mains voltage from its battery even with the cord pulled.",
+  "difficulty": 2,
+  "mins": 20,
+  "tools": ["screwdriver","socket","multimeter","pliers","cutters"],
+  "hazards": ["mains","hv_cap","acid","lead","heavy"],
+  "materials": [],
+  "steps": [
+    {"text":"Unplug the UPS from the wall and every device from it. Press and hold the power button until it switches off and goes silent.","warn":"A UPS makes 120 V or 230 V AC from its battery even when unplugged. Treat its outlets and insides as live until the battery is out."},
+    {"text":"Open the battery door: on most units a front panel slides or pops off, or a plate on the underside unscrews."},
+    {"text":"Pull the battery out by its tab and unplug its connector or the spade terminals. Do this before opening anything else.","warn":"Keep tools away from the battery terminals. A short across them can melt a spanner."},
+    {"text":"Measure each battery after it has rested a few hours. 12.6 V or more is full, about 12.2 V is half, below 11.8 V is flat. Below 10.5 V it has been flat a long time and may only partly recover. Swollen or cracked cases: recycle. See test_lead_acid."},
+    {"text":"Open the case: undo the screws on the underside, back and sides and slide the cover off."},
+    {"text":"Wait 5 minutes, then measure DC volts across the large capacitors on the board. Discharge any that show more than about 30 V with a resistor tool (see safety_discharge_capacitor) and measure again.","warn":"Board capacitors can hold mains-level voltage for minutes after the unit is off."},
+    {"text":"Photograph the wiring. Unplug the leads between the board, the transformer and the battery connector."},
+    {"text":"Unbolt the transformer: 2–4 bolts through its base. It weighs about 2–8 kg depending on the unit."},
+    {"text":"Take the main board out whole if you might reuse it as an inverter. Otherwise take the fan, relays, fuse holder, outlets, the mains inlet and the cord."}
+  ],
+  "notes": "## What's worth keeping and why\n\n- **Batteries.** 12 V sealed lead-acid, most often 7–9 Ah, one to four per unit (two in series makes 24 V). Even tired ones run LED lights, radios and alarms. Many recover some capacity after a long slow charge.\n- **The whole UPS.** The best use is often intact: a ready-made battery charger and inverter. Keep a working unit for a router, a radio, a CPAP or a laptop.\n- **Transformer.** Heavy iron transformer with a low-voltage winding; a good start for a battery charger or rewinding project.\n- **Main board.** Power MOSFETs on heatsinks, relays, a 12 V fan, fuses.\n- **IEC outlets and inlet, cord.**\n\n## Running a UPS from bigger batteries\n\nYou can wire a bigger battery bank of the same voltage in place of the small batteries, with a fuse close to the battery and thick enough cable (see skill_dc_wiring and reference_wire_gauge). Know the limits:\n\n- Small UPS units are built for 5–15 minutes of running. Long runs at high load overheat them. Keep the load well under half the rating on the label.\n- The built-in charger is small (often under 1–2 A), so it can take days to refill a large bank. Charge big banks separately.\n- Many small units make a stepped \"modified sine\" output. Fine for chargers, lights and laptops; motors and some medical devices may run hot or noisy.\n- Some units won't start without mains present, and many draw several to tens of watts just being on.\n\n## Variations\n\n- Rack-mount and large floor-standing UPS units hold strings of batteries at 48 V up to several hundred volts DC. Those are lethal and need training to dismantle; see ups_large.\n- Some newer small units use lithium iron phosphate batteries instead of lead-acid.\n\n## What to leave\n\n- Batteries with swollen, cracked or leaking cases.\n- The plastic case.",
+  "tree": {"era":3,"branch":"salvage","requires":["safety_lead_acid","safety_discharge_capacitor"]},
+  "devices": ["ups"],
+  "parts": ["battery_pb","inverter","charger","transformer_lv","fan","relay","mosfet","heatsink"],
+  "license": "CC-BY-SA-4.0"
+}

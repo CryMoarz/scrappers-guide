@@ -1,0 +1,30 @@
+{
+  "id": "garage_opener",
+  "name": "Garage door opener",
+  "group": "Building systems",
+  "aliases": ["garage door operator","garage door motor"],
+  "brands": ["Chamberlain","LiftMaster","Genie","Craftsman","Wayne-Dalton","Overhead Door"],
+  "prev": 5,
+  "tools": ["screwdriver","socket"],
+  "mins": 20,
+  "hazards": ["spring"],
+  "comps": [
+    {"key":"motor_ac","fn":"motor_ac","spec":"Gear motor (AC, or 24V DC on newer belt units)","v":24,"qty":1,"ext":2,"obs":4,"loc":"Ceiling-mounted head unit"},
+    {"key":"gearbox","fn":"gearbox","spec":"Worm gear reduction","qty":1,"ext":2,"obs":4,"loc":"Head unit"},
+    {"key":"transformer_lv","fn":"transformer_lv","spec":"Low-voltage transformer or power supply","v":24,"w":[20,150],"ac":true,"qty":1,"ext":2,"obs":4,"loc":"Head unit"},
+    {"key":"radio_rf","fn":"radio_rf","spec":"Remote receiver (receive only)","qty":1,"ext":2,"obs":5,"loc":"Head unit logic board"},
+    {"key":"sensor_motion","fn":"sensor_motion","spec":"Infrared safety beam pair","qty":2,"ext":1,"obs":5,"loc":"Low on each side of the door"},
+    {"key":"spring","fn":"spring","spec":"Door torsion springs: enough stored energy to kill. Leave them alone (see the safety guide)","qty":2,"ext":5,"obs":3,"loc":"Above the door"},
+    {"key":"led_light","fn":"led_light","spec":"Opener light","v":[120,240],"w":[10,100],"ac":true,"qty":1,"ext":1,"obs":4,"loc":"Head unit"}
+  ],
+  "boards": [
+    {"id":"mcu_board","qty":1,"loc":"Logic board in the head unit","p":1}
+  ],
+  "buildings": [
+    {"b":"house","l":5},
+    {"b":"garage_res","l":5},
+    {"b":"car_repair","l":4},
+    {"b":"warehouse","l":3},
+    {"b":"hardware","l":3}
+  ]
+}

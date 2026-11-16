@@ -1,0 +1,20 @@
+{
+  "id": "space_heater_delonghi_trd40615t",
+  "device": "space_heater",
+  "brand": "De'Longhi",
+  "model": "TRD40615T",
+  "notes": "Covers the De'Longhi TRD40615T oil-filled radiator, rated 120 V 60 Hz 1500 W on the manual's cover, with a thermostat dial and a MIN/MED/MAX power selector. The manual covers units with and without a timer, so the timer dial is only on timer units.",
+  "research": {"checked":"2026-11-12","gaps":["The 120 V 60 Hz 1500 W on the cover is the whole radiator's electrical rating, so v, w and ac are not set on the heating element.","The manual does not describe the heating element, or the oil's type or amount; the oil appears only in a leak warning.","No tip-over switch is named; the manual only says to run the radiator upright.","The safety device has no stated type, temperature, rating or count, so qty and ratings are left out.","The manual covers timer and non-timer units and does not say which the TRD40615T is, so the timer is claimed only for timer units. The TRD40615T-6A manual also mentions two- and three-output versions.","Cord wire gauge is not stated.","No production years are given; the manual shows only the code 5711010681/05.13_01.","Not read by the researcher: retailer parts pages (Appliance Factory Parts, fix.com, PartSelect, eReplacementParts; HTTP 403)."],"method":["De'Longhi Oil Filled Radiator TRD40615T, Instructions for use, ref. 5711010681/05.13, PDF on De'Longhi's document server, 9 pages. Model name and 120 V~ 60 Hz 1500 W on the cover (PDF page 2); description list on page 4 (rendered), controls, antifreeze and timer on pages 6 to 8.","De'Longhi TRD40615T-6A Electric Oil Filled Radiator, Instructions for use, ref. 5711011371, PDF on De'Longhi's document server. Read as a variant check: same 120 V~ 60 Hz 1500 W rating and the same description list, controls and safety device text."]},
+  "comps": [
+    {"key":"heating_element","conf":"documented","spec":"The radiator's electric heater: an oil-filled radiator body whose heat output is chosen with the MIN, MED and MAX power selector. The oil appears in the manual only in a leak warning.","source":"https://dls.delonghigroup.com/files/docs/5/EN-5711010681.pdf"},
+    {"key":"thermostat","conf":"documented","spec":"Thermostat dial that keeps the room at the set temperature. The antifreeze setting holds about 41 F (5 C).","source":"https://dls.delonghigroup.com/files/docs/5/EN-5711010681.pdf"},
+    {"key":"switch","conf":"documented","spec":"Power selector with MIN, MED and MAX positions, each with its own indicator light, and an off (0) position.","source":"https://dls.delonghigroup.com/files/docs/5/EN-5711010681.pdf"},
+    {"key":"switch_timer","fn":"switch","spec":"Timer dial, only on units that have a timer: a numbered dial (22 is 10 p.m.) with teeth pushed inward to run the heater in 15-minute periods. It works like an electric clock and only runs while plugged in.","qty":1,"ext":2,"obs":4,"conf":"documented","source":"https://dls.delonghigroup.com/files/docs/5/EN-5711010681.pdf"},
+    {"key":"thermostat_fuse","fn":"thermostat","spec":"Safety device that switches the heater off if it overheats.","ext":2,"obs":4,"conf":"documented","source":"https://dls.delonghigroup.com/files/docs/5/EN-5711010681.pdf"},
+    {"key":"wire_copper","conf":"documented","spec":"Polarized alternating-current plug and cord; the cord wraps round a cord holder on the unit.","ac":true,"source":"https://dls.delonghigroup.com/files/docs/5/EN-5711010681.pdf"}
+  ],
+  "sources": [
+    {"title":"De'Longhi Oil Filled Radiator TRD40615T, Instructions for use, ref. 5711010681/05.13 (PDF on De'Longhi's document server)","url":"https://dls.delonghigroup.com/files/docs/5/EN-5711010681.pdf"},
+    {"title":"De'Longhi TRD40615T-6A Electric Oil Filled Radiator, Instructions for use, ref. 5711011371 (PDF on De'Longhi's document server)","url":"https://dls.delonghigroup.com/files/docs/5/A1-5711011371.pdf"}
+  ]
+}

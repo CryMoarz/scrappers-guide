@@ -1,0 +1,6 @@
+{
+  "id": "pet_shop",
+  "name": "Pet stores",
+  "osm": ["shop=pet","shop=pet_grooming"],
+  "exposure": 2
+}

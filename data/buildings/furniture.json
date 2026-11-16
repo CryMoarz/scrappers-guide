@@ -1,0 +1,6 @@
+{
+  "id": "furniture",
+  "name": "Furniture and mattress stores",
+  "osm": ["shop=furniture","shop=bed","shop=interior_decoration","shop=kitchen","shop=carpet","shop=antiques","shop=window_blind"],
+  "exposure": 2
+}

@@ -1,0 +1,27 @@
+{
+  "id": "hoverboard_hover_1_hy_rm_ultra",
+  "device": "hoverboard",
+  "brand": "Hover-1",
+  "model": "HY-RM-ULTRA",
+  "years": "2017",
+  "notes": "Hover-1 ULTRA (HY-RM-ULTRA).",
+  "research": {"checked":"2026-11-11","gaps":["It does not say outright that the power figures are per motor.","The manual's top speed conflicts with itself (up to 9 mph in section 2, 7 mph in section 5.2) and the iFixit device page says up to 10 mph.","No FCC filing or teardown is cited.","The iFixit guides do not say where the battery cable or the motherboard sits."],"method":["The manualslib page titled Hover-1 ULTRA (HY-RM-ULTRA) Manual gives a 36 V 4 Ah lithium-ion battery and a dual motor with Rated Power 200W X 2 and Max Power 250W X 2.","IFixit names HY-RM-ULTRA on its device and troubleshooting pages, gives a 2017 release, and has guides for the battery and charging port.","Not source facts."]},
+  "comps": [
+    {"key":"battery_li","conf":"documented","spec":"Built-in lithium-ion battery, 36 V, 4 Ah (manual sections 2 and 9.1). The manual says users should not remove it (section 9.2). Cell count and cell format not stated.","v":36,"ah":4,"source":"https://www.manualslib.com/manual/3619976/Hover-1-Ultra.html"},
+    {"key":"motor_bldc","conf":"documented","spec":"Dual motor. Manual section 2 lists Rated Power 200W X 2 and Max Power 250W X 2. Motor type not stated.","source":"https://www.manualslib.com/manual/3619976/Hover-1-Ultra.html"},
+    {"key":"sensor_misc","conf":"documented","spec":"Gyroscope and acceleration sensors (manual section 1.3). Four sensors under the foot mats (section 3.2).","source":"https://www.manualslib.com/manual/3619976/Hover-1-Ultra.html"},
+    {"key":"led_light","conf":"documented","spec":"LED light, listed as item 7 in the manual's features and parts list.","source":"https://www.manualslib.com/manual/3619976/Hover-1-Ultra.html"},
+    {"key":"charger","conf":"documented","spec":"Charger listed in the manual's package contents (section 1.1). Specifications list Power Requirement AC 100V-240V, 50 Hz/60 Hz and Charge Time up to 5 hours (section 2). Output not stated.","source":"https://www.manualslib.com/manual/3619976/Hover-1-Ultra.html"},
+    {"key":"connector_charge","fn":"connector","spec":"Charging port on the rear of the unit (manual item 9). Connector type and rating not stated.","qty":1,"ext":3,"obs":2,"loc":"rear of the unit","conf":"documented","source":"https://www.manualslib.com/manual/3619976/Hover-1-Ultra.html"},
+    {"key":"connector_battery","fn":"connector","spec":"Black and yellow connecting cable, pinched and pulled apart to disconnect the battery. Connector type and rating not stated.","qty":1,"ext":2,"obs":3,"loc":"reached after the shell and the battery case are removed","conf":"documented","source":"https://www.ifixit.com/Guide/Hover-1+Ultra+Battery+Replacement/116762"},
+    {"key":"controller_board_motherboard","fn":"controller_board","spec":"Motherboard. The iFixit charging port guide names it as the board the port's insulated red and black wires are unclipped from. Board type and parts not stated.","qty":1,"ext":3,"obs":3,"conf":"documented","source":"https://www.ifixit.com/Guide/Hover-1+Ultra+Charging+Port+Replacement/116561"},
+    {"key":"switch_power","fn":"switch","spec":"Power button on the rear of the unit (manual item 8, section 3.1). Rating not stated.","qty":1,"ext":3,"obs":2,"loc":"rear of the unit","conf":"documented","source":"https://www.manualslib.com/manual/3619976/Hover-1-Ultra.html"}
+  ],
+  "sources": [
+    {"title":"Hover-1 ULTRA (HY-RM-ULTRA) Manual, manualslib (sections 1.1, 1.2, 1.3, 2, 3.1, 3.2, 5.2, 9)","url":"https://www.manualslib.com/manual/3619976/Hover-1-Ultra.html"},
+    {"title":"iFixit: Hover-1 Ultra device page (states model number HY-RM-ULTRA and release year 2017)","url":"https://www.ifixit.com/Device/Hover-1_Ultra"},
+    {"title":"iFixit: Hover-1 Ultra Troubleshooting wiki (names HY-RM-ULTRA)","url":"https://www.ifixit.com/Wiki/Hover-1_Ultra_Troubleshooting"},
+    {"title":"iFixit: Hover-1 Ultra Battery Replacement guide","url":"https://www.ifixit.com/Guide/Hover-1+Ultra+Battery+Replacement/116762"},
+    {"title":"iFixit: Hover-1 Ultra Charging Port Replacement guide","url":"https://www.ifixit.com/Guide/Hover-1+Ultra+Charging+Port+Replacement/116561"}
+  ]
+}

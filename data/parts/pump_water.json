@@ -1,0 +1,14 @@
+{
+  "id": "pump_water",
+  "name": "Water and fluid pumps",
+  "group": "Fluids",
+  "demand": 3,
+  "keywords": ["pump","water pump","bilge pump","sump pump","submersible","fuel pump","washer pump","well pump","pool pump","pond pump","fountain pump","circulation pump","circulator","booster pump","pressure pump","diaphragm pump","drain pump","dishwasher pump","transfer pump","hand pump","12v pump","dc pump","rv pump"],
+  "substitutes": ["compressor"],
+  "summary": "Pumps that move water and other liquids: submersible, centrifugal, diaphragm, bilge and hand pumps.",
+  "uses": ["Lifting water from wells, creeks and tanks","Pressurising a water system or shower","Draining flooded spaces","Moving fuel (fuel-rated pumps only)"],
+  "identify": "12V diaphragm pumps in RVs and boats; bilge pumps in boat hulls; sump pumps in basement pits; drain pumps in washers and dishwashers; pond and fountain pumps; well and pool pumps in sheds; hand pumps on farms and old wells.",
+  "test": "Prime it and run it with the inlet in a bucket: water should flow steadily. Don’t run it dry for long, and power mains pumps near water only through an RCD (GFCI).",
+  "decay": {"halfLifeMonths":null,"note":"Lasts; seals dry out and impellers stick after long storage but often free up."},
+  "hazards": ["mains"]
+}

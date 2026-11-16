@@ -1,0 +1,42 @@
+{
+  "id": "riding_mower",
+  "name": "Riding mower or lawn tractor",
+  "group": "Tools and yard",
+  "aliases": ["lawn tractor","ride-on mower","riding lawn mower","zero-turn mower","garden tractor","rider mower"],
+  "brands": ["John Deere","Craftsman","Husqvarna","Toro","Cub Cadet","Troy-Bilt","Ariens","Gravely","Bad Boy"],
+  "prev": 4,
+  "tools": ["socket","wrench","pliers"],
+  "mins": 60,
+  "kg": 180,
+  "hazards": ["fuel","sharp","heavy","acid"],
+  "comps": [
+    {"key":"engine_small","fn":"engine_small","spec":"Single or V-twin petrol engine, 15–25 hp, electric start, vertical shaft","w":[11190,18650],"qty":1,"ext":3,"obs":2,"loc":"Under the hood or behind the seat","kg":30},
+    {"key":"battery_pb","fn":"battery_pb","spec":"Small 12V starting battery (U1 size)","v":12,"qty":1,"ext":1,"obs":3,"loc":"Under the seat or hood"},
+    {"key":"alternator","fn":"alternator","spec":"Flywheel charging stator, about 3–15A at 12V","v":12,"a":[3,15],"qty":1,"ext":3,"obs":5,"loc":"Under the engine flywheel"},
+    {"key":"motor_dc_small","fn":"motor_dc_small","spec":"12V starter motor","v":12,"qty":1,"ext":2,"obs":5,"loc":"Side of the engine"},
+    {"key":"hydraulic","fn":"hydraulic","spec":"Hydrostatic drive pumps and wheel motors (hydrostatic tractors and zero-turns)","qty":2,"ext":4,"obs":5,"loc":"Rear axle or each drive wheel"},
+    {"key":"gearbox","fn":"gearbox","spec":"Transaxle with differential (gear-drive tractors)","qty":1,"ext":3,"obs":5,"loc":"Rear axle","kg":25},
+    {"key":"belt_pulley","fn":"belt_pulley","spec":"Drive and deck belts, pulleys and idlers","qty":6,"ext":2,"obs":4,"loc":"Under the frame and deck"},
+    {"key":"bearing","fn":"bearing","spec":"Deck spindle and wheel bearings","qty":8,"ext":2,"obs":4,"loc":"Deck and wheels"},
+    {"key":"fuel_liquid","fn":"fuel_liquid","spec":"Petrol left in the tank, 5–12 L (stale after some months)","qty":1,"ext":1,"obs":3,"loc":"Tank under the seat or hood"},
+    {"key":"oil_lube","fn":"oil_lube","spec":"Engine oil, about 1.5–2 L","qty":1,"ext":1,"obs":5,"loc":"Engine sump"},
+    {"key":"solenoid_actuator","fn":"solenoid_actuator","spec":"12V starter solenoid","v":12,"qty":1,"ext":1,"obs":5,"loc":"Near the battery"},
+    {"key":"switch","fn":"switch","spec":"Seat, brake and blade safety switches","qty":3,"ext":1,"obs":5,"loc":"Seat and pedals"},
+    {"key":"led_light","fn":"led_light","spec":"12V headlights","v":12,"qty":2,"ext":1,"obs":4,"loc":"Front"}
+  ],
+  "buildings": [
+    {"b":"garage_res","l":5},
+    {"b":"farm","l":5},
+    {"b":"house","l":4},
+    {"b":"golf","l":4},
+    {"b":"hardware","l":4},
+    {"b":"farm_supply","l":4},
+    {"b":"garden_centre","l":3},
+    {"b":"school","l":3},
+    {"b":"church","l":3},
+    {"b":"campground","l":3},
+    {"b":"self_storage","l":2},
+    {"b":"stadium","l":2}
+  ],
+  "notes": "The whole tractor is a slow load hauler with a trailer. The engine runs a generator head well on a belt."
+}

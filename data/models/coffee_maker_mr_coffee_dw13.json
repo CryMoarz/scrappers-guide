@@ -1,0 +1,19 @@
+{
+  "id": "coffee_maker_mr_coffee_dw13",
+  "device": "coffee_maker",
+  "brand": "Mr. Coffee",
+  "model": "DW13 (drip coffeemaker)",
+  "notes": "A simple drip maker: per the teardown, one heater under the water pipe heats both the water and the pot, with a power switch and a temperature regulator. The parts are named in iFixit's DW13 teardown and heating-plate guide.",
+  "research": {"checked":"2026-11-12","gaps":["The iFixit guides give no wattage, voltage, current, temperature or part numbers, so no ratings are claimed. The teardown is community-contributed.","Whether the heating plate carries an element of its own is not shown; the teardown names one resistor as both pot heater and water heater.","A comment on the heating-plate guide mentions thermal fuses; comments are not the guide, so no fuse is claimed.","A Sunbeam spec sheet for the DWA12-NP and DWA13-NP lists a rating, but nothing ties that model to the DW13, so no rating is used.","The DW13's cup count is not shown, so none is claimed.","Commenters mention BVMC-EVX23 and FTX49; neither is confirmed as the DW13."],"method":["iFixit guide 107184, Mr. Coffee DW13 Teardown (community-contributed), read through the iFixit API; the guide page also opened normally.","iFixit guide 22648, Mr. Coffee DW13 Heating Plate Replacement, read through the iFixit API; its comments were read and not used for any part.","The Sunbeam DWA12-NP / DWA13-NP specification sheet and the Mr. Coffee DW Series 12-cup manual (2008) were read; neither names the DW13, and nothing is taken from them.","IFixit content is CC BY-NC-SA, used here for facts and links only."]},
+  "comps": [
+    {"key":"heating_element","conf":"documented","spec":"Heater under the metal pipe that carries the water; the teardown calls this one resistor both the pot heater and the water heater.","loc":"Under the metal water pipe","source":"https://www.ifixit.com/Guide/Mr.+Coffee+DW13+Teardown/107184"},
+    {"key":"heating_element_warming_plate","fn":"heating_element","spec":"Heating plate, a separate part from the heating coil that the water tubing attaches to. The guide takes two 13 mm screws off the silver support bracket, lifts the bracket to free the plate from the coil, and pushes the plate out from the front.","qty":1,"ext":2,"obs":4,"conf":"documented","source":"https://www.ifixit.com/Guide/Mr.+Coffee+DW13+Heating+Plate+Replacement/22648"},
+    {"key":"thermostat","conf":"documented","spec":"Temperature regulator that keeps the water and the pot from going above a set temperature; removing two screws frees it along with the water heater and pot heater.","source":"https://www.ifixit.com/Guide/Mr.+Coffee+DW13+Teardown/107184"},
+    {"key":"switch_power","fn":"switch","spec":"Power switch connected to the power cord; with it on, power goes on to the heater and the temperature regulator.","qty":1,"ext":1,"obs":3,"loc":"Where the power cord connects","conf":"documented","source":"https://www.ifixit.com/Guide/Mr.+Coffee+DW13+Teardown/107184"},
+    {"key":"hose_tubing","conf":"documented","spec":"Rubber tubing that carries the water through the heated metal pipe (teardown). On the heating coil it is held by crimps, which the heating plate guide pinches loose, slides down the tubing and then pulls the tubing off the coil.","loc":"At the heating coil","source":"https://www.ifixit.com/Guide/Mr.+Coffee+DW13+Heating+Plate+Replacement/22648"}
+  ],
+  "sources": [
+    {"title":"Mr. Coffee DW13 Teardown, iFixit guide 107184 (community-contributed)","url":"https://www.ifixit.com/Guide/Mr.+Coffee+DW13+Teardown/107184"},
+    {"title":"Mr. Coffee DW13 Heating Plate Replacement, iFixit guide 22648","url":"https://www.ifixit.com/Guide/Mr.+Coffee+DW13+Heating+Plate+Replacement/22648"}
+  ]
+}

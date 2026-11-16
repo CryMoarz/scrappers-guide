@@ -1,0 +1,9 @@
+state
+dist
+test
+*.zip
+*.key
+.git
+node_modules
+research
+app/src

@@ -1,0 +1,41 @@
+{
+  "id": "escalator",
+  "name": "Escalator or moving walkway",
+  "group": "Building systems",
+  "aliases": ["escalator","moving staircase","moving walkway","travelator","moving sidewalk","moving stairs"],
+  "brands": ["Otis","Schindler","KONE","ThyssenKrupp","Mitsubishi Electric","Hitachi","Fujitec"],
+  "prev": 2,
+  "tools": ["screwdriver","socket","wrench","pry","heavy"],
+  "mins": 180,
+  "kg": 8000,
+  "hazards": ["heavy","crush","mains","fall"],
+  "comps": [
+    {"key":"chain_sprocket","fn":"chain_sprocket","spec":"Heavy step chains and drive chain with large sprockets","qty":3,"ext":5,"obs":5,"loc":"Both sides of the truss; drive at the top"},
+    {"key":"motor_ac","fn":"motor_ac","spec":"3-phase drive motor, about 5–20 kW","w":[5000,20000],"qty":1,"ext":4,"obs":5,"loc":"Machine space under the top floor plate","kg":120},
+    {"key":"gearbox","fn":"gearbox","spec":"Worm or helical gear reducer","qty":1,"ext":5,"obs":5,"loc":"Coupled to the drive motor","kg":150},
+    {"key":"solenoid_actuator","fn":"solenoid_actuator","spec":"Electromagnetic brake","v":[100,210],"qty":1,"ext":3,"obs":5,"loc":"On the motor shaft"},
+    {"key":"bearing","fn":"bearing","spec":"Step and chain rollers with sealed bearings, hundreds","qty":100,"ext":3,"obs":5,"loc":"Every step and chain link"},
+    {"key":"foam_rubber","fn":"foam_rubber","spec":"Rubber handrail belts with fabric and steel cord, 20–50 m loops","qty":2,"ext":4,"obs":5,"loc":"Balustrades"},
+    {"key":"oil_lube","fn":"oil_lube","spec":"Gearbox oil and chain oiler reservoir, 10–30 L","qty":1,"ext":2,"obs":5,"loc":"Top machine space"},
+    {"key":"relay","fn":"relay","spec":"Contactors and safety relays","a":[25,65],"qty":6,"ext":2,"obs":5,"loc":"Controller in the top pit"},
+    {"key":"switch","fn":"switch","spec":"Safety switches for comb plates, skirts and handrail entries","qty":10,"ext":2,"obs":5,"loc":"Top and bottom landings"},
+    {"key":"sheet_metal","fn":"sheet_metal","spec":"Stainless steel skirt and deck panels","qty":10,"ext":2,"obs":5,"loc":"Sides and top of the balustrades"},
+    {"key":"led_light","fn":"led_light","spec":"Step, comb and balustrade lights","qty":6,"ext":2,"obs":5,"loc":"Landings and balustrades"}
+  ],
+  "boards": [
+    {"id":"mcu_board","qty":1,"loc":"Controller in the top pit","p":1},
+    {"id":"vfd_drive","qty":1,"loc":"Controller in the top pit","p":0.7}
+  ],
+  "buildings": [
+    {"b":"mall","l":5},
+    {"b":"airport","l":5},
+    {"b":"train_station","l":5},
+    {"b":"department","l":4},
+    {"b":"stadium","l":3},
+    {"b":"cinema","l":3},
+    {"b":"hotel","l":2},
+    {"b":"hospital","l":2},
+    {"b":"office","l":2}
+  ],
+  "notes": "Lift the floor plates at the top landing to reach the machine space. Never stand on steps while the drive is being worked on."
+}

@@ -1,0 +1,15 @@
+{
+  "id": "co_gas",
+  "label": "Carbon monoxide",
+  "severity": 5,
+  "summary": "Carbon monoxide (CO) comes from anything that burns: generators, engines, stoves, barbecues, heaters, charcoal and wood. You can't see, smell or taste it. In a closed space it kills in minutes to hours, often while people sleep, and it builds up in garages, tents, basements and vehicles even with a door open.",
+  "signs": ["Headache, dizziness, nausea, tiredness or confusion","Several people or pets ill at once, and better when they go outside","A CO alarm sounding","Yellow, sooty flames instead of blue; soot around a heater or flue","Stuffy air and condensation on windows where something is burning"],
+  "do": ["Run generators and engines outdoors, at least 6 m from doors, windows and vents, with the exhaust pointing away","Vent every stove and heater to the outside, and keep a fresh-air opening as well","Fit a battery CO alarm in every sleeping area; take them from abandoned homes, but check the replace-by date (sensors wear out after about 7–10 years) and fit fresh batteries: the test button only checks the beeper, not the sensor","Turn off burners and heaters before sleeping unless they are properly flued","Get everyone outside at once if the alarm sounds or anyone has these symptoms","If you must run a stopped vehicle for heat, clear snow and mud from the exhaust pipe, open a window a little, and run it only about 10 minutes each hour"],
+  "dont": ["Don't run a generator, engine or charcoal grill indoors, in a garage, tent or basement, or under a tarp, even with doors open","Don't heat a room with a gas oven or camp stove","Don't sleep in a running vehicle or next to an unflued heater","Don't ignore a headache that gets better outside"],
+  "ppe": ["A working battery CO alarm","Dust masks and respirators do nothing against CO"],
+  "firstAid": ["Get the person into fresh air at once; open doors and windows, but don't become a second victim","Turn off the source if you can do it quickly","If they aren't breathing normally, start CPR","Anyone who passed out, is confused, has chest pain, or is pregnant needs medical care and oxygen","Headaches and memory problems can appear days later"],
+  "refs": [
+    {"lib":"wikimed","q":"Carbon monoxide poisoning"},
+    {"lib":"wikipedia","q":"Carbon monoxide poisoning"}
+  ]
+}

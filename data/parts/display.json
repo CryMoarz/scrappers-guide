@@ -1,0 +1,14 @@
+{
+  "id": "display",
+  "name": "Displays",
+  "group": "Signal and control",
+  "demand": 1,
+  "keywords": ["display","screen","lcd","monitor","lcd screen","lcd panel","oled","tft","16x2","1602","hd44780","e-ink","crt","tv screen","touchscreen","backlight"],
+  "substitutes": [],
+  "summary": "Screens of every kind: LCD panels, small character displays, OLEDs, e-ink and old CRTs.",
+  "uses": ["Monitor for a CCTV camera, computer or Raspberry Pi","Small readouts for chargers and meters","LED backlight panels as soft light sources"],
+  "identify": "TVs, monitors, laptops, phones, car stereos and appliance panels; small 16x2 character LCDs sit on printers, alarm panels and lab gear. Older LCDs use thin backlight tubes that hold mercury, and CRTs (deep glass tubes) hold vacuum and charge: leave them whole.",
+  "test": "Power the whole device and check the picture before stripping it. Shine a torch on a dark LCD: a faint image means the panel works and only the backlight is dead.",
+  "decay": {"halfLifeMonths":null,"note":"Lasts dry; cracked panels can’t be fixed."},
+  "hazards": ["implosion","hv_cap","mercury"]
+}

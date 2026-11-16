@@ -1,0 +1,25 @@
+# docker compose -f deploy/docker-compose.yml up -d
+# One service is enough. On Project NOMAD, use the Supply Depot instead (docs/NOMAD.md).
+# Use the hub for the master or a regional hub; use a node for a camp, a NOMAD box or a cyberdeck
+# that mirrors a hub and forwards contributions when it can reach it.
+services:
+  scrappers-guide:
+    build:
+      context: ..
+      dockerfile: deploy/Dockerfile
+    image: scrappers-guide:local
+    restart: unless-stopped
+    ports:
+      - "8787:8787"
+    environment:
+      SDG_MODE: "hub"                  # hub | node
+      # SDG_UPSTREAM: "https://hub.example.org"   # node mode: the hub to sync with
+      # SDG_ADMINS: "adminid1,adminid2"   # hub mode: the 32-character admin id from `node tools/keys.js show admin.key`
+      # SDG_NOMAD: "off"               # don't look for Project NOMAD (default: auto)
+      # SDG_COMMENTS: "off"            # save space on small devices
+      # SDG_STORE: "files"             # force the plain-file store
+    volumes:
+      - sdg:/guide
+
+volumes:
+  sdg:

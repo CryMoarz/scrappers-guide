@@ -1,0 +1,40 @@
+{
+  "id": "holiday_decor",
+  "name": "Holiday decorations (lights and inflatables)",
+  "group": "Household and furniture",
+  "aliases": ["christmas lights","fairy lights","string lights","yard inflatable","halloween decorations","led candles","tea lights","blow mold","light projector"],
+  "brands": ["Gemmy","Home Accents Holiday","Holiday Living","GE","Philips","Feit Electric","Twinkly","Govee"],
+  "prev": 5,
+  "tools": ["hands","cutters","screwdriver"],
+  "mins": 10,
+  "kg": 3,
+  "hazards": [],
+  "comps": [
+    {"key":"led_light","fn":"led_light","spec":"LED light strings, 50–300 bulbs: mains strings, or low-voltage battery and solar strings that run on 3–4.5V","v":[3,4.5],"qty":3,"ext":1,"obs":4,"loc":"Boxes and tubs, or on eaves and trees"},
+    {"key":"fan","fn":"fan","spec":"12V DC blower inside each inflatable — a ready blower for a forge or stove","v":12,"qty":1,"ext":1,"obs":5,"loc":"Base of the inflatable"},
+    {"key":"psu","fn":"psu","spec":"12V adapters for inflatables and light displays","v":12,"qty":1,"ext":1,"obs":5,"loc":"On the inflatable's lead"},
+    {"key":"solar_panel","fn":"solar_panel","spec":"Small solar panels on solar string lights and stakes, about 2–6V, usually with one AA NiMH cell underneath","w":[0.1,1],"v":[2,6],"qty":2,"ext":1,"obs":5,"loc":"Stake on the light string"},
+    {"key":"battery_coin","fn":"battery_coin","spec":"CR2032 coin cells in LED tea lights and small light-up decorations","v":3,"ah":0.22,"qty":6,"ext":1,"obs":5,"loc":"Underneath each tea light"},
+    {"key":"fabric_tarp","fn":"fabric_tarp","spec":"Ripstop nylon from inflatables — light waterproof fabric","qty":1,"ext":1,"obs":5,"loc":"The inflatable itself"},
+    {"key":"wire_copper","fn":"wire_copper","spec":"Outdoor extension cords and lots of thin twin wire","qty":3,"ext":1,"obs":4,"loc":"With the lights"},
+    {"key":"motor_sync","fn":"motor_sync","spec":"Slow motors in animated figures and rotating stands","qty":1,"ext":2,"obs":5,"loc":"Inside animated pieces"},
+    {"key":"opto_sensor","fn":"opto_sensor","spec":"Photocell switches and plug-in timers","qty":1,"ext":1,"obs":5,"loc":"On the extension cords"}
+  ],
+  "boards": [],
+  "buildings": [
+    {"b":"self_storage","l":5},
+    {"b":"house","l":5},
+    {"b":"department","l":5},
+    {"b":"garden_centre","l":4},
+    {"b":"church","l":4},
+    {"b":"mall","l":4},
+    {"b":"hardware","l":4},
+    {"b":"apartment","l":3},
+    {"b":"hotel","l":3},
+    {"b":"school","l":3},
+    {"b":"nursing_home","l":3},
+    {"b":"supermarket","l":3},
+    {"b":"warehouse","l":3},
+    {"b":"office","l":2}
+  ]
+}

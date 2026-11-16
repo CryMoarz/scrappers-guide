@@ -1,0 +1,17 @@
+{
+  "id": "hot_water",
+  "name": "Heat water",
+  "keywords": ["hot water","heat water","warm water","hot shower","warm shower","solar shower","solar water heater","bath water","wash in hot water"],
+  "summary": "Sunlight does it for free: a coil of black hose or a dark tank in a glazed box gets water hot enough to wash in on a sunny afternoon. An old water heater tank, painted black and boxed behind glass, makes a large batch heater. A water heater element wired straight to house solar panels makes heat with no battery or inverter, if every switch is rated for DC.",
+  "parts": [
+    {"fn":"hose_tubing","why":"A coil of black hose makes a quick solar water heater","core":true},
+    {"fn":"tank","why":"Dark tanks heat and hold water; old water heater tanks are ideal","core":true},
+    {"fn":"glass_pane","why":"Glazing traps heat in a solar collector box","core":true},
+    {"fn":"heating_element","why":"Water heater elements run on solar panels directly or on spare power"},
+    {"fn":"sheet_metal","why":"Painted black, it collects heat behind glass"},
+    {"fn":"insulation","why":"Keeps heated water hot overnight"},
+    {"fn":"solar_panel","why":"Drives a heating element with no battery","need":{"w":100}}
+  ],
+  "guides": ["build_solar_shower","teardown_water_heater"],
+  "tips": ["Never heat water in a sealed container. It needs a vent or a pressure relief valve.","Test the temperature before you shower: a black hose in full sun can scald.","On DC, use switches and thermostats rated for DC. AC ones can arc and burn.","Put a pot of water on the stove after cooking to use the leftover heat."]
+}

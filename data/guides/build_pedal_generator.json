@@ -1,0 +1,45 @@
+{
+  "id": "build_pedal_generator",
+  "kind": "build",
+  "title": "Pedal generator from a bicycle and a DC motor",
+  "keywords": ["pedal power","bike generator","bicycle generator","pedal generator","human power","exercise bike generator","charge battery by pedalling","treadmill motor generator"],
+  "summary": "Mount a bicycle on a stand and let its rear wheel spin a permanent-magnet DC motor that charges a 12V battery. A fit adult can keep up 50–100W; an hour's pedalling puts about 30–60Wh into the battery, enough for several phones and a night of LED light.",
+  "difficulty": 3,
+  "mins": 360,
+  "tools": ["wrench","socket","drill","saw","screwdriver","multimeter","crimper","cutters","clamps"],
+  "hazards": ["crush","burn","acid"],
+  "materials": [
+    {"item":"Permanent-magnet DC motor: treadmill motor (best) or a 24–36V brushed scooter or wheelchair motor","qty":"1","fn":"motor_dc_large"},
+    {"item":"Smaller 12–24V brushed motor as an alternative generator","qty":"1","fn":"motor_dc_small","optional":true},
+    {"item":"Bicycle with a sound rear wheel","qty":"1"},
+    {"item":"Bridge rectifier or blocking diode, 15–25A","qty":"1","fn":"bridge_rect","only":["15–25a","25–50a","input bridge","heavy rectifier","treadmill"]},
+    {"item":"Deep-cycle 12V battery","qty":"1","fn":"battery_pb","only":["deep-cycle","vrla","agm"]},
+    {"item":"Fuse and holder within 30 cm of battery +, 15–20A","qty":"1","fn":"fuse","only":["blade"]},
+    {"item":"Wire 14–12 AWG (2.5–4 mm²)","qty":"2–4 m","fn":"wire_copper","only":["extension","heavy","feed cable"]},
+    {"item":"Stand: timber or steel tube to lift and clamp the rear axle","qty":"about 3 m","fn":"lumber"},
+    {"item":"Drive roller or pulley: the motor's flywheel wrapped in inner tube, or a belt and pulley","qty":"1","fn":"belt_pulley","only":["flywheel"]},
+    {"item":"Spring or bungee to press the roller on the tyre","qty":"1","fn":"spring","optional":true},
+    {"item":"Panel voltmeter and ammeter","qty":"1 each","optional":true},
+    {"item":"Bolts, hinges, screws","qty":"some","fn":"fasteners","optional":true}
+  ],
+  "steps": [
+    {"text":"Choose the motor and find its volts per 1,000 rpm: rated volts ÷ rated rpm × 1,000. You want about 15–18V at a comfortable pedalling speed."},
+    {"text":"Work out the roller size with the gearing maths in the notes. Often a treadmill motor's own flywheel (about 100–150 mm across) is close to right for a 26–29 inch wheel."},
+    {"text":"Build the stand: clamp the rear axle so the tyre is 2–5 cm off the floor, and block the front wheel so the bike sits level. It must not rock or tip when you stand on the pedals."},
+    {"text":"Mount the motor on a hinged plate so the roller presses on the tyre, parallel to the wheel. Use a spring or bungee for steady pressure. For a belt drive instead, take the tyre off and run a belt from the rim to the motor pulley.","warn":"The tyre and roller form a pinch point that can strip skin and catch fingers, hair and laces. Cover it with a guard."},
+    {"text":"Wire: motor leads → rectifier AC terminals; rectifier + → fuse → battery +; rectifier − → battery −. Put the fuse within 30 cm of the battery. Leave it out until you are ready.","warn":"Remove rings and watches; a tool across battery terminals arcs and burns. Charge in a ventilated space; charging lead-acid batteries give off hydrogen."},
+    {"text":"Connect a voltmeter across the battery and, if you have one, an ammeter in the battery line."},
+    {"text":"Insert the fuse and pedal. Current flows once the motor's voltage beats the battery's. Adjust roller pressure: too little slips and squeals, too much drags."},
+    {"text":"Pedal in 20–40 minute sessions. Stop when the battery reads 14.4V. Run your loads from the battery, never straight from the generator.","warn":"Never pedal hard with the battery disconnected: voltage can shoot past 30V and destroy anything plugged in."},
+    {"text":"Every week: check bolts, roller wear and tyre pressure. Pump the tyre firm so it rolls easily against the roller."}
+  ],
+  "notes": "## What a person can make\n- Fit adult: 50–100W for an hour; 150–200W for a few minutes.\n- After losses (roller slip, motor, rectifier, battery) about 60–70% reaches the battery. One hour at 75W ≈ 50Wh stored.\n- 50Wh charges 3–5 phones, or runs 5W of LED light for 10 hours. It won't run a fridge or a kettle.\n\n## Gearing maths\n1. Volts per rpm: rated V ÷ rated rpm. Example: 130V at 6,700 rpm → 0.019 V/rpm.\n2. Target motor rpm = target volts ÷ volts per rpm: 17V ÷ 0.019 ≈ 880 rpm.\n3. Wheel rpm at a comfortable road speed: 20 km/h on a 0.67 m (26–28 inch) wheel ≈ 160 rpm.\n4. Ratio = 880 ÷ 160 = 5.5. Roller diameter = wheel diameter ÷ ratio = 670 ÷ 5.5 ≈ 120 mm.\n\nA smaller roller spins the motor faster: higher voltage, harder pedalling. If it's too hard, use a bigger roller or a lower-voltage motor.\n\n## Why it gets heavy\nBelow battery voltage, nothing flows and pedalling is easy. Above it, current = (motor volts − battery volts) ÷ motor resistance (often 1–3 Ω on treadmill motors). Each extra volt adds load fast. That's why gearing matters.\n\n## Other generators\n- **Exercise bikes** with a self-powered console already have a generator; some can be tapped.\n- **Brushless hub motors** (e-bikes, hoverboards) give 3-phase AC: rectify with three bridge rectifiers or a 3-phase bridge.\n- **Car alternators** need about 1,500–2,000 rpm and a few amps of field current before they make anything. Poor for pedal power.\n- **Bottle dynamos** (bike lights) make 3–6W: enough for a phone through a USB regulator, slowly.\n\n## Troubleshooting\n- Pedals freely, no charge: below battery voltage (gear up), roller slipping, rectifier or fuse open.\n- Too hard to pedal: gear down (bigger roller) or reduce roller pressure.\n- Battery voltage jumps high and drops fast after pedalling: the battery is sulphated or small.\n\n## If you lack a part\n- No rectifier: a single diode in the positive line works if you get polarity right; check with the multimeter while spinning.\n- No stand: a commercial bike trainer works and its roller can drive the motor.\n",
+  "tree": {"era":4,"branch":"power","requires":["test_motor","build_battery_bank_lead_acid"]},
+  "devices": ["treadmill","bicycle","exercise_bike","scooter","power_wheelchair","ride_on_toy","car","ups"],
+  "parts": ["motor_dc_large","motor_dc_small","bridge_rect","battery_pb","dynamo"],
+  "license": "CC-BY-SA-4.0",
+  "refs": [
+    {"lib":"lowtech","q":"pedal power"},
+    {"lib":"appropedia","q":"bicycle generator"}
+  ]
+}

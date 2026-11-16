@@ -1,0 +1,14 @@
+{
+  "id": "rod_shaft",
+  "name": "Rods, shafts and rails",
+  "group": "Mechanical",
+  "demand": 1,
+  "keywords": ["rod","shaft","steel rod","guide rod","rail","axle","linear rail","linear rod","smooth rod","guide rail","steel bar","round bar","rebar","drive shaft","8mm rod"],
+  "substitutes": [],
+  "summary": "Steel rods, shafts, rails and bars: axles, guide rods and rebar.",
+  "uses": ["Axles for carts and generators","Linear guides for sliding mechanisms","Pry bars, stakes and frame parts"],
+  "identify": "Polished guide rods in printers, scanners and copiers; axles in mowers, prams and treadmills; rebar on building sites; drive shafts in washers and vehicles.",
+  "test": "Roll it on a flat surface: a straight rod rolls evenly without wobble. Check bearing surfaces for rust pits.",
+  "decay": {"halfLifeMonths":null,"note":"Lasts; polished rods rust if left damp."},
+  "hazards": []
+}

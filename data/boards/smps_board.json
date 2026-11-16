@@ -1,0 +1,21 @@
+{
+  "id": "smps_board",
+  "name": "Mains switch-mode power supply",
+  "notes": "Found in TVs, printers, LED drivers, monitors and many appliances. The bulk capacitor can stay charged.",
+  "comps": [
+    {"key":"fuse","fn":"fuse","spec":"Glass or ceramic input fuse, 2–6A","a":[2,6],"qty":1,"ext":2,"obs":4,"loc":"Next to the mains input"},
+    {"key":"surge_protect","fn":"surge_protect","spec":"MOV surge suppressor and NTC inrush thermistor","qty":2,"ext":3,"obs":5,"loc":"Mains input"},
+    {"key":"inductor","fn":"inductor","spec":"Common-mode choke","qty":1,"ext":3,"obs":5,"loc":"Mains input"},
+    {"key":"cap_film","fn":"cap_film","spec":"X2 safety capacitor","qty":1,"ext":3,"obs":5,"loc":"Mains input"},
+    {"key":"bridge_rect","fn":"bridge_rect","spec":"Bridge rectifier, 600V+","v":600,"qty":1,"ext":3,"obs":4,"loc":"After the filter"},
+    {"key":"cap_bulk","fn":"cap_elec","spec":"Bulk 400V electrolytic — discharge before handling","v":400,"qty":1,"ext":3,"obs":4,"loc":"Tallest capacitor on the board"},
+    {"key":"ic_pwm","fn":"ic_pwm","spec":"PWM controller IC (UC384x-type or integrated switcher)","qty":1,"ext":4,"obs":5,"loc":"Near the transformer"},
+    {"key":"mosfet","fn":"mosfet","spec":"High-voltage switching MOSFET, 600V+","v":600,"qty":1,"ext":3,"obs":4,"loc":"On a heatsink"},
+    {"key":"ferrite_xfmr","fn":"ferrite_xfmr","spec":"Ferrite switching transformer","qty":1,"ext":3,"obs":5,"loc":"Centre of the board"},
+    {"key":"optocoupler","fn":"optocoupler","spec":"Optocoupler (PC817-type) for feedback","qty":1,"ext":3,"obs":5,"loc":"Across the isolation gap"},
+    {"key":"tl431","fn":"tl431","spec":"TL431 shunt reference","qty":1,"ext":4,"obs":5,"loc":"Output side, near the optocoupler"},
+    {"key":"diode_schottky","fn":"diode_schottky","spec":"Output Schottky or fast-recovery diodes","qty":2,"ext":3,"obs":4,"loc":"Output side, often on a heatsink"},
+    {"key":"cap_out","fn":"cap_elec","spec":"Low-ESR output capacitors","qty":3,"ext":2,"obs":4,"loc":"Output side"},
+    {"key":"heatsink","fn":"heatsink","spec":"Aluminium heatsinks","qty":2,"ext":2,"obs":4,"loc":"Bolted to the MOSFET and diodes"}
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "id": "hair_dryer",
+  "name": "Hair dryers",
+  "group": "Household and furniture",
+  "aliases": ["blow dryer","hairdryer","blow-dryer","salon dryer","hair blower","ionic dryer"],
+  "brands": ["Conair","Revlon","BaBylissPRO","Dyson","T3","Remington","Philips"],
+  "prev": 5,
+  "tools": ["screwdriver","security_bits"],
+  "mins": 10,
+  "kg": 0.6,
+  "repairs": {"records":4467,"fixed":0.65,"end_of_life":0.25},
+  "hazards": [],
+  "comps": [
+    {"key":"motor_dc_small","fn":"motor_dc_small","spec":"Small 12–24V DC motor fed through a diode bridge from a tap on the heater — runs from a battery once removed","v":[12,24],"qty":1,"ext":2,"obs":5,"loc":"Behind the fan at the back"},
+    {"key":"heating_element","fn":"heating_element","spec":"Nichrome ribbon on mica cards, about 1,000–1,800W — spare nichrome for hot-wire cutting","w":[1000,1800],"qty":1,"ext":2,"obs":4,"loc":"Barrel"},
+    {"key":"fan","fn":"fan","spec":"Small plastic impeller","qty":1,"ext":1,"obs":5,"loc":"On the motor shaft"},
+    {"key":"bridge_rect","fn":"bridge_rect","spec":"Bridge rectifier or four diodes feeding the motor","qty":1,"ext":2,"obs":5,"loc":"On the motor leads"},
+    {"key":"thermostat","fn":"thermostat","spec":"Bimetal cutoff and one-shot thermal fuse","qty":2,"ext":2,"obs":5,"loc":"In the barrel beside the element"},
+    {"key":"switch","fn":"switch","spec":"Heat and speed slide switches","qty":2,"ext":2,"obs":5,"loc":"Handle"},
+    {"key":"wire_copper","fn":"wire_copper","spec":"Mains cord, about 1.8 m","qty":1,"ext":1,"obs":5,"loc":"Handle"}
+  ],
+  "boards": [],
+  "buildings": [
+    {"b":"house","l":5},
+    {"b":"apartment","l":5},
+    {"b":"hotel","l":5},
+    {"b":"gym","l":4},
+    {"b":"department","l":4},
+    {"b":"nursing_home","l":3},
+    {"b":"pharmacy","l":3},
+    {"b":"school","l":2},
+    {"b":"campground","l":2},
+    {"b":"self_storage","l":2},
+    {"b":"supermarket","l":2},
+    {"b":"salon","l":5}
+  ],
+  "notes": "Professional and newer high-speed dryers may use AC or brushless motors instead of the small DC motor.",
+  "sources": [
+    {"title":"Open Repair Alliance, Open Repair Data v0.3 (community repair events, 2012 to July 2026; CC BY-SA 4.0): 4,467 repairs recorded as Hair dryer","url":"https://github.com/openrepair/data"}
+  ]
+}

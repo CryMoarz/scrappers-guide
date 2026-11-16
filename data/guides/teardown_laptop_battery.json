@@ -1,0 +1,30 @@
+{
+  "id": "teardown_laptop_battery",
+  "kind": "teardown",
+  "title": "Laptop battery pack: harvest the cells",
+  "keywords": ["laptop battery teardown","laptop battery cells","18650 harvest","salvage 18650","battery pack teardown","laptop pack","notebook battery"],
+  "summary": "Old laptop packs usually hold 3–9 cylindrical 18650 lithium-ion cells joined by nickel strip, plus a protection board. Many \"dead\" packs have good cells behind a locked-out board. Open the case without stabbing a cell, break the strips without shorting anything, and sort the cells with a meter.",
+  "difficulty": 3,
+  "mins": 30,
+  "tools": ["screwdriver","pry","knife","pliers","cutters","multimeter","tape"],
+  "hazards": ["li_fire","sharp"],
+  "materials": [],
+  "steps": [
+    {"text":"Get the pack out. Older laptops: slide the latches on the underside and lift it out. Newer ones: remove the bottom cover screws and unplug the pack from the motherboard before you touch anything else.","warn":"Never pry under a built-in battery to free it. Bent pouch cells catch fire."},
+    {"text":"Look at the pack. If it is swollen, hot, dented or leaking, stop and follow safety_swollen_lithium. Read the label: 10.8–11.1 V means 3 cells in series; 14.4–14.8 V means 4."},
+    {"text":"Work outdoors or on a metal tray or concrete, with sand or dirt close by. Take off rings and watches."},
+    {"text":"Find the seam in the plastic case. Start at a corner or end where the protection board sits, not in the middle where the cells are. Work a flat blade into the seam and twist to crack the glue. Move along the seam a little at a time.","warn":"Never push a blade, screwdriver or pry bar into the case where it could reach a cell."},
+    {"text":"Lift the shell off. Note the layout: groups of cells in parallel, joined in series by nickel strips, with thin balance wires running to the board at one end."},
+    {"text":"Cut the main leads from the board to the cell groups one at a time, taping each cut end. Then cut the balance wires one at a time.","warn":"Cut one wire at a time. Cutting two at once can short a group through the cutters."},
+    {"text":"Separate the cells: grip a nickel strip with pliers and peel it off slowly by rolling or twisting, not by levering against the next cell. Leave a small stub of strip on each cell for later soldering if you can.","warn":"Don't let the pliers touch both ends of a cell or two groups at once. Don't dent or bend the cell tops."},
+    {"text":"Pouch packs (flat foil cells) from thin laptops: don't separate them. Keep the pack whole, with its board, or leave it."},
+    {"text":"Measure every cell. Above 3.0 V: good candidate. 2.0–3.0 V: charge slowly and watch for heat. Below 2.0 V, or one that heats up: reject. Then test capacity and self-discharge (see test_lithium_cell)."},
+    {"text":"Store cells with their ends covered (tape, caps or a box with dividers), at about 3.6–3.8 V, somewhere cool and fireproof."},
+    {"text":"While the laptop is open, take the 19 V charger brick, the lid magnets near the palm rest and lid edge, the small blower fan and the speakers."}
+  ],
+  "notes": "## What's worth keeping and why\n\n- **18650 cells.** 3.6–3.7 V nominal, 4.2 V full. New laptop cells were about 2,000–3,200 mAh; salvaged ones often give 60–90% of that. Rebuild them into packs for lights, radios, power banks and e-bike repairs (see build_18650_pack).\n- **Protection board (BMS).** Usually tied to its pack and hard to reuse, but its MOSFETs and thermistor are good spares.\n- **Charger brick.** About 19 V at 2–5 A: a good supply for a buck converter or a 12 V system charger.\n- **Lid magnets.** Small neodymium bars.\n\n## Reading the pack\n\n| Label voltage | Cells in series | Common layouts |\n|---|---|---|\n| 10.8–11.1 V | 3 | 3 or 6 cells (3S1P, 3S2P), 9 in some (3S3P) |\n| 14.4–14.8 V | 4 | 4 or 8 cells (4S1P, 4S2P) |\n| 7.2–7.4 V | 2 | 2 or 4 cells, small netbooks |\n\nWatt-hours on the label tell you the size: a 48 Wh pack at 10.8 V holds about 4,400 mAh, likely 6 cells of about 2,200 mAh.\n\n## Why \"dead\" packs often have good cells\n\nLaptop boards lock the pack out when one parallel group drops too low, or when the pack hits a set age or cycle count. The other groups may be fine. Measure each group before you give up on a pack.\n\n## Variations\n\n- Some packs use prismatic or pouch cells instead of cylinders. Pouches are fragile; leave them whole.\n- Some newer cylinders are 21700 size (21 mm by 70 mm) or thinner 14500 or 18500 sizes.\n- Cells are often wrapped in cardboard spacers and glue. Peel glue off slowly with your fingers.\n\n## What to leave\n\n- Cells under 2.0 V, cells that get warm on their own, dented or rusty cells.\n- Cells whose wrap is torn: rewrap them with tape or heat-shrink before storing, or reject them.",
+  "tree": {"era":3,"branch":"salvage","requires":["safety_swollen_lithium"]},
+  "devices": ["laptop"],
+  "parts": ["battery_li","bms","psu","magnet_strong"],
+  "license": "CC-BY-SA-4.0"
+}

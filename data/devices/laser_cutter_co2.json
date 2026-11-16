@@ -1,0 +1,23 @@
+{
+  "id": "laser_cutter_co2",
+  "name": "CO2 laser cutter",
+  "variantOf": "laser_cutter",
+  "aliases": ["co2 laser","laser cutting machine","k40","co2 laser engraver","glass tube laser"],
+  "brands": ["xTool","Glowforge","Epilog","Full Spectrum Laser","OMTech","Boss Laser","Thunder Laser"],
+  "prev": 2,
+  "kg": 80,
+  "hazards": ["hv","glass","heavy"],
+  "comps": [
+    {"key":"transformer_hv","fn":"transformer_hv","spec":"Laser tube power supply, 20–30 kV output — lethal; let it sit unplugged and earth the output before touching","v":[20000,30000],"qty":1,"ext":2,"obs":5,"loc":"Electronics bay"},
+    {"key":"laser_diode","fn":"laser_diode","spec":"Red alignment pointer, under 5 mW (many machines)","qty":1,"ext":1,"obs":5,"loc":"Beside the laser head or on the beam combiner"},
+    {"key":"optics","fn":"optics","spec":"Coated mirrors and a zinc selenide focus lens","qty":4,"ext":1,"obs":5,"loc":"Beam path and laser head"},
+    {"key":"pump_water","fn":"pump_water","spec":"Mains coolant pump, in a bucket or the chiller","v":[120,240],"w":[20,80],"ac":true,"qty":1,"ext":1,"obs":4,"loc":"Under or behind the machine"},
+    {"key":"compressor","fn":"compressor","spec":"Air-assist pump","v":[120,240],"w":[20,135],"ac":true,"qty":1,"ext":1,"obs":4,"loc":"Under or behind the machine"},
+    {"key":"fan","fn":"fan","spec":"Exhaust blower, 100–300 mm duct, plus cooling fans","v":[120,240],"w":[50,400],"ac":true,"qty":2,"ext":1,"obs":4,"loc":"Rear duct and electronics bay"},
+    {"key":"motor_dc_small","fn":"motor_dc_small","spec":"Bed lift motor (larger machines)","v":24,"qty":1,"ext":2,"obs":5,"loc":"Under the bed"}
+  ],
+  "boards": [
+    {"id":"smps_board","qty":1,"loc":"24V supply","p":1}
+  ],
+  "notes": "The glass CO2 tube is fragile and not much use outside the machine. Fumes from cutting plastics are toxic."
+}

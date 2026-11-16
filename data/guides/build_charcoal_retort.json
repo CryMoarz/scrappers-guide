@@ -1,0 +1,50 @@
+{
+  "id": "build_charcoal_retort",
+  "kind": "build",
+  "title": "Charcoal in a sealed steel can or drum (retort)",
+  "keywords": ["charcoal","make charcoal","charcoal making","retort","charcoal retort","charcoal kiln","biochar","pyrolysis","lump charcoal","forge fuel","smokeless fuel","cooking fuel","char","tin can charcoal","drum retort","barrel charcoal"],
+  "summary": "Pack dry wood into a steel tin or drum with one small vent hole, heat it in a fire, and the wood cooks into charcoal instead of burning away. Charcoal burns hotter and cleaner than wood: it is the fuel for a forge, cooks without smoke, and can be a filter layer that improves the taste and smell of water. Home-made charcoal is not activated carbon and does not make water safe. Making it and burning it both give off carbon monoxide, so work outdoors only.",
+  "difficulty": 2,
+  "mins": 180,
+  "tools": ["drill","hammer","saw","pliers","wrench"],
+  "hazards": ["co_gas","burn","fuel","chemical"],
+  "materials": [
+    {"item":"Steel container with a tight lid: a 1–5 L paint or biscuit tin, or a 20–200 L open-head steel drum with its lid and clamp ring. Plain steel, or burned clean first","qty":"1","fn":"tank","only":["steel drum"]},
+    {"item":"Dry wood: hardwood is best, split 2–5 cm thick and cut to fit. No painted, treated or glued wood (plywood, MDF, chipboard)","qty":"enough to fill the container"},
+    {"item":"Heat: a rocket stove or campfire for small tins; a fire pit or a larger outer drum for a drum, plus extra firewood","qty":"1"},
+    {"item":"Wire to hold a tin lid down, or the drum's clamp ring","qty":"1 m"},
+    {"item":"Nail, bolt or wet clay to plug the vent hole","qty":"1"},
+    {"item":"Long pliers or tongs and leather gloves","qty":"1 set"},
+    {"item":"Bucket of water or sand, kept beside the fire","qty":"1"},
+    {"item":"Bricks or stones to raise a drum off the ground","qty":"3–4","optional":true},
+    {"item":"Clay or mud to seal gaps round the lid","qty":"1 bucket","optional":true},
+    {"item":"Outer shell for a drum retort: a bigger drum, or a ring of sheet steel to hold the fire round it","qty":"1","fn":"sheet_metal","optional":true},
+    {"item":"Metal bin or tin with a lid to store the charcoal","qty":"1","optional":true}
+  ],
+  "steps": [
+    {"text":"Choose the container: plain steel that a magnet sticks to, with a lid that fits snugly. Burn off any paint, lining or zinc coating in a hot open fire before first use, standing well upwind.","warn":"Never heat or cut a drum or tin that held fuel, solvents or chemicals: vapour inside can explode. Burning coatings and galvanising give off toxic fumes: do it outdoors and stay out of the smoke."},
+    {"text":"Make one vent hole in the lid: 3–6 mm for a small tin, 8–12 mm for a drum. Gas gets out; little air gets in."},
+    {"text":"Prepare the wood: dry enough to snap and with cracks in the ends, split to similar thickness, cut to fit. Pack it in tightly, standing on end in a drum, leaving as little space as you can.","warn":"Treated, painted or composite wood gives off poisons as it cooks and leaves them in the charcoal."},
+    {"text":"Close it: press the lid on and wire it down on a tin (pressure inside can pop it off), or fit and tighten the clamp ring on a drum. Smear clay over any gaps."},
+    {"text":"Heat it: set a small tin in the hot part of a fire or on a rocket stove with the vent facing into the flames, so the escaping gas burns. Raise a drum on bricks and build a fire round and under it, or inside an outer drum.","warn":"Outdoors only, well away from buildings, tents and shelters. The smoke and gas are flammable and full of carbon monoxide."},
+    {"text":"Watch the vent. First comes white steam (water leaving the wood), then thick yellow-brown smoke, then gas that catches and burns as a jet of flame. Keep the fire going. A small tin takes 20–60 minutes; a drum 3–8 hours."},
+    {"text":"When the jet of flame dies and no more smoke comes out, it's done. Pull a tin out of the fire, or let the fire round a drum burn down, and plug the vent at once with a nail, a bolt or wet clay.","warn":"The container is red hot. Use long pliers or tongs and gloves, and keep children and dogs well back."},
+    {"text":"Let it cool completely with the vent plugged: a small tin 1–2 hours, a drum 12–24 hours. Don't open it early: hot charcoal bursts into flame when air reaches it.","warn":"Open it only when the outside is cold to the touch, tip the charcoal onto bare ground, and watch it for 15 minutes for any glow."},
+    {"text":"Check the result: good charcoal is black right through, light, rings when tapped and snaps cleanly. Brown, heavy pieces in the middle are under-cooked: heat longer or split the wood thinner next time. Keep the brown bits to cook again."},
+    {"text":"Store it dry in a closed metal bin, away from your shelter for the first few days.","warn":"Fresh charcoal can heat up and catch fire by itself, especially when crushed or damp. Never store a new batch in a building or plastic container."},
+    {"text":"Use it: crush to walnut size (1–3 cm) and sieve out the dust for a forge (build_brake_drum_forge); burn lumps in a grill or rocket stove for smokeless cooking outdoors; or crush to 1–5 mm, rinse until the water runs clear, and use as a layer below the sand in a water filter.","warn":"Charcoal makes carbon monoxide without any smoke to warn you. Never cook or heat with it indoors, in a tent or under a tarp."}
+  ],
+  "notes": "## How it works\nHeated without air, wood breaks down instead of burning. First its water boils off, then from about 280 °C it gives off tar and flammable gas, and above about 400 °C what is left is mostly carbon. The single small vent lets the gas out but keeps air from rushing in and burning the charcoal. The gas from the vent burns too, and helps heat the container.\n\n## What you get\n- By weight, about a quarter of the dry wood ends up as charcoal (20–30%); by volume, about half.\n- A 1 L paint tin gives a good handful; a 20 L tin about 1–2 kg; a 200 L drum about 15–20 kg.\n- Charcoal holds about 28–30 MJ per kg, dry wood about 15–18 MJ per kg. Weight for weight, charcoal is nearly twice the heat, but making it throws away half or more of the wood's energy. Make it when you need its high heat (a forge) or lack of smoke, not just to cook.\n\n## Not activated carbon\nActivated carbon is charcoal treated with steam or chemicals at 800–1,000 °C so it is riddled with tiny pores: a gram has hundreds to over a thousand square metres of inner surface. Home charcoal has a small fraction of that. In a water filter it removes some colour, taste and smell, but far less than real activated carbon, and it does **nothing** against germs, salt or most dissolved poisons. Always boil or disinfect water afterwards. Steaming red-hot charcoal can open its pores a little, but you can't measure the result in the field, so treat it as plain charcoal.\n\n## Container choice\n- **Paint and biscuit tins:** easy to find, quick, small batches. Thin tins burn through after a few uses.\n- **Open-head steel drums (removable lid with clamp ring):** big batches. Closed-head drums need the top cut out and a lid made, and must never have held fuel or chemicals.\n- **Galvanised steel:** burn the zinc off outdoors first, standing well upwind, and expect it to rust quickly afterwards.\n- **Never:** aluminium (melts), plastic-lined tins without burning out the lining first, gas cylinders or anything that held fuel.\n\n## Mistakes\n- Wet wood: hours of steam and a weak, brown result. Dry it under cover for weeks first.\n- A big vent hole: the wood burns to ash.\n- Forgetting to plug the vent: air gets sucked in as it cools and burns your charcoal.\n- Opening too soon: the whole batch flares up.\n- Mixed thick and thin wood: thin pieces finish while thick ones stay brown.\n\n## Variations\n- **Double drum:** a small drum inside a bigger one, fire in the gap. Turn the inner drum's vent into the fire so its gas feeds the heat.\n- **Pit or mound kilns:** burn part of the wood to cook the rest, under soil. They need no container but waste more wood and need watching day and night.\n- **Biochar:** crushed charcoal soaked in compost or urine for a few weeks and dug into poor soil holds water and nutrients.\n",
+  "tree": {"era":3,"branch":"fire","requires":["build_rocket_stove"]},
+  "devices": ["shop_vac","bbq_grill"],
+  "parts": ["carbon","tank","sheet_metal"],
+  "license": "CC-BY-SA-4.0",
+  "refs": [
+    {"lib":"appropedia","q":"charcoal"},
+    {"lib":"energypedia","q":"charcoal"}
+  ],
+  "sources": [
+    {"title":"FAO, Simple technologies for charcoal making (Forestry Paper 41)","note":"Principles of retorts, kilns and yields summarised in our own words."},
+    {"title":"Common tin-can and drum retort designs shared by hobbyists and smallholders","note":"Described in our own words."}
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "id": "keep_food_cold",
+  "name": "Keep food cold",
+  "keywords": ["keep food cold","keep my food cold","cold food","keep food cool","cool food","fridge","refrigerator","freezer","refrigeration","cold storage","chill food","make ice"],
+  "summary": "Move a whole working fridge or freezer and run it on solar and batteries; the sealed cooling system can’t be rebuilt in the field. Small 12V compressor fridges hide in RVs, boats and semi truck sleeper cabs and sip power. Peltier coolers suit drinks, not a food store. Insulation does half the work.",
+  "parts": [
+    {"fn":"compressor","why":"The heart of any real fridge. Take the whole sealed unit, not just the compressor","core":true,"only":["refrigerat","fridge","freezer","hermetic","cooler","ice"]},
+    {"fn":"thermoelectric","why":"Peltier modules for small 12V coolers","core":true},
+    {"fn":"cooler_box","why":"An insulated box to build a cooler into, or to hold ice","core":true},
+    {"fn":"insulation","why":"Extra insulation cuts the power any cooler needs"},
+    {"fn":"thermostat","why":"An external thermostat turns a chest freezer into a very efficient fridge"},
+    {"fn":"solar_panel","why":"Runs a small fridge by day","need":{"w":100}},
+    {"fn":"battery_pb","why":"Keeps a 12V fridge running overnight"},
+    {"fn":"inverter","why":"Runs a mains fridge from a battery bank"}
+  ],
+  "guides": ["build_peltier_cooler","teardown_fridge_compressor","safety_refrigerant","build_solar_12v_system","reference_power_budget","build_chest_freezer_fridge"],
+  "tips": ["A chest freezer run as a fridge on an external thermostat uses very little power. Cold air stays in when you open the lid.","Look for 12V compressor fridges in RVs, boats and semi truck sleeper cabs.","Peltier coolers waste most of their power. Use them for drinks, not to keep meat safe.","In dry heat, a clay pot inside a bigger pot with wet sand between them cools food with no power.","Food keeps safest below 4°C. A cheap fridge thermometer tells you if your setup works."],
+  "refs": [
+    {"lib":"lowtech","q":"refrigeration"}
+  ]
+}

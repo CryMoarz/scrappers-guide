@@ -1,0 +1,18 @@
+{
+  "id": "cordless_drill_milwaukee_2903_20",
+  "device": "cordless_drill",
+  "brand": "Milwaukee",
+  "model": "2903-20",
+  "notes": "M18 FUEL 1/2 in. drill/driver. The parts list applies from starting serial M63A.",
+  "research": {"checked":"2026-11-11","method":["Product page lists a POWERSTATE brushless motor and 1400 in-lbs of torque.","The service parts list PDF (bulletin 54-06-2990, rev. Nov. 2023, catalog 2903-20) gives the rotor, gearbox and electronics service assembly part numbers, each listed once per tool; read as text from the PDF and checked on 2026-11-11 (part numbers, figure numbers and quantities match)."]},
+  "comps": [
+    {"key":"motor_dc_small","conf":"documented","spec":"POWERSTATE brushless motor; 1400 in-lbs of torque","source":"https://www.milwaukeetool.com/products/details/m18-fuel-1-2-drill-driver/2903-20"},
+    {"key":"motor_bldc_rotor","fn":"motor_bldc","spec":"Rotor Service Assembly, part no. 16-07-2983 (parts list fig. 68)","qty":1,"ext":2,"obs":2,"conf":"documented","source":"https://documents.milwaukeetool.com/54-06-2990.pdf"},
+    {"key":"gearbox","spec":"Gearbox Service Assembly, part no. 14-29-5010 (parts list fig. 77)","conf":"documented","source":"https://documents.milwaukeetool.com/54-06-2990.pdf"},
+    {"key":"controller_board_electronics","fn":"controller_board","spec":"Electronic Service Assembly, part no. 14-20-6560 (parts list fig. 69)","qty":1,"ext":2,"obs":3,"conf":"documented","source":"https://documents.milwaukeetool.com/54-06-2990.pdf"}
+  ],
+  "sources": [
+    {"title":"Milwaukee M18 FUEL 1/2 in. Drill/Driver 2903-20 product page (milwaukeetool.com)","url":"https://www.milwaukeetool.com/products/details/m18-fuel-1-2-drill-driver/2903-20"},
+    {"title":"Milwaukee M18 FUEL Brushless Drill-Driver 2903-20 service parts list, bulletin 54-06-2990 (documents.milwaukeetool.com)","url":"https://documents.milwaukeetool.com/54-06-2990.pdf"}
+  ]
+}

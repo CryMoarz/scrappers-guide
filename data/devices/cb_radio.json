@@ -1,0 +1,38 @@
+{
+  "id": "cb_radio",
+  "name": "CB radio",
+  "group": "Communications",
+  "aliases": ["citizens band radio","trucker radio","cb","11 meter radio","mobile cb","cb transceiver"],
+  "brands": ["Cobra","Uniden","Midland"],
+  "era": "1970s–present",
+  "prev": 3,
+  "tools": ["screwdriver","wrench","cutters"],
+  "mins": 15,
+  "kg": 1.5,
+  "hazards": [],
+  "comps": [
+    {"key":"radio_rf","fn":"radio_rf","spec":"27 MHz CB transceiver, 4W AM (some 12W SSB), runs on 12–13.8V DC — typically 5–25 km","v":[12,13.8],"qty":1,"ext":1,"obs":4,"loc":"Under the dash or in an overhead console; base sets on a desk","p":0.5},
+    {"key":"antenna_coax","fn":"antenna_coax","spec":"Whip antenna (1–2.7 m) on a magnet, mirror or bumper mount, with RG-58 coax","qty":1,"ext":1,"obs":4,"loc":"Roof, mirror or bumper"},
+    {"key":"magnet_ferrite","fn":"magnet_ferrite","spec":"Large magnet in the magnetic antenna mount","qty":1,"ext":1,"obs":5,"loc":"Base of the antenna"},
+    {"key":"microphone","fn":"microphone","spec":"Hand microphone with push-to-talk switch","qty":1,"ext":1,"obs":4,"loc":"Hanging on a clip"},
+    {"key":"speaker","fn":"speaker","spec":"Built-in or external speaker","w":[3,10],"qty":1,"ext":1,"obs":4,"loc":"Radio case or under the dash"},
+    {"key":"fuse","fn":"fuse","spec":"Inline fuse in the 12V lead, about 2–5A","v":12,"a":[2,5],"qty":1,"ext":1,"obs":5,"loc":"Red power lead"}
+  ],
+  "boards": [
+    {"id":"radio_transceiver_board","qty":1,"loc":"Main board","p":1}
+  ],
+  "buildings": [
+    {"b":"gas_station","l":4},
+    {"b":"farm","l":4},
+    {"b":"garage_res","l":3},
+    {"b":"auto_wrecker","l":3},
+    {"b":"auto_parts","l":3},
+    {"b":"electronics","l":3},
+    {"b":"house","l":2},
+    {"b":"rv_dealer","l":2},
+    {"b":"campground","l":2},
+    {"b":"warehouse","l":2},
+    {"b":"self_storage","l":2}
+  ],
+  "notes": "Old trucks, tractors and farm pickups often still have one under the dash. Channel 9 is the traditional emergency channel in North America."
+}

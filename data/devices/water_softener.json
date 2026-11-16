@@ -1,0 +1,39 @@
+{
+  "id": "water_softener",
+  "name": "Water softener",
+  "group": "Heating, cooling and water",
+  "aliases": ["softener","brine tank","salt tank","water conditioner","softener salt","ion exchange softener","water softener system"],
+  "brands": ["Culligan","Kinetico","RainSoft","Pentair","Fleck","Aquasana"],
+  "prev": 3,
+  "tools": ["hands","screwdriver","wrench"],
+  "mins": 20,
+  "kg": 40,
+  "hazards": ["heavy"],
+  "comps": [
+    {"key":"salt","fn":"salt","spec":"Softener salt (sodium chloride), 10–150 kg — not food grade: check the bag for additives before using it on food","qty":1,"ext":1,"obs":4,"loc":"Inside the brine tank; spare bags on the floor beside it","kg":20},
+    {"key":"tank_mineral","fn":"tank","spec":"Fibreglass resin tank, about 20–25 cm wide and 1.2–1.5 m tall — reuse as a sand or carbon filter vessel","qty":1,"ext":2,"obs":5,"loc":"The tall tank","kg":30},
+    {"key":"tank_brine","fn":"tank","spec":"Brine tank, about 100–250 litres of tough plastic with a lid","qty":1,"ext":1,"obs":5,"loc":"The squat tank beside it","kg":8},
+    {"key":"hall_reed","fn":"hall_reed","spec":"Turbine flow meter with a magnet and Hall sensor or reed switch (metered models)","qty":1,"ext":3,"obs":5,"loc":"Outlet of the control valve","p":0.5},
+    {"key":"motor_sync","fn":"motor_sync","spec":"Timer drive motor (synchronous or small DC gear motor)","v":[12,24],"qty":1,"ext":2,"obs":5,"loc":"Control head, under the cover"},
+    {"key":"valve_solenoid","fn":"valve_solenoid","spec":"Control valve head and bypass valve","v":[12,24],"qty":1,"ext":2,"obs":5,"loc":"Top of the resin tank"},
+    {"key":"psu","fn":"psu","spec":"12–24V plug-in transformer or adapter","v":[12,24],"qty":1,"ext":1,"obs":5,"loc":"Nearby outlet"},
+    {"key":"hose_tubing","fn":"hose_tubing","spec":"Brine line and drain hose","qty":2,"ext":1,"obs":5,"loc":"Between the tanks and to the drain"}
+  ],
+  "boards": [
+    {"id":"mcu_board","qty":1,"loc":"Control head","p":0.8}
+  ],
+  "buildings": [
+    {"b":"house","l":4},
+    {"b":"laundromat","l":4},
+    {"b":"hardware","l":4},
+    {"b":"supermarket","l":3},
+    {"b":"farm_supply","l":3},
+    {"b":"hotel","l":3},
+    {"b":"restaurant","l":3},
+    {"b":"nursing_home","l":3},
+    {"b":"apartment","l":2},
+    {"b":"gym","l":2},
+    {"b":"school","l":2}
+  ],
+  "notes": "Use softener salt for hides, de-icing and trade; for curing or eating, prefer bags labelled food grade. Hardware and supermarket stock of salt bags is rarely touched."
+}

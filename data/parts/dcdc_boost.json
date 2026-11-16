@@ -1,0 +1,14 @@
+{
+  "id": "dcdc_boost",
+  "name": "DC-DC step-up (boost) converters",
+  "group": "Electronic components",
+  "demand": 2,
+  "keywords": ["boost","boost converter","step up","step-up","stepup","mt3608","xl6009","5v to 12v","xl6019","boost module","step-up module","step up converter","voltage booster","5v to 19v","3.7v to 5v"],
+  "substitutes": ["dcdc_buck"],
+  "summary": "Small switching boards that raise a DC voltage: 3.7V to 5V, 12V to 19V and so on.",
+  "uses": ["USB 5V from a single lithium cell","Running a laptop from 12V","Driving LED strings from low-voltage batteries"],
+  "identify": "Small boards with a coil, a chip, a diode and capacitors, sometimes with a blue trimmer. Inside power banks, USB lights, cameras, torches and laptop car adapters; modules are marked MT3608 or XL6009.",
+  "test": "Feed a low voltage in and measure the output: it should be higher and steady. Turn the trimmer, if fitted, and watch the output change.",
+  "decay": {"halfLifeMonths":null,"note":"Lasts."},
+  "hazards": []
+}

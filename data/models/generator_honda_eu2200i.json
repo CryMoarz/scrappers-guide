@@ -1,0 +1,23 @@
+{
+  "id": "generator_honda_eu2200i",
+  "device": "generator",
+  "brand": "Honda",
+  "model": "EU2200i (EU2200iT types A, A2; Companion type A1)",
+  "notes": "Covers EU2200iT types A and A2 and the Companion type A1. The stator, rotor and oil level switch part numbers are confirmed for the A2 type only.",
+  "research": {"checked":"2026-11-12","gaps":["No inverter unit part number is given.","The manual gives AC output in kVA (1.8 rated, 2.2 maximum), not watts, so no w value is set.","The DC outlet is therefore not put on the inverter.","The wiring diagram also names a spark unit, ignition coil and throttle control motor, but no part numbers were found, so they are not claimed."],"method":["Specs are from Honda's owner's manual 00X31-Z44-6020 (2019 printing); the spec table is on printed page 74, controls on pages 12-17, and the wiring diagram on page 75.","OEM part numbers for the stator, rotor and oil level switch come from the parts lists of three iFixit repair guides filed under the Honda EU2200IT A2.","IFixit content is CC BY-NC-SA, used here for facts and links only.","Honda's dealer parts catalogue pages returned HTTP 403 to the researcher.","Types A and A2 also have a DC output only for charging 12 V automotive batteries (8.3 A maximum).","The wiring diagram feeds the DC outlet from a DC winding through a rectifier, not from the inverter unit."]},
+  "comps": [
+    {"key":"engine_small","conf":"documented","spec":"Honda GXR120T: 121 cm3 (7.38 cu in) 4-stroke overhead-camshaft single cylinder, bore x stroke 60.0 x 43.0 mm, compression 8.5:1, 4,000-4,500 rpm with Eco Throttle off, forced-air cooled, full-transistor ignition, spark plug NGK CR5HSB","source":"https://cdn.powerequipment.honda.com/pe/pdf/manuals/00X31Z446020.pdf"},
+    {"key":"alternator","conf":"documented","spec":"Stator, Honda part 31125-Z44-A31 (qty 1 in the parts list of the iFixit stator guide for the EU2200IT A2)","qty":1,"source":"https://www.ifixit.com/Guide/Honda+EU2200IT+A2+Stator+Replacement/134898"},
+    {"key":"alternator_rotor","fn":"alternator","spec":"Rotor, Honda part 31130-Z44-A01 (iFixit rotor guide for the EU2200IT A2), bolted to the shaft and removed with a flywheel puller","qty":1,"ext":3,"obs":3,"conf":"documented","source":"https://www.ifixit.com/Guide/Honda+EU2200IT+A2+Rotor+Replacement/134837"},
+    {"key":"controller_board","conf":"documented","spec":"Inverter unit (the manual's wiring diagram has an inverter block); rated AC output 120 V 60 Hz, 15 A, 1.8 kVA (2.2 kVA maximum)","v":120,"a":15,"ac":true,"source":"https://cdn.powerequipment.honda.com/pe/pdf/manuals/00X31Z446020.pdf"},
+    {"key":"breaker_protectors","fn":"breaker","spec":"Two resettable circuit protectors on types A/A2: an AC protector that switches off on a short or heavy overload at the 20 A receptacles, and a DC protector that cuts off the battery-charging circuit","qty":2,"ext":2,"obs":3,"conf":"documented","source":"https://cdn.powerequipment.honda.com/pe/pdf/manuals/00X31Z446020.pdf"},
+    {"key":"sensor_misc_oil","fn":"sensor_misc","spec":"Oil level switch assembly, Honda part 35480-Z0D-D02 (iFixit oil level switch guide for the EU2200IT A2)","qty":1,"ext":3,"obs":4,"conf":"documented","source":"https://www.ifixit.com/Guide/Honda+EU2200IT+A2+Oil+Level+Switch+Replacement/134909"},
+    {"key":"tank_fuel","fn":"tank","spec":"Fuel tank, capacity 0.95 US gal (3.6 L)","qty":1,"ext":2,"obs":2,"conf":"documented","source":"https://cdn.powerequipment.honda.com/pe/pdf/manuals/00X31Z446020.pdf"}
+  ],
+  "sources": [
+    {"title":"Honda EU2200i / EU2200i Companion Owner's Manual, 00X31-Z44-6020 (Honda Power Equipment PDF, 2019)","url":"https://cdn.powerequipment.honda.com/pe/pdf/manuals/00X31Z446020.pdf"},
+    {"title":"Honda EU2200IT A2 Stator Replacement (iFixit guide 134898, parts list)","url":"https://www.ifixit.com/Guide/Honda+EU2200IT+A2+Stator+Replacement/134898"},
+    {"title":"Honda EU2200IT A2 Rotor Replacement (iFixit guide 134837, parts list)","url":"https://www.ifixit.com/Guide/Honda+EU2200IT+A2+Rotor+Replacement/134837"},
+    {"title":"Honda EU2200IT A2 Oil Level Switch Replacement (iFixit guide 134909, parts list)","url":"https://www.ifixit.com/Guide/Honda+EU2200IT+A2+Oil+Level+Switch+Replacement/134909"}
+  ]
+}

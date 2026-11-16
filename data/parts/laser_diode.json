@@ -1,0 +1,14 @@
+{
+  "id": "laser_diode",
+  "name": "Laser diodes",
+  "group": "Electronic components",
+  "demand": 1,
+  "keywords": ["laser","laser diode","laser module","laser pointer","dvd laser","blu-ray laser","laser sled","laser level","405nm","650nm"],
+  "substitutes": ["led_light"],
+  "summary": "Small semiconductor lasers from optical drives, pointers, levels and printers.",
+  "uses": ["Pointers and levels","Alignment and beam-break alarms","Signalling over distance at night"],
+  "identify": "Tiny brass or metal cans on the moving sled of CD, DVD and Blu-ray drives, and in laser pointers, levels, printers and barcode scanners. DVD lasers are red and Blu-ray violet. Even small ones can blind: never look into the beam or aim it at people or aircraft.",
+  "test": "Power it only through a current-limiting driver or resistor, starting low, and aim it at a wall. Without current limiting it dies instantly.",
+  "decay": {"halfLifeMonths":null,"note":"Lasts. Static and over-current kill them."},
+  "hazards": ["laser"]
+}

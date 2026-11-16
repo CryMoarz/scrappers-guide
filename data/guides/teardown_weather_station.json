@@ -1,0 +1,30 @@
+{
+  "id": "teardown_weather_station",
+  "kind": "teardown",
+  "title": "Weather station: wind and rain sensors, reed switches and magnets",
+  "keywords": ["weather station","anemometer","rain gauge","wind speed sensor","reed switch","tipping bucket","barometer","outdoor sensor array"],
+  "summary": "A home weather station has a sensor array outdoors (wind cups and vane, a tipping rain bucket, a temperature and humidity sensor) and a console indoors with a barometer and display. Take the sensors and their reed switches and magnets in about 20 minutes. The main danger is falling from a roof or ladder, and touching a power line with a metal mast.",
+  "difficulty": 1,
+  "mins": 20,
+  "tools": ["screwdriver","ladder","pliers","cutters","multimeter"],
+  "hazards": ["fall","hv"],
+  "materials": [],
+  "steps": [
+    {"text":"Start with the console indoors. Put in fresh batteries or plug it in. If it shows the time, indoor temperature and air pressure, keep it whole: it is a working barometer, and its pressure trend is the most useful thing in the kit. Only strip it for parts if it is dead."},
+    {"text":"Find the outdoor array. It is usually on a pole, fence post, balcony rail or roof bracket, and may be a cable or wireless unit. Look up and around the mount first, then decide how you will reach it.","warn":"Check for overhead power lines before you lift a metal pole or ladder. A mast that touches a line can kill you. If you can't reach it from the ground or a firm ladder, leave it."},
+    {"text":"Stand a ladder on firm, level ground with a helper footing it. Take the batteries out of the array (usually AA or a lithium coin or CR123 cell, under a small cover) so nothing is live while you work.","warn":"Don't carry tools in your hands on a ladder. Keep three points of contact and don't overreach."},
+    {"text":"Undo the mounting clamp (2–4 nuts on a U-bolt or a single wing nut) and bring the whole array down to the ground. For a wired unit, unplug or cut the cable at the console end and keep its length with the plug."},
+    {"text":"Anemometer: pull the wind cups off their hub, or unscrew the central screw. A small magnet sits in the rotor. A reed switch or Hall sensor on the circuit board below gives one pulse per turn. Keep the cups and the shaft with its tiny bearings."},
+    {"text":"Wind vane: take off the arrow. A magnet (or several) sits in the vane base over reed switches, or a small variable resistor reads direction. Keep the vane, its shaft and its bearings together."},
+    {"text":"Rain gauge: lift out the funnel (clips or 2 screws) and the tipping bucket, a small seesaw that tips each time it fills. A small magnet on the bucket passes a reed switch, which clicks once for each tip. Keep the bucket and its switch together if you may rebuild a gauge."},
+    {"text":"Unclip the white louvred plates that shade the temperature and humidity sensor. Take out the small sensor board by its edges. Don't touch the sensor chip with your fingers.","warn":"Reed switches are small glass tubes. They snap if you bend their wire legs close to the glass."},
+    {"text":"If the top has a small solar cell, unscrew it with its leads. If the array has a small circuit board with the radio transmitter, take it whole, with its antenna wire. Don't cut the board; the radio parts are tiny."},
+    {"text":"Test the switches. Set the meter to continuity (see test_continuity) and probe the two wires of each reed switch while you pass a magnet near it: it should beep when the magnet is close. A good wind or rain sensor closes once for each turn or tip."},
+    {"text":"Bag small parts by type (magnets with magnets, switches with switches). Keep the small magnets away from compasses, cards and electronics, or they will upset them."}
+  ],
+  "notes": "## What's worth keeping and why\n\n- **Console and barometer.** Keep it working if you can. A steady fall of air pressure (about 6 hPa or more in three hours) usually means a storm is coming; a steady rise means settling weather. Even a rough record in a notebook is useful for farming, sailing and planning trips.\n- **Reed switches and magnets.** Glass-sealed switches that close when a magnet comes close. Use them as door or window alarm sensors, bicycle speedometer sensors, flow-meter counters and rev counters (see build_perimeter_alarm).\n- **Wind cups and sensor.** A cup anemometer typically gives about 3–4 km/h of wind speed for each turn per second. Calibrate it by holding it out of a car window on a calm day at a known speed. Use it to find a good site for a wind turbine before you build one.\n- **Rain gauge bucket.** Each tip is a fixed amount of rain, often 0.2 mm or 0.01 inch. Calibrate by pouring a measured cup of water through the funnel and counting the tips.\n- **Temperature and humidity board.** A small sensor that works with an Arduino-style board; the humidity element is delicate.\n- **Small bearings.** Tiny ball bearings from the cups and vane.\n- **Solar cell.** A small 3–5 V cell that charges a small cell or runs a little light.\n- **433 or 915 MHz radio parts.** A sensor transmitter and receiver. Handy for a wireless alarm or sensor project, but not easy to repurpose.\n\n## Variations\n\n- Wired stations (like some Davis models) send readings along a thin four-wire cable. The cable is a useful length of low-voltage wire.\n- Newer all-in-one arrays use an ultrasonic wind sensor with no moving parts, so no cups, vane or reed switch.\n- Cheap garden thermometers and wireless thermometers hold little more than a temperature sensor and a display.\n- Farm, marina and school stations are sometimes bigger, with a data logger and a small solar panel or battery (see safety_lead_acid if one has a lead-acid battery).\n\n## What to leave\n\n- The plastic housings and mounting poles, unless you need the pole.\n- The display glass of the console once it is dead.",
+  "tree": {"era":2,"branch":"salvage","requires":["safety_entering_buildings"]},
+  "devices": ["weather_station"],
+  "parts": ["hall_reed","magnet_strong","bearing","sensor_misc","solar_panel","radio_rf","display"],
+  "license": "CC-BY-SA-4.0"
+}

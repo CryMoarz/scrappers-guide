@@ -1,0 +1,50 @@
+{
+  "id": "build_18650_pack",
+  "kind": "build",
+  "title": "Battery pack from salvaged 18650 cells",
+  "keywords": ["18650","lithium pack","li-ion pack","battery pack","powerwall","laptop cells","3s","4s","7s","bms","spot weld","nickel strip"],
+  "summary": "Harvest 18650 lithium-ion cells from laptop packs, power banks, tool and e-bike batteries, test them, match them into groups and build a protected pack with a BMS and a fuse. Careful testing is what makes second-life cells safe.",
+  "difficulty": 4,
+  "mins": 600,
+  "tools": ["multimeter","desolder","cutters","pliers","knife","tape","screwdriver","security_bits","file"],
+  "hazards": ["li_fire","burn"],
+  "materials": [
+    {"item":"18650 cells, tested and matched","qty":"e.g. 12–40","fn":"battery_li","only":["cylindrical cells","of 18650","often 18650"]},
+    {"item":"BMS board for your series count, rated 1.5× your peak current","qty":"1","fn":"bms"},
+    {"item":"CC/CV chargers: a single-cell charger for testing, and a pack charger set to exactly 4.20V per series cell (12.6V for 3S, 16.8V for 4S)","qty":"1 of each","fn":"charger","only":["tp4056","42v"]},
+    {"item":"Main fuse on the pack positive, about 1.25× the max current","qty":"1","fn":"fuse","only":["blade"]},
+    {"item":"Pure nickel strip 0.15–0.2 mm, or tinned copper wire for soldered packs","qty":"1–2 m"},
+    {"item":"Wire: silicone 14–10 AWG (2.5–6 mm²) for main leads, 22–26 AWG for BMS balance leads","qty":"0.5 m heavy red and black, 1 m thin","fn":"wire_copper","only":["balance lead","nickel strip"]},
+    {"item":"Output connector (Anderson, XT60 or ring lugs)","qty":"1 pair","fn":"connector","optional":true},
+    {"item":"Cell holders or spacers","qty":"1 per cell","optional":true},
+    {"item":"Insulating paper rings for the positive ends, Kapton or electrical tape, heat-shrink","qty":"some"},
+    {"item":"Rigid, non-flammable enclosure (metal box lined with insulating board)","qty":"1","fn":"sheet_metal","optional":true}
+  ],
+  "steps": [
+    {"text":"Open donor packs (teardown_laptop_battery) outdoors on concrete or bare earth with a bucket of sand nearby. Cut the plastic case along the seams; never stab or pry where a cell might be.","warn":"A punctured or shorted lithium cell can burst into fire in seconds. Water does not reliably put it out: smother with sand and let it burn out away from anything."},
+    {"text":"Separate the cells. Twist nickel strip off with pliers; don't cut into the can. File sharp weld stubs flat. Scrap any cell that is dented, rusty, leaking, swollen or hot."},
+    {"text":"Measure each cell. Set aside as scrap any below 2.0V; don't try to revive them. Mark each good cell with a number."},
+    {"text":"Charge each cell to 4.20V at 0.5–1A on a CC/CV charger. Touch-check them during charging: any cell that gets warm is scrap.","warn":"Charge on a non-flammable surface, never unattended, never overnight indoors."},
+    {"text":"Let the charged cells rest 7–14 days. Measure again. A cell that dropped more than about 0.05V is leaking charge: scrap it."},
+    {"text":"Test each cell (test_lithium_cell)'s capacity with a battery tester (discharge to 3.0V at 0.5–1A) and write the mAh on the wrapper."},
+    {"text":"Plan the pack: series count (S) sets voltage, parallel count (P) sets capacity and current. Sort cells into P-groups so each group's total mAh matches the others within 1–2%."},
+    {"text":"Fit insulating rings on every positive end. Arrange the cells in holders or glue them in rows, all positives facing the same way within each group, then flipped for the next group."},
+    {"text":"Join each parallel group with nickel strip. Spot welding is best. If you must solder: rough the cell end, use flux, a hot large-tip iron and get each joint done in 2–3 seconds.","warn":"Long heating damages cells and seals. Never solder to a cell that's already in a connected pack without insulating its neighbours."},
+    {"text":"Join the groups in series. Put insulating paper between groups where cans touch or strip crosses."},
+    {"text":"Wire the BMS: B− to pack negative first, then each balance lead in order (B1 at the top of group 1, B2 at the top of group 2…), then B+. Measure each balance wire against B− before plugging it in: the reading must rise by one cell's voltage (3.0–4.2V) at each wire, in order.","warn":"A balance lead in the wrong order can burn the BMS or short a group."},
+    {"text":"Connect the output leads to the BMS P− and the pack positive, with the fuse on the positive lead close to the cells."},
+    {"text":"Charge the finished pack at no more than 0.5A per cell in parallel, watching it. When full, check that every group reads within 0.05V of the others."},
+    {"text":"Wrap the pack: insulating board on the ends, tape, heat-shrink, then a rigid enclosure. Label it with series count, voltage range, Ah, max amps and charger voltage."}
+  ],
+  "notes": "## Pack maths\n- Li-ion cell: 4.20V full, 3.6–3.7V nominal, 3.0V empty (some cells allow 2.5V; 3.0V is kinder).\n- 3S: 9.0–12.6V, runs most 12V gear. 4S: 12–16.8V, too high for some 12V devices. 7S ≈ 24V, 10S ≈ 36V, 13S ≈ 48V (e-bikes).\n- Capacity = P × cell Ah. Energy = S × 3.6V × P × cell Ah.\n- Example: 3S6P of 2.0Ah cells = 10.8V nominal, 12Ah, about 130Wh.\n\n## Current per cell\nSecond-life laptop cells: plan on 1A per cell continuous for long life, 2–3A at most. Power-tool cells can give 10–20A each. Required P ≥ peak current ÷ current per cell.\n\n## Strip and wire capacity\n- Pure nickel 0.15 × 8 mm: about 3–5A. 0.2 × 8 mm: about 5–7A. Double up for more.\n- Nickel-plated steel strip looks the same but carries much less. Test: leave a scrap in salt water overnight; plated steel rusts.\n- For series links carrying high current, add copper wire or double strip.\n\n## BMS\n- Match the series count and chemistry (Li-ion 4.2V, not LiFePO4 3.65V).\n- Continuous rating at least 1.5× your load. Balancing current on cheap BMS boards is tiny (30–60 mA), so matched groups matter.\n\n## Storage\nStore at 3.6–3.8V per cell, cool and dry. Check every few months.\n\n## LiFePO4\nLiFePO4 cells (3.2V nominal, 3.65V full) make a 4S pack of 12.8V that drops into lead-acid systems. Never mix them with Li-ion cells, and use a BMS and charger for LiFePO4.\n\n## Troubleshooting\n- BMS won't give output: a group is under its low limit, or the BMS needs a charger connected once to wake.\n- One group always low: a weak or self-discharging cell in it. Find it with the pack rested and the group disconnected.\n- Pack hot under load: too few cells in parallel for the current, or a bad joint.\n\n## If you lack a part\n- No spot welder: solder quickly (above), or use cell holders with springs (fine for low currents only).\n- No BMS: don't build the pack. At minimum, use separate single-cell chargers on each group and a low-voltage cut-off; check every group by hand. This is risky.\n- No capacity tester: a resistor load, a multimeter and a clock work (see build_battery_tester).\n",
+  "tree": {"era":4,"branch":"power","requires":["test_lithium_cell","teardown_laptop_battery","skill_soldering"]},
+  "devices": ["laptop","power_bank","cordless_drill","ebike","scooter","stick_vacuum","battery_yard","robot_vacuum","power_station","hoverboard"],
+  "parts": ["battery_li","bms","charger","fuse"],
+  "license": "CC-BY-SA-4.0",
+  "refs": [
+    {"lib":"electronics","q":"18650 battery pack"}
+  ],
+  "sources": [
+    {"title":"Second-life 18650 pack builders' community practice","note":"Cell testing and matching steps summarised in our own words."}
+  ]
+}

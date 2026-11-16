@@ -1,0 +1,14 @@
+{
+  "id": "tl431",
+  "name": "Shunt references (TL431)",
+  "group": "Electronic components",
+  "demand": 1,
+  "keywords": ["tl431","shunt regulator","shunt reference","adjustable reference","431","az431","ka431","tl432","voltage reference","2.5v reference"],
+  "substitutes": ["diode_zener"],
+  "summary": "A tiny adjustable voltage reference found in almost every switching power supply.",
+  "uses": ["Precise voltage references and battery monitors","Adjusting a power supply’s output voltage","Simple shunt regulators"],
+  "identify": "A three-legged TO-92 or tiny surface-mount part marked TL431 or just 431, near the optocoupler on power supply boards.",
+  "test": "Join the reference pin to the cathode and feed it through a 1 kΩ resistor from 5–12V: the cathode should sit at about 2.5V.",
+  "decay": {"halfLifeMonths":null,"note":"Lasts."},
+  "hazards": []
+}

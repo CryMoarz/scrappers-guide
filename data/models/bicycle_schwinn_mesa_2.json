@@ -1,0 +1,19 @@
+{
+  "id": "bicycle_schwinn_mesa_2",
+  "device": "bicycle",
+  "brand": "Schwinn",
+  "model": "Mesa 2",
+  "years": "2015",
+  "notes": "Covers the 2015 Mesa 2, from one spec page for that year; other Mesa models and years may differ. The page says 7-speed in the chain and cassette rows but 21-speed in its feature text, and V-brake in one place and linear-pull in another.",
+  "research": {"checked":"2026-11-12","gaps":["Chain and cassette rows say 7-speed, but a features bullet says \"21-speed drivetrain\"; no total gear count is claimed.","The brakes row says alloy V-brake, but a features bullet says alloy linear-pull; brakes are not listed (the template has no brake part).","The SR Suntour M3020 suspension fork (63 mm travel) is not listed as a part; the page gives no spring type.","Only the 2015 Mesa 2 page was read."],"method":["Specs are from the BikeRoar spec page \"Schwinn Mesa 2 (2015) Specs\".","The researcher reported HTTP 429 from Schwinn and Mongoose pages, a bot check on Walmart, and HTTP 403 from 99spokes; none are cited."]},
+  "comps": [
+    {"key":"chain_sprocket","conf":"documented","spec":"KMC Z51 chain, listed as 7-speed; alloy MTB crankset, 42/34/24T; SunRace 14-34 cassette, listed as 7-speed","source":"https://bikeroar.com/products/schwinn/mesa-2-2015/specs"},
+    {"key":"derailleur_rear","fn":"chain_sprocket","spec":"Shimano Tourney rear derailleur, shifted by SRAM MRX grip shifters","qty":1,"ext":2,"obs":3,"conf":"documented","source":"https://bikeroar.com/products/schwinn/mesa-2-2015/specs"},
+    {"key":"derailleur_front","fn":"chain_sprocket","spec":"Shimano Tourney front derailleur","qty":1,"ext":2,"obs":3,"conf":"documented","source":"https://bikeroar.com/products/schwinn/mesa-2-2015/specs"},
+    {"key":"foam_rubber","conf":"documented","spec":"Schwinn MTB tyres, 26 x 2.1","source":"https://bikeroar.com/products/schwinn/mesa-2-2015/specs"},
+    {"key":"tube_frame","conf":"documented","spec":"Schwinn MTB trail aluminium frame (frame-type line ends in 26; tyres are 26 x 2.1)","source":"https://bikeroar.com/products/schwinn/mesa-2-2015/specs"}
+  ],
+  "sources": [
+    {"title":"Schwinn Mesa 2 (2015) Specs (BikeRoar spec database)","url":"https://bikeroar.com/products/schwinn/mesa-2-2015/specs"}
+  ]
+}

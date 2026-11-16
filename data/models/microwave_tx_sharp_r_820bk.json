@@ -1,0 +1,21 @@
+{
+  "id": "microwave_tx_sharp_r_820bk",
+  "device": "microwave_tx",
+  "brand": "Sharp",
+  "model": "R-820BK",
+  "notes": "Covers the R-820BK and R-820BW. The parts list also includes a convection motor and heaters, so this is a combination oven.",
+  "research": {"checked":"2026-11-11","method":["Sharp R-820BK/R-820BW service manual (manualslib copy), parts list: power transformer, HV capacitor, HV rectifier, fan and turntable motors, interlock switch, thermal cut-outs and monitor fuse / switch assembly with part numbers.","Rows were matched by position in the extracted page text, so check the printed page before ordering."]},
+  "comps": [
+    {"key":"transformer_hv","conf":"documented","spec":"Power transformer, part RTRN-A568WRE0 (parts list ref 1-18)","source":"https://www.manualslib.com/manual/794612/Sharp-R-820bk.html?page=43"},
+    {"key":"capacitor_large","conf":"documented","spec":"High voltage capacitor, part RC-QZA173WRE0 (parts list ref 1-5). Interchangeable alternate RC-QZA211WRE0 is also listed.","source":"https://www.manualslib.com/manual/794612/Sharp-R-820bk.html?page=43"},
+    {"key":"fan","conf":"documented","spec":"Fan motor, part RMOTEA370WRE0 (parts list ref 1-6).","source":"https://www.manualslib.com/manual/794612/Sharp-R-820bk.html?page=43"},
+    {"key":"motor_sync","conf":"documented","spec":"Turntable motor, part RMOTDA231WRE0 (parts list ref 1-3).","source":"https://www.manualslib.com/manual/794612/Sharp-R-820bk.html?page=43"},
+    {"key":"switch","conf":"documented","spec":"Secondary interlock switch / door sensing switch, part QSW-MA110WRE0 (parts list ref 1-1).","source":"https://www.manualslib.com/manual/794612/Sharp-R-820bk.html?page=43"},
+    {"key":"thermostat","conf":"documented","spec":"Thermal cut-out 170 deg., part RTHM-A048WRE0 (parts list ref 1-16). A second cut-out, 125 deg., is part RTHM-A078WRE0 (ref 1-17).","source":"https://www.manualslib.com/manual/794612/Sharp-R-820bk.html?page=43"},
+    {"key":"diode_rect_hv","fn":"diode_rect","spec":"High voltage rectifier assembly, part FH-DZA025WRK0 (parts list ref 1-4)","qty":1,"ext":2,"obs":4,"conf":"documented","source":"https://www.manualslib.com/manual/794612/Sharp-R-820bk.html?page=43"},
+    {"key":"fuse_monitor","fn":"fuse","spec":"Monitor fuse and monitor switch assembly, part FFS-BA021WRK0 (parts list ref 1-2)","qty":1,"ext":2,"obs":3,"conf":"documented","source":"https://www.manualslib.com/manual/794612/Sharp-R-820bk.html?page=43"}
+  ],
+  "sources": [
+    {"title":"Sharp R-820BK service manual, parts list (manualslib, page 43)","url":"https://www.manualslib.com/manual/794612/Sharp-R-820bk.html?page=43"}
+  ]
+}

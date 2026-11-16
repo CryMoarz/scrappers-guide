@@ -1,0 +1,27 @@
+{
+  "id": "reference_wiring_colours",
+  "kind": "reference",
+  "title": "Wire colours: mains, DC, data and thermostats",
+  "keywords": ["wire colours","wire colors","live neutral earth","hot neutral ground","atx wire colours","ethernet t568b","thermostat wires","usb wire colours","speaker wire polarity","brown blue"],
+  "summary": "What each wire colour usually means in house wiring, cords, PC power supplies, USB, network cable, thermostats and speakers. Colours are a hint, not a guarantee: always test.",
+  "difficulty": 1,
+  "mins": 5,
+  "tools": ["multimeter"],
+  "hazards": ["mains"],
+  "materials": [],
+  "steps": [
+    {"text":"Never trust a colour in salvaged or old wiring. Test with a meter or a non-contact voltage tester before you touch it.","warn":"In North American switch loops a white wire can be live. Treat every wire as live until you have proved it dead."},
+    {"text":"Mark wires with tape and a pen as you disconnect them, or photograph them first."},
+    {"text":"When you reuse cable, keep green and green-yellow for earth only, so the next person isn’t misled."}
+  ],
+  "notes": "## Mains wiring\n\n| Conductor | North America | Europe and most of the world (IEC) | Old UK fixed wiring (before 2004) |\n|---|---|---|---|\n| Live (hot) | Black, also red | Brown | Red |\n| Neutral | White or grey | Blue | Black |\n| Earth (ground) | Green, green-yellow or bare | Green-yellow | Green-yellow (older: green) |\n\n- North American polarised plugs: the wider blade is neutral.\n- Flat two-wire cord (North America): the ribbed or marked side is neutral, the smooth side is live.\n- 240 V circuits in North America have two live wires (often black and red) and may have no neutral.\n- In the UK, appliance cords have been brown and blue since the 1970s, and house wiring from 2004 to 2006 can mix the old and new colours.\n\n## DC and vehicles\n\n- Red is usually +, black −. Some old equipment breaks this rule.\n- In cars, ground wires are often black or brown; measure before you rely on it.\n\n## USB cable (USB 2.0)\n\n| Colour | Use |\n|---|---|\n| Red | +5 V |\n| Black | Ground |\n| Green | Data + |\n| White | Data − |\n\n## PC power supply (ATX)\n\n| Colour | Use |\n|---|---|\n| Yellow | +12 V |\n| Red | +5 V |\n| Orange | +3.3 V |\n| Black | Ground |\n| Purple | +5 V standby (on whenever plugged in) |\n| Green | Power on: connect to ground to switch the supply on |\n| Grey | Power good signal |\n| Blue | −12 V |\n\n## Network cable (Ethernet, T568B)\n\nPins 1 to 8, left to right, looking at the gold contacts with the clip underneath: white-orange, orange, white-green, blue, white-blue, green, white-brown, brown. T568A swaps the orange and green pairs. Old telephone wiring uses red and green for the line.\n\n## Thermostat wires (24 V AC)\n\n| Letter | Usual colour | Does |\n|---|---|---|\n| R (Rh, Rc) | Red | 24 V AC from the furnace transformer |\n| C | Blue or black | Common: the other side of the 24 V (on some heat pumps blue is B instead) |\n| W | White | Heat |\n| Y | Yellow | Cooling (the compressor) |\n| G | Green | Fan |\n| O/B | Orange or dark blue | Heat pump reversing valve |\n\n## Speakers and audio\n\n- Speaker wire: the striped, ribbed or copper-coloured conductor is usually +. To check, touch a 1.5 V cell across the speaker: the cone moves out when + is on +.\n- 3.5 mm audio plug: tip left, ring right, sleeve ground. Four-part phone plugs add a microphone: most since about 2012 are tip left, ring right, ring ground, sleeve microphone; older Nokia, Sony Ericsson and some Chinese phones swap the last two.\n",
+  "tree": {"era":3,"branch":"power","requires":["skill_multimeter"]},
+  "parts": ["wire_copper","connector"],
+  "license": "CC-BY-SA-4.0",
+  "sources": [
+    {"title":"IEC 60446 / IEC 60445: identification of conductors by colours"},
+    {"title":"US National Electrical Code (NFPA 70): grounded and grounding conductor colours"},
+    {"title":"ATX power supply design guide (Intel): connector pin colours"},
+    {"title":"TIA-568: T568A and T568B wiring"}
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "id": "gas_mower_troy_bilt_tb110",
+  "device": "gas_mower",
+  "brand": "Troy-Bilt",
+  "model": "TB110 (model code 11A-A2BM)",
+  "notes": "A 21-inch push mower. The 2014 parts manual lists model code 11A-A2BM together with the TB115, TB120 and TB130; other TB110 model codes may use different parts.",
+  "research": {"checked":"2026-11-12","gaps":["The manual's only engine section is for engine model 5X65RU (PDF pages 12-20), but it never says which of its four models use that engine.","The TB110 control cable 946-04661A is labelled 'Control Cable, Briggs' on the TB115 list, so this model code may have a Briggs engine; all engine-based claims (engine, carburetor, ignition coil, spark plug, recoil starter, fuel tank, main bearing) were dropped.","The front and rear wheels (634-04607, 634-04660) are listed, but no bearing is shown in them, so they were not mapped to bearings.","The manual has no quantity column, so no quantities are set.","No drive belt, battery or starter motor is listed on the TB110 page.","Parts for other TB110 model codes were not checked."],"method":["MTD Illustrated Parts Manual, Push Mower Models TB110, TB115, TB120 and TB130, Form 769-10291 (October 16, 2014, apps.mtdproducts.com PDF, 24 pages): the TB110 (11A-A2BM) list on PDF page 5, the other model lists on pages 7, 9 and 11, and the engine pages 12-20.","The PDF text layer is readable; page numbers here are PDF pages, which match the printed numbers.","The MTD parts page for TB110 code 11A-B1BM723 redirected to a general parts store page and was not used."]},
+  "comps": [
+    {"key":"blade","fn":"sheet_metal","spec":"Mulching blade 942-0741A with blade adapter 748-0376E; the 21 inch deck is 787-01869B (model 11A-A2BM list, PDF p.5)","ext":2,"obs":3,"conf":"documented","source":"https://apps.mtdproducts.com/manuals/769-10291.pdf"},
+    {"key":"rod_shaft","fn":"rod_shaft","spec":"Rear axle assembly 911-04142A and front axle assembly 911-04143B (model 11A-A2BM list, PDF p.5)","ext":2,"obs":4,"conf":"documented","source":"https://apps.mtdproducts.com/manuals/769-10291.pdf"},
+    {"key":"spring_torsion","fn":"spring","spec":"Torsion springs 732-05061A (right), 732-05062A (left) and 732-1014C (model 11A-A2BM list, PDF p.5)","ext":1,"obs":3,"conf":"documented","source":"https://apps.mtdproducts.com/manuals/769-10291.pdf"},
+    {"key":"cable_steel","fn":"cable_steel","spec":"Control cable 946-04661A (model 11A-A2BM list, PDF p.5)","ext":2,"obs":3,"conf":"documented","source":"https://apps.mtdproducts.com/manuals/769-10291.pdf"}
+  ],
+  "sources": [
+    {"title":"MTD Illustrated Parts Manual, Push Mower Models TB110, TB115, TB120 and TB130, Form 769-10291 (October 16, 2014)","url":"https://apps.mtdproducts.com/manuals/769-10291.pdf"}
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "id": "battery_yard_greenworks_mo40l03",
+  "device": "battery_yard",
+  "brand": "Greenworks",
+  "model": "MO40L03 (LMF415; manual file 2525102AZ)",
+  "notes": "Greenworks 40V 21 in. Brushless Smart Pace self-propelled mower. The BAF704 ratings are for that named model only.",
+  "research": {"checked":"2026-11-12","gaps":["Motor voltage: neither 40 V nor 2800 RPM is stated for the motor part itself, so the motor carries no voltage field.","It does not say which battery or how many come in the box.","With its characters shifted back, the body text on page 11 also notes an automatic switch-over to the other battery when the first cannot operate, which suggests two battery bays, but this is not claimed.","No charger ratings are claimed.","No board-level parts or teardown found."],"method":["Main source: Greenworks operator manual P0801785-01 Rev B for MO40L03 / LMF415 (file name 2525102AZ, greenworkstools.com), read as text on 2026-11-12.","Most of the English body text in that PDF uses a shifted font encoding and extracts as gibberish, but the technical data table (page 14) and the exploded-view parts list (page 15) extract cleanly.","The technical data give the mower's voltage as 40 V and its no-load speed as 2800 RPM.","The manual names battery model BAF704 and charger model CAF806 (each 'and other BAF/CAF series').","The BAF704 ratings below come from Greenworks' BAF701-BAF706 battery manual (P0801954-01, hosted on Amazon's document server)."]},
+  "comps": [
+    {"key":"motor_bldc","conf":"documented","spec":"Motor, part no. R0201026-00 (exploded view item 11); the manual titles the mower Brushless","qty":1,"source":"https://www.greenworkstools.com/cdn/shop/files/P0801785-01_2525102AZ_GWK_40V_Mower_ManualDrawing.pdf"},
+    {"key":"controller_board","conf":"documented","spec":"Power control board, part no. R0201043-00 (exploded view item 10)","qty":1,"source":"https://www.greenworkstools.com/cdn/shop/files/P0801785-01_2525102AZ_GWK_40V_Mower_ManualDrawing.pdf"},
+    {"key":"battery_li","conf":"documented","spec":"Battery model named in the mower's technical data: Greenworks BAF704 (or other BAF series); not stated whether one is included. BAF704 per its own manual: lithium-ion, 36 V, 40 V MAX, 4.0 Ah, 144 Wh, with a USB-A port rated 5 V DC at 1 amp; 120 min charge on a 29482/CAG801 charger","v":36,"ah":4,"source":"https://m.media-amazon.com/images/I/B1UkA-Qq6dL.pdf"},
+    {"key":"charger","conf":"documented","spec":"Charger model named in the mower's technical data: CAF806 (or other Greenworks CAF series)","source":"https://www.greenworkstools.com/cdn/shop/files/P0801785-01_2525102AZ_GWK_40V_Mower_ManualDrawing.pdf"}
+  ],
+  "sources": [
+    {"title":"Greenworks 40V 21'' Brushless Smart Pace Lawn Mower MO40L03 / LMF415 operator manual, P0801785-01 Rev B (greenworkstools.com, file 2525102AZ)","url":"https://www.greenworkstools.com/cdn/shop/files/P0801785-01_2525102AZ_GWK_40V_Mower_ManualDrawing.pdf"},
+    {"title":"Greenworks 40V battery BAF701/BAF702/BAF703/BAF704/BAF705/BAF706 operator manual, P0801954-01 (Greenworks PDF on Amazon's document server)","url":"https://m.media-amazon.com/images/I/B1UkA-Qq6dL.pdf"}
+  ]
+}

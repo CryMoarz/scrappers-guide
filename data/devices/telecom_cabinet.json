@@ -1,0 +1,37 @@
+{
+  "id": "telecom_cabinet",
+  "name": "Street telecom cabinet",
+  "group": "Communications",
+  "aliases": ["street cabinet","green box","fibre cabinet","dslam cabinet","cable tv node","utility cabinet","roadside cabinet","outside plant cabinet"],
+  "brands": ["Charles Industries","CommScope","Corning","Ericsson"],
+  "prev": 4,
+  "tools": ["socket","cutters","screwdriver","pry"],
+  "mins": 30,
+  "kg": 300,
+  "hazards": ["acid","heavy","mains","laser"],
+  "comps": [
+    {"key":"battery_pb","fn":"battery_pb","spec":"-48V string of 4× 12V VRLA blocks, 50–200Ah (fibre and DSL cabinets); cable TV power supplies hold 2–4 similar blocks","ah":[50,200],"qty":4,"ext":2,"obs":5,"loc":"Battery compartment at the bottom of the cabinet","kg":30},
+    {"key":"psu","fn":"psu","spec":"Plug-in -48V rectifier modules","v":48,"qty":2,"ext":1,"obs":5,"loc":"Power shelf"},
+    {"key":"transformer_lv","fn":"transformer_lv","spec":"Ferroresonant transformer, 15–40 kg (cable TV power supplies)","v":[60,90],"w":[900,1350],"ac":true,"qty":1,"ext":3,"obs":5,"loc":"Power supply cabinet","kg":25},
+    {"key":"fan","fn":"fan","spec":"48V DC fans and heat exchanger","v":48,"qty":4,"ext":1,"obs":5,"loc":"Cabinet door and roof"},
+    {"key":"thermoelectric","fn":"thermoelectric","spec":"Peltier cooling unit (some cabinets)","v":48,"w":[100,500],"qty":1,"ext":2,"obs":5,"loc":"Cabinet door","p":0.5},
+    {"key":"heating_element","fn":"heating_element","spec":"Cabinet heater, 48V or mains (cold climates)","v":48,"qty":1,"ext":2,"obs":5,"loc":"Bottom of the cabinet"},
+    {"key":"thermostat","fn":"thermostat","spec":"Fan and heater thermostats","qty":2,"ext":1,"obs":5,"loc":"Cabinet wall"},
+    {"key":"breaker","fn":"breaker","spec":"DC breakers and fuses, 48V","v":48,"qty":6,"ext":1,"obs":5,"loc":"Power distribution panel"},
+    {"key":"relay","fn":"relay","spec":"Low-voltage battery disconnect contactor","v":48,"a":[100,500],"qty":1,"ext":2,"obs":5,"loc":"Power shelf"},
+    {"key":"surge_protect","fn":"surge_protect","spec":"Surge arrestors on every line","qty":10,"ext":1,"obs":5,"loc":"Line terminations"},
+    {"key":"laser_diode","fn":"laser_diode","spec":"Fibre transceiver modules with tiny infrared lasers — invisible beam, never look into a fibre","qty":4,"ext":1,"obs":5,"loc":"Plug-in ports on the equipment cards"},
+    {"key":"wire_heavy","fn":"wire_heavy","spec":"DC cabling and busbars","qty":1,"ext":2,"obs":5,"loc":"Power shelf to batteries"}
+  ],
+  "boards": [
+    {"id":"mcu_board","qty":1,"loc":"Power and alarm controller","p":0.8}
+  ],
+  "buildings": [
+    {"b":"telecom","l":5},
+    {"b":"roadside","l":4},
+    {"b":"apartment","l":2},
+    {"b":"office","l":2},
+    {"b":"datacenter","l":2}
+  ],
+  "notes": "Grey or green metal boxes on verges and street corners. Almost nobody knows they hold batteries. Remove the battery links one at a time with insulated tools."
+}

@@ -1,0 +1,39 @@
+{
+  "id": "wind_turbine",
+  "name": "Small wind turbine system",
+  "group": "Power and solar",
+  "aliases": ["wind generator","wind turbine","windmill generator","off-grid turbine","skystream","small wind generator"],
+  "brands": ["Bergey Windpower","Xzeres","Primus Windpower","Southwest Windpower","Endurance Wind Power"],
+  "prev": 2,
+  "tools": ["socket","wrench","cutters","heavy"],
+  "mins": 180,
+  "kg": 500,
+  "hazards": ["fall","heavy","crush","acid"],
+  "comps": [
+    {"key":"wind_turbine_small","fn":"wind_turbine_small","spec":"Turbine head with blades, 400W–10 kW, 12–48V or higher-voltage output","v":[12,48],"qty":1,"ext":4,"obs":3,"loc":"Top of the tower","kg":20},
+    {"key":"magnet_strong","fn":"magnet_strong","spec":"Neodymium magnets in the permanent-magnet alternator","qty":20,"ext":4,"obs":5,"loc":"Alternator rotor in the head"},
+    {"key":"bearing","fn":"bearing","spec":"Main shaft and yaw bearings","qty":3,"ext":3,"obs":5,"loc":"Head"},
+    {"key":"charge_controller","fn":"charge_controller","spec":"Wind charge controller with dump-load switching","qty":1,"ext":1,"obs":3,"loc":"Near the batteries"},
+    {"key":"heating_element","fn":"heating_element","spec":"Dump load: air resistor bank or water heater element, 0.5–5 kW","w":[500,5000],"qty":1,"ext":1,"obs":5,"loc":"Wall beside the controller"},
+    {"key":"bridge_rect","fn":"bridge_rect","spec":"3-phase rectifier","qty":1,"ext":2,"obs":5,"loc":"Controller or tower base"},
+    {"key":"wire_heavy","fn":"wire_heavy","spec":"Heavy copper cable down the tower and to the house","qty":1,"ext":2,"obs":4,"loc":"Tower and buried run"},
+    {"key":"cable_steel","fn":"cable_steel","spec":"Galvanised steel guy wires, 6–10 mm, with turnbuckles and clamps","qty":4,"ext":2,"obs":5,"loc":"Anchors around the tower"},
+    {"key":"winch","fn":"winch","spec":"Hand or electric winch for raising and lowering a tilt-up tower","qty":1,"ext":1,"obs":5,"loc":"Stored near the tower base"},
+    {"key":"tube_frame","fn":"tube_frame","spec":"Steel pipe or lattice tower, 10–30 m","qty":1,"ext":5,"obs":5,"loc":"The tower","kg":200},
+    {"key":"battery_pb","fn":"battery_pb","spec":"Deep-cycle battery bank (off-grid systems)","v":[12,48],"ah":[100,400],"qty":8,"ext":2,"obs":3,"loc":"Shed or basement"},
+    {"key":"inverter","fn":"inverter","spec":"Off-grid or grid-tie inverter","v":[12,48],"w":[1000,5000],"ac":true,"qty":1,"ext":1,"obs":3,"loc":"Beside the batteries"}
+  ],
+  "boards": [
+    {"id":"inverter_board","qty":1,"loc":"Inside the inverter","p":0.6}
+  ],
+  "buildings": [
+    {"b":"farm","l":4},
+    {"b":"house","l":2},
+    {"b":"campground","l":2},
+    {"b":"telecom","l":2},
+    {"b":"farm_supply","l":2},
+    {"b":"school","l":1},
+    {"b":"marina","l":1}
+  ],
+  "notes": "Tie the blades or brake the turbine before lowering it: a free-spinning head is dangerous and makes live voltage. Never climb a guyed tower; tilt it down with the winch."
+}

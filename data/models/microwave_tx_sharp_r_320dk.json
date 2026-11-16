@@ -1,0 +1,17 @@
+{
+  "id": "microwave_tx_sharp_r_320dk",
+  "device": "microwave_tx",
+  "brand": "Sharp",
+  "model": "R-320DK",
+  "notes": "Covers the R-320DK, R-320DQ and R-320DW.",
+  "research": {"checked":"2026-11-11","gaps":["Ratings are not given."],"method":["Sharp R-320DK service manual (manualslib copy, which also covers R-320DQ and R-320DW), electric parts list: power transformer, HV capacitor, fan motor and turntable motor with part numbers.","Rows were matched by position in the extracted page text, so check the printed page before ordering."]},
+  "comps": [
+    {"key":"transformer_hv","conf":"documented","spec":"Power transformer, part RTRN-A603WRZZ (parts list ref 1-14)","source":"https://www.manualslib.com/manual/1127771/Sharp-R-320dk.html?page=2"},
+    {"key":"capacitor_large","conf":"documented","spec":"High voltage capacitor, part RC-QZA234WRE0 (parts list ref 1-7)","source":"https://www.manualslib.com/manual/1127771/Sharp-R-320dk.html?page=2"},
+    {"key":"fan","conf":"documented","spec":"Fan motor, part RMOTEA383WRE0 (parts list ref 1-9). Interchangeable alternate RMOTEA355WRE0 is also listed.","source":"https://www.manualslib.com/manual/1127771/Sharp-R-320dk.html?page=2"},
+    {"key":"motor_sync","conf":"documented","spec":"Turntable motor, part RMOTDA229WRE0 (parts list ref 1-12). Interchangeable alternate RMOTDA211WRE0 is also listed.","source":"https://www.manualslib.com/manual/1127771/Sharp-R-320dk.html?page=2"}
+  ],
+  "sources": [
+    {"title":"Sharp R-320DK service manual, electric parts list (manualslib, page 2)","url":"https://www.manualslib.com/manual/1127771/Sharp-R-320dk.html?page=2"}
+  ]
+}

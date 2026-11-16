@@ -1,0 +1,6 @@
+{
+  "id": "golf",
+  "name": "Golf courses",
+  "osm": ["leisure=golf_course"],
+  "exposure": 1
+}

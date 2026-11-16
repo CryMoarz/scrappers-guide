@@ -1,0 +1,28 @@
+{
+  "id": "cpap_resmed_airsense_10",
+  "device": "cpap",
+  "brand": "ResMed",
+  "model": "AirSense 10",
+  "fcc": "2ACHL-AIR10CD",
+  "notes": "The parts below are for the CDMA variant (USA and Canada). The CPAP, Elite, AutoSet and AutoSet For Her variants are covered.",
+  "research": {"checked":"2026-11-12","gaps":["The later CPAP filings were not checked and may carry other modems.","It gives heater plate temperatures but no heater wattage, and calls the display a screen without naming its type.","Next to the MCU sits an ISSI chip whose part number is not fully legible.","The main board also carries a shielded block with two ports and a single-port package beside silkscreen Sensor502, neither with a legible part number; the sensor claim uses the user guide's description.","The coin cell's brand print is only partly legible, so no brand is claimed."],"method":["FCC exhibits were read through the fccid.io mirror (fccid.io/pdf.php?id=...) because apps.fcc.gov and fcc.report returned HTTP 403.","The internal-photo exhibit (6 pages, checked 2026-11-12) is from the original 2014 CDMA filing 2ACHL-AIR10CD (grant 2014-07-17) and shows the FG Main PCBA R370-7326 (silkscreen R370-7325 Rev1.0) and the CAM PCBA R379-748.","The user guide filed with it lists the wireless module as CDMA (USA and Canada) and gives this FCC ID.","ResMed's fccid.io grantee list shows later CPAP filings (2ACHL-A10STACD, 2ACHL-AIR103G, 2ACHL-A10STA3G, 2ACHL-AIR104G, 2ACHL-AIR104GU).","The user guide is ResMed doc 378120 rev 2 (AirSense 10 with humidifier, AMER, July 2014).","In the iFixit pump guide the heater plate's orange wire is disconnected from a fuse, and a plastic heater plate cover is held by four Torx T10 screws.","ResMed's own document server (document.resmed.com) refused the research fetcher (HTTP 403), so it was skipped."]},
+  "comps": [
+    {"key":"psu","conf":"documented","spec":"ResMed 90 W external power supply unit: AC input 100-240 V 50-60 Hz 1.0-1.5 A (Class II), DC output 24 V 3.75 A; whole device typical draw 53 W, peak 104 W","v":24,"a":3.75,"w":90,"source":"https://fccid.io/pdf.php?id=2328351"},
+    {"key":"sensor_misc","conf":"documented","spec":"Pressure sensor at the device outlet, analog gauge type, -5 to +45 cm H2O; flow sensor at the device inlet, digital mass-flow type, -70 to +180 L/min","source":"https://fccid.io/pdf.php?id=2328351"},
+    {"key":"heating_element","conf":"documented","spec":"Humidifier heater plate: maximum plate temperature 68 C, cut-out 74 C; water tub holds 380 mL to the maximum fill line","source":"https://fccid.io/pdf.php?id=2328351"},
+    {"key":"hose_tubing","conf":"documented","spec":"Air tubing options: SlimLine 1.8 m, 15 mm inner diameter; Standard 2 m, 19 mm inner diameter; ClimateLineAir heated tube 2 m, 15 mm inner diameter with 41 C cut-out; 22 mm air outlet","source":"https://fccid.io/pdf.php?id=2328351"},
+    {"key":"filter_air","conf":"documented","spec":"Inlet air filter: standard polyester non-woven (over 75% arrestance at about 7 micron) or hypoallergenic acrylic/polypropylene fibre (over 98% at about 7-8 micron, over 80% at about 0.5 micron); not washable","source":"https://fccid.io/pdf.php?id=2328351"},
+    {"key":"fan","conf":"documented","spec":"Blower (pump assembly) wrapped in a rubber sock on a mounting plate inside a pump casing closed by three Torx T10 screws; one wire connector to the main board","source":"https://www.ifixit.com/Guide/ResMed+AirSense+10+Pump+Motor+Replacement/137050"},
+    {"key":"controller_board","conf":"documented","spec":"FG Main PCBA R370-7326 (silkscreen R370-7325 Rev1.0, ResMed 2014): ST STM32F405ZGT6 MCU, ISSI chip, buzzer (BZ200), coin cell, SD card slot and the screen on the display side","source":"https://fccid.io/pdf.php?id=2328350"},
+    {"key":"ic_mcu_main","fn":"ic_mcu","spec":"ST STM32F405ZGT6 Arm microcontroller (marked STM32F405ZGT6), quad flat package on the CPU side of the main PCBA","qty":1,"ext":4,"obs":4,"conf":"documented","source":"https://fccid.io/pdf.php?id=2328350"},
+    {"key":"radio_rf_cellular","fn":"radio_rf","spec":"CAM PCBA R379-748 carrying a Telit CE910-DUAL cellular module (module FCC ID RI7CE910-DUAL), with an inductor and two electrolytic capacitors; joined to the main board by a 4-wire lead","qty":1,"ext":2,"obs":4,"conf":"documented","source":"https://fccid.io/pdf.php?id=2328350"},
+    {"key":"battery_coin_main","fn":"battery_coin","spec":"Coin cell with solder tabs at BAT200 on the main PCBA","qty":1,"ext":2,"obs":4,"conf":"documented","source":"https://fccid.io/pdf.php?id=2328350"},
+    {"key":"display_screen","fn":"display","spec":"Screen mounted on the display side of the main PCBA","qty":1,"ext":2,"obs":3,"conf":"documented","source":"https://fccid.io/pdf.php?id=2328350"}
+  ],
+  "sources": [
+    {"title":"AirSense 10 user guide with humidifier, AMER, ResMed doc 378120 rev 2 (2014), FCC exhibit for 2ACHL-AIR10CD (fccid.io mirror)","url":"https://fccid.io/pdf.php?id=2328351"},
+    {"title":"AirSense 10 internal photographs, FG Main PCBA R370-7326 and CAM PCBA R379-748, FCC exhibit for 2ACHL-AIR10CD (fccid.io mirror)","url":"https://fccid.io/pdf.php?id=2328350"},
+    {"title":"ResMed AirSense 10 Pump Motor Replacement guide (iFixit, guide 137050)","url":"https://www.ifixit.com/Guide/ResMed+AirSense+10+Pump+Motor+Replacement/137050"},
+    {"title":"ResMed (grantee 2ACHL) FCC filings list (fccid.io), cited in the notes for the later CPAP filings","url":"https://fccid.io/2ACHL"}
+  ]
+}

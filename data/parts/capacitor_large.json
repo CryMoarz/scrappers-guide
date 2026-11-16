@@ -1,0 +1,14 @@
+{
+  "id": "capacitor_large",
+  "name": "Large capacitors",
+  "group": "Power conversion",
+  "demand": 1,
+  "keywords": ["capacitor","capacitors","run capacitor","start capacitor","hv capacitor","motor capacitor","ac capacitor","dual run capacitor","microwave capacitor","hv cap","oil capacitor","power factor capacitor","cbb65","cbb60","cd60"],
+  "substitutes": [],
+  "summary": "Large capacitors from motors, microwaves and power gear: run and start caps, HV caps and power-factor banks.",
+  "uses": ["Replacing a dead AC motor, pump or compressor capacitor","Starting a stubborn single-phase motor","Running an induction motor as a generator (with the right capacitors)"],
+  "identify": "Metal or plastic cylinders with two or three spade terminals, marked in µF and volts (for example 35/5 µF 440V), on AC units, pumps, fans and compressors. The microwave HV capacitor is a flat metal can near the transformer and can kill hours after unplugging. Old oil-filled capacitors (before about 1980) may hold toxic PCB oil.",
+  "test": "Discharge first with an insulated resistor tool, then use a meter’s capacitance range: it should read within about 6% of the label. Bulging, leaking or cracked cans are dead.",
+  "decay": {"halfLifeMonths":180,"note":"Film and oil types last decades; electrolytic start capacitors dry out sooner."},
+  "hazards": ["hv_cap","pcb"]
+}

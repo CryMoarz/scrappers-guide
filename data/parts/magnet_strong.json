@@ -1,0 +1,14 @@
+{
+  "id": "magnet_strong",
+  "name": "Neodymium magnets",
+  "group": "Magnets and wire",
+  "demand": 1,
+  "keywords": ["magnet","magnets","neodymium","rare earth","ndfeb","strong magnet","neodymium magnet","rare earth magnet","neo magnet","hard drive magnet","hdd magnet","arc magnet","n42","n52"],
+  "substitutes": ["magnet_ferrite"],
+  "summary": "Neodymium (rare earth) magnets: small, silver and extremely strong.",
+  "uses": ["Building efficient wind and water generators","Strong holding and retrieval magnets","Triggering reed switches and Hall sensors","Fishing metal out of water or debris"],
+  "identify": "Shiny silver or nickel-plated pieces: curved pairs on steel plates inside hard drives, small discs in phones, earbuds and speakers, and arcs in brushless motors, hub motors and cordless tools.",
+  "test": "They grab steel hard from a distance; neodymium weakens above about 80 °C, so heated ones may be weak. Big ones pinch skin and shatter into sharp chips; keep them away from pacemakers and electronics.",
+  "decay": {"halfLifeMonths":null,"note":"Lasts."},
+  "hazards": ["magnet_pinch"]
+}
