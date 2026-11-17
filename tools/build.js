@@ -38,7 +38,7 @@ async function make(ds, maintainer) {
     });
   } catch (e) { /* no changelog */ }
   const core = SDG.MODULES.map(n => `(function(){const module={};\n${read(`core/${n}.js`)}\nmodule.exports(SDG);})();`).join('\n');
-  const APP_FILES = ['store', 'md', 'forms', 'sync', 'runs', 'map', 'simple', 'calc', 'pinouts', 'pinboards', 'reference', 'app'];
+  const APP_FILES = ['store', 'md', 'forms', 'sync', 'runs', 'map', 'simple', 'sun', 'sungrid', 'calc', 'pinouts', 'pinboards', 'reference', 'app'];
   // The build id fingerprints the code, not the data: data reaches apps by sync, so only a code
   // change should tell people there's a newer app to download.
   const code = [core, ...APP_FILES.map(n => read(`app/src/${n}.js`)), read('app/src/styles.css'), read('app/src/index.html')].join('\n');
