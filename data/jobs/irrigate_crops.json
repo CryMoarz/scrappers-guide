@@ -1,7 +1,7 @@
 {
   "id": "irrigate_crops",
   "name": "Irrigate crops",
-  "keywords": ["irrigate crops","irrigation","drip irrigation","water the garden","water my garden","water crops","water plants","garden watering","watering"],
+  "keywords": ["irrigate crops","irrigation","drip irrigation","water the garden","water my garden","water crops","water plants","garden watering","watering","irrigate","irrigate garden","irrigate the garden"],
   "summary": "Drip lines put water at the roots and use a fraction of what sprinklers waste. A tank raised a metre or two feeds drip lines by gravity with no pump at all. Farm stores, garden centres and golf course maintenance sheds hold tube, fittings, timers and valves that nobody loots.",
   "parts": [
     {"fn":"hose_tubing","why":"Drip line, hose and fittings","core":true},

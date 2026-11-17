@@ -2,7 +2,7 @@
   "id": "fridge",
   "name": "Refrigerator",
   "group": "Kitchen and appliances",
-  "aliases": ["icebox","french door fridge"],
+  "aliases": ["icebox","french door fridge","fridge","refrigerator"],
   "brands": ["Whirlpool","GE","Samsung","LG","Frigidaire","Kenmore","Maytag","KitchenAid","Bosch","Electrolux"],
   "prev": 5,
   "tools": ["screwdriver","socket"],
@@ -30,6 +30,7 @@
     {"b":"school","l":3},
     {"b":"church","l":2},
     {"b":"appliance","l":4},
-    {"b":"recycling","l":3}
+    {"b":"recycling","l":3},
+    {"b":"childcare","l":5}
   ]
 }

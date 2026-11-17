@@ -1,7 +1,7 @@
 {
   "id": "hot_water",
   "name": "Heat water",
-  "keywords": ["hot water","heat water","warm water","hot shower","warm shower","solar shower","solar water heater","bath water","wash in hot water"],
+  "keywords": ["hot water","heat water","warm water","hot shower","warm shower","solar shower","solar water heater","bath water","wash in hot water","shower","showers","take a shower"],
   "summary": "Sunlight does it for free: a coil of black hose or a dark tank in a glazed box gets water hot enough to wash in on a sunny afternoon. An old water heater tank, painted black and boxed behind glass, makes a large batch heater. A water heater element wired straight to house solar panels makes heat with no battery or inverter, if every switch is rated for DC.",
   "parts": [
     {"fn":"hose_tubing","why":"A coil of black hose makes a quick solar water heater","core":true},

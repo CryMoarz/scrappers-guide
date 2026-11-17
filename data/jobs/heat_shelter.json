@@ -1,7 +1,7 @@
 {
   "id": "heat_shelter",
   "name": "Heat a shelter",
-  "keywords": ["heat a shelter","heat shelter","keep warm","stay warm","heat a room","heat my home","space heating","wood stove","survive the cold","cold at night"],
+  "keywords": ["heat a shelter","heat shelter","keep warm","stay warm","heat a room","heat my home","space heating","wood stove","survive the cold","cold at night","heat my house","heat the house","heat a house","heat my room","keep the house warm","heating"],
   "summary": "Heat people, not air. Shrink the space: one small insulated room, or a tent pitched inside a room, holds heat a whole house can’t. A sheet-metal wood stove with a proper flue heats it safely, and any flame indoors needs a carbon monoxide alarm. Electric heat is too hungry for scavenged power, but a 12V heated blanket warms a bed on about 50W.",
   "parts": [
     {"fn":"insulation","why":"Holds heat in the room you live in","core":true},

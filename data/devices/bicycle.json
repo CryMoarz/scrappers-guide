@@ -2,7 +2,7 @@
   "id": "bicycle",
   "name": "Bicycle",
   "group": "Vehicles and mobility",
-  "aliases": ["bike","push bike","pushbike","mountain bike","road bike","cycle","kids bike","bmx"],
+  "aliases": ["bike","push bike","pushbike","mountain bike","road bike","kids bike","bmx"],
   "brands": ["Trek","Specialized","Giant","Cannondale","Schwinn","Huffy","Raleigh","Diamondback","Marin","GT"],
   "prev": 5,
   "tools": ["hex","wrench","pliers","screwdriver"],

@@ -3,7 +3,7 @@
   "name": "Sheet metal and panels",
   "group": "Materials",
   "demand": 2,
-  "keywords": ["sheet metal","metal sheet","steel sheet","sheet steel","aluminium sheet","aluminum sheet","corrugated iron","corrugated metal","roofing sheet","metal roofing","tin roof","flashing","metal panel","galvanised sheet","galvanized sheet"],
+  "keywords": ["sheet metal","metal sheet","steel sheet","sheet steel","aluminium sheet","aluminum sheet","corrugated iron","corrugated metal","roofing sheet","metal roofing","tin roof","flashing","metal panel","galvanised sheet","galvanized sheet","scrap metal","metal"],
   "substitutes": ["plastic_sheet","lumber"],
   "summary": "Flat and corrugated steel and aluminium sheet: appliance cases, roofing, ducting, signs and panels.",
   "uses": ["Roofs, walls and weather shields","Heat shields, stove parts and solar cookers","Patching vehicles, tanks and ducts","Brackets, guards and boxes"],

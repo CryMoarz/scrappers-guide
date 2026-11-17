@@ -1,7 +1,7 @@
 {
   "id": "filter_air",
   "name": "Clean the air",
-  "keywords": ["clean the air","clean air","filter air","purify air","air filtration","smoke in the air","wildfire smoke","dusty air","box fan filter"],
+  "keywords": ["clean the air","clean air","filter air","purify air","air filtration","smoke in the air","wildfire smoke","dusty air","box fan filter","filter smoke","smoke filter","smoky air","smoke inside"],
   "summary": "Tape a furnace filter to a box fan and you have a room air cleaner that rivals bought ones. Furnace filters sit in nearly every furnace and on hardware store shelves, and vacuum cleaners and air purifiers hold HEPA filters. HEPA catches dust, smoke and spores; activated carbon catches smells and some fumes.",
   "parts": [
     {"fn":"filter_air","why":"HEPA and furnace filters catch dust, smoke and spores","core":true},

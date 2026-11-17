@@ -3,7 +3,7 @@
   "name": "Tanks and drums",
   "group": "Containers and pressure",
   "demand": 3,
-  "keywords": ["tank","drum","barrel","water tank","storage tank","ibc","ibc tote","tote","55 gallon drum","200 litre drum","200 liter drum","jerry can","jerrycan","bucket","5 gallon bucket","rain barrel","cistern","pressure tank","fuel can","fuel tank","water container","holding tank"],
+  "keywords": ["tank","drum","barrel","water tank","storage tank","ibc","ibc tote","tote","55 gallon drum","200 litre drum","200 liter drum","jerry can","jerrycan","bucket","5 gallon bucket","rain barrel","cistern","pressure tank","fuel can","fuel tank","water container","holding tank","gas can"],
   "substitutes": ["cooler_box"],
   "summary": "Drums, barrels, IBC totes, jerry cans, buckets and tanks for storing water, fuel and grain.",
   "uses": ["Storing drinking water and rainwater","Fuel storage (in fuel-rated cans and tanks)","Rain barrels and gravity-fed water systems","Rodent-proof grain and feed storage"],

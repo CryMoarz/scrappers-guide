@@ -3,7 +3,7 @@
   "name": "Petrol and diesel",
   "group": "Stored supplies",
   "demand": 5,
-  "keywords": ["fuel","petrol","gasoline","unleaded","diesel","red diesel","dyed diesel","biodiesel","kerosene","paraffin","lamp oil","heating oil","fuel oil","jet fuel","two-stroke mix","2-stroke mix","mixed fuel","e10"],
+  "keywords": ["fuel","petrol","gasoline","unleaded","diesel","red diesel","dyed diesel","biodiesel","kerosene","paraffin","lamp oil","heating oil","fuel oil","jet fuel","two-stroke mix","2-stroke mix","mixed fuel","e10","gas can","gasoline can","gas jug"],
   "substitutes": ["propane"],
   "summary": "Petrol (gasoline), diesel and kerosene for engines, generators, heaters and lamps. The vapour explodes: no flames, sparks or phones nearby, and never siphon by mouth.",
   "uses": ["Running generators, vehicles and small engines","Diesel and kerosene for heaters and lamps","Petrol for chainsaws and garden tools"],
