@@ -1,6 +1,15 @@
 # Runtime state: hub database, identities and outboxes. Never commit these.
 state/
 *.key
+# Keys the app exports (Sync → Contributor key), hub configs, and environment files with secrets.
+scrappers-guide-key-*.json
+hub.json
+.env
+.env.*
+# Bundles and releases moved by hand (tools/sync.js, the app's Sync tab) and zips of them.
+*.zip
+*.json.gz
+contributions.json
 # Build outputs that are regenerated (the app HTML is kept so people can download it from the repo).
 dist/
 node_modules/
