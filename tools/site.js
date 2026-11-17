@@ -31,6 +31,9 @@ const src = f => fs.readFileSync(path.join(F.ROOT, 'app', 'src', f), 'utf8');
 const { MD, Pinouts } = new Function(`${src('md.js')}\n${src('pinouts.js')}\n${src('pinboards.js')}\nreturn { MD, Pinouts };`)();
 const esc = MD.esc;
 const KIND = SDG.text.KIND;
+// The printable field guide, made by tools/export-text.js: copied in and linked when it has been made.
+const BOOK = path.join(F.ROOT, 'dist', 'field-guide.html');
+const HAS_BOOK = fs.existsSync(BOOK);
 
 // ---- What gets a page ----
 const live = r => !r.deprecated && !r.abstract;
@@ -81,7 +84,7 @@ function write(rel, text) { const f = path.join(OUT, rel); fs.mkdirSync(path.dir
 const nav = rel => `<header class="top"><div class="wrap"><a class="brand" href="${rel || './'}"><img src="${rel}icon.svg" alt="" width="28" height="28">${SITE}</a>
 <nav aria-label="Sections"><a href="${rel}devices/">Devices</a><a href="${rel}parts/">Parts</a><a href="${rel}guides/">Guides</a><a href="${rel}pinouts/">Pinouts</a><a href="${rel}hazards/">Hazards</a><a class="btn" href="${rel}app/">Open the app</a></nav></div></header>`;
 const footer = rel => `<footer class="wrap"><p><b>Salvage can kill.</b> Read the <a href="${rel}hazards/">hazards</a> before you open anything, and treat guides as a starting point, not a procedure: see <a href="${rel || './'}#trust">how much to trust it</a>.</p>
-<p>Data and guides <a href="${REPO}/blob/main/DATA-LICENSE.md">CC BY-SA 4.0</a> · code <a href="${REPO}/blob/main/LICENSE">MIT</a> · version ${esc(VERSION)}, data ${esc(data.meta.seq)}, built ${BUILT} · <a href="${REPO}">Source on GitHub</a> · <a href="${REPO}/issues/new/choose">Report a mistake</a> · <a href="${rel}field-guide.html">Printable field guide</a></p></footer>`;
+<p>Data and guides <a href="${REPO}/blob/main/DATA-LICENSE.md">CC BY-SA 4.0</a> · code <a href="${REPO}/blob/main/LICENSE">MIT</a> · version ${esc(VERSION)}, data ${esc(data.meta.seq)}, built ${BUILT} · <a href="${REPO}">Source on GitHub</a> · <a href="${REPO}/issues/new/choose">Report a mistake</a>${HAS_BOOK ? ` · <a href="${rel}field-guide.html">Printable field guide</a>` : ''}</p></footer>`;
 function page({ at, title, desc, body, crumbs, type }) {
   const rel = '../'.repeat(at.split('/').filter(Boolean).length);
   const url = BASE + at;
@@ -320,8 +323,7 @@ function main() {
   const app = fs.readFileSync(path.join(F.ROOT, 'app', 'scrappers-guide.html'));
   write('app/index.html', app);
   write('scrappers-guide.html', app);
-  const book = path.join(F.ROOT, 'dist', 'field-guide.html');
-  if (fs.existsSync(book)) write('field-guide.html', fs.readFileSync(book));
+  if (HAS_BOOK) write('field-guide.html', fs.readFileSync(BOOK));
   else console.warn('No dist/field-guide.html: run tools/export-text.js first to include the printable field guide.');
   home();
   for (const [coll, C] of Object.entries(COLLS)) C.recs.forEach(r => recordPage(coll, r));
