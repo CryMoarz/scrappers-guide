@@ -43,7 +43,27 @@ module.exports = function (SDG) {
   // Keys that reach object prototypes. Records never need them; untrusted JSON loses them on parse.
   const BAD_KEYS = ['__proto__', 'constructor', 'prototype'];
   const reviver = (k, v) => (BAD_KEYS.includes(k) ? undefined : v);
-  const parse = text => JSON.parse(text, reviver);
+  // Same result as JSON.parse(text, reviver), but a reviver makes JSON.parse keep the source of
+  // every value while it runs (several times the memory, far more for hostile input), so this
+  // parses plainly and then drops those keys, depth first, holding one frame per open level.
+  // Nesting deeper than any real data is refused, as the reviver's own recursion did.
+  const MAX_DEPTH = 1000;
+  function parse(text) {
+    const root = JSON.parse(text), open = [];
+    const enter = o => {
+      if (open.length >= MAX_DEPTH) throw new SyntaxError('JSON nested too deeply');
+      open.push({ o, keys: Array.isArray(o) ? null : Object.keys(o), i: 0 });
+    };
+    if (root && typeof root === 'object') enter(root);
+    while (open.length) {
+      const f = open[open.length - 1];
+      if (f.i >= (f.keys ? f.keys.length : f.o.length)) { open.pop(); continue; }
+      const k = f.keys ? f.keys[f.i++] : f.i++;
+      if (f.keys && BAD_KEYS.includes(k)) delete f.o[k];
+      else if (f.o[k] && typeof f.o[k] === 'object') enter(f.o[k]);
+    }
+    return root;
+  }
   const has = (o, k) => Object.prototype.hasOwnProperty.call(o, k);
   // A shallow copy of own keys only, minus `skip`. Unlike Object.assign it never sets a prototype:
   // an own "__proto__" stays a plain key, so signatures and validation still see it.
