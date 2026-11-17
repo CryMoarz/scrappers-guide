@@ -41,9 +41,9 @@ On a phone, Find, Map, Plan, Guides and More sit along the bottom of the screen 
 - **Find.** Search by part, number, need or device. The best devices to strip come first, then the building types to look in, with the rest a tap away. Filters fold into one line: months since the collapse (batteries and fuel age, looters take the obvious), the tools you have, and how much you can carry.
 - **Map.** On a [Project NOMAD](#built-for-project-nomad) box, or any hub with an offline map, the places near you that hold what you need (shops, schools, hospitals, industrial areas, even street lamps) are ranked by what's probably there, what's probably left and how far it is, out to 50 km. One tap marks a place looted, untouched, dangerous or occupied. Your own markers (home base, stash points, water) never leave your device. See [docs/MAP.md](docs/MAP.md).
 - **Plan.** A shopping list of the parts you need, and a run that gets them in the fewest stops; runs with when, how and what to get at each stop, drawn on the map; your stash; your field notes.
-- **Guides.** 52 teardowns, each saying what to leave as well as what to take, plus builds, repairs, field tests, skills and safety: 113 in all, including building a LoRa mesh node from parts and a mesh network that covers a whole town. “What can I build?” checks them against your stash.
+- **Guides.** 52 teardowns, each saying what to leave as well as what to take, plus builds, repairs, field tests, skills and safety: 115 in all, including building a LoRa mesh node from parts, a mesh network that covers a whole town, and running it and handing it over. “What can I build?” checks them against your stash.
 - **Quick reference** (Reference on a wide screen; on a phone, a switch at the top of Guides), ready to print:
-  - **13 calculators:** Ohm’s law, LED resistors, dividers, RC and 555 timers, battery and solar sizing, voltage drop, gears, resistor colour codes, and an engineering calculator that takes 4k7 or 100n.
+  - **14 calculators:** Ohm’s law, LED resistors, dividers, RC and 555 timers, battery runtime, voltage drop, gears, resistor colour codes, LoRa airtime and range, an engineering calculator that takes 4k7 or 100n, and solar sizing for anywhere in the world, offline, from NASA’s sun data built in: type a place or use your location.
   - **27 cheat sheets:** warning labels and symbols, component codes, wire colours, connectors, what fits what, power draw, battery chemistries, first aid, water and sanitation, food safety, fire and heat, shop chemicals (lye from wood ash included), welding, knots and lifting, vehicles, radio, LoRa frequencies for 211 countries, navigation, weather and more. Where it matters they say what to do when no help is coming.
   - **Microcontrollers:** board pinouts drawn for 26 boards, half of them the Chinese clones most people actually own, with the boot and strapping pins marked; how to get each family into its bootloader and unbrick it; and code templates in Arduino C++ and MicroPython for battery monitors, low-voltage cut-offs, thermostats, motors and sensors.
 - **More.** The whole database to browse, a form to log a model you opened, and sync and settings.
@@ -97,7 +97,7 @@ Be clear about what this is before you rely on it.
 | Field | Value |
 |---|---|
 | Name | `Scrapper's Guide` |
-| Image | `ghcr.io/crymoarz/scrappers-guide:4.0.1` |
+| Image | `ghcr.io/crymoarz/scrappers-guide:4.1.0` |
 | Port | container `8787`, host `8787` |
 | Volume | host `/opt/project-nomad/storage/scrappers-guide`, container `/guide` |
 
@@ -141,11 +141,11 @@ Everything else, including running it next to NOMAD without Docker and every set
 
 | **187** devices | **125** part types | **238** documented models |
 |:-:|:-:|:-:|
-| **113** guides | **30** quick-reference cards | **13** calculators |
+| **115** guides | **30** quick-reference cards | **14** calculators |
 | **41** jobs | **32** hazard cards | **63** building types |
 | **23** shared boards | **26** board pinouts | **41** linked libraries |
 
-*Counts for version 4.0.1, plus 679 router and access point models from the OpenWrt hardware table that are not yet fact-checked. `node tools/validate.js` prints the current numbers; it counts guides and written cards together (141).*
+*Counts for version 4.1.0, plus 679 router and access point models from the OpenWrt hardware table that are not yet fact-checked. `node tools/validate.js` prints the current numbers; it counts guides and written cards together (143).*
 
 The records cross-link: a job needs part types, part types hide in devices, devices sit in buildings and carry hazards, guides strip them and build with what comes out, and each guide says what to learn first. Logged models of real products confirm what is inside each device.
 
@@ -175,7 +175,7 @@ That serves the app, the API and an AI tool endpoint at http://127.0.0.1:8787. I
 - Or run the same image as NOMAD, anywhere with Docker:
 
 ```bash
-docker run -d --name scrappers-guide --restart unless-stopped -p 8787:8787 -v /srv/scrappers-guide:/guide ghcr.io/crymoarz/scrappers-guide:4.0.1
+docker run -d --name scrappers-guide --restart unless-stopped -p 8787:8787 -v /srv/scrappers-guide:/guide ghcr.io/crymoarz/scrappers-guide:4.1.0
 ```
 
 See [docs/RUNNING-A-HUB.md](docs/RUNNING-A-HUB.md), [docs/NOMAD.md](docs/NOMAD.md) and [docs/LORA.md](docs/LORA.md).
