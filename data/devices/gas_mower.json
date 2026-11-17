@@ -7,13 +7,14 @@
   "prev": 5,
   "tools": ["socket"],
   "mins": 20,
-  "hazards": ["fuel","sharp"],
+  "hazards": ["fuel","sharp","burn"],
   "comps": [
     {"key":"engine_small","fn":"engine_small","spec":"Small gas engine, 3–8 hp","w":[2240,5970],"qty":1,"ext":2,"obs":2,"loc":"Deck or frame"},
     {"key":"belt_pulley","fn":"belt_pulley","spec":"Drive belts and pulleys","qty":2,"ext":2,"obs":4,"loc":"Underneath"},
     {"key":"rod_shaft","fn":"rod_shaft","spec":"Axles and shafts","qty":2,"ext":2,"obs":4,"loc":"Chassis"},
     {"key":"bearing","fn":"bearing","spec":"Wheel and spindle bearings","qty":4,"ext":2,"obs":4,"loc":"Wheels and deck"},
-    {"key":"diode_rect","fn":"diode_rect","spec":"Rectifier diode on the charging coil (electric-start models)","qty":1,"ext":2,"obs":5,"loc":"Under the flywheel shroud","p":0.5}
+    {"key":"diode_rect","fn":"diode_rect","spec":"Rectifier diode on the charging coil (electric-start models)","qty":1,"ext":2,"obs":5,"loc":"Under the flywheel shroud","p":0.5},
+    {"key":"blade","fn":"sheet_metal","spec":"Hardened steel cutting blade, about 45–55 cm (18–22 in)","qty":1,"ext":2,"obs":4,"loc":"Under the deck, bolted to the crankshaft"}
   ],
   "buildings": [
     {"b":"garage_res","l":5},

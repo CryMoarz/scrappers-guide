@@ -5,9 +5,9 @@
   "aliases": ["angle grinder","circular saw"],
   "brands": ["Makita","DeWalt","Bosch","Milwaukee","Black+Decker","Ryobi","Metabo HPT","Skil","Vevor"],
   "prev": 5,
-  "tools": ["screwdriver"],
+  "tools": ["screwdriver","security_bits"],
   "mins": 10,
-  "hazards": ["mains"],
+  "hazards": ["mains","sharp"],
   "comps": [
     {"key":"motor_universal","fn":"motor_universal","spec":"Universal motor (runs on AC or DC)","v":[120,240],"w":[400,2400],"ac":true,"qty":1,"ext":2,"obs":3,"loc":"Tool body"},
     {"key":"gearbox","fn":"gearbox","spec":"Reduction gears","qty":1,"ext":2,"obs":4,"loc":"Tool head"},

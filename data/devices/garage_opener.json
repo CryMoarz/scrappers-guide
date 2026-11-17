@@ -7,9 +7,9 @@
   "prev": 5,
   "tools": ["screwdriver","socket"],
   "mins": 20,
-  "hazards": ["spring","mains"],
+  "hazards": ["spring","mains","heavy","fall"],
   "comps": [
-    {"key":"motor_ac","fn":"motor_ac","spec":"Gear motor (AC, or 24V DC on newer belt units)","v":24,"qty":1,"ext":2,"obs":4,"loc":"Ceiling-mounted head unit"},
+    {"key":"motor_ac","fn":"motor_ac","spec":"Gear motor: 120 V AC on older chain units, DC (12 V up to about 140 V) on newer belt and battery-backup units","v":24,"qty":1,"ext":2,"obs":4,"loc":"Ceiling-mounted head unit"},
     {"key":"gearbox","fn":"gearbox","spec":"Worm gear reduction","qty":1,"ext":2,"obs":4,"loc":"Head unit"},
     {"key":"transformer_lv","fn":"transformer_lv","spec":"Low-voltage transformer or power supply","v":24,"w":[20,150],"ac":true,"qty":1,"ext":2,"obs":4,"loc":"Head unit"},
     {"key":"radio_rf","fn":"radio_rf","spec":"Remote receiver (receive only)","qty":1,"ext":2,"obs":5,"loc":"Head unit logic board"},

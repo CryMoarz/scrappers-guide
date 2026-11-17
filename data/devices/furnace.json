@@ -7,7 +7,7 @@
   "prev": 5,
   "tools": ["screwdriver","socket"],
   "mins": 30,
-  "hazards": ["mains"],
+  "hazards": ["mains","fuel","co_gas","sharp"],
   "comps": [
     {"key":"motor_ac","fn":"motor_ac","spec":"Blower motor (PSC or variable-speed ECM)","v":[120,240],"w":[250,750],"ac":true,"qty":1,"ext":2,"obs":3,"loc":"Bottom compartment"},
     {"key":"transformer_lv","fn":"transformer_lv","spec":"24V AC control transformer","v":24,"ac":true,"qty":1,"ext":1,"obs":4,"loc":"Junction box near the controls"},
@@ -15,7 +15,10 @@
     {"key":"relay","fn":"relay","spec":"Control relays","v":24,"a":[10,20],"qty":2,"ext":2,"obs":4,"loc":"Control board"},
     {"key":"capacitor_large","fn":"capacitor_large","spec":"Blower run capacitor","qty":1,"ext":1,"obs":4,"loc":"Blower housing"},
     {"key":"valve_solenoid","fn":"valve_solenoid","spec":"Gas valve","v":24,"ac":true,"qty":1,"ext":2,"obs":4,"loc":"Burner compartment"},
-    {"key":"sensor_misc","fn":"sensor_misc","spec":"Flame sensor and pressure switch","qty":2,"ext":2,"obs":5,"loc":"Burner area"}
+    {"key":"sensor_misc","fn":"sensor_misc","spec":"Flame sensor and pressure switch","qty":2,"ext":2,"obs":5,"loc":"Burner area"},
+    {"key":"igniter","fn":"igniter","spec":"Hot surface igniter (silicon carbide or nitride, glows at 120 V) or spark igniter on older units","qty":1,"ext":2,"obs":4,"loc":"In the burner area, next to the flame sensor"},
+    {"key":"thermostat","fn":"thermostat","spec":"High-limit and flame rollout switches (bimetal)","qty":2,"ext":2,"obs":4,"loc":"On the heat exchanger and burner box"},
+    {"key":"sheet_metal","fn":"sheet_metal","spec":"Painted steel cabinet panels","qty":1,"ext":1,"obs":2,"loc":"The cabinet"}
   ],
   "boards": [
     {"id":"mcu_board","qty":1,"loc":"Furnace control board","p":1}

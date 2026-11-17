@@ -7,10 +7,10 @@
   "prev": 5,
   "tools": ["screwdriver"],
   "mins": 10,
-  "hazards": [],
+  "hazards": ["mains","fall","acid"],
   "comps": [
-    {"key":"battery_nimh","fn":"battery_nimh","spec":"6V or 12V backup pack (NiCd or NiMH)","v":[6,12],"ah":[0.8,4],"qty":1,"ext":1,"obs":5,"loc":"Behind the sign face"},
-    {"key":"battery_pb","fn":"battery_pb","spec":"Small 6V sealed lead-acid (twin-head units)","v":6,"qty":1,"ext":1,"obs":5,"loc":"Inside the housing"},
+    {"key":"battery_nimh","fn":"battery_nimh","spec":"Backup pack of NiCd or NiMH cells (1.2–4.8 V packs in small units)","v":[6,12],"ah":[0.8,4],"qty":1,"ext":1,"obs":5,"loc":"Behind the sign face"},
+    {"key":"battery_pb","fn":"battery_pb","spec":"6 V or 12 V sealed lead-acid or lead-calcium battery (larger units and steel cabinets)","v":6,"qty":1,"ext":1,"obs":5,"loc":"Inside the housing"},
     {"key":"led_light","fn":"led_light","spec":"LED arrays and lamp heads","v":[3.6,12],"w":[1,10],"qty":2,"ext":1,"obs":4,"loc":"Front"},
     {"key":"charger","fn":"charger","spec":"Built-in charger and transfer circuit","v":[6,12],"qty":1,"ext":2,"obs":5,"loc":"Inside the housing"}
   ],

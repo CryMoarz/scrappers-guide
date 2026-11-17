@@ -6,9 +6,9 @@
   "brands": ["Hunter","Harbor Breeze","Hampton Bay","Minka-Aire","Casablanca","Progress Lighting","Craftmade","Monte Carlo","Kichler","Westinghouse"],
   "prev": 5,
   "tools": ["screwdriver","pliers","ladder"],
-  "mins": 20,
+  "mins": 40,
   "kg": 6,
-  "hazards": ["fall","mains"],
+  "hazards": ["fall","mains","heavy"],
   "comps": [
     {"key":"motor_ac","fn":"motor_ac","spec":"Low-speed capacitor-run motor with an outer rotor, 50–100W","w":[50,100],"qty":1,"ext":2,"obs":4,"loc":"Motor housing","kg":3},
     {"key":"motor_bldc","fn":"motor_bldc","spec":"Brushless outer-rotor motor with permanent magnets (DC-motor models) — a decent slow-speed generator","w":[15,40],"qty":1,"ext":2,"obs":5,"loc":"Motor housing","p":0.5},
