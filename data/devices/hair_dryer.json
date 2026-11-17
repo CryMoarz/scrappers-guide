@@ -11,11 +11,11 @@
   "repairs": {"records":4467,"fixed":0.65,"end_of_life":0.25},
   "hazards": ["mains","burn"],
   "comps": [
-    {"key":"motor_dc_small","fn":"motor_dc_small","spec":"Small 12–24V DC motor fed through a diode bridge from a tap on the heater — runs from a battery once removed","v":[12,24],"qty":1,"ext":2,"obs":5,"loc":"Behind the fan at the back"},
+    {"key":"motor_dc_small","fn":"motor_dc_small","spec":"Small DC motor, often rated about 12–17 V (around 10 V in use), fed through a diode bridge from a tap on the heater — runs from a battery once removed","v":[12,17],"qty":1,"ext":2,"obs":5,"loc":"Behind the fan at the back"},
     {"key":"heating_element","fn":"heating_element","spec":"Nichrome ribbon on mica cards, about 1,000–1,800W — spare nichrome for hot-wire cutting","w":[1000,1800],"qty":1,"ext":2,"obs":4,"loc":"Barrel"},
     {"key":"fan","fn":"fan","spec":"Small plastic impeller","qty":1,"ext":1,"obs":5,"loc":"On the motor shaft"},
     {"key":"bridge_rect","fn":"bridge_rect","spec":"Bridge rectifier or four diodes feeding the motor","qty":1,"ext":2,"obs":5,"loc":"On the motor leads"},
-    {"key":"thermostat","fn":"thermostat","spec":"Bimetal cutoff and one-shot thermal fuse","qty":2,"ext":2,"obs":5,"loc":"In the barrel beside the element"},
+    {"key":"thermostat","fn":"thermostat","spec":"Overheat cut-out, and on some models a one-shot thermal fuse","qty":2,"ext":2,"obs":5,"loc":"In the barrel beside the element"},
     {"key":"switch","fn":"switch","spec":"Heat and speed slide switches","qty":2,"ext":2,"obs":5,"loc":"Handle"},
     {"key":"wire_copper","fn":"wire_copper","spec":"Mains cord, about 1.8 m","qty":1,"ext":1,"obs":5,"loc":"Handle"}
   ],
