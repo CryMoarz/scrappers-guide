@@ -8,7 +8,7 @@
   "tools": ["hands","wrench","screwdriver"],
   "mins": 20,
   "kg": 20,
-  "hazards": ["compressed_gas","fuel","co_gas"],
+  "hazards": ["compressed_gas","fuel","co_gas","mains","burn"],
   "comps": [
     {"key":"propane","fn":"propane","spec":"Propane in a 20 lb (9 kg) cylinder hidden in the base, often part full — never burn a propane heater indoors","qty":1,"ext":1,"obs":4,"loc":"Inside the base housing","kg":17},
     {"key":"gas_cylinder","fn":"gas_cylinder","spec":"Refillable propane cylinder (the 20 lb tank in North America), in the base","qty":1,"ext":1,"obs":4,"loc":"Inside the base housing"},

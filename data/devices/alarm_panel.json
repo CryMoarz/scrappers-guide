@@ -7,7 +7,7 @@
   "prev": 4,
   "tools": ["screwdriver"],
   "mins": 10,
-  "hazards": [],
+  "hazards": ["mains"],
   "comps": [
     {"key":"battery_pb","fn":"battery_pb","spec":"12V 4–7Ah sealed lead-acid battery","v":12,"ah":[4,7],"qty":1,"ext":1,"obs":5,"loc":"Metal box in a closet or basement"},
     {"key":"transformer_lv","fn":"transformer_lv","spec":"16.5V AC plug-in transformer","v":16.5,"ac":true,"qty":1,"ext":1,"obs":5,"loc":"Nearby outlet"},

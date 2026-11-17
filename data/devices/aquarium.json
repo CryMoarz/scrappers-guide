@@ -7,7 +7,7 @@
   "prev": 3,
   "tools": ["hands"],
   "mins": 5,
-  "hazards": [],
+  "hazards": ["mains"],
   "comps": [
     {"key":"pump_water","fn":"pump_water","spec":"Submersible water pumps","v":[120,240],"w":[3,150],"ac":true,"qty":1,"ext":1,"obs":4,"loc":"In the tank or pond"},
     {"key":"compressor","fn":"compressor","spec":"Small diaphragm air pumps","v":[120,240],"w":[2,35],"ac":true,"qty":1,"ext":1,"obs":5,"loc":"Beside the tank"},

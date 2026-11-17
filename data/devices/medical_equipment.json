@@ -7,7 +7,7 @@
   "prev": 3,
   "tools": ["screwdriver","security_bits"],
   "mins": 30,
-  "hazards": ["biohazard","li_fire"],
+  "hazards": ["biohazard","li_fire","mains"],
   "comps": [
     {"key":"battery_li","fn":"battery_li","spec":"Li-ion packs, about 10–15V, in monitors, infusion pumps and portable units","v":[10,15],"qty":4,"ext":1,"obs":5,"loc":"Battery doors on the back or base"},
     {"key":"battery_pb","fn":"battery_pb","spec":"12V 2–7Ah sealed lead-acid in older monitors, suction units and carts","v":12,"ah":[2,7],"qty":2,"ext":1,"obs":5,"loc":"Base of the unit or cart"},

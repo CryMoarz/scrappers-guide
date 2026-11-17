@@ -9,7 +9,7 @@
   "mins": 20,
   "kg": 30,
   "repairs": {"records":1583,"fixed":0.46,"end_of_life":0.3},
-  "hazards": ["fuel","hydraulic"],
+  "hazards": ["fuel","hydraulic","mains"],
   "comps": [
     {"key":"engine_small","fn":"engine_small","spec":"Petrol engine, 4–7 hp, horizontal shaft (gas models)","w":[2980,5220],"qty":1,"ext":2,"obs":2,"loc":"Frame","kg":15,"p":0.5},
     {"key":"motor_universal","fn":"motor_universal","spec":"Mains universal or induction motor, 1.5–2.5 kW (electric models)","w":[1500,2500],"qty":1,"ext":2,"obs":4,"loc":"Inside the housing","p":0.5},

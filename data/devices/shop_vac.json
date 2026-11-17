@@ -8,7 +8,7 @@
   "tools": ["screwdriver"],
   "mins": 10,
   "kg": 8,
-  "hazards": [],
+  "hazards": ["mains"],
   "comps": [
     {"key":"motor_universal","fn":"motor_universal","spec":"Universal motor with impeller, 1–2 kW — a strong blower from the exhaust port","w":[1000,2000],"qty":1,"ext":2,"obs":4,"loc":"Power head in the lid"},
     {"key":"tank","fn":"tank","spec":"Plastic or steel drum, 20–60 L, with lid","qty":1,"ext":1,"obs":5,"loc":"The body"},

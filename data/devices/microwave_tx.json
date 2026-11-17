@@ -7,7 +7,7 @@
   "era": "1970s–present",
   "prev": 5,
   "repairs": {"records":2722,"fixed":0.45,"end_of_life":0.31},
-  "hazards": ["heavy"],
+  "hazards": ["heavy","mains"],
   "comps": [
     {"key":"transformer_hv","fn":"transformer_hv","spec":"Microwave oven transformer (MOT), about 2 kV, 6–9 kg","v":2000,"qty":1,"ext":2,"obs":2,"loc":"Base, behind the control panel"},
     {"key":"capacitor_large","fn":"capacitor_large","spec":"High-voltage capacitor, about 1 µF 2 kV — can hold a lethal charge","v":2000,"qty":1,"ext":2,"obs":3,"loc":"Next to the transformer"},

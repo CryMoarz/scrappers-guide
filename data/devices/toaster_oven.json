@@ -9,7 +9,7 @@
   "mins": 15,
   "kg": 4,
   "repairs": {"records":377,"fixed":0.42,"end_of_life":0.25},
-  "hazards": ["sharp"],
+  "hazards": ["sharp","mains","burn"],
   "comps": [
     {"key":"heating_element","fn":"heating_element","spec":"Sheathed, quartz or nichrome-ribbon elements, 800–1,800W in total","w":[800,1800],"qty":3,"ext":2,"obs":4,"loc":"Top and bottom of the cavity"},
     {"key":"glass_pane","fn":"glass_pane","spec":"Tempered glass door — a window for a solar oven or cold frame","qty":1,"ext":1,"obs":5,"loc":"Front door (toaster ovens)"},

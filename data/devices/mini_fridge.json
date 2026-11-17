@@ -8,7 +8,7 @@
   "tools": ["screwdriver","socket"],
   "mins": 20,
   "kg": 18,
-  "hazards": ["refrigerant","chemical"],
+  "hazards": ["refrigerant","chemical","mains"],
   "comps": [
     {"key":"thermoelectric","fn":"thermoelectric","spec":"Peltier module, about 40 × 40 mm, 12V drawing about 4–5A, with heatsinks and fans (12V car coolers, wine coolers, some minibars)","v":12,"a":[4,5],"qty":1,"ext":2,"obs":5,"loc":"Back wall, between two heatsinks"},
     {"key":"cooler_box","fn":"cooler_box","spec":"Foam-insulated cabinet or cool box — still works as an icebox with no power","qty":1,"ext":1,"obs":4,"loc":"The whole unit"},

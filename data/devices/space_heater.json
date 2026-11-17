@@ -9,7 +9,7 @@
   "mins": 10,
   "kg": 4,
   "repairs": {"records":4168,"fixed":0.57,"end_of_life":0.23},
-  "hazards": [],
+  "hazards": ["mains","burn"],
   "comps": [
     {"key":"heating_element","fn":"heating_element","spec":"Nichrome coil, ceramic PTC block or sealed oil-filled fins, about 1,500W at 120V (2–3 kW at 230V) — nichrome wire also makes a hot-wire cutter","v":[120,240],"w":[1500,3000],"ac":true,"qty":1,"ext":2,"obs":4,"loc":"Behind the front grille"},
     {"key":"fan","fn":"fan","spec":"Fan blade or tangential blower with a small AC motor (fan heaters)","v":[120,240],"w":[10,30],"ac":true,"qty":1,"ext":2,"obs":4,"loc":"Behind the element"},

@@ -9,7 +9,7 @@
   "tools": ["screwdriver","cutters","ladder"],
   "mins": 15,
   "kg": 6,
-  "hazards": ["mercury","glass","fall","pcb"],
+  "hazards": ["mercury","glass","fall","pcb","mains"],
   "comps": [
     {"key":"led_light","fn":"led_light","spec":"Fluorescent tubes, 60–150 cm (T5, T8 or T12) — need a ballast; fragile and contain mercury","w":[14,80],"qty":2,"ext":1,"obs":4,"loc":"In the fixture; spare boxes in janitor closets"},
     {"key":"inductor","fn":"inductor","spec":"Magnetic ballast (older fixtures): iron core and copper windings, 1–2 kg — pre-1979 ballasts without a \"No PCBs\" label may hold PCB oil; leave leaking ones alone","qty":1,"ext":2,"obs":5,"loc":"Under the centre cover plate","kg":1.5},

@@ -5,7 +5,7 @@
   "aliases": ["electric chainsaw","battery chainsaw","cordless chainsaw","corded chainsaw","mini chainsaw"],
   "brands": ["Greenworks","Ryobi","Worx","Black+Decker","Sun Joe","EGO","Makita","DeWalt","Oregon","Milwaukee"],
   "prev": 4,
-  "hazards": ["li_fire"],
+  "hazards": ["li_fire","mains"],
   "comps": [
     {"key":"motor_universal","fn":"motor_universal","spec":"Universal motor, 1.5–2.4 kW, mains (corded models)","w":[1500,2400],"qty":1,"ext":2,"obs":4,"loc":"Body","p":0.5},
     {"key":"motor_bldc","fn":"motor_bldc","spec":"Brushless motor, 36–80V (cordless models)","v":[36,80],"qty":1,"ext":2,"obs":4,"loc":"Body","p":0.5},

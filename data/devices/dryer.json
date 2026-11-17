@@ -7,7 +7,7 @@
   "prev": 5,
   "tools": ["screwdriver","socket"],
   "mins": 35,
-  "hazards": ["heavy"],
+  "hazards": ["heavy","mains","burn"],
   "comps": [
     {"key":"motor_ac","fn":"motor_ac","spec":"1/3 hp dual-shaft AC motor","v":[120,240],"w":250,"ac":true,"qty":1,"ext":3,"obs":3,"loc":"Bottom, drives the drum belt and blower"},
     {"key":"heating_element","fn":"heating_element","spec":"About 5 kW nichrome heating coil","w":5000,"qty":1,"ext":2,"obs":3,"loc":"Rear heater housing"},

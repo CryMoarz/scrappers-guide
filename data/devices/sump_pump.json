@@ -7,7 +7,7 @@
   "prev": 3,
   "tools": ["hands","pliers"],
   "mins": 15,
-  "hazards": [],
+  "hazards": ["mains"],
   "comps": [
     {"key":"pump_water","fn":"pump_water","spec":"Submersible pump, about 1/3 hp 120V","v":120,"qty":1,"ext":2,"obs":4,"loc":"Basement pit"},
     {"key":"switch","fn":"switch","spec":"Float switch","qty":1,"ext":1,"obs":5,"loc":"Attached to the pump"},

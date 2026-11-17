@@ -8,7 +8,7 @@
   "tools": ["screwdriver","socket"],
   "mins": 20,
   "kg": 10,
-  "hazards": ["sharp"],
+  "hazards": ["sharp","mains"],
   "comps": [
     {"key":"fan","fn":"fan","spec":"Squirrel-cage blower","qty":1,"ext":2,"obs":4,"loc":"Inside the hood, above the filters"},
     {"key":"motor_ac","fn":"motor_ac","spec":"Shaded-pole or capacitor-run blower motor, 120V or 230V, 50–250W","w":[50,250],"qty":1,"ext":2,"obs":4,"loc":"In the blower housing"},

@@ -8,7 +8,7 @@
   "tools": ["hands","screwdriver","wrench"],
   "mins": 20,
   "kg": 40,
-  "hazards": ["heavy"],
+  "hazards": ["heavy","mains"],
   "comps": [
     {"key":"salt","fn":"salt","spec":"Softener salt (sodium chloride), 10–150 kg — not food grade: check the bag for additives before using it on food","qty":1,"ext":1,"obs":4,"loc":"Inside the brine tank; spare bags on the floor beside it","kg":20},
     {"key":"tank_mineral","fn":"tank","spec":"Fibreglass resin tank, about 20–25 cm wide and 1.2–1.5 m tall — reuse as a sand or carbon filter vessel","qty":1,"ext":2,"obs":5,"loc":"The tall tank","kg":30},

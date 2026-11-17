@@ -7,7 +7,7 @@
   "prev": 3,
   "tools": ["screwdriver","socket"],
   "mins": 20,
-  "hazards": [],
+  "hazards": ["mains"],
   "comps": [
     {"key":"linear_actuator","fn":"linear_actuator","spec":"24–29V DC linear actuators","v":[24,29],"qty":2,"ext":2,"obs":5,"loc":"Under the frame"},
     {"key":"psu","fn":"psu","spec":"29V power supply","v":29,"qty":1,"ext":1,"obs":5,"loc":"Floor, plugged in"},

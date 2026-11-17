@@ -8,7 +8,7 @@
   "tools": ["screwdriver"],
   "mins": 10,
   "kg": 2,
-  "hazards": ["mold"],
+  "hazards": ["mold","mains","burn"],
   "comps": [
     {"key":"tank","fn":"tank","spec":"Water tank, 2–6 litres with a screw cap","qty":1,"ext":1,"obs":4,"loc":"Top or side"},
     {"key":"hall_reed","fn":"hall_reed","spec":"Low-water float with a magnet and reed switch (many ultrasonic models)","qty":1,"ext":2,"obs":5,"loc":"Water well in the base","p":0.5},

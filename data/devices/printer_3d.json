@@ -8,7 +8,7 @@
   "prev": 2,
   "tools": ["screwdriver"],
   "mins": 20,
-  "hazards": [],
+  "hazards": ["mains","burn"],
   "comps": [
     {"key":"motor_stepper","fn":"motor_stepper","spec":"NEMA 17 stepper motors","v":[12,24],"a":[0.8,2],"qty":5,"ext":1,"obs":3,"loc":"Each axis and the extruder"},
     {"key":"rod_shaft","fn":"rod_shaft","spec":"Linear rods or rails","qty":6,"ext":1,"obs":4,"loc":"Frame"},

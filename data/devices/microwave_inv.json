@@ -7,6 +7,7 @@
   "era": "2000s–present",
   "prev": 3,
   "repairs": {"records":2722,"fixed":0.45,"end_of_life":0.31},
+  "hazards": ["mains"],
   "comps": [
     {"key":"controller_board","fn":"controller_board","spec":"Inverter power board (high-voltage switching)","qty":1,"ext":2,"obs":5,"loc":"Where the transformer would be"}
   ],

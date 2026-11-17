@@ -7,7 +7,7 @@
   "prev": 4,
   "tools": ["screwdriver"],
   "mins": 10,
-  "hazards": [],
+  "hazards": ["mains"],
   "comps": [
     {"key":"battery_pb","fn":"battery_pb","spec":"12V 7–9Ah sealed lead-acid (1–4 per unit)","v":12,"ah":[7,9],"qty":2,"ext":1,"obs":4,"loc":"Front battery door or bottom"},
     {"key":"inverter","fn":"inverter","spec":"12/24V to 120V inverter with charger","v":[12,24],"w":[200,1000],"ac":true,"qty":1,"ext":1,"obs":4,"loc":"The whole unit"},

@@ -8,7 +8,7 @@
   "tools": ["hands","cutters","screwdriver"],
   "mins": 10,
   "kg": 3,
-  "hazards": [],
+  "hazards": ["mains"],
   "comps": [
     {"key":"led_light","fn":"led_light","spec":"LED light strings, 50–300 bulbs: mains strings, or low-voltage battery and solar strings that run on 3–4.5V","v":[3,4.5],"qty":3,"ext":1,"obs":4,"loc":"Boxes and tubs, or on eaves and trees"},
     {"key":"fan","fn":"fan","spec":"12V DC blower inside each inflatable — a ready blower for a forge or stove","v":12,"qty":1,"ext":1,"obs":5,"loc":"Base of the inflatable"},

@@ -7,7 +7,7 @@
   "prev": 5,
   "tools": ["screwdriver","socket"],
   "mins": 40,
-  "hazards": ["refrigerant","heavy"],
+  "hazards": ["refrigerant","heavy","mains"],
   "comps": [
     {"key":"compressor","fn":"compressor","spec":"Hermetic compressor — have refrigerant recovered first","v":[120,240],"w":[100,250],"ac":true,"qty":1,"ext":4,"obs":2,"loc":"Bottom rear"},
     {"key":"fan","fn":"fan","spec":"Evaporator and condenser fans (12V DC or 120V)","v":12,"qty":2,"ext":2,"obs":3,"loc":"Freezer back wall; rear base"},

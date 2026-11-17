@@ -8,7 +8,7 @@
   "tools": ["screwdriver","socket"],
   "mins": 30,
   "kg": 40,
-  "hazards": ["refrigerant","heavy"],
+  "hazards": ["refrigerant","heavy","mains"],
   "comps": [
     {"key":"compressor","fn":"compressor","spec":"Hermetic refrigeration compressor, about 1/6–1/4 hp, in a sealed system: keep the whole freezer running rather than opening it","v":[120,240],"w":[120,190],"ac":true,"qty":1,"ext":5,"obs":3,"loc":"Back corner compartment","kg":9},
     {"key":"thermostat","fn":"thermostat","spec":"Capillary-bulb thermostat with dial","qty":1,"ext":2,"obs":4,"loc":"Behind the control dial"},

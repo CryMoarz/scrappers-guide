@@ -7,7 +7,7 @@
   "prev": 4,
   "tools": ["screwdriver"],
   "mins": 30,
-  "hazards": [],
+  "hazards": ["mains","burn"],
   "comps": [
     {"key":"pump_water","fn":"pump_water","spec":"Circulation pump and drain pump","v":[120,240],"w":[25,200],"ac":true,"qty":2,"ext":2,"obs":4,"loc":"Sump at the bottom"},
     {"key":"heating_element","fn":"heating_element","spec":"Heating element, about 1 kW","w":1000,"qty":1,"ext":2,"obs":4,"loc":"Floor of the tub"},

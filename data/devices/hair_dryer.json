@@ -9,7 +9,7 @@
   "mins": 10,
   "kg": 0.6,
   "repairs": {"records":4467,"fixed":0.65,"end_of_life":0.25},
-  "hazards": [],
+  "hazards": ["mains","burn"],
   "comps": [
     {"key":"motor_dc_small","fn":"motor_dc_small","spec":"Small 12–24V DC motor fed through a diode bridge from a tap on the heater — runs from a battery once removed","v":[12,24],"qty":1,"ext":2,"obs":5,"loc":"Behind the fan at the back"},
     {"key":"heating_element","fn":"heating_element","spec":"Nichrome ribbon on mica cards, about 1,000–1,800W — spare nichrome for hot-wire cutting","w":[1000,1800],"qty":1,"ext":2,"obs":4,"loc":"Barrel"},

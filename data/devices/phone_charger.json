@@ -5,9 +5,9 @@
   "aliases": ["usb wall charger","usb c charger"],
   "brands": ["Anker","Apple","Belkin","Samsung","Google","Aukey","Ugreen","Mophie"],
   "prev": 5,
-  "tools": ["hands","pry"],
+  "tools": ["hands","clamps","saw","multimeter"],
   "mins": 5,
-  "hazards": [],
+  "hazards": ["mains","hv_cap"],
   "comps": [
     {"key":"psu","fn":"psu","spec":"5V USB supply (higher on fast chargers)","v":5,"qty":1,"ext":1,"obs":2,"loc":"The whole unit"}
   ],

@@ -6,6 +6,7 @@
   "brands": ["LG","Samsung","Whirlpool","GE","Electrolux","Maytag"],
   "era": "2000s–present",
   "prev": 4,
+  "hazards": ["mains"],
   "comps": [
     {"key":"motor_bldc","fn":"motor_bldc","spec":"Large direct-drive brushless motor — a good low-RPM generator","w":[300,1000],"qty":1,"ext":3,"obs":5,"loc":"Rear of the drum, bolted to the shaft"},
     {"key":"magnet_ferrite","fn":"magnet_ferrite","spec":"Rotor magnet segments (usually ferrite)","qty":24,"ext":3,"obs":5,"loc":"Inside the direct-drive rotor"}

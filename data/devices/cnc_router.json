@@ -8,7 +8,7 @@
   "tools": ["hex","screwdriver","wrench"],
   "mins": 60,
   "kg": 100,
-  "hazards": ["sharp","heavy"],
+  "hazards": ["sharp","heavy","mains"],
   "comps": [
     {"key":"motor_stepper","fn":"motor_stepper","spec":"NEMA 23 stepper motors, about 1–3 Nm (larger machines may use servos)","v":[24,48],"a":[2,4.2],"qty":4,"ext":1,"obs":4,"loc":"End of each axis"},
     {"key":"rod_shaft","fn":"rod_shaft","spec":"Ball screws or lead screws and hardened linear rails","qty":6,"ext":2,"obs":5,"loc":"Each axis"},

@@ -9,7 +9,7 @@
   "mins": 10,
   "kg": 2,
   "repairs": {"records":1028,"fixed":0.36,"end_of_life":0.51},
-  "hazards": [],
+  "hazards": ["mains"],
   "comps": [
     {"key":"heating_element","fn":"heating_element","spec":"Long flexible heating wire, about 50–200W at mains voltage; 12V car blankets draw about 40–60W straight from a battery","v":12,"qty":1,"ext":2,"obs":5,"loc":"Sewn through the blanket in channels"},
     {"key":"fabric_tarp","fn":"fabric_tarp","spec":"Fleece or polyester blanket — still warm with the power off","qty":1,"ext":1,"obs":3,"loc":"The blanket itself"},

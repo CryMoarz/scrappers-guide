@@ -7,7 +7,7 @@
   "prev": 4,
   "tools": ["screwdriver"],
   "mins": 30,
-  "hazards": [],
+  "hazards": ["mains"],
   "comps": [
     {"key":"motor_dc_small","fn":"motor_dc_small","spec":"24V DC gear motor","v":24,"qty":1,"ext":3,"obs":5,"loc":"Header above the doors"},
     {"key":"belt_pulley","fn":"belt_pulley","spec":"Toothed drive belt and pulleys","qty":1,"ext":2,"obs":5,"loc":"Header"},

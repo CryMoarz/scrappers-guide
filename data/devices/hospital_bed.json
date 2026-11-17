@@ -7,7 +7,7 @@
   "prev": 3,
   "tools": ["screwdriver","socket"],
   "mins": 30,
-  "hazards": ["heavy"],
+  "hazards": ["heavy","mains"],
   "comps": [
     {"key":"linear_actuator","fn":"linear_actuator","spec":"24V linear actuators (3–5 per bed)","v":24,"qty":4,"ext":2,"obs":5,"loc":"Under the bed frame"},
     {"key":"battery_pb","fn":"battery_pb","spec":"24V backup battery","v":24,"qty":1,"ext":2,"obs":5,"loc":"Control box under the bed"},

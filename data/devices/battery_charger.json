@@ -7,7 +7,7 @@
   "prev": 3,
   "tools": ["screwdriver"],
   "mins": 15,
-  "hazards": [],
+  "hazards": ["mains"],
   "comps": [
     {"key":"charger","fn":"charger","spec":"6/12V lead-acid charger","v":12,"qty":1,"ext":1,"obs":3,"loc":"The whole unit"},
     {"key":"wire_heavy","fn":"wire_heavy","spec":"Clamp leads","qty":2,"ext":1,"obs":3,"loc":"Leads"}

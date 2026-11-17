@@ -8,7 +8,7 @@
   "tools": ["screwdriver"],
   "mins": 10,
   "kg": 5,
-  "hazards": ["uv"],
+  "hazards": ["uv","mains"],
   "comps": [
     {"key":"filter_air","fn":"filter_air","spec":"True HEPA pleated filter — strap one to a box fan to filter smoke and dust","qty":1,"ext":1,"obs":4,"loc":"Behind the front or rear cover; spares often boxed nearby"},
     {"key":"carbon","fn":"carbon","spec":"Activated carbon pre-filter or granule tray","qty":1,"ext":1,"obs":5,"loc":"In front of the HEPA filter"},

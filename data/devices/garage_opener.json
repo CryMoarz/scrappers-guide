@@ -7,7 +7,7 @@
   "prev": 5,
   "tools": ["screwdriver","socket"],
   "mins": 20,
-  "hazards": ["spring"],
+  "hazards": ["spring","mains"],
   "comps": [
     {"key":"motor_ac","fn":"motor_ac","spec":"Gear motor (AC, or 24V DC on newer belt units)","v":24,"qty":1,"ext":2,"obs":4,"loc":"Ceiling-mounted head unit"},
     {"key":"gearbox","fn":"gearbox","spec":"Worm gear reduction","qty":1,"ext":2,"obs":4,"loc":"Head unit"},

@@ -9,7 +9,7 @@
   "mins": 15,
   "kg": 3,
   "repairs": {"records":24651,"fixed":0.49,"end_of_life":0.3},
-  "hazards": [],
+  "hazards": ["mains","burn"],
   "comps": [
     {"key":"pump_water","fn":"pump_water","spec":"Vibratory pump, about 15 bar on 120/230V AC (espresso and many pod machines), or a small DC diaphragm pump","v":230,"ac":true,"qty":1,"ext":2,"obs":5,"loc":"Base, beside the water tank"},
     {"key":"heating_element","fn":"heating_element","spec":"Cast-in tube heater or thermoblock, 800–1,500W","w":[800,1500],"qty":1,"ext":2,"obs":4,"loc":"Base, under the hot plate or boiler"},

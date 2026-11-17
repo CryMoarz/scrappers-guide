@@ -8,7 +8,7 @@
   "tools": ["screwdriver","pliers","cutters"],
   "mins": 20,
   "kg": 4,
-  "hazards": ["hv_cap"],
+  "hazards": ["hv_cap","mains"],
   "comps": [
     {"key":"capacitor_large","fn":"capacitor_large","spec":"Energy storage capacitor, several hundred volts — can hold a painful charge after unplugging","qty":1,"ext":2,"obs":5,"loc":"Inside the energiser"},
     {"key":"transformer_hv","fn":"transformer_hv","spec":"Pulse step-up transformer, 5–10 kV pulses","v":[5000,10000],"qty":1,"ext":2,"obs":5,"loc":"Inside the energiser"},

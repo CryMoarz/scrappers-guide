@@ -7,7 +7,7 @@
   "prev": 3,
   "tools": ["socket","cutters","heavy"],
   "mins": 60,
-  "hazards": ["heavy","acid"],
+  "hazards": ["heavy","acid","mains"],
   "comps": [
     {"key":"battery_pb","fn":"battery_pb","spec":"-48V VRLA battery strings (many 12V 100Ah+ blocks)","ah":100,"qty":8,"ext":3,"obs":5,"loc":"Equipment shelter or battery cabinet"},
     {"key":"psu","fn":"psu","spec":"-48V rectifier modules","v":48,"qty":4,"ext":2,"obs":5,"loc":"Power cabinet"},

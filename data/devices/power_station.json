@@ -7,7 +7,7 @@
   "prev": 3,
   "tools": ["screwdriver"],
   "mins": 15,
-  "hazards": ["li_fire"],
+  "hazards": ["li_fire","mains"],
   "comps": [
     {"key":"battery_li","fn":"battery_li","spec":"LiFePO4 or Li-ion pack","v":[11.1,51.2],"ah":[6,50],"qty":1,"ext":2,"obs":1,"loc":"Case"},
     {"key":"inverter","fn":"inverter","spec":"Built-in pure-sine inverter","v":[12,51.2],"w":[300,3000],"ac":true,"qty":1,"ext":2,"obs":2,"loc":"Case"},

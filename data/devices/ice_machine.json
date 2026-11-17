@@ -8,7 +8,7 @@
   "tools": ["screwdriver","socket"],
   "mins": 45,
   "kg": 90,
-  "hazards": ["refrigerant","heavy","mold"],
+  "hazards": ["refrigerant","heavy","mold","mains"],
   "comps": [
     {"key":"cooler_box","fn":"cooler_box","spec":"Insulated ice storage bin, holds 100–300 kg of ice — a big ready-made cooler","qty":1,"ext":2,"obs":5,"loc":"Under the ice-making head","kg":40},
     {"key":"filter_water","fn":"filter_water","spec":"Inline sediment and carbon cartridges; sealed spares are often stored nearby","qty":2,"ext":1,"obs":5,"loc":"On the wall behind the machine, on the water supply line"},

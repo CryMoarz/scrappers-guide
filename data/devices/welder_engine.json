@@ -8,7 +8,7 @@
   "tools": ["socket","wrench","heavy"],
   "mins": 60,
   "kg": 250,
-  "hazards": ["fuel","co_gas","heavy","acid"],
+  "hazards": ["fuel","co_gas","heavy","acid","mains"],
   "comps": [
     {"key":"alternator","fn":"alternator","spec":"Welding alternator with 120/240V auxiliary outlets, several kW — a full generator","v":240,"qty":1,"ext":4,"obs":5,"loc":"Coupled to the engine","kg":50},
     {"key":"engine_small","fn":"engine_small","spec":"Petrol or diesel engine, 10–25 hp","w":[7460,18650],"qty":1,"ext":3,"obs":4,"loc":"Inside the enclosure","kg":60},

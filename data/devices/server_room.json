@@ -7,7 +7,7 @@
   "prev": 3,
   "tools": ["screwdriver","socket","heavy"],
   "mins": 60,
-  "hazards": ["heavy"],
+  "hazards": ["heavy","mains"],
   "comps": [
     {"key":"battery_pb","fn":"battery_pb","spec":"Large UPS battery banks","v":12,"ah":[7,200],"qty":20,"ext":3,"obs":5,"loc":"UPS cabinets"},
     {"key":"psu","fn":"psu","spec":"Server power supplies, 12V at high current","v":12,"qty":10,"ext":1,"obs":4,"loc":"Back of each server"},

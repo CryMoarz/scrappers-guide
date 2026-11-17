@@ -7,7 +7,7 @@
   "prev": 5,
   "tools": ["screwdriver","socket"],
   "mins": 30,
-  "hazards": [],
+  "hazards": ["mains"],
   "comps": [
     {"key":"motor_ac","fn":"motor_ac","spec":"Blower motor (PSC or variable-speed ECM)","v":[120,240],"w":[250,750],"ac":true,"qty":1,"ext":2,"obs":3,"loc":"Bottom compartment"},
     {"key":"transformer_lv","fn":"transformer_lv","spec":"24V AC control transformer","v":24,"ac":true,"qty":1,"ext":1,"obs":4,"loc":"Junction box near the controls"},

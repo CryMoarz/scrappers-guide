@@ -7,7 +7,7 @@
   "prev": 3,
   "tools": ["hex","screwdriver","socket","heavy"],
   "mins": 120,
-  "hazards": ["refrigerant","heavy","mold"],
+  "hazards": ["refrigerant","heavy","mold","mains"],
   "comps": [
     {"key":"insulation","fn":"insulation","spec":"Insulated sandwich panels, 75–100 mm foam between steel skins, cam-locked together — rebuild as an insulated room","qty":12,"ext":3,"obs":5,"loc":"Walls, ceiling and often the floor","kg":30},
     {"key":"compressor","fn":"compressor","spec":"Condensing unit compressor, about 1–3 hp","v":[208,460],"w":[750,2240],"ac":true,"qty":1,"ext":5,"obs":4,"loc":"On the roof of the box or outside the building","kg":30},

@@ -9,7 +9,7 @@
   "mins": 20,
   "kg": 4,
   "repairs": {"records":1657,"fixed":0.54,"end_of_life":0.23},
-  "hazards": ["mercury","laser","glass"],
+  "hazards": ["mercury","laser","glass","mains"],
   "comps": [
     {"key":"optics","fn":"optics","spec":"Multi-element glass projection lens, condenser lenses, mirrors and dichroic filters — good magnifiers and burning glasses","qty":4,"ext":2,"obs":5,"loc":"Front lens barrel and light path"},
     {"key":"fan","fn":"fan","spec":"Blower and axial fans, 12V","v":12,"qty":3,"ext":1,"obs":4,"loc":"Around the lamp and power supply"},

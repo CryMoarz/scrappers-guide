@@ -7,7 +7,7 @@
   "prev": 4,
   "tools": ["socket","pry","heavy"],
   "mins": 45,
-  "hazards": ["heavy","refrigerant"],
+  "hazards": ["heavy","refrigerant","mains"],
   "comps": [
     {"key":"motor_dc_small","fn":"motor_dc_small","spec":"Spiral dispensing gear motors, 24V (dozens)","v":24,"qty":30,"ext":2,"obs":5,"loc":"Behind each spiral"},
     {"key":"psu","fn":"psu","spec":"24V power supply","v":24,"qty":1,"ext":2,"obs":5,"loc":"Base"},

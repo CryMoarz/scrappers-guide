@@ -8,7 +8,7 @@
   "tools": ["screwdriver"],
   "mins": 10,
   "kg": 5,
-  "hazards": [],
+  "hazards": ["mains"],
   "comps": [
     {"key":"thermostat","fn":"thermostat","spec":"Digital temperature controller with probe, holds within about 0.1–0.5 °C","qty":1,"ext":1,"obs":5,"loc":"Lid or front panel"},
     {"key":"heating_element","fn":"heating_element","spec":"Heater, 25–150W, mains or 12V","v":12,"w":[25,150],"qty":1,"ext":1,"obs":5,"loc":"Lid or rear wall"},

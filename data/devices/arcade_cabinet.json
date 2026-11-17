@@ -8,7 +8,7 @@
   "tools": ["screwdriver","socket","pry"],
   "mins": 30,
   "kg": 120,
-  "hazards": ["heavy","glass","hv_cap","implosion"],
+  "hazards": ["heavy","glass","hv_cap","implosion","mains"],
   "comps": [
     {"key":"display","fn":"display","spec":"19–32 in LCD; older cabinets have a CRT — treat it as charged and fragile","qty":1,"ext":3,"obs":4,"loc":"Front of the cabinet"},
     {"key":"speaker","fn":"speaker","spec":"Cabinet speakers, 4–8 Ω","w":[5,20],"qty":2,"ext":1,"obs":4,"loc":"Above or below the screen"},

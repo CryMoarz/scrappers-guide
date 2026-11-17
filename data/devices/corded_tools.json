@@ -7,7 +7,7 @@
   "prev": 5,
   "tools": ["screwdriver"],
   "mins": 10,
-  "hazards": [],
+  "hazards": ["mains"],
   "comps": [
     {"key":"motor_universal","fn":"motor_universal","spec":"Universal motor (runs on AC or DC)","v":[120,240],"w":[400,2400],"ac":true,"qty":1,"ext":2,"obs":3,"loc":"Tool body"},
     {"key":"gearbox","fn":"gearbox","spec":"Reduction gears","qty":1,"ext":2,"obs":4,"loc":"Tool head"},

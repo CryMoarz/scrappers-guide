@@ -8,7 +8,7 @@
   "prev": 5,
   "tools": ["hands","pliers"],
   "mins": 3,
-  "hazards": ["li_fire","chemical"],
+  "hazards": ["li_fire","chemical","burn"],
   "comps": [
     {"key":"battery_li","fn":"battery_li","spec":"Small lithium cell, about 400–1,000 mAh (rechargeable on many models)","ah":[0.4,1],"qty":1,"ext":1,"obs":5,"loc":"Inside the body","p":0.75},
     {"key":"led_light","fn":"led_light","spec":"Tiny indicator LED","v":[3,4.2],"w":[0.02,0.1],"qty":1,"ext":1,"obs":5,"loc":"Base"},

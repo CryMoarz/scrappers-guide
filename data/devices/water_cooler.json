@@ -8,7 +8,7 @@
   "tools": ["screwdriver","socket"],
   "mins": 20,
   "kg": 15,
-  "hazards": ["refrigerant","uv"],
+  "hazards": ["refrigerant","uv","mains"],
   "comps": [
     {"key":"water_stored","fn":"water_stored","spec":"Full 19-litre (5-gallon) bottles on top and in storerooms","qty":2,"ext":1,"obs":2,"loc":"On top; spares in a closet or storeroom","kg":19},
     {"key":"tank","fn":"tank","spec":"Empty 19-litre bottles — tough water carriers","qty":3,"ext":1,"obs":4,"loc":"Stacked in a corner or storeroom"},

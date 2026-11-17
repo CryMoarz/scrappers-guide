@@ -7,7 +7,7 @@
   "prev": 5,
   "tools": ["screwdriver"],
   "mins": 10,
-  "hazards": ["sharp"],
+  "hazards": ["sharp","mains"],
   "comps": [
     {"key":"motor_universal","fn":"motor_universal","spec":"Powerful universal motor","v":[120,240],"w":[300,1500],"ac":true,"qty":1,"ext":2,"obs":4,"loc":"Base"},
     {"key":"gearbox","fn":"gearbox","spec":"Metal gearbox (stand mixers)","qty":1,"ext":2,"obs":5,"loc":"Head"},

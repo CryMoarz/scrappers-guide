@@ -7,7 +7,7 @@
   "prev": 5,
   "tools": ["screwdriver","socket","pliers"],
   "mins": 40,
-  "hazards": ["heavy"],
+  "hazards": ["heavy","mains","burn"],
   "comps": [
     {"key":"heating_element","fn":"heating_element","spec":"Screw-in heating elements, about 4.5 kW (electric models)","w":4500,"qty":2,"ext":2,"obs":4,"loc":"Behind the front access panels","p":0.5},
     {"key":"thermostat","fn":"thermostat","spec":"Adjustable thermostats","qty":2,"ext":2,"obs":4,"loc":"Behind the same panels"},

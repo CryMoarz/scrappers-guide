@@ -7,7 +7,7 @@
   "prev": 4,
   "tools": ["screwdriver","socket"],
   "mins": 40,
-  "hazards": ["heavy"],
+  "hazards": ["heavy","mains","burn"],
   "comps": [
     {"key":"heating_element","fn":"heating_element","spec":"Large heating elements (fryers, ovens, warmers)","v":[120,240],"w":[500,6000],"ac":true,"qty":4,"ext":2,"obs":4,"loc":"Each appliance"},
     {"key":"motor_ac","fn":"motor_ac","spec":"Heavy-duty mixer and slicer motors with gearboxes","v":[120,240],"w":[250,2240],"ac":true,"qty":2,"ext":3,"obs":4,"loc":"Mixers and slicers"},

@@ -9,7 +9,7 @@
   "tools": ["screwdriver","security_bits"],
   "mins": 15,
   "kg": 1.5,
-  "hazards": [],
+  "hazards": ["mains"],
   "comps": [
     {"key":"fan","fn":"fan","spec":"Sealed blower (motor and impeller) — a strong, quiet 12–24V air supply for a forge or rocket stove","v":[12,24],"qty":1,"ext":2,"obs":5,"loc":"Centre of the case, in a foam-lined box"},
     {"key":"motor_bldc","fn":"motor_bldc","spec":"High-speed brushless motor inside the blower","v":[12,24],"w":[10,40],"qty":1,"ext":3,"obs":5,"loc":"Inside the blower unit"},

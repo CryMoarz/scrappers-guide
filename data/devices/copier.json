@@ -7,7 +7,7 @@
   "prev": 4,
   "tools": ["screwdriver"],
   "mins": 40,
-  "hazards": ["heavy"],
+  "hazards": ["heavy","mains","burn"],
   "comps": [
     {"key":"heating_element","fn":"heating_element","spec":"Fuser heater (halogen lamp or ceramic element)","v":[120,240],"w":[400,1500],"ac":true,"qty":1,"ext":2,"obs":5,"loc":"Fuser unit at the paper exit"},
     {"key":"motor_bldc","fn":"motor_bldc","spec":"24V brushless drive motors","v":24,"qty":3,"ext":2,"obs":5,"loc":"Rear frame"},

@@ -7,7 +7,7 @@
   "prev": 3,
   "tools": ["screwdriver"],
   "mins": 20,
-  "hazards": [],
+  "hazards": ["mains"],
   "comps": [
     {"key":"speaker","fn":"speaker","spec":"Large speakers and horn drivers","w":[30,500],"qty":4,"ext":2,"obs":4,"loc":"Ceilings, walls, stage"},
     {"key":"transformer_lv","fn":"transformer_lv","spec":"Heavy amplifier transformers","v":[24,60],"w":[150,1000],"ac":true,"qty":1,"ext":2,"obs":5,"loc":"Amplifier rack"},

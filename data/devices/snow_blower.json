@@ -8,7 +8,7 @@
   "tools": ["socket","wrench"],
   "mins": 40,
   "kg": 100,
-  "hazards": ["fuel","sharp","heavy"],
+  "hazards": ["fuel","sharp","heavy","mains"],
   "comps": [
     {"key":"engine_small","fn":"engine_small","spec":"Petrol engine, 5–15 hp, horizontal shaft","w":[3730,11190],"qty":1,"ext":2,"obs":3,"loc":"Behind the auger housing","kg":30},
     {"key":"motor_universal","fn":"motor_universal","spec":"Mains plug-in electric starter (many two-stage models); corded snow throwers have a universal drive motor","v":[120,240],"w":[300,1800],"ac":true,"qty":1,"ext":2,"obs":5,"loc":"Side of the engine","p":0.75},

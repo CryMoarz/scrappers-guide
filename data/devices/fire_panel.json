@@ -7,7 +7,7 @@
   "prev": 4,
   "tools": ["screwdriver"],
   "mins": 10,
-  "hazards": [],
+  "hazards": ["mains"],
   "comps": [
     {"key":"battery_pb","fn":"battery_pb","spec":"Pair of 12V 7–18Ah sealed lead-acid batteries","v":12,"ah":[7,18],"qty":2,"ext":1,"obs":5,"loc":"Bottom of the panel cabinet"},
     {"key":"psu","fn":"psu","spec":"24V power supply","v":24,"qty":1,"ext":2,"obs":5,"loc":"Panel"},

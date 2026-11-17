@@ -10,7 +10,7 @@
   "kg": 8.8,
   "repairs": {"records":1846,"fixed":0.58,"end_of_life":0.16,"faults":[{"what":"power or battery","share":0.34},{"what":"won't boot","share":0.14},{"what":"internal storage drive","share":0.12},{"what":"mainboard, memory, CPU or add-in cards","share":0.11}]},
   "materials": {"aluminium":0.77,"copper":0.34,"steel":4.6,"plastic":1.8,"boards":0.87,"glass":0.2,"other_metal":0.079,"other":0.11},
-  "hazards": [],
+  "hazards": ["mains"],
   "comps": [
     {"key":"psu","fn":"psu","spec":"ATX power supply, 12V/5V/3.3V at high current — a ready 12V source","v":12,"a":[18,70],"w":[250,850],"qty":1,"ext":1,"obs":3,"loc":"Rear of the case"},
     {"key":"fan","fn":"fan","spec":"12V cooling fans","v":12,"qty":3,"ext":1,"obs":3,"loc":"Case, CPU and PSU"},

@@ -8,7 +8,7 @@
   "tools": ["hands","wrench","screwdriver"],
   "mins": 15,
   "kg": 8,
-  "hazards": ["uv"],
+  "hazards": ["uv","mains"],
   "comps": [
     {"key":"filter_water_membrane","fn":"filter_water","spec":"RO membrane, about 190–380 litres (50–100 gallons) a day — removes dissolved salts and most microbes; needs 3–4 bar feed pressure","qty":1,"ext":1,"obs":5,"loc":"Horizontal housing on top"},
     {"key":"filter_water","fn":"filter_water","spec":"Sediment and carbon-block pre-filters in standard 10 in (25 cm) housings","qty":3,"ext":1,"obs":4,"loc":"Row of vertical housings"},

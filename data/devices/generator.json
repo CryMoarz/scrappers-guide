@@ -7,7 +7,7 @@
   "prev": 3,
   "tools": ["socket"],
   "mins": 30,
-  "hazards": ["fuel","heavy"],
+  "hazards": ["fuel","heavy","mains"],
   "comps": [
     {"key":"engine_small","fn":"engine_small","spec":"Small gas engine","w":[2000,12000],"qty":1,"ext":1,"obs":1,"loc":"Frame"},
     {"key":"alternator","fn":"alternator","spec":"120/240V alternator head","v":240,"qty":1,"ext":3,"obs":2,"loc":"Coupled to the engine"},

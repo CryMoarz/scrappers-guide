@@ -11,7 +11,7 @@
   "kg": 2.7,
   "repairs": {"records":1481,"fixed":0.43,"end_of_life":0.25},
   "materials": {"aluminium":0.24,"copper":0.059,"steel":0.85,"plastic":0.93,"boards":0.45,"other":0.17},
-  "hazards": ["li_fire","laser"],
+  "hazards": ["li_fire","laser","mains"],
   "comps": [
     {"key":"battery_li","fn":"battery_li","spec":"Lithium packs in wireless controllers (about 500–2,000 mAh) and handhelds (about 3,000–5,500 mAh)","v":[3.7,7.7],"ah":[0.5,5.5],"qty":2,"ext":2,"obs":4,"loc":"Inside controllers and handhelds"},
     {"key":"heatsink","fn":"heatsink","spec":"Heavy copper and aluminium heatsink, often with heat pipes","qty":1,"ext":2,"obs":4,"loc":"On the main chip","kg":0.5},

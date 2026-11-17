@@ -9,7 +9,7 @@
   "mins": 5,
   "kg": 1,
   "repairs": {"records":8913,"fixed":0.43,"end_of_life":0.42},
-  "hazards": [],
+  "hazards": ["mains","burn"],
   "comps": [
     {"key":"heating_element","fn":"heating_element","spec":"Concealed flat-plate or coil element, about 1,500W at 120V (2–3 kW at 230V) — too much for small inverters","v":[120,240],"w":[1500,3000],"ac":true,"qty":1,"ext":2,"obs":4,"loc":"Base of the jug"},
     {"key":"thermostat","fn":"thermostat","spec":"Steam-sensing bimetal switch and boil-dry thermal cutoffs","qty":3,"ext":2,"obs":5,"loc":"Under the handle and in the base"},

@@ -7,7 +7,7 @@
   "prev": 3,
   "tools": ["screwdriver"],
   "mins": 30,
-  "hazards": [],
+  "hazards": ["mains"],
   "comps": [
     {"key":"compressor","fn":"compressor","spec":"Oil-free piston compressor","v":[120,240],"w":[250,450],"ac":true,"qty":1,"ext":2,"obs":5,"loc":"Inside the case"},
     {"key":"valve_solenoid","fn":"valve_solenoid","spec":"Solenoid valves","v":[12,24],"qty":2,"ext":2,"obs":5,"loc":"Valve block"},

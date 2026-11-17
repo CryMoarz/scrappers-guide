@@ -7,7 +7,7 @@
   "prev": 4,
   "tools": ["screwdriver","socket","heavy"],
   "mins": 60,
-  "hazards": ["refrigerant","heavy"],
+  "hazards": ["refrigerant","heavy","mains"],
   "comps": [
     {"key":"compressor","fn":"compressor","spec":"Large compressors","v":[120,240],"w":[250,1100],"ac":true,"qty":1,"ext":5,"obs":4,"loc":"Rooftop or machine room"},
     {"key":"fan","fn":"fan","spec":"EC fan motors","v":[120,240],"w":[5,25],"ac":true,"qty":8,"ext":2,"obs":4,"loc":"Evaporators and condensers"},

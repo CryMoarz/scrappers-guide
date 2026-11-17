@@ -6,6 +6,7 @@
   "brands": ["Whirlpool","Maytag","Kenmore","Frigidaire","Speed Queen"],
   "era": "mostly pre-2010s",
   "prev": 4,
+  "hazards": ["mains"],
   "comps": [
     {"key":"motor_ac","fn":"motor_ac","spec":"AC induction motor, about 1/2 hp","v":[120,240],"w":370,"ac":true,"qty":1,"ext":3,"obs":2,"loc":"Underneath, driving a belt"},
     {"key":"belt_pulley","fn":"belt_pulley","spec":"Drive belt and pulley","qty":1,"ext":2,"obs":3,"loc":"Underneath"},

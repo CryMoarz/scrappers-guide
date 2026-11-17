@@ -8,7 +8,7 @@
   "tools": ["screwdriver"],
   "mins": 15,
   "repairs": {"records":2329,"fixed":0.62,"end_of_life":0.27},
-  "hazards": ["sharp"],
+  "hazards": ["sharp","mains"],
   "comps": [
     {"key":"motor_ac","fn":"motor_ac","spec":"High-torque motor","v":[120,240],"w":[100,600],"ac":true,"qty":1,"ext":2,"obs":5,"loc":"Head unit"},
     {"key":"gearbox","fn":"gearbox","spec":"Heavy reduction gearbox with high torque output","qty":1,"ext":2,"obs":5,"loc":"Head unit"},
