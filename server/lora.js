@@ -29,8 +29,8 @@ function createBridge(hub, opts) {
   const state = { link: opts.link, status: 'starting', peers: {}, heard: 0, sent: 0, botReplies: 0, received: { observations: 0, comments: 0 }, refused: 0, dropped: 0 };
   const positions = new Map();     // radio node number → last position heard
   const asked = new Map();         // radio node number → recent command times, to share airtime fairly
-  const parts = new Map();         // message id → { n, got: [], at }
-  const seen = new Set();
+  const parts = new Map();         // sending radio and message id → { n, got: [], at }
+  const seen = new Set();          // sending radio and message id of items taken
   const queue = [], replies = [];
   let sentTimes = [];
 
@@ -67,7 +67,7 @@ function createBridge(hub, opts) {
   async function announce() {
     enqueue(`${MAGIC}|H|${hub.hubFp.slice(0, 8)}|${hub.seq}|${String(await hub.datasetHash()).slice(0, 8)}|${clip(hub.cfg.name, 40)}`, { port: PORT.PRIVATE });
   }
-  async function onFrame(text) {
+  async function onFrame(text, from) {
     const f = text.split('|');
     if (f[1] === 'H') {
       if (!/^[0-9a-f]{8}$/.test(f[2] || '') || !/^\d{1,12}$/.test(f[3] || '')) return;
@@ -78,20 +78,23 @@ function createBridge(hub, opts) {
     if (f[1] !== 'D' || f.length < 6) return;
     const [, , id, iS, nS] = f;
     const i = +iS, n = +nS, piece = f.slice(5).join('|');
-    if (!/^[0-9a-z]{1,16}$/.test(id) || !(n >= 1 && n <= MAX_CHUNKS && i >= 1 && i <= n) || piece.length > CHUNK || seen.has(id)) return;
-    const p = parts.get(id) || { n, got: [], at: Date.now() };
-    if (p.n !== n) return;
+    // Chunks are kept per sending radio and id, and a chunk already in is never replaced, so
+    // another radio can't spoil someone's item by answering its first chunk with junk.
+    const key = `${from == null ? 'anon' : from}|${id}`;
+    if (!/^[0-9a-z]{1,16}$/.test(id) || !(n >= 1 && n <= MAX_CHUNKS && i >= 1 && i <= n) || piece.length > CHUNK || seen.has(key)) return;
+    const p = parts.get(key) || { n, got: [], at: Date.now() };
+    if (p.n !== n || p.got[i - 1] != null) return;
     p.got[i - 1] = piece;
-    if (!parts.has(id)) remember(parts, id, p, MAX_PARTS);
+    if (!parts.has(key)) remember(parts, key, p, MAX_PARTS);
     if (p.got.filter(x => x != null).length < n) return;
-    parts.delete(id);
-    seen.add(id);
+    parts.delete(key);
     let msg;
     try { msg = SDG.util.parse(zlib.inflateRawSync(Buffer.from(p.got.join(''), 'base64url'), { maxOutputLength: 16384 }).toString('utf8')); } catch (e) { state.dropped++; return; }
     // The same checks as any contribution: signature, schema, bans, work stamps, targets, ids.
     const take = msg && { o: hub.takeObservation, c: hub.takeComment }[msg.k];
     if (!take || !msg.v || typeof msg.v !== 'object') return;
-    try { await take(msg.v, { via: 'lora' }); state.received[msg.k === 'o' ? 'observations' : 'comments']++; } catch (e) { state.refused = (state.refused || 0) + 1; }
+    // Only an item that checks out closes its id; junk leaves it open for the real one.
+    try { await take(msg.v, { via: 'lora' }); seen.add(key); state.received[msg.k === 'o' ? 'observations' : 'comments']++; } catch (e) { state.refused = (state.refused || 0) + 1; }
   }
   const sweep = setInterval(() => {
     const t = Date.now();
@@ -185,7 +188,7 @@ function createBridge(hub, opts) {
   async function handle(m) {
     const text = String(m.text || '').trim();
     if (text.length > MAX_FRAME) { state.dropped++; return; }
-    if (text.startsWith(MAGIC + '|')) return onFrame(text);
+    if (text.startsWith(MAGIC + '|')) return onFrame(text, m.from);
     if (!opts.bot || !text.startsWith('?')) return;
     const [cmd, ...rest] = text.slice(1).split(/\s+/);
     const fn = COMMANDS[(cmd || 'help').toLowerCase()];

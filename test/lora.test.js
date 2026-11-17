@@ -131,3 +131,63 @@ test('LoRa items go through the hub\'s checks, and reassembly stays bounded', as
   for (let i = 0; i < 700; i++) b.emit('position', { from: i, lat: 1, lon: 1 });
   assert.ok(B.inFlight().positions <= 500);
 });
+
+// A node with real data and state in a temp folder, as the hub runs it.
+async function nodeHub(t, extra) {
+  const os = require('os'), fs = require('fs'), path = require('path');
+  const config = require('../server/config');
+  const { createHub } = require('../server/hub');
+  const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'sdg-lora-'));
+  fs.cpSync(F.DATA, path.join(dir, 'data'), { recursive: true });
+  const hub = await createHub(config.load([], {}, Object.assign({ mode: 'node', dataDir: path.join(dir, 'data'), stateDir: path.join(dir, 'state'), policy: { powBits: 4 } }, extra)));
+  t.after(() => hub.close());
+  return hub;
+}
+
+test('another radio can\'t spoil someone\'s chunked item', async (t) => {
+  const zlib = require('zlib');
+  const hub = await nodeHub(t);
+  const [, b] = memoryPair();
+  const B = createBridge(hub, { linkObject: b, bot: false, spacingMs: 20, maxPerMinute: 1000, firstAnnounceMs: 1e6, announceMinutes: 0 });
+  t.after(() => B.close());
+  const alice = await SDG.sign.createIdentity('Alice');
+  // A signed, stamped note long enough for several chunks, as Alice's node would send it.
+  const chunks = async label => {
+    const o = await SDG.changes.makeObservation({ lat: 45.4, lon: -75.7, status: 'dangerous', share: 'peers', label, notes: 'Gas leak in the basement, do not enter with a flame. '.repeat(3) }, null);
+    o.pow = await SDG.sign.stamp(o, 4);
+    const body = zlib.deflateRawSync(Buffer.from(JSON.stringify({ k: 'o', v: await SDG.sign.sign(o, alice) }))).toString('base64url');
+    const n = Math.ceil(body.length / 150), id = SDG.util.newId().slice(-8);
+    return Array.from({ length: n }, (_, i) => `SDG1|D|${id}|${i + 1}|${n}|${body.slice(i * 150, (i + 1) * 150)}`);
+  };
+  const junk = (chunk, i) => { const f = chunk.split('|'); return `SDG1|D|${f[2]}|${i}|${f[4]}|AAAA`; };
+  const held = label => hub.store.listObservations({ shares: ['peers'] }).some(o => o.label === label);
+  const ALICE = 0xa11ce, MALLORY = 0xbad;
+
+  // Mallory hears the first chunk and answers with junk for the rest, under the same id.
+  const one = await chunks('Gas leak');
+  assert.ok(one.length >= 3);
+  await B.handle({ text: one[0], from: ALICE });
+  for (let i = 2; i <= one.length; i++) await B.handle({ text: junk(one[0], i), from: MALLORY });
+  for (const c of one.slice(1)) await B.handle({ text: c, from: ALICE });
+  assert.ok(held('Gas leak'), 'the note arrives whatever another radio sends under its id');
+
+  // A junk copy of a chunk already in replaces nothing, even under the sender's own number.
+  const two = await chunks('Second leak');
+  for (const c of two.slice(0, -1)) await B.handle({ text: c, from: ALICE });
+  await B.handle({ text: junk(two[0], 1), from: ALICE });
+  await B.handle({ text: two[two.length - 1], from: ALICE });
+  assert.ok(held('Second leak'));
+
+  // Junk that fails to check out doesn't close the id: the real item under it still gets in.
+  const three = await chunks('Third leak');
+  const dropped = B.state.dropped;
+  for (let i = 1; i <= three.length; i++) await B.handle({ text: junk(three[0], i), from: ALICE });
+  assert.equal(B.state.dropped, dropped + 1);
+  for (const c of three) await B.handle({ text: c, from: ALICE });
+  assert.ok(held('Third leak'));
+
+  // Once an item is taken, the same chunks again are ignored.
+  assert.equal(B.state.received.observations, 3);
+  for (const c of three) await B.handle({ text: c, from: ALICE });
+  assert.equal(B.state.received.observations, 3);
+});
