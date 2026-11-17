@@ -22,7 +22,7 @@ LoRa is slow and its airtime is shared by everyone on the channel, so the bridge
 
   Replies go straight to whoever asked, not to the whole channel. Each person gets six questions per ten minutes so nobody hogs the air.
 - **Announcements.** Every hour each node says who it is and which data version it has. `?status` and the hub’s `/api/v1/info` show the nodes heard, and which have newer data, so you know which box is worth syncing with when you get close.
-- **Field notes between camps.** Notes shared with peers or the public are compressed, split into a few chunks and sent; other nodes reassemble them and take them exactly as they would over the network: signature, schema, bans, work stamps for newcomers, and a note already held is never replaced by someone else’s. (A node keeps notes shared with peers; a hub keeps only public ones.) A note is usually 2 to 4 messages. Notes made with the bot’s `?seen` are signed by the node and carry its work stamp. Reassembly is bounded (32 messages at a time, 12 chunks each, 16 KB unpacked, 10 minutes to complete), as are the radios and nodes remembered.
+- **Field notes between camps.** Notes shared with peers or the public are compressed, split into a few chunks and sent; other nodes reassemble them and take them exactly as they would over the network: signature, schema, bans, work stamps for newcomers, and a note already held is never replaced by someone else’s. (A node keeps notes shared with peers; a hub keeps only public ones.) A note is usually 2 to 4 messages. Notes made with the bot’s `?seen` are signed by the node, but anyone in radio range can send one, so they say so: each is marked as an unverified radio report, is never sent on over LoRa or put on NOMAD’s map, and is limited to 30 an hour in all and 5 an hour from any one area of about a kilometre (`seenPerHour`, `seenPerArea`). Someone who checks the place logs a note of their own, and that one travels.
 
 Machine messages go on Meshtastic’s private-app port, so they don’t clutter anyone’s chat. Full data syncs never go over LoRa: they wait for Wi-Fi, a cable or a USB stick.
 
@@ -56,7 +56,7 @@ Or in a config file:
 ```json
 {
   "mode": "node",
-  "lora": { "enabled": true, "link": "meshtastic-serial", "device": "/dev/ttyUSB0", "announceMinutes": 60, "maxPerMinute": 6 }
+  "lora": { "enabled": true, "link": "meshtastic-serial", "device": "/dev/ttyUSB0", "announceMinutes": 60, "maxPerMinute": 6, "seenPerHour": 30, "seenPerArea": 5 }
 }
 ```
 
@@ -64,7 +64,8 @@ Environment variables work too: `SDG_LORA=meshtastic-tcp SDG_LORA_HOST=192.168.1
 
 ## Being a good neighbour on the air
 
-- `maxPerMinute` (default 6) caps everything the node sends. Bot replies jump the queue; field notes and announcements wait.
+- `maxPerMinute` (default 6) caps everything the node sends. Bot replies go first, but every third message goes to field notes and announcements when they are waiting, and the two wait in separate queues so a flood of questions can’t crowd out the rest.
+- A chunked item is kept per sending radio, and a chunk already received is never replaced, so another radio can’t spoil it.
 - Long replies are cut to at most three messages.
 - Items bigger than 12 chunks are never sent over LoRa.
 - Follow your region’s rules for the band (duty cycle limits in Europe, for example).
