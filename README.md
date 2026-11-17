@@ -27,6 +27,8 @@ Type a part (“12V motor”), a part or chip number (“LM2596”), a need (“
 
 It works with no internet, ever. It syncs when it can.
 
+**Website:** [crymoarz.github.io/scrappers-guide](https://crymoarz.github.io/scrappers-guide/) has every device, part type, guide and pinout as a page you can read or link to, and the app to open or download.
+
 > [!IMPORTANT]
 > A personal open-source project developed with AI assistance. Its content has not been reviewed by qualified professionals. For educational and emergency-preparedness use only, provided without warranty: see the [disclaimer](#disclaimer).
 
@@ -206,7 +208,7 @@ node tools/build.js             # build dist/release.json and the app
 node tools/test-search.js "keep food cold" "555 timer"
 ```
 
-Also: `tools/fmt.js` (standard file layout), `tools/export-text.js` (Markdown and a printable field guide), `tools/export-tiny.js` (lookups for microcontrollers), `tools/specs.js` (electrical ratings read from part specs), `tools/import-openwrt.js` (routers from the OpenWrt hardware table), `tools/screenshots.js` (these pictures, with headless Firefox), `tools/keys.js`, `tools/mod.js`, `tools/sync.js`, `tools/lora.js`, `tools/nomad.js`, `tools/research.js`, `tools/migrate-v3.js` (old version 2 exports).
+Also: `tools/fmt.js` (standard file layout), `tools/export-text.js` (Markdown and a printable field guide), `tools/export-tiny.js` (lookups for microcontrollers), `tools/specs.js` (electrical ratings read from part specs), `tools/import-openwrt.js` (routers from the OpenWrt hardware table), `tools/site.js` (the website, published by the Website workflow), `tools/screenshots.js` (these pictures, with headless Firefox), `tools/keys.js`, `tools/mod.js`, `tools/sync.js`, `tools/lora.js`, `tools/nomad.js`, `tools/research.js`, `tools/migrate-v3.js` (old version 2 exports).
 
 ## Read next
 
