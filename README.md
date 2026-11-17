@@ -67,7 +67,7 @@ Some device pages also say what the device is made of, and for 27 kinds of devic
     <td valign="top"><b>Simple mode</b>, from the single file with no connection. Need a car battery? Everyone raids cars first; UPSes, alarm panels and telecom cabinets get overlooked.</td>
   </tr>
   <tr>
-    <td valign="top"><img src="docs/img/map.png" alt="The map of downtown Ottawa: 30 places within 2 km ranked for a car battery, each with what probably holds one there"></td>
+    <td valign="top"><img src="docs/img/map.png" alt="The map of downtown Ottawa: 30 places within 2 km ranked for a solar panel, hardware and department stores first, each with what probably holds one there"></td>
     <td valign="top"><img src="docs/img/pinout.png" alt="The ESP32-DevKitC V4 pinout on a phone, with the input-only, boot and strapping pins marked"></td>
   </tr>
   <tr>

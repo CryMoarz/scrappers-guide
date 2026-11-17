@@ -33,7 +33,7 @@ const SHOTS = [
       q.dispatchEvent(new Event('input', { bubbles: true })); const f = q.closest('form'); if (f) f.requestSubmit(); }` },
   { name: 'map', width: 1280, height: 800, hash: 'map', wait: 6000,
     run: `{ await new Promise(r => { const t = setInterval(() => { if (document.querySelector('#mapform')) { clearInterval(t); r(); } }, 100); });
-      document.querySelector('#mapq').value = 'car battery'; document.querySelector('#mapform').requestSubmit(); }` },
+      document.querySelector('#mapq').value = 'solar panel'; document.querySelector('#mapform').requestSubmit(); }` },
   { name: 'pinout', width: 390, height: 844, dpr: 2, hash: 'ref/pinouts/esp32_devkitc_v4' },
   { name: 'library-links', width: 414, height: 900, dpr: 2, hash: 'browse/hazards/acid', clip: '#v-browse .lookups', from: '#v-browse p:has(a[href*="when_no_help_is_coming"])', pad: 8 },
 ];
