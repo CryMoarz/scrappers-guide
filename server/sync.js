@@ -139,6 +139,14 @@ async function syncOnce(hub) {
   // whoever kept it, never rolls a note back.
   const signer = x => (x && x.sig && x.author && x.author.key) || null;
   const newer = (a, b) => Date.parse(a.created) > Date.parse(b.created);
+  // Hiding or showing a comment again gives it a fresh received time, as the hub's hide does, so
+  // apps paging this node see the change.
+  const setHidden = (c, hidden) => {
+    if (!c || !!c.hidden === hidden) return;
+    c.hidden = hidden;
+    c.received = hub.stamp();
+    store.putComment(c);
+  };
   for (const [kind, getOne, put] of [['comments', id => store.getComment(id), x => store.putComment(x)], ['observations', id => store.getObservation(id), x => store.putObservation(x)]]) {
     const cursor = kind + 'Received', since = store.get(cursor) || '';
     const list = await fetchPage(`${up}/api/v1/${kind}?since=${encodeURIComponent(since)}`, 1000).catch(() => null);
@@ -146,9 +154,18 @@ async function syncOnce(hub) {
     let last = since;
     for (const x of list) {
       if (x && typeof x.received === 'string' && x.received > last) last = x.received;
+      // A comment a moderator hid upstream is listed as {id, target, hidden: true}, unsigned: hide
+      // our copy too. That gives whoever answers for the upstream nothing new, since they could
+      // already keep any comment from us; one we don't hold stays unknown.
+      if (kind === 'comments' && x && x.hidden === true) {
+        if (typeof x.id === 'string') setHidden(store.getComment(x.id), true);
+        continue;
+      }
       const item = x && typeof x === 'object' ? SDG.sign.strip(x, 'received', 'hidden', 'via') : x;
       if (!(await SDG.changes.verifyItems([item], kind)).ok.length) continue;
       const known = getOne(item.id);
+      // Un-hidden upstream, a comment comes back whole and signed: show our copy again.
+      if (kind === 'comments' && known && known.hidden && signer(known) === signer(item)) { setHidden(known, false); continue; }
       if (known && (kind === 'comments' || signer(known) !== signer(item) || !newer(item, known))) continue;
       put(Object.assign(item, { received: hub.stamp() }));
     }

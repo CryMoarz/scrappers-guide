@@ -179,3 +179,50 @@ test('node: an older signed copy of a field note never replaces a newer one', as
   const v3 = await resign(v2, alice, { status: 'cleared', created: later(180e3) });
   assert.equal(await pull(v3, v1, v2), 'cleared');
 });
+
+// The hub lists a comment a moderator hid as a tombstone, unsigned, at the time it was hidden,
+// and lists it again whole and signed when it is un-hidden. This plays that hub.
+test('node: a comment hidden upstream is hidden here too, and shown again when un-hidden', async (t) => {
+  const { routes, node } = await nodeWithFake(t);
+  const alice = await SDG.sign.createIdentity('Alice'), mallory = await SDG.sign.createIdentity('Mallory');
+  const target = 'hazards/' + node.hub.dataset().hazards[0].id;
+  const c = await SDG.changes.makeComment(target, 'Bad advice: it is fine to touch this barehanded', null, alice, 4);
+  const pull = async (...items) => {
+    routes['/api/v1/comments'] = listed(...items);
+    const r = await node.hub.syncNow();
+    assert.equal(r.ok, true, JSON.stringify(r));
+    return node.hub.store.getComment(c.id);
+  };
+  const shown = async () => (await call(node.url, '/api/v1/comments?target=' + target)).body.filter(x => !x.hidden).map(x => x.id);
+  const carried = async () => ((await call(node.url, '/api/v1/bundle')).body.comments || []).some(x => x.id === c.id && x.body);
+
+  let held = await pull(c);
+  assert.deepEqual(await shown(), [c.id]);
+  const first = held.received;
+  held = await pull({ id: c.id, target, hidden: true });
+  assert.equal(held.hidden, true);
+  assert.ok(held.received > first, 'a fresh received time, so apps paging this node see it go');
+  assert.deepEqual(await shown(), []);
+  assert.equal(await carried(), false, 'bundles from this node stop carrying it');
+  const hiddenAt = held.received;
+  held = await pull({ id: c.id, target, hidden: true });
+  assert.equal(held.received, hiddenAt, 'hiding it again changes nothing');
+
+  // A tombstone for a comment this node never had is ignored.
+  await pull({ id: 'never-seen-1', target, hidden: true });
+  assert.equal(node.hub.store.getComment('never-seen-1'), null);
+
+  // Someone else's comment with its id doesn't bring it back; the author's, signed, does.
+  held = await pull(await resign(c, mallory, { body: 'Mallory was here' }));
+  assert.equal(held.hidden, true);
+  held = await pull(c);
+  assert.equal(held.hidden, false);
+  assert.equal(held.body, c.body);
+  assert.ok(held.received > hiddenAt);
+  assert.deepEqual(await shown(), [c.id]);
+  assert.equal(await carried(), true);
+
+  // A signed comment marked hidden is hidden all the same.
+  held = await pull(Object.assign({}, c, { hidden: true }));
+  assert.equal(held.hidden, true);
+});
