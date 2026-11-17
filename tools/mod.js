@@ -6,15 +6,23 @@
 //   node tools/mod.js <hub> <key> role <public key> <banned|contributor|trusted|moderator>
 //   node tools/mod.js <hub> <key> hide <comment>
 const fs = require('fs');
+const util = require('util');
 const SDG = require('../core');
 
 const [hubArg, keyFile, cmd, id, ...rest] = process.argv.slice(2);
 const hub = String(hubArg || '').replace(/\/+$/, '');
 
+// Everything a hub sends is someone else's words: shown as text, never as terminal commands.
+// Control characters (which can move the cursor, rewrite or hide lines) and bidi overrides
+// (which can reorder what you read) become visible \u escapes, line breaks included.
+const safe = v => String(v == null ? '' : v).replace(/[\u0000-\u001f\u007f-\u009f\u061c\u200e\u200f\u2028-\u202e\u2066-\u2069]/g, c => '\\u' + c.charCodeAt(0).toString(16).padStart(4, '0'));
+const json = v => safe(String(JSON.stringify(v)));
+const show = v => safe(util.inspect(v, { depth: 4, breakLength: Infinity }));
+
 async function api(path, body) {
   const res = await fetch(hub + path, body ? { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(body) } : {});
-  const out = await res.json();
-  if (!res.ok) throw new Error(`${out.error || res.status}${out.errors ? '\n' + out.errors.map(e => `  ${e.coll}/${e.id} ${e.path} ${e.msg}`).join('\n') : ''}`);
+  const out = await res.json().catch(() => { throw new Error(`HTTP ${res.status}: the hub's answer is not JSON`); });
+  if (!res.ok) throw new Error(`${safe(out.error || res.status)}${Array.isArray(out.errors) ? '\n' + out.errors.map(e => `  ${safe(e.coll)}/${safe(e.id)} ${safe(e.path)} ${safe(e.msg)}`).join('\n') : ''}`);
   return out;
 }
 
@@ -26,18 +34,21 @@ async function api(path, body) {
   if (cmd === 'pending') {
     const list = await api('/api/v1/proposals?status=pending');
     if (!list.length) return console.log('Nothing waiting.');
-    list.forEach(p => console.log(`${p.id}  ${p.op.padEnd(6)} ${p.coll}/${p.rid}${p.stale ? '  (stale)' : ''}${p.source === 'ai' ? '  [AI]' : ''}\n    by ${(p.author && p.author.name) || 'anonymous'}: ${p.reason || ''}`));
+    list.forEach(p => console.log(`${safe(p.id)}  ${safe(p.op).padEnd(6)} ${safe(p.coll)}/${safe(p.rid)}${p.stale ? '  (stale)' : ''}${p.source === 'ai' ? '  [AI]' : ''}\n    by ${safe((p.author && p.author.name) || 'anonymous')}: ${safe(p.reason)}`));
   } else if (cmd === 'show') {
     const d = await api('/api/v1/proposals/' + encodeURIComponent(id));
-    console.log(`${d.proposal.op} ${d.proposal.coll}/${d.proposal.rid}  status ${d.proposal.status}${d.stale ? '  STALE: the record changed since' : ''}\nReason: ${d.proposal.reason || ''}`);
-    d.diff.forEach(x => console.log(`  ${x.path}\n    - ${JSON.stringify(x.before)}\n    + ${JSON.stringify(x.after)}`));
-    d.problems.forEach(p => console.log(`  ✗ ${p.coll}/${p.id} ${p.path} ${p.msg}`));
+    console.log(`${safe(d.proposal.op)} ${safe(d.proposal.coll)}/${safe(d.proposal.rid)}  status ${safe(d.proposal.status)}\nReason: ${safe(d.proposal.reason)}`);
+    // The flags come after the reason, so nothing the contributor wrote can sit below them.
+    if (d.proposal.source === 'ai') console.log('AI: written by an AI tool.');
+    if (d.stale) console.log('STALE: the record changed after this was proposed. Accepting (with --force) replaces the newer version.');
+    (d.diff || []).forEach(x => console.log(`  ${safe(x.path)}\n    - ${json(x.before)}\n    + ${json(x.after)}`));
+    (d.problems || []).forEach(p => console.log(`  ✗ ${safe(p.coll)}/${safe(p.id)} ${safe(p.path)} ${safe(p.msg)}`));
   } else if (cmd === 'accept' || cmd === 'reject') {
     const note = rest.filter(x => x !== '--force').join(' ');
-    console.log(await api(`/api/v1/proposals/${encodeURIComponent(id)}/review`, await signed({ action: 'review', proposal: id, decision: cmd, note, force: rest.includes('--force') || undefined })));
+    console.log(show(await api(`/api/v1/proposals/${encodeURIComponent(id)}/review`, await signed({ action: 'review', proposal: id, decision: cmd, note, force: rest.includes('--force') || undefined }))));
   } else if (cmd === 'role') {
-    console.log(await api('/api/v1/roles', await signed({ action: 'set-role', key: id, role: rest[0] })));
+    console.log(show(await api('/api/v1/roles', await signed({ action: 'set-role', key: id, role: rest[0] }))));
   } else if (cmd === 'hide') {
-    console.log(await api(`/api/v1/comments/${encodeURIComponent(id)}/hide`, await signed({ action: 'hide-comment', comment: id, hidden: true })));
-  } else throw new Error('Unknown command ' + cmd);
-})().catch(e => { console.error(e.message); process.exit(1); });
+    console.log(show(await api(`/api/v1/comments/${encodeURIComponent(id)}/hide`, await signed({ action: 'hide-comment', comment: id, hidden: true }))));
+  } else throw new Error('Unknown command ' + safe(cmd));
+})().catch(e => { console.error(e.message.split('\n').map(safe).join('\n')); process.exit(1); });
