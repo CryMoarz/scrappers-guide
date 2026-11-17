@@ -1541,6 +1541,7 @@
         "key": {
           "type": "string",
           "maxLength": 64,
+          "pattern": "^[A-Za-z0-9_-]{43}$",
           "description": "Ed25519 public key, base64url."
         },
         "name": {
@@ -1552,6 +1553,7 @@
     "sig": {
       "type": "string",
       "maxLength": 128,
+      "pattern": "^[A-Za-z0-9_-]{86}$",
       "description": "Ed25519 signature over the canonical JSON of the object without sig, base64url."
     },
     "refs": {

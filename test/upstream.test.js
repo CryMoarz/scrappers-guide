@@ -1,5 +1,6 @@
 // A node against an upstream that misbehaves: answers that inflate to gigabytes, feeds that don't
-// end, replayed field notes and comments hidden upstream.
+// end, replayed field notes and comments hidden upstream. And what a node and a hub check in
+// whatever reaches them: one spelling per key and signature.
 const test = require('node:test');
 const assert = require('node:assert');
 const fs = require('fs');
@@ -23,8 +24,8 @@ async function start(over) {
   const addr = await hub.listen();
   return { hub, url: `http://127.0.0.1:${addr.port}`, dir };
 }
-async function call(url, p) {
-  const res = await fetch(url + p);
+async function call(url, p, body) {
+  const res = await fetch(url + p, body === undefined ? {} : { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(body) });
   return { status: res.status, body: await res.json().catch(() => null) };
 }
 
@@ -225,4 +226,84 @@ test('node: a comment hidden upstream is hidden here too, and shown again when u
   // A signed comment marked hidden is hidden all the same.
   held = await pull(Object.assign({}, c, { hidden: true }));
   assert.equal(held.hidden, true);
+});
+
+// The same bytes, spelled differently: the last character with an unused low bit set.
+const B64U = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789-_';
+const lowBit = s => s.slice(0, -1) + B64U[B64U.indexOf(s[s.length - 1]) ^ 1];
+
+test('keys and signatures have one spelling, and no other spelling of the same bytes verifies', async (t) => {
+  const alice = await SDG.sign.createIdentity('Alice');
+  const c = await SDG.changes.makeComment('parts/x', 'hi', null, alice, 4);
+  assert.equal(await SDG.sign.verify(c), true);
+  assert.ok(SDG.sign.isKey(alice.key) && SDG.sign.isSig(c.sig));
+  assert.deepEqual(SDG.util.unb64u(lowBit(c.sig)), SDG.util.unb64u(c.sig), 'atob reads both the same');
+  const sigs = [lowBit(c.sig), c.sig + '    ', ' ' + c.sig, c.sig + '==', c.sig.slice(0, 40) + '\n' + c.sig.slice(40), c.sig.replace(/-/g, '+').replace(/_/g, '/') + '+', c.sig.slice(1)];
+  for (const sig of sigs) {
+    assert.equal(SDG.sign.isSig(sig), false, JSON.stringify(sig));
+    assert.equal(await SDG.sign.verify(Object.assign({}, c, { sig })), false, JSON.stringify(sig));
+  }
+  // A key spelled another way, though its signature is good for that spelling.
+  const alice2 = Object.assign({}, alice, { key: lowBit(alice.key) });
+  const c2 = await SDG.changes.makeComment('parts/x', 'hi', null, alice2, 4);
+  assert.equal(await SDG.sign.fingerprint(alice2.key), await SDG.sign.fingerprint(alice.key));
+  assert.equal(SDG.sign.isKey(alice2.key), false);
+  assert.equal(await SDG.sign.verify(c2), false);
+  for (const key of [alice.key + ' ', alice.key + '=', alice.key.slice(1), 42, null]) assert.equal(SDG.sign.isKey(key), false, String(key));
+
+  // Checkpoints, releases and app builds are checked the same way.
+  const cp = await SDG.changes.signCheckpoint(5, 'h', alice);
+  assert.equal(await SDG.changes.verifyCheckpoint(cp), true);
+  assert.equal(await SDG.changes.verifyCheckpoint(Object.assign({}, cp, { sig: lowBit(cp.sig) })), false);
+  const rel = await SDG.changes.signRelease(await SDG.changes.makeRelease({}, 1), alice);
+  assert.equal((await SDG.changes.verifyRelease(rel, [alice.key])).trusted, true);
+  const relVar = Object.assign({}, rel, { sig: { key: rel.sig.key, value: lowBit(rel.sig.value) } });
+  assert.equal((await SDG.changes.verifyRelease(relVar, [alice.key])).signed, false);
+  const build = await SDG.changes.signAppBuild({ version: '1', date: '2026-11-17', id: 'abc', sha256: 'f'.repeat(64) }, alice);
+  assert.equal(await SDG.changes.verifyAppBuild(build, [alice.key]), true);
+  assert.equal(await SDG.changes.verifyAppBuild(Object.assign({}, build, { sig: { key: build.sig.key, value: lowBit(build.sig.value) } }), [alice.key]), false);
+  const build2 = await SDG.changes.signAppBuild({ version: '1', date: '2026-11-17', id: 'abc', sha256: 'f'.repeat(64) }, alice2);
+  assert.equal(await SDG.changes.verifyAppBuild(build2, [alice2.key]), false);
+
+  // The schema holds keys and signatures to the alphabet and length too.
+  assert.equal(SDG.schema.validate('comment', c).ok, true);
+  for (const bad of [{ sig: c.sig + ' ' }, { sig: c.sig.slice(1) }, { author: { key: alice.key + '=' } }, { author: { key: 'k' } }]) assert.equal(SDG.schema.validate('comment', Object.assign({}, c, bad)).ok, false, JSON.stringify(bad));
+
+  // A node pins only a key in its one spelling.
+  const { up, routes, node } = await nodeWithFake(t);
+  routes['/api/v1/info'] = { hubKey: lowBit(up.key) };
+  assert.match((await node.hub.syncNow()).error, /valid hub key/);
+  assert.equal(node.hub.store.get('upstreamKey'), undefined);
+});
+
+test('hub: a signature or key spelled another way is not a second message or a second person', async (t) => {
+  const admin = await SDG.sign.createIdentity('Admin'), mod = await SDG.sign.createIdentity('Mod');
+  const alice = await SDG.sign.createIdentity('Alice'), mallory = await SDG.sign.createIdentity('Mallory');
+  const { hub, url } = await start({ admins: [admin.key], moderators: [await SDG.sign.fingerprint(mod.key, 32)], policy: { powBits: 4, approvals: 2, autoAccept: ['admin'] } });
+  t.after(() => hub.close());
+  const signed = (o, who) => SDG.sign.sign(Object.assign({ created: SDG.util.now(), hub: hub.identity.key }, o), who);
+  const as = (who, key) => Object.assign({}, who, { key });
+
+  // A role change works once; spelled another way it is not new.
+  const promote = await signed({ action: 'set-role', key: mallory.key, role: 'moderator' }, admin);
+  assert.equal((await call(url, '/api/v1/roles', promote)).status, 200);
+  assert.equal((await call(url, '/api/v1/roles', await signed({ action: 'set-role', key: mallory.key, role: 'contributor' }, admin))).status, 200);
+  for (const sig of [promote.sig, lowBit(promote.sig), promote.sig + '    ']) assert.notEqual((await call(url, '/api/v1/roles', Object.assign({}, promote, { sig }))).status, 200);
+  assert.equal((await call(url, '/api/v1/users/' + mallory.key)).body.role, 'contributor');
+
+  // One moderator is one approval, however the key is spelled.
+  const part = hub.dataset().parts[1];
+  const p = await SDG.changes.makeProposal({ coll: 'parts', rid: part.id, op: 'put', data: Object.assign({}, part, { summary: 'Changed by one moderator alone' }), reason: 'x' }, alice, 4);
+  assert.equal((await call(url, '/api/v1/proposals', p)).body.status, 'pending');
+  const hash = await SDG.changes.proposalHash((await call(url, '/api/v1/proposals/' + p.id)).body.proposal);
+  const review = who => signed({ action: 'review', proposal: p.id, hash, decision: 'accept' }, who);
+  assert.equal((await call(url, `/api/v1/proposals/${p.id}/review`, await review(mod))).body.status, 'pending');
+  assert.equal((await call(url, `/api/v1/proposals/${p.id}/review`, await review(as(mod, lowBit(mod.key))))).status, 401);
+  assert.equal((await call(url, '/api/v1/proposals/' + p.id)).body.proposal.status, 'pending');
+
+  // A ban holds against the same key spelled another way.
+  assert.equal((await call(url, '/api/v1/roles', await signed({ action: 'set-role', key: alice.key, role: 'banned' }, admin))).status, 200);
+  assert.equal((await call(url, '/api/v1/comments', await SDG.changes.makeComment('parts/' + part.id, 'still here', null, alice, 4))).status, 403);
+  const r = await call(url, '/api/v1/comments', await SDG.changes.makeComment('parts/' + part.id, 'still here', null, as(alice, lowBit(alice.key)), 4));
+  assert.ok(r.status === 401 || r.status === 422, JSON.stringify(r));
 });

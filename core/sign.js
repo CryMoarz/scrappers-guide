@@ -21,11 +21,21 @@ module.exports = function (SDG) {
 
   const strip = (o, ...keys) => SDG.util.own(o, keys);
 
+  // One spelling per key and signature: exactly 43 (or 86) base64url characters that decode and
+  // encode back to the same text. Decoding alone skips whitespace and the unused low bits of the
+  // last character, so the same key or signature could be written several ways, and hubs compare
+  // keys and signatures as text (to ban a key, count reviewers once, or use a message once).
+  const canon = (s, n) => typeof s === 'string' && s.length === n && /^[A-Za-z0-9_-]+$/.test(s) && b64u(unb64u(s)) === s;
+  const isKey = s => canon(s, 43);
+  const isSig = s => canon(s, 86);
+
   async function signBytes(bytes, identity) {
     const k = await subtle().importKey('jwk', identity.jwk, ALG, false, ['sign']);
     return b64u(await subtle().sign(ALG, k, bytes));
   }
+  // Every check goes through here: items, moderation messages, checkpoints, releases, app builds.
   async function verifyBytes(bytes, key, sig) {
+    if (!isKey(key) || !isSig(sig)) return false;
     try {
       const k = await subtle().importKey('raw', unb64u(key), ALG, false, ['verify']);
       return await subtle().verify(ALG, k, unb64u(sig), bytes);
@@ -66,5 +76,5 @@ module.exports = function (SDG) {
     return zeroBits(await sha256(canonical(strip(obj, 'sig', 'pow', 'author')) + ':' + obj.pow)) >= bits;
   }
 
-  SDG.sign = { supported, createIdentity, fingerprint, sign, verify, signBytes, verifyBytes, stamp, checkStamp, strip };
+  SDG.sign = { supported, createIdentity, fingerprint, sign, verify, signBytes, verifyBytes, isKey, isSig, stamp, checkStamp, strip };
 };

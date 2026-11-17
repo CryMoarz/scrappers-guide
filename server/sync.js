@@ -70,7 +70,7 @@ async function syncOnce(hub) {
   // something that is a key gets pinned.
   const info = await fetchJSON(up + '/api/v1/info');
   const key = info && info.hubKey;
-  if (typeof key !== 'string' || !/^[A-Za-z0-9_-]{43}$/.test(key)) throw new Error('The upstream did not give a valid hub key');
+  if (!SDG.sign.isKey(key)) throw new Error('The upstream did not give a valid hub key');
   const pinned = store.get('upstreamKey');
   if (!pinned) store.set('upstreamKey', key);
   else if (pinned !== key) throw new Error('The upstream hub key changed. If that is expected, delete upstreamKey from the node state to trust the new key.');
