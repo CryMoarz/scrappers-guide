@@ -136,7 +136,7 @@ NOMAD offers the Meshtastic web client in its Supply Depot; it no longer runs a 
 
 ## Publishing a release (maintainers)
 
-The image is built and published by GitHub Actions (`.github/workflows/release-image.yml`) for x86 and ARM, to GitHub’s container registry, which NOMAD trusts. Set `version` in `package.json`, then tag it:
+The image is built and published by GitHub Actions (`.github/workflows/release-image.yml`) for x86 and ARM, to GitHub’s container registry, which NOMAD trusts. Set `version` in `package.json`, build the app with the maintainer key (`node tools/build.js --key maintainer.key`) and commit it, check it with `node tools/verify-app.js --release`, then tag it:
 
 ```bash
 git tag v3.0.1 && git push --tags

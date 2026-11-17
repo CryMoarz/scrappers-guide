@@ -110,6 +110,8 @@ signs `dist/release.json` and builds the app with the release inside. Add the ma
 
 The same key signs `app/app-build.json` (version, date, build id and the SHA-256 of `app/scrappers-guide.html`), which hubs serve as-is in `/api/v1/info`. Apps offer an update only when that signature checks out against a key in their built-in `trust/keys.json`, and they compare the downloaded file with the signed SHA-256 before saving or loading it. With no maintainer key in `trust/keys.json`, or a build not signed by one, no update is ever offered: that is the safe default, not a fault. A hub can’t make apps install anything by editing its own files.
 
+`node tools/verify-app.js` checks that the committed app is the signed release (CI runs it on every push); add `--release` before tagging to check it was built for this version from this code. The release image ships the committed app as it is, so a build without the key must not be committed.
+
 ## Docker, NOMAD and small boards
 
 - Docker: `deploy/Dockerfile` and `deploy/docker-compose.yml`. Everything that changes lives in one volume, `/guide`; the bundled data goes in on first start and again when a new image brings newer data, unless this copy has changed on its own.

@@ -1,5 +1,6 @@
-# Every push and pull request: every record valid, every reference resolves, every test passes,
-# on each Node version people run it with (20 has no built-in SQLite, so it tests the file store).
+# Every push and pull request: every record valid, every reference resolves, the committed app
+# is the signed release, every test passes, on each Node version people run it with (20 has no
+# built-in SQLite, so it tests the file store).
 name: Check
 on:
   push:
@@ -19,7 +20,10 @@ jobs:
         with:
           node-version: ${{ matrix.node }}
       - run: node tools/validate.js
-      # The app tests load the built app. The committed one is the last release's, so build
-      # this commit's (unsigned, here only) or a source change breaks them until the next release.
-      - run: node tools/build.js
+      # The committed app must stay the signed release that hubs serve and the image ships (on a
+      # tag, this version's, built from this code). Before anything rebuilds it.
+      - run: node tools/verify-app.js
+      # The tests build the app from this source in memory, so they test this commit's code.
       - run: node --test test/*.test.js
+      # And the build itself must work: unsigned, here only (it rewrites app/ in this checkout).
+      - run: node tools/build.js

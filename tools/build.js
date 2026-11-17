@@ -5,7 +5,8 @@
 //   --key    sign the release, and app/app-build.json (so apps offer the update), with a maintainer key (see tools/keys.js)
 //   --force  build even if validation finds problems
 // require('./tools/build').make() builds both in memory and writes nothing (the tests use it, so
-// they test this source rather than the app committed at the last release).
+// they test this source rather than the app committed at the last release). tools/verify-app.js
+// uses codeId() and embedded() to check the committed app.
 const fs = require('fs');
 const path = require('path');
 const zlib = require('zlib');
@@ -15,14 +16,38 @@ const F = require('../lib/fsdata');
 const ROOT = F.ROOT;
 const args = process.argv.slice(2);
 const keyFile = args.includes('--key') ? args[args.indexOf('--key') + 1] : process.env.SDG_RELEASE_KEY;
-const read = p => fs.readFileSync(path.join(ROOT, p), 'utf8');
+const read = (p, root = ROOT) => fs.readFileSync(path.join(root, p), 'utf8');
 // Inlined into a <script>: no '<' at all, so neither </script> nor <!-- can end or bend it.
 const js = v => JSON.stringify(v).replace(/</g, '\\u003c');
+const APP_FILES = ['store', 'md', 'forms', 'sync', 'runs', 'map', 'simple', 'sun', 'sungrid', 'calc', 'pinouts', 'pinboards', 'reference', 'app'];
+// Core as the app runs it: each module wrapped so it plugs itself into SDG.
+const coreScript = root => SDG.MODULES.map(n => `(function(){const module={};\n${read(`core/${n}.js`, root)}\nmodule.exports(SDG);})();`).join('\n');
+
+// The build id fingerprints the code, not the data: data reaches apps by sync, so only a code
+// change should tell people there's a newer app to download.
+async function codeId(root, core = coreScript(root)) {
+  const code = [core, ...APP_FILES.map(n => read(`app/src/${n}.js`, root)), read('app/src/styles.css', root), read('app/src/index.html', root)].join('\n');
+  return (await SDG.util.sha256hex(code)).slice(0, 12);
+}
+
+// A value the build wrote into the app on a line of its own, `const NAME = ...;` (RELEASE, TRUST,
+// BUILD, NEWS), or undefined. The JSON has no raw newline, so the line ends at the first ';\n'.
+function embedded(html, name) {
+  const at = html.indexOf(`\nconst ${name} = `);
+  if (at < 0) return undefined;
+  const from = at + name.length + 10;
+  return JSON.parse(html.slice(from, html.indexOf(';\n', from)));
+}
 
 // The release and the app from the data and source as they are now; signed if a maintainer key is given.
 async function make(ds, maintainer) {
   ds = ds || F.load();
   const release = await SDG.changes.makeRelease(F.plain(ds), (ds.meta && ds.meta.seq) || 0, ds.meta && ds.meta.name);
+  // The same release as in the app built last keeps its time, so rebuilding unchanged data and
+  // code gives the same file, and signing it again gives the same signature.
+  let last;
+  try { last = embedded(read('app/scrappers-guide.html'), 'RELEASE'); } catch (e) { /* no app built yet */ }
+  if (last && ['format', 'schema', 'name', 'seq', 'hash'].every(k => last[k] === release[k])) release.created = last.created;
   if (maintainer) await SDG.changes.signRelease(release, maintainer);
 
   let trust = [];
@@ -37,12 +62,8 @@ async function make(ds, maintainer) {
       return { version: m[1], date: m[2] || '', items: lines.filter(l => l.startsWith('- ')).map(l => l.slice(2).trim()) };
     });
   } catch (e) { /* no changelog */ }
-  const core = SDG.MODULES.map(n => `(function(){const module={};\n${read(`core/${n}.js`)}\nmodule.exports(SDG);})();`).join('\n');
-  const APP_FILES = ['store', 'md', 'forms', 'sync', 'runs', 'map', 'simple', 'sun', 'sungrid', 'calc', 'pinouts', 'pinboards', 'reference', 'app'];
-  // The build id fingerprints the code, not the data: data reaches apps by sync, so only a code
-  // change should tell people there's a newer app to download.
-  const code = [core, ...APP_FILES.map(n => read(`app/src/${n}.js`)), read('app/src/styles.css'), read('app/src/index.html')].join('\n');
-  const build = { version: pkg.version, date: new Date().toISOString().slice(0, 10), id: (await SDG.util.sha256hex(code)).slice(0, 12) };
+  const core = coreScript();
+  const build = { version: pkg.version, date: new Date().toISOString().slice(0, 10), id: await codeId(ROOT, core) };
   const buildFile = path.join(ROOT, 'app', 'app-build.json');
   let prev = {};
   try { prev = JSON.parse(fs.readFileSync(buildFile, 'utf8')); } catch (e) { /* first build */ }
@@ -98,4 +119,4 @@ if (require.main === module) (async () => {
   console.log(`  app/scrappers-guide.html ${kb(Buffer.byteLength(html))}`);
 })().catch(e => { console.error(e); process.exit(1); });
 
-module.exports = { make };
+module.exports = { make, codeId, embedded };
