@@ -131,6 +131,10 @@ test('app: the calculator reads SI prefixes and parallel, and rejects anything e
   assert.deepEqual([Calc.num('4.7kΩ'), Calc.num('2k2'), Calc.num('10mAh'), Calc.num('x')].map(v => (Number.isNaN(v) ? 'NaN' : +v.toPrecision(6))), [4700, 2200, 0.01, 'NaN']);
   assert.equal(Calc.eng(0.0000047, 'F'), '4.7 µF');
   assert.ok(Calc.LIST.length >= 12 && Calc.LIST.every(t => Calc.get(t.id)));
+  // LoRa time on air, worked by hand from Semtech's formula: Long Fast (SF11, 250 kHz, 4/5), 60 bytes,
+  // 16-symbol preamble is (16 + 4.25) + 63 symbols of 8.192 ms. SF12 at 125 kHz turns on low data rate optimisation.
+  assert.equal(+(Calc.airtime(11, 250e3, 1, 60, 16).s * 1000).toFixed(3), 681.984);
+  assert.deepEqual([Calc.airtime(11, 250e3, 1, 60, 16).de, Calc.airtime(12, 125e3, 4, 60, 16).de], [0, 1]);
 });
 
 test('app: library links only to web addresses, inside their book', () => {

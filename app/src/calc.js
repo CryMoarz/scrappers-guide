@@ -162,6 +162,19 @@ const Calc = (() => {
   const toC = (v, u) => (u === '°F' ? (v - 32) * 5 / 9 : u === 'K' ? v - 273.15 : v);
   const fromC = (c, u) => (u === '°F' ? c * 9 / 5 + 32 : u === 'K' ? c + 273.15 : c);
 
+  // LoRa: Meshtastic's modem presets as spreading factor, bandwidth (kHz) and coding rate 4/(4+cr),
+  // and the lowest signal-to-noise ratio each spreading factor still decodes (Semtech datasheets).
+  const LORA = [['LONG_FAST', 'Long Fast (default)', 11, 250, 1], ['LONG_MODERATE', 'Long Moderate', 11, 125, 4], ['LONG_SLOW', 'Long Slow', 12, 125, 4],
+    ['MEDIUM_SLOW', 'Medium Slow', 10, 250, 1], ['MEDIUM_FAST', 'Medium Fast', 9, 250, 1], ['SHORT_SLOW', 'Short Slow', 8, 250, 1], ['SHORT_FAST', 'Short Fast', 7, 250, 1], ['SHORT_TURBO', 'Short Turbo', 7, 500, 1]];
+  const LORA_SNR = { 7: -7.5, 8: -10, 9: -12.5, 10: -15, 11: -17.5, 12: -20 };
+  // Time on air in seconds by Semtech's formula: explicit header, CRC on, and low data rate
+  // optimisation on when a symbol lasts longer than 16 ms.
+  function airtime(sf, bwHz, cr, bytes, preamble) {
+    const ts = 2 ** sf / bwHz, de = ts > 0.016 ? 1 : 0;
+    const n = 8 + Math.max(Math.ceil((8 * bytes - 4 * sf + 28 + 16) / (4 * (sf - 2 * de))) * (cr + 4), 0);
+    return { ts, de, s: (preamble + 4.25) * ts + n * ts };
+  }
+
   // Each tool: fields (number fields read SI prefixes), and what it works out from them.
   const TOOLS = {
     ohm: {
@@ -256,6 +269,40 @@ const Calc = (() => {
         if (![v.A, v.L, v.V].every(Number.isFinite)) return 'Fill in current, length and voltage.';
         const drop = v.A * 0.0172 * 2 * v.L / a, need = 0.0172 * 2 * v.L * v.A / (0.03 * v.V), ok = SIZES.slice().sort((x, y) => x[1] - y[1]).find(([, s]) => s >= need);
         return [['Drop', `${fix(drop, 2)} V (${fix(drop / v.V * 100, 1)}%)`], ['Heat in the wire', eng(v.A * drop, 'W')], ['Smallest for 3% or less', ok ? ok[0] : 'bigger than 4/0 AWG: use a higher voltage'], ['Note', 'Copper at 20 °C, out and back. Also check the wire is rated for the current.']];
+      },
+    },
+    lora_airtime: {
+      title: 'LoRa airtime and range', summary: 'How long a message takes on air, how many the channel can carry, and the link budget and radio horizon for your radios.',
+      fields: [['preset', 'Meshtastic preset', 'LONG_FAST', '', 'select', [...LORA.map(([k, l]) => [k, l]), ['custom', 'Custom: the next three fields']]],
+        ['sf', 'Spreading factor (custom)', '11', '7 to 12'], ['bw', 'Bandwidth in kHz (custom)', '250'], ['cr', 'Coding rate 4/x (custom)', '5', '5 to 8'],
+        ['bytes', 'Packet size (bytes)', '60', 'At most 255, headers included'], ['pre', 'Preamble (symbols)', '16', 'Meshtastic uses 16; LoRaWAN 8'],
+        ['relays', 'Nodes that rebroadcast each message', '3'],
+        ['tx', 'Transmit power (dBm)', '22'], ['gain', 'Antenna gains, both ends added (dBi)', '4'], ['loss', 'Cable and connector losses, both ends (dB)', '1'],
+        ['mhz', 'Frequency (MHz)', '915'], ['h1', 'Antenna height here (m)', '2'], ['h2', 'Antenna height at the other end (m)', '10'],
+        ['duty', 'Duty-cycle limit (%)', '100', '100 where there is none (Canada, the US); 1 or 10 in parts of Europe: see the LoRa bands card']],
+      run(v, raw) {
+        const p = LORA.find(x => x[0] === raw.preset);
+        const [sf, bw, cr] = p ? p.slice(2) : [Math.round(v.sf), v.bw, Math.round(v.cr) - 4];
+        if (!(sf >= 7 && sf <= 12) || !(bw > 0) || !(cr >= 1 && cr <= 4)) return 'Spreading factor 7 to 12, a bandwidth in kHz, and a coding rate of 5 to 8.';
+        const bytes = Math.round(v.bytes);
+        if (!(bytes >= 1 && bytes <= 255)) return 'A LoRa packet holds 1 to 255 bytes.';
+        const { ts, de, s } = airtime(sf, bw * 1e3, cr, bytes, Number.isFinite(v.pre) ? v.pre : 16);
+        const each = s * (1 + Math.max(0, Math.round(v.relays || 0)));
+        const rows = [['Time on air', `${fix(s * 1000, 0)} ms (a symbol lasts ${fix(ts * 1000, 2)} ms${de ? '; low data rate optimisation on' : ''})`],
+          ['Data rate', `${fix(sf * (bw * 1e3 / 2 ** sf) * (4 / (4 + cr)), 0)} bit/s`],
+          ['Airtime with the rebroadcasts', `${fix(each, 2)} s per message`],
+          ['Messages a minute', `${fix(60 / each, 1)} fill the channel; ${fix(15 / each, 1)} keep it 25 % busy`]];
+        if (Number.isFinite(v.duty) && v.duty > 0 && v.duty < 100) rows.push(['Duty-cycle limit', `${fix(v.duty / 100 * 3600 / s, 0)} sends an hour from one radio`]);
+        // Sensitivity from the noise floor: −174 dBm/Hz + bandwidth + a 6 dB noise figure + the SNR floor.
+        const sens = -174 + 10 * Math.log10(bw * 1e3) + 6 + LORA_SNR[sf], budget = v.tx + (v.gain || 0) - (v.loss || 0) - sens;
+        if (Number.isFinite(budget)) {
+          rows.push(['Receiver sensitivity', `about ${fix(sens, 1)} dBm (calculated)`], ['Link budget', `${fix(budget, 1)} dB`]);
+          // Free-space path loss in dB = 20 log d(km) + 20 log f(MHz) + 32.44, keeping 10 dB in hand.
+          if (v.mhz > 0) { const km = 10 ** ((budget - 10 - 20 * Math.log10(v.mhz) - 32.44) / 20); rows.push(['Free-space limit', `${fix(km, km < 10 ? 1 : 0)} km with 10 dB to spare: only over clear, open line of sight`]); }
+        }
+        if (v.h1 >= 0 && v.h2 >= 0) rows.push(['Radio horizon', `${fix(4.12 * (Math.sqrt(v.h1) + Math.sqrt(v.h2)), 1)} km at these heights`]);
+        rows.push(['Note', 'Expect the smaller of the two, cut further by hills, buildings and trees. Range-test every link.']);
+        return rows;
       },
     },
     convert: {
@@ -365,5 +412,5 @@ const Calc = (() => {
     ...Object.entries(TOOLS).map(([id, t]) => ({ id, title: t.title, summary: t.summary })),
   ];
   const get = id => LIST.find(x => x.id === id);
-  return { LIST, get, toolHTML, wire, evaluate, num, eng };
+  return { LIST, get, toolHTML, wire, evaluate, num, eng, airtime };
 })();
