@@ -121,18 +121,23 @@ function rankPlaces(ctx, found, idx, types, o) {
 function createMap(hub) {
   const cfg = hub.cfg.map || {};
   const opened = new Map();
-  let archives = null, found = 0;
+  let archives = null, found = 0, looking = null;
 
-  // Our own files first, then whatever regions NOMAD has; checked again every ten minutes.
+  // Our own files first, then whatever regions NOMAD has; checked again every ten minutes, once
+  // for everyone asking at that moment. NOMAD's list of maps is short, so only its first 1 MB
+  // and first 64 maps are read, whatever answers.
   async function sources() {
     if (archives && Date.now() - found < (archives.length ? 10 * 60e3 : 60e3)) return archives;
+    return looking || (looking = look().finally(() => { looking = null; }));
+  }
+  async function look() {
     const list = [...(cfg.pmtiles || [])];
     const nomad = hub.nomadState && hub.nomadState.nomad;
     if (nomad && cfg.nomad !== false) {
       try {
         const res = await fetch(nomad.url + '/api/maps/regions', { signal: AbortSignal.timeout(10e3) });
-        const r = await res.json();
-        (r.files || []).forEach(f => { if (/\.pmtiles$/i.test(f.name || '')) list.push(`${nomad.url}/pmtiles/${encodeURIComponent(f.name)}`); });
+        const r = JSON.parse(await P.readBody(res, 1 << 20));
+        (r.files || []).slice(0, 64).forEach(f => { if (/\.pmtiles$/i.test(f.name || '')) list.push(`${nomad.url}/pmtiles/${encodeURIComponent(f.name)}`); });
       } catch (e) { /* NOMAD not answering: use what we have */ }
     }
     const out = [];

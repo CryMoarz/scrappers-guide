@@ -3,6 +3,7 @@
 const test = require('node:test');
 const assert = require('node:assert');
 const fs = require('fs');
+const http = require('http');
 const os = require('os');
 const path = require('path');
 const zlib = require('zlib');
@@ -137,4 +138,150 @@ test('hub: map info, tiles and places', async (t) => {
   const list = (await get(`/api/v1/places?lat=${at.lat}&lon=${at.lon}&km=1&parts=battery_pb,no_such_part`)).body;
   assert.ok(Array.isArray(list.parts.battery_pb), 'a shopping list gets places per part type');
   assert.equal(list.parts.no_such_part, undefined);
+});
+
+// A whole-world map at zoom 0 holding one tile, stored as given (no compression unless asked),
+// with header fields a hostile map could lie with.
+function world(tile, o = {}) {
+  const file = path.join(fs.mkdtempSync(path.join(os.tmpdir(), 'sdg-map-')), 'world.pmtiles');
+  const data = Buffer.from(tile);
+  const dir = Buffer.from(o.dir || [...vint(1), ...vint(0), ...vint(1), ...vint(data.length), ...vint(1)]);
+  const h = Buffer.alloc(127);
+  h.write('PMTiles', 0, 'latin1'); h[7] = 3;
+  const u64 = (off, v) => h.writeBigUInt64LE(BigInt(v), off);
+  u64(8, 127); u64(16, o.rootLen != null ? o.rootLen : dir.length); u64(56, 127 + dir.length); u64(64, data.length);
+  h[97] = o.internal || 1; h[98] = o.tileComp || 1; h[99] = 1; h[100] = 0; h[101] = 0;
+  const e7 = (off, v) => h.writeInt32LE(Math.round(v * 1e7), off);
+  e7(102, -180); e7(106, -85); e7(110, 180); e7(114, 85);
+  fs.writeFileSync(file, Buffer.concat([h, dir, data]));
+  return file;
+}
+const tileOf = (name, feats) => Buffer.from(bytes(3, [...str(1, name), ...feats, ...key(5, 0), ...vint(4096)]));
+const feature = geom => bytes(2, [...key(3, 0), ...vint(2), ...packed(4, geom)]);
+// Each of these once hung the hub or filled its memory, from a map of a few hundred bytes.
+const HOSTILE = {
+  'a layer that says it is 2^50 bytes long': [...key(3, 2), ...vint(2 ** 50)],
+  'a shape of 2^28 points in 5 bytes': tileOf('water', bytes(2, [...key(3, 0), ...vint(1), ...packed(4, [cmd(1, 0x0fffffff)])])),
+  'a packed field that says it is 2^40 bytes long': tileOf('water', bytes(2, [...key(3, 0), ...vint(1), ...key(4, 2), ...vint(2 ** 40)])),
+  'a number of 11 bytes': [...key(3, 0), ...Array(10).fill(0x80), 1],
+  'a number cut off at the end': [...key(3, 0), 0x80],
+  'a double past the end': [...key(3, 1), 1, 2, 3],
+  'a line that starts without a move': tileOf('roads', feature([cmd(2, 1), zz(5), zz(5)])),
+};
+
+test('vector tiles: a broken or hostile tile is refused at once, and the parser stays usable', { timeout: 30000 }, () => {
+  const good = Buffer.from(layer('water', [{ id: 1, type: 3, props: { kind: 'water' }, geom: ring([[0, 0], [10, 0], [10, 10], [0, 0]], true) }]));
+  for (const [what, tile] of Object.entries(HOSTILE)) {
+    const t0 = Date.now();
+    assert.throws(() => M.decode(Buffer.from(tile)), /Broken map tile/, what);
+    assert.ok(Date.now() - t0 < 1000, what + ' is refused quickly');
+    assert.equal(M.decode(good).water.features.length, 1, 'still decodes a good tile after ' + what);
+  }
+  // Too many features, or too many numbers in the layers asked for (a layer not asked for is skipped).
+  const many = Buffer.from(bytes(3, [...str(1, 'pois'), ...Array(M.MAX_FEATURES + 1).fill([...key(2, 2), 0]).flat()]));
+  assert.throws(() => M.decode(many), /more than 200000 features/);
+  const long = tileOf('water', bytes(2, [...key(4, 2), ...vint(M.MAX_NUMBERS + 1), ...Buffer.alloc(M.MAX_NUMBERS + 1)]));
+  assert.throws(() => M.decode(long), /more than 2000000 numbers/);
+  assert.deepEqual(M.decode(long, ['roads']), {}, 'a layer not asked for is never read');
+  // A name or key with the wrong wire type was read as the whole tile, once per field: a 1 MB
+  // tile of them took hours or all the memory. Now they're skipped.
+  const confused = Buffer.from(bytes(3, [...str(1, 'pois'), ...Array(250000).fill([...key(1, 0), 0, ...key(3, 0), 0]).flat()]));
+  const t0 = Date.now();
+  assert.deepEqual(M.decode(confused), { pois: { extent: 4096, features: [] } });
+  assert.ok(Date.now() - t0 < 2000, 'fields of the wrong type are skipped quickly');
+});
+
+test('PMTiles: hostile directories, lengths and compression bombs are refused at once', { timeout: 30000 }, async () => {
+  const t0 = Date.now();
+  assert.throws(() => P.directory(Buffer.from(vint(2 ** 40))), /claims more entries than it holds/, '2^40 entries in 6 bytes');
+  assert.throws(() => P.directory(Buffer.from([...vint(2), 1, 1, 1, 1, 1, 1, 1, 0x80])), /runs past its end/);
+  assert.deepEqual(P.directory(Buffer.from([...vint(1), ...vint(0), ...vint(1), ...vint(9), ...vint(1)])), { ids: [0], runs: [1], lens: [9], offs: [0] });
+  const big = Buffer.alloc(P.MAX_BYTES + 1);
+  const maps = {
+    'a gzip bomb tile': [world(zlib.gzipSync(big), { tileComp: 2 }), /unpacks to more than 4 MB/],
+    'a brotli bomb directory': [world([0], { dir: zlib.brotliCompressSync(big), internal: 3 }), /unpacks to more than 4 MB/],
+    'a directory of 2^40 entries': [world([0], { dir: vint(2 ** 40) }), /claims more entries/],
+    'a root directory 1 TB long': [world([0], { rootLen: 2 ** 40 }), /asks for 1099511627776 bytes/],
+  };
+  for (const [what, [file, err]] of Object.entries(maps)) {
+    const a = await P.openArchive(file);
+    await assert.rejects(a.tile(0, 0, 0), err, what);
+    await assert.rejects(a.tile(0, 0, 0), err, what + ', again');
+    a.close();
+  }
+  assert.ok(Date.now() - t0 < 5000, 'all refused quickly');
+});
+
+test('PMTiles over HTTP: a server sending more than was asked for is cut off', { timeout: 20000 }, async (t) => {
+  const real = fs.readFileSync(sample().file);
+  let sent = 0;
+  const srv = http.createServer((req, res) => {
+    const [, from, to] = /bytes=(\d+)-(\d+)/.exec(req.headers.range).map(Number);
+    res.writeHead(206);
+    res.write(real.subarray(from, to + 1));
+    // Then junk, without end, until the reader hangs up.
+    const junk = Buffer.alloc(64 * 1024, 7);
+    const more = () => { while (!res.destroyed && res.write(junk)) sent += junk.length; };
+    res.on('drain', more);
+    more();
+  });
+  await new Promise(ok => srv.listen(0, '127.0.0.1', ok));
+  t.after(() => { srv.closeAllConnections(); srv.close(); });
+  const a = await P.openArchive(`http://127.0.0.1:${srv.address().port}/map.pmtiles`);
+  assert.equal(a.maxzoom, Z);
+  const L = M.decode(await a.tile(Z, X, Y));
+  assert.equal(L.pois.features.length, 3, 'the tile, without the junk after it');
+  assert.ok(sent < 64 << 20, 'the reader stopped reading');
+});
+
+test('PMTiles: directories are kept up to a number of entries, so huge ones can’t fill the memory', { timeout: 30000 }, async (t) => {
+  // Three tiles far apart, each the first in a leaf directory of a million entries (4 MB
+  // unpacked, 4 KB gzipped). Kept whole, the three would be over the budget of 2.5 million.
+  const N = 1e6;
+  const tiles = [[12, 0, 0], [12, 2000, 2000], [12, 4000, 100]].map(([z, x, y]) => ({ z, x, y, id: P.tileId(z, x, y) })).sort((p, q) => p.id - q.id);
+  assert.ok(tiles[1].id - tiles[0].id > N && tiles[2].id - tiles[1].id > N);
+  const leaves = tiles.map(({ id }) => zlib.gzipSync(Buffer.concat([Buffer.from([...vint(N), ...vint(id)]), Buffer.alloc(N - 1, 1), Buffer.alloc(2 * N, 1), Buffer.from([1]), Buffer.alloc(N - 1, 0)])));
+  const root = zlib.gzipSync(Buffer.from([...vint(3), ...vint(tiles[0].id), ...vint(tiles[1].id - tiles[0].id), ...vint(tiles[2].id - tiles[1].id), 0, 0, 0, ...leaves.flatMap(l => vint(l.length)), 1, 0, 0]));
+  const h = Buffer.alloc(127);
+  h.write('PMTiles', 0, 'latin1'); h[7] = 3;
+  const u64 = (o, v) => h.writeBigUInt64LE(BigInt(v), o);
+  const leafOff = 127 + root.length, dataOff = leafOff + leaves.reduce((n, l) => n + l.length, 0);
+  u64(8, 127); u64(16, root.length); u64(40, leafOff); u64(56, dataOff);
+  h[97] = 2; h[98] = 1; h[99] = 1; h[100] = 0; h[101] = 15;
+  const file = Buffer.concat([h, root, ...leaves, Buffer.from([1, 2, 3])]);
+  const asked = [];
+  const srv = http.createServer((req, res) => {
+    const [, from, to] = /bytes=(\d+)-(\d+)/.exec(req.headers.range).map(Number);
+    asked.push(from);
+    res.writeHead(206); res.end(file.subarray(from, to + 1));
+  });
+  await new Promise(ok => srv.listen(0, '127.0.0.1', ok));
+  t.after(() => { srv.closeAllConnections(); srv.close(); });
+  const a = await P.openArchive(`http://127.0.0.1:${srv.address().port}/map.pmtiles`);
+  for (const { z, x, y } of [...tiles, tiles[0]]) assert.deepEqual([...await a.tile(z, x, y)], [1]);
+  assert.equal(asked.filter(o => o === leafOff).length, 2, 'the first leaf made way for the third, and was read again');
+  assert.equal(asked.filter(o => o === leafOff + leaves[0].length).length, 1, 'the second stayed');
+});
+
+test('hub: a hostile map answers an error for its tiles and places, and the hub stays up', { timeout: 30000 }, async (t) => {
+  const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'sdg-map-'));
+  fs.cpSync(F.DATA, path.join(dir, 'data'), { recursive: true });
+  const file = world(HOSTILE['a layer that says it is 2^50 bytes long']);
+  const cfg = config.load([], {}, { port: 0, dataDir: path.join(dir, 'data'), stateDir: path.join(dir, 'state'), map: { pmtiles: [file] } });
+  const hub = await createHub(cfg);
+  const addr = await hub.listen();
+  t.after(() => hub.close());
+  t.mock.method(console, 'error', () => {});
+  const url = `http://127.0.0.1:${addr.port}`;
+  const get = async p => { const r = await fetch(url + p, { signal: AbortSignal.timeout(5000) }); return { status: r.status, body: await r.json() }; };
+  for (let i = 0; i < 2; i++) {
+    const tileRes = await get('/api/v1/map/tiles/0/0/0');
+    assert.equal(tileRes.status, 500);
+    assert.match(tileRes.body.error, /Broken map tile/);
+    const placesRes = await get('/api/v1/places?lat=45.42&lon=-75.69&km=1');
+    assert.equal(placesRes.status, 500);
+    assert.match(placesRes.body.error, /Broken map tile/);
+  }
+  assert.equal((await get('/health')).status, 200);
+  assert.equal((await get('/api/v1/map')).body.available, true);
 });

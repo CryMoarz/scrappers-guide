@@ -4,10 +4,24 @@
 const fs = require('fs');
 const zlib = require('zlib');
 
+// A map names its own offsets and lengths, and a map can come from anyone: no read, and no
+// directory or tile once unpacked, may be over MAX_BYTES. The biggest in the 15.8 GB Canada map
+// is a 223 KB tile, 337 KB unpacked; its biggest directory is 23 KB, 68 KB unpacked.
+const MAX_BYTES = 4 << 20;
+// Read directories are kept up to this many entries in all. The Canada map's hold 9,171 at
+// most, so it keeps 256 of them; a map of huge directories keeps a few.
+const MAX_CACHED = 2500000;
+
+// A varint is at most 10 bytes and must end inside the buffer.
 function varint(b, i) {
-  let r = 0, s = 1, c;
-  do { c = b[i++]; r += (c & 0x7f) * s; s *= 128; } while (c >= 0x80);
-  return [r, i];
+  let r = 0, s = 1;
+  for (let n = 0; n < 10 && i < b.length; n++) {
+    const c = b[i++];
+    r += (c & 0x7f) * s;
+    if (c < 0x80) return [r, i];
+    s *= 128;
+  }
+  throw new Error('Broken map directory: a number runs past its end');
 }
 
 // Tiles are numbered along a Hilbert curve, zoom level after zoom level.
@@ -25,6 +39,8 @@ function tileId(z, x, y) {
 
 function directory(buf) {
   let [n, i] = varint(buf, 0);
+  // Every entry takes at least four bytes, so a bigger count is a lie.
+  if (n * 4 > buf.length - i) throw new Error('Broken map directory: it claims more entries than it holds');
   const ids = [], runs = [], lens = [], offs = [];
   let last = 0, v;
   for (let k = 0; k < n; k++) { [v, i] = varint(buf, i); last += v; ids.push(last); }
@@ -34,23 +50,41 @@ function directory(buf) {
   return { ids, runs, lens, offs };
 }
 
+// Unpacking stops at MAX_BYTES, so a few bytes can't unpack to gigabytes.
 function decompress(buf, kind) {
   if (kind === 0 || kind === 1) return buf;
-  if (kind === 2) return zlib.gunzipSync(buf);
-  if (kind === 3) return zlib.brotliDecompressSync(buf);
+  try {
+    if (kind === 2) return zlib.gunzipSync(buf, { maxOutputLength: MAX_BYTES });
+    if (kind === 3) return zlib.brotliDecompressSync(buf, { maxOutputLength: MAX_BYTES });
+  } catch (e) {
+    throw e.code === 'ERR_BUFFER_TOO_LARGE' ? new Error(`Broken map: a tile or directory unpacks to more than ${MAX_BYTES >> 20} MB`) : e;
+  }
   throw new Error('This map uses a compression Node can’t read (zstd)');
 }
 
+// A response's body, but never more than max bytes, whatever the server sends.
+async function readBody(res, max) {
+  const parts = [];
+  let got = 0;
+  if (res.body) for await (const chunk of res.body) { parts.push(chunk); got += chunk.length; if (got >= max) break; }
+  return Buffer.concat(parts, Math.min(got, max));
+}
+
 function reader(where) {
+  const check = (off, len) => {
+    if (!(Number.isSafeInteger(off) && off >= 0 && Number.isSafeInteger(len) && len >= 0 && len <= MAX_BYTES)) throw new Error(`Broken map: ${where} asks for ${len} bytes at ${off}`);
+  };
   if (/^https?:\/\//i.test(where)) {
     return async (off, len) => {
+      check(off, len);
       const res = await fetch(where, { headers: { Range: `bytes=${off}-${off + len - 1}` }, signal: AbortSignal.timeout(30e3) });
       if (res.status !== 206) { res.body && res.body.cancel().catch(() => {}); throw new Error(`${where} answered ${res.status} to a range request`); }
-      return Buffer.from(await res.arrayBuffer());
+      return readBody(res, len);
     };
   }
   let fd = null;
   const read = async (off, len) => {
+    check(off, len);
     if (fd == null) fd = fs.openSync(where, 'r');
     const b = Buffer.alloc(len);
     const n = await new Promise((ok, fail) => fs.read(fd, b, 0, len, off, (e, got) => (e ? fail(e) : ok(got))));
@@ -72,13 +106,22 @@ async function openArchive(where) {
     bounds: [e7(102), e7(106), e7(110), e7(114)], center: [e7(119), e7(123), h[118]],
   };
   if (H.type !== 1) throw new Error(`${where} holds image tiles, not vector tiles`);
-  // Directories are cached, and so is a fetch in flight, so a screen of tiles reads each once.
-  const dirs = new Map();
+  // Directories are cached, and so is a fetch in flight, so a screen of tiles reads each once:
+  // up to 256 of them, oldest out first, and no more than MAX_CACHED entries in all.
+  const dirs = new Map(), sizes = new Map();
+  let held = 0;
+  const forget = k => { held -= sizes.get(k) || 0; sizes.delete(k); dirs.delete(k); };
+  const trim = () => { while (dirs.size > 1 && (dirs.size > 256 || held > MAX_CACHED)) forget(dirs.keys().next().value); };
   const dir = (off, len) => {
     const k = off + ':' + len;
     if (!dirs.has(k)) {
-      if (dirs.size > 256) dirs.delete(dirs.keys().next().value);
-      dirs.set(k, read(off, len).then(b => directory(decompress(b, H.internal))).catch(e => { dirs.delete(k); throw e; }));
+      const p = read(off, len).then(b => {
+        const d = directory(decompress(b, H.internal));
+        if (dirs.get(k) === p) { sizes.set(k, d.ids.length); held += d.ids.length; trim(); }
+        return d;
+      }).catch(e => { if (dirs.get(k) === p) forget(k); throw e; });
+      dirs.set(k, p);
+      trim();
     }
     return dirs.get(k);
   };
@@ -107,4 +150,4 @@ const lat2y = (lat, z) => { const r = (lat * Math.PI) / 180; return ((1 - Math.l
 const x2lon = (x, z) => (x / 2 ** z) * 360 - 180;
 const y2lat = (y, z) => { const n = Math.PI - (2 * Math.PI * y) / 2 ** z; return (180 / Math.PI) * Math.atan(Math.sinh(n)); };
 
-module.exports = { openArchive, tileId, directory, lon2x, lat2y, x2lon, y2lat };
+module.exports = { openArchive, tileId, directory, readBody, MAX_BYTES, lon2x, lat2y, x2lon, y2lat };
