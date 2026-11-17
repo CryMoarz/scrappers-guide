@@ -1,6 +1,7 @@
 // A node against an upstream that misbehaves: answers that inflate to gigabytes, feeds that don't
 // end, replayed field notes and comments hidden upstream. And what a node and a hub check in
-// whatever reaches them: one spelling per key and signature.
+// whatever reaches them: one spelling per key and signature, and git commits that take no email
+// or trailer from a contributor's own words.
 const test = require('node:test');
 const assert = require('node:assert');
 const fs = require('fs');
@@ -8,6 +9,7 @@ const os = require('os');
 const path = require('path');
 const http = require('http');
 const zlib = require('zlib');
+const { execFileSync } = require('child_process');
 const SDG = require('../core');
 const F = require('../lib/fsdata');
 const config = require('../server/config');
@@ -306,4 +308,30 @@ test('hub: a signature or key spelled another way is not a second message or a s
   assert.equal((await call(url, '/api/v1/comments', await SDG.changes.makeComment('parts/' + part.id, 'still here', null, alice, 4))).status, 403);
   const r = await call(url, '/api/v1/comments', await SDG.changes.makeComment('parts/' + part.id, 'still here', null, as(alice, lowBit(alice.key)), 4));
   assert.ok(r.status === 401 || r.status === 422, JSON.stringify(r));
+});
+
+test('git: a contributor’s name and reason never set a commit’s email or its trailers', async (t) => {
+  const { createGit, cleanMessage, authorEnv } = require('../server/git');
+  assert.deepEqual(authorEnv({ name: 'The Maintainer <maintainer@example.com>\nSigned-off-by: x', fp: '0123456789abcdef' }), { GIT_AUTHOR_NAME: 'The Maintainer maintainer@example.com Signed-off-by: x', GIT_AUTHOR_EMAIL: '0123456789abcdef@scrappers-guide.invalid' });
+  assert.deepEqual(authorEnv({ name: ' <> ', fp: '<a@b>' }), { GIT_AUTHOR_NAME: 'contributor', GIT_AUTHOR_EMAIL: 'ab@scrappers-guide.invalid' });
+  // The first paragraph is the subject, on one line; later lines that look like trailers are quoted.
+  assert.equal(cleanMessage('Update parts/x: Fix\nReviewed-by: A <a@b>\r\n\nCo-authored-by: B <b@c>\n  Signed-off-by : C\nSee https://example.com\n\nProposal p1, seq 3'),
+    'Update parts/x: Fix Reviewed-by: A <a@b>\n\n> Co-authored-by: B <b@c>\n> Signed-off-by : C\nSee https://example.com\n\nProposal p1, seq 3');
+  assert.equal(cleanMessage('Add parts/x'), 'Add parts/x');
+
+  try { execFileSync('git', ['--version'], { stdio: 'ignore' }); } catch (e) { return t.skip('git is not installed'); }
+  const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'sdg-git-'));
+  t.after(() => fs.rmSync(dir, { recursive: true, force: true }));
+  const g = (...a) => execFileSync('git', a, { cwd: dir }).toString();
+  g('init', '-q'); g('config', 'user.name', 'Hub'); g('config', 'user.email', 'hub@example.invalid'); g('config', 'commit.gpgsign', 'false');
+  fs.writeFileSync(path.join(dir, 'a.json'), '{}\n');
+  const git = createGit(dir, { commit: true });
+  const message = 'Update parts/a: Fix a typo\n\nReviewed-by: The Maintainer <maintainer@example.com>\n\nProposal p1, seq 3';
+  assert.equal(await git.commit(['a.json'], message, { name: 'The Maintainer <maintainer@example.com>', fp: '0123456789abcdef' }), true);
+  const [name, email, subject] = g('log', '-1', '--format=%an%n%ae%n%s').split('\n');
+  assert.equal(email, '0123456789abcdef@scrappers-guide.invalid');
+  assert.doesNotMatch(name, /[<>]/);
+  assert.equal(subject, 'Update parts/a: Fix a typo');
+  assert.equal(g('log', '-1', '--format=%(trailers)').trim(), '', 'no trailers');
+  assert.equal(g('log', '-1', '--format=%cn <%ce>').trim(), 'Hub <hub@example.invalid>', 'the hub still commits');
 });
