@@ -7,7 +7,7 @@
   "prev": 5,
   "tools": ["screwdriver","pliers","ladder"],
   "mins": 40,
-  "kg": 6,
+  "kg": 9,
   "hazards": ["fall","mains","heavy"],
   "comps": [
     {"key":"motor_ac","fn":"motor_ac","spec":"Low-speed capacitor-run motor with an outer rotor, 50–100W","w":[50,100],"qty":1,"ext":2,"obs":4,"loc":"Motor housing","kg":3},

@@ -7,7 +7,7 @@
   "prev": 5,
   "tools": ["socket"],
   "mins": 20,
-  "hazards": ["fuel","sharp","burn"],
+  "hazards": ["fuel","sharp","burn","co_gas","spring"],
   "comps": [
     {"key":"engine_small","fn":"engine_small","spec":"Small gas engine, 3–8 hp","w":[2240,5970],"qty":1,"ext":2,"obs":2,"loc":"Deck or frame"},
     {"key":"belt_pulley","fn":"belt_pulley","spec":"Drive belts and pulleys","qty":2,"ext":2,"obs":4,"loc":"Underneath"},
