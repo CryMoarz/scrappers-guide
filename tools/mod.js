@@ -29,23 +29,29 @@ async function api(path, body) {
 (async () => {
   if (!hub || !keyFile || !cmd) { console.log(fs.readFileSync(__filename, 'utf8').split('\n').slice(1, 8).map(l => l.slice(3)).join('\n')); return; }
   const me = JSON.parse(fs.readFileSync(keyFile, 'utf8'));
-  // Hubs take a moderation message only within minutes of `created`, and only once.
-  const signed = o => SDG.sign.sign(Object.assign({ created: SDG.util.now() }, o), me);
+  // Hubs take a moderation message only within minutes of `created`, only once, and only when it
+  // names that hub's key, so it can't be replayed on another hub where this key moderates.
+  const signed = async o => SDG.sign.sign(Object.assign({ created: SDG.util.now(), hub: (await api('/api/v1/info')).hubKey }, o), me);
   if (cmd === 'pending') {
     const list = await api('/api/v1/proposals?status=pending');
     if (!list.length) return console.log('Nothing waiting.');
     list.forEach(p => console.log(`${safe(p.id)}  ${safe(p.op).padEnd(6)} ${safe(p.coll)}/${safe(p.rid)}${p.stale ? '  (stale)' : ''}${p.source === 'ai' ? '  [AI]' : ''}\n    by ${safe((p.author && p.author.name) || 'anonymous')}: ${safe(p.reason)}`));
   } else if (cmd === 'show') {
+    // The change is worked out here from the proposal as its author signed it (checked), not taken
+    // from the hub's own summary; accepting signs a hash of exactly this proposal.
     const d = await api('/api/v1/proposals/' + encodeURIComponent(id));
-    console.log(`${safe(d.proposal.op)} ${safe(d.proposal.coll)}/${safe(d.proposal.rid)}  status ${safe(d.proposal.status)}\nReason: ${safe(d.proposal.reason)}`);
+    const p = SDG.changes.signedProposal(d.proposal);
+    const sig = !p.sig ? 'unsigned' : (await SDG.sign.verify(p)) ? 'signature checks out' : 'SIGNATURE DOES NOT CHECK OUT: changed after its author signed it, do not accept';
+    console.log(`${safe(p.op)} ${safe(p.coll)}/${safe(p.rid)}  status ${safe(d.proposal.status)}  by ${safe((p.author && p.author.name) || 'anonymous')} (${sig})\nReason: ${safe(p.reason)}`);
     // The flags come after the reason, so nothing the contributor wrote can sit below them.
     if (d.proposal.source === 'ai') console.log('AI: written by an AI tool.');
     if (d.stale) console.log('STALE: the record changed after this was proposed. Accepting (with --force) replaces the newer version.');
-    (d.diff || []).forEach(x => console.log(`  ${safe(x.path)}\n    - ${json(x.before)}\n    + ${json(x.after)}`));
+    SDG.util.diff(d.current || {}, p.op === 'put' ? p.data : {}).forEach(x => console.log(`  ${safe(x.path)}\n    - ${json(x.before)}\n    + ${json(x.after)}`));
     (d.problems || []).forEach(p => console.log(`  ✗ ${safe(p.coll)}/${safe(p.id)} ${safe(p.path)} ${safe(p.msg)}`));
   } else if (cmd === 'accept' || cmd === 'reject') {
     const note = rest.filter(x => x !== '--force').join(' ');
-    console.log(show(await api(`/api/v1/proposals/${encodeURIComponent(id)}/review`, await signed({ action: 'review', proposal: id, decision: cmd, note, force: rest.includes('--force') || undefined }))));
+    const hash = await SDG.changes.proposalHash((await api('/api/v1/proposals/' + encodeURIComponent(id))).proposal);
+    console.log(show(await api(`/api/v1/proposals/${encodeURIComponent(id)}/review`, await signed({ action: 'review', proposal: id, hash, decision: cmd, note, force: rest.includes('--force') || undefined }))));
   } else if (cmd === 'role') {
     console.log(show(await api('/api/v1/roles', await signed({ action: 'set-role', key: id, role: rest[0] }))));
   } else if (cmd === 'hide') {

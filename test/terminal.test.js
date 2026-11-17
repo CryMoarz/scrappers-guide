@@ -42,7 +42,10 @@ test('mod.js: contributor text is escaped, and the AI and stale flags come after
   const proposal = { id: 'abc123', op: 'delete', coll: 'hazards', rid: 'lithium', status: 'pending', stale: true, source: 'ai', author: { name: `x\u202eevil` }, reason: EVIL };
   const hub = await fakeHub(t, {
     'GET /api/v1/proposals?status=pending': [200, [proposal]],
-    'GET /api/v1/proposals/abc123': [200, { proposal, stale: true, diff: [{ path: `name${ESC}[31m`, before: 'old\u009b2J', after: 'new\u2066' }], problems: [{ coll: 'hazards', id: 'lithium', path: 'name', msg: `bad${ESC}]0;title\x07` }] }],
+    'GET /api/v1/info': [200, { hubKey: 'hub-key' }],
+    // The change shown is worked out from the proposal and the current record, so hostile text can
+    // sit in either.
+    'GET /api/v1/proposals/abc123': [200, { proposal: Object.assign({}, proposal, { op: 'put', data: { [`name${ESC}[31m`]: 'new\u2066' } }), current: { [`name${ESC}[31m`]: 'old\u009b2J' }, stale: true, problems: [{ coll: 'hazards', id: 'lithium', path: 'name', msg: `bad${ESC}]0;title\x07` }] }],
     'GET /api/v1/proposals/nope': [400, { error: `No such proposal${ESC}[2J`, errors: [{ coll: 'parts', id: `x${ESC}[1A`, path: 'name', msg: 'm\u202e' }] }],
     'POST /api/v1/proposals/abc123/review': [200, { ok: true, status: 'rejected', note: `${ESC}[2J\u202e` }],
   });
