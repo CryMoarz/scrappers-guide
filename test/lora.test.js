@@ -272,7 +272,8 @@ test('a flood of questions can\'t hold back the node\'s own frames', async (t) =
   const o = await SDG.changes.makeObservation({ lat: 45.4, lon: -75.7, status: 'untouched', share: 'peers', label: 'Pharmacy on Main', notes: 'Back room not touched. '.repeat(10) }, hubA.identity);
   const n = A.shareObservation(o);
   assert.ok(n >= 2);
-  assert.equal(A.queueLength(), 20 + n, 'twenty replies wait; the rest are dropped, not the note');
+  // Sends go out every few ms meanwhile, so count what went and what waits.
+  assert.equal(A.queueLength() + a.sent.length, 20 + n, 'twenty replies wait; the rest are dropped, not the note');
   assert.ok(await until(() => A.queueLength() === 0));
   // Every third send goes to the note while replies wait, so it's out well before the last reply.
   const lastChunk = a.sent.map(s => s.text.startsWith('SDG1|D')).lastIndexOf(true);
