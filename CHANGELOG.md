@@ -2,6 +2,15 @@
 
 Plain notes for people using the guide. The app shows the latest few under "What's new" on its front page. Details for developers are in the commits.
 
+## 4.1.0 (17 November 2026)
+
+- Solar sizing for anywhere in the world, offline: type a place or use your location, and the solar calculator suggests a winter tilt, shows the sun on the panel month by month from NASA's 25-year averages built into the app, and sizes panel, battery and controller for your worst month or for summer only. It warns about freezing nights for lithium batteries and says when a month has too little sun for solar alone.
+- A LoRa airtime and range calculator: time on air for every Meshtastic preset, how many messages a minute the channel carries once nodes rebroadcast, the link budget, and the radio horizon from both antenna heights.
+- Run and grow a town LoRa mesh: airtime per preset, how fast the channel fills, what the firmware holds back as the air gets busy, how messages cross the mesh, finding a failing relay and adding a neighbourhood.
+- Hand over a town LoRa mesh, for when the builder is gone: a logbook and map, a card for every relay, backing up settings and keys safely, loaded spares, seasonal power checks and an offline kit.
+- The town mesh guide covers realistic range, relays that overlap without crowding, and winter sun in Canada. Fixed: device telemetry is off by default in current firmware, not sent every 30 minutes.
+- The node guide's offline kit now builds the command-line tools with pip wheel, so they install with no internet.
+
 ## 4.0.1 (16 November 2026)
 
 - Simple mode on a narrow phone: the Full app button and the sync status sit under the title instead of being cut off.
