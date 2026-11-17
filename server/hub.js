@@ -116,8 +116,9 @@ async function createHub(cfg) {
 
   // ---- people and roles ----
   // Admins and moderators are named by public key, or by at least 32 hex characters (128 bits) of
-  // its SHA-256: a 16-character fingerprint is short enough to be worth forging a key for.
-  const strong = x => typeof x === 'string' && (/^[A-Za-z0-9_-]{43}$/.test(x) || /^[0-9a-f]{32,64}$/i.test(x));
+  // its SHA-256: a 16-character fingerprint is short enough to be worth forging a key for. A key
+  // counts only in its one spelling, since another spelling would never match.
+  const strong = x => typeof x === 'string' && (SDG.sign.isKey(x) || /^[0-9a-f]{32,64}$/i.test(x));
   ['admins', 'moderators'].forEach(k => (cfg[k] || []).filter(x => !strong(x)).forEach(x => console.warn(`Ignoring ${k} entry “${x}”: give the public key or the 32-character admin id from \`node tools/keys.js show\``)));
   const matches = (list, key, hex) => (list || []).some(x => strong(x) && (x === key || hex.startsWith(x.toLowerCase())));
   async function roleOf(key) {
@@ -718,13 +719,13 @@ async function createHub(cfg) {
     });
   });
   r.get('/api/v1/users/:key', async (req, url, { key }) => {
-    if (!/^[A-Za-z0-9_-]{43}$/.test(key)) throw new H.HttpError(404, 'Not a public key');
+    if (!SDG.sign.isKey(key)) throw new H.HttpError(404, 'Not a public key');
     const u = store.getUser(key) || { key, fp: await SDG.sign.fingerprint(key), proposals: 0, accepted: 0, rejected: 0, comments: 0 };
     return Object.assign({}, u, { role: await roleOf(key) });
   });
   r.post('/api/v1/roles', async (req, url, p, res, body) => {
     await moderation(body, 'set-role', 'key', undefined, 'admin');
-    if (!/^[A-Za-z0-9_-]{43}$/.test(body.key) || !SDG.util.has(ROLE_RANK, body.role) || body.role === 'admin') throw new H.HttpError(422, 'Give key and a role: banned, contributor, trusted or moderator. Admins are set in the hub config.');
+    if (!SDG.sign.isKey(body.key) || !SDG.util.has(ROLE_RANK, body.role) || body.role === 'admin') throw new H.HttpError(422, 'Give key and a role: banned, contributor, trusted or moderator. Admins are set in the hub config.');
     const u = (await touchUser({ key: body.key })) || {};
     u.role = body.role;
     store.putUser(u);

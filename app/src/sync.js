@@ -76,6 +76,7 @@ const Sync = (() => {
         const info = await api('/api/v1/info', { timeout: 8000 });
         const url = S.settings.hubUrl;
         const pinned = (S.settings.hubKeys || {})[url];
+        if (!SDG.sign.isKey(info.hubKey)) throw new Error('The hub didn’t give a valid key; not syncing with it');
         if (pinned && pinned !== info.hubKey) throw new Error('This hub’s key has changed. If you expected that, forget the hub in Sync and connect again.');
         if (!pinned) { S.settings.hubKeys = Object.assign({}, S.settings.hubKeys, { [url]: info.hubKey }); await save('settings'); }
         S.hub.info = info;
