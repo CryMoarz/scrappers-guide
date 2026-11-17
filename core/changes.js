@@ -176,10 +176,20 @@ module.exports = function (SDG) {
     return { ok, bad };
   }
 
+  // A proposal as its author signed it, without what a hub keeps beside it (status, received,
+  // seq, notes), and a hash of exactly that. A moderator signs the hash of what they reviewed, so
+  // neither a hub nor anyone between can show one change and apply another.
+  function signedProposal(p) {
+    const o = {};
+    Object.keys(SDG.schema.schemaFor('proposal').properties).forEach(k => { if (p && SDG.util.has(p, k)) o[k] = p[k]; });
+    return o;
+  }
+  const proposalHash = p => sha256hex(canonical(signedProposal(p)));
+
   SDG.changes = {
     applyChange, overlay, checkData, makeProposal, makeComment, makeObservation,
     datasetHash, makeRelease, releaseHead, signRelease, verifyRelease, signAppBuild, verifyAppBuild,
     signCheckpoint, verifyCheckpoint, applyLedger, rebase,
-    makeBundle, parseBundle, mergeById, verifyItems, BUNDLE_KEYS,
+    makeBundle, parseBundle, mergeById, verifyItems, BUNDLE_KEYS, signedProposal, proposalHash,
   };
 };

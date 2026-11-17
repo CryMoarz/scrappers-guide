@@ -189,8 +189,13 @@ test('moderation messages fit one endpoint, are fresh, and work once', async (t)
   const alice = await SDG.sign.createIdentity('Alice');
   const { hub, url } = await start({ admins: [admin.key], policy: { powBits: 4, approvals: 2 } });
   t.after(() => hub.close());
-  const signed = (o, who) => SDG.sign.sign(Object.assign({ created: SDG.util.now() }, o), who || admin);
+  const signed = (o, who) => SDG.sign.sign(Object.assign({ created: SDG.util.now(), hub: hub.identity.key }, o), who || admin);
   const ago = ms => new Date(Date.now() - ms).toISOString();
+
+  // Every moderation message names the hub it is for.
+  const other = await SDG.sign.createIdentity('Another hub');
+  assert.equal((await call(url, '/api/v1/roles', await signed({ action: 'set-role', key: mod.key, role: 'moderator', hub: other.key }))).status, 422, 'signed for another hub');
+  assert.equal((await call(url, '/api/v1/roles', await signed({ action: 'set-role', key: mod.key, role: 'moderator', hub: undefined }))).status, 422, 'no hub named');
 
   // Roles: the action and a fresh date are required, a role name must be a real role, and a
   // message works once.
@@ -211,7 +216,12 @@ test('moderation messages fit one endpoint, are fresh, and work once', async (t)
   assert.equal((await call(url, '/api/v1/proposals', p)).body.status, 'pending');
   const c = await SDG.changes.makeComment('parts/' + part.id, 'Nice', null, alice, 4);
   assert.equal((await call(url, '/api/v1/comments', c)).body.status, 'stored');
-  const rv = await signed({ action: 'review', proposal: p.id, decision: 'accept' }, mod);
+  // A review names the hash of the proposal its moderator saw, and works only for that proposal.
+  const hash = await SDG.changes.proposalHash((await call(url, '/api/v1/proposals/' + p.id)).body.proposal);
+  assert.equal((await call(url, `/api/v1/proposals/${p.id}/review`, await signed({ action: 'review', proposal: p.id, decision: 'accept' }, mod))).status, 409, 'no hash');
+  const swapped = await SDG.changes.proposalHash(Object.assign({}, p, { reason: 'Fix a typo' }));
+  assert.equal((await call(url, `/api/v1/proposals/${p.id}/review`, await signed({ action: 'review', proposal: p.id, hash: swapped, decision: 'accept' }, mod))).status, 409, 'a different proposal than the one stored');
+  const rv = await signed({ action: 'review', proposal: p.id, hash, decision: 'accept' }, mod);
   assert.equal((await call(url, `/api/v1/proposals/${p.id}/review`, rv)).body.approvals, 1);
   const pub = (await call(url, '/api/v1/proposals/' + p.id)).body.reviews[0];
   assert.equal((await call(url, `/api/v1/comments/${c.id}/hide`, pub)).status, 422);

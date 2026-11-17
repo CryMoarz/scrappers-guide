@@ -145,12 +145,14 @@ async function createHub(cfg) {
     if (ROLE_RANK[role] < ROLE_RANK[min]) throw new H.HttpError(403, `This needs the ${min} role`);
     return role;
   }
-  // Moderation messages are signed, say what they do and to what, are fresh, and work once, so
-  // a public review or an old role change can't be replayed at another endpoint or later.
+  // Moderation messages are signed, say what they do, to what and on which hub, are fresh, and
+  // work once, so a public review or an old role change can't be replayed at another endpoint, on
+  // another hub where the same key moderates, or later.
   const FRESH = 10 * 60e3, AHEAD = 5 * 60e3;
   async function moderation(body, action, field, target, min) {
     const role = await requireRole(body, min);
-    if (body.action !== action || typeof body[field] !== 'string' || (target !== undefined && body[field] !== target)) throw new H.HttpError(422, `Sign this as {action: "${action}", ${field}, created} for this ${field}`);
+    if (body.action !== action || typeof body[field] !== 'string' || (target !== undefined && body[field] !== target)) throw new H.HttpError(422, `Sign this as {action: "${action}", ${field}, hub, created} for this ${field}`);
+    if (body.hub !== identity.key) throw new H.HttpError(422, 'Sign this for this hub: include hub, the key /api/v1/info gives as hubKey. An app or tool that leaves it out needs updating.');
     const t = isoTime(body.created), now = Date.now();
     if (!(t >= now - FRESH && t <= now + AHEAD)) throw new H.HttpError(422, 'This signed message is too old or dated in the future: sign it again, and check the clock on this device');
     const h = await SDG.util.sha256hex(body.sig);
@@ -281,6 +283,8 @@ async function createHub(cfg) {
     const p = store.getProposal(body.proposal);
     if (!p) throw new H.HttpError(404, 'No such proposal');
     if (!['pending', 'conflict'].includes(p.status)) throw new H.HttpError(409, `This proposal is already ${p.status}`);
+    // The moderator signed the hash of the proposal they were shown: it must be this one.
+    if (body.hash !== await SDG.changes.proposalHash(p)) throw new H.HttpError(409, 'This review is for a different version of the proposal than the one here: load it again and review what it says');
     store.putReview(body);
     if (body.decision === 'reject') {
       Object.assign(p, { status: 'rejected', note: body.note || '', decided: SDG.util.now() });

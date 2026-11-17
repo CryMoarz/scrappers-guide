@@ -63,11 +63,13 @@ test('hub: propose, moderate, sync, mirror, MCP', async (t) => {
   assert.ok(rb.body.errors.some(e => /no_such_device/.test(e.msg)));
 
   // Alice can't review; the admin can.
-  const aliceReview = await SDG.sign.sign({ action: 'review', proposal: good.id, decision: 'accept', created: SDG.util.now() }, alice);
-  assert.equal((await call(url, `/api/v1/proposals/${good.id}/review`, aliceReview)).status, 403);
   const detail = (await call(url, `/api/v1/proposals/${good.id}`)).body;
   assert.ok(detail.diff.length > 0);
-  const review = await SDG.sign.sign({ action: 'review', proposal: good.id, decision: 'accept', note: 'looks right', created: SDG.util.now() }, admin);
+  const hash = await SDG.changes.proposalHash(detail.proposal);
+  assert.equal(hash, await SDG.changes.proposalHash(good), 'the hash covers what the author signed, not what the hub keeps beside it');
+  const aliceReview = await SDG.sign.sign({ action: 'review', proposal: good.id, hash, hub: hub.identity.key, decision: 'accept', created: SDG.util.now() }, alice);
+  assert.equal((await call(url, `/api/v1/proposals/${good.id}/review`, aliceReview)).status, 403);
+  const review = await SDG.sign.sign({ action: 'review', proposal: good.id, hash, hub: hub.identity.key, decision: 'accept', note: 'looks right', created: SDG.util.now() }, admin);
   const r2 = await call(url, `/api/v1/proposals/${good.id}/review`, review);
   assert.equal(r2.body.status, 'accepted', JSON.stringify(r2.body));
   assert.equal(r2.body.seq, seq0 + 1);
