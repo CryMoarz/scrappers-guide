@@ -5,9 +5,12 @@ module.exports = function (SDG) {
   const plain = md => String(md || '').replace(/```[\s\S]*?```/g, ' ').replace(/^\s*\|.*\|\s*$/gm, ' ').replace(/[#*_`>|]/g, '').replace(/\[([^\]]+)\]\([^)]+\)/g, '$1').replace(/\s+/g, ' ').trim();
   const list = (title, a) => (a && a.length ? `\n**${title}**\n\n${a.map(x => `- ${x}`).join('\n')}\n` : '');
 
-  function guideMarkdown(ctx, g, level) {
+  // `link(coll, id, text)` turns a mention of another record into a Markdown link: the website
+  // passes one. Without it names stay plain text, as exports and AI tools want them.
+  const plainName = (coll, id, text) => text;
+  function guideMarkdown(ctx, g, level, link = plainName) {
     const h = '#'.repeat(level || 1);
-    const hz = (g.hazards || []).map(x => { const c = ctx.hazard(x); return `${c.label} (${c.severity}/5)`; }).join(', ');
+    const hz = (g.hazards || []).map(x => { const c = ctx.hazard(x); return `${link('hazards', x, c.label)} (${c.severity}/5)`; }).join(', ');
     const mats = (g.materials || []).map(m => `${m.item}${m.qty ? ` (${m.qty})` : ''}${m.optional ? ', optional' : ''}`);
     const body = `\n**Steps**\n\n${(g.steps || []).map((s, i) => `${i + 1}. ${s.text}${s.warn ? `\n   **⚠ ${s.warn}**` : ''}`).join('\n')}\n`;
     return `${h} ${g.title}\n\n*${KIND[g.kind] || g.kind} · difficulty ${g.difficulty}/5${g.mins ? ` · about ${g.mins >= 120 ? Math.round(g.mins / 60) + ' hours' : g.mins + ' min'}` : ''}*\n\n${g.summary}\n${(g.tools || []).length ? `\n**Tools:** ${g.tools.map(ctx.toolLabel).join(', ')}\n` : ''}${hz ? `\n**Hazards:** ${hz}\n` : ''}${list('Materials', mats)}${body}\n${g.notes || ''}\n\n*License: ${g.license || 'CC-BY-SA-4.0'}*\n`;
@@ -17,16 +20,16 @@ module.exports = function (SDG) {
 
   // Any record as Markdown: for exports, printing, and AI knowledge bases (NOMAD's among them).
   const nameOf = r => r.name || r.title || r.label || r.id;
-  function recordMarkdown(ctx, coll, r) {
+  function recordMarkdown(ctx, coll, r, link = plainName) {
     const ds = ctx.ds;
-    const pname = id => nameOf(ctx.get('parts', id) || { id });
-    const hz = ids => (ids || []).map(h => `${ctx.hazard(h).label} (${ctx.hazard(h).severity}/5)`).join(', ');
+    const pname = id => link('parts', id, nameOf(ctx.get('parts', id) || { id }));
+    const hz = ids => (ids || []).map(h => `${link('hazards', h, ctx.hazard(h).label)} (${ctx.hazard(h).severity}/5)`).join(', ');
     if (coll === 'devices') {
       const d = ctx.resolve(r.id);
       const rows = d.comps.map(c => `| ${pname(c.fn)} | ${c.spec}${c.qty > 1 ? ` ×${c.qty}` : ''} | ${c.loc || ''}${c.board ? ` (on ${c.board})` : ''} | ${c.ext} | ${c.obs} | ${SDG.db.CONF[ctx.confInfo(r.id, c.key).conf].label} |`);
-      const places = (d.buildings || []).map(b => `${nameOf(ctx.get('buildings', b.b) || { id: b.b })} ${b.l}/5`).join(', ');
-      const guides = ds.guides.filter(g => (g.devices || []).includes(r.id)).map(g => `${KIND[g.kind]}: ${g.title}`);
-      const models = (ctx.modelsByDevice.get(r.id) || []).map(m => `${ctx.modelName(m)}${m.years ? ` (${m.years})` : ''}`);
+      const places = (d.buildings || []).map(b => `${link('buildings', b.b, nameOf(ctx.get('buildings', b.b) || { id: b.b }))} ${b.l}/5`).join(', ');
+      const guides = ds.guides.filter(g => (g.devices || []).includes(r.id)).map(g => `${KIND[g.kind]}: ${link('guides', g.id, g.title)}`);
+      const models = (ctx.modelsByDevice.get(r.id) || []).map(m => `${link('models', m.id, ctx.modelName(m))}${m.years ? ` (${m.years})` : ''}`);
       return `# ${d.name} (generic)\n\n${SDG.db.GENERIC_NOTE}\n\n${[d.parentName && `Variant of ${d.parentName}.`, d.era, (d.aliases || []).length && `Also called ${d.aliases.join(', ')}.`, (d.brands || []).length && `Common brands: ${d.brands.join(', ')}.`, d.notes].filter(Boolean).join(' ')}\n\nHow common ${d.prev}/5 · about ${d.mins} min · tools: ${(d.tools || []).map(ctx.toolLabel).join(', ')}${d.kg ? ` · about ${d.kg} kg` : ''}${(d.hazards || []).length ? `\n\n**Hazards:** ${hz(d.hazards)}` : ''}\n\n| Part | Spec | Where | Difficulty | Overlooked | Confidence |\n|---|---|---|---|---|---|\n${rows.join('\n')}\n\n**Found in:** ${places}\n${list('Guides', guides)}${list('Logged models', models)}`;
     }
     if (coll === 'models') {
@@ -36,18 +39,18 @@ module.exports = function (SDG) {
       const cell = s => String(s == null ? '' : s).replace(/\|/g, '/').replace(/\s*\n\s*/g, ' ');
       const rows = (r.comps || []).map(c => `| ${cell(pname(c.fn || tpl(c.key).fn || c.key))} | ${cell(c.absent ? 'Not present in this model' : c.spec || tpl(c.key).spec)}${c.qty > 1 ? ` ×${c.qty}` : ''} | ${cell(c.loc || '')} | ${c.absent ? 'Absent' : SDG.db.CONF[c.conf] ? SDG.db.CONF[c.conf].label : 'Likely'} |`);
       const srcs = (r.sources || []).map(s => `${s.title}${s.url ? `: ${s.url}` : ''}`);
-      return `# ${ctx.modelName(r)}\n\nLogged model of ${d ? d.name : r.device}.${r.years ? ` Years: ${r.years}.` : ''}${r.fcc ? ` FCC/ISED id: ${r.fcc}.` : ''} ${r.notes || ''}\n\n| Part | What was found | Where | Confidence |\n|---|---|---|---|\n${rows.join('\n')}\n${list('Sources', srcs)}${research(r.research)}`;
+      return `# ${ctx.modelName(r)}\n\nLogged model of ${d ? link('devices', r.device, d.name) : r.device}.${r.years ? ` Years: ${r.years}.` : ''}${r.fcc ? ` FCC/ISED id: ${r.fcc}.` : ''} ${r.notes || ''}\n\n| Part | What was found | Where | Confidence |\n|---|---|---|---|\n${rows.join('\n')}\n${list('Sources', srcs)}${research(r.research)}`;
     }
     if (coll === 'parts') {
       const ranked = SDG.search.rank(ctx, new Map([[r.id, { via: 'direct', on: true }]]), '', {});
-      return `# ${r.name}\n\n${r.summary || ''}\n\nGroup: ${r.group} · demand ${r.demand}/5 · search words: ${(r.keywords || []).join(', ')}\n${list('Good for', r.uses)}${r.identify ? `\n**How to recognise it:** ${r.identify}\n` : ''}${r.test ? `\n**How to test it:** ${r.test}\n` : ''}${r.decay ? `\n**Shelf life:** ${r.decay.halfLifeMonths ? `about half unusable after ${r.decay.halfLifeMonths} months` : 'lasts indefinitely'}. ${r.decay.note || ''}\n` : ''}${(r.hazards || []).length ? `\n**Hazards:** ${hz(r.hazards)}\n` : ''}${(r.substitutes || []).length ? `\n**Substitutes:** ${r.substitutes.map(pname).join(', ')}\n` : ''}${list('Best sources (score)', ranked.res.slice(0, 12).map(x => `${x.cat.name}: ${x.best.comp.spec} (${Math.round(x.best.s)})`))}${list('Where to look', ranked.blds.slice(0, 6).map(a => `${a.bt.name}: ${SDG.search.leftLabel(a.remain).toLowerCase()}`))}`;
+      return `# ${r.name}\n\n${r.summary || ''}\n\nGroup: ${r.group} · demand ${r.demand}/5 · search words: ${(r.keywords || []).join(', ')}\n${list('Good for', r.uses)}${r.identify ? `\n**How to recognise it:** ${r.identify}\n` : ''}${r.test ? `\n**How to test it:** ${r.test}\n` : ''}${r.decay ? `\n**Shelf life:** ${r.decay.halfLifeMonths ? `about half unusable after ${r.decay.halfLifeMonths} months` : 'lasts indefinitely'}. ${r.decay.note || ''}\n` : ''}${(r.hazards || []).length ? `\n**Hazards:** ${hz(r.hazards)}\n` : ''}${(r.substitutes || []).length ? `\n**Substitutes:** ${r.substitutes.map(pname).join(', ')}\n` : ''}${list('Best sources (score)', ranked.res.slice(0, 12).map(x => `${link('devices', x.cat.id, x.cat.name)}: ${x.best.comp.spec} (${Math.round(x.best.s)})`))}${list('Where to look', ranked.blds.slice(0, 6).map(a => `${link('buildings', a.bt.id, a.bt.name)}: ${SDG.search.leftLabel(a.remain).toLowerCase()}`))}`;
     }
-    if (coll === 'guides') return guideMarkdown(ctx, r);
+    if (coll === 'guides') return guideMarkdown(ctx, r, 1, link);
     if (coll === 'hazards') return `# ${r.label}\n\nSeverity ${r.severity}/5. ${r.summary}\n${list('How to spot it', r.signs)}${list('Do', r.do)}${list('Don’t', r.dont)}${list('Protection', r.ppe)}${list('If it goes wrong', r.firstAid)}`;
-    if (coll === 'jobs') return `# ${r.name}\n\n${r.summary}\n${list('Part types', r.parts.map(p => `${pname(p.fn)}${p.why ? `: ${p.why}` : ''}`))}${list('Tips', r.tips)}${list('Guides', (r.guides || []).map(g => nameOf(ctx.get('guides', g) || { id: g })))}`;
+    if (coll === 'jobs') return `# ${r.name}\n\n${r.summary}\n${list('Part types', r.parts.map(p => `${pname(p.fn)}${p.why ? `: ${p.why}` : ''}`))}${list('Tips', r.tips)}${list('Guides', (r.guides || []).map(g => link('guides', g, nameOf(ctx.get('guides', g) || { id: g }))))}`;
     if (coll === 'buildings') {
       const devs = ds.devices.filter(d => !d.abstract).map(d => ctx.resolve(d.id)).map(d => ({ d, l: ((d.buildings || []).find(x => x.b === r.id) || {}).l })).filter(x => x.l).sort((a, c) => c.l - a.l);
-      return `# ${r.name}\n\nLooting pressure ${r.exposure}/5. ${r.notes || ''}${r.access ? `\n\nGetting in: ${r.access}` : ''}${(r.hazards || []).length ? `\n\n**Hazards:** ${hz(r.hazards)}` : ''}\n\nMap tags: ${r.osm.join(', ')}\n${list('What’s inside', devs.map(x => `${x.d.name} (${x.l}/5)`))}`;
+      return `# ${r.name}\n\nLooting pressure ${r.exposure}/5. ${r.notes || ''}${r.access ? `\n\nGetting in: ${r.access}` : ''}${(r.hazards || []).length ? `\n\n**Hazards:** ${hz(r.hazards)}` : ''}\n\nMap tags: ${r.osm.join(', ')}\n${list('What’s inside', devs.map(x => `${link('devices', x.d.id, x.d.name)} (${x.l}/5)`))}`;
     }
     return `# ${nameOf(r)}\n`;
   }

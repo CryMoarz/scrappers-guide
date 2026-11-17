@@ -70,5 +70,5 @@ const Pinouts = (() => {
   }
   // Pin tables live in their own file so they can be checked and corrected on their own.
   const use = boards => { BOARDS = boards; };
-  return { META, html, use, svg, kindOf, get boards() { return BOARDS; } };
+  return { META, html, use, svg, kindOf, boardHTML, legend, get boards() { return BOARDS; } };
 })();
