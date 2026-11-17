@@ -4,7 +4,7 @@ const assert = require('node:assert');
 const SDG = require('../core');
 const F = require('../lib/fsdata');
 const { PB, PORT, meshPacket, frame, frameReader, readFromRadio, memoryPair } = require('../server/lora-links');
-const { createBridge } = require('../server/lora');
+const { createBridge, isRadioReport } = require('../server/lora');
 
 test('Meshtastic frames round-trip, and debug noise is skipped', () => {
   const toRadio = meshPacket('?scrap battery', { to: 0x1234abcd, port: PORT.TEXT });
@@ -190,4 +190,93 @@ test('another radio can\'t spoil someone\'s chunked item', async (t) => {
   assert.equal(B.state.received.observations, 3);
   for (const c of three) await B.handle({ text: c, from: ALICE });
   assert.equal(B.state.received.observations, 3);
+});
+
+test('?seen has a budget, and its reports are marked and kept off the air and NOMAD\'s map', async (t) => {
+  // Stand-in for NOMAD's map: collects the pins it is sent.
+  const http = require('http');
+  const pins = [];
+  const nomad = http.createServer((req, res) => {
+    let body = '';
+    req.on('data', d => (body += d));
+    req.on('end', () => {
+      if (req.url !== '/api/maps/markers' || req.method !== 'POST') { res.writeHead(404); return res.end(); }
+      pins.push(JSON.parse(body));
+      res.writeHead(200, { 'Content-Type': 'application/json' });
+      res.end(JSON.stringify({ id: pins.length }));
+    });
+  });
+  await new Promise(r => nomad.listen(0, '127.0.0.1', r));
+  t.after(() => nomad.close());
+  const url = `http://127.0.0.1:${nomad.address().port}`;
+  const hub = await nodeHub(t, { nomad: { url, markers: true } });
+  const [a] = memoryPair();
+  // The pump stays still, so what is waiting can be counted.
+  const A = createBridge(hub, { linkObject: a, spacingMs: 1e6, firstAnnounceMs: 1e6, announceMinutes: 0 });
+  t.after(() => A.close());
+  const report = async (from, lat, lon, words) => { a.emit('position', { from, lat, lon }); await A.handle({ text: '?seen dangerous ' + words, from }); };
+  const stored = () => hub.store.listObservations({ shares: ['peers'], limit: 1e6 });
+
+  // Five an hour from any one area (about 1 km), so one place can't be buried in reports...
+  for (let i = 0; i < 8; i++) await report(0x1000 + i, 45.42, -75.69, 'pharmacy');
+  assert.equal(stored().length, 5);
+  // ...while other places still get theirs in.
+  await report(0x2000, 45.5, -75.5, 'hardware store');
+  assert.equal(stored().length, 6);
+
+  // One transmitter making up a node number and a position for every report: thirty an hour in all.
+  for (let i = 0; i < 300; i++) await report(0x20000000 + i, 45.3 + (i % 20) * 0.01, -75.8 + Math.floor(i / 20) * 0.01, 'Armed group, keep out');
+  assert.equal(stored().length, 30);
+  assert.deepEqual(A.state.reports, { logged: 30, refused: 279 });
+  // 30 "Noted" replies and one "too many": the 278 other refusals stay quiet.
+  assert.equal(A.state.botReplies, 31);
+  // Replies wait in a line of their own, and no report was queued to be sent on over LoRa.
+  assert.equal(A.queueLength(), 20);
+
+  // Each is signed by the node, says in its signed notes that it's an unchecked radio report, and
+  // carries via 'radio-report' here.
+  for (const o of stored()) {
+    assert.equal(o.via, 'radio-report');
+    assert.match(o.notes, /^Unverified radio report from ![0-9a-f]+ over LoRa; nobody has checked it\.$/);
+    assert.equal(o.author.key, hub.identity.key);
+    assert.ok(await SDG.sign.verify(SDG.sign.strip(o, 'via', 'received')));
+  }
+  // The mark survives a trip through a bundle, which drops via, and covers the older wording.
+  const away = SDG.sign.strip(stored()[0], 'via', 'received');
+  assert.ok(isRadioReport(away));
+  assert.ok(isRadioReport({ notes: 'Reported over LoRa by radio !1a2b' }));
+  assert.equal(A.shareObservation(away), 0, 'never sent on over LoRa');
+
+  // Someone's own signed note still goes out, even with the reply line full.
+  const alice = await SDG.sign.createIdentity('Alice');
+  const mine = await SDG.changes.makeObservation({ lat: 45.42, lon: -75.69, status: 'dangerous', share: 'peers', label: 'Gas leak at the pharmacy' }, null);
+  mine.pow = await SDG.sign.stamp(mine, 4);
+  const signed = await SDG.sign.sign(mine, alice);
+  assert.ok(!isRadioReport(signed));
+  await hub.takeObservation(signed);
+  assert.ok(A.shareObservation(signed) >= 1);
+
+  // NOMAD's map gets Alice's note and none of the radio reports.
+  hub.nomadState.nomad = { url };
+  await hub.pushMarkers();
+  assert.deepEqual(pins.map(p => p.name), ['Gas leak at the pharmacy']);
+});
+
+test('a flood of questions can\'t hold back the node\'s own frames', async (t) => {
+  const ctx = SDG.db.open(F.plain(F.load()));
+  const hubA = fakeHub('Camp A', ctx, await SDG.sign.createIdentity('Camp A'));
+  const [a] = memoryPair();
+  const A = createBridge(hubA, { linkObject: a, spacingMs: 5, maxPerMinute: 1e6, firstAnnounceMs: 1e6, announceMinutes: 0 });
+  t.after(() => A.close());
+  for (let i = 0; i < 30; i++) await A.handle({ text: '?help', from: 0x30000000 + i });
+  const o = await SDG.changes.makeObservation({ lat: 45.4, lon: -75.7, status: 'untouched', share: 'peers', label: 'Pharmacy on Main', notes: 'Back room not touched. '.repeat(10) }, hubA.identity);
+  const n = A.shareObservation(o);
+  assert.ok(n >= 2);
+  assert.equal(A.queueLength(), 20 + n, 'twenty replies wait; the rest are dropped, not the note');
+  assert.ok(await until(() => A.queueLength() === 0));
+  // Every third send goes to the note while replies wait, so it's out well before the last reply.
+  const lastChunk = a.sent.map(s => s.text.startsWith('SDG1|D')).lastIndexOf(true);
+  const lastReply = a.sent.map(s => s.text.startsWith('?scrap')).lastIndexOf(true);
+  assert.equal(a.sent.length, 20 + n);
+  assert.ok(lastChunk < lastReply, `note done at send ${lastChunk}, replies at ${lastReply}`);
 });

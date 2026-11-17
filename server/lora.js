@@ -20,19 +20,36 @@ const MAX_TEXT = 200;
 const MAX_FRAME = 600;      // longer frames are not from a radio; UDP could otherwise carry 64 KB
 const MAX_PARTS = 32;       // messages being reassembled at once
 const MAX_KNOWN = 500;      // radios remembered (positions, fair-share counters) and peers
+const MAX_REPLIES = 20;     // bot replies waiting to go out
+const MAX_QUEUED = 40;      // other frames waiting: announcements and chunks of signed items
 const PART_TTL = 10 * 60e3;
+const HOUR = 3600e3;
+const BUSY_EVERY = 5 * 60e3; // once ?seen's budget is spent, say so at most this often
 const clip = (s, n) => (s.length > n ? s.slice(0, n - 1) + '…' : s);
 
+// A ?seen report is someone's words from a radio, signed by the node that heard it and checked by
+// nobody. That node stores it with via 'radio-report' (beside the note, outside its signature, like
+// via 'lora'), and its signed notes say so, which marks it wherever it goes, even where via is
+// dropped. Such reports are never sent on over LoRa and stay off NOMAD's map (nomad.js); someone
+// who checks the place adds a note of their own, and that one travels. The second wording is the
+// one older versions of ?seen wrote.
+const RADIO_REPORT = 'radio-report';
+const radioNote = from => `Unverified radio report from !${(from >>> 0).toString(16)} over LoRa; nobody has checked it.`;
+const isRadioReport = o => !!o && (o.via === RADIO_REPORT || /^(Unverified radio report from|Reported over LoRa by radio) !/.test(o.notes || ''));
+
 function createBridge(hub, opts) {
-  opts = Object.assign({ link: 'meshtastic-tcp', bot: true, announceMinutes: 60, shareObservations: true, maxPerMinute: 6, months: undefined }, opts || {});
+  opts = Object.assign({ link: 'meshtastic-tcp', bot: true, announceMinutes: 60, shareObservations: true, maxPerMinute: 6, seenPerHour: 30, seenPerArea: 5, months: undefined }, opts || {});
   const link = opts.linkObject || createLink(opts);
-  const state = { link: opts.link, status: 'starting', peers: {}, heard: 0, sent: 0, botReplies: 0, received: { observations: 0, comments: 0 }, refused: 0, dropped: 0 };
+  const state = { link: opts.link, status: 'starting', peers: {}, heard: 0, sent: 0, botReplies: 0, received: { observations: 0, comments: 0 }, reports: { logged: 0, refused: 0 }, refused: 0, dropped: 0 };
   const positions = new Map();     // radio node number → last position heard
   const asked = new Map();         // radio node number → recent command times, to share airtime fairly
   const parts = new Map();         // sending radio and message id → { n, got: [], at }
   const seen = new Set();          // sending radio and message id of items taken
+  const reports = [];              // when ?seen reports were logged in the last hour, from any radio
+  const areas = new Map();         // area → when ?seen reports there were logged in the last hour
+  let toldBusy = 0;
   const queue = [], replies = [];
-  let sentTimes = [];
+  let sentTimes = [], turn = 0;
 
   // Everything kept per radio or per message is bounded: a busy or hostile mesh can't grow it.
   const remember = (map, k, v, max) => { map.delete(k); if (map.size >= max) map.delete(map.keys().next().value); map.set(k, v); };
@@ -41,15 +58,20 @@ function createBridge(hub, opts) {
   link.on('text', m => { state.heard++; handle(m).catch(e => console.warn('LoRa:', e.message)); });
 
   // ---- airtime-limited sending: bot replies first, then everything else ----
+  // Replies and other frames wait in separate lines, each with its own limit, so a flood of
+  // questions can't crowd out the node's announcements and notes.
   function enqueue(text, o, priority) {
-    if (queue.length + replies.length > 60) { state.dropped++; return; }
-    (priority ? replies : queue).push({ text, o: o || {} });
+    const q = priority ? replies : queue;
+    if (q.length >= (priority ? MAX_REPLIES : MAX_QUEUED)) { state.dropped++; return; }
+    q.push({ text, o: o || {} });
   }
   const pump = setInterval(() => {
     const now = Date.now();
     sentTimes = sentTimes.filter(t => now - t < 60e3);
-    const q = replies.length ? replies : queue;
-    if (!q.length || sentTimes.length >= opts.maxPerMinute) return;
+    if (sentTimes.length >= opts.maxPerMinute) return;
+    // Replies go first, but every third send goes to the other line when something waits there.
+    const q = !queue.length || (replies.length && ++turn % 3) ? replies : queue;
+    if (!q.length) return;
     const { text, o } = q.shift();
     if (link.send(text, o)) { sentTimes.push(now); state.sent++; }
   }, opts.spacingMs || 3000);
@@ -60,6 +82,8 @@ function createBridge(hub, opts) {
     const body = zlib.deflateRawSync(Buffer.from(JSON.stringify({ k: kind, v: item }))).toString('base64url');
     const n = Math.ceil(body.length / CHUNK);
     if (n > MAX_CHUNKS) return 0;
+    // All of an item's chunks or none: half an item is only airtime spent.
+    if (queue.length + n > MAX_QUEUED) { state.dropped++; return 0; }
     const id = SDG.util.newId().slice(-8);
     for (let i = 0; i < n; i++) enqueue(`${MAGIC}|D|${id}|${i + 1}|${n}|${body.slice(i * CHUNK, (i + 1) * CHUNK)}`, { port: PORT.PRIVATE });
     return n;
@@ -100,6 +124,7 @@ function createBridge(hub, opts) {
     const t = Date.now();
     parts.forEach((p, k) => { if (t - p.at > PART_TTL) parts.delete(k); });
     asked.forEach((v, k) => { if (!v.some(x => t - x < 600e3)) asked.delete(k); });
+    areas.forEach((v, k) => { if (!v.some(x => t - x < HOUR)) areas.delete(k); });
     positions.forEach((v, k) => { if (t - v.at > 6 * 3600e3) positions.delete(k); });
     if (seen.size > 2000) seen.clear();
   }, 60e3);
@@ -170,12 +195,28 @@ function createBridge(hub, opts) {
       if (!st) return 'Send ?seen untouched|partial|cleared|dangerous|occupied, then the place, e.g. ?seen cleared pharmacy';
       const pos = positions.get(from);
       if (!pos || Date.now() - pos.at > 6 * 3600e3) return 'I have no recent position from your radio. Turn on position sharing, then try again.';
+      // Node numbers and positions are whatever a sender says, so reports also share a budget:
+      // so many an hour from all radios together, and fewer from any one area (0.01°, about 1 km).
+      const t = Date.now(), area = `${Math.round(pos.lat * 100)},${Math.round(pos.lon * 100)}`;
+      while (reports.length && t - reports[0] >= HOUR) reports.shift();
+      const here = (areas.get(area) || []).filter(x => t - x < HOUR);
+      const full = reports.length >= opts.seenPerHour;
+      if (full || here.length >= opts.seenPerArea) {
+        state.reports.refused++;
+        // Said now and then, not to every radio, so a flood doesn't fill the air with refusals.
+        if (t - toldBusy < BUSY_EVERY) return '';
+        toldBusy = t;
+        return `Too many reports ${full ? '' : 'from around there '}this hour, so yours was not logged. Try again later.`;
+      }
+      reports.push(t);
+      remember(areas, area, [...here, t], MAX_KNOWN);
       const words = rest.join(' ');
       const b = ctx().ds.buildings.find(x => words && (x.name.toLowerCase().includes(words.toLowerCase()) || x.id === words.toLowerCase()));
-      // Signed by this node with a work stamp, so other nodes take it like any newcomer's note.
-      const o = await SDG.changes.makeObservation({ lat: pos.lat, lon: pos.lon, status: st, building: b && b.id, label: words ? clip(words, 200) : undefined, notes: `Reported over LoRa by radio !${(from >>> 0).toString(16)}`, share: 'peers' }, hub.identity, 4, (hub.cfg.policy || {}).powBits);
-      hub.store.putObservation(Object.assign({}, o, { received: hub.stamp ? hub.stamp() : SDG.util.now() }));
-      if (opts.shareObservations) packItem('o', o);
+      // Signed by this node with a work stamp, so apps and nodes that sync here take it like any
+      // newcomer's note, and marked as a radio report (see isRadioReport).
+      const o = await SDG.changes.makeObservation({ lat: pos.lat, lon: pos.lon, status: st, building: b && b.id, label: words ? clip(words, 200) : undefined, notes: radioNote(from), share: 'peers' }, hub.identity, 4, (hub.cfg.policy || {}).powBits);
+      hub.store.putObservation(Object.assign({}, o, { via: RADIO_REPORT, received: hub.stamp ? hub.stamp() : SDG.util.now() }));
+      state.reports.logged++;
       return `Noted: ${st}${b ? ' ' + b.name : ''} at ${o.lat.toFixed(3)}, ${o.lon.toFixed(3)}. Thanks.`;
     },
     status: () => {
@@ -197,8 +238,8 @@ function createBridge(hub, opts) {
     const times = (asked.get(who) || []).filter(t => Date.now() - t < 600e3);
     if (times.length >= 6) return;
     remember(asked, who, [...times, Date.now()], MAX_KNOWN);
-    let reply = await fn(rest.join(' '), m.from);
-    reply = reply.replace(/\s+/g, ' ').trim();
+    const reply = String((await fn(rest.join(' '), m.from)) || '').replace(/\s+/g, ' ').trim();
+    if (!reply) return; // a command may stay quiet, as ?seen does under a flood
     const to = link.canDirect && m.from != null ? m.from : undefined;
     const prefix = to === undefined && m.from != null ? `@${(m.from >>> 0).toString(16)} ` : '';
     const pieces = [];
@@ -213,7 +254,7 @@ function createBridge(hub, opts) {
 
   return {
     state,
-    shareObservation: o => (opts.shareObservations && ['peers', 'public'].includes(o.share) ? packItem('o', SDG.sign.strip(o, 'mine', 'sent', 'received', 'via')) : 0),
+    shareObservation: o => (opts.shareObservations && ['peers', 'public'].includes(o.share) && !isRadioReport(o) ? packItem('o', SDG.sign.strip(o, 'mine', 'sent', 'received', 'via')) : 0),
     shareComment: c => packItem('c', SDG.sign.strip(c, 'received', 'hidden', 'via')),
     announce, handle, COMMANDS,
     queueLength: () => queue.length + replies.length,
@@ -222,4 +263,4 @@ function createBridge(hub, opts) {
   };
 }
 
-module.exports = { createBridge, MAGIC };
+module.exports = { createBridge, isRadioReport, MAGIC };

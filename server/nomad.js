@@ -4,6 +4,7 @@
 //  - Optionally puts shared field notes on NOMAD's offline map as coloured pins.
 // Ports are NOMAD's defaults: the Command Center on 8080, Kiwix on 8090.
 const SDG = require('../core');
+const { isRadioReport } = require('./lora');
 
 const PIN = { untouched: 'green', partial: 'yellow', cleared: 'blue', dangerous: 'red', occupied: 'purple' };
 
@@ -142,7 +143,8 @@ function startNomad(hub) {
     const nomadUrl = state.nomad && state.nomad.url;
     if (!nomadUrl || !cfg.markers) return;
     const map = hub.store.get('nomadMarkers') || {};
-    const notes = hub.store.listObservations({ shares: ['public', 'peers'], limit: 5000, desc: true });
+    // Not unchecked radio reports from the LoRa bot: anyone in radio range can send those.
+    const notes = hub.store.listObservations({ shares: ['public', 'peers'], limit: 5000, desc: true }).filter(o => !isRadioReport(o));
     for (const o of notes) {
       const b = o.building && hub.getCtx().get('buildings', o.building);
       const body = {
