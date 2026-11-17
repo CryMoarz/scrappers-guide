@@ -28,6 +28,42 @@ test('part searches find the right part types', () => {
   assert.ok(top('battery').length > 10);
 });
 
+test('searches as people write them: plurals, spelled-out ratings, typing slips and filler words', () => {
+  assert.deepEqual(onParts('aa batteries').sort(), ['battery_nimh', 'battery_primary'], 'AA cells, not lead-acid');
+  assert.deepEqual(onParts('12 volt motor'), onParts('12v motor'));
+  assert.ok(onParts('batery').includes('battery_li') && !onParts('batery').includes('bms'), 'a slip reads as the word meant');
+  assert.ok(onParts('transformr').includes('transformer_lv'));
+  assert.deepEqual(onParts('scrap metal').sort(), ['sheet_metal', 'tube_frame'], '"scrap" is not a part word');
+  assert.ok(onParts('gas can').includes('fuel_liquid'), 'gas is petrol in North America');
+});
+
+test('the words around a part say where to look: a named device, or what the spec says', () => {
+  assert.equal(top('car battery')[0], 'car');
+  assert.equal(top('laptop battery')[0], 'laptop');
+  assert.equal(top('treadmill motor')[0], 'treadmill');
+  assert.ok(['bbq_grill', 'patio_heater'].includes(top('propane tank')[0]), 'a propane tank, not a CO2 cylinder');
+  assert.ok(['floor_scrubber', 'golf_cart'].includes(top('deep cycle battery')[0]));
+  assert.ok(!SDG.search.search(ctx, 'deep cycle battery').devices.some(d => d.id === 'bicycle'), '"cycle" is not a bicycle');
+});
+
+test('device names, jobs and hazard cards found by how people ask', () => {
+  const devs = q => SDG.search.search(ctx, q).devices.map(d => d.id);
+  assert.ok(['central_ac', 'window_ac'].every(id => devs('air conditioner').includes(id)), 'a name ending names the device');
+  assert.ok(devs('fridge').includes('fridge'));
+  const jobs = q => SDG.search.search(ctx, q).jobs.map(j => j.id);
+  assert.equal(jobs('heat my house')[0], 'heat_shelter');
+  assert.ok(!onParts('heat my house').includes('heatsink'));
+  assert.equal(jobs('shower')[0], 'hot_water');
+  assert.equal(jobs('filter smoke')[0], 'filter_air');
+  assert.equal(jobs('irrigate garden')[0], 'irrigate_crops');
+  const hz = q => SDG.search.findHazards(ctx, q).map(h => h.id);
+  assert.deepEqual(hz('asbestos'), ['asbestos']);
+  assert.ok(hz('capacitor discharge').includes('hv_cap'));
+  assert.ok(hz('lead acid').includes('lead'));
+  assert.ok(!hz('magnifying glass').includes('glass'), 'a card named after an everyday thing answers only that word');
+  assert.deepEqual(hz('glass'), ['glass']);
+});
+
 test('job searches switch on the job and its core parts', () => {
   for (const q of ['keep food cold', 'purify water', 'generate electricity', 'start a fire']) {
     const r = SDG.search.search(ctx, q);

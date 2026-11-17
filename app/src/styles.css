@@ -92,6 +92,7 @@ main{padding:20px 0 48px}
 .btn.ok{border-color:var(--copper);background:var(--copper);color:#fff}
 .btn:disabled{opacity:.5;cursor:not-allowed}
 .hint{color:var(--muted);font-size:.92rem;margin:10px 0 0}
+.hint.hazardhit{color:var(--ink);font-weight:600;border-left:4px solid var(--hazard);background:var(--surface);padding:6px 10px;border-radius:4px}
 .chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px}
 .chip{border:1.5px solid var(--line);background:var(--chip);padding:4px 10px;border-radius:999px;font-size:.88rem;cursor:pointer}
 .chip[aria-pressed="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}

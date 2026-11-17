@@ -4,9 +4,12 @@ module.exports = function (SDG) {
   const reEsc = t => t.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
   const lc = s => String(s || '').toLowerCase();
 
+  // Ratings written out ("12 volt", "100-watt") read as "12v" and "100w", and plurals as one
+  // ("batteries" as "battery"), so they meet the keywords the way people also write them.
+  const UNIT = { volt: 'v', volts: 'v', watt: 'w', watts: 'w', amp: 'a', amps: 'a', ampere: 'a', amperes: 'a' };
   function prep(q) {
-    q = lc(q).trim();
-    const q2 = q.split(/\s+/).map(w => (w.length > 3 ? w.replace(/s$/, '') : w)).join(' ');
+    q = lc(q).trim().replace(/(\d+(?:\.\d+)?)[\s-]*(volts?|watts?|amps?|amperes?)\b/g, (m, n, u) => n + UNIT[u]);
+    const q2 = q.split(/\s+/).map(w => (w.length > 3 ? w.replace(/ies$/, 'y').replace(/s$/, '') : w)).join(' ');
     return { q, q2 };
   }
   // Length of the longest whole-phrase term found in the query, 0 if none.
@@ -19,20 +22,23 @@ module.exports = function (SDG) {
     });
     return best;
   }
-  // How many characters of the query the terms explain together ("lead acid" + "battery" beats
-  // "battery" alone), so a part type that matches more of what was asked wins.
+  // How many words of the query the terms explain together ("lead acid" + "battery" beats
+  // "battery" alone), so a part type that matches more of what was asked wins. Words, not letters:
+  // "aa batteries" is two words, and the plural mustn't make "batteries" outweigh "aa battery".
   function coverScore(p, termList) {
-    let best = 0;
+    const hit = new Set();
     [p.q, p.q2].forEach(q => {
-      const hit = new Array(q.length).fill(false);
+      const spans = [];
+      for (const m of q.matchAll(/\S+/g)) spans.push([m.index, m.index + m[0].length]);
       termList.forEach(t => {
         if (!t) return;
         const m = new RegExp('(^|[^a-z0-9])' + reEsc(t) + '(?=[^a-z0-9]|$)').exec(q);
-        if (m) hit.fill(true, m.index + m[1].length, m.index + m[1].length + t.length);
+        if (!m) return;
+        const a = m.index + m[1].length, b = a + t.length;
+        spans.forEach(([s, e], i) => { if (s >= a && e <= b) hit.add(i); });
       });
-      best = Math.max(best, hit.filter(Boolean).length);
     });
-    return best;
+    return hit.size;
   }
   const live = list => list.filter(r => !r.deprecated);
   const partTerms = f => [lc(f.name), ...(f.keywords || []).map(lc)];
@@ -40,7 +46,7 @@ module.exports = function (SDG) {
 
   // Part types matched by a query. Longer, more specific matches are switched on; weaker ones
   // come back off so the user can turn them on. Falls back to prefixes, then single words.
-  function findParts(ctx, query) {
+  function findParts(ctx, query, retry) {
     const p = prep(query);
     if (!p.q) return [];
     const parts = live(ctx.ds.parts);
@@ -50,13 +56,67 @@ module.exports = function (SDG) {
       hits = parts.map(f => ({ f, score: partTerms(f).some(t => t.startsWith(p.q) || t.split(/\s+/).some(w => w.startsWith(p.q))) ? 1 : 0 })).filter(h => h.score);
       fallback = !!hits.length;
     }
+    // Then single words, leaving out the ones every search here could say ("scrap", "salvage").
     if (!hits.length) {
-      const toks = p.q.split(/[\s,]+/).filter(t => t.length >= 4);
+      const toks = p.q.split(/[\s,]+/).filter(t => t.length >= 4 && !FILLER.has(t));
       hits = parts.map(f => ({ f, score: partTerms(f).some(t => toks.some(k => t.split(/\s+/).includes(k))) ? 1 : 0 })).filter(h => h.score);
       fallback = !!hits.length;
     }
+    // Last, a typing slip: one letter wrong, missing, extra or swapped in a word of five or more
+    // ("batery", "magents"), against the words of part names and keywords.
+    // The corrected words are searched as if typed, so "batery" works like "battery".
+    if (!hits.length && !retry) {
+      const vocab = [...new Set(parts.flatMap(f => partTerms(f).flatMap(t => t.split(/\s+/))).filter(w => w.length >= 5))];
+      let fixed = false;
+      const q = p.q.split(/\s+/).map(t => { const w = t.length >= 5 && !FILLER.has(t) && !vocab.includes(t) && vocab.find(v => oneSlip(t, v)); if (w) fixed = true; return w || t; }).join(' ');
+      if (fixed) return findParts(ctx, q, true).map(h => Object.assign(h, { fallback: true }));
+    }
     const max = Math.max(0, ...hits.map(h => h.cover || h.score));
     return hits.map(h => ({ f: h.f, score: h.score, on: (h.cover || h.score) >= max * 0.75, fallback })).sort((a, b) => b.on - a.on || b.score - a.score);
+  }
+
+  const FILLER = new Set('scrap scraps scrapping salvage salvaged salvaging spare spares used old stuff thing things where find need want get'.split(' '));
+  // True when a and b differ by one edit: a letter changed, added or dropped, or two neighbours swapped.
+  function oneSlip(a, b) {
+    if (a === b || Math.abs(a.length - b.length) > 1) return false;
+    let i = 0;
+    while (i < a.length && a[i] === b[i]) i++;
+    if (a.length === b.length) return a.slice(i + 1) === b.slice(i + 1) || (a[i] === b[i + 1] && a[i + 1] === b[i] && a.slice(i + 2) === b.slice(i + 2));
+    return a.length > b.length ? a.slice(i + 1) === b.slice(i) : a.slice(i) === b.slice(i + 1);
+  }
+
+  // Hazard cards a query names: by label, by id, or by words people use for them. Shown with the
+  // results, since "asbestos" or "capacitor discharge" is a question about staying safe.
+  const HAZARD_WORDS = {
+    hv_cap: ['capacitor discharge', 'discharge capacitor', 'discharge a capacitor', 'charged capacitor', 'stored charge'],
+    co_gas: ['carbon monoxide', 'co poisoning', 'generator indoors', 'exhaust fumes'],
+    li_fire: ['lithium fire', 'battery fire', 'thermal runaway', 'swollen battery', 'puffy battery'],
+    fiberglass: ['fiberglass', 'fibreglass', 'glass wool'],
+    mold: ['mold', 'mould', 'damp'],
+    pcb: ['pcb oil', 'pcbs', 'transformer oil'],
+    radiation: ['radioactive', 'americium', 'radiation'],
+    biohazard: ['sharps', 'needles', 'medical waste', 'biohazard'],
+    hv: ['high voltage'],
+    mains: ['electric shock', 'electrocution'],
+    spring: ['garage door spring', 'spring under tension'],
+    structural: ['collapse', 'unstable building', 'unsafe building'],
+    acid: ['battery acid', 'sulphuric acid', 'sulfuric acid'],
+    refrigerant: ['refrigerant', 'freon', 'r134a', 'r410a', 'r600a'],
+    compressed_gas: ['compressed gas', 'gas cylinder explode'],
+    implosion: ['crt implosion', 'picture tube'],
+    lead: ['lead', 'lead poisoning', 'solder fumes'],
+    mercury: ['mercury', 'broken cfl', 'broken fluorescent'],
+  };
+  // Cards named after everyday things ("Glass", "Spring") answer only a search for that thing
+  // alone or with a safety word, not "magnifying glass" or "gas spring".
+  const EVERYDAY = new Set(['glass', 'spring', 'heavy', 'fuel']);
+  const SAFETY = /\b(danger|dangerous|hazard|hazards|safe|safety|toxic|poison|injury|hurt)\b/;
+  function findHazards(ctx, query) {
+    const p = prep(query);
+    if (!p.q) return [];
+    const alone = words(p.q).filter(w => !STOP.has(w)).length === 1 || SAFETY.test(p.q);
+    return live(ctx.ds.hazards || []).filter(h => alone || !EVERYDAY.has(h.id)).map(h => ({ h, score: phraseScore(p, [lc(h.label), h.id.replace(/_/g, ' '), ...(HAZARD_WORDS[h.id] || [])]) }))
+      .filter(x => x.score >= 4).sort((a, b) => b.score - a.score || b.h.severity - a.h.severity).map(x => x.h);
   }
 
   function findJobs(ctx, query) {
@@ -86,7 +146,7 @@ module.exports = function (SDG) {
     'riding self semi side sign signal sink sodium space stand standing system terminal travel trailer under underground unit ' +
     'vehicle walkway well window security sale fish motion clothe farm floor hood chair desk small home house machine equipment ' +
     'electric portable commercial power battery light with from other older modern type style part device tool kid cash point ' +
-    'level display external central centre control controller moving road box mini wall').split(' ').map(stem));
+    'level display external central centre control controller moving road box mini wall filter').split(' ').map(stem));
 
   // Words in a device's name that no other kind of device uses in its names ("cpap" in "CPAP
   // machine", "microwave" for the microwave family), so a query with that word names the device, or
@@ -149,6 +209,9 @@ module.exports = function (SDG) {
     const brandWords = new Set(brands.flatMap(b => words(b.brand).map(stem)));
     const core = qw.filter(w => !STOP.has(w) && !brandWords.has(w));
     const heads = core.length === 1 ? headWords(ctx).get(core[0]) : null;
+    // Two words or more that end a device's name name it too: "air conditioner" is the window,
+    // central and rooftop kinds alike.
+    const tail = core.length >= 2 ? core.join(' ') : null;
     return live(ctx.ds.devices).map(d => {
       // "String trimmer or brush cutter (petrol)" also answers to "string trimmer" and "brush cutter".
       const pieces = lc(d.name).split(/,|\(|\)|\/|\bor\b|\band\b/).map(s => s.trim()).filter(s => s.length >= 4 && !(/^[a-z]+$/.test(s) && (GENERIC.has(stem(s)) || vocab.has(stem(s)))));
@@ -156,6 +219,7 @@ module.exports = function (SDG) {
       let score = phraseScore(p, names);
       qw.forEach(w => { if (distinct.get(w) === d.id) score = Math.max(score, w.length); });
       if (heads && heads.has(d.id)) score = Math.max(score, 4);
+      if (tail && names.some(n => n === tail || n.endsWith(' ' + tail))) score = Math.max(score, tail.length);
       // A brand alone lists its devices separately; with a device name it ranks that brand's kind first.
       if (score && branded.has(d.id)) score += 2;
       return { d, score };
@@ -279,6 +343,36 @@ module.exports = function (SDG) {
   // Words with digits that aren't ratings ("18650", "lm2596"): a spec mentioning one ranks a little higher.
   // Ratings ("12v", "100w") are compared as numbers instead, through SDG.specs.
   const specTokens = q => lc(q).split(/[\s,]+/).filter(t => /\d/.test(t) && t.length > 1 && !Object.keys(SDG.specs.parse(t)).length);
+  // The other words of a query, for what they say about the part: "water" in "water tank",
+  // "propane" in "propane tank", "deep cycle" in "deep cycle battery". A source whose spec says
+  // them ranks higher. Words of the part type's own name ("tank") say nothing new, so they don't count.
+  const specWords = q => [...new Set(words(prep(q).q2).filter(w => w.length >= 2 && !/\d/.test(w) && !STOP.has(w) && !FILLER.has(w)).map(stem))];
+  const nameWords = new WeakMap();
+  const ownWords = f => { if (!nameWords.has(f)) nameWords.set(f, new Set(words(String(f.name).split('(')[0]).map(stem))); return nameWords.get(f); };
+  // A device the query names ("car battery", "treadmill motor", "laptop fan") is where the person
+  // means to look, so its own part ranks first.
+  // It's named when the rest of the query is its whole name ("car" in "car battery"), when its
+  // name holds every word asked ("inverter for car"), or by a word few devices use ("fridge"):
+  // a word in the names of six or more ("car", "air", "pump") doesn't pick one out by itself.
+  const devWords = new WeakMap(), common = new WeakMap();
+  const nameStems = t => words(t).map(stem).filter(w => !STOP.has(w));
+  function deviceWords(ctx, d) {
+    if (!common.has(ctx)) {
+      const n = new Map();
+      live(ctx.ds.devices).forEach(x => new Set([x.name, ...(x.aliases || [])].flatMap(nameStems)).forEach(w => n.set(w, (n.get(w) || 0) + 1)));
+      common.set(ctx, new Set([...n].filter(([, k]) => k >= 6).map(([w]) => w)));
+    }
+    if (!devWords.has(d)) {
+      const all = new Set([d.name, ...(d.aliases || [])].flatMap(nameStems));
+      devWords.set(d, { all, rare: new Set([...all].filter(w => w.length >= 3 && !GENERIC.has(w) && !common.get(ctx).has(w))), whole: new Set([...lc(d.name).split(/,|\(|\)|\/|\bor\b|\band\b/), ...(d.aliases || [])].map(t => nameStems(t).join(' ')).filter(Boolean)) });
+    }
+    return devWords.get(d);
+  }
+  function namesDevice(ctx, dev, part, qwords) {
+    if (!qwords || !qwords.length) return false;
+    const dw = deviceWords(ctx, dev), rest = qwords.filter(w => !(part && ownWords(part).has(w)));
+    return (rest.length && dw.whole.has(rest.join(' '))) || (qwords.length >= 2 && qwords.every(w => dw.all.has(w))) || rest.some(w => dw.rare.has(w));
+  }
 
   // How hard looters have worked an area `months` after the grid went down: none on day one (or
   // when no time is set), about half by three months, nearly all of it after a year.
@@ -299,7 +393,7 @@ module.exports = function (SDG) {
   // The hidden-fruit score for one part in one device, 0-100. Multiplicative on purpose: a part
   // has to be decent on every axis to rank high.
   // `want` holds the ratings asked for ("12v" in the query, or a job's needs).
-  function scoreComp(ctx, dev, comp, via, toks, opts, want) {
+  function scoreComp(ctx, dev, comp, via, toks, opts, want, qwords) {
     opts = opts || {};
     const tools = dev.tools || [];
     const ease = Math.max(0.05, ((6 - comp.ext) / 5) * Math.max(0.45, 1 - (dev.mins || 0) / 300) *
@@ -307,7 +401,10 @@ module.exports = function (SDG) {
     const ci = ctx.confInfo(dev.id, comp.key);
     const prev = ((dev.prev || 3) / 5) * (comp.p == null ? 1 : comp.p) * ci.presence;
     const obs = (comp.obs || 3) / 5, qty = Math.min(1, 0.6 + 0.1 * (comp.qty || 1));
-    const boost = toks.length && toks.some(t => lc(comp.spec).includes(t)) ? 1.15 : 1;
+    const spec = lc(comp.spec), part = ctx.get('parts', comp.fn);
+    const said = (qwords || []).filter(w => !(part && ownWords(part).has(w)) && new RegExp('\\b' + reEsc(w)).test(spec)).length;
+    const named = namesDevice(ctx, dev, part, qwords);
+    const boost = (toks.length && toks.some(t => spec.includes(t)) ? 1.15 : 1) * Math.min(1.3, Math.pow(1.15, said)) * (named ? 1.35 : 1);
     const fit = SDG.specs.fit(SDG.specs.ratings(comp), want);
     const decay = decayFactor(ctx, comp.fn, opts.months);
     const left = 1 - 0.9 * takenShare(lootRamp(opts.months), ctx.get('parts', comp.fn), comp);
@@ -328,7 +425,7 @@ module.exports = function (SDG) {
     opts = opts || {};
     const on = new Map([...sel].filter(([, v]) => v.on));
     if (!on.size) return { res: [], blds: [] };
-    const toks = specTokens(query || '');
+    const toks = specTokens(query || ''), qwords = specWords(query || '');
     const asked = SDG.specs.wanted(query || '');
     const wantFor = fn => { const need = on.get(fn).need; return need ? Object.assign({}, need, asked) : asked; };
     const res = [];
@@ -343,7 +440,7 @@ module.exports = function (SDG) {
         const hay = lc([x.spec, x.notes, r.name, ...(r.aliases || [])].join(' '));
         return only.some(w => hay.includes(w));
       };
-      const hits = r.comps.filter(x => on.has(x.fn) && fits(x)).map(x => scoreComp(ctx, r, x, on.get(x.fn).via, toks, opts, wantFor(x.fn))).sort((a, b) => b.s - a.s);
+      const hits = r.comps.filter(x => on.has(x.fn) && fits(x)).map(x => scoreComp(ctx, r, x, on.get(x.fn).via, toks, opts, wantFor(x.fn), qwords)).sort((a, b) => b.s - a.s);
       if (hits.length) res.push({ cat: r, hits, best: hits[0] });
     });
     res.sort((a, b) => b.best.s - a.best.s || a.cat.name.localeCompare(b.cat.name));
@@ -382,6 +479,7 @@ module.exports = function (SDG) {
       guides: findGuides(ctx, query).map(h => h.g),
       models: findModels(ctx, query),
       brands: findBrands(ctx, query),
+      hazards: findHazards(ctx, query),
     };
   }
 
@@ -398,6 +496,7 @@ module.exports = function (SDG) {
         sources: p.res.map(x => ({ id: x.cat.id, name: x.cat.name, score: Math.round(x.best.s), spec: x.best.comp.spec, where: x.best.comp.loc, hazards: (x.cat.hazards || []).map(h => ctx.hazard(h).label) })),
       })),
       devicesNamed: out.devices.slice(0, 5).map(d => ({ id: d.id, name: d.name })),
+      hazards: (out.hazards || []).slice(0, 3).map(h => ({ id: h.id, label: h.label, severity: h.severity, summary: h.summary })),
       brands: (out.brands || []).slice(0, 3).map(b => ({ name: b.brand, devices: b.devices.map(d => ({ id: d.id, name: d.name })) })),
       guides: out.guides.slice(0, 8).map(g => ({ id: g.id, kind: g.kind, title: g.title, summary: g.summary })),
       models: (out.models || []).slice(0, limit).map(h => ({ id: h.model.id, name: ctx.modelName(h.model), device: h.model.device, parts: h.parts.map(x => ({ key: x.key, spec: x.spec, confidence: SDG.db.CONF[x.conf] ? SDG.db.CONF[x.conf].label : 'Likely', source: x.source })) })),
@@ -447,5 +546,5 @@ module.exports = function (SDG) {
     }).filter(x => x.coverage > 0 || opts.all).sort((a, b) => b.coverage - a.coverage || a.guide.difficulty - b.guide.difficulty);
   }
 
-  SDG.search = { findParts, findJobs, findDevices, findModels, findBrands, findGuides, select, applySubs, specTokens, scoreComp, rank, search, summarize, buildable, decayFactor, leftLabel };
+  SDG.search = { findParts, findJobs, findDevices, findModels, findBrands, findGuides, findHazards, select, applySubs, specTokens, scoreComp, rank, search, summarize, buildable, decayFactor, leftLabel };
 };
