@@ -50,6 +50,8 @@ OpenStreetMap, population datasets, and routing engines are available to anyone.
 
 **Stage 3: routing and field memory.** Offline routing that plans a loop through the best candidates. Let users mark sites as cleared, partly looted, untouched, or dangerous, and let those observations update estimates for similar sites nearby. Sync observations between devices when caravans meet.
 
+**Next on the map: areas.** Draw a zone as well as drop a pin: a flood line, a fire perimeter, a contaminated block, streets already searched, where the mesh reaches, a water point or first-aid post, or a place to stay away from ("Raider fortifications" in see-through red). Each area gets its own label and colour, and a kind (hazard, help, coverage, cleared or other) that sets how long it stays fresh before it fades. Areas are signed, shared and moderated like field notes, with the same rate limits. They mark things to avoid or to find, never people to go after.
+
 **Stage 4: NOMAD integration.** Package the app as a small container that installs alongside Project NOMAD’s other offline tools, and expose the database in a form NOMAD’s local AI can use. (The container, MCP and OpenAPI endpoints and text export exist; what’s left is working with the NOMAD community to make it a one-click install.) The AI handles the fuzzy front end (“I need to pump water from the creek”), while ranking and mapping stay deterministic so nothing is hallucinated.
 
 **Stage 5: the reverse direction.** A build mode: here’s what I have, what can I make? Teardown cards with photos of where each part sits and the tools to get it out. Printable field-guide editions for when the batteries die.
