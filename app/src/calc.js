@@ -159,6 +159,7 @@ const Calc = (() => {
     speed: [['m/s', 1], ['km/h', 1 / 3.6], ['mph', 0.44704], ['knot', 1852 / 3600]],
     temperature: [['°C'], ['°F'], ['K']],
   };
+  const MONTHS = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
   const toC = (v, u) => (u === '°F' ? (v - 32) * 5 / 9 : u === 'K' ? v - 273.15 : v);
   const fromC = (c, u) => (u === '°F' ? c * 9 / 5 + 32 : u === 'K' ? c + 273.15 : c);
 
@@ -258,12 +259,36 @@ const Calc = (() => {
       },
     },
     solar: {
-      title: 'Solar and battery sizing', summary: 'Panels and battery for a daily energy use, by sun hours and days without sun.',
-      fields: [['Wh', 'Daily use (Wh)', '1000', 'Add up watts × hours for each load'], ['sun', 'Peak sun hours a day', '4', 'Southern Canada: about 1–2 in December, 5–6 in June'], ['V', 'System voltage (V)', '12'], ['days', 'Days of backup', '2'], ['chem', 'Battery', 'lfp', '', 'select', Object.entries(CHEM).map(([k, [l]]) => [k, l])]],
+      title: 'Solar and battery sizing', summary: 'Panels and battery for a daily energy use, from the sun where you are (anywhere in the world, offline) or the sun hours you type.',
+      fields: [['where', 'Where: latitude, longitude', '', 'Such as 45.42, -75.70 (south and west are negative). Empty: use the sun hours below', 'text'],
+        ['month', 'Size for', 'worst', '', 'select', [['worst', 'The worst month (all year)'], ['best', 'The best month (summer only)'], ...MONTHS.map((m, i) => [String(i), m])]],
+        ['tilt', 'Panel tilt (degrees)', '', 'Empty: latitude + 15°, best for winter'],
+        ['Wh', 'Daily use (Wh)', '1000', 'Add up watts × hours for each load'], ['sun', 'Peak sun hours a day (without a place)', '4', 'Southern Canada: about 1–2 in December, 5–6 in June'],
+        ['V', 'System voltage (V)', '12'], ['days', 'Days of backup', '2'], ['chem', 'Battery', 'lfp', '', 'select', Object.entries(CHEM).map(([k, [l]]) => [k, l])]],
       run(v, raw) {
-        if (![v.Wh, v.sun, v.V, v.days].every(Number.isFinite)) return 'Fill in all the numbers.';
-        const panel = v.Wh / (v.sun * 0.75), dod = (CHEM[raw.chem] || CHEM.lfp)[1], Ah = (v.Wh * v.days) / (v.V * dod);
-        return [['Panels', `${fix(panel, 0)} W or more (allowing about 25% for losses)`], ['Battery', `${fix(Ah, 0)} Ah at ${v.V} V (${fix(Ah * v.V / 1000, 1)} kWh)`], ['Charge controller', `about ${fix(panel / v.V * 1.25, 0)} A`]];
+        if (![v.Wh, v.V, v.days].every(Number.isFinite)) return 'Fill in the daily use, voltage and days of backup.';
+        const rows = [], m = /^\s*(-?\d+(?:\.\d+)?)\s*[,;\s]\s*(-?\d+(?:\.\d+)?)\s*$/.exec(raw.where || '');
+        let sun = v.sun, cell = null;
+        if (String(raw.where || '').trim() && !m) return 'Type the place as latitude, longitude in degrees, such as 45.42, -75.70.';
+        if (m) {
+          const lat = +m[1], lon = +m[2];
+          if (Math.abs(lat) > 90 || Math.abs(lon) > 180) return 'Latitude runs from −90 to 90 and longitude from −180 to 180.';
+          cell = typeof Sun === 'object' ? Sun.at(lat, lon) : null;
+          if (!cell) return 'No sun data there: it is out at sea or off the map. Leave the place empty and type sun hours.';
+          const tilt = Number.isFinite(v.tilt) ? Math.round(Math.max(0, Math.min(90, v.tilt))) : Sun.tiltFor(lat), on = Sun.tilted(lat, cell.ghi, cell.dif, tilt);
+          const k = raw.month === 'best' ? on.indexOf(Math.max(...on)) : /^\d+$/.test(raw.month) ? +raw.month : on.indexOf(Math.min(...on));
+          sun = on[k];
+          rows.push(['Panel', `${tilt}° facing ${lat >= 0 ? 'south' : 'north'}`], ['Sun on it, hours a day', on.map((x, i) => `${MONTHS[i].slice(0, 3)} ${fix(x, 1)}`).join(' · ')], ['Sized for', `${MONTHS[k]}: ${fix(sun, 2)} sun hours a day`]);
+          if (!(sun >= 0.2)) return [...rows, ['Note', `Almost no sun reaches the panel in ${MONTHS[k]}: solar alone can't carry a load through it. Plan another source for those months, or size for the months that have sun.`]];
+        }
+        if (!(sun > 0)) return 'Type the peak sun hours a day, or a place.';
+        const panel = v.Wh / (sun * 0.75), dod = (CHEM[raw.chem] || CHEM.lfp)[1], Ah = (v.Wh * v.days) / (v.V * dod);
+        rows.push(['Panels', `${fix(panel, 0)} W or more (allowing about 25% for losses)`], ['Battery', `${fix(Ah, 0)} Ah at ${v.V} V (${fix(Ah * v.V / 1000, 1)} kWh)`], ['Charge controller', `about ${fix(panel / v.V * 1.25, 0)} A`]);
+        if (cell) {
+          if (cell.cold != null && cell.cold <= 0) rows.push(['Cold', `Nights in the coldest month average about ${fix(cell.cold, 0)} °C. Don't charge lithium batteries below 0 °C: insulate them, or use a controller with a low-temperature cut-off.`]);
+          rows.push(['Note', `From NASA POWER's monthly averages for ${Sun.info().period} over a ${Sun.info().step}° square (about ${Math.round(Sun.info().step * 111)} km): hills, valleys and coasts differ, and some years are darker. The tilt model is a cautious one: in clear, snowy winters a steep panel gets 10–20 % more than shown (calculated for this guide against Natural Resources Canada's figures).`]);
+        }
+        return rows;
       },
     },
     vdrop: {
@@ -386,7 +411,10 @@ const Calc = (() => {
     if (id === 'calc') return calcHTML();
     if (id === 'resistor') return resistorHTML();
     const t = TOOLS[id];
-    return `<div class="calcform">${t.fields.map(f => fieldHTML(t, f)).join('')}</div><dl class="calcres" id="calcres"></dl><p class="hint">Numbers take SI prefixes: 4k7, 100n, 2.2M, 470u.</p>`;
+    // The solar tool starts from where you stand on the map, if you have set it.
+    const here = id === 'solar' && typeof S === 'object' && S.settings && S.settings.here;
+    const fields = here ? t.fields.map(f => (f[0] === 'where' ? [f[0], f[1], `${here.lat}, ${here.lon}`, ...f.slice(3)] : f)) : t.fields;
+    return `<div class="calcform">${fields.map(f => fieldHTML(t, f)).join('')}${id === 'solar' ? '<button class="btn small ghost" type="button" id="sunhere">Use my location</button>' : ''}</div><dl class="calcres" id="calcres"></dl><p class="hint">Numbers take SI prefixes: 4k7, 100n, 2.2M, 470u.</p>`;
   }
   function wire(id, root) {
     if (id === 'calc') return wireCalc(root);
@@ -406,6 +434,15 @@ const Calc = (() => {
       from.value = 'bar';
       cat.addEventListener('change', () => { fill(); run(); });
     }
+    // The device's own location (GPS works with no internet), rounded: the sun data is coarse anyway.
+    const btn = root.querySelector('#sunhere');
+    if (btn) btn.addEventListener('click', () => {
+      const where = root.querySelector('[data-k="where"]');
+      if (!navigator.geolocation) { btn.textContent = 'No location on this device'; return; }
+      btn.textContent = 'Finding you…';
+      navigator.geolocation.getCurrentPosition(p => { where.value = `${p.coords.latitude.toFixed(2)}, ${p.coords.longitude.toFixed(2)}`; btn.textContent = 'Use my location'; run(); },
+        () => { btn.textContent = 'Location not available: type it'; }, { timeout: 30e3, maximumAge: 10 * 60e3 });
+    });
     root.addEventListener('input', run);
     root.addEventListener('change', run);
     run();
