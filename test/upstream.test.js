@@ -144,3 +144,38 @@ test('node: feeds come in pages small enough to fit, and a long one ends in the 
   assert.deepEqual(asked(fake, '/api/v1/comments'), [1000, 250, 62]);
   assert.deepEqual(asked(fake, '/api/v1/votes'), [2000]);
 });
+
+// A feed of items the way a hub lists them, each with a later `received` than the last.
+let tick = 0;
+const listed = (...items) => items.map(x => Object.assign({}, x, { received: new Date(Date.UTC(2026, 10, 17, 0, 0, 0, ++tick)).toISOString() }));
+// The same item changed and signed again by `who`, with a fresh work stamp.
+async function resign(item, who, change) {
+  const o = Object.assign(SDG.sign.strip(item, 'sig', 'author', 'pow'), change);
+  o.pow = await SDG.sign.stamp(o, 4);
+  return SDG.sign.sign(o, who);
+}
+
+test('node: an older signed copy of a field note never replaces a newer one', async (t) => {
+  const { routes, node } = await nodeWithFake(t);
+  const alice = await SDG.sign.createIdentity('Alice'), mallory = await SDG.sign.createIdentity('Mallory');
+  const v1 = await SDG.changes.makeObservation({ lat: 45.4, lon: -75.7, status: 'untouched', share: 'public', label: 'Hardware store' }, alice, 4, 4);
+  const later = ms => new Date(Date.parse(v1.created) + ms).toISOString();
+  const pull = async (...items) => {
+    routes['/api/v1/observations'] = listed(...items);
+    const r = await node.hub.syncNow();
+    assert.equal(r.ok, true, JSON.stringify(r));
+    return node.hub.store.getObservation(v1.id).status;
+  };
+  assert.equal(await pull(v1), 'untouched');
+  const v2 = await resign(v1, alice, { status: 'dangerous', notes: 'Gas leak, armed occupants', created: later(60e3) });
+  assert.equal(await pull(v2), 'dangerous', 'its author may update it');
+
+  // Whoever kept the first copy replays it: refused, and so is a copy no newer than ours, or one
+  // someone else signed, however new.
+  assert.equal(await pull(v1), 'dangerous');
+  assert.equal(await pull(await resign(v1, alice, { status: 'cleared', created: v2.created })), 'dangerous');
+  assert.equal(await pull(await resign(v2, mallory, { status: 'cleared', created: later(120e3) })), 'dangerous');
+  // In one page, the order doesn't matter: the newest wins.
+  const v3 = await resign(v2, alice, { status: 'cleared', created: later(180e3) });
+  assert.equal(await pull(v3, v1, v2), 'cleared');
+});

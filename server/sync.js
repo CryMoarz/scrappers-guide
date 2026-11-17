@@ -134,8 +134,11 @@ async function syncOnce(hub) {
 
   // Comments and shared observations from everyone else, paged by when the upstream got them
   // (its `received`). Each is checked like any carried item and gets this node's own received
-  // time, so apps paging this node never skip one. Nobody else's item replaces one we hold.
+  // time, so apps paging this node never skip one. Nobody else's item replaces one we hold, and
+  // a field note's author replaces theirs only with a newer one: an old signed copy, replayed by
+  // whoever kept it, never rolls a note back.
   const signer = x => (x && x.sig && x.author && x.author.key) || null;
+  const newer = (a, b) => Date.parse(a.created) > Date.parse(b.created);
   for (const [kind, getOne, put] of [['comments', id => store.getComment(id), x => store.putComment(x)], ['observations', id => store.getObservation(id), x => store.putObservation(x)]]) {
     const cursor = kind + 'Received', since = store.get(cursor) || '';
     const list = await fetchPage(`${up}/api/v1/${kind}?since=${encodeURIComponent(since)}`, 1000).catch(() => null);
@@ -146,7 +149,7 @@ async function syncOnce(hub) {
       const item = x && typeof x === 'object' ? SDG.sign.strip(x, 'received', 'hidden', 'via') : x;
       if (!(await SDG.changes.verifyItems([item], kind)).ok.length) continue;
       const known = getOne(item.id);
-      if (known && (kind === 'comments' || signer(known) !== signer(item))) continue;
+      if (known && (kind === 'comments' || signer(known) !== signer(item) || !newer(item, known))) continue;
       put(Object.assign(item, { received: hub.stamp() }));
     }
     store.set(cursor, last);
