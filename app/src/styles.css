@@ -55,6 +55,8 @@ h1{margin:0;font-size:clamp(1.6rem,4vw,2.3rem);line-height:1.05;font-weight:700;
   h1 .long,.brand p{display:none}
   h1 .short{display:inline}
   .brand{flex-wrap:nowrap;align-items:center}
+  /* Simple mode has two buttons beside the title: under it when they don't fit, rather than cut off. */
+  body.simple .brand{flex-wrap:wrap}
   h1{white-space:nowrap}
   .topbtns{min-width:0}
   body:not(.simple) #modebtn{display:none}
