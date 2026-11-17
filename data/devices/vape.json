@@ -13,7 +13,7 @@
     {"key":"battery_li","fn":"battery_li","spec":"Small lithium cell, about 400–1,000 mAh (rechargeable on many models)","ah":[0.4,1],"qty":1,"ext":1,"obs":5,"loc":"Inside the body","p":0.75},
     {"key":"led_light","fn":"led_light","spec":"Tiny indicator LED","v":[3,4.2],"w":[0.02,0.1],"qty":1,"ext":1,"obs":5,"loc":"Base"},
     {"key":"sensor_misc","fn":"sensor_misc","spec":"Airflow pressure switch","qty":1,"ext":1,"obs":5,"loc":"Base"},
-    {"key":"wire_copper","fn":"wire_copper","spec":"Fine wire and heating coil","qty":1,"ext":1,"obs":5,"loc":"Top"}
+    {"key":"wire_copper","fn":"heating_element","spec":"Heating coil of resistance wire (kanthal or nichrome), with fine leads","qty":1,"ext":1,"obs":5,"loc":"Top"}
   ],
   "boards": [
     {"id":"li_charger_small","qty":1,"loc":"Rechargeable models","p":0.6}

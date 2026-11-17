@@ -11,7 +11,7 @@
   "hazards": ["compressed_gas","fuel"],
   "comps": [
     {"key":"propane","fn":"propane","spec":"Propane in a 20 lb (9 kg) cylinder, often part full — check by weight, or pour warm water down the side and feel for the cold line","qty":1,"ext":1,"obs":2,"loc":"Under or beside the grill","kg":17},
-    {"key":"gas_cylinder","fn":"gas_cylinder","spec":"Refillable steel cylinder with an overfill-protection valve — keep it even when empty","qty":1,"ext":1,"obs":3,"loc":"Under the grill"},
+    {"key":"gas_cylinder","fn":"gas_cylinder","spec":"Refillable propane cylinder (the 20 lb tank in North America) with an overfill-protection valve — keep it even when empty","qty":1,"ext":1,"obs":3,"loc":"Under the grill"},
     {"key":"igniter","fn":"igniter","spec":"Push-button piezo or AA-battery spark igniter with electrode leads — lights stoves and fires","qty":1,"ext":1,"obs":5,"loc":"Control panel; electrodes at the burners"},
     {"key":"hose_tubing","fn":"hose_tubing","spec":"Regulator and rubber hose with cylinder fitting — feeds propane to other burners and stoves","qty":1,"ext":1,"obs":4,"loc":"From the cylinder to the manifold"},
     {"key":"valve_solenoid","fn":"valve_solenoid","spec":"Burner control valves on a gas manifold","qty":3,"ext":2,"obs":5,"loc":"Behind the knobs"},

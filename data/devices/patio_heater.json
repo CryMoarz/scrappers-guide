@@ -11,7 +11,7 @@
   "hazards": ["compressed_gas","fuel","co_gas"],
   "comps": [
     {"key":"propane","fn":"propane","spec":"Propane in a 20 lb (9 kg) cylinder hidden in the base, often part full — never burn a propane heater indoors","qty":1,"ext":1,"obs":4,"loc":"Inside the base housing","kg":17},
-    {"key":"gas_cylinder","fn":"gas_cylinder","spec":"Refillable steel cylinder","qty":1,"ext":1,"obs":4,"loc":"Inside the base housing"},
+    {"key":"gas_cylinder","fn":"gas_cylinder","spec":"Refillable propane cylinder (the 20 lb tank in North America), in the base","qty":1,"ext":1,"obs":4,"loc":"Inside the base housing"},
     {"key":"igniter","fn":"igniter","spec":"Piezo push-button igniter","qty":1,"ext":1,"obs":5,"loc":"Control box under the emitter"},
     {"key":"thermocouple","fn":"thermocouple","spec":"Thermocouple flame-safety sensor","qty":1,"ext":2,"obs":5,"loc":"At the burner, beside the pilot"},
     {"key":"valve_solenoid","fn":"valve_solenoid","spec":"Gas control valve with flame-safety and anti-tilt cutoff","qty":1,"ext":2,"obs":5,"loc":"Control box"},
