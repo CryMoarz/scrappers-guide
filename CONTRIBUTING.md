@@ -38,8 +38,10 @@ Requires Node 20 or newer and nothing else.
 node tools/fmt.js           # standard layout for data files
 node tools/validate.js --warn
 node --test test/*.test.js
-node tools/build.js
+node tools/build.js          # optional: try the app with your change
 ```
+
+Don't commit `app/scrappers-guide.html` or `app/app-build.json` after a build: the committed app is the last release's, signed by a maintainer, and the checks fail if it's replaced by an unsigned one (`git checkout app/` puts it back). The maintainer rebuilds and signs it at release.
 
 ## Reviewing
 
