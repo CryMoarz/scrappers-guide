@@ -3,7 +3,7 @@
   "kind": "teardown",
   "title": "Gas furnace: safe teardown",
   "keywords": ["furnace teardown","furnace blower motor","furnace transformer 24v","furnace control board","inducer motor","furnace capacitor","gas valve","hot surface igniter","forced air furnace","squirrel cage blower"],
-  "summary": "A forced-air gas furnace gives a big squirrel-cage blower with its motor and run capacitor, a 24 V control transformer, a control board with relays, an inducer fan, limit switches and a door switch. It is the most dangerous teardown in this set: gas, carbon monoxide, mains power and a hot-surface igniter. Shut off the gas and have the line capped by someone able to do gas work before any gas part comes off; never improvise gas connections, and never fire the furnace again once it has been opened.",
+  "summary": "A forced-air gas furnace gives a big squirrel-cage blower with its motor and run capacitor, a 24 V control transformer, a control board with relays, an inducer fan, limit switches and a door switch. It is one of the most dangerous teardowns in the guide: gas, carbon monoxide, mains power and a hot-surface igniter. Shut off the gas and have the line capped by someone able to do gas work before any gas part comes off; never improvise gas connections, and never fire the furnace again once it has been opened.",
   "difficulty": 4,
   "mins": 60,
   "tools": ["screwdriver","socket","wrench","pliers","cutters","multimeter","tape"],
