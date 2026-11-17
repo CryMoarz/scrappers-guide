@@ -2,6 +2,10 @@
 
 Plain notes for people using the guide. The app shows the latest few under "What's new" on its front page. Details for developers are in the commits.
 
+## 4.0.1 (16 November 2026)
+
+- Simple mode on a narrow phone: the Full app button and the sync status sit under the title instead of being cut off.
+
 ## 4.0.0 (16 November 2026)
 
 - First public release. The code is under the MIT License and the data under CC BY-SA 4.0.

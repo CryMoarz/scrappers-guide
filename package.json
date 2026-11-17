@@ -1,6 +1,6 @@
 {
   "name": "scrappers-guide",
-  "version": "4.0.0",
+  "version": "4.0.1",
   "description": "Offline salvage and survival database: what's inside everyday devices, which parts to strip, where to find them, and how to get them out safely. Single-file app, sync hub and Project NOMAD add-on.",
   "keywords": ["offline-first", "survival", "prepper", "emergency-preparedness", "salvage", "repair", "teardown", "e-waste", "electronics", "off-grid", "self-hosted", "project-nomad", "kiwix", "meshtastic", "lora", "offline-maps", "open-data"],
   "homepage": "https://github.com/CryMoarz/scrappers-guide#readme",
