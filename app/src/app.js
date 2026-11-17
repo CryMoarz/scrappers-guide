@@ -529,6 +529,13 @@ function addComment(c) {
   list.sort((a, b) => a.created.localeCompare(b.created));
   if (list.length > 100) list.splice(0, list.length - 100);
 }
+// A comment a moderator hid comes back from the hub as a bare tombstone ({id, target, hidden}):
+// it leaves this device too, and isn't carried on to anyone else.
+function dropComment(x) {
+  if (!x || x.hidden !== true || typeof x.id !== 'string' || typeof x.target !== 'string' || !SDG.util.has(S.comments, x.target)) return;
+  S.comments[x.target] = S.comments[x.target].filter(c => c.id !== x.id);
+  S.carry.comments = S.carry.comments.filter(c => c.id !== x.id);
+}
 function commentsHTML(target) {
   if (!S.settings.comments) return '';
   const list = (S.comments[target] || []).filter(c => !c.hidden);

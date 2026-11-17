@@ -103,4 +103,15 @@ function clientIp(req, trustProxy) {
   return (list.length >= hops && list[list.length - hops]) || req.socket.remoteAddress || 'unknown';
 }
 
-module.exports = { HttpError, router, readJSON, readBody, send, limiter, clientIp };
+// Rate-limit buckets: an IPv4 address each, but IPv6 by its /64, the block one household or one
+// machine gets, so changing the last half of an address doesn't buy a fresh budget.
+function bucketOf(ip) {
+  ip = String(ip || '');
+  if (!ip.includes(':') || /^::ffff:\d/i.test(ip)) return ip.replace(/^::ffff:/i, '');
+  const [head, tail] = ip.split('%')[0].split('::');
+  const a = head ? head.split(':') : [], b = tail !== undefined && tail ? tail.split(':') : [];
+  const groups = tail !== undefined ? [...a, ...Array(Math.max(0, 8 - a.length - b.length)).fill('0'), ...b] : a;
+  return groups.slice(0, 4).map(g => (parseInt(g, 16) || 0).toString(16)).join(':') + '::/64';
+}
+
+module.exports = { HttpError, router, readJSON, readBody, send, limiter, clientIp, bucketOf };

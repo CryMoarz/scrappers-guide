@@ -160,6 +160,7 @@ const Sync = (() => {
         if (S.settings.comments && (info.policy || {}).comments !== 'off') {
           const since = S.settings.commentsReceived || '';
           const list = await api('/api/v1/comments?since=' + encodeURIComponent(since) + '&limit=1000').catch(() => []);
+          if (Array.isArray(list)) list.forEach(dropComment);
           (await pulled(list, 'comments')).forEach(c => addComment(c));
           S.settings.commentsReceived = lastReceived(list, since);
           S.outbox.comments = S.outbox.comments.filter(c => c.status !== 'sent');

@@ -35,7 +35,7 @@ function loadToken(stateDir) {
   const file = path.join(stateDir, 'control-token');
   try { return fs.readFileSync(file, 'utf8').trim(); } catch (e) { /* first run */ }
   const t = require('crypto').randomBytes(24).toString('base64url');
-  fs.mkdirSync(stateDir, { recursive: true });
+  fs.mkdirSync(stateDir, { recursive: true, mode: 0o700 });
   fs.writeFileSync(file, t + '\n', { mode: 0o600 });
   return t;
 }
@@ -44,7 +44,7 @@ async function loadIdentity(stateDir, name) {
   const file = path.join(stateDir, 'hub-identity.json');
   try { return JSON.parse(fs.readFileSync(file, 'utf8')); } catch (e) { /* first run */ }
   const id = await SDG.sign.createIdentity(name);
-  fs.mkdirSync(stateDir, { recursive: true });
+  fs.mkdirSync(stateDir, { recursive: true, mode: 0o700 });
   fs.writeFileSync(file, JSON.stringify(id, null, 2), { mode: 0o600 });
   return id;
 }
@@ -324,9 +324,14 @@ async function createHub(cfg) {
     checkCreated(o, 'observation');
     const allowed = cfg.mode === 'node' ? ['public', 'peers'] : ['public'];
     if (!allowed.includes(o.share || 'private')) throw new H.HttpError(422, `This ${cfg.mode} only stores observations shared as ${allowed.join(' or ')}`);
-    // Its author may update a note; nobody else may replace it.
+    // Its author may update a note; nobody else may replace it, and an update must be newer than
+    // what is here: an old signed copy, sent again by anyone, would put back what its author has
+    // since corrected ("dangerous" back to "untouched").
     const known = store.getObservation(o.id);
-    if (known) sameAuthor(known, o, 'observation');
+    if (known) {
+      sameAuthor(known, o, 'observation');
+      if (!(isoTime(o.created) > isoTime(known.created))) return { id: o.id, status: 'stored', duplicate: true };
+    }
     await checkAuthor(o, 'observation');
     store.putObservation(Object.assign({}, o, meta, { received: stamp() }));
     if (cfg.mode === 'node' && o.share === 'public') { store.outboxAdd('observations', o); hub.kick && hub.kick(); }
@@ -459,7 +464,13 @@ async function createHub(cfg) {
       await writeChange(e.coll, e.rid, e.op, e.data);
       store.appendLedger(e);
       hub.seq = e.seq;
-      if (e.proposal) { const p = store.getProposal(e.proposal); if (p) { p.status = 'accepted'; p.seq = e.seq; store.putProposal(p); } }
+      // The entry's proposal id isn't covered by the checkpoint: mark a local proposal accepted only
+      // when the change that landed is the one it proposed.
+      if (e.proposal) {
+        const p = store.getProposal(e.proposal);
+        const same = x => SDG.util.own(x || {}, ['rev', 'updated']);
+        if (p && p.coll === e.coll && p.rid === e.rid && p.op === e.op && (e.op === 'delete' || SDG.util.deepEqual(same(Object.assign({}, p.data, { id: p.rid })), same(e.data)))) { p.status = 'accepted'; p.seq = e.seq; store.putProposal(p); }
+      }
     }
     ds.meta = Object.assign({}, ds.meta, { seq: hub.seq });
     F.writeMeta(cfg.dataDir, ds.meta);
@@ -540,7 +551,7 @@ async function createHub(cfg) {
   function problemsFor(p) {
     const c = problemCache.get(p.id);
     if (c && c.gen === gen) return c.problems;
-    if (problemCache.size >= 500) problemCache.clear();
+    if (problemCache.size >= 5000) problemCache.delete(problemCache.keys().next().value);
     const problems = newProblems(p);
     problemCache.set(p.id, { gen, problems });
     return problems;
@@ -559,9 +570,13 @@ async function createHub(cfg) {
     policy: { requireSignature: P.requireSignature, powBits: P.powBits, powBitsKnown: P.powBitsKnown, approvals: P.approvals, comments: P.comments, observations: P.observations, votes: P.votes },
     endpoints: { api: '/api/v1', openapi: '/api/v1/openapi.json', mcp: '/mcp', app: '/' },
   }));
+  // Reads cost what they cost: a search, a proposal's check and a map search take far more work
+  // than a plain read, so they spend more of the caller's budget (one token is already paid).
+  const costs = (req, n) => { if (!req.charge('r', n - 1)) throw new H.HttpError(429, 'Too many requests; slow down'); };
   r.get('/api/v1/search', (req, url) => {
     const query = text(url, 'q');
     if (!query.trim()) throw new H.HttpError(400, 'Add a query: ?q=12v motor');
+    costs(req, 5);
     const opts = { subs: q(url, 'subs') === '1' || q(url, 'subs') === 'true', months: num(q(url, 'months')), tools: listParam(text(url, 'tools', 2000)), maxKg: num(q(url, 'kg')) };
     return SDG.search.summarize(getCtx(), SDG.search.search(getCtx(), query, opts), lim(url, 10, 50));
   });
@@ -582,6 +597,7 @@ async function createHub(cfg) {
     if (!(lat >= -85 && lat <= 85 && lon >= -180 && lon <= 180)) throw new H.HttpError(400, 'Give lat and lon');
     const parts = listParam(text(url, 'parts', 2000));
     if (parts && parts.length > 40) throw new H.HttpError(400, 'Ask for at most 40 part types at once');
+    costs(req, 20);
     return map.places(getCtx(), { lat, lon, km: num(q(url, 'km')), query: text(url, 'q'), limit: lim(url, 40, 200), parts, perPart: Math.min(10, Math.max(1, num(q(url, 'per')) || 5)),
       opts: { months: num(q(url, 'months')), tools: listParam(text(url, 'tools', 2000)), maxKg: num(q(url, 'kg')) } });
   });
@@ -639,6 +655,7 @@ async function createHub(cfg) {
   r.get('/api/v1/proposals/:id', (req, url, { id }) => {
     const p = store.getProposal(id);
     if (!p) throw new H.HttpError(404, 'No such proposal');
+    costs(req, 5);
     const cur = getRec(p.coll, p.rid) || null;
     return { proposal: p, current: cur, stale: isStale(p), diff: SDG.util.diff(cur || {}, p.op === 'put' ? p.data : {}), reviews: store.reviewsFor(id), problems: ['pending', 'conflict'].includes(p.status) ? problemsFor(p) : [] };
   });
@@ -655,7 +672,10 @@ async function createHub(cfg) {
   }, { write: true });
   r.get('/api/v1/comments', (req, url) => {
     if (P.comments === 'off') return [];
-    return store.listComments({ target: q(url, 'target') || undefined, since: q(url, 'since') || undefined, limit: lim(url, 200, 1000), desc: q(url, 'order') === 'newest' });
+    // A feed read (since) also carries hides, as bare tombstones, so copies on nodes and apps go too.
+    const since = q(url, 'since') || undefined;
+    return store.listComments({ target: q(url, 'target') || undefined, since, limit: lim(url, 200, 1000), desc: q(url, 'order') === 'newest', includeHidden: !!since })
+      .map(c => (c.hidden ? { id: c.id, target: c.target, hidden: true, received: c.received } : c));
   });
   r.post('/api/v1/comments', (req, url, p, res, body) => takeComment(body), { write: true });
   r.post('/api/v1/comments/:id/hide', async (req, url, { id }, res, body) => {
@@ -663,6 +683,8 @@ async function createHub(cfg) {
     const c = store.getComment(id);
     if (!c) throw new H.HttpError(404, 'No such comment');
     c.hidden = body.hidden !== false;
+    // A fresh `received` puts the change in the feed, so nodes and apps that hold it hear of it.
+    c.received = stamp();
     store.putComment(c);
     return { id, hidden: c.hidden };
   }, { write: true });
@@ -720,9 +742,15 @@ async function createHub(cfg) {
   r.get('/api/v1/openapi.json', (req) => buildOpenApi({ name: cfg.name, version: VERSION, url: `${req.headers['x-forwarded-proto'] || 'http'}://${req.headers.host}` }));
   // One request may carry a few JSON-RPC messages, and every tool call pays its own way.
   r.post('/mcp', async (req, url, p, res, body) => {
+    // The MCP spec asks servers to check Origin: a browser page may only call from one of this
+    // hub's own kinds of name (a local tool's page), never a public site's.
+    if (req.headers.origin && !ownName(String(req.headers.origin).replace(/^[a-z]+:\/\//i, ''))) throw new H.HttpError(403, 'Not from that origin');
     const msgs = Array.isArray(body) ? body : [body];
     if (msgs.length > 10) throw new H.HttpError(413, 'Send at most 10 JSON-RPC messages in one request');
     const calls = msgs.filter(m => m && m.method === 'tools/call'), writes = calls.filter(m => mcp.WRITES.includes(m.params && m.params.name)).length;
+    // Write tools sign as this hub, so they answer only by its own names, and when they are on
+    // because the hub listens on this machine alone, never for a request a proxy passed on.
+    if (writes && (!localName(req) || (!cfg.mcpWrite || cfg.mcpWrite === 'auto') && (req.headers['x-forwarded-for'] || req.headers.forwarded))) throw new H.HttpError(403, 'AI write tools answer only on this hub’s own address');
     if ((writes && !req.charge('w', writes)) || (calls.length > writes && !req.charge('r', calls.length - writes))) throw new H.HttpError(429, 'Too many tool calls from here; slow down');
     const out = await mcp.handleHttp(body, req.headers);
     if (out === null) return { __status: 202, __body: '' };
@@ -745,7 +773,9 @@ async function createHub(cfg) {
   const serveApp = () => {
     const st = fs.statSync(cfg.appFile);
     if (st.mtimeMs !== appCache.mtime) appCache = { mtime: st.mtimeMs, buf: fs.readFileSync(cfg.appFile) };
-    return { __headers: { 'Content-Type': 'text/html; charset=utf-8', 'Cache-Control': 'no-cache' }, __body: appCache.buf };
+    // Not inside another site's frame, where a click on Accept could be steered (a meta policy in
+    // the page can't say this, so the hub does).
+    return { __headers: { 'Content-Type': 'text/html; charset=utf-8', 'Cache-Control': 'no-cache', 'X-Frame-Options': 'SAMEORIGIN', 'Content-Security-Policy': "frame-ancestors 'self'" }, __body: appCache.buf };
   };
   r.get('/', serveApp);
   r.get('/app', serveApp);
@@ -755,8 +785,21 @@ async function createHub(cfg) {
   const CORS = { 'Access-Control-Allow-Origin': '*', 'Access-Control-Allow-Methods': 'GET, POST, OPTIONS', 'Access-Control-Allow-Headers': 'Content-Type, Content-Encoding', 'Access-Control-Expose-Headers': 'ETag' };
   const corsFor = (method, m) => !!m && !m.allowed && !m.opts.local && !m.opts.mcp && (method !== 'POST' || cfg.corsWrites !== false);
   const crossOrigin = req => { const o = req.headers.origin; if (!o) return false; try { return new URL(o).host !== req.headers.host; } catch (e) { return true; } };
+  // DNS rebinding: a web page can point its own name at this hub's address and then talk to it as
+  // its "own origin". Such a name is public. The names people really reach a hub by are addresses,
+  // localhost, one-word LAN names (raspberrypi, nomad_guide) and private suffixes like .local, plus
+  // any listed in hostnames; only requests by those may see peers-only notes or use AI write tools.
+  const PRIVATE_NAME = /(^|\.)(localhost|local|lan|home|home\.arpa|internal)$/;
+  const ownName = host => {
+    let h;
+    try { h = new URL('http://' + host).hostname.toLowerCase(); } catch (e) { return false; }
+    if (!h) return false;
+    if (h.startsWith('[') || /^\d{1,3}(\.\d{1,3}){3}$/.test(h) || !h.includes('.') || PRIVATE_NAME.test(h)) return true;
+    return (cfg.hostnames || []).some(n => String(n).toLowerCase() === h);
+  };
+  const localName = req => ownName(req.headers.host || '');
   // Peers-only field notes stay with the node's own people: never to a page from another origin.
-  const sharesFor = req => (cfg.mode === 'node' && !crossOrigin(req) ? ['public', 'peers'] : ['public']);
+  const sharesFor = req => (cfg.mode === 'node' && !crossOrigin(req) && localName(req) ? ['public', 'peers'] : ['public']);
 
   async function handle(req, res) {
     let cors = {};
@@ -773,7 +816,7 @@ async function createHub(cfg) {
       if (corsFor(req.method, m)) cors = CORS;
       // A JSON content type can't be sent cross-site without a preflight, so forms can't post here.
       if (req.method === 'POST' && !m.opts.local && !/^application\/json\s*(;|$)/i.test(req.headers['content-type'] || '')) throw new H.HttpError(415, 'Send JSON, with Content-Type: application/json');
-      const ip = H.clientIp(req, cfg.trustProxy);
+      const ip = H.bucketOf(H.clientIp(req, cfg.trustProxy));
       const write = req.method === 'POST';
       // Writes spend from a small bucket per ten minutes, reads (and /mcp, which charges each
       // tool call itself) from a large one per minute.
@@ -795,6 +838,17 @@ async function createHub(cfg) {
   hub.listen = () => new Promise(resolve => {
     // Nothing a request does may take the process down.
     hub.server = http.createServer((q, s) => handle(q, s).catch(e => { console.error(e); try { if (!s.headersSent) s.writeHead(500); s.end(); } catch (x) { s.destroy(); } }));
+    // Half-sent requests can't hold the door: headers within 15 s, a whole request within two
+    // minutes (a big bundle on a slow link), and no one address holding more than 64 connections
+    // (behind a proxy every connection is the proxy's, so then only the overall cap applies).
+    Object.assign(hub.server, { headersTimeout: 15e3, requestTimeout: 120e3, keepAliveTimeout: 5e3, maxConnections: cfg.maxConnections || 1024 });
+    const open = new Map();
+    if (!cfg.trustProxy) hub.server.on('connection', sock => {
+      const a = sock.remoteAddress || '', n = (open.get(a) || 0) + 1;
+      if (n > 64) { sock.destroy(); return; }
+      open.set(a, n);
+      sock.once('close', () => { const m = (open.get(a) || 1) - 1; if (m) open.set(a, m); else open.delete(a); });
+    });
     hub.server.listen(cfg.port, cfg.host, () => resolve(hub.server.address()));
   });
   if (cfg.lora && cfg.lora.enabled) hub.lora = createBridge(hub, cfg.lora);

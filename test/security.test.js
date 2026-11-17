@@ -439,3 +439,77 @@ test('admins are named by their whole key or 128 bits of its hash, never a 64-bi
   assert.equal(await role([await SDG.sign.fingerprint(admin.key, 32)]), 'admin');
   assert.equal(await role([admin.key]), 'admin');
 });
+
+test('DNS rebinding, note rollback, hides that travel, framing, private state and slow clients', async (t) => {
+  const alice = await SDG.sign.createIdentity('Alice');
+  const mod = await SDG.sign.createIdentity('Mod');
+  const { hub, url, port, dir } = await start({ admins: [mod.key] });
+  t.after(() => hub.close());
+  // fetch() won't set Host, so these go out raw.
+  const req = (p, headers, body, to) => new Promise((ok, fail) => {
+    const r = http.request({ host: '127.0.0.1', port: to || port, path: p, method: body === undefined ? 'GET' : 'POST', headers: Object.assign(body === undefined ? {} : { 'Content-Type': 'application/json' }, headers) }, res => {
+      let b = '';
+      res.on('data', c => (b += c));
+      res.on('end', () => { let j = null; try { j = JSON.parse(b); } catch (e) { /* not JSON */ } ok({ status: res.statusCode, body: j, headers: res.headers }); });
+    });
+    r.on('error', fail);
+    r.end(body === undefined ? undefined : JSON.stringify(body));
+  });
+
+  // A page that rebinds its own public name to this hub can't use the AI write tools, which sign
+  // as the hub, and /mcp checks Origin; a local tool's page still can call.
+  const write = { jsonrpc: '2.0', id: 1, method: 'tools/call', params: { name: 'add_comment', arguments: {} } };
+  assert.equal((await req('/mcp', { Host: `attacker.example:${port}`, Origin: `http://attacker.example:${port}` }, write)).status, 403);
+  assert.equal((await req('/mcp', { Host: `attacker.example:${port}` }, write)).status, 403, 'no Origin, but a public name');
+  assert.equal((await req('/mcp', { Host: `127.0.0.1:${port}`, 'X-Forwarded-For': '6.6.6.6' }, write)).status, 403, 'passed on by a proxy the hub was not told about');
+  assert.equal((await req('/mcp', { Origin: 'http://attacker.example' }, { jsonrpc: '2.0', id: 1, method: 'ping' })).status, 403);
+  assert.equal((await req('/mcp', { Host: `localhost:${port}`, Origin: 'http://localhost:6274' }, { jsonrpc: '2.0', id: 1, method: 'ping' })).status, 200);
+
+  // Peers-only notes on a node: by its address, a one-word LAN name or a configured name, never a
+  // rebound public one.
+  const node = await start({ mode: 'node', upstream: url, syncMinutes: 60, hostnames: ['guide.example.org'] });
+  t.after(() => node.hub.close());
+  const peers = await SDG.changes.makeObservation({ lat: 45.4, lon: -75.7, status: 'cleared', share: 'peers' }, alice);
+  node.hub.store.putObservation(Object.assign({}, peers, { received: SDG.util.now() }));
+  const notes = async host => (await req('/api/v1/observations', { Host: `${host}:${node.port}` }, undefined, node.port)).body.length;
+  assert.equal(await notes('127.0.0.1'), 1);
+  assert.equal(await notes('nomad_guide'), 1);
+  assert.equal(await notes('pi.local'), 1);
+  assert.equal(await notes('guide.example.org'), 1);
+  assert.equal(await notes('attacker.example'), 0);
+
+  // A field note only moves forward: its own old signed copy, sent again, changes nothing.
+  const v1 = await SDG.changes.makeObservation({ lat: 45.4, lon: -75.7, status: 'untouched', share: 'public' }, alice, null, 4);
+  assert.equal((await call(url, '/api/v1/observations', v1)).body.status, 'stored');
+  const v2 = await resign(v1, alice, { status: 'dangerous', notes: 'gas leak', created: new Date(Date.parse(v1.created) + 1000).toISOString() });
+  assert.equal((await call(url, '/api/v1/observations', v2)).body.status, 'stored');
+  assert.equal((await call(url, '/api/v1/observations', v1)).body.duplicate, true);
+  assert.equal(hub.store.getObservation(v1.id).status, 'dangerous');
+
+  // A hidden comment leaves the public lists, and the feed tells copies elsewhere, as a tombstone.
+  const part = hub.dataset().parts[0];
+  const c = await SDG.changes.makeComment('parts/' + part.id, 'Test it with a wet finger', null, alice, 4);
+  assert.equal((await call(url, '/api/v1/comments', c)).body.status, 'stored');
+  const feed1 = (await call(url, '/api/v1/comments?since=2000-01-01T00:00:00.000Z')).body;
+  assert.equal(feed1.length, 1);
+  const hide = await SDG.sign.sign({ action: 'hide-comment', comment: c.id, hidden: true, hub: hub.identity.key, created: SDG.util.now() }, mod);
+  assert.equal((await call(url, `/api/v1/comments/${c.id}/hide`, hide)).body.hidden, true);
+  const feed2 = (await call(url, '/api/v1/comments?since=' + encodeURIComponent(feed1[0].received))).body;
+  assert.deepEqual(feed2.map(x => [x.id, x.hidden, x.text]), [[c.id, true, undefined]]);
+  assert.equal((await call(url, '/api/v1/comments?target=parts/' + part.id)).body.length, 0);
+
+  // The app can't be framed by another site; the state folder is this user's alone; half-sent
+  // requests time out.
+  const app = await req('/');
+  assert.equal(app.headers['x-frame-options'], 'SAMEORIGIN');
+  assert.match(app.headers['content-security-policy'], /frame-ancestors 'self'/);
+  assert.equal(fs.statSync(path.join(dir, 'state')).mode & 0o777, 0o700);
+  const db = path.join(dir, 'state', 'hub.sqlite');
+  if (fs.existsSync(db)) assert.equal(fs.statSync(db).mode & 0o777, 0o600);
+  assert.equal(hub.server.headersTimeout, 15e3);
+  assert.equal(hub.server.requestTimeout, 120e3);
+  // IPv6 callers share a budget per /64.
+  const H = require('../server/http');
+  assert.equal(H.bucketOf('2001:db8:1:2::9'), H.bucketOf('2001:db8:1:2:ffff:1:2:3'));
+  assert.equal(H.bucketOf('::ffff:1.2.3.4'), '1.2.3.4');
+});

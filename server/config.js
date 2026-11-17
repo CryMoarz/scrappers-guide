@@ -24,6 +24,9 @@ const DEFAULTS = {
   admins: [],
   moderators: [],
   trustProxy: false, // behind a reverse proxy: true (one) or the number of proxies in front
+  // Names this hub is reached by, besides addresses, localhost, one-word LAN names and .local or
+  // .lan ones: a node at a real domain name lists it here to show peers-only notes there.
+  hostnames: [],
   // Let pages from other origins send signed contributions (the app opened from a file, or from
   // another hub, syncs this way). Reads are always open; /mcp and local controls never are.
   corsWrites: true,
@@ -83,6 +86,7 @@ function fromEnv(env) {
   if (env.SDG_ALLOW_ROLLBACK) c.allowRollback = env.SDG_ALLOW_ROLLBACK === '1';
   if (env.SDG_ADMINS) c.admins = list(env.SDG_ADMINS);
   if (env.SDG_MODERATORS) c.moderators = list(env.SDG_MODERATORS);
+  if (env.SDG_HOSTNAMES) c.hostnames = list(env.SDG_HOSTNAMES);
   if (env.SDG_TRUST_PROXY) c.trustProxy = +env.SDG_TRUST_PROXY > 0 ? +env.SDG_TRUST_PROXY : false;
   if (env.SDG_CORS_WRITES) c.corsWrites = env.SDG_CORS_WRITES === '1';
   if (env.SDG_MCP_WRITE) c.mcpWrite = env.SDG_MCP_WRITE === '1';
@@ -123,6 +127,7 @@ function fromArgs(argv) {
     else if (a === '--lora-host') { c.lora = Object.assign(c.lora || {}, { host: v }); i++; }
     else if (a === '--lora-device') { c.lora = Object.assign(c.lora || {}, { device: v }); i++; }
     else if (a === '--public') c.host = '0.0.0.0';
+    else if (a === '--hostname') { (c.hostnames = c.hostnames || []).push(v); i++; }
     else if (a === '--mcp-write') c.mcpWrite = true;
     else if (a === '--no-mcp-write') c.mcpWrite = false;
   }

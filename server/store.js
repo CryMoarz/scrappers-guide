@@ -20,6 +20,9 @@ function loadSqlite() {
 class SqliteStore {
   constructor(file, sqlite) {
     this.kind = 'sqlite';
+    // SQLite gives its journal files the database's own rights, so make the database private first.
+    if (!fs.existsSync(file)) fs.closeSync(fs.openSync(file, 'a', 0o600));
+    for (const f of [file, file + '-wal', file + '-shm']) try { fs.chmodSync(f, 0o600); } catch (e) { /* not there yet */ }
     this.db = new sqlite.DatabaseSync(file);
     this.db.exec(`
       PRAGMA journal_mode = WAL;
@@ -213,8 +216,11 @@ class FileStore {
   close() {}
 }
 
+// The state folder holds peers-only notes, the hub's private key and its control token: this user
+// only, even where it already existed with looser rights.
 function openStore(dir, prefer) {
-  fs.mkdirSync(dir, { recursive: true });
+  fs.mkdirSync(dir, { recursive: true, mode: 0o700 });
+  try { fs.chmodSync(dir, 0o700); } catch (e) { /* not ours to change, e.g. a mounted volume */ }
   const sqlite = prefer === 'files' ? null : loadSqlite();
   if (sqlite) return new SqliteStore(path.join(dir, 'hub.sqlite'), sqlite);
   return new FileStore(path.join(dir, 'store'));
