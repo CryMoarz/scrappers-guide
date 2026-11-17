@@ -23,7 +23,7 @@ An offline salvage and survival database: what’s inside everyday devices and a
 
 It answers one question: **I need this part, so what should I strip, and where should I look?**
 
-Type a part (“12V motor”), a part or chip number (“LM2596”), a need (“keep food cold”) or a device (“microwave”). The guide ranks the devices that hide it by how useful, easy to get and overlooked they are, tells you which kinds of buildings probably still have them, warns you what can hurt you, and shows you how to get the part out. With an offline map it finds the actual places near you and plans a run to get everything on your list.
+Type a part (“12V motor”), a part or chip number (“LM2596”), a need (“keep food cold”), a device (“microwave”) or a brand or product (“ryobi”, “AirSense 10”). The guide ranks the devices that hide it by how useful, easy to get and overlooked they are, tells you which kinds of buildings probably still have them, warns you what can hurt you, and shows you how to get the part out. With an offline map it finds the actual places near you and plans a run to get everything on your list.
 
 It works with no internet, ever. It syncs when it can.
 
@@ -36,19 +36,22 @@ It works with no internet, ever. It syncs when it can.
 
 ## What it does
 
-Five sections, along the bottom of the screen on a phone and across the top on anything wider:
+On a phone, Find, Map, Plan, Guides and More sit along the bottom of the screen where your thumb is. On anything wider they are tabs along the top, with Reference, Browse, Contribute and Sync beside them.
 
 - **Find.** Search by part, number, need or device. The best devices to strip come first, then the building types to look in, with the rest a tap away. Filters fold into one line: months since the collapse (batteries and fuel age, looters take the obvious), the tools you have, and how much you can carry.
 - **Map.** On a [Project NOMAD](#built-for-project-nomad) box, or any hub with an offline map, the places near you that hold what you need (shops, schools, hospitals, industrial areas, even street lamps) are ranked by what's probably there, what's probably left and how far it is, out to 50 km. One tap marks a place looted, untouched, dangerous or occupied. Your own markers (home base, stash points, water) never leave your device. See [docs/MAP.md](docs/MAP.md).
 - **Plan.** A shopping list of the parts you need, and a run that gets them in the fewest stops; runs with when, how and what to get at each stop, drawn on the map; your stash; your field notes.
-- **Guides.** A teardown for every device, each saying what to leave as well as what to take, plus builds, repairs, field tests, skills and safety: 141 in all, including building a LoRa mesh node from parts and a mesh network that covers a whole town. “What can I build?” checks them against your stash.
-- **Quick reference**, ready to print:
+- **Guides.** 52 teardowns, each saying what to leave as well as what to take, plus builds, repairs, field tests, skills and safety: 113 in all, including building a LoRa mesh node from parts and a mesh network that covers a whole town. “What can I build?” checks them against your stash.
+- **Quick reference** (Reference on a wide screen; on a phone, a switch at the top of Guides), ready to print:
   - **13 calculators:** Ohm’s law, LED resistors, dividers, RC and 555 timers, battery and solar sizing, voltage drop, gears, resistor colour codes, and an engineering calculator that takes 4k7 or 100n.
-  - **29 cheat sheets:** warning labels and symbols, component codes, wire colours, connectors, what fits what, power draw, battery chemistries, first aid, water and sanitation, food safety, fire and heat, shop chemicals (lye from wood ash included), welding, knots and lifting, vehicles, radio, LoRa frequencies for 211 countries, navigation, weather and more. Where it matters they say what to do when no help is coming.
+  - **27 cheat sheets:** warning labels and symbols, component codes, wire colours, connectors, what fits what, power draw, battery chemistries, first aid, water and sanitation, food safety, fire and heat, shop chemicals (lye from wood ash included), welding, knots and lifting, vehicles, radio, LoRa frequencies for 211 countries, navigation, weather and more. Where it matters they say what to do when no help is coming.
   - **Microcontrollers:** board pinouts drawn for 26 boards, half of them the Chinese clones most people actually own, with the boot and strapping pins marked; how to get each family into its bootloader and unbrick it; and code templates in Arduino C++ and MicroPython for battery monitors, low-voltage cut-offs, thermostats, motors and sensors.
-- **More.** The whole database to browse, a form to log a model you opened, sync and settings, and **Simple mode**: big text, just a search box, what to strip, where to look, what can hurt you and plain numbered steps.
+- **More.** The whole database to browse, a form to log a model you opened, and sync and settings.
+- **Simple mode** (under More on a phone, the button at the top on a wider screen): big text, just a search box, what to strip, where to look, what can hurt you and plain numbered steps.
 
 Every part shows how sure the guide is, as one to four bars: a generic guess, likely, documented from a public source, or verified by someone who opened one. People who open one can say **Found it** or **Not in mine**, and three finds turn a guess into likely.
+
+Some device pages also say what the device is made of, and for 27 kinds of device how often repair cafés got one working again and what had usually failed, from 600,000 community repair records: the part to suspect in a dead one.
 
 <p align="center">
   <img src="docs/img/search.png" alt="Searching “pump water from the creek”: the pump-water job, the best source for each part, and the guides that use them" width="90%">
@@ -56,16 +59,24 @@ Every part shows how sure the guide is, as one to four bars: a generic guess, li
 
 <table>
   <tr>
-    <td width="62%" valign="top"><img src="docs/img/device.png" alt="The E-scooter page: parts marked Documented, where to find them, logged models and links into the offline library"></td>
-    <td width="38%" valign="top"><img src="docs/img/phone.png" alt="Simple mode on a phone, searching car battery: exit signs, office UPSes and alarm panels before cars"></td>
+    <td width="50%" valign="top"><img src="docs/img/device.png" alt="The E-scooter page on a phone: the teardown guide, Stripped one and Log a model buttons, and 7 of 19 parts confirmed in real models"></td>
+    <td width="50%" valign="top"><img src="docs/img/phone.png" alt="Simple mode on a phone, opened from the bare HTML file with no connection, searching car battery: office UPSes, fire alarm and burglar alarm panels before cars"></td>
   </tr>
   <tr>
-    <td valign="top"><b>Every device, part and building links to the others.</b> Parts confirmed in real models say so, with the source.</td>
-    <td valign="top"><b>Simple mode</b> on a phone. Need a car battery? Everyone raids cars first; exit signs, UPSes and alarm panels get overlooked.</td>
+    <td valign="top"><b>Every device, part and building links to the others.</b> Each part shows how sure the guide is; parts confirmed in real models say so, with the source.</td>
+    <td valign="top"><b>Simple mode</b>, from the single file with no connection. Need a car battery? Everyone raids cars first; UPSes, alarm panels and telecom cabinets get overlooked.</td>
+  </tr>
+  <tr>
+    <td valign="top"><img src="docs/img/map.png" alt="The map of downtown Ottawa: 30 places within 2 km ranked for a car battery, each with what probably holds one there"></td>
+    <td valign="top"><img src="docs/img/pinout.png" alt="The ESP32-DevKitC V4 pinout on a phone, with the input-only, boot and strapping pins marked"></td>
+  </tr>
+  <tr>
+    <td valign="top"><b>The map</b> ranks the places near you by what's probably there and what's probably left, from an offline map.</td>
+    <td valign="top"><b>Board pinouts</b> for 26 boards and their clones, with the pins that stop a board booting marked.</td>
   </tr>
 </table>
 
-**Use it anywhere.** Open `app/scrappers-guide.html` in any modern browser: phone, laptop, cyberdeck. The whole database is inside that one file, so it works from a USB stick with nothing installed. `node tools/export-text.js` writes a printable field guide for when the batteries die. How much storage to set aside for maps and offline libraries, for a pocket kit or a deck: [docs/LIBRARIES.md](docs/LIBRARIES.md).
+**Use it anywhere.** Download `scrappers-guide.html` from the [latest release](https://github.com/CryMoarz/scrappers-guide/releases/latest) (or take `app/scrappers-guide.html` from here) and open it in any modern browser: phone, laptop, cyberdeck. The whole database is inside that one file, so it works from a USB stick with nothing installed. `node tools/export-text.js` writes a printable field guide for when the batteries die. How much storage to set aside for maps and offline libraries, for a pocket kit or a deck: [docs/LIBRARIES.md](docs/LIBRARIES.md).
 
 ## How much to trust it
 
@@ -107,7 +118,7 @@ Click **Install**, then **Open**. There are no addresses to type: the guide find
 | **Phones on your network** | Library links point at the box’s own address, so they work from any device that can reach it. |
 
 <p align="center">
-  <img src="docs/img/library-links.png" alt="A hazard card ending in Read more offline links to Wikipedia, the medical encyclopedia and Military Medicine" width="80%">
+  <img src="docs/img/library-links.png" alt="The end of the battery acid hazard card: a link to First aid, When no help is coming, its safety guide, and Read more offline links to the medical encyclopedia, Wikipedia and Military Medicine" width="60%">
 </p>
 
 <details>
@@ -130,10 +141,11 @@ Everything else, including running it next to NOMAD without Docker and every set
 
 | **187** devices | **125** part types | **238** documented models |
 |:-:|:-:|:-:|
-| **141** guides | **41** jobs | **32** hazard cards |
-| **63** building types | **23** shared boards | **41** linked libraries |
+| **113** guides | **30** quick-reference cards | **13** calculators |
+| **41** jobs | **32** hazard cards | **63** building types |
+| **23** shared boards | **26** board pinouts | **41** linked libraries |
 
-*Counts for version 4.0.0, plus 679 router and access point models from the OpenWrt hardware table that are not yet fact-checked. Run `node tools/validate.js` for the current numbers.*
+*Counts for version 4.0.0, plus 679 router and access point models from the OpenWrt hardware table that are not yet fact-checked. `node tools/validate.js` prints the current numbers; it counts guides and written cards together (141).*
 
 The records cross-link: a job needs part types, part types hide in devices, devices sit in buildings and carry hazards, guides strip them and build with what comes out, and each guide says what to learn first. Logged models of real products confirm what is inside each device.
 
@@ -194,7 +206,7 @@ node tools/build.js             # build dist/release.json and the app
 node tools/test-search.js "keep food cold" "555 timer"
 ```
 
-Also: `tools/fmt.js` (standard file layout), `tools/export-text.js` (Markdown and a printable field guide), `tools/export-tiny.js` (lookups for microcontrollers), `tools/keys.js`, `tools/mod.js`, `tools/sync.js`, `tools/lora.js`, `tools/nomad.js`, `tools/research.js`.
+Also: `tools/fmt.js` (standard file layout), `tools/export-text.js` (Markdown and a printable field guide), `tools/export-tiny.js` (lookups for microcontrollers), `tools/specs.js` (electrical ratings read from part specs), `tools/import-openwrt.js` (routers from the OpenWrt hardware table), `tools/screenshots.js` (these pictures, with headless Firefox), `tools/keys.js`, `tools/mod.js`, `tools/sync.js`, `tools/lora.js`, `tools/nomad.js`, `tools/research.js`, `tools/migrate-v3.js` (old version 2 exports).
 
 ## Read next
 
@@ -207,8 +219,14 @@ Also: `tools/fmt.js` (standard file layout), `tools/export-text.js` (Markdown an
 | [docs/NOMAD.md](docs/NOMAD.md) | Everything about running with Project NOMAD |
 | [docs/LIBRARIES.md](docs/LIBRARIES.md) | Which offline libraries to install alongside, and what each one adds |
 | [docs/MAP.md](docs/MAP.md) | The map: where it comes from, how places are ranked, your location |
+| [docs/RUNNING-A-HUB.md](docs/RUNNING-A-HUB.md) | Running a hub or a node, moderation and settings |
+| [docs/LORA.md](docs/LORA.md) | The LoRa radio bridge |
+| [docs/AI-TOOLS.md](docs/AI-TOOLS.md) and [docs/API.md](docs/API.md) | The AI tool server and the HTTP API |
+| [CONTRIBUTING.md](CONTRIBUTING.md) | Every way to help, from one found part to a reviewed guide |
 | [docs/DATA-GUIDE.md](docs/DATA-GUIDE.md) | How to write good records |
+| [docs/GIT-BASICS.md](docs/GIT-BASICS.md) | Git in plain words, for sending changes as files |
 | [research/README.md](research/README.md) | How model data is researched and fact-checked |
+| [SECURITY.md](SECURITY.md) | Reporting a security or safety problem |
 
 ## Licenses
 
