@@ -162,15 +162,20 @@ const Calc = (() => {
   const toC = (v, u) => (u === '°F' ? (v - 32) * 5 / 9 : u === 'K' ? v - 273.15 : v);
   const fromC = (c, u) => (u === '°F' ? c * 9 / 5 + 32 : u === 'K' ? c + 273.15 : c);
 
-  // LoRa: Meshtastic's modem presets as spreading factor, bandwidth (kHz) and coding rate 4/(4+cr),
-  // and the lowest signal-to-noise ratio each spreading factor still decodes (Semtech datasheets).
-  const LORA = [['LONG_FAST', 'Long Fast (default)', 11, 250, 1], ['LONG_MODERATE', 'Long Moderate', 11, 125, 4], ['LONG_SLOW', 'Long Slow', 12, 125, 4],
-    ['MEDIUM_SLOW', 'Medium Slow', 10, 250, 1], ['MEDIUM_FAST', 'Medium Fast', 9, 250, 1], ['SHORT_SLOW', 'Short Slow', 8, 250, 1], ['SHORT_FAST', 'Short Fast', 7, 250, 1], ['SHORT_TURBO', 'Short Turbo', 7, 500, 1]];
+  // LoRa: Meshtastic's modem presets (firmware's modemPresetToParams) as spreading factor, bandwidth
+  // (kHz) and coding rate 4/(4+cr), and the lowest signal-to-noise ratio each spreading factor still
+  // decodes (Semtech datasheets). The 2.8 presets are labelled so 2.7 users don't pick them.
+  const LORA = [['LONG_FAST', 'Long Fast (default)', 11, 250, 1], ['LONG_MODERATE', 'Long Moderate', 11, 125, 4], ['LONG_TURBO', 'Long Turbo (500 kHz)', 11, 500, 4], ['LONG_SLOW', 'Long Slow (deprecated in 2.7)', 12, 125, 4],
+    ['MEDIUM_SLOW', 'Medium Slow', 10, 250, 1], ['MEDIUM_FAST', 'Medium Fast', 9, 250, 1], ['MEDIUM_TURBO', 'Medium Turbo (500 kHz, firmware 2.8)', 9, 500, 1],
+    ['SHORT_SLOW', 'Short Slow', 8, 250, 1], ['SHORT_FAST', 'Short Fast', 7, 250, 1], ['SHORT_TURBO', 'Short Turbo (500 kHz)', 7, 500, 1],
+    ['LITE_FAST', 'Lite Fast (EU 866, firmware 2.8)', 9, 125, 1], ['LITE_SLOW', 'Lite Slow (EU 866, firmware 2.8)', 10, 125, 1],
+    ['NARROW_FAST', 'Narrow Fast (62.5 kHz, firmware 2.8)', 7, 62.5, 2], ['NARROW_SLOW', 'Narrow Slow (62.5 kHz, firmware 2.8)', 8, 62.5, 2],
+    ['TINY_FAST', 'Tiny Fast (15.6 kHz, firmware 2.8)', 7, 15.625, 1], ['TINY_SLOW', 'Tiny Slow (15.6 kHz, firmware 2.8)', 8, 15.625, 2]];
   const LORA_SNR = { 7: -7.5, 8: -10, 9: -12.5, 10: -15, 11: -17.5, 12: -20 };
   // Time on air in seconds by Semtech's formula: explicit header, CRC on, and low data rate
-  // optimisation on when a symbol lasts longer than 16 ms.
+  // optimisation on when a symbol lasts 16 ms or more, as Meshtastic's firmware does.
   function airtime(sf, bwHz, cr, bytes, preamble) {
-    const ts = 2 ** sf / bwHz, de = ts > 0.016 ? 1 : 0;
+    const ts = 2 ** sf / bwHz, de = ts >= 0.016 ? 1 : 0;
     const n = 8 + Math.max(Math.ceil((8 * bytes - 4 * sf + 28 + 16) / (4 * (sf - 2 * de))) * (cr + 4), 0);
     return { ts, de, s: (preamble + 4.25) * ts + n * ts };
   }
@@ -275,7 +280,7 @@ const Calc = (() => {
       title: 'LoRa airtime and range', summary: 'How long a message takes on air, how many the channel can carry, and the link budget and radio horizon for your radios.',
       fields: [['preset', 'Meshtastic preset', 'LONG_FAST', '', 'select', [...LORA.map(([k, l]) => [k, l]), ['custom', 'Custom: the next three fields']]],
         ['sf', 'Spreading factor (custom)', '11', '7 to 12'], ['bw', 'Bandwidth in kHz (custom)', '250'], ['cr', 'Coding rate 4/x (custom)', '5', '5 to 8'],
-        ['bytes', 'Packet size (bytes)', '60', 'At most 255, headers included'], ['pre', 'Preamble (symbols)', '16', 'Meshtastic uses 16; LoRaWAN 8'],
+        ['bytes', 'Packet size (bytes)', '60', 'At most 255. A Meshtastic text is 22 bytes more than its letters: 5 letters about 27, 200 letters about 223. A direct message adds 12'], ['pre', 'Preamble (symbols)', '16', 'Meshtastic uses 16; LoRaWAN 8'],
         ['relays', 'Nodes that rebroadcast each message', '3'],
         ['tx', 'Transmit power (dBm)', '22'], ['gain', 'Antenna gains, both ends added (dBi)', '4'], ['loss', 'Cable and connector losses, both ends (dB)', '1'],
         ['mhz', 'Frequency (MHz)', '915'], ['h1', 'Antenna height here (m)', '2'], ['h2', 'Antenna height at the other end (m)', '10'],
