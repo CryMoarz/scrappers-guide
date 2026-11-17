@@ -2,6 +2,18 @@
 
 Plain notes for people using the guide. The app shows the latest few under "What's new" on its front page. Details for developers are in the commits.
 
+## 4.2.0 (17 November 2026)
+
+- A website: every device, part type, guide, pinout and hazard as a page you can read or link to, with the app to open or download, at crymoarz.github.io/scrappers-guide.
+- Security fixes from a full review. For moderators: the Review tab now works out each change on your own device and checks its signature, and your review counts only for the exact change you saw, so nobody between you and the hub can slip a different one through. Update the app (or tools/mod.js) to review on a 4.2.0 hub.
+- Field notes only move forward: an old copy of a note, sent again by anyone, can no longer undo its author's update.
+- A comment a moderator hides now disappears from nodes and phones that already had it.
+- The app is stricter with what it receives: a file can't roll its data back, an update is offered only for a newer version, a damaged or bad database can't lock it (it falls back to its built-in data), and a hub's word alone can't make your unsent edits disappear.
+- Hubs and nodes stay up when attacked: a broken or hostile offline map, a hostile upstream hub, slow or flooding clients and costly searches no longer hang or crash them, and place searches in the far north read far fewer map tiles. A web page can no longer reach a hub's peers-only notes or AI tools through your browser.
+- LoRa: field notes sent with ?seen are limited per hour and per area, marked as unverified radio reports, and never passed on over the air or to NOMAD's map. One radio can't spoil another's message.
+- The Docker image ships the signed app, so apps that sync with it are offered updates again, and the services and container run with fewer rights.
+- Faster searches for models and for what you can build.
+
 ## 4.1.0 (17 November 2026)
 
 - Solar sizing for anywhere in the world, offline: type a place or use your location, and the solar calculator suggests a winter tilt, shows the sun on the panel month by month from NASA's 25-year averages built into the app, and sizes panel, battery and controller for your worst month or for summer only. It warns about freezing nights for lithium batteries and says when a month has too little sun for solar alone.
