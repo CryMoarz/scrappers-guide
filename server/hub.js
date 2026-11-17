@@ -597,7 +597,8 @@ async function createHub(cfg) {
     if (!(lat >= -85 && lat <= 85 && lon >= -180 && lon <= 180)) throw new H.HttpError(400, 'Give lat and lon');
     const parts = listParam(text(url, 'parts', 2000));
     if (parts && parts.length > 40) throw new H.HttpError(400, 'Ask for at most 40 part types at once');
-    costs(req, 20);
+    // A place search reads up to a thousand map tiles and ranks each part type asked for.
+    costs(req, 10 + (parts ? parts.length : 0));
     return map.places(getCtx(), { lat, lon, km: num(q(url, 'km')), query: text(url, 'q'), limit: lim(url, 40, 200), parts, perPart: Math.min(10, Math.max(1, num(q(url, 'per')) || 5)),
       opts: { months: num(q(url, 'months')), tools: listParam(text(url, 'tools', 2000)), maxKg: num(q(url, 'kg')) } });
   });
