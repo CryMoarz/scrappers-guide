@@ -168,10 +168,26 @@ module.exports = function (SDG) {
   // - names: every word is part of the brand, model name or the device's name ("AirSense 10",
   //   "resmed", "honda generator"), with the brand or a distinctive model word among them (so "air"
   //   alone isn't the MacBook Air); any word left over must pick out some of its parts ("macbook battery").
+  // What a search needs from each model, worked out once per opened dataset rather than on every
+  // query: a search looks at every model, and rebuilding these made long queries slow on a small hub.
+  const MODEL_BITS = new WeakMap();
+  function modelBits(ctx, m) {
+    let all = MODEL_BITS.get(ctx);
+    if (!all) MODEL_BITS.set(ctx, (all = new WeakMap()));
+    let b = all.get(m);
+    if (!b) {
+      const dev = ctx.get('devices', m.device) || {};
+      b = {
+        brand: runs(m.brand || ''), own: runs([m.model, m.fcc].join(' ')),
+        kind: runs([dev.name, ...(dev.aliases || [])].join(' ')), kindName: runs(dev.name || ''),
+        name: squash([m.brand, m.model, m.fcc].join(' ')), specs: (m.comps || []).map(x => squash(x.spec)),
+      };
+      all.set(m, b);
+    }
+    return b;
+  }
   function nameHit(ctx, m, qt, vocab) {
-    const brand = runs(m.brand || ''), own = runs([m.model, m.fcc].join(' '));
-    const dev = ctx.get('devices', m.device) || {};
-    const kind = runs([dev.name, ...(dev.aliases || [])].join(' ')), kindName = runs(dev.name || '');
+    const { brand, own, kind, kindName } = modelBits(ctx, m);
     const left = [];
     let mine = 0, sure = false;
     for (let i = 0; i < qt.length;) {
@@ -195,13 +211,15 @@ module.exports = function (SDG) {
     return { mine, parts: left.length ? comps.filter(x => left.some(w => text(x).includes(stem(w)))) : [] };
   }
   function findModels(ctx, query) {
-    const codes = lc(query).split(/[\s,]+/).map(squash).filter(t => t.length >= 4 && /[a-z]/.test(t) && /\d/.test(t) && !Object.keys(SDG.specs.parse(t)).length);
-    const qt = words(query).filter(w => !STOP.has(w));
+    // A dozen words and a handful of codes say all a person searches for; more is only cost.
+    const codes = lc(query).split(/[\s,]+/).map(squash).filter(t => t.length >= 4 && /[a-z]/.test(t) && /\d/.test(t) && !Object.keys(SDG.specs.parse(t)).length).slice(0, 8);
+    const qt = words(query).filter(w => !STOP.has(w)).slice(0, 12);
     if (!codes.length && !qt.length) return [];
     const vocab = partWords(ctx);
     return (ctx.ds.models || []).map(m => {
-      const named = codes.some(c => squash([m.brand, m.model, m.fcc].join(' ')).includes(c));
-      const parts = (m.comps || []).filter(x => !x.absent && codes.some(c => squash(x.spec).includes(c)));
+      const bits = modelBits(ctx, m);
+      const named = codes.some(c => bits.name.includes(c));
+      const parts = (m.comps || []).filter((x, i) => !x.absent && codes.some(c => bits.specs[i].includes(c)));
       const byName = qt.length ? nameHit(ctx, m, qt, vocab) : null;
       if (byName) byName.parts.forEach(x => { if (!parts.includes(x)) parts.push(x); });
       return named || parts.length || byName ? { model: m, parts, named: named || !!byName, mine: byName ? byName.mine : 0 } : null;
@@ -404,16 +422,27 @@ module.exports = function (SDG) {
 
   // "Here's what I have, what can I make?" Build and repair guides ranked by how much of their
   // materials list the user already has, with the best place to scrap each missing part.
+  // The best place to scrap each part, remembered per opened dataset and set of options: what you
+  // have changes from call to call, where a part is best found doesn't.
+  const BEST = new WeakMap();
+  function bestSource(ctx, m, opts) {
+    let memo = BEST.get(ctx);
+    if (!memo) BEST.set(ctx, (memo = new Map()));
+    const key = SDG.util.canonical([ctx.votesGen ? ctx.votesGen() : 0, m.fn, m.only || [], opts]);
+    if (!memo.has(key)) {
+      if (memo.size >= 2000) memo.delete(memo.keys().next().value);
+      const top = rank(ctx, new Map([[m.fn, { via: 'direct', on: true, only: m.only && m.only.length ? m.only.map(lc) : undefined }]]), '', opts).res[0];
+      memo.set(key, top ? { id: top.cat.id, name: top.cat.name, score: Math.round(top.best.s) } : null);
+    }
+    return memo.get(key);
+  }
   function buildable(ctx, have, opts) {
     opts = opts || {};
     have = new Set(have || []);
     return live(ctx.ds.guides || []).filter(g => ['build', 'repair'].includes(g.kind)).map(g => {
       const need = (g.materials || []).filter(m => m.fn && !m.optional);
       const got = need.filter(m => have.has(m.fn));
-      const missing = need.filter(m => !have.has(m.fn)).map(m => {
-        const top = rank(ctx, new Map([[m.fn, { via: 'direct', on: true, only: m.only && m.only.length ? m.only.map(lc) : undefined }]]), '', opts).res[0];
-        return { fn: m.fn, item: m.item, bestSource: top ? { id: top.cat.id, name: top.cat.name, score: Math.round(top.best.s) } : null };
-      });
+      const missing = need.filter(m => !have.has(m.fn)).map(m => ({ fn: m.fn, item: m.item, bestSource: bestSource(ctx, m, opts) }));
       return { guide: g, coverage: need.length ? got.length / need.length : 0, have: got.map(m => m.fn), missing };
     }).filter(x => x.coverage > 0 || opts.all).sort((a, b) => b.coverage - a.coverage || a.guide.difficulty - b.guide.difficulty);
   }

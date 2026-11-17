@@ -98,7 +98,10 @@ module.exports = function (SDG) {
     // models of parents or variants can only make it likely. Absences lower `presence`.
     // Tallied votes (SDG.votes.tally), set by whoever holds them: the app or a hub.
     let votes = null;
-    const setVotes = t => { votes = t || null; };
+    // Each new tally counts up, so anything worked out from the old one knows it's out of date.
+    let votesSeen = 0;
+    const setVotes = t => { votes = t || null; votesSeen++; };
+    const votesGen = () => votesSeen;
     function confInfo(deviceId, key) {
       let best = 'assumed';
       const confirmed = [], absentIn = [];
@@ -132,7 +135,7 @@ module.exports = function (SDG) {
       return out;
     }
 
-    return { ds, by, get, resolve, confInfo, setVotes, lineage, boardComps, modelName, hazard, toolLabel, stats, kids, modelsByDevice };
+    return { ds, by, get, resolve, confInfo, setVotes, votesGen, lineage, boardComps, modelName, hazard, toolLabel, stats, kids, modelsByDevice };
   }
 
   SDG.db = { COLLS, CONF, GENERIC_NOTE, empty, open, migrateLegacy };
