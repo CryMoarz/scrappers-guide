@@ -43,6 +43,12 @@ const Sync = (() => {
     if (!v.hashOk || !Number.isInteger(rel.seq)) throw new Error('The data failed its integrity check; not using it');
     if (!v.trusted && !o.untrustedOk) throw new Error('The data isn’t signed by a key this app trusts; not using it');
     if (rel.seq < S.base.seq && !o.olderOk) throw new Error(`That data (version ${rel.seq}) is older than yours (${S.base.seq}); not using it`);
+    // Signed is not the same as sound: every record is checked as strictly as a ledger entry, so
+    // one bad release can't leave the app unable to open its own data.
+    const ds = rel.dataset;
+    const sound = ds && typeof ds === 'object' && !Array.isArray(ds) && (!ds.vocab || (typeof ds.vocab === 'object' && !Array.isArray(ds.vocab))) &&
+      SDG.db.COLLS.every(c => !SDG.util.has(ds, c) || (Array.isArray(ds[c]) && ds[c].every(r => r && SDG.schema.validateRecord(c, r).ok)));
+    if (!sound) throw new Error('The data has records that don’t check out; not using it');
     S.base = { seq: rel.seq, hash: rel.hash, created: rel.created, name: rel.name, source: sourceLabel, signed: v.signed, trusted: v.trusted, key: v.key, dataset: rel.dataset };
     return v;
   }
@@ -110,7 +116,10 @@ const Sync = (() => {
           const rel = await api('/api/v1/release', { timeout: 120e3, etag: `"${S.base.hash}"` });
           if (rel.notModified) return;
           const older = rel.seq < S.base.seq;
-          if (older && !(manual && confirm(`The hub has older data (version ${rel.seq}) than this device (${S.base.seq}). Use the hub’s anyway?`))) throw new Error(`The hub offered older data (version ${rel.seq}) than yours (${S.base.seq}); kept yours`);
+          // Older data signed by the same hub key that signed what this device holds is that hub's
+          // own word (a restore from backup, or undoing a mistake), not a rollback by someone else.
+          const sameHub = !!S.base.key && S.base.key === info.hubKey;
+          if (older && !sameHub && !(manual && confirm(`The hub has older data (version ${rel.seq}) than this device (${S.base.seq}). Use the hub’s anyway?`))) throw new Error(`The hub offered older data (version ${rel.seq}) than yours (${S.base.seq}); kept yours`);
           await applyRelease(rel, url, { keys: [info.hubKey], olderOk: older });
           report.reset = true;
         };
@@ -134,7 +143,7 @@ const Sync = (() => {
           if (cp.seq === seq && cp.hash === (await SDG.changes.datasetHash(ds || S.base.dataset))) {
             S.base = Object.assign({}, S.base, { dataset: ds || S.base.dataset, seq, hash: cp.hash, source: ds ? url : S.base.source });
             report.pulled += got.length;
-            got.forEach(en => { const e = S.edits.find(x => x.id === en.proposal); if (e) { e.status = 'accepted'; e.seq = en.seq; } });
+            got.forEach(en => { const e = S.edits.find(x => x.id === en.proposal); if (e) { e.status = 'accepted'; e.seq = en.seq; e.confirmed = true; } });
           } else await fullRelease();
           break;
         }
@@ -145,7 +154,7 @@ const Sync = (() => {
           mine.forEach(p => { const e = S.edits.find(x => x.id === p.id); if (e && p.status !== 'queued') { e.status = p.status; if (p.seq) e.seq = p.seq; if (p.note) e.note = p.note; } });
         }
         // Accepted edits that the base now contains are no longer local.
-        S.edits = S.edits.filter(e => !(e.status === 'accepted' && e.seq && e.seq <= S.base.seq));
+        S.edits = S.edits.filter(e => !editDone(e));
 
         // 4. Comments and shared observations.
         if (S.settings.comments && (info.policy || {}).comments !== 'off') {

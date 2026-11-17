@@ -210,6 +210,23 @@ test('app: what a hub sends is checked before the app keeps it', async (t) => {
   assert.match(app.S.hub.error, /older/);
   assert.equal(app.S.base.seq, before);
 
+  // Signed is not the same as sound: a release with a record that doesn't check out is refused,
+  // so it can't leave the app unable to open its own data.
+  const release = async (ds, seq) => { const x = await SDG.changes.makeRelease(ds, seq); await SDG.changes.signRelease(x, evil); routes['/api/v1/sync'] = () => ({ reset: true, head: seq }); routes['/api/v1/release'] = () => x; };
+  await release(Object.assign(SDG.util.clone(app.S.base.dataset), { devices: [{ oops: true }] }), before + 2);
+  await app.Sync.run(false);
+  assert.match(app.S.hub.error, /check out/);
+  assert.equal(app.S.base.seq, before);
+  // Once the device holds the pinned hub's own data, that hub may take it back to an older version:
+  // that is its own word, not a rollback by someone else.
+  await release(SDG.util.clone(app.S.base.dataset), before + 3);
+  await app.Sync.run(false);
+  assert.equal(app.S.base.seq, before + 3);
+  await release(SDG.util.clone(app.S.base.dataset), before + 1);
+  await app.Sync.run(false);
+  assert.equal(app.S.hub.error, null);
+  assert.equal(app.S.base.seq, before + 1);
+
   // Comments and notes: bad ones are dropped, and nothing pulled is "mine".
   const o = await SDG.changes.makeObservation({ lat: 45.4, lon: -75.7, status: 'cleared', share: 'public' }, alice);
   const c = await SDG.changes.makeComment('parts/' + part.id, 'Good one', null, alice);
@@ -224,6 +241,34 @@ test('app: what a hub sends is checked before the app keeps it', async (t) => {
   const pulled = app.S.observations.find(x => x.id === o.id);
   assert.ok(pulled && !pulled.mine && pulled.sent === undefined, 'a pulled note is never treated as ours');
   assert.equal(app.S.settings.commentsReceived, '2026-11-12T00:00:00.000Z');
+});
+
+test('app: the Review screen shows the proposal as signed, against its own data, and signs its hash', async (t) => {
+  const hubId = await SDG.sign.createIdentity('Hub');
+  const eve = await SDG.sign.createIdentity('Eve');
+  const mod = await SDG.sign.createIdentity('Mod');
+  const routes = {};
+  const fake = await fakeHub(hubId, routes);
+  t.after(() => fake.server.close());
+  const app = await loadApp();
+  const h = app.S.base.dataset.hazards[0];
+  const p = await SDG.changes.makeProposal({ coll: 'hazards', rid: h.id, op: 'put', data: Object.assign({}, h, { summary: 'EVIL instructions' }), reason: 'Fix a typo' }, eve, 0);
+  // The hub (or someone between) sends a harmless-looking diff beside the real proposal.
+  routes['/api/v1/proposals'] = () => [];
+  routes['/api/v1/proposals/' + p.id] = () => ({ proposal: Object.assign({}, p, { status: 'pending', received: SDG.util.now() }), current: h, diff: [{ path: 'summary', before: 'a', after: 'b' }], problems: [] });
+  Object.assign(app.S.settings, { hubUrl: fake.url, hubKeys: { [fake.url]: hubId.key } });
+  app.S.identity = mod; app.S.hub.online = true;
+  await app.renderReview(p.id);
+  let html = app.$('#v-review').innerHTML;
+  assert.match(html, /EVIL instructions/, 'the change itself is shown, worked out on the device');
+  assert.match(html, /signature checks out/);
+  assert.ok(html.includes(`data-hash="${await SDG.changes.proposalHash(p)}"`));
+  // Changed after its author signed it: said plainly, and Accept is off.
+  routes['/api/v1/proposals/' + p.id] = () => ({ proposal: Object.assign({}, p, { reason: 'Something else' }), current: h, diff: [], problems: [] });
+  await app.renderReview(p.id);
+  html = app.$('#v-review').innerHTML;
+  assert.match(html, /signature doesn’t check out/);
+  assert.match(html, /data-decide="accept"[^>]*disabled/);
 });
 
 test('app: updates are offered only when a maintainer signed them, and checked when fetched', async (t) => {
@@ -248,6 +293,8 @@ test('app: updates are offered only when a maintainer signed them, and checked w
   assert.equal(await show(Object.assign({}, signed, { sha256: '00' }), keys), false, 'changed after signing');
   assert.equal(await show(signed, keys), true);
   assert.equal(await show(signed, []), false, 'no maintainer keys, no update: the default today');
+  const older = await SDG.changes.signAppBuild({ version: '0.9.0', date: '2099-01-01', id: 'aa11bb22cc33', sha256: newer.sha256 }, maintainer);
+  assert.equal(await show(older, keys), false, 'an older version is never offered, even signed and dated later');
 
   // Fetched bytes that don't match the signed fingerprint are never saved.
   await show(signed, keys);

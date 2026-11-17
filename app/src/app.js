@@ -48,11 +48,13 @@ const KEYS = { base: 'base', edits: 'edits', outbox: 'outbox', carry: 'carry', c
 async function save(k) { return Store.set(KEYS[k], k === 'hub' ? { lastSync: S.hub.lastSync, error: S.hub.error } : S[k]); }
 async function saveAll() { for (const k of Object.keys(KEYS)) await save(k); }
 
+// The data built into this file, signed at release.
+const builtIn = () => ({ seq: RELEASE.seq, hash: RELEASE.hash, created: RELEASE.created, name: RELEASE.name, source: 'built in', signed: !!RELEASE.sig, trusted: !!RELEASE.sig && TRUST.some(k => k.key === RELEASE.sig.key), dataset: RELEASE.dataset });
 async function load() {
   await Store.init();
   const [base, edits, outbox, carry, comments, observations, votes, markers, runs, need, inventory, settings, identity, hub] = await Promise.all(Object.values(KEYS).map(k => Store.get(k)));
   // Use whichever is newer: the data built into this file, or the data last synced.
-  S.base = base && base.seq > RELEASE.seq ? base : { seq: RELEASE.seq, hash: RELEASE.hash, created: RELEASE.created, name: RELEASE.name, source: 'built in', signed: !!RELEASE.sig, trusted: !!RELEASE.sig && TRUST.some(k => k.key === RELEASE.sig.key), dataset: RELEASE.dataset };
+  S.base = base && base.seq > RELEASE.seq ? base : builtIn();
   S.edits = edits || [];
   S.outbox = Object.assign({ comments: [], votes: [] }, outbox);
   S.carry = Object.assign({ proposals: [], comments: [], observations: [], votes: [] }, carry);
@@ -85,8 +87,17 @@ function migrateV2() {
   if (n) setTimeout(() => toast(`Kept ${n} template${n > 1 ? 's' : ''} and model${n > 1 ? 's' : ''} from the earlier version as local edits`), 600);
 }
 
+// An accepted edit stops being local once the synced data holds it: seen in a ledger entry that a
+// signed checkpoint vouched for, or the record now reads as the edit did. A hub's word that it was
+// accepted is not enough, so a faked answer can't make someone's work disappear.
+function editDone(e) {
+  if (e.status !== 'accepted' || !e.seq || e.seq > S.base.seq) return false;
+  if (e.confirmed) return true;
+  const cur = (SDG.util.has(S.base.dataset, e.coll) && Array.isArray(S.base.dataset[e.coll]) ? S.base.dataset[e.coll] : []).find(r => r && r.id === e.rid);
+  return e.op === 'delete' ? !cur : !!cur && SDG.util.deepEqual(cur, Object.assign({}, e.data, { id: e.rid }));
+}
 function rebuild() {
-  const ds = SDG.changes.overlay(S.base.dataset, S.edits.filter(e => e.status !== 'accepted' || !e.seq || e.seq > S.base.seq));
+  const ds = SDG.changes.overlay(S.base.dataset, S.edits.filter(e => !editDone(e)));
   S.ctx = SDG.db.open(ds);
   S.ctx.setVotes(S.tally);
   S.localIds = new Set(S.edits.filter(e => e.status !== 'accepted').map(e => e.coll + '/' + e.rid));
@@ -364,7 +375,7 @@ function renderRef(id) {
 // ---------- Browse ----------
 const bstate = { coll: 'devices', filter: '' };
 function renderBrowse(coll, id) {
-  if (coll) bstate.coll = coll;
+  if (coll && SDG.util.has(COLL_LABEL, coll)) bstate.coll = coll;
   coll = bstate.coll;
   const v = $('#v-browse');
   const f = bstate.filter.toLowerCase();
@@ -376,7 +387,7 @@ function renderBrowse(coll, id) {
     <div style="margin-top:10px"><button class="btn small ghost" data-new="${esc(coll)}">New ${esc(ONE[coll])}</button></div>
     ${Object.keys(groups).sort().map(g => `${g ? `<h4>${esc(g)}</h4>` : ''}${groups[g].sort((a, b) => nameOf(a).localeCompare(nameOf(b))).map(r => `<button class="cat ${r.variantOf ? 'variant' : ''}" data-open="${esc(coll)}/${esc(r.id)}" aria-current="${r.id === id}">${esc(nameOf(r))}${S.localIds.has(coll + '/' + r.id) ? '<span class="mark">edit</span>' : ''}${r.deprecated ? ' <span class="where">(old)</span>' : ''}</button>`).join('')}`).join('') || '<p class="hint">Nothing matches.</p>'}</div>`;
   v.innerHTML = `<div class="browse${id ? ' has-detail' : ''}">${left}<div class="detail" id="bdetail"></div></div>`;
-  $('#bdetail').innerHTML = id && S.ctx.get(coll, id) ? (coll === 'hazards' ? detailHTML(coll, id) : detailHTML(coll, id).replace('<div class="actions">', lookupsHTML(coll, coll === 'devices' ? S.ctx.resolve(id) : S.ctx.get(coll, id)) + '<div class="actions">')) : `<h2>${esc(COLL_LABEL[coll])}</h2><p class="sub-h">Pick one on the left. Everything here can be corrected: use “Suggest an edit” and it goes to the hub for review when you’re next online.</p>`;
+  $('#bdetail').innerHTML = id && S.ctx.get(coll, id) ? (coll === 'hazards' ? detailHTML(coll, id) : detailHTML(coll, id).replace('<div class="actions">', () => lookupsHTML(coll, coll === 'devices' ? S.ctx.resolve(id) : S.ctx.get(coll, id)) + '<div class="actions">')) : `<h2>${esc(COLL_LABEL[coll])}</h2><p class="sub-h">Pick one on the left. Everything here can be corrected: use “Suggest an edit” and it goes to the hub for review when you’re next online.</p>`;
 }
 // What a device is made of, heaviest first: where the copper, aluminium and circuit boards are.
 const MATERIALS = { copper: 'Copper', aluminium: 'Aluminium', steel: 'Steel', other_metal: 'Other metals', plastic: 'Plastic', glass: 'Glass', boards: 'Circuit boards', battery: 'Battery', other: 'Other' };
@@ -825,8 +836,11 @@ async function importFile(file) {
     const trusted = cp && [...TRUST.map(k => k.key), ...Object.values(S.settings.hubKeys || {})].includes(cp.key) && await SDG.changes.verifyCheckpoint(cp);
     const ds = SDG.util.clone(S.base.dataset);
     let fits = !!trusted;
-    try { const list = parsed.ledger.filter(e => e && e.seq > S.base.seq); list.forEach(Sync.checkEntry); SDG.changes.applyLedger(ds, list); } catch (e) { fits = false; }
-    if (fits && cp.hash === await SDG.changes.datasetHash(ds)) { S.base = Object.assign({}, S.base, { dataset: ds, seq: cp.seq, hash: cp.hash, source: 'file: ' + file.name }); msgs.push(`${parsed.ledger.length} accepted changes applied`); }
+    // As in a sync: the checkpoint must vouch for exactly the last change applied, and be newer than
+    // what this device has, so an old checkpoint can't carry an old record back in.
+    let last = S.base.seq;
+    try { const list = parsed.ledger.filter(e => e && e.seq > S.base.seq).sort((a, b) => a.seq - b.seq); list.forEach(Sync.checkEntry); SDG.changes.applyLedger(ds, list); if (list.length) last = list[list.length - 1].seq; } catch (e) { fits = false; }
+    if (fits && cp.seq === last && cp.seq > S.base.seq && cp.hash === await SDG.changes.datasetHash(ds)) { S.base = Object.assign({}, S.base, { dataset: ds, seq: cp.seq, hash: cp.hash, source: 'file: ' + file.name }); msgs.push(`${parsed.ledger.length} accepted changes applied`); }
     else msgs.push('The changes in the file couldn’t be verified, so they weren’t applied');
   }
   for (const k of ['proposals', 'comments', 'observations', 'votes']) {
@@ -856,13 +870,24 @@ async function renderReview(id) {
     const left = `<div class="catlist"><h4>Waiting (${esc(all.length)})</h4>${all.map(p => `<button class="cat" data-review="${esc(p.id)}" aria-current="${p.id === id}">${esc(p.op === 'delete' ? 'Delete ' : '')}${esc(p.coll)}/${esc(p.rid)}${p.source === 'ai' ? ' <span class="mark">AI</span>' : ''}${p.stale ? ' <span class="mark">stale</span>' : ''}<br><span class="where">${esc((p.author && p.author.name) || 'anonymous')}</span></button>`).join('') || '<p class="hint">Nothing waiting.</p>'}</div>`;
     let right = '<h2>Review</h2><p class="sub-h">Pick a proposal. Check it against the data guide: honest, specific, safe, original words.</p>';
     if (id) {
+      // What is shown is worked out here, not taken from the hub: the proposal as its author
+      // signed it (checked), compared with this device's own copy of the record. Accept and
+      // Reject sign a hash of exactly this proposal, and the hub refuses any other.
       const d = await Sync.api('/api/v1/proposals/' + encodeURIComponent(id));
-      const p = d.proposal;
-      right = `<h2>${esc(p.op === 'delete' ? 'Delete' : d.current ? 'Change' : 'New')} ${esc(p.coll)}/${esc(p.rid)}</h2><p class="sub-h">By ${esc((p.author && p.author.name) || 'anonymous')}${p.source === 'ai' ? ' · <b>written by an AI tool</b>' : ''} · ${esc(String(p.created).slice(0, 16).replace('T', ' '))}</p>
-      <p><b>Why:</b> ${esc(p.reason || '(no reason given)')}</p>${d.stale ? '<p class="err">The record changed after this was proposed. Accepting replaces the newer version.</p>' : ''}${(d.problems || []).length ? `<p class="err">${d.problems.map(x => `${esc(x.coll)}/${esc(x.id)} ${esc(x.path)} ${esc(x.msg)}`).join('<br>')}</p>` : ''}
-      <div class="diff">${(d.diff || []).map(x => `<div class="p">${esc(x.path)}</div>${x.before !== undefined ? `<div class="m">- ${esc(JSON.stringify(x.before))}</div>` : ''}${x.after !== undefined ? `<div class="a">+ ${esc(JSON.stringify(x.after))}</div>` : ''}`).join('') || '<p class="hint">No field changes.</p>'}</div>
+      const p = SDG.changes.signedProposal(d.proposal);
+      if (p.id !== id || !SDG.util.has(COLL_LABEL, p.coll)) throw new Error('The hub sent a proposal that doesn’t check out');
+      const sigOk = p.sig ? await SDG.sign.verify(p) : null;
+      const mine = (Array.isArray(S.base.dataset[p.coll]) ? S.base.dataset[p.coll] : []).find(r => r && r.id === p.rid) || null;
+      const diff = SDG.util.diff(mine || {}, p.op === 'put' ? p.data : {});
+      const behind = !SDG.util.deepEqual(mine, d.current || null);
+      const hash = await SDG.changes.proposalHash(p);
+      const blocked = (d.problems || []).length || sigOk === false;
+      right = `<h2>${esc(p.op === 'delete' ? 'Delete' : mine ? 'Change' : 'New')} ${esc(p.coll)}/${esc(p.rid)}</h2><p class="sub-h">By ${esc((p.author && p.author.name) || 'anonymous')}${sigOk ? ' (signature checks out)' : sigOk === null ? ' (unsigned)' : ''}${p.source === 'ai' ? ' · <b>written by an AI tool</b>' : ''} · ${esc(String(p.created).slice(0, 16).replace('T', ' '))}</p>
+      ${sigOk === false ? '<p class="err">This proposal’s signature doesn’t check out: it was changed after its author signed it. Don’t accept it.</p>' : ''}
+      <p><b>Why:</b> ${esc(p.reason || '(no reason given)')}</p>${behind ? `<p class="hint">The changes below are against this device’s copy of the record (data version ${esc(S.base.seq)}), which isn’t the hub’s latest. Sync, then review.</p>` : ''}${d.stale ? '<p class="err">The record changed after this was proposed. Accepting replaces the newer version.</p>' : ''}${(d.problems || []).length ? `<p class="err">${d.problems.map(x => `${esc(x.coll)}/${esc(x.id)} ${esc(x.path)} ${esc(x.msg)}`).join('<br>')}</p>` : ''}
+      <div class="diff">${diff.map(x => `<div class="p">${esc(x.path)}</div>${x.before !== undefined ? `<div class="m">- ${esc(JSON.stringify(x.before))}</div>` : ''}${x.after !== undefined ? `<div class="a">+ ${esc(JSON.stringify(x.after))}</div>` : ''}`).join('') || '<p class="hint">No field changes.</p>'}</div>
       <div class="field"><label for="rnote">Note to the contributor</label><input id="rnote" maxlength="2000"></div>
-      <div class="actions"><button class="btn ok" data-decide="accept" data-pid="${esc(p.id)}"${(d.problems || []).length ? ' disabled' : ''}>Accept</button><button class="btn danger" data-decide="reject" data-pid="${esc(p.id)}">Reject</button></div>`;
+      <div class="actions"><button class="btn ok" data-decide="accept" data-pid="${esc(p.id)}" data-hash="${esc(hash)}"${blocked ? ' disabled' : ''}>Accept</button><button class="btn danger" data-decide="reject" data-pid="${esc(p.id)}" data-hash="${esc(hash)}">Reject</button></div>`;
     }
     v.innerHTML = `<div class="browse${id ? ' has-detail' : ''}">${left}<div class="detail">${right}</div></div>`;
   } catch (e) { v.innerHTML = `<div class="form"><p class="err">${esc(e.message)}</p></div>`; }
@@ -872,8 +897,10 @@ async function renderReview(id) {
 const VIEWS = ['scrap', 'map', 'plan', 'guides', 'ref', 'browse', 'contribute', 'sync', 'review', 'more', 'simple'];
 // On a phone these sit under More; its button shows as current while one is open.
 const UNDER_MORE = ['browse', 'contribute', 'sync', 'review', 'more'];
+// A link's address is anyone's text: a bad escape like %E0 reads as written instead of stopping the app.
+function decodePart(s) { try { return decodeURIComponent(s); } catch (e) { return s; } }
 function route() {
-  const parts = (location.hash || '').slice(1).split('/').map(decodeURIComponent);
+  const parts = (location.hash || '').slice(1).split('/').map(decodePart);
   let v = parts[0];
   document.body.classList.toggle('simple', !!S.settings.simple);
   $('#modebtn').textContent = S.settings.simple ? 'Full app' : 'Simple';
@@ -929,7 +956,7 @@ function jumpTo(slug) {
   if (h) h.scrollIntoView();
   return !!h;
 }
-const hashPart = n => decodeURIComponent((location.hash || '').slice(1).split('/')[n] || '');
+const hashPart = n => decodePart((location.hash || '').slice(1).split('/')[n] || '');
 // Following a link closes any open card, such as a hazard card with links to guides.
 window.addEventListener('hashchange', () => { closeModal(); route(); if (!(S.view === 'ref' && jumpTo(hashPart(2)))) window.scrollTo({ top: 0 }); });
 document.querySelector('.tabs').addEventListener('click', e => { const b = e.target.closest('[data-tab]'); if (b) location.hash = b.dataset.tab; });
@@ -941,13 +968,20 @@ async function setSimple(on) {
 }
 $('#modebtn').addEventListener('click', () => setSimple(!S.settings.simple));
 
+// Versions compare part by part as numbers (4.10.0 is newer than 4.9.2). Only a higher version is
+// offered: an older signed build is still signed, and must not be a way to undo a fix.
+function newerVersion(a, b) {
+  const x = String(a).split('.').map(Number), y = String(b).split('.').map(Number);
+  for (let i = 0; i < 3; i++) if ((x[i] || 0) !== (y[i] || 0)) return (x[i] || 0) > (y[i] || 0);
+  return false;
+}
 // A newer app on the hub: one tap to update, one tap to ignore that version for good. Offered only
 // when a maintainer key (TRUST) signed that build (Sync checks, S.hub.appOk), and the download
 // must match the signed sha256 before it is saved or loaded.
 function updateBanner() {
   const bar = $('#updatebar');
   const a = S.hub.info && S.hub.info.app;
-  const show = !!(a && a.id && S.hub.appOk === a.id && a.id !== BUILD.id && a.date >= BUILD.date && S.settings.skipApp !== a.id && !S.hideApp);
+  const show = !!(a && a.id && S.hub.appOk === a.id && a.id !== BUILD.id && newerVersion(a.version, BUILD.version) && S.settings.skipApp !== a.id && !S.hideApp);
   bar.hidden = !show;
   if (show) bar.innerHTML = `<span>A newer version of the app (${esc(a.version)}, ${esc(a.date)}) is on the hub.</span><button class="btn small ok" id="appupdate">Update</button><button class="btn small ghost" id="appskip">Ignore this version</button><button class="btn small ghost" id="apphide">Not now</button>`;
 }
@@ -1103,8 +1137,9 @@ document.addEventListener('click', async e => {
   const dec = t.closest('[data-decide]');
   if (dec) {
     if (!S.identity) return toast('Make or restore your key first');
+    if (!(S.settings.hubKeys || {})[S.settings.hubUrl]) return toast('Sync with this hub first');
     try {
-      const r = await Sync.api(`/api/v1/proposals/${encodeURIComponent(dec.dataset.pid)}/review`, { body: await SDG.sign.sign({ action: 'review', proposal: dec.dataset.pid, decision: dec.dataset.decide, note: $('#rnote').value.trim(), created: SDG.util.now() }, S.identity) });
+      const r = await Sync.api(`/api/v1/proposals/${encodeURIComponent(dec.dataset.pid)}/review`, { body: await SDG.sign.sign({ action: 'review', proposal: dec.dataset.pid, hash: dec.dataset.hash, hub: (S.settings.hubKeys || {})[S.settings.hubUrl], decision: dec.dataset.decide, note: $('#rnote').value.trim(), created: SDG.util.now() }, S.identity) });
       toast(`${r.status}${r.seq ? ' as change ' + r.seq : ''}`);
       await Sync.run(false);
       location.hash = 'review';
@@ -1139,7 +1174,13 @@ document.addEventListener('input', e => {
   // ?simple=1 or ?simple=0 in the address sets the mode, e.g. for a kiosk or a shared link.
   const sp = new URLSearchParams(location.search).get('simple');
   if (sp != null) { S.settings.simple = sp !== '0'; await save('settings'); }
-  rebuild();
+  // Stored data that no longer opens (damaged, or a bad release) must not lock the app: fall back
+  // to the data built into this file, which a sync then brings up to date.
+  try { rebuild(); } catch (e) {
+    S.base = builtIn(); await save('base');
+    try { rebuild(); } catch (x) { S.edits = []; rebuild(); }
+    setTimeout(() => toast('The stored data couldn’t be opened, so the app went back to its built-in data. Sync to update it.'), 500);
+  }
   $('#subs').checked = !!S.settings.subs;
   $('#months').value = S.settings.months == null ? '' : S.settings.months;
   $('#maxkg').value = S.settings.maxKg == null ? '' : S.settings.maxKg;
