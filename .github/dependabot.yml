@@ -1,0 +1,20 @@
+# Dependabot proposes new releases of the GitHub Actions in .github/workflows/ and of the base
+# image in deploy/Dockerfile, once a week, as pull requests. Everything is pinned to a commit hash
+# or digest, so nothing changes until one is reviewed and merged.
+version: 2
+updates:
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: weekly
+    groups:
+      actions:
+        patterns: ["*"]
+  - package-ecosystem: docker
+    directory: /deploy
+    schedule:
+      interval: weekly
+    ignore:
+      # A new Node major is a deliberate change, made by hand, not a weekly bump.
+      - dependency-name: node
+        update-types: ["version-update:semver-major"]

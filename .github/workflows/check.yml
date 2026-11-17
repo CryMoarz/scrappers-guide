@@ -1,6 +1,7 @@
 # Every push and pull request: every record valid, every reference resolves, the committed app
 # is the signed release, every test passes, on each Node version people run it with (20 has no
-# built-in SQLite, so it tests the file store).
+# built-in SQLite, so it tests the file store). Actions are pinned to full commit hashes, with the
+# release in a comment, so a moved tag can't change what runs; Dependabot proposes new releases.
 name: Check
 on:
   push:
@@ -15,10 +16,13 @@ jobs:
       matrix:
         node: [20, 22, 24, 26]
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
         with:
           node-version: ${{ matrix.node }}
+          package-manager-cache: false
       - run: node tools/validate.js
       # The committed app must stay the signed release that hubs serve and the image ships (on a
       # tag, this version's, built from this code). Before anything rebuilds it.
