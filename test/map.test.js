@@ -11,7 +11,7 @@ const SDG = require('../core');
 const F = require('../lib/fsdata');
 const P = require('../server/pmtiles');
 const M = require('../server/mvt');
-const { createMap } = require('../server/map');
+const { createMap, plan, MAX_TILES, SEARCHES, WAITING } = require('../server/map');
 const config = require('../server/config');
 const { createHub } = require('../server/hub');
 
@@ -261,6 +261,59 @@ test('PMTiles: directories are kept up to a number of entries, so huge ones can�
   for (const { z, x, y } of [...tiles, tiles[0]]) assert.deepEqual([...await a.tile(z, x, y)], [1]);
   assert.equal(asked.filter(o => o === leafOff).length, 2, 'the first leaf made way for the third, and was read again');
   assert.equal(asked.filter(o => o === leafOff + leaves[0].length).length, 1, 'the second stayed');
+});
+
+test('map: a search reads at most MAX_TILES tiles, the same ones as before in the south', () => {
+  const full = { minzoom: 0, maxzoom: 15 };
+  const count = rings => rings.reduce((n, r) => n + r.tiles.length, 0);
+  const ottawa = plan(full, 45.42, -75.69, 50);
+  assert.deepEqual(ottawa.map(r => [r.z, r.inner, r.outer]), [[15, 0, 3], [14, 3, 10], [13, 10, 25], [12, 25, 50]]);
+  assert.equal(count(ottawa), 650, 'Ottawa reads every ring at full detail');
+  assert.equal(count(plan(full, 45.42, -75.69, 2)), 30);
+  // Tiles shrink towards the poles: 50 km at 83.1° once read 18,917 tiles.
+  for (const lat of [60, 70, 83.1, 85, -85]) {
+    const rings = plan(full, lat, -75, 50);
+    assert.ok(count(rings) <= MAX_TILES, `${count(rings)} tiles at ${lat}°`);
+    assert.ok(rings.every((r, i) => r.z <= [15, 14, 13, 12][i]), 'only ever lower');
+  }
+  assert.deepEqual(plan(full, 70, -100, 50).map(r => r.z), [15, 13, 12, 11], 'every shop close in, less detail further out');
+  // A map with no lower zoom to fall back on is cut off at MAX_TILES, nearest ring first.
+  const flat = plan({ minzoom: 15, maxzoom: 15 }, 83.1, -75, 50);
+  assert.equal(count(flat), MAX_TILES);
+  assert.equal(flat[0].tiles.length, MAX_TILES);
+});
+
+test('map: place searches take turns across the hub, and a failed one frees its turn', { timeout: 30000 }, async () => {
+  const { file } = sample();
+  const ctx = SDG.db.open(F.plain(F.load()));
+  const map = createMap({ cfg: { map: { pmtiles: [file] } } });
+  const [a] = await map.sources();
+  // Every place counts as covered and each tile read takes a moment, so searches overlap.
+  a.covers = () => true;
+  const tile = a.tile;
+  let inFlight = 0, most = 0, reads = 0, fail = false;
+  a.tile = async (...zxy) => {
+    inFlight++; reads++; most = Math.max(most, inFlight);
+    try { await new Promise(ok => setTimeout(ok, 5)); if (fail) throw new Error('unreadable tile'); return await tile(...zxy); } finally { inFlight--; }
+  };
+  const at = i => ({ lat: -60 + i * 3, lon: -170 + i * 10, km: 1 });
+  const all = await Promise.allSettled(Array.from({ length: SEARCHES + WAITING + 5 }, (_, i) => map.places(ctx, at(i))));
+  const busy = all.filter(r => r.status === 'rejected');
+  assert.equal(busy.length, 5, 'past the line, the map is busy');
+  assert.ok(busy.every(r => r.reason.status === 503 && /busy/.test(r.reason.message)));
+  assert.ok(all.slice(0, SEARCHES + WAITING).every(r => r.status === 'fulfilled'));
+  assert.ok(most <= SEARCHES * 8, `${most} tiles read at once`);
+  // A search whose tiles can't be read fails once the reads under way are done, and starts no more.
+  fail = true;
+  for (let i = 0; i < SEARCHES + 1; i++) {
+    reads = 0;
+    await assert.rejects(map.places(ctx, Object.assign(at(30 + i), { km: 3 })), /unreadable tile/);
+    assert.ok(reads <= 8, `${reads} tiles tried`);
+    assert.equal(inFlight, 0);
+  }
+  fail = false;
+  const after = await Promise.all(Array.from({ length: SEARCHES + 1 }, (_, i) => map.places(ctx, at(40 + i))));
+  assert.equal(after.length, SEARCHES + 1, 'failed searches gave their turns back');
 });
 
 test('hub: a hostile map answers an error for its tiles and places, and the hub stays up', { timeout: 30000 }, async (t) => {

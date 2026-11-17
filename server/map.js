@@ -4,6 +4,7 @@
 // value (shop=hardware is "hardware"), so a building type's `osm` tags are all the matching needs.
 const P = require('./pmtiles');
 const M = require('./mvt');
+const { HttpError } = require('./http');
 const SDG = require('../core');
 
 const PLACE_ZOOM = 15;
@@ -12,6 +13,13 @@ const MAX_KM = 50;
 // that still hold the big places (schools, industrial areas, malls, hospitals, farms), so a 50 km
 // search reads a few hundred tiles instead of thousands.
 const RINGS = [[15, 3], [14, 10], [13, 25], [12, 50]];
+// A search reads at most this many tiles (a 50 km search around Ottawa reads 650, so it's well
+// under the 1500 tiles kept). Tiles shrink towards the poles: up north, the ring that would read
+// the most tiles is read a zoom level lower, with bigger tiles that keep the bigger places.
+const MAX_TILES = 1000;
+// Place searches across the hub take turns: two at once, a few more wait, and past that the map
+// is busy. However many people search, only two searches' tiles are being read at any time.
+const SEARCHES = 2, WAITING = 16;
 // Street furniture comes by the hundred: only the nearest few of each kind are listed.
 const DENSE = new Set(['street_lamp', 'traffic_signals', 'billboard']);
 // Homes are everywhere: the nearest one stands for all of them.
@@ -27,11 +35,15 @@ function lru(max) {
   const m = new Map();
   return { get: k => { if (!m.has(k)) return undefined; const v = m.get(k); m.delete(k); m.set(k, v); return v; }, set: (k, v) => { m.delete(k); m.set(k, v); if (m.size > max) m.delete(m.keys().next().value); return v; } };
 }
-// Runs fns with at most n at a time, so a screen of tiles doesn't hit NOMAD all at once.
+// Runs fns with at most n at a time, so a screen of tiles doesn't hit NOMAD all at once. After a
+// failure no more start, and the error comes once the ones running have finished.
 async function pool(fns, n) {
   const out = new Array(fns.length);
-  let next = 0;
-  await Promise.all(Array.from({ length: Math.min(n, fns.length) }, async () => { while (next < fns.length) { const i = next++; out[i] = await fns[i](); } }));
+  let next = 0, err = null;
+  await Promise.all(Array.from({ length: Math.min(n, fns.length) }, async () => {
+    while (next < fns.length) { const i = next++; try { out[i] = await fns[i](); } catch (e) { err = err || e; next = fns.length; } }
+  }));
+  if (err) throw err;
   return out;
 }
 function distKm(lat1, lon1, lat2, lon2) {
@@ -39,6 +51,46 @@ function distKm(lat1, lon1, lat2, lon2) {
   return Math.sqrt(x * x + y * y) * 6371;
 }
 const bearing = (lat1, lon1, lat2, lon2) => DIRS[Math.round(((Math.atan2((lon2 - lon1) * Math.cos((lat1 * Math.PI) / 180), lat2 - lat1) * 180) / Math.PI + 360) % 360 / 45) % 8];
+// The tiles at zoom z between two distances from a point, less those wholly inside the inner one.
+function ringTiles(lat, lon, z, inner, outer) {
+  const dLat = outer / 111.32, dLon = outer / (111.32 * Math.cos((lat * Math.PI) / 180));
+  const x0 = Math.floor(P.lon2x(lon - dLon, z)), x1 = Math.floor(P.lon2x(lon + dLon, z));
+  const y0 = Math.floor(P.lat2y(lat + dLat, z)), y1 = Math.floor(P.lat2y(lat - dLat, z));
+  const lons = [], lats = [], out = [];
+  for (let x = x0; x <= x1 + 1; x++) lons.push(P.x2lon(x, z));
+  for (let y = y0; y <= y1 + 1; y++) lats.push(P.y2lat(y, z));
+  for (let x = x0; x <= x1; x++) for (let y = y0; y <= y1; y++) {
+    const cx = x - x0, cy = y - y0;
+    const far = Math.max(distKm(lat, lon, lats[cy], lons[cx]), distKm(lat, lon, lats[cy], lons[cx + 1]), distKm(lat, lon, lats[cy + 1], lons[cx]), distKm(lat, lon, lats[cy + 1], lons[cx + 1]));
+    if (far >= inner) out.push([x, y]);
+  }
+  return out;
+}
+// The rings a search reads, each with its zoom and tiles, counted before any is read: while there
+// are more than MAX_TILES, the ring with the most goes a zoom level lower (on a tie, the outer one).
+function plan(a, lat, lon, km) {
+  const rings = [];
+  let inner = 0;
+  for (const [rz, upto] of RINGS) {
+    const outer = Math.min(km, upto);
+    if (outer <= inner) break;
+    rings.push({ z: Math.min(rz, a.maxzoom), inner, outer, tiles: null });
+    inner = outer;
+  }
+  for (;;) {
+    rings.forEach(r => { r.tiles = r.tiles || ringTiles(lat, lon, r.z, r.inner, r.outer); });
+    if (rings.reduce((n, r) => n + r.tiles.length, 0) <= MAX_TILES) return rings;
+    const r = rings.filter(r => r.z > a.minzoom).reduce((m, r) => (!m || r.tiles.length >= m.tiles.length ? r : m), null);
+    if (!r) {
+      // A map with no lower zoom: the nearest rings, cut off at MAX_TILES.
+      let room = MAX_TILES;
+      rings.forEach(r => { r.tiles = r.tiles.slice(0, room); room -= r.tiles.length; });
+      return rings;
+    }
+    r.z--;
+    r.tiles = null;
+  }
+}
 function centroid(ring) {
   let x = 0, y = 0;
   const n = ring.length / 2;
@@ -173,23 +225,21 @@ function createMap(hub) {
     })().catch(e => { placeTiles.set(key, undefined); throw e; }));
   }
 
+  // Searches take turns (SEARCHES at once, WAITING in line), reading tiles and ranking what they
+  // find; the next in line gets the turn.
+  let running = 0;
+  const line = [];
+  async function inTurn(fn) {
+    if (running < SEARCHES) running++;
+    else if (line.length < WAITING) await new Promise(ok => line.push(ok));
+    else throw new HttpError(503, 'The map is busy with other searches; try again in a moment');
+    try { return await fn(); } finally { const next = line.shift(); if (next) next(); else running--; }
+  }
+
   async function nearby(a, lat, lon, km, kinds) {
     const jobs = [];
-    let inner = 0;
-    for (const [rz, upto] of RINGS) {
-      const z = Math.min(rz, a.maxzoom), outer = Math.min(km, upto);
-      if (outer <= inner) break;
-      const dLat = outer / 111.32, dLon = outer / (111.32 * Math.cos((lat * Math.PI) / 180));
-      const x0 = Math.floor(P.lon2x(lon - dLon, z)), x1 = Math.floor(P.lon2x(lon + dLon, z));
-      const y0 = Math.floor(P.lat2y(lat + dLat, z)), y1 = Math.floor(P.lat2y(lat - dLat, z));
-      const ring = [inner, outer];
-      for (let x = x0; x <= x1; x++) for (let y = y0; y <= y1; y++) {
-        // A tile wholly inside the ring before this one adds nothing.
-        const far = Math.max(...[[x, y], [x + 1, y], [x, y + 1], [x + 1, y + 1]].map(([cx, cy]) => distKm(lat, lon, P.y2lat(cy, z), P.x2lon(cx, z))));
-        if (far < inner) continue;
-        jobs.push(() => tilePlaces(a, z, x, y, kinds).then(list => list.filter(p => { const d = distKm(lat, lon, p.lat, p.lon); return d > ring[0] && d <= ring[1]; })));
-      }
-      inner = outer;
+    for (const r of plan(a, lat, lon, km)) {
+      for (const [x, y] of r.tiles) jobs.push(() => tilePlaces(a, r.z, x, y, kinds).then(list => list.filter(p => { const d = distKm(lat, lon, p.lat, p.lon); return d > r.inner && d <= r.outer; })));
     }
     const seen = new Set(), out = [];
     for (const p of (await pool(jobs, 8)).flat()) {
@@ -205,7 +255,8 @@ function createMap(hub) {
   // Places near a point ranked for a search: the building type's score for what was asked
   // (how likely it holds the best devices, how much is probably left), lowered with distance.
   // With no search, every place a building type matches, nearest first.
-  async function places(ctx, o) {
+  const places = (ctx, o) => inTurn(() => findPlaces(ctx, o));
+  async function findPlaces(ctx, o) {
     const lat = +o.lat, lon = +o.lon, km = Math.min(MAX_KM, Math.max(0.1, +o.km || 2));
     const a = await covering(lon, lat);
     if (!a) return { here: { lat, lon }, km, places: [], note: 'No offline map covers this place.' };
@@ -231,6 +282,8 @@ function createMap(hub) {
         const r = SDG.search.search(ctx, '', Object.assign({}, o.opts, { sel: new Map([[fn, { via: 'direct', on: true }]]) }));
         const t = new Map(r.ranked.blds.filter(b => !HOME_TYPES.has(b.bt.id)).map(b => [b.bt.id, b]));
         parts[fn] = t.size ? rankPlaces(ctx, near, idx, t, { lat, lon, km, limit: o.perPart || 5, perType: 2 }).list : [];
+        // Ranking 40 part types can take a second: let other requests in between them.
+        await new Promise(ok => setImmediate(ok));
       }
       return { here: { lat, lon }, km, map: a.where.split('/').pop(), parts, detail };
     }
@@ -288,4 +341,4 @@ function createMap(hub) {
   return { info, places, renderTile, sources, close };
 }
 
-module.exports = { createMap, kindIndex, distKm };
+module.exports = { createMap, kindIndex, distKm, plan, MAX_TILES, SEARCHES, WAITING };
