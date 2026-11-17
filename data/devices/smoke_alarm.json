@@ -19,6 +19,7 @@
     {"b":"hotel","l":5},
     {"b":"office","l":4},
     {"b":"school","l":4},
-    {"b":"church","l":4}
+    {"b":"church","l":4},
+    {"b":"childcare","l":5}
   ]
 }

@@ -37,7 +37,8 @@
     {"b":"hotel","l":2},
     {"b":"construction","l":2},
     {"b":"salon","l":2},
-    {"b":"shop_small","l":2}
+    {"b":"shop_small","l":2},
+    {"b":"childcare","l":2}
   ],
   "notes": "At 1.5 kW a space heater empties a small battery bank in minutes; insulating the room does far more.",
   "sources": [

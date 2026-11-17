@@ -24,6 +24,7 @@
     {"b":"restaurant","l":3},
     {"b":"office","l":2},
     {"b":"church","l":2},
-    {"b":"appliance","l":4}
+    {"b":"appliance","l":4},
+    {"b":"childcare","l":4}
   ]
 }

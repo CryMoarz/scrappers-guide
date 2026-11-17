@@ -19,6 +19,7 @@
     {"b":"house","l":4},
     {"b":"garage_res","l":4},
     {"b":"toy_store","l":5},
-    {"b":"department","l":5}
+    {"b":"department","l":5},
+    {"b":"childcare","l":3}
   ]
 }

@@ -39,7 +39,8 @@
     {"b":"nursing_home","l":3},
     {"b":"department","l":3},
     {"b":"hotel","l":2},
-    {"b":"self_storage","l":2}
+    {"b":"self_storage","l":2},
+    {"b":"childcare","l":4}
   ],
   "notes": "E-readers run for weeks on one charge and hold thousands of books: load them with repair manuals and medical references while you still can. Cellular tablets also have a GPS receiver; most Wi-Fi-only ones do not.",
   "sources": [

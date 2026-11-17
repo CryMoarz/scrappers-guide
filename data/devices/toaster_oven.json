@@ -34,7 +34,8 @@
     {"b":"school","l":2},
     {"b":"nursing_home","l":2},
     {"b":"campground","l":2},
-    {"b":"self_storage","l":2}
+    {"b":"self_storage","l":2},
+    {"b":"childcare","l":3}
   ],
   "sources": [
     {"title":"Open Repair Alliance, Open Repair Data v0.3 (community repair events, 2012 to July 2026; CC BY-SA 4.0): 377 repairs recorded as Toaster oven / mini oven (subset)","url":"https://github.com/openrepair/data"}

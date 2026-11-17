@@ -37,7 +37,8 @@
     {"b":"department","l":3},
     {"b":"self_storage","l":2},
     {"b":"salon","l":2},
-    {"b":"shop_small","l":1}
+    {"b":"shop_small","l":1},
+    {"b":"childcare","l":4}
   ],
   "sources": [
     {"title":"Open Repair Alliance, Open Repair Data v0.3 (community repair events, 2012 to July 2026; CC BY-SA 4.0): 24,651 repairs recorded as Coffee maker","url":"https://github.com/openrepair/data"}

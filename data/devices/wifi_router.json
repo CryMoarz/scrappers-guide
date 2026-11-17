@@ -27,7 +27,8 @@
     {"b":"bank","l":4},
     {"b":"recycling","l":3},
     {"b":"salon","l":2},
-    {"b":"shop_small","l":3}
+    {"b":"shop_small","l":3},
+    {"b":"childcare","l":5}
   ],
   "refs": [
     {"lib":"openwrt","q":"Table of Hardware","note":"Whether a router can run OpenWrt, and how to install it"}

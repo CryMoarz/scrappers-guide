@@ -36,7 +36,8 @@
     {"b":"church","l":3},
     {"b":"hotel","l":3},
     {"b":"supermarket","l":3},
-    {"b":"cinema","l":3}
+    {"b":"cinema","l":3},
+    {"b":"childcare","l":2}
   ],
   "notes": "A working AED saves lives: leave it in its cabinet and check the battery and pad dates. Strip only broken or long-expired units. The spare battery pack is the easy prize."
 }

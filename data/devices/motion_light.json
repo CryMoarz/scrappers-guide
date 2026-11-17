@@ -23,6 +23,7 @@
     {"b":"gas_station","l":3},
     {"b":"school","l":3},
     {"b":"hardware","l":4},
-    {"b":"shop_small","l":2}
+    {"b":"shop_small","l":2},
+    {"b":"childcare","l":2}
   ]
 }

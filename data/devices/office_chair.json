@@ -38,6 +38,7 @@
     {"b":"warehouse","l":3},
     {"b":"car_dealer","l":3},
     {"b":"department","l":3},
-    {"b":"datacenter","l":2}
+    {"b":"datacenter","l":2},
+    {"b":"childcare","l":3}
   ]
 }

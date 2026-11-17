@@ -28,6 +28,7 @@
     {"b":"apartment","l":5},
     {"b":"church","l":4},
     {"b":"supermarket","l":4},
-    {"b":"department","l":5}
+    {"b":"department","l":5},
+    {"b":"childcare","l":3}
   ]
 }

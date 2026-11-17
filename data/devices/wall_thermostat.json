@@ -36,7 +36,8 @@
     {"b":"hardware","l":4},
     {"b":"gym","l":3},
     {"b":"warehouse","l":3},
-    {"b":"self_storage","l":2}
+    {"b":"self_storage","l":2},
+    {"b":"childcare","l":4}
   ],
   "notes": "Old mercury thermostats are worth keeping intact as tilt switches or thermostats; if one breaks, ventilate the room and see the mercury hazard.",
   "sources": [

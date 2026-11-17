@@ -41,6 +41,7 @@
     {"b":"hotel","l":3},
     {"b":"train_station","l":3},
     {"b":"recycling","l":3},
-    {"b":"shop_small","l":3}
+    {"b":"shop_small","l":3},
+    {"b":"childcare","l":4}
   ]
 }

@@ -32,6 +32,7 @@
     {"b":"office","l":2},
     {"b":"school","l":2},
     {"b":"self_storage","l":2},
-    {"b":"salon","l":2}
+    {"b":"salon","l":2},
+    {"b":"childcare","l":4}
   ]
 }

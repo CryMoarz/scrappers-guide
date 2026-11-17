@@ -34,7 +34,8 @@
     {"b":"gym","l":3},
     {"b":"recycling","l":3},
     {"b":"salon","l":2},
-    {"b":"shop_small","l":2}
+    {"b":"shop_small","l":2},
+    {"b":"childcare","l":3}
   ],
   "sources": [
     {"title":"Weight: a 43-inch LED TV (2016) weighed 9.3 kg; 2009-era LCD TVs averaged 20.8 kg (Babbitt et al. 2020, disassembly-based bill of materials data for consumer electronics, CC0)","url":"https://doi.org/10.6084/m9.figshare.11306792"},

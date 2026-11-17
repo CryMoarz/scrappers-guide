@@ -33,6 +33,7 @@
     {"b":"hardware","l":5},
     {"b":"restaurant","l":4},
     {"b":"salon","l":3},
-    {"b":"shop_small","l":4}
+    {"b":"shop_small","l":4},
+    {"b":"childcare","l":4}
   ]
 }

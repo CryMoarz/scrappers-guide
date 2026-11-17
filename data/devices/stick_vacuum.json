@@ -24,6 +24,7 @@
     {"b":"office","l":2},
     {"b":"hotel","l":2},
     {"b":"department","l":3},
-    {"b":"electronics","l":3}
+    {"b":"electronics","l":3},
+    {"b":"childcare","l":3}
   ]
 }

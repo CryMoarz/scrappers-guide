@@ -22,7 +22,8 @@
     {"b":"bank","l":5},
     {"b":"house","l":3},
     {"b":"hospital","l":3},
-    {"b":"shop_small","l":1}
+    {"b":"shop_small","l":1},
+    {"b":"childcare","l":2}
   ],
   "sources": [
     {"title":"Open Repair Alliance, Open Repair Data v0.3 (community repair events, 2012 to July 2026; CC BY-SA 4.0): 2,329 repairs recorded as Paper shredder","url":"https://github.com/openrepair/data"}

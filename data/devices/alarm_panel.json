@@ -29,6 +29,7 @@
     {"b":"hardware","l":4},
     {"b":"church","l":3},
     {"b":"salon","l":3},
-    {"b":"shop_small","l":4}
+    {"b":"shop_small","l":4},
+    {"b":"childcare","l":3}
   ]
 }

@@ -33,7 +33,8 @@
     {"b":"church","l":3},
     {"b":"appliance","l":4},
     {"b":"department","l":3},
-    {"b":"recycling","l":3}
+    {"b":"recycling","l":3},
+    {"b":"childcare","l":4}
   ],
   "notes": "Pick a variant. Most units are transformer type; some newer ones use an inverter board instead."
 }

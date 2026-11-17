@@ -27,6 +27,7 @@
     {"b":"restaurant","l":4},
     {"b":"supermarket","l":4},
     {"b":"salon","l":3},
-    {"b":"shop_small","l":4}
+    {"b":"shop_small","l":4},
+    {"b":"childcare","l":5}
   ]
 }

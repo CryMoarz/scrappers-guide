@@ -1,6 +1,6 @@
 {
   "id": "school",
   "name": "Schools and colleges",
-  "osm": ["amenity=school","amenity=college","amenity=university","amenity=kindergarten","amenity=childcare","amenity=music_school","amenity=language_school","amenity=driving_school","amenity=prep_school"],
+  "osm": ["amenity=school","amenity=college","amenity=university","amenity=music_school","amenity=prep_school"],
   "exposure": 2
 }

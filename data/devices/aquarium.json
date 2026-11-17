@@ -19,6 +19,7 @@
     {"b":"pet_shop","l":5},
     {"b":"school","l":2},
     {"b":"restaurant","l":2},
-    {"b":"office","l":1}
+    {"b":"office","l":1},
+    {"b":"childcare","l":3}
   ]
 }

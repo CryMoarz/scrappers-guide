@@ -43,7 +43,8 @@
     {"b":"self_storage","l":3},
     {"b":"church","l":2},
     {"b":"salon","l":2},
-    {"b":"shop_small","l":2}
+    {"b":"shop_small","l":2},
+    {"b":"childcare","l":3}
   ],
   "notes": "Peltier coolers are inefficient (about 40–60W to cool a small box) but run straight from 12V. Medicine and vaccine fridges in clinics are built for tight temperature control."
 }

@@ -28,6 +28,7 @@
     {"b":"pharmacy","l":4},
     {"b":"school","l":4},
     {"b":"salon","l":2},
-    {"b":"shop_small","l":3}
+    {"b":"shop_small","l":3},
+    {"b":"childcare","l":3}
   ]
 }

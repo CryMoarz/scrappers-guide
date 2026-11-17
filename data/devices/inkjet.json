@@ -32,7 +32,8 @@
     {"b":"electronics","l":4},
     {"b":"recycling","l":4},
     {"b":"church","l":3},
-    {"b":"bank","l":3}
+    {"b":"bank","l":3},
+    {"b":"childcare","l":4}
   ],
   "sources": [
     {"title":"Weight: printer and scanner combos averaged 6.1 kg (Babbitt et al. 2020, disassembly-based bill of materials data for consumer electronics, CC0)","url":"https://doi.org/10.6084/m9.figshare.11306792"},

@@ -27,7 +27,8 @@
     {"b":"house","l":4},
     {"b":"apartment","l":4},
     {"b":"electronics","l":3},
-    {"b":"department","l":3}
+    {"b":"department","l":3},
+    {"b":"childcare","l":2}
   ],
   "sources": [
     {"title":"Open Repair Alliance, Open Repair Data v0.3 (community repair events, 2012 to July 2026; CC BY-SA 4.0): 1,280 repairs recorded as Vacuum (robot vacuum subset)","url":"https://github.com/openrepair/data"}

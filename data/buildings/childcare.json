@@ -1,0 +1,6 @@
+{
+  "id": "childcare",
+  "name": "Daycares and kindergartens",
+  "osm": ["amenity=kindergarten","amenity=childcare"],
+  "exposure": 2
+}

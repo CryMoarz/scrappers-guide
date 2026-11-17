@@ -24,7 +24,8 @@
     {"b":"church","l":4},
     {"b":"hospital","l":3},
     {"b":"salon","l":2},
-    {"b":"shop_small","l":2}
+    {"b":"shop_small","l":2},
+    {"b":"childcare","l":5}
   ],
   "sources": [
     {"title":"Open Repair Alliance, Open Repair Data v0.3 (community repair events, 2012 to July 2026; CC BY-SA 4.0): 34,840 repairs recorded as Vacuum","url":"https://github.com/openrepair/data"}

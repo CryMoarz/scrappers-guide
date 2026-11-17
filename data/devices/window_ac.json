@@ -26,6 +26,7 @@
     {"b":"office","l":2},
     {"b":"school","l":2},
     {"b":"appliance","l":4},
-    {"b":"recycling","l":3}
+    {"b":"recycling","l":3},
+    {"b":"childcare","l":2}
   ]
 }

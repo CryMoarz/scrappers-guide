@@ -35,6 +35,7 @@
     {"b":"nursing_home","l":3},
     {"b":"supermarket","l":3},
     {"b":"warehouse","l":3},
-    {"b":"office","l":2}
+    {"b":"office","l":2},
+    {"b":"childcare","l":4}
   ]
 }

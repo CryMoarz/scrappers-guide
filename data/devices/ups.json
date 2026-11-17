@@ -27,6 +27,7 @@
     {"b":"house","l":2},
     {"b":"electronics","l":3},
     {"b":"pharmacy","l":3},
-    {"b":"shop_small","l":2}
+    {"b":"shop_small","l":2},
+    {"b":"childcare","l":2}
   ]
 }

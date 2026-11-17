@@ -38,6 +38,7 @@
     {"b":"restaurant","l":2},
     {"b":"gym","l":2},
     {"b":"garage_res","l":2},
-    {"b":"campground","l":2}
+    {"b":"campground","l":2},
+    {"b":"childcare","l":2}
   ]
 }

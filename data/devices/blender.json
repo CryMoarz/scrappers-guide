@@ -20,6 +20,7 @@
     {"b":"restaurant","l":4},
     {"b":"hotel","l":3},
     {"b":"church","l":3},
-    {"b":"school","l":3}
+    {"b":"school","l":3},
+    {"b":"childcare","l":3}
   ]
 }

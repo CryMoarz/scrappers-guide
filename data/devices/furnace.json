@@ -27,6 +27,7 @@
     {"b":"school","l":4},
     {"b":"church","l":5},
     {"b":"warehouse","l":3},
-    {"b":"hardware","l":2}
+    {"b":"hardware","l":2},
+    {"b":"childcare","l":3}
   ]
 }

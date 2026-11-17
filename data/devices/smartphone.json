@@ -41,7 +41,8 @@
     {"b":"department","l":3},
     {"b":"convenience","l":3},
     {"b":"supermarket","l":3},
-    {"b":"police","l":2}
+    {"b":"police","l":2},
+    {"b":"childcare","l":3}
   ],
   "notes": "A working phone beats its parts: with offline maps and files it is a GPS, camera, torch, library and voice recorder that charges from any 5V USB source. Drawers of dead phones still hold lithium cells and magnets; check each cell for swelling before charging.",
   "sources": [
