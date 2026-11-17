@@ -2,6 +2,15 @@
 
 Plain notes for people using the guide. The app shows the latest few under "What's new" on its front page. Details for developers are in the commits.
 
+## 4.3.0 (17 November 2026)
+
+- 20 new teardown guides: smartphones, tablets, power banks, phone chargers, flat TVs, Wi-Fi routers, emergency lights, garage door openers, mini fridges, clothes dryers, gas furnaces, range hoods, toaster ovens, space heaters, coffee makers, hair dryers, ceiling fans, corded power tools, petrol mowers and vacuums. Each is written from cited sources and fact-checked against every one, with the safety steps first.
+- Search understands more of how people ask: plurals and "12 volt", typing slips like "batery", a part with a device ("car battery" or "laptop battery" puts that device first), names like "air conditioner", and needs like "heat my house", "shower" or "filter smoke".
+- Searching for a hazard ("asbestos", "capacitor discharge", "lead acid") shows its safety card first.
+- On the map, daycares and kindergartens are their own kind of building instead of counting as schools.
+- Mains-powered appliances now carry the mains electricity hazard and hot ones the burn hazard, with more device fixes found while writing the teardowns (a furnace's igniter, a mower's blade, a vacuum's filter).
+- The refrigerant safety guide and the compressor teardown now agree: never cut an intact loop open; crimp both lines first.
+
 ## 4.2.0 (17 November 2026)
 
 - A website: every device, part type, guide, pinout and hazard as a page you can read or link to, with the app to open or download, at crymoarz.github.io/scrappers-guide.
