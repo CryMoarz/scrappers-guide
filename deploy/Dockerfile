@@ -10,8 +10,9 @@
 #
 # Everything that changes lives in /guide: records in /guide/data, the hub's key and database in
 # /guide/state. A new image brings its newer records, unless this copy has changed on its own.
-# For production, pin the base image by digest.
-FROM node:26-alpine
+# The base image is pinned by digest (Node 26.13.1 on Alpine 3.24), so a rebuild can't get a
+# different image under the same tag; Dependabot proposes the new digest when node:26-alpine moves.
+FROM node:26-alpine@sha256:6bd9ab43c0ec0190ca7b2d193906cb8b7edf6e7f4afa43ddeccd6452710bffb5
 RUN apk add --no-cache su-exec
 
 WORKDIR /app

@@ -1,6 +1,7 @@
 # systemd unit for a Raspberry Pi, a cyberdeck or any small Linux box.
 #   sudo cp deploy/scrappers-guide.service /etc/systemd/system/
-#   (edit User, WorkingDirectory, ExecStart and the environment below)
+#   (edit User, the folder in WorkingDirectory and ReadWritePaths, ExecStart and the environment below)
+#   sudo -u pi mkdir -p /opt/scrappers-guide/state     (as that user: the sandbox can't make it)
 #   sudo systemctl daemon-reload && sudo systemctl enable --now scrappers-guide
 [Unit]
 Description=Scrapper's Digital Guide (hub or node)
@@ -9,6 +10,8 @@ After=network.target
 [Service]
 Type=simple
 User=pi
+# Serial ports belong to this group, for a USB LoRa radio (docs/LORA.md). On Arch it is uucp.
+SupplementaryGroups=dialout
 WorkingDirectory=/opt/scrappers-guide
 ExecStart=/usr/bin/node server/hub.js
 Environment=SDG_HOST=0.0.0.0
@@ -19,6 +22,24 @@ Restart=on-failure
 RestartSec=10
 # Keep writes small and slow on SD cards.
 Nice=5
+
+# Sandbox: the guide reads its own folder but writes only data/ and state/ in it, sees no home
+# folders and no one else's /tmp, and can't change the kernel or start other namespaces. With
+# SDG_GIT_COMMIT=1 git writes .git and reads your git login too: add the .git folder to
+# ReadWritePaths and use ProtectHome=read-only. (No MemoryDenyWriteExecute: Node's JIT needs it.)
+NoNewPrivileges=yes
+ProtectSystem=strict
+ReadWritePaths=/opt/scrappers-guide/data /opt/scrappers-guide/state
+ProtectHome=yes
+PrivateTmp=yes
+ProtectKernelTunables=yes
+ProtectKernelModules=yes
+ProtectKernelLogs=yes
+ProtectControlGroups=yes
+RestrictAddressFamilies=AF_INET AF_INET6 AF_UNIX AF_NETLINK
+RestrictNamespaces=yes
+LockPersonality=yes
+UMask=0077
 
 [Install]
 WantedBy=multi-user.target

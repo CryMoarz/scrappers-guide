@@ -9,8 +9,16 @@ services:
       dockerfile: deploy/Dockerfile
     image: scrappers-guide:local
     restart: unless-stopped
+    # On every network interface, on purpose: a hub is for the phones and laptops around it.
+    # Docker opens it past the host's firewall (ufw); for this machine only: "127.0.0.1:8787:8787".
     ports:
       - "8787:8787"
+    # It starts as root only to hand /guide to the node user and switch to it (see the Dockerfile),
+    # which needs these three capabilities and no others, and it can never gain more. A folder
+    # bind-mounted at /guide must be one root can list (not mode 700).
+    security_opt: [no-new-privileges:true]
+    cap_drop: [ALL]
+    cap_add: [CHOWN, SETUID, SETGID]
     environment:
       SDG_MODE: "hub"                  # hub | node
       # SDG_UPSTREAM: "https://hub.example.org"   # node mode: the hub to sync with

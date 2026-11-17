@@ -1,6 +1,6 @@
 # systemd user service: keeps the guide running on your own machine, next to Project NOMAD.
 # No sudo. It starts when you log in and restarts if it crashes.
-#   (edit WorkingDirectory and the node path in ExecStart below)
+#   (edit the folder in WorkingDirectory and in the sandbox lines, and the node path in ExecStart)
 #   cp deploy/scrappers-guide-user.service ~/.config/systemd/user/scrappers-guide.service
 #   systemctl --user daemon-reload && systemctl --user enable --now scrappers-guide
 # To start it at boot without logging in: loginctl enable-linger
@@ -9,7 +9,7 @@ Description=Scrapper's Digital Guide to the Apocalypse (port 8787)
 
 [Service]
 Type=simple
-WorkingDirectory=/home/you/scrappers-guide
+WorkingDirectory=%h/scrappers-guide
 ExecStart=/usr/bin/node server/hub.js
 # Reachable from phones and other devices on the network, like NOMAD itself.
 Environment=SDG_HOST=0.0.0.0
@@ -19,6 +19,34 @@ Environment=SDG_NOMAD=http://localhost:8080
 Environment=SDG_NOMAD_MARKERS=1
 Restart=on-failure
 RestartSec=10
+
+# Sandbox. The guide runs as you, so without one it could read and change your whole home
+# folder: your keys (a maintainer key too), SSH logins, browser profiles. ProtectHome=tmpfs puts
+# an empty folder over /home instead, BindReadOnlyPaths brings back only the guide's own folder,
+# read-only, and ReadWritePaths lets it write data/ and state/ there. %h is your home folder;
+# use the WorkingDirectory folder in all three, in quotes if it has a space: "%h/my guide".
+# If node lives in your home folder (nvm, ~/.local) or you give it offline maps from there, add
+# those folders to BindReadOnlyPaths too, e.g. BindReadOnlyPaths=%h/scrappers-guide %h/.nvm
+# The + runs mkdir outside the sandbox, so state/ is there on the first start.
+# For a USB LoRa radio, add yourself to the dialout group (docs/LORA.md).
+# If it won't start (status 226/NAMESPACE), your system doesn't let user services sandbox
+# themselves: delete the lines from ExecStartPre to UMask. (No MemoryDenyWriteExecute: Node's
+# JIT needs it.)
+ExecStartPre=+/bin/mkdir -p state
+NoNewPrivileges=yes
+ProtectSystem=strict
+ProtectHome=tmpfs
+BindReadOnlyPaths=%h/scrappers-guide
+ReadWritePaths=%h/scrappers-guide/data %h/scrappers-guide/state
+PrivateTmp=yes
+ProtectKernelTunables=yes
+ProtectKernelModules=yes
+ProtectKernelLogs=yes
+ProtectControlGroups=yes
+RestrictAddressFamilies=AF_INET AF_INET6 AF_UNIX AF_NETLINK
+RestrictNamespaces=yes
+LockPersonality=yes
+UMask=0077
 
 [Install]
 WantedBy=default.target

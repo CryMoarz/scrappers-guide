@@ -1,3 +1,6 @@
+# Kept out of the image build. The Dockerfile copies only what it names, but the build context
+# must never carry a key, a hub's state or a password, at any depth (a bare *.key or state only
+# matches at the top).
 state
 dist
 test
@@ -7,3 +10,13 @@ test
 node_modules
 research
 app/src
+**/*.key
+**/state
+**/*.sqlite*
+**/hub-identity.json
+**/control-token
+**/scrappers-guide-key-*.json
+**/.env*
+HANDOFF.md
+.claude
+.github
