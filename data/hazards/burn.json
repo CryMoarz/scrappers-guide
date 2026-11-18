@@ -7,13 +7,16 @@
   "do": ["Let things cool before handling them","Hold the back of your hand near a part, without touching, to feel for heat","Put hot tools on a stand, never on the bench or the ground","Hold small parts with pliers while cutting, grinding or soldering","Keep a container of clean water near hot work"],
   "dont": ["Don't grab metal you have just cut, ground, drilled or welded","Don't touch elements, bulbs or exhausts to see if they're hot","Don't open radiator or coolant caps on a hot engine","Don't wear synthetic clothes for hot work: they melt onto skin"],
   "ppe": ["Leather gloves","Untreated cotton long sleeves; synthetics melt onto skin","Safety glasses"],
-  "firstAid": ["Cool the burn under cool running water for 20 minutes; don't use ice","Take off rings, watches and tight clothing before swelling starts, but leave anything that is stuck to the burn","Cover loosely with clean plastic film or a clean non-fluffy cloth","Don't pop blisters or put butter, oil or toothpaste on a burn","Burns bigger than the person's palm, deep, white or charred burns, and burns to the face, hands, feet, joints or groin need medical care","Keep the rest of the person warm while you cool the burn; large burns and small children chill quickly"],
+  "firstAid": ["Cool the burn under cool running water for at least 10 minutes, ideally 20; don't use ice","Take off rings, watches and tight clothing before swelling starts, but leave anything that is stuck to the burn","Cover loosely with clean plastic film or a clean non-fluffy cloth","Don't pop blisters or put butter, oil or toothpaste on a burn","Burns wider than about 5–8 cm (2–3 in), deep, white or charred burns, burns on the face, hands, feet, joints or groin, and any burn on a child need medical care","Keep the rest of the person warm while you cool the burn; large burns and small children chill quickly"],
   "refs": [
     {"lib":"nomad_conditions","q":"burns","path":"burns","note":"First aid and over-the-counter treatment on a NOMAD box"},
     {"lib":"wikimed","q":"Burn"},
     {"lib":"wikipedia","q":"Burn"}
   ],
   "sources": [
-    {"title":"OSHA 1910.269 App E: Appendix E to 1910.269, Protection From Flames and Electric Arcs","url":"https://www.osha.gov/laws-regs/regulations/standardnumber/1910/1910.269AppE"}
+    {"title":"OSHA 1910.269 App E: Appendix E to 1910.269, Protection From Flames and Electric Arcs","url":"https://www.osha.gov/laws-regs/regulations/standardnumber/1910/1910.269AppE"},
+    {"title":"CRC LEARNER GUIDE: Canadian Red Cross, First Aid & CPR Learner Guide (2025 program), Burns, pp. 35-36","url":"https://cdn.redcross.ca/prodmedia/crc/azure/documents/first-aid-program-2025/fa_cpr_learner_guide_en.pdf"},
+    {"title":"SickKids burns: AboutKidsHealth (The Hospital for Sick Children), Burns first aid","url":"https://www.aboutkidshealth.ca/burns-first-aid"},
+    {"title":"NS 811: Government of Nova Scotia, 811 Health Topics, First aid: burns","url":"https://811.novascotia.ca/health_topics/first-aid-burns/"}
   ]
 }

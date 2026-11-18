@@ -4,12 +4,19 @@
   "severity": 1,
   "summary": "Ionisation smoke alarms hold a tiny americium-241 source inside a small metal chamber. Sealed in its housing it is harmless; opening, scraping, eating or breathing it in is the problem. Radioactive sources from hospitals, labs, factories and industrial gauges are far stronger and can kill: leave them alone.",
   "signs": ["Smoke alarm labelled ionisation, with a radiation symbol or the words Americium 241","A small metal can or cage on the alarm's circuit board","Old glow-in-the-dark watch and instrument dials, mostly from before about 1970, may use radium paint","Heavy lead or steel containers, capsules, pellets or machine heads marked with the radiation symbol, from hospitals, labs, factories, oil wells or road-building density gauges: these are deadly, not tiny"],
-  "do": ["Take the buzzer and battery and leave the chamber sealed","If you must remove the chamber, keep it in one piece in a closed tin away from living space","Wash hands after handling smoke alarm insides"],
-  "dont": ["Don't open, crush, scrape or heat the chamber","Don't keep piles of them where people sleep or eat","Don't scrape or sand old luminous paint","Don't let children play with them","Don't touch, open, cut or carry off anything like that: get away, keep everyone out, and mark the spot"],
+  "do": ["Take the battery out and leave the alarm in one piece. Don't open it for the buzzer or the chamber: Kidde's guide says never to take one apart","To get rid of an old alarm, take the battery out and dispose of the whole alarm: the CNSC accepts household garbage (not recycling or compost) or return to the maker","Wash hands after handling a broken or damaged alarm","Strong sources (gauges, capsules, shielded containers): if you can't avoid being near one, keep the time short, the distance long and concrete or lead between you and it. The CNSC sets a 2 m perimeter round a damaged portable gauge"],
+  "dont": ["Don't open the alarm, and don't crush, scrape or heat it or its chamber","Don't keep piles of them where people sleep or eat","Don't scrape or sand old luminous paint","Don't let children play with them","Don't touch, open, cut or carry off anything like that: get away, keep everyone out, and mark the spot"],
   "ppe": ["Gloves if a chamber is damaged","Wash hands afterwards"],
   "firstAid": ["Touched a damaged source: wash hands well with soap and water","If someone swallowed a source or breathed dust from one, get medical advice; the risk is small but real","Nausea, vomiting, or burns and blisters that appeared without a fire after handling a metal object: suspect radiation; get away from the object, wash, and get medical help"],
   "refs": [
     {"lib":"wikimed","q":"Americium-241"},
     {"lib":"wikipedia","q":"Americium-241"}
+  ],
+  "sources": [
+    {"title":"Kidde i9070CA: Kidde Canada i9070CA ionization smoke alarm user's guide","url":"https://cdn.shopify.com/s/files/1/0083/4328/9961/files/i9070CA_UserGuide_EN.pdf"},
+    {"title":"CNSC smoke detectors: Canadian Nuclear Safety Commission, Household smoke detector safety and disposal (fact sheet)","url":"https://www.cnsc-ccsn.gc.ca/eng/resources/fact-sheets/household-smoke-detector/"},
+    {"title":"CNSC protecting workers: Canadian Nuclear Safety Commission, Protecting workers (radiation)","url":"https://www.cnsc-ccsn.gc.ca/eng/resources/radiation/protecting-workers/"},
+    {"title":"CNSC radium: Canadian Nuclear Safety Commission, Could your collectible item contain radium?","url":"https://www.cnsc-ccsn.gc.ca/eng/nuclear-safety-security/educational-resources/radiation/could-your-collectible-item-contain-radium/"},
+    {"title":"CNSC portable gauges: Canadian Nuclear Safety Commission, Portable Gauge Quick Reference Guide","url":"https://www.cnsc-ccsn.gc.ca/eng/nuclear-substances/licensing-nuclear-substances-and-radiation-devices/portable-nuclear-gauges/quick-reference-guide.cfm"}
   ]
 }
