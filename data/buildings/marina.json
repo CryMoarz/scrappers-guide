@@ -3,5 +3,5 @@
   "name": "Marinas and boat launches",
   "osm": ["leisure=marina","leisure=slipway"],
   "exposure": 2,
-  "hazards": ["cold_water"]
+  "hazards": ["cold_water","found_ammunition"]
 }

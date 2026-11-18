@@ -2,5 +2,6 @@
   "id": "auto_parts",
   "name": "Auto parts stores",
   "osm": ["shop=car_parts"],
-  "exposure": 4
+  "exposure": 4,
+  "hazards": ["found_ammunition"]
 }

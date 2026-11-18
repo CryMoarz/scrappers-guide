@@ -4,5 +4,6 @@
   "osm": ["amenity=police"],
   "exposure": 2,
   "notes": "Radios, backup power and vehicles. Often secured.",
-  "access": "Usually locked and reinforced"
+  "access": "Usually locked and reinforced",
+  "hazards": ["found_ammunition"]
 }

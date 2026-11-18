@@ -2,5 +2,6 @@
   "id": "department",
   "name": "Department and variety stores",
   "osm": ["shop=department_store","shop=variety_store","shop=second_hand","shop=charity","shop=general","shop=pawnbroker","shop=houseware"],
-  "exposure": 5
+  "exposure": 5,
+  "hazards": ["found_ammunition"]
 }

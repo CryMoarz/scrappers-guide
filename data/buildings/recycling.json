@@ -2,5 +2,6 @@
   "id": "recycling",
   "name": "Recycling depots and landfills",
   "osm": ["amenity=recycling","landuse=landfill","amenity=waste_transfer_station","amenity=waste_disposal"],
-  "exposure": 1
+  "exposure": 1,
+  "hazards": ["sealed_heating"]
 }

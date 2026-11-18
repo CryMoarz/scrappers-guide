@@ -3,5 +3,5 @@
   "name": "Farms and farm supply",
   "osm": ["landuse=farmyard","building=barn","building=farm_auxiliary"],
   "exposure": 2,
-  "hazards": ["entanglement","line_recoil","wildlife"]
+  "hazards": ["entanglement","line_recoil","wildlife","found_ammunition","self_heating","confined_space","grain_engulfment","h2s"]
 }

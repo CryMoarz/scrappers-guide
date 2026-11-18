@@ -2,5 +2,6 @@
   "id": "laundromat",
   "name": "Laundromats",
   "osm": ["shop=laundry","shop=dry_cleaning"],
-  "exposure": 1
+  "exposure": 1,
+  "hazards": ["self_heating"]
 }
