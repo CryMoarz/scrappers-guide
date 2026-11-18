@@ -3,5 +3,5 @@
   "name": "Apartment buildings",
   "osm": ["building=apartments"],
   "exposure": 3,
-  "hazards": ["ice_fall","open_flame"]
+  "hazards": ["ice_fall","open_flame","radon"]
 }
