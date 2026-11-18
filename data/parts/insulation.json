@@ -7,8 +7,8 @@
   "substitutes": ["foam_rubber"],
   "summary": "Materials that slow heat loss: glass and mineral wool, foam board, spray foam and reflective foil.",
   "uses": ["Insulating a shelter, room or sleeping area","Building a cooler, hay-box cooker or solar oven","Wrapping pipes and tanks against freezing"],
-  "identify": "Lofts and wall cavities, foam boards on building sites, foam inside fridges, freezers, coolers and water heaters, and foil on HVAC ducts. In old buildings, grey-brown granular loose fill (vermiculite) and old pipe lagging may contain asbestos: leave them alone.",
+  "identify": "Lofts and wall cavities, foam boards on building sites, foam inside fridges, freezers, coolers and water heaters, and foil on HVAC ducts. In old buildings, grey-brown granular loose fill (vermiculite) and old pipe lagging may contain asbestos: leave them alone. Plastic foam burns fast with thick, toxic smoke: cover it and keep it away from stoves and heaters.",
   "test": "Dry, fluffy and clean is good; wet, squashed or mouldy insulation has lost most of its value. Wear gloves, long sleeves and a mask for glass wool.",
   "decay": {"halfLifeMonths":null,"note":"Lasts if dry. Wet insulation is useless and grows mould."},
-  "hazards": ["fiberglass","asbestos"]
+  "hazards": ["fiberglass","asbestos","burn"]
 }
