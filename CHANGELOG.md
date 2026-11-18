@@ -2,6 +2,15 @@
 
 Plain notes for people using the guide. The app shows the latest few under "What's new" on its front page. Details for developers are in the commits.
 
+## 4.4.0 (18 November 2026)
+
+- Protective gear: 25 kinds, from dust masks and respirators to safety glasses, gloves, earplugs, hard hats, boots, coveralls and fall harnesses. Each says what it protects against and what it doesn't, how to read its markings and spot fakes, how to tell a found one is still good, what to use without one, and which places keep it on hand and where inside.
+- Search finds gear kept on shelves, not just parts inside devices: "hard hat" points you to construction sites, hardware stores and water plants. Building pages list the supplies kept there, and hazard cards link to the gear that helps.
+- 22 hazard cards give better protection advice, checked against safety bodies: boots are not electrical protection, arc flash needs an arc-rated shield, asbestos needs a half mask with P100 filters rather than a disposable, thin nitrile gloves are splash protection only, and a fall harness needs a strong anchor, enough room below and never working alone. A new card covers loud noise.
+- 20 new teardown guides: hoverboards, robot and stick vacuums, electric toothbrushes, battery yard tools, riding mowers, pressure washers, gas grills, window and central air conditioners, chest freezers, air purifiers, blenders, humidifiers, projectors, holiday decorations, bicycles, two-way radios, car USB chargers and mattresses. Teardowns now cover 97 of 181 kinds of device. The gas grill, central AC and projector guides are marked for experienced people only.
+- Nearly 100 fixes to device data found while writing them: missing hazards and parts, a hoverboard pack is 20 cells, not 10, and two unsafe notes corrected (never short an AC capacitor with a screwdriver, and never move a grill's regulator to another gas appliance).
+- The refrigerant safety guide now says crimping lines shut works only on tubing your pinch-off tool fits; leave a central air conditioner's loop sealed.
+
 ## 4.3.0 (17 November 2026)
 
 - 20 new teardown guides: smartphones, tablets, power banks, phone chargers, flat TVs, Wi-Fi routers, emergency lights, garage door openers, mini fridges, clothes dryers, gas furnaces, range hoods, toaster ovens, space heaters, coffee makers, hair dryers, ceiling fans, corded power tools, petrol mowers and vacuums. Each is written from cited sources and fact-checked against every one, with the safety steps first.
