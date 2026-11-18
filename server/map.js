@@ -99,7 +99,11 @@ function centroid(ring) {
 }
 
 // Which building types an OSM kind can be: "hardware" → hardware stores; office=* → any office.
+// Map tiles keep a kind (and sometimes a kind_detail) but not the OSM key, so the layer stands in
+// for it: building=* tags match building outlines first, every other key matches points and land
+// areas first. That keeps an industrial building (a factory) apart from an industrial area.
 const indexes = new WeakMap();
+const groupOf = layer => (layer === 'buildings' ? 'b' : 'a');
 function kindIndex(ctx) {
   if (indexes.has(ctx)) return indexes.get(ctx);
   const by = new Map();
@@ -107,10 +111,21 @@ function kindIndex(ctx) {
     const [k, v] = String(t).split('=');
     const kind = v === '*' ? k : v;
     if (!kind || kind === 'yes') return;
-    (by.get(kind) || by.set(kind, new Set()).get(kind)).add(b.id);
+    const key = (k === 'building' ? 'b' : 'a') + '|' + kind;
+    (by.get(key) || by.set(key, new Set()).get(key)).add(b.id);
   }));
   indexes.set(ctx, by);
   return by;
+}
+// The building types a map feature can be: its detail values first ("ice_hockey" on a sports
+// centre), then its kind, each from its own layer's tags and then from the others'.
+function typesFor(idx, layer, kind, detail) {
+  const g = groupOf(layer), o = g === 'b' ? 'a' : 'b';
+  for (const v of [...String(detail || '').split(';').filter(Boolean), kind]) {
+    const s = idx.get(g + '|' + v) || idx.get(o + '|' + v);
+    if (s) return s;
+  }
+  return null;
 }
 
 // Scores places for the building types a search ranks (`types`, or every type when null), then
@@ -121,7 +136,7 @@ function rankPlaces(ctx, found, idx, types, o) {
   const scored = [];
   for (const p of found) {
     let best = null;
-    for (const id of idx.get(p.kind) || []) {
+    for (const id of typesFor(idx, p.layer, p.kind, p.detail) || []) {
       const t = types && types.get(id);
       if (types && !t) continue;
       const base = t ? t.n : 100;
@@ -214,11 +229,14 @@ function createMap(hub) {
       const L = M.decode(buf, ['pois', 'landuse', 'buildings']), out = [];
       for (const [layer, d] of Object.entries(L)) {
         for (const f of d.features) {
-          const kind = layer === 'buildings' ? f.props.kind_detail : f.props.kind;
-          if (!kinds.has(kind) || !f.geom[0]) continue;
+          let kind = layer === 'buildings' ? f.props.kind_detail : f.props.kind;
+          const detail = layer === 'buildings' ? undefined : f.props.kind_detail;
+          // A residential building four or more storeys tall is a block of flats, not a house.
+          if (kind === 'residential' && layer === 'buildings' && f.props.height >= 12) kind = 'apartments';
+          if (!typesFor(kinds, layer, kind, detail) || !f.geom[0]) continue;
           const pt = f.type === 'point' ? f.geom[0] : f.type === 'polygon' ? centroid(f.geom[0]) : null;
           if (!pt || pt[0] < 0 || pt[1] < 0 || pt[0] >= d.extent || pt[1] >= d.extent) continue;
-          out.push({ id: f.id || null, layer, kind, name: f.props.name || '', lon: P.x2lon(x + pt[0] / d.extent, z), lat: P.y2lat(y + pt[1] / d.extent, z) });
+          out.push({ id: f.id || null, layer, kind, detail, name: f.props.name || '', lon: P.x2lon(x + pt[0] / d.extent, z), lat: P.y2lat(y + pt[1] / d.extent, z) });
         }
       }
       return out;
@@ -341,4 +359,4 @@ function createMap(hub) {
   return { info, places, renderTile, sources, close };
 }
 
-module.exports = { createMap, kindIndex, distKm, plan, MAX_TILES, SEARCHES, WAITING };
+module.exports = { createMap, kindIndex, typesFor, distKm, plan, MAX_TILES, SEARCHES, WAITING };

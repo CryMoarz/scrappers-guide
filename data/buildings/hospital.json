@@ -1,6 +1,6 @@
 {
   "id": "hospital",
-  "name": "Hospitals, clinics and dentists",
+  "name": "Hospitals",
   "osm": ["amenity=hospital"],
   "exposure": 4
 }

@@ -338,3 +338,18 @@ test('hub: a hostile map answers an error for its tiles and places, and the hub 
   assert.equal((await get('/health')).status, 200);
   assert.equal((await get('/api/v1/map')).body.available, true);
 });
+
+test('map kinds match by layer and detail, so look-alike tags stay apart', () => {
+  const { kindIndex, typesFor } = require('../server/map');
+  const ctx = SDG.db.open(F.plain(F.load()));
+  const idx = kindIndex(ctx);
+  const one = (layer, kind, detail) => [...(typesFor(idx, layer, kind, detail) || [])];
+  assert.deepEqual(one('buildings', 'industrial'), ['factory'], 'an industrial building is a factory');
+  assert.deepEqual(one('landuse', 'industrial'), ['warehouse'], 'an industrial area is warehouses');
+  assert.deepEqual(one('pois', 'sports_centre', 'ice_hockey;ice_skating'), ['stadium'], 'an ice arena is an arena');
+  assert.deepEqual(one('pois', 'sports_centre', 'soccer'), ['gym'], 'other sports centres are gyms');
+  assert.deepEqual(one('pois', 'social_facility'), [], 'a shelter or food bank is not a nursing home');
+  assert.deepEqual(one('pois', 'plant'), [], 'a power plant is not a solar farm');
+  assert.deepEqual(one('landuse', 'residential'), ['house'], 'a residential area still stands for houses');
+  assert.deepEqual(one('buildings', 'school'), ['school'], 'outlines still match tags written for points');
+});
