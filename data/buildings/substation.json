@@ -5,5 +5,5 @@
   "exposure": 1,
   "notes": "Transformers, switchgear and battery banks. Lines may still be live from solar or generators. Old transformer oil may contain PCBs.",
   "access": "Fenced; assume everything is live",
-  "hazards": ["hv","pcb"]
+  "hazards": ["hv","pcb","ice_fall"]
 }

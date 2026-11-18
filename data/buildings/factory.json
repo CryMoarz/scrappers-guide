@@ -3,5 +3,5 @@
   "name": "Factories and works",
   "osm": ["man_made=works","building=industrial"],
   "exposure": 1,
-  "hazards": ["entanglement","projectile","ammonia_refrigeration"]
+  "hazards": ["entanglement","projectile","ammonia_refrigeration","molten_metal"]
 }

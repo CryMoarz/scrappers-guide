@@ -2,5 +2,6 @@
   "id": "telecom",
   "name": "Cell towers and telecom huts",
   "osm": ["man_made=telecom","man_made=mast","tower:type=communication","telecom=exchange"],
-  "exposure": 1
+  "exposure": 1,
+  "hazards": ["ice_fall"]
 }

@@ -3,5 +3,5 @@
   "name": "Makerspaces and libraries",
   "osm": ["leisure=hackerspace","amenity=library"],
   "exposure": 1,
-  "hazards": ["entanglement","self_heating"]
+  "hazards": ["entanglement","self_heating","molten_metal"]
 }

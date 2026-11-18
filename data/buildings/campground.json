@@ -3,5 +3,5 @@
   "name": "Campgrounds and RV parks",
   "osm": ["tourism=camp_site","tourism=caravan_site"],
   "exposure": 2,
-  "hazards": ["cold_water","wildlife","sealed_heating"]
+  "hazards": ["cold_water","wildlife","sealed_heating","cyanobacteria","open_flame"]
 }

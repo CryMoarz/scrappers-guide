@@ -2,5 +2,6 @@
   "id": "golf",
   "name": "Golf courses",
   "osm": ["leisure=golf_course"],
-  "exposure": 1
+  "exposure": 1,
+  "hazards": ["cyanobacteria"]
 }

@@ -3,5 +3,5 @@
   "name": "Restaurants, cafes and bars",
   "osm": ["amenity=restaurant","amenity=fast_food","amenity=cafe","amenity=bar","amenity=pub","amenity=ice_cream","amenity=food_court","shop=bakery","shop=pastry","shop=deli","shop=coffee","shop=tea","shop=chocolate","craft=caterer","craft=brewery"],
   "exposure": 3,
-  "hazards": ["wildlife","sealed_heating","confined_space"]
+  "hazards": ["wildlife","sealed_heating","confined_space","open_flame"]
 }
