@@ -99,7 +99,7 @@ Be clear about what this is before you rely on it.
 | Field | Value |
 |---|---|
 | Name | `Scrapper's Guide` |
-| Image | `ghcr.io/crymoarz/scrappers-guide:4.3.0` |
+| Image | `ghcr.io/crymoarz/scrappers-guide:4.4.0` |
 | Port | container `8787`, host `8787` |
 | Volume | host `/opt/project-nomad/storage/scrappers-guide`, container `/guide` |
 
@@ -141,13 +141,13 @@ Everything else, including running it next to NOMAD without Docker and every set
 
 ## What’s inside
 
-| **187** devices | **125** part types | **238** documented models |
+| **187** devices | **150** part types | **238** documented models |
 |:-:|:-:|:-:|
-| **135** guides | **30** quick-reference cards | **14** calculators |
-| **41** jobs | **32** hazard cards | **64** building types |
+| **155** guides | **30** quick-reference cards | **14** calculators |
+| **41** jobs | **33** hazard cards | **64** building types |
 | **23** shared boards | **26** board pinouts | **41** linked libraries |
 
-*Counts for version 4.3.0, plus 679 router and access point models from the OpenWrt hardware table that are not yet fact-checked. `node tools/validate.js` prints the current numbers; it counts guides and written cards together (163).*
+*Counts for version 4.4.0, plus 679 router and access point models from the OpenWrt hardware table that are not yet fact-checked. The part types include 25 kinds of protective gear. `node tools/validate.js` prints the current numbers; it counts guides and written cards together (183).*
 
 The records cross-link: a job needs part types, part types hide in devices, devices sit in buildings and carry hazards, guides strip them and build with what comes out, and each guide says what to learn first. Logged models of real products confirm what is inside each device.
 
@@ -177,7 +177,7 @@ That serves the app, the API and an AI tool endpoint at http://127.0.0.1:8787. I
 - Or run the same image as NOMAD, anywhere with Docker:
 
 ```bash
-docker run -d --name scrappers-guide --restart unless-stopped -p 8787:8787 -v /srv/scrappers-guide:/guide ghcr.io/crymoarz/scrappers-guide:4.3.0
+docker run -d --name scrappers-guide --restart unless-stopped -p 8787:8787 -v /srv/scrappers-guide:/guide ghcr.io/crymoarz/scrappers-guide:4.4.0
 ```
 
 See [docs/RUNNING-A-HUB.md](docs/RUNNING-A-HUB.md), [docs/NOMAD.md](docs/NOMAD.md) and [docs/LORA.md](docs/LORA.md).
