@@ -8,15 +8,18 @@
   "tools": ["knife","cutters","pliers"],
   "mins": 30,
   "kg": 30,
-  "hazards": ["sharp","fiberglass","mold"],
+  "hazards": ["sharp","fiberglass","mold","spring","crush"],
   "comps": [
-    {"key":"spring","fn":"spring","spec":"Hundreds of steel coil springs (open or pocketed), about 1.4–2.5 mm wire","qty":300,"ext":2,"obs":5,"loc":"Core of innerspring mattresses"},
+    {"key":"spring","fn":"spring","spec":"Hundreds of steel coil springs (open or pocketed); the wire gauge varies by model (the Serta Trelleburg lists 15.5 gauge, with no unit printed)","qty":300,"ext":2,"obs":5,"loc":"Core of innerspring mattresses"},
     {"key":"rod_shaft","fn":"rod_shaft","spec":"Heavy steel border rod, about 4–5 mm, around the spring unit","qty":2,"ext":2,"obs":5,"loc":"Top and bottom edges of the spring unit"},
     {"key":"foam_rubber","fn":"foam_rubber","spec":"Polyurethane and memory foam layers, 5–25 cm — padding, cushions and insulation","qty":1,"ext":1,"obs":5,"loc":"Top layers; the whole core in foam mattresses","kg":10},
     {"key":"fabric_tarp","fn":"fabric_tarp","spec":"Quilted ticking and polypropylene dust cover","qty":1,"ext":1,"obs":5,"loc":"Outer cover"},
     {"key":"insulation","fn":"insulation","spec":"Felt and fibre insulator pads","qty":2,"ext":1,"obs":5,"loc":"Over the springs"},
     {"key":"lumber","fn":"lumber","spec":"Pine frame and slats in the box spring","qty":1,"ext":2,"obs":5,"loc":"Box spring","kg":10},
-    {"key":"spring_grid","fn":"spring","spec":"Wire grid and torsion springs in the box spring","qty":1,"ext":2,"obs":5,"loc":"Box spring, on the wooden frame"}
+    {"key":"spring_grid","fn":"spring","spec":"Wire grid and torsion springs in the box spring","qty":1,"ext":2,"obs":5,"loc":"Box spring, on the wooden frame"},
+    {"key":"psu","fn":"psu","spec":"Powered adjustable bases only: mains power supply, 100–240V AC in and 29V DC 2A out, 58W (TEMPUR-Ergo Smart base)","v":29,"a":2,"w":58,"qty":1,"ext":1,"obs":3,"loc":"Between the wall plug and the control box","p":0.25},
+    {"key":"linear_actuator","fn":"linear_actuator","spec":"Head and foot lift motors on powered bases (TEMPUR-Ergo Smart: limited to about 2 minutes of use in any 18); children and pets can be crushed in the moving parts","qty":2,"ext":2,"obs":4,"loc":"Head and foot sections of the base","p":0.25},
+    {"key":"controller_board","fn":"controller_board","spec":"Control box on powered bases: takes power from the supply and has ports for the head and foot motors (lift and massage)","qty":1,"ext":2,"obs":4,"loc":"Under the base","p":0.25}
   ],
   "boards": [],
   "buildings": [

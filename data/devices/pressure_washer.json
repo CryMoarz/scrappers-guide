@@ -9,7 +9,7 @@
   "mins": 20,
   "kg": 30,
   "repairs": {"records":1583,"fixed":0.46,"end_of_life":0.3},
-  "hazards": ["fuel","hydraulic","mains"],
+  "hazards": ["fuel","hydraulic","mains","burn","co_gas"],
   "comps": [
     {"key":"engine_small","fn":"engine_small","spec":"Petrol engine, 4–7 hp, horizontal shaft (gas models)","w":[2980,5220],"qty":1,"ext":2,"obs":2,"loc":"Frame","kg":15,"p":0.5},
     {"key":"motor_universal","fn":"motor_universal","spec":"Mains universal or induction motor, 1.5–2.5 kW (electric models)","w":[1500,2500],"qty":1,"ext":2,"obs":4,"loc":"Inside the housing","p":0.5},
@@ -18,7 +18,11 @@
     {"key":"bearing","fn":"bearing","spec":"Wheels with axle","qty":2,"ext":1,"obs":4,"loc":"Frame"},
     {"key":"tube_frame","fn":"tube_frame","spec":"Steel tube frame and handle","qty":1,"ext":2,"obs":5,"loc":"Frame"},
     {"key":"fuel_liquid","fn":"fuel_liquid","spec":"Petrol left in the tank (gas models)","qty":1,"ext":1,"obs":3,"loc":"Tank on the engine","p":0.5},
-    {"key":"oil_lube","fn":"oil_lube","spec":"Pump and engine oil","qty":1,"ext":1,"obs":5,"loc":"Pump crankcase and engine sump"}
+    {"key":"oil_lube","fn":"oil_lube","spec":"Pump and engine oil","qty":1,"ext":1,"obs":5,"loc":"Pump crankcase and engine sump"},
+    {"key":"gfci","fn":"breaker","spec":"Power cord with a built-in GFCI plug on electric models (Sun Joe SPX3000: 35 ft, 10.7 m) — keep it whole","qty":1,"ext":2,"obs":4,"loc":"Mains cord","p":0.4},
+    {"key":"tank_detergent","fn":"tank","spec":"Detergent tank: one on the Predator 62214 and two removable ones on the Sun Joe SPX3000; the Simpson MSH3125 has a soap hose and filter kit instead","qty":1,"ext":1,"obs":4},
+    {"key":"unloader","fn":"valve_solenoid","spec":"Unloader valve on the pump: sends the water round in bypass when you release the trigger (Simpson: no more than 2 minutes in bypass) — leave it on the pump and don't adjust it","qty":1,"ext":3,"obs":4,"loc":"On the pump"},
+    {"key":"valve_relief","fn":"valve_solenoid","spec":"Thermal relief valve on the pump: dumps a gush of hot water when the pump overheats (Simpson MSH3125; the Predator warns of very hot water if left idling) — leave it on the pump","qty":1,"ext":2,"obs":4,"loc":"On the pump"}
   ],
   "buildings": [
     {"b":"hardware","l":5},

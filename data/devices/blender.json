@@ -9,10 +9,16 @@
   "mins": 10,
   "hazards": ["sharp","mains"],
   "comps": [
-    {"key":"motor_universal","fn":"motor_universal","spec":"Powerful universal motor","v":[120,240],"w":[300,1500],"ac":true,"qty":1,"ext":2,"obs":4,"loc":"Base"},
-    {"key":"gearbox","fn":"gearbox","spec":"Metal gearbox (stand mixers)","qty":1,"ext":2,"obs":5,"loc":"Head"},
+    {"key":"motor_universal","fn":"motor_universal","spec":"Powerful universal motor","v":[120,240],"w":[300,1560],"ac":true,"qty":1,"ext":2,"obs":4,"loc":"Base"},
+    {"key":"gearbox","fn":"gearbox","spec":"Gear train in stand mixers: worm, bevel and planetary gears in a greased case. Housings and gears vary: some KitchenAid New Generation housings are plastic, and the Classic's worm gear is nylon","qty":1,"ext":2,"obs":5,"loc":"Head"},
     {"key":"switch","fn":"switch","spec":"Speed switches","qty":1,"ext":1,"obs":4,"loc":"Base"},
-    {"key":"thyristor","fn":"thyristor","spec":"Triac speed control (multi-speed models)","qty":1,"ext":3,"obs":5,"loc":"Base, behind the switch panel","p":0.5}
+    {"key":"thyristor","fn":"thyristor","spec":"Triac speed control (multi-speed models)","qty":1,"ext":3,"obs":5,"loc":"Base, behind the switch panel","p":0.5},
+    {"key":"controller_board","fn":"controller_board","spec":"Speed control board: a plate of contact switches read from a centrifugal governor on the KitchenAid Classic, a control board (part 9706509) on the KitchenAid New Generation; the Blendtec Total has a logic board","qty":1,"ext":3,"obs":4,"loc":"Inside the base or head","p":0.5},
+    {"key":"bearing","fn":"bearing","spec":"Motor and gear bearings: two ball bearings (reported as 608RS size) on the Blendtec Total rotor; a sealed front armature bearing with oil-impregnated rear and beater-shaft bearings on the KitchenAid Classic","qty":2,"ext":3,"obs":4,"loc":"Motor shaft and gear case"},
+    {"key":"potentiometer","fn":"potentiometer","spec":"Variable speed dial on the Vitamix 5200, active only with the High/Variable switch on Variable; its electrical type is not stated","qty":1,"ext":2,"obs":3,"loc":"Base","p":0.25},
+    {"key":"wire_copper","fn":"wire_copper","spec":"Mains cord with plug (three-prong earthed on the Vitamix 5200, polarised on Oster blenders) — good for repairs and extension leads","qty":1,"ext":1,"obs":2},
+    {"key":"sensor_misc","fn":"sensor_misc","spec":"Speed sensor: a Hall effect sensor on the KitchenAid New Generation (part 9703312) or an inductive sensor on the Blendtec Total","qty":1,"ext":2,"obs":4,"p":0.5},
+    {"key":"thermostat","fn":"thermostat","spec":"Overload or thermal cut-out: the Blendtec Total's thermistor shuts the motor off at 130°C and the Vitamix 5200 shuts off on overheating (reset button underneath on 220/240V units) — never heat, bridge or rely on a salvaged one","qty":1,"ext":3,"obs":4,"p":0.5}
   ],
   "buildings": [
     {"b":"house","l":5},

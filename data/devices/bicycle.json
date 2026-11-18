@@ -5,11 +5,11 @@
   "aliases": ["bike","push bike","pushbike","mountain bike","road bike","kids bike","bmx"],
   "brands": ["Trek","Specialized","Giant","Cannondale","Schwinn","Huffy","Raleigh","Diamondback","Marin","GT"],
   "prev": 5,
-  "tools": ["hex","wrench","pliers","screwdriver"],
+  "tools": ["hex","wrench","pliers","screwdriver","cutters","bolt_cutters"],
   "mins": 20,
   "kg": 13,
   "repairs": {"records":18162,"fixed":0.83,"end_of_life":0.05},
-  "hazards": [],
+  "hazards": ["spring","compressed_gas","chemical","sharp","li_fire"],
   "comps": [
     {"key":"chain_sprocket","fn":"chain_sprocket","spec":"Roller chain, 1/2 in pitch, with chainrings, rear sprockets and derailleurs — the drive for pedal generators","qty":1,"ext":2,"obs":3,"loc":"Drivetrain"},
     {"key":"hall_reed","fn":"hall_reed","spec":"Reed switch speed sensor with a spoke magnet (bike computers)","qty":1,"ext":1,"obs":5,"loc":"On the fork, magnet on a spoke"},
@@ -20,7 +20,8 @@
     {"key":"tube_frame","fn":"tube_frame","spec":"Steel or aluminium tube frame","qty":1,"ext":2,"obs":4,"loc":"The frame","kg":2.5},
     {"key":"led_light","fn":"led_light","spec":"Battery or USB LED front and rear lights","v":[3,7.4],"w":[0.5,10],"qty":2,"ext":1,"obs":3,"loc":"Handlebar and seat post"},
     {"key":"compressor","fn":"compressor","spec":"Frame pump or floor pump","qty":1,"ext":1,"obs":3,"loc":"On the frame or in the garage"},
-    {"key":"battery_coin","fn":"battery_coin","spec":"Coin cell in the bike computer","v":3,"ah":0.22,"qty":1,"ext":1,"obs":5,"loc":"Handlebar computer"}
+    {"key":"battery_coin","fn":"battery_coin","spec":"Coin cell in the bike computer","v":3,"ah":0.22,"qty":1,"ext":1,"obs":5,"loc":"Handlebar computer"},
+    {"key":"spring_fork","fn":"spring","spec":"Suspension fork on mountain bikes (Trek Marlin 5: coil spring, 80–100 mm travel; Schwinn Mesa 2: 63 mm travel); better forks hold air or nitrogen under pressure — leave them whole","qty":1,"ext":2,"obs":3,"loc":"Front fork","p":0.25}
   ],
   "buildings": [
     {"b":"bike_shop","l":5},

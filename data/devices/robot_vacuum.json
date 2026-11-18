@@ -9,14 +9,16 @@
   "tools": ["screwdriver"],
   "mins": 20,
   "repairs": {"records":1280,"fixed":0.45,"end_of_life":0.26},
-  "hazards": ["li_fire"],
+  "hazards": ["li_fire","chemical","mold","mains","hv_cap","laser"],
   "comps": [
     {"key":"battery_li","fn":"battery_li","spec":"14.4V battery pack","v":14.4,"qty":1,"ext":1,"obs":3,"loc":"Underside"},
     {"key":"motor_dc_small","fn":"motor_dc_small","spec":"Wheel gear motors with encoders","v":14.4,"qty":2,"ext":2,"obs":5,"loc":"Wheel modules"},
     {"key":"robot_brush_motors","fn":"motor_dc_small","spec":"Brush and vacuum motors","v":14.4,"w":[10,50],"qty":2,"ext":2,"obs":5,"loc":"Body"},
     {"key":"sensor_misc","fn":"sensor_misc","spec":"Infrared cliff and bump sensors","qty":6,"ext":2,"obs":5,"loc":"Bumper and underside"},
     {"key":"charger","fn":"charger","spec":"Charging dock","v":[19,24],"a":[0.6,1.5],"qty":1,"ext":1,"obs":4,"loc":"Against a wall"},
-    {"key":"controller_board","fn":"controller_board","spec":"Main board","qty":1,"ext":2,"obs":5,"loc":"Body"}
+    {"key":"controller_board","fn":"controller_board","spec":"Main board","qty":1,"ext":2,"obs":5,"loc":"Body"},
+    {"key":"battery_nimh","fn":"battery_nimh","spec":"Some Roomba 600-series robots take a NiMH pack instead of Li-ion, up to 3Ah and 14.8V at most (about 12 cells) — read the pack label and charge it only on a charger made for it","v":14.4,"qty":1,"ext":1,"obs":3,"loc":"Underside","p":0.5},
+    {"key":"gearbox","fn":"gearbox","spec":"Gear train inside each wheel module, driven by the small DC motor, with a shock spring on the wheel — a ready slow geared drive for a cart or turntable","qty":2,"ext":3,"obs":5,"loc":"Wheel modules"}
   ],
   "boards": [
     {"id":"motor_driver_board","qty":1,"loc":"Main board","p":1},

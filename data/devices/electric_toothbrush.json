@@ -5,17 +5,21 @@
   "aliases": ["sonic toothbrush","electric shaver","electric razor","beard trimmer","hair clippers","sonicare","norelco"],
   "brands": ["Oral-B","Philips Sonicare","Braun","Philips Norelco","Remington","Panasonic","Wahl","Andis","Oster","Conair"],
   "prev": 5,
-  "tools": ["screwdriver","pliers","knife"],
+  "tools": ["screwdriver","pliers","cutters"],
   "mins": 10,
   "kg": 0.2,
   "repairs": {"records":949,"fixed":0.37,"end_of_life":0.43},
   "hazards": ["li_fire","sharp"],
   "comps": [
-    {"key":"battery_li","fn":"battery_li","spec":"One 3.6–3.7V lithium cell (often 14500 size, some 18650) in newer models","v":[3.6,3.7],"qty":1,"ext":3,"obs":5,"loc":"Sealed inside the handle"},
+    {"key":"battery_li","fn":"battery_li","spec":"One 3.6–3.7V lithium-ion cell, about AA size (14 by 49 mm on the Oral-B iO and Sonicare HX6710, 14500 size on the Philips S5000 shaver) in newer models","v":[3.6,3.7],"qty":1,"ext":3,"obs":5,"loc":"Sealed inside the handle"},
     {"key":"battery_nimh","fn":"battery_nimh","spec":"One or two 1.2V NiMH cells in older and budget models","v":1.2,"qty":1,"ext":3,"obs":5,"loc":"Sealed inside the handle"},
     {"key":"motor_dc_small","fn":"motor_dc_small","spec":"Small 1.2–3.7V DC motor (shavers, clippers, rotating brushes)","v":[1.2,3.7],"qty":1,"ext":2,"obs":5,"loc":"Top of the handle"},
     {"key":"magnet_strong","fn":"magnet_strong","spec":"Neodymium magnets in the resonant drive (sonic toothbrushes)","qty":2,"ext":3,"obs":5,"loc":"Top of the handle"},
-    {"key":"charger","fn":"charger","spec":"Inductive charging stand with a coil (toothbrushes) or a small adapter","qty":1,"ext":1,"obs":5,"loc":"Bathroom counter"}
+    {"key":"charger","fn":"charger","spec":"Inductive charging stand with a coil (toothbrushes) or a small adapter","qty":1,"ext":1,"obs":5,"loc":"Bathroom counter"},
+    {"key":"inductor","fn":"inductor","spec":"Coil that picks up power from the charging stand, soldered to the main board (the iO's charging coil sits at the bottom end; the Sonicare Flexcare Platinum charges at about 80 kHz)","qty":1,"ext":3,"obs":4,"loc":"Bottom of the handle"},
+    {"key":"controller_board","fn":"controller_board","spec":"Small board in the handle: the motor, charging coil and cell are soldered to it; the Bluetooth Oral-B iO's also carries a Bluetooth chip, a Hall sensor and an OLED screen","qty":1,"ext":3,"obs":3,"loc":"In the handle"},
+    {"key":"hall_reed","fn":"hall_reed","spec":"Hall effect sensor on the Oral-B iO's board that reads a small magnet on a flexible plastic piece to sense brushing pressure (not found in the other logged brushes)","qty":1,"ext":3,"obs":4,"p":0.25},
+    {"key":"linear_actuator","fn":"linear_actuator","spec":"Frictionless coil motor in the Oral-B iO: a coil that gives straight up-and-down brush motion with no cam or gear, held by Torx 8 screws","qty":1,"ext":3,"obs":4,"p":0.25}
   ],
   "boards": [],
   "buildings": [
@@ -30,7 +34,7 @@
     {"b":"clinic","l":2},
     {"b":"salon","l":4}
   ],
-  "notes": "Handles are sealed and often welded shut: cut or pry carefully so you don't puncture the cell.",
+  "notes": "Handles are sealed and often closed tight round the cell. Open one only the way it was made to open (a twist-off cap or screws), use plastic tools in any seam, and never put a blade or screwdriver in a seam: you could puncture the cell.",
   "sources": [
     {"title":"Open Repair Alliance, Open Repair Data v0.3 (community repair events, 2012 to July 2026; CC BY-SA 4.0): 949 repairs recorded as Hair & beauty item (electric toothbrush subset)","url":"https://github.com/openrepair/data"}
   ]

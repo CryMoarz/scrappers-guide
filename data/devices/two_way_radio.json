@@ -8,11 +8,11 @@
   "tools": ["hands","screwdriver"],
   "mins": 5,
   "kg": 0.3,
-  "hazards": ["li_fire"],
+  "hazards": ["li_fire","chemical"],
   "comps": [
-    {"key":"radio_rf","fn":"radio_rf","spec":"Handheld VHF/UHF transceiver, about 0.5–5W — 1–5 km ground to ground, much further from high ground","w":[0.5,5],"qty":1,"ext":1,"obs":4,"loc":"The whole radio"},
-    {"key":"battery_li","fn":"battery_li","spec":"Lithium-ion pack, about 3.7–7.4V 1,500–2,500 mAh (business and ham radios)","v":[3.7,7.4],"ah":[1.5,2.5],"qty":1,"ext":1,"obs":4,"loc":"Clip-on pack on the back"},
-    {"key":"battery_nimh","fn":"battery_nimh","spec":"3–4 AA or AAA NiMH cells or a NiMH pack (consumer sets)","v":[3.6,4.8],"ah":[0.7,2.5],"qty":3,"ext":1,"obs":4,"loc":"Battery compartment"},
+    {"key":"radio_rf","fn":"radio_rf","spec":"Handheld VHF/UHF transceiver, about 0.5–5W — range depends mostly on height, and is much further from high ground","w":[0.5,5],"qty":1,"ext":1,"obs":4,"loc":"The whole radio"},
+    {"key":"battery_li","fn":"battery_li","spec":"Lithium-ion pack, about 3.7–7.4V 1,150–2,500 mAh (business and ham radios)","v":[3.7,7.4],"ah":[1.15,2.5],"qty":1,"ext":1,"obs":4,"loc":"Clip-on pack on the back"},
+    {"key":"battery_nimh","fn":"battery_nimh","spec":"3–4 AA or AAA NiMH cells or a NiMH or NiCd pack (consumer sets); business radios use 6-cell 7.2V packs, for example 1,400 mAh NiMH or 950 mAh NiCd — NiCd holds toxic cadmium, so keep it whole","v":[3.6,7.2],"ah":[0.7,2.5],"qty":3,"ext":1,"obs":4,"loc":"Battery compartment"},
     {"key":"antenna_coax","fn":"antenna_coax","spec":"Flexible rubber-duck antenna on SMA or BNC","qty":1,"ext":1,"obs":4,"loc":"Top"},
     {"key":"charger","fn":"charger","spec":"Drop-in desktop chargers and multi-unit gang chargers","v":[3.6,8.4],"a":[0.3,1],"qty":1,"ext":1,"obs":4,"loc":"Charging rack in an office or closet"},
     {"key":"speaker","fn":"speaker","spec":"Speaker, plus speaker-mics and earpieces","w":[0.5,2],"qty":1,"ext":2,"obs":5,"loc":"Front; accessories in a drawer"}

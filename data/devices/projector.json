@@ -9,16 +9,18 @@
   "mins": 20,
   "kg": 4,
   "repairs": {"records":1657,"fixed":0.54,"end_of_life":0.23},
-  "hazards": ["mercury","laser","glass","mains"],
+  "hazards": ["mercury","laser","glass","mains","hv_cap","burn","li_fire"],
   "comps": [
     {"key":"optics","fn":"optics","spec":"Multi-element glass projection lens, condenser lenses, mirrors and dichroic filters — good magnifiers and burning glasses","qty":4,"ext":2,"obs":5,"loc":"Front lens barrel and light path"},
-    {"key":"fan","fn":"fan","spec":"Blower and axial fans, 12V","v":12,"qty":3,"ext":1,"obs":4,"loc":"Around the lamp and power supply"},
+    {"key":"fan","fn":"fan","spec":"Blower and axial fans that cool the light source and the power supply; low voltage, so read the label","qty":3,"ext":1,"obs":4,"loc":"Around the lamp and power supply"},
     {"key":"motor_bldc","fn":"motor_bldc","spec":"Colour wheel motor (DLP models)","qty":1,"ext":2,"obs":5,"loc":"Light path before the chip","p":0.5},
     {"key":"laser_diode","fn":"laser_diode","spec":"Blue laser diode banks (laser models) — eye damage even from reflections","qty":1,"ext":3,"obs":5,"loc":"Light source module on a heatsink","p":0.5},
-    {"key":"led_light","fn":"led_light","spec":"High-power LEDs on heatsinks (LED models); lamp models use a small mercury lamp that can burst when hot","v":[2.5,4.5],"w":[10,100],"qty":3,"ext":2,"obs":5,"loc":"Light source module","p":0.5},
+    {"key":"led_light","fn":"led_light","spec":"High-power LEDs on heatsinks (LED models only; lamp models use the separate mercury lamp listed here)","v":[2.5,4.5],"w":[10,100],"qty":3,"ext":2,"obs":5,"loc":"Light source module","p":0.5},
     {"key":"heatsink","fn":"heatsink","spec":"Heat pipes and finned heatsinks","qty":2,"ext":2,"obs":5,"loc":"Light source and power board"},
     {"key":"opto_sensor","fn":"opto_sensor","spec":"IR remote receiver","qty":1,"ext":2,"obs":5,"loc":"Front and rear panels"},
-    {"key":"speaker","fn":"speaker","spec":"Small speaker","w":[2,10],"qty":1,"ext":1,"obs":5,"loc":"Side of the case"}
+    {"key":"speaker","fn":"speaker","spec":"Small speaker","w":[2,10],"qty":1,"ext":1,"obs":5,"loc":"Side of the case"},
+    {"key":"mercury_lamp","fn":"led_light","spec":"Lamp models only: a high-pressure mercury (UHP-type) lamp module, 180–230W on the 3M SCP176, at 200–250 bar and extremely hot — it can burst, so keep it whole and sealed","w":[180,230],"qty":1,"ext":2,"obs":3,"loc":"Lamp module behind its own cover","p":0.5},
+    {"key":"battery_li","fn":"battery_li","spec":"Portable models only: three 3.7V, 3,930 mAh cells in the ViewSonic M1X; a built-in 52 Wh pack in the Anker Nebula Capsule 3 Laser","qty":1,"ext":2,"obs":3,"loc":"Inside portable models","p":0.25}
   ],
   "boards": [
     {"id":"smps_board","qty":1,"loc":"Power supply","p":1},

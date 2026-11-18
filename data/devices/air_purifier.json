@@ -8,12 +8,12 @@
   "tools": ["screwdriver"],
   "mins": 10,
   "kg": 5,
-  "hazards": ["uv","mains"],
+  "hazards": ["uv","mains","mercury"],
   "comps": [
     {"key":"filter_air","fn":"filter_air","spec":"True HEPA pleated filter — strap one to a box fan to filter smoke and dust","qty":1,"ext":1,"obs":4,"loc":"Behind the front or rear cover; spares often boxed nearby"},
     {"key":"carbon","fn":"carbon","spec":"Activated carbon pre-filter or granule tray","qty":1,"ext":1,"obs":5,"loc":"In front of the HEPA filter"},
     {"key":"fan","fn":"fan","spec":"Centrifugal or axial fan","qty":1,"ext":2,"obs":4,"loc":"Behind the filter"},
-    {"key":"motor_bldc","fn":"motor_bldc","spec":"Fan motor: brushless DC on many newer models (shaded-pole AC on older ones)","v":24,"w":[10,60],"qty":1,"ext":2,"obs":5,"loc":"Behind the filter"},
+    {"key":"motor_bldc","fn":"motor_bldc","spec":"Fan motor, type varies: brushless DC (needs its own board) or mains AC — read the label","w":[10,60],"qty":1,"ext":2,"obs":5,"loc":"Behind the filter"},
     {"key":"uv_lamp","fn":"uv_lamp","spec":"UV-C lamp (some models) — never look at it lit","qty":1,"ext":2,"obs":5,"loc":"In the air path","p":0.5},
     {"key":"sensor_misc","fn":"sensor_misc","spec":"Optical dust (PM2.5) sensor and odour sensor (auto models)","qty":1,"ext":2,"obs":5,"loc":"Side grille","p":0.5}
   ],

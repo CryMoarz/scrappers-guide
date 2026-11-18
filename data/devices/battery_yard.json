@@ -8,12 +8,19 @@
   "prev": 4,
   "tools": ["screwdriver"],
   "mins": 15,
-  "hazards": ["li_fire"],
+  "hazards": ["li_fire","sharp","chemical"],
   "comps": [
     {"key":"battery_li","fn":"battery_li","spec":"40–80V battery pack","v":[40,80],"qty":1,"ext":1,"obs":2,"loc":"Tool"},
     {"key":"motor_bldc","fn":"motor_bldc","spec":"Brushless motor","v":[40,80],"w":[400,3000],"qty":1,"ext":2,"obs":3,"loc":"Tool head"},
     {"key":"controller_board","fn":"controller_board","spec":"Motor controller","qty":1,"ext":2,"obs":5,"loc":"Tool body"},
-    {"key":"charger","fn":"charger","spec":"Charger","v":[40,82],"a":[2,6],"qty":1,"ext":1,"obs":2,"loc":"Garage shelf"}
+    {"key":"charger","fn":"charger","spec":"Charger","v":[40,82],"a":[2,6],"qty":1,"ext":1,"obs":2,"loc":"Garage shelf"},
+    {"key":"motor_dc_large","fn":"motor_dc_large","spec":"A DC motor assembly instead of a brushless one on some models (the EGO LM2000E manual lists one without saying brushed or brushless) — count the thick wires to tell","qty":1,"ext":2,"obs":3,"loc":"Tool head","p":0.25},
+    {"key":"switch","fn":"switch","spec":"Bail, starter, push, micro or film switches (Toro 21466: bail and starter switch; EGO LM2000E: push, micro and film switch; Ryobi RY404010: signal and push switch)","qty":2,"ext":2,"obs":3,"loc":"Handle and tool body"},
+    {"key":"connector_battery","fn":"connector","spec":"Battery receiver or compartment that the pack clicks into (Toro 21466 battery receiver, EGO LM2000E battery compartment); keep it with its own brand's packs","qty":1,"ext":2,"obs":3,"loc":"Where the pack fits"},
+    {"key":"led_light","fn":"led_light","spec":"LED headlight on some mowers (EGO LM2000E LED light assembly)","qty":1,"ext":2,"obs":3,"loc":"Front of the mower","p":0.25},
+    {"key":"fan","fn":"fan","spec":"Fan or impeller in blowers (the Ryobi RY404010 parts list has a fan with an M6 flange lock nut)","qty":1,"ext":2,"obs":3,"loc":"Blower housing","p":0.4},
+    {"key":"gearbox_drive","fn":"gearbox","spec":"Self-propel transmission on self-propelled mowers (Toro 21466: rear-wheel transmission with two 15-tooth pinion gears; on the EGO LM2130SP a separate drive unit)","qty":1,"ext":3,"obs":3,"loc":"Rear wheels","p":0.25},
+    {"key":"belt_pulley_drive","fn":"belt_pulley","spec":"V-belt in the self-propel drive of the Toro 21466","qty":1,"ext":2,"obs":3,"loc":"Rear wheels","p":0.25}
   ],
   "boards": [
     {"id":"bldc_controller","qty":1,"loc":"Tool body","p":1},

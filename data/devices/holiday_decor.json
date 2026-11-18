@@ -8,17 +8,21 @@
   "tools": ["hands","cutters","screwdriver"],
   "mins": 10,
   "kg": 3,
-  "hazards": ["mains"],
+  "hazards": ["mains","chemical","glass","laser"],
   "comps": [
     {"key":"led_light","fn":"led_light","spec":"LED light strings, 50–300 bulbs: mains strings, or low-voltage battery and solar strings that run on 3–4.5V","v":[3,4.5],"qty":3,"ext":1,"obs":4,"loc":"Boxes and tubs, or on eaves and trees"},
-    {"key":"fan","fn":"fan","spec":"12V DC blower inside each inflatable — a ready blower for a forge or stove","v":12,"qty":1,"ext":1,"obs":5,"loc":"Base of the inflatable"},
-    {"key":"psu","fn":"psu","spec":"12V adapters for inflatables and light displays","v":12,"qty":1,"ext":1,"obs":5,"loc":"On the inflatable's lead"},
+    {"key":"fan","fn":"fan","spec":"Blower that keeps each inflatable up: fed from a 12V plug-in adapter on the Gemmy 13-E-DTC (the fan's own rating isn't printed) or from 120V mains on the Gemmy AB-2-E — read the label first; a ready blower for a forge or stove","qty":1,"ext":1,"obs":5,"loc":"Base of the inflatable"},
+    {"key":"psu","fn":"psu","spec":"Low-voltage plug-in adapters for inflatables and light displays: 12V 1.5A on the Gemmy 13-E-DTC, 5.9V 1.5A on the SVI 12 ft skeleton — read the label","v":[5.9,12],"qty":1,"ext":1,"obs":5,"loc":"On the inflatable's lead","a":1.5},
     {"key":"solar_panel","fn":"solar_panel","spec":"Small solar panels on solar string lights and stakes, about 2–6V, usually with one AA NiMH cell underneath","w":[0.1,1],"v":[2,6],"qty":2,"ext":1,"obs":5,"loc":"Stake on the light string"},
     {"key":"battery_coin","fn":"battery_coin","spec":"CR2032 coin cells in LED tea lights and small light-up decorations","v":3,"ah":0.22,"qty":6,"ext":1,"obs":5,"loc":"Underneath each tea light"},
     {"key":"fabric_tarp","fn":"fabric_tarp","spec":"Ripstop nylon from inflatables — light waterproof fabric","qty":1,"ext":1,"obs":5,"loc":"The inflatable itself"},
     {"key":"wire_copper","fn":"wire_copper","spec":"Outdoor extension cords and lots of thin twin wire","qty":3,"ext":1,"obs":4,"loc":"With the lights"},
-    {"key":"motor_sync","fn":"motor_sync","spec":"Slow motors in animated figures and rotating stands","qty":1,"ext":2,"obs":5,"loc":"Inside animated pieces"},
-    {"key":"opto_sensor","fn":"opto_sensor","spec":"Photocell switches and plug-in timers","qty":1,"ext":1,"obs":5,"loc":"On the extension cords"}
+    {"key":"motor_sync","fn":"motor_sync","spec":"Slow motors in some animated figures and rotating stands (none documented in the logged models, so check yours)","qty":1,"ext":2,"obs":5,"loc":"Inside animated pieces"},
+    {"key":"opto_sensor","fn":"opto_sensor","spec":"Photocell switches and plug-in timers","qty":1,"ext":1,"obs":5,"loc":"On the extension cords"},
+    {"key":"fuse","fn":"fuse","spec":"Plug fuse on mains light strings and inflatables: 3A, 125V in the GE 50-light sets and 5A, 125V in the Gemmy AB-2-E — replace only with the same rating","v":125,"a":[3,5],"ac":true,"qty":1,"ext":1,"obs":4,"loc":"In the attachment plug"},
+    {"key":"battery_nimh","fn":"battery_nimh","spec":"One AA NiMH cell (1.2V, 600 mAh on the Glitzhome string) under the panel of solar string lights — charge it only on a NiMH charger","v":1.2,"ah":0.6,"qty":1,"ext":1,"obs":4,"loc":"Under the solar panel"},
+    {"key":"battery_primary","fn":"battery_primary","spec":"Four 1.5V C cells in big animated figures such as the SVI 12 ft skeleton (not included; the 5.9V adapter can power it instead)","v":1.5,"qty":4,"ext":1,"obs":3,"loc":"Battery compartment","p":0.25},
+    {"key":"display","fn":"display","spec":"LCD eyes in big animated figures such as the SVI 12 ft skeleton, switched from a button on the pelvis (on, 6-hour timer, off); no ratings printed","qty":1,"ext":2,"obs":3,"p":0.25}
   ],
   "boards": [],
   "buildings": [

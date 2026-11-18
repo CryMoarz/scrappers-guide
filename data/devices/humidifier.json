@@ -8,14 +8,16 @@
   "tools": ["screwdriver"],
   "mins": 10,
   "kg": 2,
-  "hazards": ["mold","mains","burn"],
+  "hazards": ["mold","mains","burn","hv_cap","chemical"],
   "comps": [
     {"key":"tank","fn":"tank","spec":"Water tank, 2–6 litres with a screw cap","qty":1,"ext":1,"obs":4,"loc":"Top or side"},
     {"key":"hall_reed","fn":"hall_reed","spec":"Low-water float with a magnet and reed switch (many ultrasonic models)","qty":1,"ext":2,"obs":5,"loc":"Water well in the base","p":0.5},
     {"key":"fan","fn":"fan","spec":"Small 12–24V DC fan that pushes the mist out","v":[12,24],"qty":1,"ext":1,"obs":5,"loc":"Base"},
-    {"key":"heating_element","fn":"heating_element","spec":"Heater, about 200–400W (warm-mist and steam models)","w":[200,400],"qty":1,"ext":2,"obs":5,"loc":"Base","p":0.5},
+    {"key":"heating_element","fn":"heating_element","spec":"Heater, about 200–400W, in warm-mist and hybrid models (the Levoit LV600HH is rated 280W); steam vaporizers with electrodes, like the Vicks V150, have no separate heater — current passes through the water, so never run or test one","w":[200,400],"qty":1,"ext":2,"obs":5,"loc":"Base","p":0.5},
     {"key":"psu","fn":"psu","spec":"Plug-in adapter or internal supply, often 24–48V for the mist driver","v":[24,48],"qty":1,"ext":1,"obs":5,"loc":"Base or wall plug"},
-    {"key":"controller_board","fn":"controller_board","spec":"Mist driver board with a power transistor and a piezo disc (about 1.7 MHz)","qty":1,"ext":2,"obs":5,"loc":"Base"}
+    {"key":"controller_board","fn":"controller_board","spec":"Mist driver board with a power transistor and a piezo disc (about 1.7 MHz)","qty":1,"ext":2,"obs":5,"loc":"Base"},
+    {"key":"pump_water","fn":"pump_water","spec":"Small pump that lifts water to the wicks on some evaporative models (the Levoit Superior 6000S, fed from its 24V adapter)","qty":1,"ext":2,"obs":4,"loc":"On the wick frame","p":0.25},
+    {"key":"battery_coin","fn":"battery_coin","spec":"CR2025 coin cell in the remote of the Levoit LV600HH; a swallowed coin cell can burn through a child's throat in as little as two hours, so keep it from children","v":3,"qty":1,"ext":1,"obs":4,"loc":"Remote control (models that have one)","p":0.25}
   ],
   "boards": [
     {"id":"smps_small","qty":1,"loc":"Plug-in adapter or built-in supply","p":0.5}

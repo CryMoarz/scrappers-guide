@@ -8,11 +8,12 @@
   "prev": 4,
   "tools": ["screwdriver"],
   "mins": 15,
-  "hazards": ["li_fire"],
+  "hazards": ["li_fire","chemical","mold","crush"],
   "comps": [
     {"key":"battery_li","fn":"battery_li","spec":"18–25V pack of cylindrical cells","v":[18,25],"qty":1,"ext":1,"obs":3,"loc":"Handle"},
-    {"key":"motor_bldc","fn":"motor_bldc","spec":"High-speed brushless motor","v":[18,25],"w":[100,450],"qty":1,"ext":2,"obs":4,"loc":"Body"},
-    {"key":"charger","fn":"charger","spec":"Charging dock or adapter","v":[21,30.5],"a":[0.5,1.2],"qty":1,"ext":1,"obs":3,"loc":"Wall mount"}
+    {"key":"motor_bldc","fn":"motor_bldc","spec":"High-speed motor run by its own control board; three thick leads usually mean brushless, two a plain DC motor. Type and power vary by model, so check yours","v":[18,25],"qty":1,"ext":2,"obs":4,"loc":"Body"},
+    {"key":"charger","fn":"charger","spec":"Charging dock or adapter","v":[21,30.5],"a":[0.5,1.2],"qty":1,"ext":1,"obs":3,"loc":"Wall mount"},
+    {"key":"filter_air","fn":"filter_air","spec":"Washable pre- and post-filters on the Dyson V8 Cyclone (rinse under a running tap, dry at least 24 hours); other models differ, check yours","qty":2,"ext":1,"obs":3}
   ],
   "boards": [
     {"id":"bldc_controller","qty":1,"loc":"Motor housing","p":1},

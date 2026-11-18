@@ -7,10 +7,10 @@
   "prev": 4,
   "tools": ["socket","wrench","pliers"],
   "mins": 60,
-  "kg": 180,
-  "hazards": ["fuel","sharp","heavy","acid"],
+  "kg": 218,
+  "hazards": ["fuel","sharp","heavy","acid","spring","burn","co_gas","crush"],
   "comps": [
-    {"key":"engine_small","fn":"engine_small","spec":"Single or V-twin petrol engine, 15–25 hp, electric start, vertical shaft","w":[11190,18650],"qty":1,"ext":3,"obs":2,"loc":"Under the hood or behind the seat","kg":30},
+    {"key":"engine_small","fn":"engine_small","spec":"Single or V-twin petrol engine, 15–25 hp, electric start, vertical shaft","w":[11190,18650],"qty":1,"ext":3,"obs":2,"loc":"Under the hood or behind the seat"},
     {"key":"battery_pb","fn":"battery_pb","spec":"Small 12V starting battery (U1 size)","v":12,"qty":1,"ext":1,"obs":3,"loc":"Under the seat or hood"},
     {"key":"alternator","fn":"alternator","spec":"Flywheel charging stator, about 3–15A at 12V","v":12,"a":[3,15],"qty":1,"ext":3,"obs":5,"loc":"Under the engine flywheel"},
     {"key":"motor_dc_small","fn":"motor_dc_small","spec":"12V starter motor","v":12,"qty":1,"ext":2,"obs":5,"loc":"Side of the engine"},
@@ -22,7 +22,11 @@
     {"key":"oil_lube","fn":"oil_lube","spec":"Engine oil, about 1.5–2 L","qty":1,"ext":1,"obs":5,"loc":"Engine sump"},
     {"key":"solenoid_actuator","fn":"solenoid_actuator","spec":"12V starter solenoid","v":12,"qty":1,"ext":1,"obs":5,"loc":"Near the battery"},
     {"key":"switch","fn":"switch","spec":"Seat, brake and blade safety switches","qty":3,"ext":1,"obs":5,"loc":"Seat and pedals"},
-    {"key":"led_light","fn":"led_light","spec":"12V headlights","v":12,"qty":2,"ext":1,"obs":4,"loc":"Front"}
+    {"key":"led_light","fn":"led_light","spec":"12V headlights: a 27W bulb on the Deere E100 and a bulb holder on the Husqvarna YTH18542 (bulb type not stated); Toro sells an LED kit as an accessory","v":12,"qty":2,"ext":1,"obs":4,"loc":"Front"},
+    {"key":"fuse","fn":"fuse","spec":"Blade fuse in the wiring harness: 20A on the Husqvarna YTH18542, 15A and 25A on the Toro 75748","a":[15,25],"qty":1,"ext":1,"obs":3,"loc":"Behind the dash, with the wiring harness"},
+    {"key":"tank_fuel","fn":"tank","spec":"Fuel tank, about 9–11.4 L (2.4–3 gal) on the models checked","qty":1,"ext":2,"obs":2,"loc":"Under the seat or hood"},
+    {"key":"blade","fn":"sheet_metal","spec":"Steel mower blades on the deck (two on the Toro 75748; the count varies by deck) — razor sharp, so pull the spark plug lead first","qty":2,"ext":1,"obs":3,"loc":"Under the deck"},
+    {"key":"solenoid_actuator_clutch","fn":"solenoid_actuator","spec":"Electric blade clutch with its engine pulley on some mowers (Toro 75748, part 117-7468), worked from the battery by the blade-control (PTO) switch","qty":1,"ext":3,"obs":4,"p":0.5}
   ],
   "buildings": [
     {"b":"garage_res","l":5},

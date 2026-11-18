@@ -8,15 +8,18 @@
   "tools": ["screwdriver","socket"],
   "mins": 30,
   "kg": 40,
-  "hazards": ["refrigerant","heavy","mains"],
+  "hazards": ["refrigerant","heavy","mains","hv_cap","spring","fiberglass"],
   "comps": [
     {"key":"compressor","fn":"compressor","spec":"Hermetic refrigeration compressor, about 1/6–1/4 hp, in a sealed system: keep the whole freezer running rather than opening it","v":[120,240],"w":[120,190],"ac":true,"qty":1,"ext":5,"obs":3,"loc":"Back corner compartment","kg":9},
     {"key":"thermostat","fn":"thermostat","spec":"Capillary-bulb thermostat with dial","qty":1,"ext":2,"obs":4,"loc":"Behind the control dial"},
-    {"key":"insulation","fn":"insulation","spec":"Thick polyurethane foam walls, about 5–8 cm, bonded to the cabinet","qty":1,"ext":5,"obs":4,"loc":"All walls and lid"},
+    {"key":"insulation","fn":"insulation","spec":"Thick polyurethane foam walls, about 5–8 cm, bonded to the cabinet; the Frigidaire lids are insulated with bulk fibreglass","qty":1,"ext":5,"obs":4,"loc":"All walls and lid"},
     {"key":"cooler_box","fn":"cooler_box","spec":"The cabinet itself: a superinsulated box that holds cold for a day or more with the power off","qty":1,"ext":1,"obs":5,"loc":"Whole unit","kg":35},
     {"key":"wire_copper","fn":"wire_copper","spec":"Mains cord, 3-core, about 2 m","qty":1,"ext":1,"obs":3,"loc":"Back"},
     {"key":"switch","fn":"switch","spec":"Lid light switch (some models)","qty":1,"ext":1,"obs":4,"loc":"Lid hinge edge","p":0.5},
-    {"key":"led_light","fn":"led_light","spec":"Small interior lamp (some models)","v":[120,240],"w":[1,15],"ac":true,"qty":1,"ext":1,"obs":4,"loc":"Under the lid","p":0.4}
+    {"key":"led_light","fn":"led_light","spec":"Small interior lamp (some models)","v":[120,240],"w":[1,15],"ac":true,"qty":1,"ext":1,"obs":4,"loc":"Under the lid","p":0.4},
+    {"key":"capacitor_large","fn":"capacitor_large","spec":"Run capacitor, 6–15 µF at 220–250V (Danby 6 or 8 µF 250V, Frigidaire 12 or 15 µF 220V) — discharge it through a resistor tool before touching it; keep it with its compressor","v":[220,250],"ac":true,"qty":1,"ext":1,"obs":3,"loc":"With the compressor"},
+    {"key":"relay","fn":"relay","spec":"Compressor start relay or PTC starter (Danby QP2-4.7H, JPQII-4.7 or QP2-4R7), or a single compressor controller on the Frigidaire models — the compressor won't start without its own","qty":1,"ext":1,"obs":4,"loc":"With the compressor"},
+    {"key":"thermostat_overload","fn":"thermostat","spec":"Compressor overload protector (Danby DRB21R61A1, BT62-120 or DRB18R61A1); a continuity reading doesn't prove it will still trip, so never heat or bridge a salvaged one","qty":1,"ext":1,"obs":4,"loc":"With the compressor","p":0.5}
   ],
   "buildings": [
     {"b":"house","l":3},

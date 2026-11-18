@@ -7,7 +7,7 @@
   "prev": 4,
   "tools": ["screwdriver","socket"],
   "mins": 30,
-  "hazards": ["refrigerant","heavy","sharp","mains"],
+  "hazards": ["refrigerant","heavy","sharp","mains","hv_cap","mold"],
   "comps": [
     {"key":"compressor","fn":"compressor","spec":"Rotary compressor","v":[120,240],"w":[400,2000],"ac":true,"qty":1,"ext":4,"obs":2,"loc":"Base"},
     {"key":"motor_ac","fn":"motor_ac","spec":"Dual-shaft fan motor","v":[120,240],"w":[50,190],"ac":true,"qty":1,"ext":3,"obs":3,"loc":"Centre, driving both fans"},

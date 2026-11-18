@@ -7,11 +7,15 @@
   "prev": 5,
   "tools": ["hands","screwdriver"],
   "mins": 3,
-  "hazards": [],
+  "hazards": ["sharp"],
   "comps": [
     {"key":"dcdc_buck","fn":"dcdc_buck","spec":"12V to 5V buck converter","v":5,"a":[1,3],"qty":1,"ext":2,"obs":4,"loc":"Inside the plug"},
-    {"key":"fuse","fn":"fuse","spec":"Small glass fuse in the tip","a":[2,10],"qty":1,"ext":1,"obs":5,"loc":"Unscrew the tip"},
-    {"key":"connector","fn":"connector","spec":"USB sockets","qty":2,"ext":3,"obs":4,"loc":"Top"}
+    {"key":"fuse","fn":"fuse","spec":"Some have one, some don't: behind the screw-off tip on some (2.5A on one generic 1A charger; 15A in a Slime compressor's 12V plug), on the board on others (PureGear, Ugreen CD213); the Belkin teardown names none","a":[2.5,15],"qty":1,"ext":1,"obs":5,"loc":"Behind the screw-off tip, or on the board"},
+    {"key":"connector","fn":"connector","spec":"USB sockets","qty":2,"ext":3,"obs":4,"loc":"Top"},
+    {"key":"inductor","fn":"inductor","spec":"Small power inductor of the step-down circuit (two on the Belkin F8J251, one per board on the Ugreen CD213): a spare for other small converters","qty":1,"ext":2,"obs":3,"loc":"On the board"},
+    {"key":"cap_elec","fn":"cap_elec","spec":"Low-voltage electrolytic capacitors: 35V 10 µF in with 16V 470 µF and 6.3V 330 µF out on the Belkin, 35V 100 µF in and 16V 220 µF out on each Ugreen board — reuse only at or below the marked voltage","v":[6.3,35],"qty":2,"ext":1,"obs":3,"loc":"On the board"},
+    {"key":"led_light","fn":"led_light","spec":"Small status LED beside the output ports (green on the Belkin F8J251, blue on the Ugreen CD213)","qty":1,"ext":1,"obs":5,"loc":"Beside the output ports"},
+    {"key":"charger_usb_pd","fn":"charger","spec":"USB-C power delivery chip on USB-C models (Hynetek HUSB338L on the Belkin F8J251, HUSB339 on the Ugreen CD213) that agrees 9V or 12V with the phone; too small to reuse by hand","qty":1,"ext":3,"obs":4,"p":0.5}
   ],
   "buildings": [
     {"b":"parking","l":4},
