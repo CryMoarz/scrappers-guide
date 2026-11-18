@@ -6,9 +6,12 @@
   "signs": ["Old fluorescent light ballasts with no 'No PCBs' label, mostly from before 1980","Large oil-filled capacitors in old industrial machines, lighting and motor gear","Older pole-top and pad-mounted transformers","Labels saying PCB or Askarel, or a yellow PCB warning sticker","Thick oily leaks from old electrical gear"],
   "do": ["Leave old oil-filled transformers and capacitors sealed and where they are","Choose light fittings with electronic ballasts or a 'No PCBs' label","If a part is leaking, wear gloves, soak up the oil with dry dirt or sawdust, and bag it","Keep leaking parts in a sealed metal container, away from water"],
   "dont": ["Don't burn PCB items or the oil","Don't cut, drain or crush old capacitors and transformers","Don't use the oil as fuel, lubricant or for anything else","Don't let the oil reach wells, streams or gardens"],
-  "ppe": ["Nitrile gloves","Safety glasses","Long sleeves"],
+  "ppe": ["Nitrile gloves","Goggles if anything can spray, safety glasses otherwise","Long sleeves"],
   "firstAid": ["On skin: wash with soap and water straight away","In an eye: rinse with clean water for at least 15 minutes","Breathed smoke from burning PCBs: get to fresh air and get medical care","Rashes, especially acne-like spots, after exposure need medical attention"],
   "refs": [
     {"lib":"wikipedia","q":"Polychlorinated biphenyl"}
+  ],
+  "sources": [
+    {"title":"OSHA 3151: Personal Protective Equipment (OSHA 3151-02R 2023)","url":"https://www.osha.gov/sites/default/files/publications/osha3151.pdf"}
   ]
 }

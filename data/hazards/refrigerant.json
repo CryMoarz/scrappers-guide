@@ -6,9 +6,12 @@
   "signs": ["A sealed loop of copper or aluminium tubing joined to a black dome compressor","A rating plate listing the refrigerant, such as R-134a, R-600a, R-290, R-410A, R-22 or R-12","'Flammable refrigerant' warnings, or red markings on the tubing","Hissing, oily stains on tubing, or frost on a broken line","Gas, caravan, RV and silent minibar fridges with no compressor, and fridges from before about 1950: these may hold ammonia, sulfur dioxide or methyl chloride, which are poisonous, so keep their tubing sealed"],
   "do": ["Keep the sealed system closed: take fans, motors, wiring, thermostats and panels without cutting tubing","Take the whole unit if you need the compressor; a working fridge is worth more whole","Treat flammable refrigerants like propane: no sparks or flames nearby","Ventilate well if a line breaks, and keep out of low spots where gas collects"],
   "dont": ["Don't cut, drill or unbraze tubing on a unit that still holds gas","Don't use a torch or grinder on refrigerant lines","Don't open a sealed system in a small room or basement","Don't attempt refrigerant recovery without training and a recovery machine"],
-  "ppe": ["Safety glasses","Thick gloves; liquid refrigerant causes frostbite","Good ventilation"],
+  "ppe": ["Goggles if anything can spray","Thick gloves; liquid refrigerant causes frostbite","Good ventilation"],
   "firstAid": ["Frostbite from spray: warm the area in lukewarm water, not hot; don't rub; blistering or numbness needs medical care","Spray in an eye: rinse with lukewarm water for at least 15 minutes and get medical help","Dizziness or breathlessness after a leak: get to fresh air. Don't go down into a basement or pit after someone who collapsed until it's aired out, or you'll collapse too; collapse needs CPR and medical care"],
   "refs": [
     {"lib":"wikipedia","q":"Refrigerant"}
+  ],
+  "sources": [
+    {"title":"OSHA 3151: Personal Protective Equipment (OSHA 3151-02R 2023)","url":"https://www.osha.gov/sites/default/files/publications/osha3151.pdf"}
   ]
 }

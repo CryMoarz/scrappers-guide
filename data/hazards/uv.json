@@ -6,11 +6,15 @@
   "signs": ["Clear quartz tubes or bulbs, not frosted or white-coated, labelled UV-C, UVC or germicidal","Lamps inside water purifier chambers, air purifiers, ductwork and sterilising cabinets","A faint blue-violet glow from a clear tube","A sharp, clean smell like after a thunderstorm: ozone","Warning labels about eye and skin exposure"],
   "do": ["Run UV-C lamps only inside a closed housing","Fit or keep a switch that turns the lamp off when the housing is opened","Check it's lit through a small window of ordinary glass or clear polycarbonate, which block UV-C","Handle lamps by the ends, and treat a broken one like a mercury spill"],
   "dont": ["Don't look at a bare lit UV-C lamp, even for a moment","Don't expose your skin to it","Don't use it to disinfect people, pets, or rooms with people in them","Don't run ozone-making lamps where people sleep"],
-  "ppe": ["Polycarbonate safety glasses or a face shield","Gloves and long sleeves"],
+  "ppe": ["UV-rated eye protection (a UV mark on the lens, or EN 166), or a face shield over safety glasses; a visor with no rating may not block enough","Gloves and long sleeves"],
   "firstAid": ["Gritty, painful, watering eyes 6–12 hours after exposure: rest in a dark room with eyes closed and a cool damp cloth on them","It usually heals in 1–2 days; if it doesn't, or vision stays blurred, get medical care","Skin: treat like sunburn; cool it, shade it and keep it covered"],
   "refs": [
     {"lib":"nomad_conditions","q":"eye irritation","path":"eye-irritation","note":"First aid and over-the-counter treatment on a NOMAD box"},
     {"lib":"wikimed","q":"Photokeratitis"},
     {"lib":"wikipedia","q":"Photokeratitis"}
+  ],
+  "sources": [
+    {"title":"uvex EN 166: Safety glasses, standards and directives","url":"https://www.uvex-safety.com/en/knowledge/safety-standards/safety-glasses"},
+    {"title":"OSHA 3151: Personal Protective Equipment (OSHA 3151-02R 2023)","url":"https://www.osha.gov/sites/default/files/publications/osha3151.pdf"}
   ]
 }

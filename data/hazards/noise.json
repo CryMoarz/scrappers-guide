@@ -1,0 +1,16 @@
+{
+  "id": "noise",
+  "label": "Loud noise",
+  "severity": 2,
+  "summary": "Generators, chainsaws, grinders, cut-off saws, compressors and engines damage hearing a little at a time, without pain, and the damage is permanent. Ringing or dull hearing after work is the warning.",
+  "signs": ["You have to shout to be heard by someone close by","Ringing or buzzing in your ears afterwards","Sounds seem muffled after the noise stops"],
+  "do": ["Wear earplugs or earmuffs around loud machines, and both together for the loudest jobs","Fit foam plugs properly: roll them thin, pull the ear up and back, push them in and hold until they expand","Put generators and compressors away from where people work and sleep, behind something solid","Take breaks away from the noise"],
+  "dont": ["Don’t rely on cotton wool or fingers in your ears for more than a moment","Don’t treat ringing that fades as harmless"],
+  "ppe": ["Foam earplugs, fitted properly, or earmuffs","Plugs and muffs together for chainsaws, cut-off saws and similar"],
+  "firstAid": ["There is no fix for noise damage once it’s done; ringing that fades still means some harm. Keep away from loud noise and protect what hearing is left"],
+  "sources": [
+    {"title":"NIOSH 98-126: Criteria for a Recommended Standard, Occupational Noise Exposure","url":"https://www.cdc.gov/niosh/docs/98-126/pdfs/CriteriaDoc_98-126.pdf"},
+    {"title":"OSHA 1910.95: 29 CFR 1910.95 Occupational noise exposure","url":"https://www.osha.gov/laws-regs/regulations/standardnumber/1910/1910.95"},
+    {"title":"NIOSH earplugs: How to Wear Soft Foam Earplugs","url":"https://www.cdc.gov/niosh/mining/tools/earplugs.html"}
+  ]
+}

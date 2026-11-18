@@ -6,10 +6,14 @@
   "signs": ["Optical drives (DVD writers have the strongest diodes), barcode scanners and laser printers","Laser pointers, levels and projectors","Laser cutters and engravers","Fibre-optic modules in network gear","Warning stickers with a starburst symbol, or Class 3B or Class 4"],
   "do": ["Treat every salvaged laser diode as able to blind you","Power diodes only through a current-limited driver","Point the beam at a dark, matte, non-flammable target such as brick or concrete, never at anything shiny","Wear laser goggles rated for that wavelength and power when testing","Keep other people and animals out of the room"],
   "dont": ["Don't look into the beam or along it, even briefly","Don't look at reflections from glass, metal or water","Don't assume a laser is off because you can't see a beam","Don't point a laser at people, animals, vehicles or aircraft","Don't trust sunglasses: they don't protect against lasers","Don't open a CO2 laser cutter's tube or power supply until it's unplugged and discharged: it runs on tens of thousands of volts"],
-  "ppe": ["Laser safety glasses rated for the wavelength: about 405 nm (Blu-ray), 445–455 nm (blue diode engravers), 520–532 nm (green pointers), 650 nm (DVD), 780 nm (CD), 1,064 nm (fibre lasers, and the hidden infrared from cheap green pointers), or 10,600 nm (CO2 cutters)"],
+  "ppe": ["Laser safety glasses rated for the wavelength: about 405 nm (Blu-ray), 450–460 nm (blue diode engravers), 532 nm (green pointers), 650 nm (DVD), 780 nm (CD), 1,064 nm (fibre lasers, and the hidden infrared from cheap green pointers), or 10,600 nm (CO2 cutters)"],
   "firstAid": ["There is no first aid for a laser eye injury","A blind spot, an afterimage that doesn't fade, or blurred vision after exposure needs an eye examination","Skin burns: cool under cool running water for 20 minutes"],
   "refs": [
     {"lib":"nomad_conditions","q":"eye irritation","path":"eye-irritation","note":"First aid and over-the-counter treatment on a NOMAD box"},
     {"lib":"wikipedia","q":"Laser safety"}
+  ],
+  "sources": [
+    {"title":"xTool goggles: An Introduction to xTool Safety Goggles","url":"https://support.xtool.com/article/631"},
+    {"title":"NIST green pointers: Beware the Dim Laser Pointer: NIST Researchers Measure High Infrared","url":"https://www.nist.gov/node/400021"}
   ]
 }

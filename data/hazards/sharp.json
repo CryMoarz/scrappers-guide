@@ -6,11 +6,15 @@
   "signs": ["Cut or punched sheet metal: computer cases, ducting, appliance panels","Blades in shredders, blenders, mowers and fans","Snapped plastic, cut wire ends and cut cable ties","Rusty metal, hidden screws and nails in rubble"],
   "do": ["Wear gloves for all teardown work","File or tape cut edges as you make them","Cut away from your body and keep your other hand behind the blade","Look before you reach into a cavity","Carry a clean first-aid kit"],
   "dont": ["Don't run your hand along an edge to feel it","Don't reach blind into bins, cabinets or cushions","Don't hold a part in your hand while cutting it","Don't leave cut metal lying where people walk"],
-  "ppe": ["Cut-resistant or leather gloves","Safety glasses","Long sleeves, and boots with stiff soles"],
+  "ppe": ["Cut-resistant gloves (EN 388 or ANSI A-rated); leather alone isn’t cut-resistant","No gloves near spinning machines: they can pull a hand in","Safety glasses","Long sleeves, and boots with puncture-resistant soles (PR, the CSA green triangle, S3)"],
   "firstAid": ["Press firmly on the cut with a clean pad for at least 10 minutes","Rinse well with clean water that was boiled and cooled, and cover with a clean dressing","Change the dressing daily; spreading redness, heat, pus, red streaks or fever need medical care","Deep, gaping or dirty cuts, or cuts with numbness or weak movement, need medical care","Dirty or rusty wounds carry a tetanus risk; get a booster if any medical help exists","Blood spurting or soaking through pad after pad on an arm or leg: keep pressing hard; if it won't stop, tie a wide strip of cloth tight 5–8 cm above the cut, not on a joint, twist it with a stick until bleeding stops, note the time and leave it on","Don't pull out a large or deeply stuck piece of metal or glass: pad around it, keep it still and get medical help"],
   "refs": [
     {"lib":"nomad_conditions","q":"wounds cuts","path":"wounds-cuts","note":"First aid and over-the-counter treatment on a NOMAD box"},
     {"lib":"wikimed","q":"Wound"},
     {"lib":"wikipedia","q":"Wound"}
+  ],
+  "sources": [
+    {"title":"Superior Glove: Everything You Need to Know About Cut Resistant Gloves","url":"https://superiorglove.com/2023/12/18/everything-you-need-to-know-about-cut-resistant-gloves"},
+    {"title":"OSHA 3151: Personal Protective Equipment (OSHA 3151-02R 2023)","url":"https://www.osha.gov/sites/default/files/publications/osha3151.pdf"}
   ]
 }

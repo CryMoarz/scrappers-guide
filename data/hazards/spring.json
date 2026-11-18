@@ -6,9 +6,12 @@
   "signs": ["Garage doors: a thick coil spring on a bar above the door, or long springs along the side tracks","Steel cables running from the bottom corners of a door to drums or pulleys at the top","Vehicle suspension struts and coil springs","Recoil starter springs in small engines","Heavy springs in machines, trampolines, door closers and lifting arms"],
   "do": ["Leave garage door springs, cables, drums and bottom brackets alone","Take the parts that aren't under tension, such as the opener head unit and wiring","Take car struts out as a whole unit, with the spring still on it","Keep your face and body out of line with any spring you work near"],
   "dont": ["Don't loosen set screws on a torsion spring or its winding cone","Don't unbolt the bottom brackets or cables of a garage door","Don't use screwdrivers or bars that weren't made for winding springs","Don't take a strut apart without a proper spring compressor and training","Don't stand in front of a spring while releasing anything","Don't unbolt a suspension arm, ball joint or axle with a coil spring sitting on it, and don't cut or heat a spring that is still compressed","Don't pull the opener's emergency release or unbolt the opener while the door is open: with a weak or broken spring the door can crash down"],
-  "ppe": ["Face shield or safety glasses","Leather gloves"],
+  "ppe": ["Safety glasses, with a face shield over them","Gloves for grip"],
   "firstAid": ["Control bleeding with firm pressure","A blow to the head followed by confusion, vomiting, drowsiness or unequal pupils needs urgent medical care","Splint suspected broken bones and get medical help"],
   "refs": [
     {"lib":"wikipedia","q":"Garage door"}
+  ],
+  "sources": [
+    {"title":"OSHA 3151: Personal Protective Equipment (OSHA 3151-02R 2023)","url":"https://www.osha.gov/sites/default/files/publications/osha3151.pdf"}
   ]
 }
