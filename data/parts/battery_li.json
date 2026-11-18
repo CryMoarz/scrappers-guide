@@ -9,6 +9,10 @@
   "uses": ["Power banks, lights and radios","DIY packs for 12V and 24V systems","Replacing dead packs in tools and e-bikes","Solar storage (LiFePO4 is the safest)"],
   "identify": "Cylinders (an 18650 is 18 × 65 mm) or flat silver pouches, usually wrapped in packs with a small protection board. Li-ion runs 3.0–4.2V per cell (3.6–3.7V nominal); LiFePO4 runs 2.5–3.65V (3.2V nominal). Disposable vapes often hide one cell each.",
   "test": "Measure each cell: below about 2.5V a Li-ion cell may be damaged; below 1V treat it as dead. Charge slowly and watch: a cell that gets hot, swells or loses voltage overnight is scrap. Never puncture, short or charge a swollen cell.",
-  "decay": {"halfLifeMonths":36,"note":"Cells self-discharge slowly; ones left in devices drain flat and can be ruined within a year or two."},
-  "hazards": ["li_fire"]
+  "decay": {"halfLifeMonths":36,"note":"Cells self-discharge slowly; ones left in devices drain flat and can be ruined within a year or two. Heat ruins them faster: about 60 °C cuts their life sharply and more can make them vent, and a closed car passes 50 °C in 20 min on a 35 °C day. Salvage in spring or autumn."},
+  "hazards": ["li_fire"],
+  "sources": [
+    {"title":"NRC lithium-ion primer: Lithium-ion battery safety primer: for use, storage and disposal (Touchette et al., National Research Council Canada, 2021)","url":"https://nrc-publications.canada.ca/eng/view/ft/?id=6512acce-9abc-48d2-9f84-1200a810ac66"},
+    {"title":"Canada Safety Council hot car: Hot Car Warning","url":"https://canadasafetycouncil.org/hot-car-warning/"}
+  ]
 }

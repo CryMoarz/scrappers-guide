@@ -3,7 +3,7 @@
   "label": "Medical waste and sharps",
   "severity": 3,
   "summary": "Used needles, scalpels, blood, body fluids, medical waste, sewage and human or animal remains can carry hepatitis, HIV, tetanus and gut infections. Hospitals, clinics, nursing homes, pharmacies and abandoned homes all have them.",
-  "signs": ["Yellow or red bins and bags, often with the biohazard symbol","Sharps boxes and loose needles","Bloody dressings, tubing and swabs","Sewage, overflowing toilets and standing dirty water","Dead animals or human remains; flies and a sweet rotten smell","Mouse or rat droppings, nests and urine stains, especially in closed-up rooms, sheds, cabins and vehicles"],
+  "signs": ["Yellow or red bins and bags, often with the biohazard symbol","Sharps boxes and loose needles","Bloody dressings, tubing and swabs","Sewage, overflowing toilets and standing dirty water","Dead animals or human remains; flies and a sweet rotten smell","Mouse or rat droppings, nests and urine stains, especially in closed-up rooms, sheds, cabins and vehicles","Raccoon latrines: piles of droppings on raised, flat spots in attics, garages, decks and roofs. Roundworm eggs live for years, bleach doesn't kill them (heat does), and young children are at highest risk. Don't treat it like mouse droppings: mist it and wear an N95 in a closed space.","Thick, dry bird or bat droppings in attics, lofts, old buildings, coops and on bridges: the dust can carry histoplasmosis (known in Ontario and Quebec) and cryptococcus. Mist it first, wear an N95 or better (N100 for large piles), and never sweep or vacuum it dry.","Bats in a roof space or building: any contact, even with no visible bite or scratch, is a rabies risk. Wash with soap and water for at least 15 minutes, leave the wound uncovered, and get rabies shots from any clinic still working, soon: once symptoms start it can't be treated."],
   "do": ["Wear thick gloves and pick up needles with pliers or tongs","Drop needles point-first into a hard plastic bottle with a screw lid","Assume all blood and body fluid is infectious","Wash hands with soap and water after any contact, even with gloves on","Keep sewage and remains well away from water sources","Leave remains alone, or move them only with gloves, a mask and help","Air out rooms with rodent droppings for 30 minutes, then soak droppings and nests with 1 part bleach to 10 parts water for 5 minutes and wipe up with gloves; never sweep or vacuum them dry"],
   "dont": ["Don't reach blindly into bins, bags, drawers or between cushions","Don't recap, bend or break needles","Don't open sharps boxes","Don't eat or drink in contaminated rooms"],
   "ppe": ["Nitrile gloves, with thick gloves over them for rough work. No glove stops a needle: pick sharps up with pliers or tongs","Goggles or a face shield against splashes; safety glasses don’t keep splashes out","An N95 or better for dust from droppings; a half mask with P100 filters for a heavy rodent mess","Boots with puncture-resistant soles"],
@@ -15,6 +15,22 @@
   "sources": [
     {"title":"ISHN: Stop on-the-job needlestick injuries (2014)","url":"https://www.ishn.com/articles/97869-stop-on-the-job-needlestick-injuries"},
     {"title":"CDC rodent clean-up: How to Clean Up After Rodents","url":"https://www.cdc.gov/healthy-pets/rodent-control/clean-up.html"},
-    {"title":"OSHA 3151: Personal Protective Equipment (OSHA 3151-02R 2023)","url":"https://www.osha.gov/sites/default/files/publications/osha3151.pdf"}
+    {"title":"OSHA 3151: Personal Protective Equipment (OSHA 3151-02R 2023)","url":"https://www.osha.gov/sites/default/files/publications/osha3151.pdf"},
+    {"title":"CDC Baylisascaris prevention: Preventing Raccoon Roundworm","url":"https://www.cdc.gov/baylisascaris/prevention/index.html"},
+    {"title":"CDC Baylisascaris causes: How Raccoon Roundworm Spreads","url":"https://www.cdc.gov/baylisascaris/causes/index.html"},
+    {"title":"CDC EID egg viability: Viability of Baylisascaris procyonis Eggs (Shafir et al., Emerging Infectious Diseases 17(7), 2011)","url":"https://wwwnc.cdc.gov/eid/article/17/7/10-1774"},
+    {"title":"King County raccoon latrine: How to clean up a raccoon latrine - King County, Washington","url":"https://kingcounty.gov/en/dept/dph/health-safety/disease-illness/zoonotic-diseases/diseases-by-animal/raccoons/latrine"},
+    {"title":"USask WCVM Baylisascaris: Baylisascaris procyonis in people","url":"https://wcvm.usask.ca/learnaboutparasites/parasites/baylisascaris-procyonis-people.php"},
+    {"title":"CDC MMWR Quebec: Histoplasmosis Outbreak Associated with the Renovation of an Old House - Quebec, Canada, 2013","url":"https://www.cdc.gov/mmwr/preview/mmwrhtml/mm6251a1.htm"},
+    {"title":"PHO EID Ontario: Epidemiology and Geographic Distribution of Blastomycosis, Histoplasmosis, and Coccidioidomycosis, Ontario, Canada, 1990-2015 (Brown et al., Emerging Infectious Diseases 24(7), 2018)","url":"https://wwwnc.cdc.gov/eid/article/24/7/17-2063_article"},
+    {"title":"CCOHS histoplasmosis: CCOHS, Histoplasmosis","url":"https://ccohs.ca/oshanswers/diseases/histopla.html"},
+    {"title":"CDC histoplasmosis prevention: Reducing Risk for Histoplasmosis","url":"https://www.cdc.gov/histoplasmosis/prevention/index.html"},
+    {"title":"NIOSH histoplasmosis: Histoplasmosis and Work","url":"https://www.cdc.gov/niosh/histoplasmosis/about/"},
+    {"title":"Illinois IDPH droppings: Health Hazards Associated with Bird and Bat Droppings","url":"https://idph.illinois.gov/public/hb/hbb&bdrp.htm"},
+    {"title":"PHAC PSDS Cryptococcus: Pathogen Safety Data Sheets: Infectious Substances - Cryptococcus neoformans","url":"https://www.canada.ca/en/public-health/services/laboratory-biosafety-biosecurity/pathogen-safety-data-sheets-risk-assessment/cryptococcus-neoformans.html"},
+    {"title":"Quebec bat droppings: Cleaning of an environment contaminated with bat droppings","url":"https://www.quebec.ca/en/housing-territory/healthy-living-environment/cleaning-of-an-environment-contaminated-with-bat-droppings"},
+    {"title":"PHAC rabies: Rabies: Spread, prevention and risks","url":"https://www.canada.ca/en/public-health/services/diseases/rabies/prevention.html"},
+    {"title":"Halton Region bats: Bats and Rabies","url":"https://www.halton.ca/For-Residents/Immunizations-Preventable-Disease/Rabies/Bats-Rabies"},
+    {"title":"Quebec bats: Preventing health problems caused by bats","url":"https://www.quebec.ca/en/health/advice-and-prevention/health-and-environment/preventing-health-problems-caused-by-bats"}
   ]
 }

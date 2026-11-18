@@ -3,7 +3,7 @@
   "label": "Fall from height",
   "severity": 4,
   "summary": "Falls from ladders, roofs, shelving, mezzanines and loading docks, and through skylights, fragile roof sheets, rotten floors and open shafts. A fall of 2 m can kill, and a broken leg far from help can be just as deadly.",
-  "signs": ["Any work above about 2 m","Fragile roofs: cement sheets, plastic roof lights and skylights","Open lift shafts, missing railings, hatches and pits","Wet, icy, mossy or dusty surfaces","Wind, darkness or tiredness"],
+  "signs": ["Any work above about 2 m","Fragile roofs: cement sheets, plastic roof lights and skylights","Open lift shafts, missing railings, hatches and pits","Wet, icy, mossy or dusty surfaces","Wind, darkness or tiredness","Open manholes and missing storm grates: cast-iron covers get stolen for scrap, and flood pressure can push them off. Floodwater hides the hole, and people have died after falling into one, so don't walk or drive through flooded streets."],
   "do": ["Stand a ladder on firm, level ground, about 1 out for every 4 up","Have someone foot the ladder, or tie it at the top","Keep three points of contact: two feet and a hand, or two hands and a foot","Let the ladder stick out about 1 m above the edge you step onto","Haul tools and parts up on a rope instead of carrying them","Stay off fragile roofs and skylights entirely"],
   "dont": ["Don't stand on the top three rungs of a leaning ladder, or the top two steps of a stepladder","Don't lean or reach out sideways from a ladder","Don't step on skylights, plastic roof lights or cement roof sheets","Don't work at height alone, in wind, or in the dark","Don't use shelving, chairs or boxes as ladders","Don't raise, carry or use a ladder, especially a metal one, within about 3 m of overhead power lines"],
   "ppe": ["Boots with good grip","Hard hat with the chin strap done up, so it stays on if you slip or fall","A harness only with an anchor good for about 22 kN (5,000 lb), a check before each use, and enough clear space below: OSHA’s worked example with a short lanyard needs 4.4 m (14.5 ft)","Retire a harness that has caught a fall, or whose history you don’t know","Never work at height alone: hanging in a harness can kill in under 30 minutes"],
@@ -15,6 +15,11 @@
     {"title":"OSHA 1926.502: Fall protection systems criteria and practices, 29 CFR 1926.502","url":"https://www.osha.gov/laws-regs/regulations/standardnumber/1926/1926.502"},
     {"title":"OSHA OTM clearance: OSHA Technical Manual, Section V Chapter 4, Fall Protection in Construction","url":"https://www.osha.gov/otm/section-5-construction-operations/chapter-4"},
     {"title":"OSHA SHIB suspension trauma: Suspension Trauma/Orthostatic Intolerance, SHIB 03-24-2004","url":"https://www.osha.gov/sites/default/files/publications/shib032404.pdf"},
-    {"title":"OSHA SHIB: Head Protection: Safety Helmets in the Workplace","url":"https://www.osha.gov/sites/default/files/publications/safety_helmet_shib.pdf"}
+    {"title":"OSHA SHIB: Head Protection: Safety Helmets in the Workplace","url":"https://www.osha.gov/sites/default/files/publications/safety_helmet_shib.pdf"},
+    {"title":"Global News Vancouver grates: Vancouver bandits take theft to a hole new level by stealing iron catch basin covers (7 June 2012)","url":"https://globalnews.ca/news/253924/vancouver-bandits-take-theft-to-a-hole-new-level-by-stealing-iron-catch-basin-covers/"},
+    {"title":"BC Government op-ed 2011: Metal thieves threaten public safety in countless ways (Shirley Bond, 4 November 2011)","url":"https://news.gov.bc.ca/factsheets/opinion-editorial-metal-thieves-threaten-public-safety-countless-ways"},
+    {"title":"Korea Times Seoul floods: Seoul City to retrofit manholes to prevent fatal falls during floods (12 August 2022)","url":"https://www.koreatimes.co.kr/amp/southkorea/environment-animals/20220812/seoul-city-to-retrofit-manholes-to-prevent-fatal-falls-during-floods"},
+    {"title":"NWS flood aftermath: National Weather Service, After a Flood","url":"https://www.weather.gov/safety/flood-after"},
+    {"title":"CDC floodwater: Safety Guidelines: Floodwater","url":"https://cdc.gov/floods/safety/floodwater-after-a-disaster-or-emergency-safety.html"}
   ]
 }

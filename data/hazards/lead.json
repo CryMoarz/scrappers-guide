@@ -3,13 +3,20 @@
   "label": "Lead",
   "severity": 3,
   "summary": "Lead in old solder, CRT glass, old paint, batteries, wheel weights and old pipes is toxic. It builds up in the body and damages nerves, kidneys and the brain. Children and pregnant women are harmed most, at doses that cause no symptoms.",
-  "signs": ["Dull grey solder on older circuit boards","Lead-acid batteries and the crust around them","Flaking or chalky old paint, especially in buildings from before the 1980s","CRT funnel glass","Wheel weights, fishing weights, old pipes and roof flashing"],
-  "do": ["Wash hands and face before eating, drinking or smoking","Work outdoors or with a through-draught","Wet old paint before scraping it","Change clothes after dirty work and wash them separately","Keep children and pregnant women away from lead work and lead dust"],
+  "signs": ["Dull grey solder on older circuit boards","Lead-acid batteries and the crust around them","Flaking or chalky old paint, especially in buildings from before the 1980s","CRT funnel glass","Wheel weights, fishing weights, old pipes and roof flashing","Painted doors, sashes and trim: probably lead paint if the building dates from before 1960; exteriors may have it up to 1990, interiors in smaller amounts; after 1990 it should be lead-free. Chipped or flaking paint is the worst.","Hardware-store swab kits are a rough check at best: Health Canada doesn't recommend home lead test kits, and the US EPA trusts a kit only for a negative result in trained hands. Send a paint chip to a lab if it matters, or treat old paint as lead."],
+  "do": ["Wash hands and face before eating, drinking or smoking","Work outdoors or with a through-draught","Wet old paint before scraping it","Change clothes after dirty work and wash them separately","Keep children and pregnant women away from lead work and lead dust","Strip salvaged paint with a brush-on paste stripper if you can. To scrape, spray the paint with water and a little detergent first and wipe up with a damp cloth. No sanders, heat guns or blowlamps: they make lead dust and fumes."],
   "dont": ["Don't sand, grind or burn old paint","Don't melt lead indoors or anywhere near food","Don't eat, drink or smoke while working with lead","Don't keep food or water in lead-soldered or lead-glazed containers","Don't dry-sweep or blow lead dust: wipe it up with wet rags or a wet mop","Don't let water, damp scrap or a wet mould touch molten lead: it turns to steam and throws molten metal"],
   "ppe": ["Nitrile gloves","A P100 (P3) respirator for dust and fumes","Work clothes you leave at the door"],
   "firstAid": ["There is no quick fix: stop the exposure and keep it stopped","Stomach pain, headaches, tiredness, irritability, or a child falling behind after exposure needs medical attention","Only a blood test confirms lead poisoning","A child who swallowed a lead weight, pellet or paint chips needs medical care quickly: lead dissolves in the stomach"],
   "refs": [
     {"lib":"wikimed","q":"Lead poisoning"},
     {"lib":"wikipedia","q":"Lead poisoning"}
+  ],
+  "sources": [
+    {"title":"Health Canada lead paint: Lead-based paint","url":"https://www.canada.ca/en/health-canada/services/home-safety/lead-based-paint.html"},
+    {"title":"Health Canada lead exposure: Reduce your exposure to lead","url":"https://www.canada.ca/en/health-canada/services/home-garden-safety/reduce-your-exposure-lead.html"},
+    {"title":"HealthLinkBC lead paint: Lead paint and hazards","url":"https://www.healthlinkbc.ca/healthlinkbc-files/lead-paint-and-hazards"},
+    {"title":"Health Canada test kits 2007: Canadians advised that home lead testing kits are unreliable (news release, 18 December 2007)","url":"https://www.canada.ca/en/news/archive/2007/12/canadians-advised-that-home-lead-testing-kits-are-unreliable.html"},
+    {"title":"EPA lead test kits: Lead Test Kits","url":"https://www.epa.gov/lead/lead-test-kits"}
   ]
 }
