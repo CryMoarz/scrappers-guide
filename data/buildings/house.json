@@ -3,5 +3,5 @@
   "name": "Houses",
   "osm": ["building=house","building=detached","building=residential"],
   "exposure": 3,
-  "hazards": ["found_ammunition","sealed_heating"]
+  "hazards": ["found_ammunition","sealed_heating","stinging_insects"]
 }

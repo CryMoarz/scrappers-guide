@@ -3,5 +3,5 @@
   "name": "Scrap and salvage yards",
   "osm": ["industrial=scrap_yard","amenity=scrapyard"],
   "exposure": 1,
-  "hazards": ["line_recoil","projectile","sealed_heating"]
+  "hazards": ["line_recoil","projectile","sealed_heating","stinging_insects"]
 }

@@ -4,5 +4,5 @@
   "osm": ["man_made=water_works","man_made=wastewater_plant","man_made=pumping_station"],
   "exposure": 1,
   "notes": "Large pumps, motors, standby generators, chemical stores and spare parts. Chemical hazards on site.",
-  "hazards": ["chemical","mains","confined_space","h2s"]
+  "hazards": ["chemical","mains","confined_space","h2s","caustic"]
 }

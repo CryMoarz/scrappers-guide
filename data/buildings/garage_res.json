@@ -3,5 +3,5 @@
   "name": "Garages and sheds",
   "osm": ["building=garage","building=garages","building=shed"],
   "exposure": 2,
-  "hazards": ["entanglement","found_ammunition","self_heating","sealed_heating"]
+  "hazards": ["entanglement","found_ammunition","self_heating","sealed_heating","stinging_insects"]
 }
