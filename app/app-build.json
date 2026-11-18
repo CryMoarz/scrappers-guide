@@ -1,10 +1,10 @@
 {
-  "version": "4.3.0",
-  "date": "2026-11-17",
-  "id": "9ea1d26a3e9b",
-  "sha256": "3c6af4d4ab3629d0d6f1c6cd0c7c6c8c7e750222499b76614af0362b4d78fae0",
+  "version": "4.4.0",
+  "date": "2026-11-18",
+  "id": "f02bb2f95494",
+  "sha256": "1e193788d7ed874ae074e575fb8f8959daccf7fc2e2e356e9bd7e03f24d7127a",
   "sig": {
     "key": "zlzxoO0nDkCb4pDu-MukBhhaK8LtIXGx3nhFRJqLJDU",
-    "value": "KU5MjtXK1_LS3VSIOdPErokca6HDRRD8miUVScmln_PQTnZOs7ZXF7DWcDqcINuda8aC1cfcBRS8P4PrM8eHAg"
+    "value": "ZLnxsiU0TWKaLNnUGTA6Vedy1FGKfsyp2TIT25YCSMZyumNdjnw2KTz6BudUnqgmWSXXwiuoivbfmnv5FVsxDA"
   }
 }
