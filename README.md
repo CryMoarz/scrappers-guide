@@ -225,6 +225,7 @@ Also: `tools/fmt.js` (standard file layout), `tools/export-text.js` (Markdown an
 | [docs/LORA.md](docs/LORA.md) | The LoRa radio bridge |
 | [docs/AI-TOOLS.md](docs/AI-TOOLS.md) and [docs/API.md](docs/API.md) | The AI tool server and the HTTP API |
 | [CONTRIBUTING.md](CONTRIBUTING.md) | Every way to help, from one found part to a reviewed guide |
+| [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md) | How we treat each other, and how to report a problem |
 | [docs/DATA-GUIDE.md](docs/DATA-GUIDE.md) | How to write good records |
 | [docs/GIT-BASICS.md](docs/GIT-BASICS.md) | Git in plain words, for sending changes as files |
 | [research/README.md](research/README.md) | How model data is researched and fact-checked |

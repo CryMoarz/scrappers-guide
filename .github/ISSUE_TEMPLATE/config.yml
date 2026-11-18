@@ -3,3 +3,6 @@ contact_links:
   - name: Report a security problem privately
     url: https://github.com/CryMoarz/scrappers-guide/blob/main/SECURITY.md
     about: Please don't open a public issue for security problems.
+  - name: Report a conduct problem privately
+    url: https://github.com/CryMoarz/scrappers-guide/blob/main/CODE_OF_CONDUCT.md#reporting-an-issue
+    about: Harassment or other code of conduct problems go to the project mailbox, not a public issue.

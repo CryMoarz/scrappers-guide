@@ -29,6 +29,7 @@ Read [docs/DATA-GUIDE.md](docs/DATA-GUIDE.md). The short version:
 - **Your own words.** Don’t paste from manuals, websites or books. Credit sources in `sources`.
 - **Nothing for hurting people.** No weapons, explosives, injurious traps, drug synthesis, or anything about taking things from people. This is a guide to the abandoned and overlooked.
 - **Ids are forever.** Retire records with `deprecated`, don’t rename them.
+- **Be decent to people.** Everyone here follows the [code of conduct](CODE_OF_CONDUCT.md). Report problems privately to scrappers-guide@proton.me.
 
 ## Checks before you send (git route)
 

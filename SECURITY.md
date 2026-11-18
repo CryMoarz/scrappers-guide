@@ -13,6 +13,10 @@ Please report it privately, not in a public issue: use **Security → Report a v
 
 Open an issue with the **Something is wrong** form and tick the safety box. These are fixed before anything else and don’t need to be private: the sooner other people know, the better.
 
+## No GitHub account?
+
+Email either kind of problem to **scrappers-guide@proton.me**.
+
 ## What’s in scope
 
 The app (`app/`), the hub and node (`server/`), the shared core (`core/`), the AI tool server (`mcp/`), the LoRa bridge, the Docker image and the release and signing tools (`tools/`). The trust model is described in [ARCHITECTURE.md](ARCHITECTURE.md): contributions are signed by their authors, hubs moderate, releases and app updates are signed by maintainer keys listed in `trust/keys.json`, and nodes and apps check those signatures rather than trusting the connection they came over.
