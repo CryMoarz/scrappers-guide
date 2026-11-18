@@ -7,7 +7,7 @@
   "substitutes": [],
   "summary": "Pressure cylinders for propane, butane, CO2, air and welding gases. Keep them upright and away from heat, and never cut or drill one, even when empty.",
   "uses": ["Propane for cooking, heating and lights","CO2 and air for tyres and air tools","Running a generator converted to propane"],
-  "identify": "Propane bottles on grills, patio heaters, campers and forklifts (horizontal tanks), and in exchange cages outside shops; CO2 at bars, restaurants and paintball shops; air tanks at dive shops and fire stations. The collar is stamped with the gas, test date and empty weight (TW).",
+  "identify": "Propane bottles on grills, patio heaters, campers and forklifts (horizontal tanks), and in exchange cages outside shops; CO2 at bars, restaurants and paintball shops; air tanks at dive shops and fire stations. The collar is stamped with the gas, test date and empty weight (TW). Forklift tanks usually feed liquid propane, not gas: never connect one to a grill, heater, stove or lamp, where liquid can flood the burner and start a fire.",
   "test": "Weigh it and subtract the stamped empty weight to see what’s left. Check the valve and threads, and brush soapy water on joints: bubbles mean a leak.",
   "decay": {"halfLifeMonths":null,"note":"Cylinders hold gas for years; rusted or out-of-date ones may be unsafe to refill."},
   "hazards": ["compressed_gas","fuel"]
