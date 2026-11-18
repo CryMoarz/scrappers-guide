@@ -1,0 +1,47 @@
+{
+  "id": "diesel_air_heater",
+  "name": "Diesel air heater (parking heater)",
+  "group": "Heating, cooling and water",
+  "aliases": ["diesel heater","parking heater","bunk heater","night heater","van heater","truck heater","air heater","Chinese diesel heater","2 kW diesel heater","5 kW diesel heater","8 kW diesel heater","all-in-one diesel heater"],
+  "brands": ["Webasto","Espar","Eberspächer","Autoterm","Planar","Vevor"],
+  "prev": 3,
+  "tools": ["wrench","socket","screwdriver","pliers","knife"],
+  "mins": 30,
+  "kg": 3,
+  "hazards": ["co_gas","fuel","burn","open_flame"],
+  "combustion": {"indoor":"vented","fuels":["diesel (EN 590, a grade suited to the cold)","heating oil (Webasto diesel model)"],"kw":[0.8,8],"power_w":40,"note":"Safe indoors only with intake and exhaust piped outside and sealed. Needs 12 or 24 V DC: start-up draws about 75–100 W (Webasto 75 W; Espar 8.3 A at 12 V), then roughly 10–40 W running on the 2–4 kW units; Autoterm rates its AIR-8D at up to 75–90 W and its AIR-9D at up to 210–290 W."},
+  "comps": [
+    {"key":"fuel_liquid","fn":"fuel_liquid","spec":"Diesel left in the heater's own tank or the vehicle tank it draws from; check for water and sludge before use","qty":1,"ext":1,"obs":3,"loc":"Separate heater tank, or the vehicle tank via a standpipe"},
+    {"key":"tank","fn":"tank","spec":"Separate small fuel tank with a pickup through the top","qty":1,"ext":2,"obs":3,"loc":"Beside the heater or under the floor","p":0.5},
+    {"key":"pump_water","fn":"pump_water","spec":"Fuel metering (dosing) pump: small pulse-driven 12 or 24 V pump that clicks as it runs; never run it on steady DC or the coil burns","v":[12,24],"qty":1,"ext":2,"obs":4,"loc":"Near the fuel tank on a rubber mount"},
+    {"key":"igniter","fn":"igniter","spec":"Glow pin (ceramic on Webasto), a hot-surface igniter that heats the burner before fuel flows; the whole heater draws about 8 A at 12 V (Espar D2/D4) or 75 W (Webasto) during that start. Hot enough to burn","v":[12,24],"qty":1,"ext":3,"obs":5,"loc":"Side of the combustion chamber, under the cover"},
+    {"key":"fan","fn":"fan","spec":"One 12 or 24 V motor turning two blower wheels: combustion air and warm air; air flow about 48 cfm (D2) to 85 cfm (D4) at full output","v":[12,24],"qty":1,"ext":3,"obs":4,"loc":"Inside the heater casing"},
+    {"key":"controller_board","fn":"controller_board","spec":"Control unit with temperature sensing and low and high voltage cut-outs (Espar: 10.5 V and 16 V at 12 V)","v":[12,24],"qty":1,"ext":3,"obs":5,"loc":"End of the heater under the cover"},
+    {"key":"sensor_misc","fn":"sensor_misc","spec":"Overheat and flame sensors (temperature sensors) that shut the heater down","qty":2,"ext":3,"obs":5,"loc":"Inside the heater casing"},
+    {"key":"hose_tubing","fn":"hose_tubing","spec":"2 mm-bore nylon fuel line with rubber joiners, 25 mm combustion-air hose, and 60–90 mm warm-air duct rated for heat","qty":1,"ext":1,"obs":3,"loc":"Under the floor and behind panels"},
+    {"key":"display","fn":"display","spec":"Control panel: a rotary knob, or an LCD timer and thermostat","qty":1,"ext":1,"obs":2,"loc":"Cab, bunk or living area wall","p":0.6},
+    {"key":"fuse","fn":"fuse","spec":"Blade fuse in a weatherproof holder close to the battery (within about 35 cm / 14 in): 15 A on the Webasto Air Top 2000 STC, 20 A on the Espar Airtronic D2 (12 V), 25 A in Autoterm's wiring diagrams; never swap in another rating or a wire","a":[15,25],"qty":1,"ext":1,"obs":4,"loc":"Power lead near the battery"},
+    {"key":"wire_copper","fn":"wire_copper","spec":"Wiring harness and power lead","qty":1,"ext":1,"obs":3,"loc":"From battery to heater, heater to pump and panel"}
+  ],
+  "boards": [],
+  "buildings": [
+    {"b":"auto_wrecker","l":4,"loc":"Sleeper trucks (bunk heaters under the bunk or in a side box), vans and motorhomes"},
+    {"b":"rv_dealer","l":4,"loc":"Motorhomes and camper vans; spares in the parts room"},
+    {"b":"bus_depot","l":3,"loc":"Minibuses and service trucks"},
+    {"b":"marina","l":3,"loc":"Cabin boats, under bunks and in lockers"},
+    {"b":"boat_shop","l":3,"loc":"Boats in stock and the parts counter"},
+    {"b":"campground","l":3,"loc":"Converted vans and RVs left on site"},
+    {"b":"gas_station","l":2,"loc":"Sleeper trucks parked at truck stops"},
+    {"b":"car_repair","l":2,"loc":"Vans and trucks in for work"},
+    {"b":"garage_res","l":2,"loc":"Van conversions and workshop heaters"},
+    {"b":"self_storage","l":2,"loc":"RV and boat storage yards"}
+  ],
+  "notes": "Sealed combustion: the heater can sit inside a vehicle or room only because its combustion air, exhaust and fuel connections are all outside, with an airtight gasket between (Espar D2/D4). The exhaust runs up to 500 °C (Autoterm Air). Several cheap Chinese-made units have been turned back at the UK border for missing installation instructions and exhaust warnings (OPSS Vevor 2302-0090, OPSS Vevor 2212-0144). Diesel only: Autoterm says to use only EN 590 diesel, and Espar bans blending used engine oil into it; petrol belongs in no diesel heater (Autoterm Air, Espar D2/D4). Do not run one where flammable vapour, gas or lots of dust can collect, such as a garage holding petrol or solvents (Espar D2/D4, Autoterm Air).",
+  "sources": [
+    {"title":"Espar D2/D4: Espar Inc., Airtronic D2/D4 installation, troubleshooting and parts manual (P/N 610-103-0901, Nov. 2001; copy on Bergstrom's site)","url":"https://bergstrominc.com/us/wp-content/uploads/2025/04/Airtronic_D2-D4_Manual-1.pdf"},
+    {"title":"Webasto AT2000: Webasto Thermo & Comfort N.A., Air Top 2000 STC installation manual (P/N 5012634C, rev. 11/2021; copy hosted by a dealer)","url":"https://www.vanlifeoutfitters.com/wp-content/uploads/2021/12/webasto-airtop-2000-stc-installation-manual.pdf"},
+    {"title":"Autoterm Air: Autoterm, User's manual with installation instructions for AIR-2D, 4D, 8D and 9D air heaters (v03.2022; copy hosted by a dealer)","url":"https://cdn.shopify.com/s/files/1/0287/7797/1764/files/air-manual-29062023pdf-2-1.pdf"},
+    {"title":"OPSS Vevor 2302-0090: UK Office for Product Safety and Standards, Product Safety Report: Vevor diesel air parking heater XMZ-D1, 12 V, 40 W, 8 kW (Aug. 2023)","url":"https://gov.uk/product-safety-alerts-reports-recalls/product-safety-report-vevor-diesel-air-parking-heater-2302-0090"},
+    {"title":"OPSS Vevor 2212-0144: UK Office for Product Safety and Standards, Product Safety Report: Vevor parking heater ZM5001","url":"https://assets.publishing.service.gov.uk/media/63ee764f8fa8f5612f2a7dfd/2212-0144-psr-vevor-diesel-parking-heater.pdf"}
+  ]
+}

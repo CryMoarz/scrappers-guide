@@ -1,0 +1,48 @@
+{
+  "id": "construction_heater",
+  "name": "Construction heater (torpedo and forced-air)",
+  "group": "Industrial and construction",
+  "aliases": ["torpedo heater","forced-air heater","kerosene torpedo heater","diesel torpedo heater","propane forced-air heater","salamander heater","jet heater","bullet heater","construction heater","tank-top heater","cabinet propane heater","site heater","direct-fired heater","indirect-fired heater"],
+  "brands": ["Mr. Heater","Remington","Dyna-Glo","DeWalt","L.B. White","Heatstar","John Deere","Flagro"],
+  "prev": 3,
+  "tools": ["screwdriver","wrench","pliers","hex"],
+  "mins": 30,
+  "kg": 20,
+  "hazards": ["co_gas","fuel","burn","open_flame","mains","compressed_gas"],
+  "combustion": {"indoor":"outdoor_only","fuels":["kerosene (1-K)","diesel no. 1 and no. 2","fuel oil no. 1 and no. 2","JP-8 / Jet A (factory tested)","propane"],"kw":[1.9,61.5],"power_w":630,"note":"Direct-fired: all exhaust stays in the space, so building sites with big openings only, never homes, sleeping areas, RVs or tents. Indirect-fired heaters send exhaust up a flue (CSA B140.8). Kerosene torpedoes draw 4–5.5 A, propane forced-air about 1 A."},
+  "comps": [
+    {"key":"fuel_liquid","fn":"fuel_liquid","spec":"Kerosene, diesel or fuel oil left in the tank; check for water and sludge before using it anywhere. Never gasoline, biodiesel, drained crankcase oil, naphtha, thinners or alcohol in a kerosene model, and stop the heater before adding fuel and fill outdoors away from flame (Mr. Heater MHC)","qty":1,"ext":1,"obs":3,"loc":"Tank in the base of kerosene and diesel models","p":0.6},
+    {"key":"tank","fn":"tank","spec":"Fuel tank, about 23–57 L (6–15 US gal) on the 80,000–210,000 Btu/h kerosene models","qty":1,"ext":2,"obs":3,"loc":"Base","p":0.6},
+    {"key":"propane","fn":"propane","spec":"Propane cylinder on a hose and regulator: 20 lb on small units, 100 lb on big ones; often left attached and part full. Never bring or store a cylinder indoors, even part full: close its valve and carry it outside; leaked propane sinks and pools in low spots (Remington GFA, Deere HR-18R)","qty":1,"ext":1,"obs":2,"loc":"Beside the heater, or inside the cabinet of cabinet heaters","p":0.4},
+    {"key":"compressor","fn":"compressor","spec":"Rotary air pump on the motor shaft that blows fuel through the nozzle, set to about 29–58 kPa (4.2–8.4 psi) on kerosene models","qty":1,"ext":3,"obs":5,"loc":"Behind the air filter at the motor end","p":0.6},
+    {"key":"fan","fn":"fan","spec":"Large fan on a 115–120 V motor; propane forced-air units move about 300–400 cfm","v":[115,120],"ac":true,"qty":1,"ext":2,"obs":4,"loc":"Rear inlet end"},
+    {"key":"igniter","fn":"igniter","spec":"Continuous spark igniter, 16.5 kV at 0.2 A on kerosene torpedoes; piezo spark on cabinet propane heaters. Can shock you","qty":1,"ext":2,"obs":4,"loc":"Burner end, under the top cover"},
+    {"key":"opto_sensor","fn":"opto_sensor","spec":"CAD cell (photocell) flame sensor that shuts the fuel off if it sees no flame","qty":1,"ext":2,"obs":5,"loc":"Facing the flame inside the burner head","p":0.6},
+    {"key":"controller_board","fn":"controller_board","spec":"Solid-state primary safety control, mains powered","v":[115,120],"ac":true,"qty":1,"ext":2,"obs":5,"loc":"Under the top cover","p":0.6},
+    {"key":"filter_air","fn":"filter_air","spec":"Air intake filter (washable) and air output filter (tap it clean: no liquids or compressed air); dirty ones upset the fuel-air mix (Mr. Heater MHC)","qty":2,"ext":1,"obs":5,"loc":"Rear end around the pump","p":0.6},
+    {"key":"thermocouple","fn":"thermocouple","spec":"Thermocouple of the ODS pilot on cabinet propane heaters","qty":1,"ext":2,"obs":5,"loc":"At the pilot beside the burner","p":0.2},
+    {"key":"hose_tubing","fn":"hose_tubing","spec":"Propane hose and regulator, or the small fuel and air lines and fuel filter of kerosene models","qty":1,"ext":1,"obs":3,"loc":"Outside the casing or inside along the burner"},
+    {"key":"wire_copper","fn":"wire_copper","spec":"Grounded three-prong mains cord","v":[115,120],"ac":true,"qty":1,"ext":1,"obs":3,"loc":"Rear"}
+  ],
+  "boards": [],
+  "buildings": [
+    {"b":"construction","l":5,"loc":"Site trailers, inside framed buildings, under tarps over foundations"},
+    {"b":"tool_rental","l":5,"loc":"Heater bay, with hoses, regulators and fuel cans"},
+    {"b":"hardware","l":4,"loc":"Seasonal heating aisle and contractor desk"},
+    {"b":"farm","l":4,"loc":"Shop, calving barn, machine shed"},
+    {"b":"farm_supply","l":3,"loc":"Heating aisle"},
+    {"b":"warehouse","l":3,"loc":"Loading docks and maintenance shop"},
+    {"b":"garage_res","l":3,"loc":"Workshop corner"},
+    {"b":"car_repair","l":2,"loc":"Service bays"},
+    {"b":"factory","l":2,"loc":"Maintenance stores"},
+    {"b":"self_storage","l":2,"loc":"Contractors' units"}
+  ],
+  "notes": "The kerosene and propane forced-air heaters in these manuals are direct-fired: every bit of their exhaust goes into the space they heat, and the makers say not for homes, RVs or tents (Mr. Heater MHC, Remington GFA, Deere HR-18R). Indoors they are only for buildings under construction, with large openings to outside: 2,800 cm² (3 sq ft) per 100,000 Btu/h for propane units (Remington GFA). Even the cabinet models with an oxygen sensor and tip switch carry the same warning (Deere HR-18R). Clearances come from the heater's label. Mr. Heater's kerosene models want combustibles 2.4 m (8 ft) from the outlet, 1 m (3 ft) from the top, sides and inlet, and 3 m (10 ft) from canvas or plastic sheeting that is tied down; its 80,000 Btu/h model is not suitable for wood floors or other combustible surfaces, and the maker says it should rest on insulating material at least 2.5 cm (1 in) thick reaching 90 cm (3 ft) or more past it on all sides. Remington's propane models want 1.8 m (72 in) in front, 0.9 m (36 in) above and 0.6 m (24 in) at the sides and rear; Deere's cabinet heater wants 1.8 m in front, 0.6 m above and 0.3 m at the sides (Mr. Heater MHC, Remington GFA, Deere HR-18R). Kerosene models want about 0.19 m² (2 sq ft) of opening to outside near the floor and the same near the ceiling (Mr. Heater MHC). Never use one in living or sleeping areas or leave it burning unattended (Deere HR-18R, Mr. Heater MHC). Stop a kerosene one before refuelling, fill it outdoors away from flame, and don't start it with the chamber hot or move it while hot (Mr. Heater MHC, Remington GFA). Never bring or store a propane cylinder indoors; Remington wants it at least 3 m (10 ft) from the heater in Canada (Remington GFA, Deere HR-18R). Strip them for the fan, pump, igniter, filters and fuel.",
+  "sources": [
+    {"title":"Mr. Heater MHC: Mr. Heater, Kerosene forced-air heater MHC80KT, MHC140KT, MHC210KT operating instructions and owner's manual (form 27159; copy hosted by Home Depot)","url":"https://images.thdstatic.com/catalog/pdfImages/31/31b70604-c8f9-4f81-8aa1-9ebbb5cba0be.pdf"},
+    {"title":"Remington GFA: Pinnacle Climate Technologies, Remington propane forced air heater user's manual (REM-40/60V/125V/150V-GFA-O, 2017; copy hosted by Lowe's)","url":"https://pdf.lowes.com/productdocuments/813f5767-51bb-4711-b729-987761f5b445/60809789.pdf"},
+    {"title":"Deere HR-18R: John Deere, HR-18R space heater operator's manual (propane construction heater)","url":"https://www.deere.com/assets/pdfs/common/products/home-workshop/heaters/37-1351-JD-SPACE-HEATER-HR-18R-E-F-S-120315.pdf"},
+    {"title":"CSA B140.8: CSA B140.8:67 (R2025), Portable industrial oil-fired heaters (scope as listed in the Nimonik standards catalogue)","url":"https://standards.nimonik.com/products/csa/b140pt8/"},
+    {"title":"CCN Z83.7: Standards Council of Canada, ANSI Z83.7-2011/CSA 2.14-2011 Gas-fired construction heaters (standards database entry; this 2011 edition is cancelled and superseded by the 2017 edition, which the cited manuals predate)","url":"https://ccn-scc.ca/standardsdb/standards/4026155"}
+  ]
+}
