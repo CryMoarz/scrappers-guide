@@ -2,5 +2,6 @@
   "id": "farm",
   "name": "Farms and farm supply",
   "osm": ["landuse=farmyard","building=barn","building=farm_auxiliary"],
-  "exposure": 2
+  "exposure": 2,
+  "hazards": ["entanglement","line_recoil","wildlife"]
 }

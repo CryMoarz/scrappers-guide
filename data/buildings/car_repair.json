@@ -2,5 +2,6 @@
   "id": "car_repair",
   "name": "Auto repair shops",
   "osm": ["shop=car_repair","shop=tyres","amenity=car_wash"],
-  "exposure": 3
+  "exposure": 3,
+  "hazards": ["projectile"]
 }

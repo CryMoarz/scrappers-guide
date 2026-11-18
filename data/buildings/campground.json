@@ -2,5 +2,6 @@
   "id": "campground",
   "name": "Campgrounds and RV parks",
   "osm": ["tourism=camp_site","tourism=caravan_site"],
-  "exposure": 2
+  "exposure": 2,
+  "hazards": ["cold_water","wildlife"]
 }

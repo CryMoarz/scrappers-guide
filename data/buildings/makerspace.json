@@ -2,5 +2,6 @@
   "id": "makerspace",
   "name": "Makerspaces and libraries",
   "osm": ["leisure=hackerspace","amenity=library"],
-  "exposure": 1
+  "exposure": 1,
+  "hazards": ["entanglement"]
 }

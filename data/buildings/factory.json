@@ -2,5 +2,6 @@
   "id": "factory",
   "name": "Factories and works",
   "osm": ["man_made=works","building=industrial"],
-  "exposure": 1
+  "exposure": 1,
+  "hazards": ["entanglement","projectile"]
 }

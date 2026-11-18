@@ -2,5 +2,6 @@
   "id": "garage_res",
   "name": "Garages and sheds",
   "osm": ["building=garage","building=garages","building=shed"],
-  "exposure": 2
+  "exposure": 2,
+  "hazards": ["entanglement"]
 }
