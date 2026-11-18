@@ -2,7 +2,7 @@
   "id": "camping_gear",
   "name": "Camping gear",
   "group": "Leisure and fitness",
-  "aliases": ["camping equipment","tent","camp stove","lantern","sleeping bag","backpacking gear","outdoor gear","camping stove","camp kitchen"],
+  "aliases": ["camping equipment","tent","sleeping bag","backpacking gear","outdoor gear","camp kitchen"],
   "brands": ["Coleman","REI","Big Agnes","Kelty","Eureka","MSR","Jetboil","Igloo","Stanley","Vevor"],
   "prev": 4,
   "tools": ["hands"],
