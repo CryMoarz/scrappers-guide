@@ -1,0 +1,41 @@
+{
+  "id": "refractory",
+  "name": "Firebrick and refractory",
+  "group": "Materials",
+  "demand": 2,
+  "keywords": ["firebrick","fire brick","refractory","refractory brick","hard brick","insulating firebrick","IFB","soft brick","kiln brick","K23","K26","ceramic fibre blanket","ceramic fiber blanket","kaowool","baffle board","stove brick","pizza oven brick","fireclay","grog","castable"],
+  "substitutes": [],
+  "summary": "Bricks, boards, blankets and mixes made to take fire: dense firebrick, soft insulating firebrick, ceramic-fibre blanket and board, kiln shelves and fireclay castable.",
+  "uses": ["Dense firebrick: the hot face where fire, ash and logs hit, in stoves, fireplaces, pizza ovens and wood-fired kilns. Strong and heavy; soft brick insulates far better (CM Refractories 102, Morgan K IFB, Mutual Materials)","Soft insulating firebrick: electric kiln walls, or backup insulation behind the hot face (Morgan K IFB). Breaks easily and doesn't last in wood, salt or soda kiln fire, so not where logs hit (CM Refractories 102)","Ceramic-fibre blanket and board: insulation in kilns, furnace linings and stove baffles. Cut it only with gloves and a fitted respirator; possibly carcinogenic to humans (IARC group 2B, from animal studies) (CM Refractories 102, CAREX Canada RCF, Cornell maintenance)","Stove repair: replace bricks with the same type and size as the original (Cornell maintenance)","Fireclay with grog: mortar, patches and small cast shapes. Needs slow drying and a very slow first heat, or steam cracks or bursts it (CAN Castable Refractory, CAN Refractories)"],
+  "identify": "Dense (hard) firebrick is heavy and hard, mostly yellow, tan or light orange (CM Refractories 102). A standard 229 × 114 × 64 mm (9 × 4½ × 2½ in) brick weighs about 2.9 kg (6.5 lb), a 32 mm (1¼ in) split about 1.8 kg (4 lb) (Mutual Materials). Some stoves use grey cement-and-pumice bricks (Drolet Part 1). Soft insulating firebrick (IFB) is light, porous and easy to cut or break (CM Refractories 102); the number stamped on it is its grade (23, 25, 26), and K23 is 513 kg/m³ (32 lb/ft³), under a third the weight of dense brick (Morgan K IFB, Mutual Materials). Ceramic-fibre blanket looks like cotton wool but is tough (CM Refractories 102); stove baffles are fibre board or vermiculite board (Drolet Part 1). Kiln shelves are silicon carbide, cordierite or alumina slabs; silicon carbide conducts electricity, so keep it off kiln elements (Digitalfire refractory). Castable is refractory concrete poured in place, as in kiln floors (CAN Castable Refractory).",
+  "test": "Look and handle. In a stove, hairline cracks are normal (Skamol's policy for its Chesneys stoves, which have metal behind the bricks); replace a brick when a crack is wider than 3 mm or deeper than 6 mm, when it has worn away more than a quarter of its thickness, or when it crumbles (Skamol policy, EPA catalytic). Soft brick and kiln shelves that got wet must be dried before heating: trapped water turns to steam and can burst them (CAN Refractories, Digitalfire refractory). Fibre blanket heated past its rating shrinks and goes brittle (CM Refractories 102); don't reuse brittle blanket in a hot spot.",
+  "decay": {"halfLifeMonths":null,"note":"Fired brick lasts indefinitely if kept dry. Wet soft brick and kiln shelves must be dried before heating; fibre blanket that has been overheated goes brittle."},
+  "hazards": ["silica","fiberglass","asbestos","chemical"],
+  "protects": [],
+  "improvise": "Ordinary house and structural brick is not firebrick: firebrick is made to take heat that would melt or deform it (Digitalfire firebrick). Home-made refractory starts from fireclay, a clay that resists melting and stays plastic enough to take grog (Digitalfire fireclay); grog is crushed brick or other fired ceramic, which cuts shrinkage and resists thermal shock (Digitalfire grog), so broken firebrick crushed small is the grog. No tested home recipe is given here: make a test piece first. Let it cure at least 24 hours, keep it from freezing, and heat it very slowly the first time, holding the heat down while steam comes off (CAN Castable Refractory).",
+  "buildings": [
+    {"b":"hardware","l":3,"loc":"Fireplace and stove aisle"},
+    {"b":"house","l":2,"loc":"Firebox of fireplaces and wood stoves"},
+    {"b":"school","l":2,"loc":"Art room kiln and its shelves"},
+    {"b":"makerspace","l":1,"loc":"Pottery kiln, forge or metal-casting furnace"},
+    {"b":"farm_supply","l":2,"loc":"Stove and chimney aisle"},
+    {"b":"restaurant","l":1,"loc":"Wood-fired pizza oven"},
+    {"b":"factory","l":1,"loc":"Furnace, kiln and oven linings"}
+  ],
+  "sources": [
+    {"title":"CM Refractories 102: Techno File, Refractories 102 (Dave Finkelnburg, Ceramics Monthly, January 2023)","url":"https://ceramicartsnetwork.org/ceramics-monthly/ceramics-monthly-article/techno-file-refractories-102"},
+    {"title":"CAN Refractories: Refractories (Dave Finkelnburg, Ceramics Monthly, December 2013, Ceramic Arts Network)","url":"https://ceramicartsnetwork.org/ceramic-recipes/recipe/Refractories"},
+    {"title":"CAN Castable Refractory: Castable Refractory (Forrest Gard, Ceramics Monthly, March 2012, Ceramic Arts Network)","url":"https://ceramicartsnetwork.org/ceramic-recipes/recipe/Castable-Refractory-168843"},
+    {"title":"Mutual Materials: Firebrick product data sheet (2022)","url":"https://www.mutualmaterials.com/wp-content/uploads/2026/01/US-FireBrick-DataSheet-2026.pdf"},
+    {"title":"Morgan K IFB: K Insulating Firebrick Series product data sheet (Morgan Advanced Materials, 2025)","url":"https://www.morganthermalceramics.com/media/9429/k-ifb-series_eng.pdf"},
+    {"title":"Digitalfire firebrick: Firebrick (Digitalfire glossary, Tony Hansen)","url":"https://digitalfire.com/glossary/firebrick"},
+    {"title":"Digitalfire fireclay: Fireclay (Digitalfire glossary, Tony Hansen)","url":"https://digitalfire.com/glossary/fireclay"},
+    {"title":"Digitalfire grog: Grog (Digitalfire glossary, Tony Hansen)","url":"https://digitalfire.com/glossary/grog"},
+    {"title":"Digitalfire refractory: Refractory (Digitalfire glossary, Tony Hansen)","url":"https://digitalfire.com/glossary/refractory"},
+    {"title":"CAREX Canada RCF: Refractory Ceramic Fibres profile","url":"https://www.carexcanada.ca/?p=9309"},
+    {"title":"Drolet Part 1: Wood Stove Owner's Manual Part 1, Safety Notifications and General Information (46231, 2023)","url":"https://www.drolet.ca/file/46231_UA_2023-04-28.pdf"},
+    {"title":"Cornell maintenance: Proper Maintenance, Heating With Wood (Cornell Cooperative Extension, Allegany County, 2021)","url":"https://allegany.cce.cornell.edu/natural-resources-environment/heating-with-wood/proper-maintenance"},
+    {"title":"Skamol policy: Policy for SKAMOLEX replacement bricks (Skamol A/S, for Chesneys stoves, 2019)","url":"https://chesneys.co.uk/skamol-2019-a5"},
+    {"title":"EPA catalytic: Catalytic Woodstoves, Installation, Operation, and Maintenance (EPA-22A-4001, 1992; archived)","url":"https://19january2021snapshot.epa.gov/sites/static/files/2013-09/documents/catalytic.pdf"}
+  ]
+}

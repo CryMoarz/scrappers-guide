@@ -3,12 +3,16 @@
   "name": "Glass panes",
   "group": "Materials",
   "demand": 1,
-  "keywords": ["glass","glass pane","window glass","window pane","pane","sheet glass","glass sheet","glazing","tempered glass","toughened glass","safety glass","glass door","shower screen"],
+  "keywords": ["glass","glass pane","window glass","window pane","pane","sheet glass","glass sheet","glazing","tempered glass","toughened glass","safety glass","glass door","shower screen","ceramic glass","stove glass"],
   "substitutes": ["plastic_sheet"],
   "summary": "Flat glass from windows, doors, shelves, picture frames, oven doors and scanners.",
-  "uses": ["Glazing for shelter windows and cold frames","Covers for solar ovens, stills and water heaters","Greenhouses and seed frames"],
-  "identify": "Windows, glass doors, shower screens, fridge shelves, oven doors, picture frames and scanner beds. Tempered glass has a small etched stamp in one corner, shatters into small cubes and cannot be cut.",
+  "uses": ["Glazing for shelter windows and cold frames","Covers for solar ovens, stills and water heaters","Greenhouses and seed frames","Not for wood-stove doors: replace stove glass only with ceramic stove glass (Drolet Escape 1800)"],
+  "identify": "Windows, glass doors, shower screens, fridge shelves, oven doors, picture frames and scanner beds. Tempered glass has a small etched stamp in one corner, shatters into small cubes and cannot be cut.\n\nWood-stove door glass is a transparent ceramic (sold as ceramic glass), not ordinary glass: it takes firebox heat (NRCan wood heating, Drolet Escape 1800), so window and tempered glass cannot stand in for it.",
   "test": "Check the edges for chips: a chipped tempered pane can burst later. Plain glass can be scored and snapped; tempered glass cannot.",
   "decay": {"halfLifeMonths":null,"note":"Lasts. Stocks fall as storms and vandals break windows."},
-  "hazards": ["glass"]
+  "hazards": ["glass"],
+  "sources": [
+    {"title":"NRCan wood heating: A Guide to Residential Wood Heating (Natural Resources Canada, 2002, cat. M92-23/2002E; archived copy)","url":"https://bac-lac.wayback.archive-it.org/web/20061212072848/http://dsp-psd.pwgsc.gc.ca/Collection/M92-23-2002E.pdf"},
+    {"title":"Drolet Escape 1800: Wood Stove Owner's Manual Part 2, Installation and Operation Requirements (46240, 2022)","url":"https://www.drolet.ca/file/46240A_2022-10-07.pdf"}
+  ]
 }

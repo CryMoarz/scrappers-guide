@@ -1,0 +1,52 @@
+{
+  "id": "wood_stove",
+  "name": "Wood stove (and wood cookstove)",
+  "group": "Heating, cooling and water",
+  "aliases": ["woodstove","wood burning stove","wood burner","log burner","airtight stove","box stove","parlour stove","cast iron stove","potbelly stove","EPA stove","catalytic stove","wood cookstove","wood cook stove","wood range","fireplace insert"],
+  "brands": ["Drolet","Osburn","Englander","Jøtul","Pacific Energy","Blaze King","Vermont Castings","Hearthstone","Woodstock Soapstone","Regency","Napoleon","Vogelzang","J.A. Roby"],
+  "prev": 3,
+  "tools": ["hands","wrench","socket","screwdriver","pry","heavy"],
+  "mins": 60,
+  "kg": 170,
+  "hazards": ["heavy","co_gas","open_flame","burn","asbestos","fiberglass","sharp"],
+  "combustion": {"indoor":"vented","fuels":["seasoned firewood","coal only where the stove's label lists it"],"kw":[3,22],"power_w":0,"note":"Sealed firebox vented through a listed chimney; leaking pipe joints, a cracked body or an open door spill CO and smoke into the room."},
+  "comps": [
+    {"key":"refractory","fn":"refractory","spec":"Firebrick lining the firebox: a mid-size Drolet takes 21 bricks 9 in long and 1¼ in thick (229 × 32 mm); a split brick that size weighs about 1.8 kg (4 lb). Good for a rocket stove, forge or oven","qty":21,"ext":1,"obs":3,"loc":"Floor and walls of the firebox, held by retainer strips; lift out once the baffle is out","kg":1.8},
+    {"key":"baffle","fn":"refractory","spec":"Baffle board across the top of the firebox: vermiculite or aluminosilicate fibre board, about 500 × 320 × 32 mm (20 × 12½ × 1¼ in) on a Drolet, sometimes with a ceramic-fibre blanket on top. Fibre dust is a possible carcinogen: gloves and a fitted respirator","qty":1,"ext":2,"obs":4,"loc":"Resting on the secondary air tubes at the top of the firebox"},
+    {"key":"glass_pane","fn":"glass_pane","spec":"Ceramic door glass, 4 mm (5/32 in) thick on a Drolet, tested to 760 °C (1,400 °F). Drolet says to replace it only with ceramic glass of the same spec, so window glass will not do. Worth keeping whole even off a scrapped stove","qty":1,"ext":2,"obs":3,"loc":"In the loading door, held by retainer clips and a flat woven gasket","p":0.8},
+    {"key":"chimney_pipe","fn":"chimney_pipe","spec":"Connector pipe left on the stove: 150 mm (6 in) on most, 200 mm (8 in) on big ones; black single-wall or double-wall","qty":1,"ext":1,"obs":2,"loc":"On the flue collar on top or at the back","p":0.6},
+    {"key":"sheet_metal","fn":"sheet_metal","spec":"Plate-steel body and thin steel side and rear heat shields. Check a shield's gauge before reusing it as a wall shield: Drolet calls for 24 gauge (0.61 mm) or heavier on non-combustible spacers with an air gap","qty":1,"ext":3,"obs":2,"loc":"The body; heat shields bolted to the sides and back"},
+    {"key":"door_gasket","fn":"insulation","spec":"Door rope gasket, fibreglass, about 16 mm (⅝ in) on a Drolet Escape 1800, plus a flat glass gasket; replace with rope of the same diameter and density. On an old stove the gasket may be asbestos, as may asbestos paper or millboard round the stove","qty":1,"ext":1,"obs":5,"loc":"In the groove round the loading door and round the glass"},
+    {"key":"fan","fn":"fan","spec":"Optional convection blower: a 120 V crossflow fan about 130 CFM and 56 W, with a speed knob","v":115,"w":56,"ac":true,"qty":1,"ext":2,"obs":3,"loc":"Under or behind the stove, inside the rear heat shield","p":0.4},
+    {"key":"thermostat","fn":"thermostat","spec":"Snap-disc switch that turns the blower on when the stove is hot (Drolet F110-20F); Blaze King stoves have a built-in thermostat that sets the air inlet with no power","qty":1,"ext":2,"obs":4,"loc":"Clipped to the stove body next to the blower","p":0.4},
+    {"key":"catalytic_combustor","fn":"refractory","spec":"Catalytic combustor on some stoves: a coated ceramic honeycomb that burns smoke once it reaches 177–316 °C (350–600 °F). Fragile: don't drop or scrape it","qty":1,"ext":2,"obs":5,"loc":"Above the fire behind a bypass damper, near the flue outlet","p":0.2},
+    {"key":"fasteners","fn":"fasteners","spec":"Leg levelling bolts (⅜-16), hinge pins, ¼-20 screws and retainer clips","qty":20,"ext":1,"obs":4,"loc":"Legs, door hinges, glass retainers"}
+  ],
+  "boards": [],
+  "buildings": [
+    {"b":"house","l":4,"loc":"Living room or basement; most in rural houses, cottages, cabins and hunt camps"},
+    {"b":"farm","l":4,"loc":"Farmhouse, shop and barn office; old stoves stored in sheds"},
+    {"b":"hardware","l":3,"loc":"Stove and pipe display at rural hardware stores"},
+    {"b":"farm_supply","l":3,"loc":"Stove, pipe and chimney aisle"},
+    {"b":"garage_res","l":3,"loc":"Workshop heater; retired stoves stored at the back"},
+    {"b":"campground","l":3,"loc":"Rental cabins, camp office and warm-up shelters"},
+    {"b":"recycling","l":2,"loc":"Scrap-metal pile at depots and scrapyards"},
+    {"b":"self_storage","l":2,"loc":"Units holding cottage and farm contents"},
+    {"b":"church","l":2,"loc":"Halls and basements of older rural churches"}
+  ],
+  "notes": "Read the label on the back first: it gives the clearances to walls, the pipe size and the chimney type, and it overrides the manual (Drolet). With no label it is uncertified and needs 1,200 mm (48 in) from anything that burns at the sides, back and loading side and 1,500 mm (60 in) above (NRCan, quoting the 2001 edition of CSA B365; the 2025 edition revised clearances and is not free to read, so give more room where you can). It is only as safe as its chimney: a leaking pipe joint or a door left open puts CO in the room, and ash holds live embers that stay hot for days and keep making CO (Drolet Part 1). Stoves run from about 73 kg (160 lb) for a small one to 220 kg (484 lb) for a cookstove; lift the bricks and baffle out first, then use a dolly and as many helpers as its weight needs.",
+  "sources": [
+    {"title":"NRCan: A Guide to Residential Wood Heating (Natural Resources Canada, 2002, cat. M92-23/2002E; archived copy)","url":"https://bac-lac.wayback.archive-it.org/web/20061212072848/http://dsp-psd.pwgsc.gc.ca/Collection/M92-23-2002E.pdf"},
+    {"title":"Drolet Escape 1800: Wood Stove Owner's Manual Part 2, Installation and Operation Requirements (46240, 2022)","url":"https://www.drolet.ca/file/46240A_2022-10-07.pdf"},
+    {"title":"Drolet Part 1: Wood Stove Owner's Manual Part 1, Safety Notifications and General Information (46231, 2023)","url":"https://www.drolet.ca/file/46231_UA_2023-04-28.pdf"},
+    {"title":"Blaze King: King KE40 and Princess PE32 brochure (Q.371, 2024)","url":"https://www.blazeking.com/wp-content/uploads/2024/10/Q.371_BK_King_Prin_Broch_10-2024_Web.pdf"},
+    {"title":"Jøtul: F 602 V3 wood stove product page","url":"https://www.jotul.com/products/wood-stoves/f-602-v3"},
+    {"title":"Hearthstone: Deva 8220 wood cookstove sales sheet (2021)","url":"https://www.hearthstonestoves.com/wp-content/uploads/2021/07/210726_Sales-sheets_Deva-8220.pdf"},
+    {"title":"Mutual Materials: Firebrick product data sheet (2022)","url":"https://www.mutualmaterials.com/wp-content/uploads/2026/01/US-FireBrick-DataSheet-2026.pdf"},
+    {"title":"EPA catalytic: Catalytic Woodstoves, Installation, Operation, and Maintenance (EPA-22A-4001, 1992; archived)","url":"https://19january2021snapshot.epa.gov/sites/static/files/2013-09/documents/catalytic.pdf"},
+    {"title":"CPSC: Asbestos in the Home","url":"https://cpsc.gov/safety-education/safety-guides/home/asbestos-home"},
+    {"title":"CM Refractories 102: Techno File, Refractories 102 (Dave Finkelnburg, Ceramics Monthly, January 2023)","url":"https://ceramicartsnetwork.org/ceramics-monthly/ceramics-monthly-article/techno-file-refractories-102"},
+    {"title":"CAREX Canada RCF: Refractory Ceramic Fibres profile","url":"https://www.carexcanada.ca/?p=9309"},
+    {"title":"Cornell maintenance: Proper Maintenance, Heating With Wood (Cornell Cooperative Extension, Allegany County, 2021)","url":"https://allegany.cce.cornell.edu/natural-resources-environment/heating-with-wood/proper-maintenance"}
+  ]
+}
