@@ -5,7 +5,7 @@
   "aliases": ["gas chainsaw","petrol chainsaw","two-stroke chainsaw"],
   "brands": ["Stihl","Husqvarna","Echo","Poulan","McCulloch","Oregon","Craftsman","Homelite","Makita","Dolmar"],
   "prev": 4,
-  "hazards": ["fuel"],
+  "hazards": ["fuel","co_gas"],
   "comps": [
     {"key":"engine_small","fn":"engine_small","spec":"2-stroke engine, 30–70 cc","w":[1200,4500],"qty":1,"ext":2,"obs":2,"loc":"Body","kg":3},
     {"key":"fuel_liquid","fn":"fuel_liquid","spec":"2-stroke petrol-oil mix, under 1 L; jerry cans of mix often nearby","qty":1,"ext":1,"obs":3,"loc":"Fuel tank in the body"},
