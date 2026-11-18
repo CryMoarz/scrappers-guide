@@ -1,0 +1,39 @@
+{
+  "id": "ppe_boots_rubber",
+  "name": "Rubber and PVC boots (wellingtons)",
+  "group": "Protective gear",
+  "demand": 3,
+  "keywords": ["rubber boots","wellies","wellingtons","gumboots","rain boots","pvc boots","chemical boots","steel toe rubber boots","muck boots","barn boots","waders","s5","en 13832","green triangle","flood boots","sewage boots"],
+  "substitutes": [],
+  "summary": "Pull-on waterproof boots moulded in one piece from rubber, PVC or other polymers, some with steel toes, for water, mud, sewage and chemical splashes.",
+  "uses": ["Sewage cleanup and flooded buildings: CDC calls for rubber boots, rubber gloves and goggles when sewage is involved (CDC cleanup)","Chemical spills and splashes underfoot, if the material suits the chemical; natural rubber is not recommended against oil-based chemicals and solvents (EU-OSHA footwear)","Don't rely on any boot against electricity: even rated EH boots are backup only, for 600 V or less, and give little protection when wet (OSHA SHIB EH boots)","Toe and sole protection only if marked: a CSA green or yellow triangle (toe cap and puncture-resistant sole), a blue or grey rectangle (toe cap only), or EN S5","Wear trousers outside the boot tops so splashes run off instead of in (UNH pesticide PPE)"],
+  "identify": "One-piece moulded boots with no laces or stitched seams. EN ISO 20345 safety footwear has a toe cap tested at 200 J; all-rubber or all-polymer boots are 'Class II'. S5 is a Class II safety boot with antistatic, fuel-oil-resistant sole plus a puncture-resistant insert and cleated sole; S4 lacks the insert (EU-OSHA footwear). Chemical-resistant footwear is tested to EN 13832 (EU-OSHA footwear). Canadian safety boots carry a CSA Z195 patch: a green triangle for a Grade 1 toe cap with a puncture-resistant sole, yellow for Grade 2, and a white label with an orange Greek omega for electric-shock-resistant soles (CCOHS footwear). US electrical-hazard boots are marked EH, as backup protection only (OSHA SHIB EH boots). Natural rubber resists bases, acids, alcohols and most water-soluble chemicals but not oil-based chemicals and solvents; neoprene resists fats, blood, oils and caustics; PVC resists fats, bases, oils, many acids and petroleum but not most solvents, ketones and aldehydes (EU-OSHA footwear). Boots for live electrical work are a separate kind (EN 50321, up to 1 kV, worn with insulating gloves or blankets) (EU-OSHA footwear). Look-alikes: fashion rain boots and clogs with no standard or symbol have no tested protection.",
+  "test": "Bend each boot at the ball of the foot and around the ankle and look for fine cracks: ozone cracks rubber, worst where it is flexed or stretched (SATRA ozone). Check the sole for splits and worn-through tread, and for metal embedded in the sole or heel; worn-through soles and embedded metal also spoil any electrical rating (OSHA 3151). A leak check, a practical tip and not a standard: fill each boot with water to above the ankle, stand it on dry paper and look for a damp patch after a while. It shows leaks in still water only, not whether the boot will stand up to a chemical. Check for an exposed toe cap or other damage; footwear that took a hard impact or a sole puncture may be damaged without showing it, so replace it (CCOHS footwear). A boot that has gone harder, stiffer, more brittle, softer or swollen after chemical use has been degraded by the chemical; retire it (CCOHS gloves, which describes this for glove materials). Fit: trousers go over the boot tops (UNH pesticide PPE). Afterwards wash off chemicals and sewage before you take the boots off, and dry them. Keep them away from electric motors and welders, which make ozone that cracks rubber (SATRA ozone).",
+  "decay": {"halfLifeMonths":60,"note":"60 months is an estimate, not a maker's figure. SATRA says ozone cracks rubber, especially rubber under strain, and electric motors and arc welders make ozone."},
+  "hazards": [],
+  "protects": ["chemical","acid","biohazard"],
+  "improvise": "No rubber boots: heavy plastic bags pulled over your boots and taped at the shin may keep your feet dry for a few steps through clean water (a last-resort tip with no source: bags tear and slip, so don't count on them against chemicals, sewage, sharp debris or electricity). For chemicals, avoid leather footwear, which can absorb pesticides (UNH pesticide PPE). Don't rely on any boot to protect you from electricity: OSHA treats even rated EH boots as backup only, for 600 V or less when dry and with little protection when wet (OSHA SHIB EH boots); shock resistance is greatly reduced by wet conditions and wear (CCOHS footwear); the antistatic marking on safety boots cannot guarantee protection against shock (EU-OSHA footwear). If circuits or equipment got wet, turn the power off at the main breaker, but don't enter standing water to reach it: CDC says call an electrician. Never switch power or use an electric tool or appliance while standing in water (CDC cleanup). Floodwater can carry bacteria from sewage and farm and industrial waste: CDC says skin contact alone isn't a serious risk, but swallowing it can make you ill, and cuts and sores should be kept clean (CDC cleanup).",
+  "buildings": [
+    {"b":"farm","l":5,"loc":"mudroom, barn entry and milk house"},
+    {"b":"farm_supply","l":4,"loc":"footwear wall"},
+    {"b":"water_works","l":4,"loc":"operators' locker room and boot racks"},
+    {"b":"fire_station","l":4,"loc":"turnout gear racks"},
+    {"b":"hardware","l":3,"loc":"seasonal and work-wear aisle"},
+    {"b":"house","l":3,"loc":"back door, garage and front closet"},
+    {"b":"department","l":3,"loc":"seasonal footwear"},
+    {"b":"marina","l":3,"loc":"dock office and boat lockers"},
+    {"b":"garden_centre","l":2,"loc":"staff room and footwear display"},
+    {"b":"construction","l":2,"loc":"site trailer and gang boxes"},
+    {"b":"garage_res","l":2,"loc":"by the door and on shelves"}
+  ],
+  "sources": [
+    {"title":"CDC cleanup: Guidelines for Cleaning Safely After a Disaster","url":"https://www.cdc.gov/DISASTERS/CLEANUP/FACTS.HTML"},
+    {"title":"CCOHS footwear: Safety Footwear (OSH Answers)","url":"https://www.ccohs.ca/oshanswers/prevention/ppe/footwear.html"},
+    {"title":"OSHA SHIB EH boots: Potential Hazards of Mislabeled Steel Toe Logger Boots, SHIB 09-30-2004","url":"https://www.osha.gov/sites/default/files/publications/shib093004.pdf"},
+    {"title":"OSHA 3151: Personal Protective Equipment (OSHA 3151-02R 2023)","url":"https://www.osha.gov/sites/default/files/publications/osha3151.pdf"},
+    {"title":"EU-OSHA footwear: Protective footwear: requirements, selection and ergonomics (OSHwiki)","url":"https://oshwiki.osha.europa.eu/en/themes/protective-footwear-requirements-selection-and-ergonomics"},
+    {"title":"UNH pesticide PPE: Personal Protective Equipment (PPE) for Pesticide Use: Selection, Use, and Legal Requirements","url":"https://extension.unh.edu/resource/personal-protective-equipment-ppe-pesticide-use-selection-use-legal-requirements-fact-sheet"},
+    {"title":"SATRA ozone: Premature breakdown of rubber exposed to ozone","url":"https://satra.com/bulletin/article.php?id=2168"},
+    {"title":"CCOHS gloves: Chemical Protective Clothing - Glove Selection (OSH Answers)","url":"https://www.ccohs.ca/oshanswers/prevention/ppe/gloves.html"}
+  ]
+}

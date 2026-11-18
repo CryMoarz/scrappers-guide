@@ -1,0 +1,42 @@
+{
+  "id": "ppe_boots_safety",
+  "name": "Safety boots and shoes",
+  "group": "Protective gear",
+  "demand": 3,
+  "keywords": ["safety boots","safety shoes","steel toe","steel-toe","composite toe","safety toe","work boots","astm f2413","f2413","csa z195","green triangle","omega","eh","electrical hazard boots","puncture resistant","pr","metatarsal","s3","s1p","en iso 20345"],
+  "substitutes": [],
+  "summary": "Boots or shoes with a built-in toe cap that resists impact and crushing, often with a puncture-resistant plate in the sole and other ratings.",
+  "uses": ["Dropped parts and rolling loads: the toe cap takes a set impact and squeeze; the top of the foot is covered only if marked Mt or M","Nails and sharp scrap underfoot, only with a puncture plate: PR (US), a triangle patch (Canada), or P, PL or PS (Europe)","Steel and composite caps can carry the same marks: composite is lighter and does not carry cold; steel is slimmer and the stronger choice against extreme hits","EH or omega soles are back-up only, for 600 V or less on dry, well-insulated surfaces; wet or worn-through soles, metal in the sole or heel, or touching grounded metal can defeat them","Conductive (Cd in the US, C in Canada) and static-dissipative (SD) boots are not shock protection; never wear conductive boots where electrical hazards exist","After a hard hit on the toe or a nail through the sole, replace them: the damage may not show"],
+  "identify": "A safety toe is a hard cap built into the boot; the label or patch, not the feel of the toe, shows which standard it meets (SafetyNow F2413; CCOHS footwear). US: a boxed label on the tongue or lining reads ASTM F2413 and the year, then M or F with I and C (impact and compression), then extra codes: Mt (metatarsal), EH (electrical hazard), PR (puncture), Cd (conductive) or SD (static dissipative) (SafetyNow F2413). I/75 C/75 means 75 ft-lb impact and 2,500 lb squeeze (KEEN ASTM). Canada, CSA Z195, a coloured patch: green triangle, grade 1 toe plus puncture-resistant sole (heavy industry, construction); yellow triangle, grade 2 toe plus puncture-resistant sole; blue rectangle, grade 1 toe, no puncture protection; grey rectangle, grade 2 toe, no puncture protection; white rectangle with orange omega, electric shock resistant; yellow rectangle with SD, static dissipative; red rectangle with C, conductive; dark grey M, metatarsal; white label with green fir tree, chainsaw (CCOHS footwear). Europe, EN ISO 20345: toe caps take 200 J and 15 kN; codes SB, S1 to S3, S4 and S5 for rubber; in the 2022 edition S1P and S3 mean a steel plate, and PL or PS a textile one tested with a 4.5 or 3 mm nail. EN ISO 20346 caps (P codes) take only 100 J and 20347 (O codes) has none (OSHwiki footwear; Elten standards). A boot that only looks like a safety boot, with no label or patch, has nothing to show it was tested.",
+  "test": "Check the label or patch first. Then look for leather or rubber worn through so the toe cap shows, cracks in the sole and breaks in the leather (CCOHS footwear). Bend the sole: polyurethane soles break down with damp over the years, even boxed, and at the end crack or crumble; a crumbling sole is finished (uvex soles; Safety Jogger hydrolysis). Replace a boot that took a heavy blow to the toe or had something go through the sole, even if it looks fine (CCOHS footwear). EH or omega soles are back-up protection only, on dry, well-insulated surfaces; OSHA says it can be lost if the boots get wet, the soles wear through, metal particles are embedded in the sole or heel, or you touch grounded conductive items (OSHA CPL 02-01-050; CCOHS footwear). Replacing or adding insoles or footbeds can void the ASTM marking (SafetyNow F2413); ask the maker before adding inserts (CCOHS footwear). Fit: about 12.5 mm (half an inch) of room past the toes, snug at the heel and ankle when laced, tried with the socks you'll wear. Safety footwear won't stretch to fit (CCOHS footwear).",
+  "decay": {"halfLifeMonths":60,"note":"Steel and composite caps last. A standard polyurethane sole lasts about 3 years, 1.5 in the tropics, even in storage (Safety Jogger hydrolysis); damp makes it worse and rubber soles harden (uvex soles). EH protection falls with wear and wet (CCOHS footwear)."},
+  "hazards": [],
+  "protects": ["crush","heavy","sharp"],
+  "improvise": "A boot without a built-in toe cap gives no tested protection from crushing, however heavy it looks. Strap-on toe and metatarsal guards made to go over ordinary shoes exist. ASTM F2413 does not allow them as a substitute for safety footwear, though OSHA accepts ones shown to be as protective, and makers can supply their test data on request (SafetyNow F2413; OSHA CPL 02-01-050). A rubber boot is a safety boot only if it carries the marks: a CSA triangle patch (CCOHS footwear) or the S4 or S5 code under EN ISO 20345 (OSHwiki footwear). Boots whose soles are worn, wet or cracked may still guard your toes, but don't trust their EH rating near live wiring (OSHA CPL 02-01-050), and even good EH boots are no substitute for insulating (dielectric) boots or other electrical gear (OHS footwear 2025). Never wear conductive (C) or static-control boots for shock protection (CCOHS footwear; OSHA CPL 02-01-050). Without safety boots, keep your feet clear of anything raised or being moved. Store spare boots dry and cool, not in a damp basement or shed, so the soles last (uvex soles; Safety Jogger hydrolysis).",
+  "buildings": [
+    {"b":"farm_supply","l":4,"loc":"footwear wall, back stockroom"},
+    {"b":"department","l":2,"loc":"shoe department, workwear section"},
+    {"b":"water_works","l":2,"loc":"locker rooms, maintenance shop"},
+    {"b":"factory","l":2,"loc":"locker rooms, safety stores"},
+    {"b":"warehouse","l":2,"loc":"locker rooms, spare pairs in the safety cupboard"},
+    {"b":"hardware","l":2,"loc":"workwear and boot aisle"},
+    {"b":"auto_wrecker","l":2,"loc":"office, locker area"},
+    {"b":"recycling","l":2,"loc":"scale house, staff room"},
+    {"b":"shop_small","l":2,"loc":"workwear and shoe shops: boot wall and stockroom"},
+    {"b":"construction","l":2,"loc":"site trailer, spare pairs in lockers"},
+    {"b":"house","l":1,"loc":"front closet, mudroom, basement"},
+    {"b":"garage_res","l":1,"loc":"by the door, on a shelf"}
+  ],
+  "sources": [
+    {"title":"CCOHS footwear: Safety Footwear (OSH Answers)","url":"https://www.ccohs.ca/oshanswers/prevention/ppe/footwear.html"},
+    {"title":"OSHA CPL 02-01-050: Enforcement Guidance for Personal Protective Equipment in General Industry (2011)","url":"https://www.osha.gov/sites/default/files/enforcement/directives/CPL_02-01-050.pdf"},
+    {"title":"SafetyNow F2413: Protective Footwear Standards - Quick Tips (SafetyNow ILT)","url":"https://ilt.safetynow.com/protective-footwear-standards-quick-tips/?print=pdf"},
+    {"title":"KEEN ASTM: ASTM vs ANSI vs Mark II: What's the Difference? (KEEN Footwear)","url":"https://www.keenfootwear.ca/blogs/keen-blog/astm-vs-ansi-vs-mark-ii-what-s-the-difference"},
+    {"title":"OHS footwear 2025: Decoding Safety Footwear Standards (Occupational Health & Safety, 2025)","url":"https://ohsonline.com/articles/2025/09/26/decoding-safety-footwear-standards.aspx"},
+    {"title":"OSHwiki footwear: Protective footwear: requirements, selection and ergonomics (EU-OSHA OSHwiki)","url":"https://oshwiki.osha.europa.eu/en/themes/protective-footwear-requirements-selection-and-ergonomics"},
+    {"title":"Elten standards: Standards overview, EN ISO 20345:2022 (Elten)","url":"https://elten.com/en/technologie/standards/"},
+    {"title":"uvex soles: What is the service life of safety shoes? And why does the sole disintegrate? (uvex blog, 2019)","url":"https://www.uvex-safety.com/blog/why-do-shoe-soles-disintegrate/"},
+    {"title":"Safety Jogger hydrolysis: Hydrolysis, the crumbling of shoe soles explained (Safety Jogger)","url":"https://www.safetyjogger.com/en/eu/technical/hydrolysis"},
+    {"title":"IHSA foot protection: Personal Protective Equipment - Foot Protection (Ontario construction OHS guide, O. Reg. 213/91 s. 23)","url":"https://ohsguide.ihsa.ca/en/topic/foot_protection","note":"Basis for where it’s kept"}
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "id": "ppe_fr_clothing",
+  "name": "Flame-resistant (FR) and arc-rated clothing",
+  "group": "Protective gear",
+  "demand": 1,
+  "keywords": ["fr clothing","flame resistant","fire resistant","frc","arc rated","arc flash","arc flash suit","nomex","fr coveralls","welding jacket","nfpa 70e","nfpa 2112","csa z462","cal/cm2","atpv","en iso 11612","iec 61482","modacrylic"],
+  "substitutes": [],
+  "summary": "Shirts, trousers, coveralls and jackets of flame-resistant fabric that stops burning when the flame is gone and doesn't melt; arc-rated ones carry a tested rating in cal/cm².",
+  "uses": ["Flash fire from fuel vapour or gas: it reduces how much of you is burned and how badly; it doesn't make you fireproof","Electrical arc flash: only arc-rated gear at or above the expected energy; the rating is about heat, not electric shock","Molten metal splash and short contact with flame, if marked EN ISO 11612 with code D or E for metal","Only works over layers that don't melt: nylon, polyester, acetate or polypropylene underneath can melt onto skin","Fleece, polyester hi-vis marked NOT FR and Tyvek-type suits worn over or under it can catch fire and melt"],
+  "identify": "The sewn-in tag names the standard. Arc-rated (AR) clothing shows an arc rating in cal/cm²: the heat at which there is a 50% chance of a second-degree burn (OSHA 1910.269 App E). A maker's guide to the 2018 NFPA 70E gives minimum ratings by PPE Category: 1 is 4 cal/cm², 2 is 8, 3 is 25 and 4 is 40 (NSA arc categories). CSA Z462 added a Category 5, up to 75 cal/cm², in 2021 (EasyPower CSA Z462). Go by the cal/cm² on the tag. NFPA 2112 is the flash-fire standard OSHA points oil and gas employers to (OSHA FRC memo); older Canadian gear may cite CAN/CGSB-155.20, withdrawn in December 2022 (CGSB 155.20 record). European marks: EN ISO 11612 for heat and flame with codes A to F (A flame spread, B convective heat, C radiant heat, D molten aluminium, E molten iron, F contact heat) and EN ISO 14116 index 1 to 3 for limited flame spread, where index 1 must not touch skin (uvex standards); IEC 61482 box-test arc class 1 (4 kA) or 2 (7 kA) (TenCate norms). FR clothing is either made from inherently flame-resistant fibres or chemically treated (OSHA 1910.269 App E). Look-alikes: ordinary cotton workwear, hi-vis marked NOT FR, and 'self-extinguishing' treated polyester vests, which still melt and drip and are not for arc or flash-fire work (Radians HV facts).",
+  "test": "Read the tag: if the arc rating, standard or FR wording is missing or unreadable, treat it as ordinary clothing. Look for holes, tears, worn-thin patches and frayed cuffs: a hole lets flame and heat straight through. Check badges: logos and name tags that aren't flame resistant can spoil the arc rating (OSHA 1910.269 App E). Smell and look for oil, grease or fuel soaked in: flammable residue on FR clothing is a hazard of its own (TenCate clean FR). Wash with detergent only: no chlorine bleach, hydrogen peroxide, fabric softener or starch (Bulwark care). If the tag doesn't say it is FR, treat it as ordinary clothing: a flame test at home proves nothing, because treated 'self-extinguishing' polyester also goes out once the flame is removed but still melts and drips (Radians HV facts). For arc work it must cover the whole body except hands, feet, face and head, which need their own gear, and nothing that melts may go underneath (OSHA 1910.269 App E).",
+  "decay": {"halfLifeMonths":96,"note":"An estimate: no maker's shelf life was found. Kept dry the fabric can last years; damp, mould, mice, fuel or oil soaking, wear, and bleach or softener ruin found garments (TenCate clean FR; Bulwark care)."},
+  "hazards": [],
+  "protects": ["burn","fuel","hv"],
+  "improvise": "No FR clothing: wear long sleeves and trousers of plain cotton with the collar closed, and nothing synthetic underneath or on top: nylon, polyester, acetate and polypropylene can melt onto skin, even in blends (OSHA 1910.269 App E). OSHA calls untreated cotton usually acceptable only for very low arc exposure, about 2 cal/cm² or less (OSHA 1910.269 App E), and it will burn once lit. A leather welding jacket or apron helps against sparks, since leather is used against dry heat and flames (OSHA 3151). Useless or worse: fleece, nylon jackets, polyester hi-vis, Tyvek-type suits, which ignite and melt (DuPont Tyvek 500), and 'self-extinguishing' treated polyester (Radians HV facts). No clothing makes live electrical work or a fuel-vapour cloud safe: switch the power off and prove it dead, clear the vapour, or stay out.",
+  "buildings": [
+    {"b":"substation","l":2,"loc":"crew trucks and the control-building locker room"},
+    {"b":"fire_station","l":3,"loc":"turnout gear racks and wildland kit"},
+    {"b":"factory","l":2,"loc":"welding bays, electrical shop and locker rooms"},
+    {"b":"datacenter","l":2,"loc":"electrical room arc-flash PPE cabinet"},
+    {"b":"solar_farm","l":2,"loc":"site office and inverter building"},
+    {"b":"water_works","l":2,"loc":"electrical shop and locker room"},
+    {"b":"makerspace","l":2,"loc":"metal shop, by the welders"},
+    {"b":"construction","l":1,"loc":"electricians' gang boxes and trucks"},
+    {"b":"department","l":1,"loc":"workwear section"},
+    {"b":"auto_wrecker","l":1,"loc":"torch-cutting area"}
+  ],
+  "sources": [
+    {"title":"OSHA 1910.269 App E: Appendix E to 1910.269, Protection From Flames and Electric Arcs","url":"https://www.osha.gov/laws-regs/regulations/standardnumber/1910/1910.269AppE"},
+    {"title":"OSHA 1910.269: Electric power generation, transmission, and distribution, 29 CFR 1910.269","url":"https://www.osha.gov/laws-regs/regulations/standardnumber/1910/1910.269"},
+    {"title":"OSHA FRC memo: Enforcement Policy for Flame-Resistant Clothing in Oil and Gas Drilling, Well Servicing, and Production-Related Operations (2010)","url":"https://www.osha.gov/laws-regs/standardinterpretations/2010-03-19-0"},
+    {"title":"NSA arc categories: What Are the 4 Different Arc Flash PPE Categories in NFPA 70E? (National Safety Apparel, Enespro)","url":"https://www.thinknsa.com/enespro/resources/articles/what-are-the-4-different-arc-flash-ppe-categories-in-nfpa-70e/"},
+    {"title":"EasyPower CSA Z462: 2021 Update of the Canadian CSA-Z462 Electrical Safety Standard","url":"https://www.easypower.com/resources/article/2021-update-of-the-canadian-csa-z462-electrical-safety-standard"},
+    {"title":"CGSB 155.20 record: CAN/CGSB-155.20-2017, Workwear for protection against hydrocarbon flash fire and optionally steam and hot fluids (Government of Canada Publications)","url":"https://publications.gc.ca/site/eng/9.848260/publication.html"},
+    {"title":"uvex standards: Protective clothing and disposable overalls, safety standards","url":"https://www.uvex-safety.com/en/knowledge/safety-standards/protective-clothing-and-disposable-overalls/"},
+    {"title":"TenCate norms: PPE clothing norms quick guide (TenCate Protective Fabrics)","url":"https://eu.tencatefabrics.com/blog/ppe-clothing-norms-quick-guide-safety-compliance"},
+    {"title":"TenCate clean FR: Clean FR is safe FR (TenCate Protective Fabrics)","url":"https://us.tencatefabrics.com/blog/clean-fr-is-safe-fr"},
+    {"title":"Bulwark care: How to Wash Flame-Resistant Clothing (Bulwark)","url":"https://www.bulwark.com/safety-care.html"},
+    {"title":"Radians HV facts: Radians Hi-Viz Fast Facts, ANSI/ISEA 107-2020 (REV03)","url":"https://www.radians.com/hubfs/Fast%20Fact%20PDFs/HV%20FastFacts%20REV03_LR.pdf"},
+    {"title":"DuPont Tyvek 500: DuPont Tyvek 500 coverall product page and FAQ","url":"https://www.dupont.com/products/dupont-tyvek-500-ty198s-wh.html"},
+    {"title":"OSHA 3151: Personal Protective Equipment (OSHA 3151-02R 2023)","url":"https://www.osha.gov/sites/default/files/publications/osha3151.pdf"}
+  ]
+}

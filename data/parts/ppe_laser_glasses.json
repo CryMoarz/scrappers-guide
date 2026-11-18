@@ -1,0 +1,42 @@
+{
+  "id": "ppe_laser_glasses",
+  "name": "Laser safety glasses and goggles",
+  "group": "Protective gear",
+  "demand": 1,
+  "keywords": ["laser safety glasses","laser goggles","laser glasses","laser eye protection","optical density","od rating","od4","od5","od6","en 207","en 208","z136","445nm glasses","450nm glasses","532nm glasses","1064nm glasses","co2 laser glasses","10600nm","engraver goggles"],
+  "substitutes": [],
+  "summary": "Glasses or goggles with filters that block particular laser wavelengths; they protect only at the wavelengths and optical density printed on them.",
+  "uses": ["Match the laser: 405 nm (Blu-ray), 450–460 nm (blue diode engravers), 532 nm (green pointers), 650 nm (DVD), 780 nm (CD) (Wikipedia optical drives; xTool goggles; NIST green pointers)","Invisible: 1,064 nm (fibre lasers, and the infrared leak from cheap green pointers) and 10,600 nm (CO2 cutters) (Trotec fibre laser; NIST green pointers; OSHA technical manual)","Close doesn't count: in MIT's example, eyewear rated OD 4+ at 435 nm gives under OD 1 at 455 nm (MIT laser eyewear)","Eyewear is the last layer: ANSI doesn't recommend relying on it above about 100 W or 200 W/cm², and OSHA puts engineering controls first (MIT laser eyewear; OSHA technical manual)","Plastic filters are damaged by much weaker beams than glass ones: enclose strong lasers instead (MIT laser eyewear)","Laser-level 'visibility' glasses and ordinary sunglasses don't protect (Hilti laser tools; OSHA/LIA laser)"],
+  "identify": "Real laser eyewear is labelled with the wavelengths it covers and the optical density (OD) at each, sometimes in several bands (xTool goggles: the Pro set is OD 5+ at 180–540 nm); OSHA's construction rule requires the wavelengths, OD and visible light transmission on the label (OSHA 1926.102; OSHA 3151; MIT laser eyewear). OD counts powers of ten: OD 3 lets through a thousandth, OD 5 a hundred-thousandth (MIT laser eyewear). European eyewear to EN 207 shows the wavelength, a mode letter (D continuous, I long pulse 1 µs–250 ms, R Q-switched 1 ns–1 µs, M under 1 ns; Lasermet EN 207), an LB protection level, the maker's mark and CE; an OD-only mark is not allowed under EN 207 (uvex laservision). EN 207 and EN 208 are replaced by EN ISO 19818-1 (SIS ISO 19818-1). EN 208 alignment glasses only cut a visible beam down to class 2 levels and don't protect against the direct beam (uvex laservision; MIT laser eyewear). Goggles bundled with an engraver may cover only that machine's band: xTool's standard goggles cover 400–500 nm at OD 4+ (xTool goggles). Not laser protection: laser-level visibility glasses (Hilti laser tools), ordinary sunglasses (OSHA/LIA laser), and anything with no wavelength or OD marked.",
+  "test": "Read the label and match it to the laser's wavelength and power; if the label is gone or unreadable, treat them as unrated, because only what the maker printed counts (MIT laser eyewear). Inspect the filter for pitting, crazing, cracks and discolouration, and the frame for cracks and gaps that let light in; replace stretched or frayed straps (MIT laser eyewear). Plastic dye filters can darken with heat and UV, and plastic has a much lower damage threshold than glass (MIT laser eyewear). Fit: they should sit close so stray light can't come round the edges (MIT laser eyewear). Trust only the printed rating (MIT laser eyewear): in NIST tests with ultrafast lasers, many rated filters failed their specs when the wavelength shifted by only 1% (NIST eyewear). If a green pointer may leak infrared, NIST describes a camera check for it; glasses must then be marked for both 532 and 1,064 nm (NIST green pointers; MIT laser eyewear).",
+  "decay": {"halfLifeMonths":96,"note":"Estimate: kept in cases indoors they last years, but plastic dye filters age with heat and UV and can darken, and straps stretch (MIT laser eyewear). Check any lens a strong beam has hit."},
+  "hazards": [],
+  "protects": ["laser"],
+  "improvise": "There is no safe substitute. Ordinary sunglasses don't protect against laser light, and each laser needs eyewear made for its wavelength and power (OSHA/LIA laser). Laser-level visibility glasses are not protective (Hilti laser tools). Ordinary safety glasses and welding filters are made to Z87.1, whose selection guide refers lasers to a separate standard, ANSI Z136 (NIOSH eyewear bulletin). Without rated eyewear, the only other control is to keep the beam completely enclosed: OSHA/LIA says lasers that are completely enclosed need no eyewear (OSHA/LIA laser). An improvised box is not a tested enclosure, so leave no gaps, never look into it, aim the beam at matte brick or concrete, and watch through a camera rather than over the beam, as MIT suggests for alignment work (MIT laser eyewear). Keep power to the minimum and keep others out. Remember that 780 nm CD diodes, 1,064 nm lasers and 10,600 nm CO2 beams are infrared and hard or impossible to see (Wikipedia optical drives; NIST green pointers; OSHA technical manual).",
+  "buildings": [
+    {"b":"hospital","l":3,"loc":"operating theatre laser carts and eye clinics"},
+    {"b":"makerspace","l":2,"loc":"on a hook beside the laser cutter or engraver"},
+    {"b":"clinic","l":1,"loc":"dermatology, eye, dental and vet treatment rooms"},
+    {"b":"school","l":1,"loc":"physics labs, college engineering and fab labs"},
+    {"b":"factory","l":1,"loc":"beside laser cutting, welding and marking machines"},
+    {"b":"salon","l":1,"loc":"laser hair-removal and tattoo-removal rooms"},
+    {"b":"garage_res","l":1,"loc":"next to a hobby diode engraver"}
+  ],
+  "sources": [
+    {"title":"OSHA 3151: Personal Protective Equipment (OSHA 3151-02R 2023)","url":"https://www.osha.gov/sites/default/files/publications/osha3151.pdf"},
+    {"title":"OSHA 1926.102: 29 CFR 1926.102, Eye and face protection (construction)","url":"https://www.osha.gov/laws-regs/regulations/standardnumber/1926/1926.102"},
+    {"title":"MIT laser eyewear: Laser Eye Protection (LEP) Guidelines, MIT Radiation Protection Program (RP-L-LEPGuidelines Rev 1.0)","url":"https://ehs.mit.edu/wp-content/uploads/2019/10/RP-L-LEPGuidelines-1_0.pdf"},
+    {"title":"uvex laservision: Laser safety standards (laservision, uvex group)","url":"https://www.uvex-laservision.de/en/laser-safety/laser-safety-standards/"},
+    {"title":"xTool goggles: An Introduction to xTool Safety Goggles (xTool Support Center)","url":"https://support.xtool.com/article/631"},
+    {"title":"Hilti laser tools: Laser Scanning and Measuring Tool Safety, Toolbox Talk (Hilti)","url":"https://hilti.ca/content/dam/urgent-folder/w1/pdf/hse/csw-2022/23-Hilti-Laser-Scanning-and-Measuring-Tool-Safety-Toolbox%20Talk.pdf"},
+    {"title":"OSHA/LIA laser: Introduction to Laser Safety (OSHA and Laser Institute of America Alliance fact sheet)","url":"https://www.lia.org/sites/default/files/pdf/OSHAIntroductionToLaserSafety.pdf"},
+    {"title":"NIOSH eyewear bulletin: The Manufacture and Selection of Eye Protection at Work (NIOSH Science Bulletin, June 2022)","url":"https://cdc.gov/niosh/bulletin/2022/eyeware.html"},
+    {"title":"NIST eyewear: NIST Finds Many Protective Glasses Do Not Meet Specs for Shielding Light from Ultrafast Lasers (NIST, 2017)","url":"https://www.nist.gov/news-events/news/2017/11/nist-finds-many-protective-glasses-do-not-meet-specs-shielding-light"},
+    {"title":"NIST green pointers: Beware the Dim Laser Pointer: NIST Researchers Measure High Infrared Power Levels from Some Green Lasers (NIST, 2010)","url":"https://www.nist.gov/node/400021"},
+    {"title":"OSHA technical manual: OSHA Technical Manual, Section III Chapter 6, Laser Hazards","url":"https://www.osha.gov/otm/section-3-health-hazards/chapter-6"},
+    {"title":"Wikipedia optical drives: Optical disc drive (Wikipedia)","url":"https://en.wikipedia.org/wiki/Optical_disc_drive"},
+    {"title":"Trotec fibre laser: Fiber laser (Trotec laser wiki)","url":"https://www.troteclaser.com/en/resources/laser-wiki/fiber-laser"},
+    {"title":"Lasermet EN 207: EN 207, CE Marking and Laser Protective Eyewear (Lasermet)","url":"https://www.lasermet.com/us/?p=1181"},
+    {"title":"SIS ISO 19818-1: SS-EN ISO 19818-1:2021, Eye and face protection - Protection against laser radiation - Part 1: Requirements and test methods (Swedish Institute for Standards)","url":"https://www.sis.se/en/produkter/environment-health-protection-safety/air-quality/ambient-atmospheres/ss-en-iso-19818-12021/"}
+  ]
+}

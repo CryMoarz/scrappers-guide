@@ -1,0 +1,38 @@
+{
+  "id": "ppe_hi_vis",
+  "name": "High-visibility vests and clothing",
+  "group": "Protective gear",
+  "demand": 1,
+  "keywords": ["hi vis","hi-vis","high visibility","high-vis","safety vest","reflective vest","traffic vest","flagger vest","reflective tape","fluorescent","safety orange","ansi 107","ansi/isea 107","class 2","class 3","csa z96","en iso 20471","hi viz"],
+  "substitutes": [],
+  "summary": "Fluorescent yellow-green, orange or red vests, jackets and trousers with reflective stripes that make the wearer easy to see by day and in headlights at night.",
+  "uses": ["Being seen by drivers and machine operators in daylight, through fluorescent colour that contrasts with the background (CCOHS hi-vis)","Being seen at night in headlights through the reflective stripes; fluorescent colour needs natural light, so it does not work at night (CCOHS hi-vis)","Visibility only: it is not protection against being hit, so stay out of the path of vehicles and machines anyway","Ordinary polyester vests melt and drip in flame; near fire, welding or arcs use only one labelled FR, and for arcs one with an arc rating on the tag (Radians HV facts)","Faded, torn, dirty or worn gear should be replaced; dirty reflective material is less visible (USDA FS sign guide; CCOHS hi-vis)"],
+  "identify": "US gear is labelled ANSI/ISEA 107 with a type and class: Type O Class 1 for off-road work such as warehouses; Type R Class 2 or 3 for roads; Type P Class 2 or 3 for police, fire and ambulance; Class E for trousers and shorts. A Class 2 top with Class E trousers counts as Class 3, and a sleeveless vest is never Class 3 (Radians HV facts). A Type R Class 2 garment needs at least about 0.5 m² (775 sq in) of fluorescent background and 0.13 m² (201 sq in) of reflective tape; Type R Class 3 needs 0.8 m² (1,240 sq in) and 0.2 m² (310 sq in); Type P Class 3 needs 775 sq in of background (Radians HV facts). Canada uses CSA Z96, Classes 1 to 3 by body coverage: stripes at least 50 mm wide, a band round the waist, two front stripes over the shoulders and an X on the back; Class 3 adds bands round both arms and legs (CCOHS hi-vis). Europe uses EN ISO 20471, Classes 1 to 3 (TenCate norms). Background colours are fluorescent yellow-green, orange-red or red (CCOHS hi-vis). Vests made to ANSI 107-2015 or later are labelled FR or NOT FR (Radians HV facts). Look-alikes: costume, sports and party vests with no standard on the label, narrow tape or big gaps.",
+  "test": "Read the label: you want a standard and class you can still read. In daylight, compare it with a new garment: paler or greyer means faded, so replace it (a rough check, not from a standard). Replace it if it is faded, torn, soiled, worn or defaced, or can't be seen from 1,000 ft (about 300 m) by day or night (USDA FS sign guide, which cites the 2004 edition of ANSI/ISEA 107). WorkSafeBC says to check before and after each use for small holes, fraying and fading, and that reflective material is still bright and visible (BC Forest Safety). A rough night check, not from a standard: shine a torch from beside your eye; tape that stays dull, cracked or peeling is worn out. Dirt on the tape cuts visibility, so keep it clean and wash it as the label says (CCOHS hi-vis). Fit: worn closed, on the outside of your other layers. A tear-away vest is needed wherever it could be caught in machinery (BC Forest Safety). CCOHS suggests Class 2 (Class 1 in some cases) where vehicles stay under 40 km/h, Class 2 or 3 at 40 to 80 km/h, and above 80 km/h Class 2 by day and Class 3 in low light (CCOHS hi-vis).",
+  "decay": {"halfLifeMonths":36,"note":"Hi-vis is replaced when faded, torn or dirty. A USDA Forest Service guide says about 6 months of service if worn daily and up to 3 years or more if not, and to store it cool and dry, out of direct sunlight. 36 months is an estimate."},
+  "hazards": [],
+  "protects": [],
+  "improvise": "No vest: wear the brightest plain colours you have and pick what contrasts most with what is behind you, because contrast with the background is what makes people visible (CCOHS hi-vis); orange may stand out better than yellow-green against heavy foliage (Ergodyne hi-vis). At night only retroreflective material lights up in headlights (Radians HV facts): add reflective tape, cyclists' bands or strips cut from a damaged vest, and carry a torch; these are better than nothing but do not meet any standard. Useless: dark, camouflage or earth-toned clothes near traffic or machines, and a vest faded to white or grey. Never rely on being seen: keep out of the path of moving vehicles and machines, and make sure a driver has seen you before you step in front. Near fire, welding or electrical arcs, take off a polyester vest, which melts and drips (Radians HV facts), and use clothing marked FR instead, with an arc rating on the tag if arcs are possible (Radians HV facts).",
+  "buildings": [
+    {"b":"construction","l":5,"loc":"site trailer, trucks and coat hooks"},
+    {"b":"hardware","l":4,"loc":"safety-gear aisle"},
+    {"b":"airport","l":4,"loc":"ramp office and baggage-hall lockers"},
+    {"b":"police","l":4,"loc":"patrol cars and equipment room"},
+    {"b":"fire_station","l":4,"loc":"apparatus compartments"},
+    {"b":"warehouse","l":4,"loc":"shipping office and hooks by the dock doors"},
+    {"b":"tool_rental","l":3,"loc":"counter and traffic-control gear"},
+    {"b":"recycling","l":3,"loc":"scale house and staff room"},
+    {"b":"bus_depot","l":3,"loc":"yard office and garage"},
+    {"b":"water_works","l":3,"loc":"operators' locker room and trucks"},
+    {"b":"auto_wrecker","l":3,"loc":"yard office"},
+    {"b":"parking","l":2,"loc":"attendant booth"}
+  ],
+  "sources": [
+    {"title":"CCOHS hi-vis: High-Visibility Safety Apparel (OSH Answers)","url":"https://www.ccohs.ca/oshanswers/prevention/ppe/high_visibility.html"},
+    {"title":"Radians HV facts: Radians Hi-Viz Fast Facts, ANSI/ISEA 107-2020 (REV03)","url":"https://www.radians.com/hubfs/Fast%20Fact%20PDFs/HV%20FastFacts%20REV03_LR.pdf"},
+    {"title":"USDA FS sign guide: Incident Sign Installation Guide, page 2, high-visibility safety apparel (USDA Forest Service, 1251-2820P-MTDC)","url":"https://www.fs.usda.gov/t-d/pubs/htmlpubs/htm12512820/page02.htm"},
+    {"title":"BC Forest Safety: Stand out safely, high-visibility apparel (BC Forest Safety Council, 01/23)","url":"https://www.bcforestsafe.org/wp-content/uploads/2021/07/Stand-Out-Safely-Hi-Vis-Apparel.pdf"},
+    {"title":"Ergodyne hi-vis: Understanding Hi-Vis Standards: ANSI/ISEA 107","url":"https://www.ergodyne.com/blog/understanding-hi-vis-standards-ansi-isea-107"},
+    {"title":"TenCate norms: PPE clothing norms quick guide (TenCate Protective Fabrics)","url":"https://eu.tencatefabrics.com/blog/ppe-clothing-norms-quick-guide-safety-compliance"}
+  ]
+}

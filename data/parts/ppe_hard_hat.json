@@ -1,0 +1,40 @@
+{
+  "id": "ppe_hard_hat",
+  "name": "Hard hats",
+  "group": "Protective gear",
+  "demand": 1,
+  "keywords": ["hard hat","hardhat","safety helmet","construction helmet","head protection","z89.1","ansi z89.1","csa z94.1","type 1","type 2","class e","class g","class c","en 397","en 50365","v-gard","suspension","chin strap","full brim"],
+  "substitutes": [],
+  "summary": "A plastic shell hung on a strap suspension that spreads the blow from falling or flying objects; many are also proof-tested to reduce the shock risk from touching live wires.",
+  "uses": ["Tools, bolts, debris and bits of ceiling falling from above; it is built to take one blow, then be retired","Type I (CSA Type 1) guards only the top of the head; Type II (Type 2) also the sides and back","Class G (tested at 2,200 V) and E (20,000 V) lower the shock risk if your head touches a wire; the test voltage is not a safe working limit","Class C hats give no electrical protection, and vented hats must not be used for electrical work","In a slip or fall it only helps if it stays on: use the chin strap when climbing or above 3 m","It is the last line of defence: getting out from under the hazard comes first"],
+  "identify": "A rigid shell (cap style with a front peak, or full brim) on a strap suspension that keeps a gap between shell and head; safety helmets as well as hard hats can meet the same US standard (OSHA SHIB). A label or moulding inside gives the ratings. US: ANSI/ISEA Z89.1, Type I (top) or II (top and sides), and Class G, E or C; optional marks are HT (high heat), LT (cold), HV (hi-vis) and a reverse-wearing mark, and only hats with that mark may be worn backwards (OSHA SHIB). Hats made to the 1986 edition say Class A (2,200 V) or B (20,000 V) instead of G or E, and their Type I and II meant full brim and brimless, not top and side impact (OSHA CPL 02-01-050). Canada: CSA Z94.1, Type 1 or 2, with the same G, E and C classes (CCOHS headwear). Europe: EN 397, with optional marks −20 °C or −30 °C, +150 °C, 440 V, MM (molten metal) and a lateral deformation (side squeeze) test; EN 50365 hats insulate to 1,000 V AC (uvex helmets). The maker's date is moulded under the brim, and the suspension has its own month, year and size (MSA hard hat). Check that the label is legible and not tampered with (OSHA SHIB). WorkSafeBC accepts safety headgear only if it meets CSA Z94.1 or ANSI Z89.1 (WorkSafeBC Part 8), so don't count a hat with no standard on it as a hard hat. Don't mix in a suspension from another maker (CCOHS headwear; MSA hard hat).",
+  "test": "Read the dates under the brim and on the suspension. MSA says replace the suspension 12 months after first use and the shell after 5 years at most, and as often as every 2 years, depending on environment, application and use (MSA hard hat); the US Forest Service gives 2 to 5 years (USFS hardhat). Retire it at once if it took a hard hit or was pierced, even with no mark showing (OSHA SHIB; CCOHS headwear). Also retire it for cracks, including a web of fine cracks, dents, gouges, holes, a dull, faded or chalky surface, stiffness or brittleness, or a brim that flexes too much (CCOHS headwear; MSA hard hat). Squeeze test: press the sides in about 2.5 cm (1 in) and let go; it should spring back fast. If it is stiffer than a new one or cracks, scrap it (USFS hardhat). Suspension: look for torn straps or stitching, cracked slots and broken clips (CCOHS headwear; MSA hard hat). Fit: tighten the headband so the hat stays on when you bend over, with nothing stuffed between shell and suspension and no ball cap underneath (CCOHS headwear).",
+  "decay": {"halfLifeMonths":36,"note":"MSA counts from first use: suspension 12 months, shell 5 years at most and as often as every 2 years in hard use (MSA hard hat); USFS gives 2 to 5 years (USFS hardhat). Sun, heat and chemicals make shells chalky and brittle (CCOHS headwear; USFS hardhat)."},
+  "hazards": [],
+  "protects": ["structural"],
+  "improvise": "There is no safe home-made hard hat. A bump cap is not one: it is made only for knocking your head on fixed things, not for falling objects (ISEA bump cap). Mountaineering helmets are made to a different standard, EN 12492 (uvex helmets), and bike and sports helmets to others again; count one as a hard hat only if it also carries Z89.1, CSA Z94.1 or EN 397. The real protection is not being under the hazard: rules put removing the risk ahead of the helmet (WorkSafeBC Part 8). Clear or prop loose material, keep out from under racking, sagging ceilings and anyone working above. A spare suspension from the same maker and model can renew a sound shell; never mix makers (CCOHS headwear; MSA hard hat). Don't paint a shell or clean it with solvents or petrol: they make it brittle and paint hides cracks (CCOHS headwear; MSA hard hat). Keep it out of the sun and off a car's rear shelf when stored (CCOHS headwear; OSHA SHIB). OSHA says to follow the maker's lifespan and to discard a hat with any sign of damage or degradation (OSHA SHIB). If an out-of-date hat is all you have, wear it only if it passes every check above, and expect it to protect less than a new one; one that took a hit, or is chalky or brittle, should not be worn (OSHA SHIB; USFS hardhat).",
+  "buildings": [
+    {"b":"construction","l":5,"loc":"site trailer, gang boxes, hooks by the gate"},
+    {"b":"hardware","l":3,"loc":"safety aisle next to glasses and vests"},
+    {"b":"water_works","l":3,"loc":"maintenance shop, crane and pump gallery entrances"},
+    {"b":"factory","l":3,"loc":"visitor rack at the entrance, maintenance shop, crane bays"},
+    {"b":"recycling","l":2,"loc":"scale house, tipping floor office"},
+    {"b":"tool_rental","l":2,"loc":"counter and safety-gear shelf"},
+    {"b":"auto_wrecker","l":2,"loc":"office, crane and forklift area"},
+    {"b":"warehouse","l":2,"loc":"receiving office, visitor rack, racking aisles"},
+    {"b":"farm_supply","l":2,"loc":"safety aisle"},
+    {"b":"solar_farm","l":2,"loc":"operations building or service container"},
+    {"b":"substation","l":1,"loc":"control building"}
+  ],
+  "sources": [
+    {"title":"OSHA SHIB: Head Protection: Safety Helmets in the Workplace (Safety and Health Information Bulletin SHIB 3-6-2024)","url":"https://www.osha.gov/sites/default/files/publications/safety_helmet_shib.pdf"},
+    {"title":"OSHA CPL 02-01-050: Enforcement Guidance for Personal Protective Equipment in General Industry (2011)","url":"https://www.osha.gov/sites/default/files/enforcement/directives/CPL_02-01-050.pdf"},
+    {"title":"CCOHS headwear: Safety Headwear (OSH Answers)","url":"https://www.ccohs.ca/oshanswers/prevention/ppe/headwear.html"},
+    {"title":"WorkSafeBC Part 8: OHS Regulation Part 8, Personal Protective Clothing and Equipment (s. 8.11 Safety headgear)","url":"https://www.worksafebc.com/en/law-policy/occupational-health-safety/searchable-ohs-regulation/ohs-regulation/part-08-personal-protective-clothing-and-equipment"},
+    {"title":"IHSA head protection: Personal Protective Equipment - Head Protection (Ontario construction OHS guide, O. Reg. 213/91 s. 22)","url":"https://ohsguide.ihsa.ca/en/topic/head_protection","note":"Basis for where it’s kept"},
+    {"title":"MSA hard hat: Signs You May Need a New Hard Hat (MSA Spotlight on Safety, 2019)","url":"https://blog.msasafety.com/signs-you-may-need-a-new-hard-hat/"},
+    {"title":"USFS hardhat: Your Hardhat: Inspection and Maintenance (USDA Forest Service MTDC, 2002)","url":"https://www.fs.usda.gov/t-d/pubs/htmlpubs/htm02672331/index.htm"},
+    {"title":"uvex helmets: Safety helmets standards (uvex safety knowledge)","url":"https://uvex-safety.com/en/knowledge/safety-standards/safety-helmets"},
+    {"title":"ISEA bump cap: ISEA Releases New Bump Cap Safety Standard (ANSI/ISEA 100-2024)","url":"https://safetyequipment.org/isea-releases-new-bump-cap-safety-standard/"}
+  ]
+}

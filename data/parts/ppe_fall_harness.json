@@ -1,0 +1,42 @@
+{
+  "id": "ppe_fall_harness",
+  "name": "Full-body fall-arrest harnesses",
+  "group": "Protective gear",
+  "demand": 2,
+  "keywords": ["harness","safety harness","fall arrest","fall protection","full body harness","roof harness","roofing kit","lanyard","shock absorbing lanyard","d-ring","anchor","lifeline","self-retracting lifeline","csa z259.10","ansi z359.11","en 361","class a harness","tie off"],
+  "substitutes": [],
+  "summary": "A webbing harness with shoulder, chest and leg straps and a D-ring on the back that, with a shock-absorbing lanyard and a strong anchor, catches a fall.",
+  "uses": ["Stops a fall only as a system: anchor, connector, shock-absorbing lanyard or self-retracting line, harness, and clear space below","OSHA wants an anchor that holds 22.2 kN (5,000 lb) per person, or one engineered with a safety factor of two; Canadian provinces differ. If you can't be sure, don't use it","It only catches you after you fall; guardrails, staying back from edges or restraint prevent the fall","Hanging in a harness can cause unconsciousness and death in under 30 minutes: someone must be able to rescue you fast, so never work at height alone","Retire it after any fall it caught, if it fails inspection, if you don't know its history, or past the maker's age limit","Body belts and climbing or sit harnesses are not fall-arrest harnesses"],
+  "identify": "A full-body harness has shoulder straps, leg loops, usually a chest strap, and a D-ring between the shoulder blades; OSHA wants the fall-arrest point at the centre of the back near shoulder level (OSHA 1910.140). Labels are sewn on: standard, maker, model, serial number, month and year of manufacture; the maker's notice gives the weight limit, 130 kg plus 10 kg of gear on a Petzl NEWTON (Petzl NEWTON notice). US harnesses are made to ANSI/ASSP Z359.11, whose label pack must include diagrams showing a deployed and a non-deployed load indicator (ASSP Z359.11). Canadian ones are CSA Z259.10 (CCOHS harnesses); Ontario's rule lists groups A fall arresting, D descent, E confined entry and exit, L ladder climbing, P work positioning (Waterloo fall arrest, which cites the 1990 edition), so read the label. European ones say EN 361 (Petzl NEWTON notice). Fall indicators are often stitched folds of webbing; ripped stitching, even partly, probably means it caught a fall (MSA harness life). Not fall-arrest gear: body belts, which OSHA has not accepted for fall arrest since 1998 (OSHA 1926.502), and climbing, sit or other harnesses not marked for fall arrest; Petzl says only a fall-arrest harness may hold the body in a fall-arrest system (Petzl NEWTON notice).",
+  "test": "Check it before every use; OSHA requires this (OSHA 1926.502; OSHA 1910.140). Read the label: if it is missing or unreadable, or you don't know the harness's history, retire it (Petzl NEWTON notice). Check the date: Petzl gives the NEWTON a 10-year lifespan from manufacture; MSA says there is no set expiry date and leaves it to inspection (Petzl NEWTON notice; MSA harness life). Bend all the webbing into an upside-down U, a bit at a time, and look for cuts, frayed edges, broken fibres, pulled stitches and chemical damage (CCOHS harnesses), and damage from heat (Petzl NEWTON notice). Check every stitch pattern and the fall indicator: any ripped stitching probably means it caught a fall, so treat it as finished (MSA harness life). D-rings and buckles: no cracks, bends, rust or sharp edges, and buckles must close and hold (CCOHS harnesses). Adjust it snug, then hang in it from each attachment point in a safe place, with your gear on, to check the fit (Petzl NEWTON notice). Inspect the lanyard, shock absorber and connectors the same way. Anything that caught a fall comes out of service at once (OSHA 1910.140), and MSA says to destroy it (MSA harness life).",
+  "decay": {"halfLifeMonths":48,"note":"Webbing weakens with heat, chemicals, poor storage and wear; Petzl gives its NEWTON harness 10 years from manufacture and says to retire one with an unreadable label or unknown history."},
+  "hazards": [],
+  "protects": ["fall"],
+  "improvise": "No harness: stay off roofs and high places, or work from a ladder footed by a helper, from the ground with poles and ropes, or not at all. A rope tied round your waist or chest is not fall arrest: OSHA bans body belts for it (OSHA 1926.502). A rope can only keep you back from an edge, as travel restraint: it needs a strong anchor and must be too short to reach the edge, and it will not catch a fall (OSHA OTM clearance). Never trust an anchor you can't prove: OSHA wants 22.2 kN (5,000 lb) per person, or an engineered system (OSHA 1926.502); Canadian provinces differ (CCOHS anchor strength). Don't guess with vents, pipes, gutters or railings. Clearance: OSHA allows 1.8 m (6 ft) of free fall and 1.07 m (3.5 ft) of absorber stretch (OSHA 1926.502), but you also need room for harness shift, your D-ring-to-feet height and a margin: OSHA's example with a 0.6 m (2 ft) lanyard needs 4.4 m (14.5 ft) (OSHA OTM clearance). With less, arrest is the wrong tool. Never work at height alone: hanging can cause unconsciousness and death in under 30 minutes (OSHA SHIB suspension trauma). While hanging, pump the legs and use any foothold; get them down fast, then watch them and get medical care, as kidney failure can follow (OSHA SHIB suspension trauma).",
+  "buildings": [
+    {"b":"construction","l":3,"loc":"gang boxes, site trailer and roofers' trucks"},
+    {"b":"tool_rental","l":3,"loc":"counter stock and roofing-kit shelf"},
+    {"b":"hardware","l":3,"loc":"roofing and ladder aisle"},
+    {"b":"water_works","l":3,"loc":"confined-space kit with tripod and winch"},
+    {"b":"fire_station","l":3,"loc":"rescue rope bags"},
+    {"b":"warehouse","l":2,"loc":"near the aerial lift or order-picker charging area"},
+    {"b":"substation","l":2,"loc":"crew trucks and equipment room"},
+    {"b":"telecom","l":1,"loc":"equipment shelter, if a climber left a kit"},
+    {"b":"solar_farm","l":2,"loc":"site office"},
+    {"b":"stadium","l":2,"loc":"rigging and lighting stores"},
+    {"b":"factory","l":2,"loc":"maintenance stores"}
+  ],
+  "sources": [
+    {"title":"OSHA 1926.502: Fall protection systems criteria and practices, 29 CFR 1926.502","url":"https://www.osha.gov/laws-regs/regulations/standardnumber/1926/1926.502"},
+    {"title":"OSHA 1910.140: Personal fall protection systems, 29 CFR 1910.140","url":"https://www.osha.gov/laws-regs/regulations/standardnumber/1910/1910.140"},
+    {"title":"OSHA 1926.501: Duty to have fall protection, 29 CFR 1926.501","url":"https://www.osha.gov/laws-regs/regulations/standardnumber/1926/1926.501","note":"Basis for where it’s kept"},
+    {"title":"OSHA SHIB suspension trauma: Suspension Trauma/Orthostatic Intolerance, SHIB 03-24-2004, updated 2011","url":"https://www.osha.gov/sites/default/files/publications/shib032404.pdf"},
+    {"title":"CCOHS anchor strength: Fall Protection - Legislation for Anchor Strength (OSH Answers)","url":"https://www.ccohs.ca/oshanswers/hsprograms/fall/fall_protection_leg_anchor_strength.html"},
+    {"title":"CCOHS harnesses: Body Belts, Harnesses, and Lanyards (OSH Answers)","url":"https://www.ccohs.ca/oshanswers/prevention/ppe/belts.html"},
+    {"title":"Petzl NEWTON notice: Technical notice NEWTON, NEWTON FAST, NEWTON EASYFIT EUR, C0116600E (300725)","url":"https://media.petzl.com/sfc/servlet.shepherd/version/download/068bK00000fUZFMQA4"},
+    {"title":"MSA harness life: Do Fall Protection Harnesses Have a Defined Expiration Date? (MSA Safety blog)","url":"https://blog.msasafety.com/fall-protection-harness-expiration-date/"},
+    {"title":"ASSP Z359.11: What the updated Z359.11 standard means for full body harnesses (ASSP)","url":"https://www.assp.org/news-and-articles/what-the-updated-z359.11-standard-means-for-full-body-harnesses"},
+    {"title":"Waterloo fall arrest: Fall Arrest Standard (University of Waterloo Safety Office)","url":"https://uwaterloo.ca/safety-office/occupational-health-safety/working-heights/fall-arrest-standard"},
+    {"title":"OSHA OTM clearance: OSHA Technical Manual (OTM), Section V: Chapter 4, Fall Protection in Construction","url":"https://www.osha.gov/otm/section-5-construction-operations/chapter-4"}
+  ]
+}

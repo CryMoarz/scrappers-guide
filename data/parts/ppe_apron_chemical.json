@@ -1,0 +1,39 @@
+{
+  "id": "ppe_apron_chemical",
+  "name": "Chemical-resistant aprons",
+  "group": "Protective gear",
+  "demand": 2,
+  "keywords": ["apron","chemical apron","rubber apron","pvc apron","neoprene apron","vinyl apron","acid apron","battery apron","lab apron","bib apron","pesticide apron","nitrile apron","butyl apron","splash apron"],
+  "substitutes": [],
+  "summary": "A bib apron of rubber or plastic (PVC, neoprene, nitrile, butyl and others) that, if its material suits the chemical, sheds splashes of acids, alkalis and pesticides from chest to knees.",
+  "uses": ["Splashes when pouring, mixing or decanting liquids such as battery acid or pesticides, if its material suits the chemical (OSHA 1926.441; UNH pesticide PPE)","Covers only the front, from mid-chest to the knees: arms, face, eyes and feet still need gloves, goggles or a face shield, and boots (WAC 296-307-11220)","Battery acid: OSHA's construction rule says face shields, aprons and rubber gloves must be provided for workers handling acids or batteries (OSHA 1926.441)","Each material fails against some chemicals: match it to the label, the safety data sheet (SDS) or the maker's chart (CCOHS gloves)","Splash protection, not soaking: all chemicals eventually get through protective clothing, sooner when it is thin or warm (NIOSH CPC)"],
+  "identify": "A smooth, waterproof bib apron with a neck strap and waist ties, often yellow, green, black, white or clear, with no fabric weave showing on its face. Washington State's pesticide rule says that where a label calls for a chemical-resistant apron, it must cover the front of the body from mid-chest to the knees (WAC 296-307-11220). The material is usually printed on a label or the bag: PVC, neoprene, nitrile, butyl, natural rubber, Viton or a multi-layer laminate. These are a university's glove ratings, a rough guide for an apron of the same material: PVC resists most acids, fats and petroleum hydrocarbons; neoprene has excellent chemical resistance; butyl handles gases and ketones but is severely affected by fuels and hydrocarbon solvents; natural rubber is poor with organic solvents, oils, greases and fuels; Viton is the most resistant and handles fuel (Virginia Tech EHS). Look-alikes: thin disposable plastic aprons from kitchens and clinics, and leather, canvas or cloth aprons from welding and workshops. Every material lets a chemical through in the end, sooner when it is thin or hot (NIOSH CPC), and UNH says not to use absorbent cotton, canvas or leather for pesticide gloves (UNH pesticide PPE).",
+  "test": "Hang it up in good light. Discard it if it has gone harder, stiffer, more brittle, softer or swollen, which is how a chemical degrades a material (CCOHS gloves), or if it is cracked, torn or worn. Flex the bib and the folds and look for fine cracks; check seams and where the straps join. Holding it up to a bright light may help show pinholes and cuts (a practical tip, not from a standard). Pesticide rules ask for a check for leaks, holes, tears and worn places before each day of use (WAC 296-307-11220). If you don't know the material, a drop of the chemical on a hidden corner can show softening or swelling (a practical tip, not a standard), but a corner that looks fine proves little: every chemical eventually gets through (NIOSH CPC). Adjust the neck strap so the bib reaches your chest and the hem your knees. Wear it with goggles or a face shield and chemical gloves: OSHA pairs aprons with face shields and rubber gloves for acid and battery work (OSHA 1926.441). Afterwards wash it as the maker or the pesticide label says, or with detergent and hot water, keep it apart from clean clothes and dry it fully before storing (WAC 296-307-11220).",
+  "decay": {"halfLifeMonths":60,"note":"60 months is an estimate, not a maker's figure. SATRA says ozone cracks rubber, especially rubber under strain, and electric motors and arc welders make ozone; a chemical can also leave a material harder, brittle, softer or swollen (CCOHS gloves)."},
+  "hazards": [],
+  "protects": ["chemical","acid"],
+  "improvise": "No apron: OSHA says rubber, rubberised fabric, neoprene and plastics protect against certain chemicals, and to check with the maker that the material suits the hazard (OSHA 3151). Rain gear of PVC or rubberised fabric, or a heavy plastic sheet with a neck hole and a cord at the waist, is a last resort for a small splash of a liquid you know it resists; against an unknown chemical it may give little or no protection (a practical tip, not from a standard). Take it off at once if it softens or swells. Set up so splashes are unlikely: work outdoors, pour slowly through a funnel, and keep clean water close for rinsing skin and eyes; OSHA wants drenching within 7.6 m (25 ft) of battery handling (OSHA 1926.441). Poor choices: cloth, canvas and leather aprons, since UNH warns against absorbent cotton, canvas and leather for pesticide gloves and against leather footwear that absorbs pesticides (UNH pesticide PPE). Washington's rule says absorbent materials drenched or heavily contaminated with a DANGER or WARNING pesticide must not be reused (WAC 296-307-11220). An apron does nothing for your lungs: vapour needs fresh air or a respirator with the right cartridges.",
+  "buildings": [
+    {"b":"pool_supply","l":3,"loc":"chemical storeroom and dispensing area"},
+    {"b":"water_works","l":3,"loc":"chemical feed and chlorine rooms"},
+    {"b":"farm","l":3,"loc":"chemical shed or sprayer fill area"},
+    {"b":"farm_supply","l":3,"loc":"spray-equipment and safety shelves"},
+    {"b":"factory","l":2,"loc":"plating, cleaning and battery-charging areas"},
+    {"b":"school","l":2,"loc":"science prep room"},
+    {"b":"hospital","l":2,"loc":"lab, sterile processing and cleaning stores"},
+    {"b":"warehouse","l":2,"loc":"forklift battery charging room"},
+    {"b":"car_repair","l":2,"loc":"battery bench and parts-washer area"},
+    {"b":"restaurant","l":2,"loc":"dish pit"},
+    {"b":"telecom","l":1,"loc":"battery room spill kit"}
+  ],
+  "sources": [
+    {"title":"OSHA 1926.441: Batteries and battery charging, 29 CFR 1926.441","url":"https://www.osha.gov/laws-regs/regulations/standardnumber/1926/1926.441"},
+    {"title":"OSHA 3151: Personal Protective Equipment (OSHA 3151-02R 2023)","url":"https://www.osha.gov/sites/default/files/publications/osha3151.pdf"},
+    {"title":"CCOHS gloves: Chemical Protective Clothing - Glove Selection (OSH Answers)","url":"https://www.ccohs.ca/oshanswers/prevention/ppe/gloves.html"},
+    {"title":"NIOSH CPC: Recommendations for Chemical Protective Clothing, a companion to the NIOSH Pocket Guide (archived)","url":"https://archive.cdc.gov/www_cdc_gov/niosh/ncpc/default.html"},
+    {"title":"Virginia Tech EHS: Chemical gloves (glove material guide)","url":"https://ehs.vt.edu/programs/occupational-safety/personal-protective-equipment/chemical-gloves.html"},
+    {"title":"UNH pesticide PPE: Personal Protective Equipment (PPE) for Pesticide Use: Selection, Use, and Legal Requirements","url":"https://extension.unh.edu/resource/personal-protective-equipment-ppe-pesticide-use-selection-use-legal-requirements-fact-sheet"},
+    {"title":"WAC 296-307-11220: Washington State, personal protective equipment for pesticide handlers (2024 archive)","url":"https://lawfilesext.leg.wa.gov/Law/WACArchive/2024/htm/WAC%20296%20-307%20%20CHAPTER/WAC%20296%20-307%20-11220.htm"},
+    {"title":"SATRA ozone: Premature breakdown of rubber exposed to ozone","url":"https://satra.com/bulletin/article.php?id=2168"}
+  ]
+}

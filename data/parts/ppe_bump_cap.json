@@ -1,0 +1,37 @@
+{
+  "id": "ppe_bump_cap",
+  "name": "Bump caps",
+  "group": "Protective gear",
+  "demand": 1,
+  "keywords": ["bump cap","bump hat","bump cap insert","baseball bump cap","hard cap","scalp protection","en 812","ansi/isea 100","isea 100","level 1","level 2","head protection","mechanic cap","low clearance"],
+  "substitutes": ["ppe_hard_hat"],
+  "summary": "A baseball-style cap, or an insert for one, with a thin plastic shell and padding that protects your scalp when you hit your head on fixed things.",
+  "uses": ["A bump cap is not a hard hat: it only softens knocks from your own head hitting pipes, ducts, car underbodies, shelf edges and low beams","Fits in crawlspaces, attics and under vehicles where a hard hat's brim gets in the way","Not for falling or thrown objects or moving or hanging loads; wear a hard hat for those","Caps not marked FR have not been flame tested: keep them away from welding and open flame"],
+  "identify": "Looks like a baseball cap but the crown feels stiff: a vented plastic shell with foam pads sits inside, sewn in or as a separate insert that goes into an ordinary cap (Ergodyne bump cap). Europe: marked EN 812, the standard for industrial bump caps. It covers hitting your head on hard, stationary objects, and says plainly the caps are not meant to protect against falling or thrown objects or moving or suspended loads (EVS EN 812). US: ANSI/ISEA 100-2024, the first US bump cap standard, announced by ISEA in January 2025 (ISEA bump cap). Level 1 caps are tested with a 7.5 J blow at one point front and back; Level 2 with 12.5 J at two points front and back; both are tested for penetration at the top. ISEA says it is not a replacement for Z89.1 hard hats (ISEA bump cap). JSP marks its bump caps with a date of manufacture (JSP shelf life); other makers may not. If the label says Z89.1, CSA Z94.1 or EN 397, you have a hard hat, not a bump cap (OSHA SHIB; CCOHS headwear; uvex helmets). A cap with a shell but no standard on the label has nothing to show it was tested. A plain cap with no shell is not a bump cap. Canada: no bump-cap marking is confirmed here. CSA Z94.1 is the Canadian hard-hat standard (CCOHS headwear) and WorkSafeBC accepts safety headgear that meets Z94.1 or Z89.1 (WorkSafeBC Part 8), so do not use a bump cap where the rules require safety headgear (ISEA bump cap).",
+  "test": "Take the insert out if you can. Look for cracks or splits, a shell gone brittle, faded or chalky, and missing or crushed foam pads; inspect for damage, brittleness and wear, and use the date of manufacture to judge age. JSP gives its caps up to 5 years on the shelf plus 5 years in use (JSP shelf life). A cracked or deformed shell should be retired. Put the insert back where the maker meant it to sit, over the crown; parts added to a cap must not make it fail the standard, so only trim or fit an insert the way its maker says (ISEA bump cap). Fit: snug enough that it stays put when you duck and bend under things. A chin strap, if fitted, is made to break away at a low pull so it can't strangle you; don't replace it with a stronger cord (ISEA bump cap).",
+  "decay": {"halfLifeMonths":60,"note":"JSP, one maker, gives its bump caps up to 5 years in storage then 5 years in use, and says to check for damage, brittleness and wear (JSP shelf life). Other makers may differ."},
+  "hazards": [],
+  "protects": [],
+  "improvise": "A hard hat does a bump cap's job and more, where there is room for the brim; it is the right choice whenever anything could fall (ISEA bump cap; JSP bump cap). Never wear a bump cap where things could fall, swing or be thrown: it was not made or tested for that (EVS EN 812; JSP bump cap). Nothing improvised has been tested as a bump cap. The cheaper fix is to deal with the hazard itself, which safety rules put ahead of headgear: pad or mark the low pipes, beams and sharp edges you keep hitting (WorkSafeBC Part 8). Bump-cap inserts made to go inside an ordinary baseball cap are sold (Ergodyne bump cap), but EN 812 does not cover universal inserts (ISEA bump cap), and padding you add to a cap yourself is not a bump cap.",
+  "buildings": [
+    {"b":"car_repair","l":2,"loc":"service bays by the lifts, technicians' lockers"},
+    {"b":"bus_depot","l":2,"loc":"maintenance pits and bay lockers"},
+    {"b":"hardware","l":2,"loc":"safety aisle next to hard hats"},
+    {"b":"factory","l":1,"loc":"line-side lockers, visitor rack, maintenance shop"},
+    {"b":"airport","l":1,"loc":"ground crew and baggage rooms, hangar lockers"},
+    {"b":"warehouse","l":1,"loc":"receiving office, lockers"},
+    {"b":"water_works","l":1,"loc":"pipe gallery entrances, maintenance lockers"},
+    {"b":"datacenter","l":1,"loc":"staging room, under-floor access kit"}
+  ],
+  "sources": [
+    {"title":"ISEA bump cap: ISEA Releases New Bump Cap Safety Standard (ANSI/ISEA 100-2024)","url":"https://safetyequipment.org/isea-releases-new-bump-cap-safety-standard/"},
+    {"title":"EVS EN 812: EVS-EN 812:2012 Industrial bump caps (standard summary and scope)","url":"https://www.evs.ee/en/evs-en-812-2012"},
+    {"title":"JSP bump cap: Can I wear a bump cap instead of an industrial safety helmet? (JSP help centre)","url":"https://jspsafety.helpjuice.com/en_GB/i-have-been-told-by-a-member-of-staff-that-i-can-wear-a-bump-cap-instead-of-an-industrial-safety-helmet-is-this-acceptable"},
+    {"title":"JSP shelf life: What is the shelf life of JSP helmets and bump caps? (JSP help centre)","url":"https://jspsafety.helpjuice.com/en_GB/what-is-the-shelf-life-of-jsp-helmets-and-bump-caps"},
+    {"title":"Ergodyne bump cap: What's the Difference Between Bump Caps, Hard Hats and Safety Helmets?","url":"https://www.ergodyne.com/blog/whats-the-difference-between-a-bump-cap-and-a-hard-hat"},
+    {"title":"OSHA SHIB: Head Protection: Safety Helmets in the Workplace (Safety and Health Information Bulletin SHIB 3-6-2024)","url":"https://www.osha.gov/sites/default/files/publications/safety_helmet_shib.pdf"},
+    {"title":"CCOHS headwear: Safety Headwear (OSH Answers)","url":"https://www.ccohs.ca/oshanswers/prevention/ppe/headwear.html"},
+    {"title":"uvex helmets: Safety helmets standards (uvex safety knowledge)","url":"https://uvex-safety.com/en/knowledge/safety-standards/safety-helmets"},
+    {"title":"WorkSafeBC Part 8: OHS Regulation Part 8, Personal Protective Clothing and Equipment (s. 8.11 Safety headgear)","url":"https://www.worksafebc.com/en/law-policy/occupational-health-safety/searchable-ohs-regulation/ohs-regulation/part-08-personal-protective-clothing-and-equipment"}
+  ]
+}

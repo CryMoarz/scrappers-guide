@@ -1,0 +1,41 @@
+{
+  "id": "ppe_coveralls_disposable",
+  "name": "Disposable coveralls (Tyvek-type suits)",
+  "group": "Protective gear",
+  "demand": 3,
+  "keywords": ["coveralls","overalls","disposable coveralls","tyvek","tyvek suit","paint suit","bunny suit","hazmat suit","protective suit","type 5","type 6","type 5/6","en iso 13982","en 13034","category iii","asbestos suit","boiler suit","dust suit"],
+  "substitutes": [],
+  "summary": "Single-use hooded one-piece suits of papery plastic fabric, worn over clothes to keep dust, fibres and light splashes off you and your clothes.",
+  "uses": ["Cuts down the asbestos, fibreglass, lead and mould dust that reaches your clothes and skin; it does nothing for your lungs, so wear a respirator too","Type 6 only sheds light splashes and mist: not soaking, liquid jets or strong chemicals such as acids; check the maker's chemical table","Only gas-tight Type 1 suits are built to keep out gases and vapours; a Type 5/6 suit is not. Suit standards cover skin, not breathing","Not flame resistant: Tyvek-type suits ignite, keep burning and melt; keep them away from flames, sparks and welding","Single use: after dirty work it is waste, so bag it; don't wash and reuse it","Hot to work in: heat stress builds fast inside a suit, so plan rest breaks and water"],
+  "identify": "Usually white hooded one-piece suits with a zip and elastic cuffs and ankles, sold folded in a plastic bag. The ratings are European, printed on the bag and a sewn-in label: a CE mark, 'Category III' and type numbers. Types run from 1, the most protective, to 6: Type 1 gas-tight (EN 943), Type 3 against liquid jets and Type 4 against sprays (EN 14605), Type 5 against airborne dust (EN ISO 13982-1) and Type 6 against light splashes and mist (EN 13034); Type 2 was withdrawn in 2015 (Lakeland types; uvex standards). Common suits such as Tyvek 500 are Type 5 and 6; a 'B' after the type, as on Tyvek 500 (5-B, 6-B), goes with an EN 14126 test against infective agents, and EN 1149-5 means antistatic; DuPont's North American page lists these same European marks (DuPont Tyvek 500). For asbestos, HSE asks for Type 5 (HSE em6). Look-alikes: lightweight single-layer polypropylene suits. WorkSafe Victoria warns that these may let fine dust through and tear easily, and it names Type 5 as the rating to look for on asbestos work (WorkSafe Victoria).",
+  "test": "Read the label for Type 5; Type 5 and 6 is better. Unfold it and check for holes, split seams, a broken zip and slack elastic. Throw out suits that are yellowed or brittle, or have been wet or chewed: DuPont says store them cool, dark and dry and use them within about 5 years (DuPont Tyvek 500). Choose one size too big so the seams don't rip when you crouch. Respirator on first, hood over its straps, legs over your boots, not tucked in, and tape loose cuffs (HSE em6; WorkSafe Victoria). Close the zip flap: much of the dust that gets into a suit comes through an uncovered zip (Lakeland garments). Squat and reach overhead to check nothing pulls open. If it rips during the job, stop, back out and change. Suits add heat stress, so plan rest and water (DuPont Tyvek 500; Lakeland garments). Taking it off after asbestos: pat it down with damp rags rather than rubbing, peel it off inside out straight into a waste bag, take the respirator off last, then tape the bag shut (HSE em8). Double-bag and label asbestos waste (HSE em9).",
+  "decay": {"halfLifeMonths":48,"note":"DuPont says use within about 5 years if kept cool, dark and dry; sunlight, heat, damp, mice and torn packs ruin them sooner."},
+  "hazards": [],
+  "protects": ["asbestos","fiberglass","lead","mold"],
+  "improvise": "No suit: wear old long-sleeved clothes you are ready to throw away, a hat or hood and gloves, with sleeves taped over the glove cuffs and trouser legs over your boots. After asbestos, treat those clothes as waste: pat them down with damp rags rather than rubbing or shaking, peel them off and bag them, and never take them home (HSE em6; HSE em8). This is no match for a Type 5 suit, which is what HSE names, so don't disturb asbestos without one (HSE em6). HSE sends reusable overalls only to a specialist laundry (HSE em8), so throwing them away is safest. For fibreglass, SafeWork NSW suggests loose-fitting long garments such as disposable coveralls with hoods, and washing heavily contaminated clothing separately (SafeWork NSW MMVF). For lead, keep work clothes in a closed bag and never shake or blow the dust off (OSHA 1926.62). For mould, disposable clothing stops spores moving onto your clothes (EPA mould course). Not suitable: lightweight single-layer polypropylene suits for asbestos (WorkSafe Victoria); any Type 5/6 suit against gases or vapours (Lakeland types); and any Tyvek-type suit near flames or sparks (DuPont Tyvek 500). No suit protects your lungs: you still need a respirator.",
+  "buildings": [
+    {"b":"hardware","l":4,"loc":"paint aisle, near respirators and drop sheets"},
+    {"b":"car_repair","l":3,"loc":"paint booth and mixing room"},
+    {"b":"construction","l":3,"loc":"site trailer and gang boxes"},
+    {"b":"hospital","l":3,"loc":"central stores, isolation carts and spill kits"},
+    {"b":"farm_supply","l":3,"loc":"spray-equipment and safety shelves"},
+    {"b":"farm","l":2,"loc":"chemical shed, mudroom or sprayer fill area"},
+    {"b":"tool_rental","l":2,"loc":"counter consumables, beside sander and dust-extractor kits"},
+    {"b":"factory","l":2,"loc":"stores cage, spray-paint and chemical areas"},
+    {"b":"water_works","l":2,"loc":"operators' locker room and chemical store"},
+    {"b":"fire_station","l":2,"loc":"decontamination and hazmat kit"}
+  ],
+  "sources": [
+    {"title":"HSE em6: Asbestos essentials em6, Personal protective equipment (including RPE)","url":"https://www.hse.gov.uk/pubns/guidance/em6.pdf"},
+    {"title":"HSE em8: Asbestos essentials em8, Personal decontamination","url":"https://www.hse.gov.uk/pubns/guidance/em8.pdf"},
+    {"title":"HSE em9: Asbestos essentials em9, Disposal of asbestos waste","url":"https://www.hse.gov.uk/pubns/guidance/em9.pdf"},
+    {"title":"WorkSafe Victoria: Coveralls used for asbestos removal (safety alert)","url":"https://worksafe.vic.gov.au/safety-alerts/coveralls-used-asbestos-removal"},
+    {"title":"Lakeland types: EN Clothing Types Compared to OSHA Protection Levels","url":"https://www.lakeland.com/en-garments-compared-to-osha-standards/"},
+    {"title":"Lakeland garments: Selecting Disposable Safety Garments","url":"https://www.lakeland.com/selecting-disposable-safety-garments/"},
+    {"title":"uvex standards: Protective clothing and disposable overalls, safety standards","url":"https://www.uvex-safety.com/en/knowledge/safety-standards/protective-clothing-and-disposable-overalls/"},
+    {"title":"DuPont Tyvek 500: DuPont Tyvek 500 coverall product page and FAQ","url":"https://www.dupont.com/products/dupont-tyvek-500-ty198s-wh.html"},
+    {"title":"SafeWork NSW MMVF: Man-made vitreous fibre insulation products","url":"https://www.safework.nsw.gov.au/hazards-a-z/man-made-vitreous-fibre-insulation-products"},
+    {"title":"EPA mould course: Mold Course Chapter 6 (EPA archive)","url":"https://19january2025snapshot.epa.gov/mold/mold-course-chapter-6"},
+    {"title":"OSHA 1926.62: Lead (construction), 29 CFR 1926.62","url":"https://www.osha.gov/laws-regs/regulations/standardnumber/1926/1926.62"}
+  ]
+}
