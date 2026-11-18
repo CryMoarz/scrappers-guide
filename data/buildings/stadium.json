@@ -3,5 +3,6 @@
   "name": "Stadiums and arenas",
   "osm": ["leisure=stadium","leisure=ice_rink","leisure=sports_hall","sport=ice_hockey","sport=ice_skating","sport=curling"],
   "exposure": 2,
-  "notes": "Scoreboards, floodlights, PA systems, generators, scrubbers and concession equipment."
+  "notes": "Scoreboards, floodlights, PA systems, generators, scrubbers and concession equipment.",
+  "hazards": ["ammonia_refrigeration"]
 }

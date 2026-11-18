@@ -4,5 +4,5 @@
   "osm": ["shop=agrarian","shop=farm"],
   "exposure": 2,
   "notes": "Electric fence chargers, livestock waterers, pumps, hose, rope, tarps, small engines and batteries.",
-  "hazards": ["wildlife","self_heating","grain_engulfment","caustic"]
+  "hazards": ["wildlife","self_heating","grain_engulfment","caustic","treated_seed"]
 }

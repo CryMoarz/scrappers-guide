@@ -2,5 +2,6 @@
   "id": "warehouse",
   "name": "Warehouses and distribution centres",
   "osm": ["building=warehouse","landuse=industrial"],
-  "exposure": 2
+  "exposure": 2,
+  "hazards": ["ammonia_refrigeration"]
 }
