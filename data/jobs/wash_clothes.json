@@ -10,5 +10,6 @@
     {"fn":"bearing","why":"A drum on bearings makes a hand-crank washer"},
     {"fn":"motor_dc_small","why":"A wiper motor can turn a small drum"}
   ],
+  "guides": ["reference_sanitation"],
   "tips": ["Soak overnight. It does most of the work.","Wash the least dirty things first so the water goes further.","Use grey water to flush toilets, not to water vegetables you eat raw.","Dry clothes fully before storing them, or they go mouldy."]
 }

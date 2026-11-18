@@ -12,7 +12,7 @@
     {"fn":"hose_tubing","why":"Plumbing for gravity and pumped filters"},
     {"fn":"pump_water","why":"Pushes water through an RO membrane, which needs pressure"}
   ],
-  "guides": ["build_gravity_water_filter","skill_solar_disinfection"],
+  "guides": ["build_gravity_water_filter","skill_solar_disinfection","reference_water_filters","reference_chemicals"],
   "tips": ["Boiling always works: a rolling boil for 1 minute, or 3 minutes above 2000 m.","Plain unscented bleach: about 2 drops per litre of clear water, then wait 30 minutes. It should smell faintly of chlorine.","Use only plain chlorine. Pool tablets with stabiliser or algaecide are not for drinking water.","Clear plastic bottles in full sun for 6 hours kill most germs (SODIS). Leave them 2 days if it’s cloudy.","Filter cloudy water before using chlorine or UV: dirt shields germs."],
   "refs": [
     {"lib":"water_lib","q":"purification"}

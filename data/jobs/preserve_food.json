@@ -10,7 +10,7 @@
     {"fn":"insulation","why":"Lines a root cellar or cold box"},
     {"fn":"propane","why":"Fuel for canning"}
   ],
-  "guides": ["build_solar_dehydrator","build_chest_freezer_fridge"],
+  "guides": ["build_solar_dehydrator","build_chest_freezer_fridge","reference_food_safety"],
   "tips": ["Low-acid foods (meat, beans, most vegetables) must be pressure-canned. Boiling-water canning is safe only for acidic foods like fruit, jam and pickles.","Use food salt where you can. Water softener and road salt aren’t made for food; road salt holds grit and chemicals.","Cool, dark and dry storage makes any food last far longer.","Bulging cans, spurting lids or a bad smell mean throw it out. Never taste to check."],
   "refs": [
     {"lib":"canning","q":"canning"},
