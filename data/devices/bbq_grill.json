@@ -16,7 +16,10 @@
     {"key":"hose_tubing","fn":"hose_tubing","spec":"Regulator and rubber hose with cylinder fitting — made for this grill; makers say to use only the regulator and hose supplied with each appliance, so don't move it to another gas burner or stove","qty":1,"ext":1,"obs":4,"loc":"From the cylinder to the manifold"},
     {"key":"valve_solenoid","fn":"valve_solenoid","spec":"Burner control valves on a gas manifold","qty":3,"ext":2,"obs":5,"loc":"Behind the knobs"},
     {"key":"sheet_metal","fn":"sheet_metal","spec":"Cast-iron or steel grates and steel firebox panels — cook over any fire","qty":2,"ext":1,"obs":4,"loc":"Cooking surface and body"},
-    {"key":"sensor_misc","fn":"sensor_misc","spec":"Bimetal dial thermometer","qty":1,"ext":1,"obs":5,"loc":"Lid"}
+    {"key":"sensor_misc","fn":"sensor_misc","spec":"Bimetal dial thermometer","qty":1,"ext":1,"obs":5,"loc":"Lid"},
+    {"key":"burners","fn":"tube_frame","spec":"Stainless or steel burner tubes, usually 3–4 main burners plus a side burner on bigger grills; each held by a screw or cotter pin. Steel tube stock once removed — never reuse as gas burners elsewhere","qty":3,"ext":2,"obs":3,"loc":"Across the firebox floor"},
+    {"key":"casters","fn":"bearing","spec":"Casters or wheels on the cart, often two swivel (one locking) and two fixed","qty":4,"ext":1,"obs":3,"loc":"Under the cart"},
+    {"key":"battery_aa","fn":"battery_primary","spec":"One AA battery for the push-button electronic igniter, on grills that have one","v":1.5,"qty":1,"ext":1,"obs":3,"loc":"Igniter button on the control panel"}
   ],
   "boards": [],
   "buildings": [
