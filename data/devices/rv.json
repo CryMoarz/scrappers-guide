@@ -7,7 +7,7 @@
   "prev": 3,
   "tools": ["screwdriver","socket","cutters"],
   "mins": 60,
-  "hazards": ["fuel","mains"],
+  "hazards": ["fuel","mains","co_gas","compressed_gas"],
   "comps": [
     {"key":"battery_pb","fn":"battery_pb","spec":"12V deep-cycle house batteries","v":12,"qty":2,"ext":1,"obs":3,"loc":"Tongue box or compartment"},
     {"key":"solar_panel","fn":"solar_panel","spec":"Roof solar panels (many units)","w":[100,200],"qty":2,"ext":3,"obs":2,"loc":"Roof","p":0.75},

@@ -9,7 +9,7 @@
   "tools": ["hands","screwdriver"],
   "hazards": ["co_gas","fuel","burn"],
   "materials": [
-    {"item":"Battery-powered CO alarm, from an abandoned home, hotel or flat","fn":"sensor_misc","qty":"1 per sleeping area"},
+    {"item":"Battery-powered CO alarm, from an abandoned home, hotel or flat","fn":"det_co_alarm","qty":"1 per sleeping area"},
     {"item":"Fresh batteries for the alarm","qty":"1 set"}
   ],
   "steps": [
