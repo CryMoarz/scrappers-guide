@@ -1,0 +1,50 @@
+{
+  "id": "hydronic_boiler",
+  "name": "Hot-water heating boiler",
+  "group": "Heating, cooling and water",
+  "aliases": ["boiler","hot water boiler","hydronic heating","radiator heating","baseboard heating","gas boiler","oil boiler","cast iron boiler","steam boiler","circulator pump","expansion tank","zone valve"],
+  "brands": ["Weil-McLain","Burnham","Viessmann","Navien","Buderus","Peerless","Slant/Fin","Lochinvar","NTI"],
+  "prev": 3,
+  "tools": ["wrench","screwdriver","socket","pliers","heavy"],
+  "mins": 90,
+  "hazards": ["burn","co_gas","fuel","mains","heavy","chemical","asbestos","hv","sealed_heating"],
+  "combustion": {"indoor":"vented","fuels":["natural gas","propane","No. 2 furnace oil"],"kw":[11,68],"note":"Vented to a chimney or wall vent: check the vent and any vent damper before firing. Needs mains for its pump and controls (an oil burner alone draws up to 5.8 A at 120 V, Beckett AFG). kW is fuel input (CGa gas boiler), not heat output."},
+  "comps": [
+    {"key":"pump_water","fn":"pump_water","spec":"Circulator pump that pushes the water round the radiator or baseboard loops; mains-powered, so no pump, no heat in a power cut","qty":1,"ext":3,"obs":3,"loc":"On the supply or return pipe beside the boiler; one per zone on some systems"},
+    {"key":"tank","fn":"tank","spec":"Expansion tank: takes up the water's growth as it heats (Wikipedia hydronics). Weil-McLain says a boiler gauge reading over 24 psig, or a relief valve that keeps weeping, can mean the tank isn't working (Weil-McLain user manual)","qty":1,"ext":3,"obs":4,"loc":"Hung from the pipes or ceiling near the boiler"},
+    {"key":"relief_valve","fn":"valve_solenoid","spec":"Pressure relief valve with a lift lever and a metal discharge pipe run to a safe place. Never plug, cap or remove it: a closed boiler without one can burst (Wikipedia hydronics). Discharge is scalding (Weil-McLain user manual)","qty":1,"ext":3,"obs":4,"loc":"Top or side of the boiler"},
+    {"key":"zone_valves","fn":"valve_solenoid","spec":"Zone valves, one per thermostat zone, opening that loop to the boiler","qty":2,"ext":3,"obs":4,"loc":"On the supply pipes near the boiler","p":0.5},
+    {"key":"drain_valve","fn":"valve_solenoid","spec":"Drain valve for emptying the boiler before a freeze, only on a system that holds plain water, not antifreeze (Weil-McLain user manual). Let the water cool first, and run a hose to a drain (InspectApedia boiler drain)","qty":1,"ext":1,"obs":4,"loc":"Low on the boiler and at low points of the piping"},
+    {"key":"gas_valve","fn":"valve_solenoid","spec":"Gas valve with a spark-ignited pilot on gas models (Resideo VR8204 or VR8304 on the Weil-McLain CGa). Stays on the gas line","qty":1,"ext":4,"obs":4,"loc":"Burner compartment behind the front jacket panel","p":0.7},
+    {"key":"igniter","fn":"igniter","spec":"Spark igniter for the pilot (gas), or on an oil-fired boiler a solid-state igniter making 14,000 to 20,000 V peak (NORA ignition). Power off before touching the electrodes or cables","qty":1,"ext":2,"obs":5,"loc":"Burner compartment, or on top of the oil burner"},
+    {"key":"flame_sensor","fn":"thermocouple","spec":"Pilot flame sensor that proves the flame","qty":1,"ext":2,"obs":5,"loc":"At the pilot burner","p":0.7},
+    {"key":"sensor_misc","fn":"sensor_misc","spec":"Pressure-temperature gauge, water temperature sensor and low-water cut-off","qty":2,"ext":2,"obs":4,"loc":"On the boiler and its supply pipe"},
+    {"key":"controller_board","fn":"controller_board","spec":"Boiler control module","qty":1,"ext":2,"obs":4,"loc":"Behind the jacket panel"},
+    {"key":"water_stored","fn":"water_stored","spec":"Water in the boiler and loops; may hold treatment chemicals or glycol antifreeze: not for drinking","qty":1,"ext":2,"obs":3,"loc":"Boiler, pipes and radiators"},
+    {"key":"sheet_metal","fn":"sheet_metal","spec":"Jacket panels over a cast-iron boiler (Weil-McLain CGa) or another heat exchanger: heavy","qty":1,"ext":3,"obs":3,"loc":"The boiler body"}
+  ],
+  "boards": [],
+  "buildings": [
+    {"b":"apartment","l":5,"loc":"Basement boiler room"},
+    {"b":"school","l":4,"loc":"Boiler room"},
+    {"b":"church","l":4,"loc":"Basement boiler room"},
+    {"b":"house","l":3,"loc":"Basement, in older houses and some new ones with in-floor heat"},
+    {"b":"nursing_home","l":3,"loc":"Mechanical room"},
+    {"b":"hotel","l":3,"loc":"Mechanical room"},
+    {"b":"office","l":3,"loc":"Mechanical room"},
+    {"b":"hospital","l":3,"loc":"Central plant"},
+    {"b":"fire_station","l":2,"loc":"Mechanical room"}
+  ],
+  "notes": "It needs mains power: in a power cut the pump and controls stop, and in cold weather a power cut can mean frozen plumbing and water damage within hours (Weil-McLain user manual). If the building will freeze, the boiler and loops can be drained, but not if they hold antifreeze (Weil-McLain user manual). Turn the boiler and its gas off first, let the water cool, and never add cold water to a hot boiler: thermal shock can crack the heat exchanger (Weil-McLain user manual). Close the water feed, run a hose from the drain valve to a safe drain, and open a bleeder high up so air can replace the water (InspectApedia boiler drain). Never put automotive antifreeze in: its silicates can sludge the system (Heating Help antifreeze), and Weil-McLain says no automotive, standard or even hydronic glycol goes into its boilers, so read your own boiler's manual before adding any (Weil-McLain user manual). If it overheats or the gas won't shut off, shut the gas off at a point outside the boiler and don't switch off or unplug the pump (Weil-McLain user manual). Don't fire a boiler whose burner or controls have been sprayed or under water: Weil-McLain says it risks fire, explosion and shock and must be replaced, or fully repaired and inspected (Weil-McLain user manual). A steam boiler is different: Weil-McLain gives 15 psig as its gauge limit against 24 psig for hot water, and steam boilers have a water gauge glass and low-water cut-off to watch (Weil-McLain user manual). The draining advice here is for hot-water systems.",
+  "sources": [
+    {"title":"Weil-McLain user manual: Weil-McLain, CGa Series 4, CGi Series 5, EG/PEG Series 7, LGB Series 2 & 3 Gas-Fired Boilers User Manual, 550-100-226/0425","url":"https://www.weil-mclain.com/wp-content/uploads/Users-Manual-CGaS4-CGiS5-EGS7-PEGS7-LGBS2-3-0425.pdf"},
+    {"title":"Weil-McLain CGa: Weil-McLain, CGa Gas Boiler Series 4 product page (38 to 233 MBH input)","url":"https://www.weil-mclain.com/products/cga-gas-boiler-series-4/"},
+    {"title":"Beckett AFG: R.W. Beckett, Model AF/AFG Burners Instruction Manual (Weil-McLain Ultra Oil version)","url":"https://www.weil-mclain.com/wp-content/uploads/RW-Beckett-AFG-Burner-Manual-for-Ultra-Oil-VBL-0321.pdf"},
+    {"title":"Wikipedia hydronics: Wikipedia, Hydronics","url":"https://en.wikipedia.org/wiki/Hydronics"},
+    {"title":"EPA asbestos: US EPA, Learn About Asbestos","url":"https://www.epa.gov/asbestos/learn-about-asbestos"},
+    {"title":"Wikipedia oil burner: Wikipedia, Oil burner","url":"https://en.wikipedia.org/wiki/Oil_burner"},
+    {"title":"InspectApedia boiler drain: InspectApedia, Boiler Drain Procedure (general reference, quotes a boiler maker)","url":"https://inspectapedia.com/heat/Boiler-Drain-Procedure.php"},
+    {"title":"Heating Help antifreeze: Heating Help, Antifreeze and Heating Systems (trade site, contributors' advice)","url":"https://heatinghelp.com/systems-help-center/antifreeze-for-hydronic-systems/"},
+    {"title":"NORA ignition: National Oilheat Research Alliance, Chapter 12, Ignition Systems (technician training text)","url":"https://learning.noraweb.org/wp-content/uploads/2022/09/Chapter-12.pdf"}
+  ]
+}

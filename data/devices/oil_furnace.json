@@ -1,0 +1,48 @@
+{
+  "id": "oil_furnace",
+  "name": "Oil furnace (forced air)",
+  "group": "Building systems",
+  "aliases": ["oil furnace","oil-fired furnace","furnace oil","heating oil furnace","oil burner","gun burner","fuel oil furnace","oil tank","heating oil tank"],
+  "brands": ["Beckett","Riello","Carlin","Granby","Thermo Pride","Lennox","Olsen","Kerr","Yukon-Eagle"],
+  "prev": 2,
+  "tools": ["wrench","screwdriver","socket","pliers","multimeter"],
+  "mins": 90,
+  "hazards": ["fuel","co_gas","mains","hv","burn","heavy","asbestos","sharp"],
+  "combustion": {"indoor":"vented","fuels":["No. 2 furnace oil","No. 1 stove oil"],"kw":[16,123],"power_w":1300,"note":"Vented to a chimney; never run with the vent blocked or the flue pipe off. kW is the burner's fuel input range (Beckett AFG). The 1,300 W is computed: burner up to 5.8 A at 120 V plus 400–600 W for the fan (DTE); start-up draws more."},
+  "comps": [
+    {"key":"fuel_liquid","fn":"fuel_liquid","spec":"Furnace oil left in the tank: house tanks hold about 680–1,135 L (150–250 imp gal) full (Granby EcoGard). No. 2 furnace oil or No. 1 stove oil (Beckett AFG). Part-full tanks collect water by condensation. Not 1-K kerosene: never pour it in a wick heater","qty":1,"ext":2,"obs":2,"loc":"Steel or fibreglass tank in the basement, garage or outside wall"},
+    {"key":"tank","fn":"tank","spec":"Oil tank, 2.5 mm steel on the Granby EcoGard, 107–152 kg empty; atmospheric pressure only. Never cut or heat one that held oil","qty":1,"ext":4,"obs":3,"loc":"Basement, garage or beside the house","kg":132},
+    {"key":"motor_ac","fn":"motor_ac","spec":"Burner motor: 1/7 hp, 3450 rpm PSC on 120 V (Beckett AFG); drives the fan and fuel pump","v":120,"ac":true,"qty":1,"ext":3,"obs":4,"loc":"Oil burner, bolted to the front of the furnace"},
+    {"key":"pump_water","fn":"pump_water","spec":"Fuel pump (gear pump) driven by the burner motor: raises the oil pressure for the nozzle","qty":1,"ext":3,"obs":5,"loc":"Side of the oil burner"},
+    {"key":"igniter","fn":"igniter","spec":"Solid-state igniter making 14,000–20,000 V peak at the electrodes; older burners have an iron-core ignition transformer making 10,000–12,000 V (NORA ignition). Can hurt you: power off at the burner switch and breaker before touching the electrodes or cables","qty":1,"ext":2,"obs":4,"loc":"Hinged on top of the oil burner"},
+    {"key":"opto_sensor","fn":"opto_sensor","spec":"Cad cell: a light-dependent resistor that sees the flame; Beckett's normal reading with flame on is 0 to 1,600 Ω (Beckett AFG). Wikipedia gives about 1 MΩ in the dark and about 75–300 Ω in flame (Wikipedia oil burner)","qty":1,"ext":2,"obs":5,"loc":"Inside the burner housing, looking at the flame"},
+    {"key":"controller_board","fn":"controller_board","spec":"Primary control with a reset button; after repeated failed starts it locks out, to stop oil building up in the firing chamber","qty":1,"ext":2,"obs":4,"loc":"On the burner"},
+    {"key":"nozzle","fn":"valve_solenoid","spec":"Oil nozzle, rated in US gallons per hour and spray angle; some burners also have an oil solenoid valve","qty":1,"ext":3,"obs":5,"loc":"End of the nozzle line inside the air tube"},
+    {"key":"blower","fn":"motor_ac","spec":"Furnace blower motor and squirrel-cage wheel","ac":true,"qty":1,"ext":2,"obs":3,"loc":"Lower compartment of the furnace"},
+    {"key":"thermostat","fn":"thermostat","spec":"High-temperature limit control that shuts the burner off if the furnace overheats","qty":1,"ext":2,"obs":4,"loc":"Furnace casing above the burner"},
+    {"key":"filter_air","fn":"filter_air","spec":"Furnace air filter","qty":1,"ext":1,"obs":3,"loc":"Return air slot by the blower"},
+    {"key":"sheet_metal","fn":"sheet_metal","spec":"Steel cabinet and heat exchanger","qty":1,"ext":3,"obs":3,"loc":"The furnace body"}
+  ],
+  "boards": [],
+  "buildings": [
+    {"b":"house","l":3,"loc":"Basement; tank in the basement, garage or outside"},
+    {"b":"farm","l":3,"loc":"Farmhouse basement, shop"},
+    {"b":"church","l":3,"loc":"Basement furnace room"},
+    {"b":"shop_small","l":2,"loc":"Back room or basement"},
+    {"b":"apartment","l":2,"loc":"Small older blocks: basement"},
+    {"b":"school","l":2,"loc":"Rural schools: boiler or furnace room"},
+    {"b":"garage_res","l":2,"loc":"Oil tank"}
+  ],
+  "notes": "It needs power to run: the burner motor, fuel pump and igniter run on 120 V, and so does the blower, so no power means no heat. The oil left in the tank is the prize: a full house tank holds about 680–1,135 L. Never cut, drill or heat a tank that held oil, and burn furnace oil only in a burner made for it: Beckett lists No. 1 stove oil or No. 2 furnace oil for its burners in Canada and says never gasoline, crankcase oil or any oil with gasoline in it (Beckett AFG). Heating oil is not kerosene: CPSC says to use only 1-K kerosene in a kerosene heater and never any other fuel (CPSC 5052). Don't keep pressing the reset button: repeated restarts can leave oil in the firing chamber (Beckett AFG). If oil has pooled in the firing chamber or the unit is full of vapour, shut off the power and the oil supply, let the vapour clear, clear out the oil before another start, and keep a fire extinguisher ready (Beckett AFG). A blocked or corroded chimney can push flue gas out of the barometric damper into the room (Beckett AFG), so keep a working CO alarm with battery backup in the hallway outside the bedrooms (Health Canada CO). In a tight house the burner needs a reliable air supply; if exhaust fans or a dryer could pull the room below outdoor pressure, Beckett wants air piped to the burner or a sealed enclosure (Beckett AFG).",
+  "sources": [
+    {"title":"Beckett AFG: R.W. Beckett, Model AF/AFG Burners Instruction Manual (Weil-McLain Ultra Oil version)","url":"https://www.weil-mclain.com/wp-content/uploads/RW-Beckett-AFG-Burner-Manual-for-Ultra-Oil-VBL-0321.pdf"},
+    {"title":"Granby tanks: Granby Industries, Residential tanks (oil storage tank capacities)","url":"https://www.granbyindustries.com/product-category/residentials-tanks/"},
+    {"title":"Granby EcoGard: Granby Industries, EcoGard double-bottom oil tank product page","url":"https://www.granbyindustries.com/products/ecogard-double-bottom-oil-tank/"},
+    {"title":"Wikipedia oil burner: Wikipedia, Oil burner","url":"https://en.wikipedia.org/wiki/Oil_burner"},
+    {"title":"DTE appliance guide: DTE Energy, Appliance Usage Guide (running watts and starting factors)","url":"https://www.dteenergy.com/content/dam/dteenergy/deg/website/residential/service-and-price/protection/Appliance-Usage-Guide-GenerLink-Worksheet.pdf"},
+    {"title":"EPA asbestos: US EPA, Learn About Asbestos","url":"https://www.epa.gov/asbestos/learn-about-asbestos"},
+    {"title":"NORA ignition: National Oilheat Research Alliance, Chapter 12, Ignition Systems (technician training text)","url":"https://learning.noraweb.org/wp-content/uploads/2022/09/Chapter-12.pdf"},
+    {"title":"CPSC 5052: US Consumer Product Safety Commission, CPSC Stresses Kerosene Heater Safety (Publication 5052)","url":"https://www.cpsc.gov/s3fs-public/5052.pdf"},
+    {"title":"Health Canada CO: Health Canada, Carbon monoxide: Preventing exposure","url":"https://www.canada.ca/en/health-canada/services/air-quality/pollutants/carbon-monoxide/preventing-exposure.html"}
+  ]
+}

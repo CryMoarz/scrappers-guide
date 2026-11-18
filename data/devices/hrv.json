@@ -1,0 +1,45 @@
+{
+  "id": "hrv",
+  "name": "Heat or energy recovery ventilator (HRV/ERV)",
+  "group": "Building systems",
+  "aliases": ["HRV","ERV","heat recovery ventilator","energy recovery ventilator","air exchanger","air-to-air heat exchanger","fresh air system","ventilation unit","Venmar","vanEE"],
+  "brands": ["vänEE","Venmar","Broan","Lifebreath","Fantech","Panasonic","Zehnder","Nu-Air","Honeywell"],
+  "prev": 4,
+  "tools": ["screwdriver","hands"],
+  "mins": 30,
+  "kg": 21,
+  "hazards": ["mains","sharp"],
+  "comps": [
+    {"key":"motor_bldc","fn":"motor_bldc","spec":"Two blower motors, one moving fresh air in and one moving stale air out. ECM (PMSM) on recent units: the Broan V180H75RT unit as a whole is rated 120 V, 3 A, 200 W and drew 22–121 W across its listed airflow tests (Broan spec sheet)","v":120,"w":[22,200],"qty":2,"ext":2,"obs":4,"loc":"Each end of the cabinet, behind the door"},
+    {"key":"fan","fn":"fan","spec":"Blower wheels on the two motors","qty":2,"ext":2,"obs":4,"loc":"On the motor shafts"},
+    {"key":"core","fn":"plastic_sheet","spec":"Heat-exchange core: a block of thin cross-flow plates where the two air streams pass without mixing. Polypropylene on the Broan V180H75RT; aluminium or plastic plates on others","qty":1,"ext":1,"obs":4,"loc":"Centre of the cabinet; slides out"},
+    {"key":"filter_air","fn":"filter_air","spec":"Washable filter or filters (MERV 8 on the Broan V180H75RT)","qty":1,"ext":1,"obs":3,"loc":"Beside or in front of the core"},
+    {"key":"dampers","fn":"motor_sync","spec":"Motorised dampers, including the defrost damper","qty":1,"ext":3,"obs":5,"loc":"Behind the duct collars on top"},
+    {"key":"controller_board","fn":"controller_board","spec":"Microprocessor control board, wired to a wall control","qty":1,"ext":2,"obs":4,"loc":"Electrical box on the cabinet"},
+    {"key":"sensor_misc","fn":"sensor_misc","spec":"Temperature sensing that starts defrost at about −5 °C (23 °F) outdoors (Broan)","qty":1,"ext":2,"obs":5,"loc":"In the fresh-air stream"},
+    {"key":"insulation","fn":"insulation","spec":"Moulded expanded polystyrene insulation shell","qty":1,"ext":2,"obs":4,"loc":"Lining the cabinet"},
+    {"key":"hose_tubing","fn":"hose_tubing","spec":"Condensate drain and hose to a floor drain","qty":1,"ext":1,"obs":4,"loc":"Bottom of the cabinet"},
+    {"key":"wire_copper","fn":"wire_copper","spec":"Three-prong 120 V power cord, about 1.8 m (6 ft)","v":120,"ac":true,"qty":1,"ext":1,"obs":3,"loc":"Side of the cabinet"},
+    {"key":"sheet_metal","fn":"sheet_metal","spec":"Galvanised steel cabinet and door","qty":1,"ext":2,"obs":3,"loc":"Outer case"}
+  ],
+  "boards": [],
+  "buildings": [
+    {"b":"house","l":5,"loc":"Basement mechanical room, often hung from the joists near the furnace"},
+    {"b":"apartment","l":4,"loc":"In-suite closet or ceiling in condos and new apartments"},
+    {"b":"nursing_home","l":2,"loc":"Mechanical room"},
+    {"b":"childcare","l":2,"loc":"Mechanical room or ceiling"},
+    {"b":"office","l":2,"loc":"Ceiling space in small offices"},
+    {"b":"hardware","l":2,"loc":"Boxed stock"}
+  ],
+  "notes": "In a tight house the HRV is how fresh air gets in; with the power off it stops, and a house built to keep air from leaking gets little fresh air, so pollutants build up. That matters most when anyone burns anything inside. Broan says its HRV is not designed to provide combustion or dilution air for fuel-burning appliances (Broan quick start), and a burner in a tight house needs its own air: Beckett says an oil burner can't burn its fuel properly without a reliable combustion air supply, and where exhaust fans or a dryer could pull the room below outdoor pressure it wants air piped to the burner or a sealed enclosure (Beckett AFG). So give any unvented heater a cracked window (EPA improving IAQ) and keep a battery CO alarm on, in the hallway outside the bedrooms (Health Canada CO). Tight buildings let pollutants build up unless they have mechanical ventilation (EPA intro IAQ). When it runs, keep its two outside hoods clear of snow. The core, filters and ECM motors are good salvage.",
+  "sources": [
+    {"title":"Broan V180H75RT spec: Broan-NuTone (vänEE/Venmar), AI Series HRV V180H75RT specification sheet","url":"https://www.broan-nutone.com/getmedia/ea98e17b-afe7-4d66-bfae-92f977dbc443/Spec_Sheet_V180H75RT_En_Fr.pdf?ext=.pdf"},
+    {"title":"Broan V180H75RT page: Broan-NuTone Canada, V180H75RT HRV product page","url":"https://www.broan-nutone.com/en-ca/product/freshairsystems/v180h75rt"},
+    {"title":"Broan quick start: Broan-NuTone, AI and N Series Quick Start Guide (warnings)","url":"https://www.broan-nutone.com/getmedia/3aa7250f-61b7-4607-8f57-b39f46b64f3f/Quick_Start_Guide_AI_N_Series.pdf?ext=.pdf"},
+    {"title":"EPA intro IAQ: US EPA, Introduction to Indoor Air Quality","url":"https://www.epa.gov/indoor-air-quality-iaq/introduction-indoor-air-quality"},
+    {"title":"EPA improving IAQ: US EPA, Improving Indoor Air Quality (heat recovery ventilators)","url":"https://www.epa.gov/indoor-air-quality-iaq/improving-indoor-air-quality"},
+    {"title":"Wikipedia HRV: Wikipedia, Heat recovery ventilation","url":"https://en.wikipedia.org/wiki/Heat_recovery_ventilation"},
+    {"title":"Beckett AFG: R.W. Beckett, Model AF/AFG Burners Instruction Manual (Weil-McLain Ultra Oil version)","url":"https://www.weil-mclain.com/wp-content/uploads/RW-Beckett-AFG-Burner-Manual-for-Ultra-Oil-VBL-0321.pdf"},
+    {"title":"Health Canada CO: Health Canada, Carbon monoxide: Preventing exposure","url":"https://www.canada.ca/en/health-canada/services/air-quality/pollutants/carbon-monoxide/preventing-exposure.html"}
+  ]
+}
