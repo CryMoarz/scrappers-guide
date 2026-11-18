@@ -254,6 +254,11 @@
           "$ref": "#/$defs/rating",
           "title": "Likelihood",
           "description": "How likely this kind of building holds this device."
+        },
+        "loc": {
+          "$ref": "#/$defs/line",
+          "title": "Where inside",
+          "description": "Where in the building to look, e.g. paint booth and mixing room."
         }
       }
     },
@@ -347,6 +352,29 @@
             "x-ref": "hazards"
           },
           "title": "Hazards"
+        },
+        "protects": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/id",
+            "x-ref": "hazards"
+          },
+          "title": "Protects against",
+          "description": "Hazards this gear really helps with. Its limits go in Good for and Without one."
+        },
+        "improvise": {
+          "$ref": "#/$defs/text",
+          "title": "Without one",
+          "description": "What to use instead, what is better than nothing, and what is useless.",
+          "x-widget": "textarea"
+        },
+        "buildings": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/buildingRef"
+          },
+          "title": "Where it's kept",
+          "description": "Building types that keep this on hand as a supply, not inside a device."
         },
         "refs": {
           "$ref": "#/$defs/refs"

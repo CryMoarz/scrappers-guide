@@ -456,6 +456,20 @@ module.exports = function (SDG) {
       const a = agg[b] || (agg[b] = { bt, v: 0, rs: 0, devices: [] });
       a.v += v; a.rs += remain * v; a.devices.push({ id: r.cat.id, n: r.cat.name, v });
     }));
+    // Supplies a building keeps on hand (protective gear, say) count as the thing itself, not a part inside something.
+    on.forEach((_, fnId) => {
+      const fn = ctx.get('parts', fnId);
+      if (!fn || fn.deprecated) return;
+      const fresh = decayFactor(ctx, fnId, opts.months);
+      (fn.buildings || []).forEach(({ b, l, loc }) => {
+        const bt = ctx.get('buildings', b);
+        if (!bt || bt.deprecated) return;
+        const remain = 1 - 0.9 * (bt.exposure / 5) * takenShare(ramp, fn, {});
+        const v = (l / 5) * remain * fresh;
+        const a = agg[b] || (agg[b] = { bt, v: 0, rs: 0, devices: [] });
+        a.v += v; a.rs += remain * v; a.devices.push({ id: fnId, n: loc ? `${fn.name} (${loc})` : `${fn.name} on hand`, v, stock: true });
+      });
+    });
     const blds = Object.values(agg).sort((a, b) => b.v - a.v);
     const max = blds.length ? blds[0].v : 1;
     blds.forEach(a => { a.n = 100 * a.v / max; a.remain = a.v ? a.rs / a.v : 0; a.devices.sort((x, y) => y.v - x.v); });

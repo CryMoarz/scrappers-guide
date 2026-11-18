@@ -286,3 +286,17 @@ test('bundles round-trip and reject forged items', async () => {
   assert.equal(v.bad.length, 1);
   assert.equal(SDG.changes.mergeById([c], [c, o]).length, 2);
 });
+
+test('supplies kept on hand rank buildings without any device', () => {
+  const d2 = SDG.util.clone(ds);
+  d2.parts.push({ id: 'test_kept', name: 'Test gloves', group: 'Protective gear', demand: 3, keywords: ['test gloves'], substitutes: [], protects: ['chemical'], improvise: 'Bread bags over socks keep splashes off, nothing more.', decay: { halfLifeMonths: 12, note: 'Rubber perishes.' }, buildings: [{ b: 'hardware', l: 5, loc: 'safety aisle' }, { b: 'clinic', l: 2 }] });
+  assert.ok(SDG.schema.validateRecord('parts', d2.parts[d2.parts.length - 1]).ok, 'protects, improvise and buildings are valid on a part type');
+  const c2 = SDG.db.open(d2);
+  const sel = new Map([['test_kept', { via: 'direct', on: true }]]);
+  const day1 = SDG.search.rank(c2, sel, '', {});
+  assert.equal(day1.res.length, 0, 'no device contains it');
+  assert.deepEqual(day1.blds.map(a => a.bt.id), ['hardware', 'clinic'], 'likelier buildings first');
+  assert.ok(day1.blds[0].devices[0].stock && /safety aisle/.test(day1.blds[0].devices[0].n), 'says it is kept on hand, and where');
+  const later = SDG.search.rank(c2, sel, '', { months: 24 });
+  assert.ok(later.blds[0].v < day1.blds[0].v, 'looting and shelf life thin it out over time');
+});

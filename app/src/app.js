@@ -127,7 +127,8 @@ function hazardCard(id) {
   const h = S.ctx.hazard(id);
   const list = (t, a) => (a && a.length ? `<h3>${esc(t)}</h3><ul>${a.map(x => `<li>${esc(x)}</li>`).join('')}</ul>` : '');
   const guides = S.ctx.ds.guides.filter(g => g.kind === 'safety' && (g.hazards || []).includes(id));
-  return `<h2 id="modal-title">${esc(h.label)}</h2><p class="sub-h">Severity ${esc(h.severity)}/5</p><p>${esc(h.summary)}</p>${list('How to spot it', h.signs)}${list('Do', h.do)}${list('Don’t', h.dont)}${list('Protection', h.ppe)}${list('If it goes wrong', h.firstAid)}${(h.firstAid || []).length ? '<p class="hint">If help can still be reached, call emergency services first, or poison control for anything swallowed, breathed in or splashed. If not, see <a href="#ref/reference_first_aid/when_no_help_is_coming">First aid › When no help is coming</a>.</p>' : ''}${guides.length ? `<h3>Safety guides</h3><p>${guides.map(g => guideLink(g.id)).join(' · ')}</p>` : ''}${lookupsHTML('hazards', h)}`;
+  const gear = S.ctx.ds.parts.filter(p => !p.deprecated && (p.protects || []).includes(id));
+  return `<h2 id="modal-title">${esc(h.label)}</h2><p class="sub-h">Severity ${esc(h.severity)}/5</p><p>${esc(h.summary)}</p>${list('How to spot it', h.signs)}${list('Do', h.do)}${list('Don’t', h.dont)}${list('Protection', h.ppe)}${gear.length ? `<p class="hint">Gear: ${gear.map(p => link('parts', p.id)).join(' · ')}</p>` : ''}${list('If it goes wrong', h.firstAid)}${(h.firstAid || []).length ? '<p class="hint">If help can still be reached, call emergency services first, or poison control for anything swallowed, breathed in or splashed. If not, see <a href="#ref/reference_first_aid/when_no_help_is_coming">First aid › When no help is coming</a>.</p>' : ''}${guides.length ? `<h3>Safety guides</h3><p>${guides.map(g => guideLink(g.id)).join(' · ')}</p>` : ''}${lookupsHTML('hazards', h)}`;
 }
 // Links into the offline libraries next to this app (Kiwix on a NOMAD box, NOMAD's own pages).
 // Your own addresses in Sync win; otherwise whatever the hub reports.
@@ -187,7 +188,7 @@ function bldCard(a) {
   return `<article class="bld"><div class="dev-head"><h3><a href="#browse/buildings/${u(a.bt.id)}">${esc(a.bt.name)}</a></h3><span class="score">${esc(Math.round(a.n))}</span></div>
   <div class="meter" aria-hidden="true"><span style="width:${esc(Math.round(a.n))}%"></span></div>
   <div class="left"><b>${esc(SDG.search.leftLabel(a.remain))}</b></div>
-  <div class="from">Mostly from ${esc(a.devices.slice(0, 3).map(d => d.n).join(', '))}</div>
+  <div class="from">${a.devices[0] && a.devices[0].stock ? 'On hand' : 'Mostly from'} ${esc(a.devices.slice(0, 3).map(d => d.n).join(', '))}</div>
   ${a.bt.access ? `<div class="where">Getting in: ${esc(a.bt.access)}</div>` : ''}${hazButtons(a.bt.hazards)}
   ${near ? `<div class="where">${esc(near)}</div>` : ''}
   <div class="tags">${a.bt.osm.map(t => `<code>${esc(t)}</code>`).join('')}</div></article>`;
@@ -258,9 +259,11 @@ function renderScrap() {
   if (!scrap.sel.size && (models || brands || hazards)) { out.innerHTML = `${jobHTML}${hazards}${extra}`; return; }
   if (!scrap.sel.size) { out.innerHTML = `${jobHTML}${hazards}${extra}<div class="empty"><p class="hint" style="margin-top:20px">No part type matches “${esc(scrap.q)}”. Try a plain word like motor, battery, pump or magnet, or pick one below.</p>${allPartsHTML(true)}</div>`; return; }
   const r = res.ranked;
-  if (!r.res.length) { out.innerHTML = `${jobHTML}${hazards}${extra}<p class="hint" style="margin-top:20px">Nothing in the database contains the selected part types yet. Add one in Contribute, or turn on substitutes.</p>`; return; }
+  if (!r.res.length && !r.blds.length) { out.innerHTML = `${jobHTML}${hazards}${extra}<p class="hint" style="margin-top:20px">Nothing in the database contains the selected part types yet. Add one in Contribute, or turn on substitutes.</p>`; return; }
   const onMap = S.settings.hubUrl ? '<a href="#map">Show on the map</a>' : '';
   const strip = `<div class="wherestrip"><b>Where to look</b> ${onMap ? `<span class="where">· ${onMap}</span>` : ''}<div class="chips">${r.blds.slice(0, 4).map(a => `<a class="chip" href="#browse/buildings/${u(a.bt.id)}">${esc(a.bt.name)}</a>`).join('')}</div></div>`;
+  // Supplies kept on hand (protective gear, say) have places to look but no device to strip.
+  if (!r.res.length) { out.innerHTML = `${jobHTML}${hazards}${extra}${strip}<div class="reshead"><h2>Where to look</h2>${onMap}</div><p class="sub-h">Kept on hand rather than inside a device. Building types ranked by likely stock left.</p>${firstFew(r.blds.slice(0, 12), 5, bldCard, 'building types')}`; return; }
   const n = [...scrap.sel.values()].filter(v => v.on).length;
   out.innerHTML = `${jobHTML}${hazards}${extra}${strip}<div class="results"><div><div class="reshead"><h2>Best devices to strip</h2><a href="#" data-needsel>Add ${n > 1 ? 'these parts' : 'this part'} to my shopping list</a></div><p class="sub-h">${esc(r.res.length)} devices, ranked by how useful, easy and overlooked the part is. Devices are generic: what most units of each kind contain.</p>${firstFew(r.res.slice(0, 30), 6, devCard, 'devices')}</div>
   <div><div class="reshead"><h2>Where to look</h2>${onMap}</div><p class="sub-h">Building types ranked by likely stock left.</p>${firstFew(r.blds.slice(0, 12), 5, bldCard, 'building types')}
@@ -449,18 +452,23 @@ function detailHTML(coll, id) {
     return `${common}<p class="sub-h" style="margin:0">${esc(rec.group)} · demand ${esc(rec.demand)}/5</p><h2>${esc(rec.name)}</h2>${rec.summary ? `<p>${esc(rec.summary)}</p>` : ''}
     ${(rec.uses || []).length ? `<h3>Good for</h3><ul>${rec.uses.map(u => `<li>${esc(u)}</li>`).join('')}</ul>` : ''}
     ${rec.identify ? `<h3>How to recognise it</h3><p>${esc(rec.identify)}</p>` : ''}${rec.test ? `<h3>How to test it</h3><p>${esc(rec.test)}</p>` : ''}
-    ${d ? `<h3>Shelf life</h3><p>${d.halfLifeMonths ? `About half is unusable after ${esc(d.halfLifeMonths)} months without care.` : 'Lasts indefinitely if kept dry.'} ${esc(d.note || '')}</p>` : ''}${hazButtons(rec.hazards)}
+    ${d ? `<h3>Shelf life</h3><p>${d.halfLifeMonths ? `About half is unusable after ${esc(d.halfLifeMonths)} months without care.` : 'Lasts indefinitely if kept dry.'} ${esc(d.note || '')}</p>` : ''}
+    ${(rec.protects || []).length ? `<h3>Protects against</h3>${hazButtons(rec.protects)}` : ''}${rec.improvise ? `<h3>Without one</h3><p>${esc(rec.improvise)}</p>` : ''}
+    ${(rec.buildings || []).length ? `<h3>Where it’s kept</h3>${rec.buildings.slice().sort((a, b) => b.l - a.l).filter(x => ctx.get('buildings', x.b)).map(x => `<div class="mrow"><span>${link('buildings', x.b)}${x.loc ? ` <span class="where">${esc(x.loc)}</span>` : ''}</span><span class="where">likelihood ${esc(x.l)}/5</span></div>`).join('')}` : ''}
+    ${(rec.protects || []).length && (rec.hazards || []).length ? '<h3>Handling it</h3>' : ''}${hazButtons(rec.hazards)}
     ${(rec.substitutes || []).length ? `<p class="hint">Substitutes: ${rec.substitutes.filter(s => ctx.get('parts', s)).map(s => link('parts', s)).join(' · ')}</p>` : ''}
     <p class="hint">Search words: ${esc((rec.keywords || []).join(', '))}</p>
     ${jobs.length ? `<p class="hint">Jobs: ${jobs.map(j => link('jobs', j.id)).join(' · ')}</p>` : ''}${guides.length ? `<p class="hint">Guides: ${guides.map(g => guideLink(g.id)).join(' · ')}</p>` : ''}
-    <h3 class="section">Best sources (${esc(ranked.res.length)})</h3>${ranked.res.slice(0, 15).map(x => `<div class="mrow"><span>${link('devices', x.cat.id)} <span class="where">${esc(x.best.comp.spec)}</span></span><span class="score" style="font-size:1.1rem">${esc(Math.round(x.best.s))}</span></div>`).join('') || '<p class="hint">No device contains it yet.</p>'}
+    ${ranked.res.length || !(rec.buildings || []).length ? `<h3 class="section">Best sources (${esc(ranked.res.length)})</h3>${ranked.res.slice(0, 15).map(x => `<div class="mrow"><span>${link('devices', x.cat.id)} <span class="where">${esc(x.best.comp.spec)}</span></span><span class="score" style="font-size:1.1rem">${esc(Math.round(x.best.s))}</span></div>`).join('') || '<p class="hint">No device contains it yet.</p>'}` : ''}
     ${actions(`<button class="btn" data-q="${esc(rec.name)}" data-goscrap>Scrap for this</button><button class="btn ghost" data-needadd="${esc(id)}">Add to shopping list</button>`)}${commentsHTML('parts/' + id)}`;
   }
   if (coll === 'buildings') {
     const devs = ctx.ds.devices.filter(dv => !dv.abstract).map(dv => ctx.resolve(dv.id)).map(r => ({ r, l: ((r.buildings || []).find(b => b.b === id) || {}).l })).filter(x => x.l).sort((a, b) => b.l - a.l || b.r.prev - a.r.prev);
+    const stock = ctx.ds.parts.filter(p => !p.deprecated).map(p => ({ p, s: (p.buildings || []).find(b => b.b === id) })).filter(x => x.s).sort((a, b) => b.s.l - a.s.l || a.p.name.localeCompare(b.p.name));
     return `${common}<h2>${esc(rec.name)}</h2><p class="sub-h">Looting pressure ${esc(rec.exposure)}/5. ${esc(rec.notes || '')}</p>${rec.access ? `<p>Getting in: ${esc(rec.access)}</p>` : ''}${hazButtons(rec.hazards)}
     <div class="tags">${rec.osm.map(t => `<code>${esc(t)}</code>`).join('')}</div><p class="hint">${esc(nearbyObs(id))}</p>
-    <h3 class="section">What’s inside (${esc(devs.length)})</h3>${devs.map(x => `<div class="mrow"><span>${link('devices', x.r.id)}</span><span class="where">likelihood ${esc(x.l)}/5</span></div>`).join('')}${actions()}${commentsHTML('buildings/' + id)}`;
+    <h3 class="section">What’s inside (${esc(devs.length)})</h3>${devs.map(x => `<div class="mrow"><span>${link('devices', x.r.id)}</span><span class="where">likelihood ${esc(x.l)}/5</span></div>`).join('')}
+    ${stock.length ? `<h3 class="section">Supplies kept here (${esc(stock.length)})</h3>${stock.map(x => `<div class="mrow"><span>${link('parts', x.p.id)}${x.s.loc ? ` <span class="where">${esc(x.s.loc)}</span>` : ''}</span><span class="where">likelihood ${esc(x.s.l)}/5</span></div>`).join('')}` : ''}${actions()}${commentsHTML('buildings/' + id)}`;
   }
   if (coll === 'jobs') {
     return `${common}<h2>${esc(rec.name)}</h2><p>${esc(rec.summary)}</p><h3>Part types</h3><ul>${rec.parts.map(p => `<li>${link('parts', p.fn)}${p.core ? ' <span class="badge">core</span>' : ''}${p.why ? ` <span class="where">${esc(p.why)}</span>` : ''}</li>`).join('')}</ul>
