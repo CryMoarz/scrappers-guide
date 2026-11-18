@@ -27,7 +27,7 @@ Type a part (“12V motor”), a part or chip number (“LM2596”), a need (“
 
 It works with no internet, ever. It syncs when it can.
 
-**Website:** [crymoarz.github.io/scrappers-guide](https://crymoarz.github.io/scrappers-guide/) has every device, part type, guide and pinout as a page you can read or link to, and the app to open or download.
+**Website:** [crymoarz.github.io/scrappers-guide](https://crymoarz.github.io/scrappers-guide/) has every device, part type, guide and pinout as a page you can read or link to, and the app to open or download. The website counts visits with [GoatCounter](https://www.goatcounter.com/help/privacy): no cookies, and nothing that identifies you is kept. The app itself has no counter of any kind.
 
 > [!IMPORTANT]
 > A personal open-source project developed with AI assistance. Its content has not been reviewed by qualified professionals. For educational and emergency-preparedness use only, provided without warranty: see the [disclaimer](#disclaimer).

@@ -4,7 +4,8 @@
 // guide. Plain HTML and one stylesheet: no scripts and nothing loaded from elsewhere, so pages open
 // fast on a bad connection, can be saved whole, and search engines read them as they are. The pages
 // are how people find the guide: someone asking what is inside a microwave lands on the microwave.
-//   node tools/site.js [--out dist/site] [--base https://crymoarz.github.io/scrappers-guide/]
+// The one exception is the visit counter, added only when given a GoatCounter code (see COUNTER).
+//   node tools/site.js [--out dist/site] [--base https://crymoarz.github.io/scrappers-guide/] [--counter code]
 // Run tools/export-text.js first to include the field guide. The Website workflow
 // (.github/workflows/pages.yml) runs both on every push to main and publishes with GitHub Pages.
 'use strict';
@@ -19,6 +20,23 @@ const OUT = path.resolve(opt('out') || path.join(F.ROOT, 'dist', 'site'));
 const BASE = (opt('base') || 'https://crymoarz.github.io/scrappers-guide/').replace(/\/?$/, '/');
 const REPO = 'https://github.com/CryMoarz/scrappers-guide';
 const SITE = 'Scrapper’s Guide';
+// Visit counting, only on the project's own site: the Website workflow passes the code, so a fork's
+// copy counts nothing. GoatCounter keeps no cookies and nothing that identifies a visitor. Its script
+// is a fixed version checked against its hash, so a changed copy never runs; the async load doesn't
+// hold up the page. Visitors without scripts are counted by its image instead. The app copy at app/
+// is the signed release, byte for byte, and never counts anything.
+const COUNTER = opt('counter') || '';
+if (COUNTER && !/^[a-z0-9-]+$/.test(COUNTER)) { console.error('--counter takes a GoatCounter code: lowercase letters, digits and dashes'); process.exit(1); }
+const COUNT_URL = `https://${COUNTER}.goatcounter.com/count`;
+const COUNT_JS = 'https://gc.zgo.at/count.v5.js';
+const COUNT_SRI = 'sha384-atnOLvQb9t+jTSipvd75X2yginT4PjVbqDdlJAmxMm+wYElFmeR6EmLP5bYeoRVQ';
+const CSP = COUNTER
+  ? `default-src 'none'; img-src 'self' ${COUNT_URL}; style-src 'self' 'unsafe-inline'; script-src ${COUNT_JS}; connect-src ${COUNT_URL}; base-uri 'none'; form-action 'none'`
+  : `default-src 'none'; img-src 'self'; style-src 'self' 'unsafe-inline'; base-uri 'none'; form-action 'none'`;
+// The script counts the canonical address; the image is given the same path and the title.
+const counter = (at, title) => (COUNTER ? `<script data-goatcounter="${COUNT_URL}" async src="${COUNT_JS}" crossorigin="anonymous" integrity="${COUNT_SRI}"></script>
+<noscript><img class="count" src="${COUNT_URL}?p=${encodeURIComponent(new URL(BASE).pathname + at)}&amp;t=${esc(encodeURIComponent(title))}" alt="" width="1" height="1"></noscript>
+` : '');
 
 const data = F.load();
 const ctx = SDG.db.open(F.plain(data));
@@ -84,7 +102,7 @@ function write(rel, text) { const f = path.join(OUT, rel); fs.mkdirSync(path.dir
 const nav = rel => `<header class="top"><div class="wrap"><a class="brand" href="${rel || './'}"><img src="${rel}icon.svg" alt="" width="28" height="28">${SITE}</a>
 <nav aria-label="Sections"><a href="${rel}devices/">Devices</a><a href="${rel}parts/">Parts</a><a href="${rel}guides/">Guides</a><a href="${rel}pinouts/">Pinouts</a><a href="${rel}hazards/">Hazards</a><a class="btn" href="${rel}app/">Open the app</a></nav></div></header>`;
 const footer = rel => `<footer class="wrap"><p><b>Salvage can kill.</b> Read the <a href="${rel}hazards/">hazards</a> before you open anything, and treat guides as a starting point, not a procedure: see <a href="${rel || './'}#trust">how much to trust it</a>.</p>
-<p>Data and guides <a href="${REPO}/blob/main/DATA-LICENSE.md">CC BY-SA 4.0</a> · code <a href="${REPO}/blob/main/LICENSE">MIT</a> · version ${esc(VERSION)}, data ${esc(data.meta.seq)}, built ${BUILT} · <a href="${REPO}">Source on GitHub</a> · <a href="${REPO}/issues/new/choose">Report a mistake</a>${HAS_BOOK ? ` · <a href="${rel}field-guide.html">Printable field guide</a>` : ''}</p></footer>`;
+<p>Data and guides <a href="${REPO}/blob/main/DATA-LICENSE.md">CC BY-SA 4.0</a> · code <a href="${REPO}/blob/main/LICENSE">MIT</a> · version ${esc(VERSION)}, data ${esc(data.meta.seq)}, built ${BUILT} · <a href="${REPO}">Source on GitHub</a> · <a href="${REPO}/issues/new/choose">Report a mistake</a>${HAS_BOOK ? ` · <a href="${rel}field-guide.html">Printable field guide</a>` : ''}${COUNTER ? ' · Visits are counted with <a href="https://www.goatcounter.com/help/privacy" rel="noopener nofollow">GoatCounter</a>: no cookies, and nothing that identifies you is kept' : ''}</p></footer>`;
 function page({ at, title, desc, body, crumbs, type }) {
   const rel = '../'.repeat(at.split('/').filter(Boolean).length);
   const url = BASE + at;
@@ -94,7 +112,7 @@ function page({ at, title, desc, body, crumbs, type }) {
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src 'self'; style-src 'self' 'unsafe-inline'; base-uri 'none'; form-action 'none'">
+<meta http-equiv="Content-Security-Policy" content="${CSP}">
 <title>${esc(title)}</title>
 <meta name="description" content="${esc(desc)}">
 <link rel="canonical" href="${url}">
@@ -115,7 +133,7 @@ ${nav(rel)}
 ${fixLinks(body, rel)}
 </main>
 ${footer(rel)}
-</body>
+${counter(at, title)}</body>
 </html>
 `);
 }
@@ -311,6 +329,7 @@ footer a{color:var(--muted)}
 .pintable td:first-child{font-weight:600;white-space:nowrap}
 .pinboard h4{margin-top:.6em}
 @media (max-width:640px){h1{font-size:1.6rem}.top nav{margin-left:0}}
+img.count{position:absolute}
 `;
 
 function main() {
@@ -328,9 +347,10 @@ function main() {
   home();
   for (const [coll, C] of Object.entries(COLLS)) C.recs.forEach(r => recordPage(coll, r));
   indexes();
-  // A missing page: links from the site root, since this one answers for any address.
+  // A missing page: links from the site root, since this one answers for any address. The counter's
+  // script counts the address asked for; its image would count the front page, so that goes.
   const root = new URL(BASE).pathname;
-  write('404.html', fs.readFileSync(path.join(OUT, 'index.html'), 'utf8')
+  write('404.html', fs.readFileSync(path.join(OUT, 'index.html'), 'utf8').replace(/<noscript>[\s\S]*?<\/noscript>\n/, '')
     .replace(/<main class="wrap">[\s\S]*<\/main>/, `<main class="wrap"><h1>No such page</h1><p class="lede">It may have been renamed. Try the <a href="./">front page</a>, or search everything in <a href="app/">the app</a>.</p></main>`)
     .replace(/<title>[^<]*<\/title>/, `<title>No such page · ${SITE}</title>`).replace(/<link rel="canonical"[^>]*>\n/, '').replace(/(href|src)="(?!https?:|#|\/)([^"]*)"/g, (m, a, p) => `${a}="${root}${p}"`));
   const pages = files.filter(f => f.endsWith('index.html') && !f.startsWith('app/')).map(f => BASE + f.replace(/index\.html$/, ''));

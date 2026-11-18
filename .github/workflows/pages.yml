@@ -25,7 +25,10 @@ jobs:
           package-manager-cache: false
       - run: node tools/validate.js
       - run: node tools/export-text.js
-      - run: node tools/site.js
+      - run: node tools/site.js --counter "$COUNTER"
+        env:
+          # Visits are counted on the project's own site only, never on a fork's (tools/site.js).
+          COUNTER: ${{ github.repository == 'CryMoarz/scrappers-guide' && 'crymoarz' || '' }}
       - uses: actions/upload-pages-artifact@fc324d3547104276b827a68afc52ff2a11cc49c9 # v5.0.0
         with:
           path: dist/site
