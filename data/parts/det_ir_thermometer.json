@@ -1,0 +1,38 @@
+{
+  "id": "det_ir_thermometer",
+  "name": "Infrared (IR) thermometers",
+  "group": "Detectors and meters",
+  "demand": 2,
+  "keywords": ["ir thermometer","infrared thermometer","laser thermometer","temperature gun","temp gun","non-contact thermometer","pyrometer","fluke 62 max","emissivity","ems 0.95","d:s","distance to spot","surface temperature","hot spot","8-14 µm","thermoworks"],
+  "substitutes": ["det_thermal_camera"],
+  "summary": "Pistol-shaped meter that reads a surface's temperature from the infrared it gives off, without touching it; a laser dot shows roughly where it is aimed.",
+  "uses": ["Checks from a safe distance whether a stove, engine part, motor, pipe or exhaust is hot before you touch it (Fluke 62 MAX; Fluke IR tips)","Reads the surface only: not the inside of food or water, or anything behind the surface; for inside temperatures use a probe (Fluke 62 MAX; ThermoWorks myths)","Shiny metal reads too low but still burns: Fluke says reflective objects read low and are a burn hazard (Fluke 62 MAX); a boiling stainless pot can read nearer 38 °C than 100 °C (ThermoWorks myths)","It can't read through glass: aimed at a window, it reads the glass (ThermoWorks IR); steam, smoke and dust also throw it off (Fluke IR tips)","The spot grows with distance: the Fluke 62 MAX (10:1) reads a circle about 100 mm across at 900 mm, so get close to small targets (Fluke 62 MAX; Fluke IR tips)","Fluke says not to use its 62 MAX around explosive gas or vapour, or in damp or wet places (Fluke 62 MAX)"],
+  "identify": "A small pistol with a lens at the front, a trigger and a screen. Most have a laser pointer, which marks only the middle of the area being read, not its size (Fluke IR tips). The screen shows °C or °F, often MAX, MIN, AVG and DIF, and an emissivity value marked EMS or ε (Fluke 62 MAX). Many are fixed at 0.95 or 0.97, which suits most organic, painted and plastic surfaces; better ones adjust, the Fluke 62 MAX from 0.10 to 1.00 (ThermoWorks IR; Fluke IR tips; Fluke 62 MAX). Read the label or manual for range, accuracy and distance-to-spot (D:S). The Fluke 62 MAX reads −30 to 500 °C, within ±1.5 °C or 1.5% of the reading, whichever is greater, above 0 °C, at 10:1 (12:1 on the 62 MAX+), in the 8 to 14 µm band, on one AA cell, and is rated to work from 0 to 50 °C (Fluke 62 MAX). A laser warning label means a Class 2 (II) aiming laser: don't look into it or point it at people, animals or shiny surfaces that bounce it back (Fluke 62 MAX).",
+  "test": "1. Battery: fit a fresh one. Fluke says replace it as soon as the low-battery symbol shows, to avoid wrong readings (Fluke 62 MAX). 2. Look at the lens: clean it gently with a swab moistened with water (Fluke 62 MAX) or a little medical alcohol on a soft cloth or swab, never soap or chemicals (ThermoWorks IR). Don't use it if the case is cracked (Fluke 62 MAX). 3. Let it sit about 30 minutes where you'll use it, especially if it was in a cold vehicle (Fluke IR tips). 4. Ice check: fill a large container to the top with crushed ice, add very cold water to about 1 cm below the top of the ice, stir and wait a minute or two. If ice floats off the bottom, pour off water. Clear a patch of open water, set emissivity to 0.95 or 0.97, and aim straight down from close up so the spot falls well inside the container. It should read 0 °C within the accuracy on its label (ThermoWorks ice test). 5. Fail signs: a reading well outside that accuracy on the ice, numbers that wander on a steady target, a blank or flickering screen. 6. The ice check tests one point, 0 °C, so treat it as a rough screen: Fluke's calibration method uses a calibrated radiation source in a lab (Fluke IR calibration).",
+  "decay": {"halfLifeMonths":120,"note":"Estimate. The sensor and lens don't wear out in storage. Units die from batteries left in, drops and scratched or cracked lenses. Most run on common cells; the Fluke 62 MAX takes one AA (Fluke 62 MAX)."},
+  "hazards": [],
+  "protects": ["burn"],
+  "improvise": "Without one, let things cool and assume anything that ran recently is hot. Hold the back of your hand near a part, not on it, to feel for heat. A probe or dial thermometer pushed into the material reads the inside, which an IR thermometer never can (ThermoWorks myths). Use one for food. A thermal camera with a spot reading does the same job as an IR thermometer and shows hot spots a single dot would miss. On shiny metal, put a strip of electrical tape or a dab of flat paint on it and read that instead (Fluke IR tips; Fluke emissivity). Useless: aiming through a window, reading shiny bare metal as it is, or reading a small part from across the room, where the spot takes in the wall behind it (ThermoWorks IR; Fluke IR tips; Fluke 62 MAX).",
+  "buildings": [
+    {"b":"hardware","l":3,"loc":"tool counter and HVAC or electrical testing aisle"},
+    {"b":"car_repair","l":3,"loc":"diagnostic cart and techs' toolboxes"},
+    {"b":"factory","l":3,"loc":"maintenance shop and electrical room"},
+    {"b":"auto_parts","l":2,"loc":"tool and diagnostic aisle"},
+    {"b":"makerspace","l":2,"loc":"electronics bench, 3D printer and forge area"},
+    {"b":"datacenter","l":2,"loc":"facilities office and tool cabinet"},
+    {"b":"restaurant","l":2,"loc":"kitchen drawer near the line; note that food probes are more common and read the inside"},
+    {"b":"appliance","l":2,"loc":"repair bench"},
+    {"b":"construction","l":2,"loc":"HVAC and electrical trades' tool bags"},
+    {"b":"tool_rental","l":2,"loc":"testing equipment shelf"},
+    {"b":"school","l":1,"loc":"science prep room, shop class"}
+  ],
+  "sources": [
+    {"title":"Fluke 62 MAX: Fluke 62 MAX/62 MAX+ Infrared Thermometer Users Manual, PN 4060712 (April 2012)","url":"https://docs.rs-online.com/96ef/0900766b8165e3e6.pdf"},
+    {"title":"Fluke IR tips: Fluke, How to Get Great Results with an Infrared Thermometer","url":"https://www.fluke.com/en-ie/learn/blog/temperature/how-to-get-great-results-with-an-infrared-thermometer"},
+    {"title":"Fluke emissivity: Fluke, What you need to know about emissivity and infrared energy","url":"https://www.fluke.com/en-ie/learn/blog/thermal-imaging/what-you-need-to-know-about-emissivity-and-infrared-energy"},
+    {"title":"Fluke IR calibration: Fluke, Metrology 101: IR thermometer calibration","url":"https://www.fluke.com/en-us/learn/blog/temperature-calibration/ir-thermometer-calibration"},
+    {"title":"ThermoWorks IR: ThermoWorks help centre, Infrared Thermometers: Care & Use Tips","url":"https://help.thermoworks.com/?p=4229"},
+    {"title":"ThermoWorks myths: ThermoWorks blog, Three Common Misconceptions About Infrared Thermometers","url":"https://blog.thermoworks.com/infrared-thermometry/"},
+    {"title":"ThermoWorks ice test: ThermoWorks support, IR gun accuracy test (ice bath)","url":"https://sites.google.com/thermoworks.com/zendesk-source/i/ir-gun/ir-gun-accuracy-test"}
+  ]
+}

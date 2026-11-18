@@ -1,0 +1,40 @@
+{
+  "id": "det_thermal_camera",
+  "name": "Thermal imaging cameras",
+  "group": "Detectors and meters",
+  "demand": 3,
+  "keywords": ["thermal camera","thermal imager","thermal imaging camera","infrared camera","tic","flir","flir one","flir k65","seek thermal","hikmicro","fluke ti","firefighting camera","nfpa 1801","radiometric","heat loss","hot spot","find people in the dark"],
+  "substitutes": ["det_ir_thermometer"],
+  "summary": "Camera that shows heat instead of light, so warm people and animals, heat leaks, hot wiring and overheating parts stand out, often with a temperature reading.",
+  "uses": ["Finds heat loss, draughts and missing insulation, best with at least 10 °C between inside and outside air (FLIR guidebook)","Shows hot breakers, fuses and connections, but only under load, and not inside a closed cabinet (Fluke electrical). A hot spot on live wiring: keep clear, don't touch, get it checked (NFPA checklist)","Spots warm people and animals in the dark, in forest and through smoke; fog and rain cut its range sharply (FLIR see-through)","Can't see through walls or glass: a window acts like a mirror and shows your own heat reflected back (FLIR see-through)","Reads surfaces only: heat deep in a pile or wall may not show; compacted piles can hide hot spots for hours or days (FLIR see-through; FLIR waste)","Shiny bare metal reads much cooler than it is (Fluke emissivity)"],
+  "identify": "Handheld cameras look like a chunky camera, a pistol with a screen, or a small add-on that plugs into a phone. Firefighting cameras are built for a gloved hand; FLIR's K65 is made to NFPA 1801, which tests durability, heat and flame resistance and image quality and calls for a basic greyscale image with a temperature bar (FLIR NFPA). Radiometric cameras show a temperature at a centre spot or box and a colour scale bar; others only show which things are warmer. Emissivity matters as with IR thermometers: painted surfaces, wood, water, skin and cloth are above 0.9, unpainted metal below 0.6 (Fluke emissivity). An occasional click with the picture freezing for a moment is the shutter doing a non-uniformity correction (NUC). It happens often just after switch-on and less once warm, and it is normal (FLIR NUC). A calibration sticker or certificate shows when it was last checked by a lab; FLIR recommends yearly (FLIR calibration).",
+  "test": "1. Power: charge or fit the battery and switch on. Expect frequent clicks for the first minutes as it corrects itself, then fewer (FLIR NUC). 2. Picture: aim at your hand against a cool wall. A working camera shows the hand clearly warmer than the wall; a blank, frozen or noisy picture that never settles is a fail. 3. Known temperatures, for cameras that show a reading: FLIR suggests melting ice with a little water, and water at a hard boil, emissivity set to 0.96, aimed at the water surface. A reading within the accuracy in the manual passes; for a ±2 °C camera, 98 to 102 °C on boiling water at sea level (FLIR calibration). 4. FLIR says this home check can't guarantee the calibration and doesn't replace lab service (FLIR calibration). Use it to catch a camera that is badly off, and trust differences (this breaker is much hotter than its neighbours) more than exact numbers. 5. For electrical checks, compare like with like under similar load. Fluke cites NETA guidance that more than 15 °C between similar parts, or more than 40 °C above ambient air, needs immediate action (Fluke electrical). For you, a hot spot on live wiring means keep clear and don't touch it.",
+  "decay": {"halfLifeMonths":96,"note":"Estimate. The sensor and lens keep for years in storage; the weak point is the rechargeable battery, often built in. Firefighting cameras with spare packs and chargers, and phone add-ons, last longest."},
+  "hazards": [],
+  "protects": ["burn"],
+  "improvise": "An IR thermometer does part of the job one spot at a time: sweep it slowly over a panel face, motor or wall and watch for jumps. For wiring without either, use your senses from a safe distance: warm or scorched sockets, buzzing or a hot-plastic smell mean trouble. Fluke scans panels with the covers off (Fluke electrical), but don't open a live panel yourself: look at the closed cover and breaker handles. If a socket, cord or panel is hot, discoloured or smells of burning, don't touch it and keep clear; get someone who knows electrical work to check it (NFPA checklist). If you see sparks or smell burning, CDC says to shut the system off at the main circuit breaker, but never while standing in water (CDC electrical hazards). To find people, a camera is a help, not proof: someone behind glass or a wall, or out in heavy rain or fog, may not show (FLIR see-through). Useless: aiming through a window to see what is inside, or judging shiny bare metal by its reading (FLIR see-through; Fluke emissivity). A camera without a temperature readout still finds hot spots by comparison, which is often all you need.",
+  "buildings": [
+    {"b":"fire_station","l":4,"loc":"on the engines and rescue trucks, in chargers by the cab seats, and spares in the equipment room"},
+    {"b":"airport","l":2,"loc":"airport fire hall vehicles and maintenance shops"},
+    {"b":"datacenter","l":2,"loc":"facilities office, for checking electrical rooms"},
+    {"b":"factory","l":2,"loc":"maintenance or reliability office"},
+    {"b":"solar_farm","l":2,"loc":"O&M building"},
+    {"b":"tool_rental","l":1,"loc":"inspection and testing shelf"},
+    {"b":"hardware","l":1,"loc":"locked tool or test-equipment case"},
+    {"b":"substation","l":1,"loc":"control building"},
+    {"b":"construction","l":1,"loc":"energy auditor's or home inspector's kit in the site office"},
+    {"b":"electronics","l":1,"loc":"phone accessory or camera section"}
+  ],
+  "sources": [
+    {"title":"FLIR see-through: Teledyne FLIR, Can Thermal Imaging See Through Walls? And Other Common Questions","url":"https://www.flir.com/discover/home-outdoor/can-thermal-imaging-see-through-walls/"},
+    {"title":"FLIR guidebook: FLIR Systems, Thermal Imaging Guidebook for Building and Renewable Energy Applications (T820325, 2011)","url":"https://www.aeconline.ae/thermal-imaging-guidebook-1022626/file-files/T820325_EN.pdf"},
+    {"title":"FLIR NUC: Teledyne FLIR, What is a Non-Uniformity Correction (NUC)?","url":"https://www.flir.com/discover/professional-tools/what-is-a-non-uniformity-correction-nuc/"},
+    {"title":"FLIR calibration: Teledyne FLIR, How Do You Calibrate a Thermal Imaging Camera?","url":"https://www.flir.com/en-gb/discover/professional-tools/how-do-you-calibrate-a-thermal-imaging-camera/"},
+    {"title":"FLIR NFPA: Teledyne FLIR, NFPA-Approved Firefighting Cameras","url":"https://www.flir.com/discover/instruments/firefighting/nfpa-approved-cameras/"},
+    {"title":"FLIR waste: Teledyne FLIR, Early fire detection for waste and recycling","url":"https://www.flir.com/instruments/fire-prevention/waste-and-recycling/"},
+    {"title":"Fluke electrical: Fluke, Using thermal imaging cameras for electrical inspections","url":"https://www.fluke.com/en-au/learn/blog/thermal-imaging/electrical-systems"},
+    {"title":"Fluke emissivity: Fluke, What you need to know about emissivity and infrared energy","url":"https://www.fluke.com/en-ie/learn/blog/thermal-imaging/what-you-need-to-know-about-emissivity-and-infrared-energy"},
+    {"title":"NFPA checklist: National Fire Protection Association, Electrical Safety: Checklist (2017)","url":"https://content.nfpa.org/-/media/project/storefront/catalog/files/home-fire-safety/electrical/electrical_safety_checklist.pdf"},
+    {"title":"CDC electrical hazards: CDC, What to Do to Protect Yourself From Electrical Hazards","url":"https://www.cdc.gov/natural-disasters/response/what-to-do-protect-yourself-from-electrical-hazards.html"}
+  ]
+}

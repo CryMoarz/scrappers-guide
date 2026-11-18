@@ -1,0 +1,38 @@
+{
+  "id": "det_smoke_alarm",
+  "name": "Smoke alarms",
+  "group": "Detectors and meters",
+  "demand": 3,
+  "keywords": ["smoke alarm","smoke detector","fire alarm","ionization","ionisation","photoelectric","dual sensor","americium 241","can/ulc-s531","ulc s531","ul 217","kidde","first alert","9 volt","10 year battery","hush button","chirping"],
+  "substitutes": [],
+  "summary": "Stand-alone alarm with its own smoke sensor, horn and power that sounds when smoke enters it; ionisation, photoelectric, or both in one.",
+  "uses": ["Ionisation alarms may sense fast flaming fires sooner, photoelectric ones slow smouldering fires; neither type is always best (Kidde i9070CA)","USFA recommends both types or dual-sensor alarms, inside and outside sleeping areas and on every level (USFA smoke alarms)","Sounds only when smoke reaches it; mains-only alarms with no battery backup stop working when the power is cut (Kidde i9070CA)","Cooking and steam cause nuisance alarms, and dust can cause false alarms or stop it working; keep ionisation types away from kitchens (Kidde i9070CA)","Rated 4.4–37.8 °C and up to 85 % humidity: not for garages, unfinished attics or right by a shower room (Kidde i9070CA)","Combination units also say carbon monoxide on the label; a CO-only alarm does not sense smoke or fire (Kidde Nighthawk)"],
+  "identify": "A round or square ceiling unit with a test (or test/hush) button and a small light. Look for the words ionization, photoelectric or dual sensor on the unit or its manual. Ionisation alarms hold a tiny americium-241 source: Kidde's manual gives 0.9 microcurie, about 33 kBq (Kidde i9070CA; CNSC smoke detectors). Alarms sold in Canada must meet CAN/ULC-S531 (MyHealth Alberta smoke alarms). A date code is on the back: replace the alarm 10 years after it (Kidde i9070CA; USFA smoke alarms). Power is a replaceable 9 V cell, a sealed 10-year lithium cell, or 120 V wiring with a backup cell (USFA smoke alarms). On the Kidde i9070CA, a chirp every 30–40 seconds for at least 7 days means a low battery (Kidde i9070CA). A smoke detector in a fire-alarm system, unlike a stand-alone alarm, typically has only a sensor: the sounder and power come from the fire-alarm panel (Fire Engineering 2008). Some in hotels and apartments have a sounder base but still depend on the panel (Fire Engineering 2008).",
+  "test": "1. Date: find the date code on the back. Over 10 years old, replace it (Kidde i9070CA; USFA smoke alarms). 2. Battery: fit a fresh cell of the type listed; sealed 10-year models can't take one (USFA smoke alarms). 3. Hold the test button at least 5 seconds, at arm's length as it is loud. It should sound if the circuits, horn and battery work; silence means a bad battery or a fault (Kidde i9070CA). First Alert says the button checks the electronics, power and sounder, but doesn't fully mimic a real fire (First Alert smoke test). 4. Smoke check, optional and disputed: MyHealth Alberta suggests blowing out a candle and letting its smoke drift toward the alarm, which should sound within 20 seconds (MyHealth Alberta smoke alarms). Kidde says never to use an open flame, which can damage the alarm or start a fire (Kidde i9070CA), and First Alert says not to use real smoke, flames or risky methods unless the manual says to (First Alert smoke test). So lean on the button test, and if you try smoke, never put a flame near the alarm. 5. Weak or erratic sound means a faulty alarm (Kidde i9070CA). Chirping after a fresh battery: press test once, as hush may be on; if cleaning and testing don't cure it, replace it (Kidde i9070CA). 6. Clean the vents with a soft brush on a vacuum; never take it apart or clean inside (Kidde i9070CA).",
+  "decay": {"halfLifeMonths":60,"note":"Estimate. Makers and USFA say replace 10 years from the date code; alarms in place are spread across that span, many already past it, and mains-only units are dead without power (Kidde i9070CA; USFA smoke alarms)."},
+  "hazards": ["radiation"],
+  "protects": ["open_flame"],
+  "improvise": "Any working smoke alarm beats none. If you find only one type, use it, and add the other type when you can, since USFA recommends both (USFA smoke alarms). Take battery alarms rather than hardwired ones unless you can keep their backup cell fresh: mains-only alarms do nothing without power (Kidde i9070CA). Fit one near where people sleep, on the ceiling or high on a wall (Oakville alarms), and one in any room where a heater runs (Kidde i9070CA). A CO alarm is no substitute: it does not sense smoke or fire (Kidde Nighthawk). A system detector taken off a ceiling won't sound without its panel (Fire Engineering 2008). Out-of-date alarms are unreliable; keep them only as extras. Leave ionisation alarms closed: Kidde says never take one apart (Kidde i9070CA), and the CNSC says the americium-241 sits between metal foils that keep it well contained and does not pose a risk to the user of the detector (CNSC smoke detectors). For a dead one the CNSC lists three ways out: a municipal recycling programme that takes smoke detectors, return to the maker, or ordinary household garbage with the battery taken out, but not general recycling or compost (CNSC smoke detectors).",
+  "buildings": [
+    {"b":"house","l":5,"loc":"hallway ceilings outside bedrooms and on every level, including the basement"},
+    {"b":"apartment","l":4,"loc":"suite hallway ceiling near the bedrooms"},
+    {"b":"hardware","l":4,"loc":"safety aisle beside CO alarms and fire extinguishers"},
+    {"b":"hotel","l":4,"loc":"guest-room ceilings"},
+    {"b":"rv_dealer","l":3,"loc":"inside RVs and trailers, and the parts counter"},
+    {"b":"nursing_home","l":3,"loc":"resident rooms and staff areas"},
+    {"b":"department","l":3,"loc":"home safety or hardware section"},
+    {"b":"childcare","l":3,"loc":"nap room and hallway ceilings"},
+    {"b":"school","l":2,"loc":"ceilings, but mostly system detectors that need the panel"},
+    {"b":"supermarket","l":1,"loc":"household or seasonal aisle"}
+  ],
+  "sources": [
+    {"title":"Kidde i9070CA: Kidde Canada i9070CA ionization smoke alarm user's guide","url":"https://cdn.shopify.com/s/files/1/0083/4328/9961/files/i9070CA_UserGuide_EN.pdf"},
+    {"title":"USFA smoke alarms: US Fire Administration, Smoke alarms","url":"https://www.usfa.fema.gov/prevention/home-fires/prepare-for-fire/smoke-alarms/"},
+    {"title":"CNSC smoke detectors: Canadian Nuclear Safety Commission, Household smoke detector safety and disposal (fact sheet, June 2019)","url":"https://cnsc-ccsn.gc.ca/eng/resources/fact-sheets/household-smoke-detector"},
+    {"title":"MyHealth Alberta smoke alarms: Alberta Health Services, MyHealth Alberta, Smoke alarms and home safety","url":"https://myhealth.alberta.ca/Alberta/Pages/Smoke-alarms-and-home-safety.aspx"},
+    {"title":"First Alert smoke test: First Alert support, How often to test smoke alarms","url":"https://www.firstalertstore.com/store/product-support/how-often-to-test-smoke-alarms.htm"},
+    {"title":"Kidde Nighthawk: Kidde Nighthawk single and/or multiple station carbon monoxide alarm user manual (KN-COB-IC, P/N 900-0128-001)","url":"https://res.cloudinary.com/wholesale-plumbing/image/upload/Documents1/Kidde_900_0128_001_User_Manual.pdf"},
+    {"title":"Fire Engineering 2008: Harry J. Oster, Smoke alarm or smoke detector? (Fire Engineering, 29 October 2008)","url":"https://www.fireengineering.com/fire-prevention-protection/smoke-alarm-or-smoke-detector/"},
+    {"title":"Oakville alarms: Town of Oakville, Detect fires and carbon monoxide","url":"https://www.oakville.ca/home-environment/fire-safety/fire-prevention-safety/detect-fires-carbon-monoxide/"}
+  ]
+}
