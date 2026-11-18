@@ -1,0 +1,51 @@
+{
+  "id": "gas_fireplace",
+  "name": "Gas fireplace, insert or wall heater",
+  "group": "Heating, cooling and water",
+  "aliases": ["gas fireplace","gas insert","fireplace insert","gas stove","direct vent fireplace","B-vent fireplace","gas log set","vent-free logs","ventless fireplace","millivolt fireplace","gas wall heater","gas wall furnace"],
+  "brands": ["Napoleon","Regency","Heat & Glo","Heatilator","Valor","Kingsman","Montigo","Majestic","Lopi","Fireplace Xtrordinair","Empire","Town & Country"],
+  "prev": 4,
+  "tools": ["screwdriver","socket","pliers","hands"],
+  "mins": 45,
+  "hazards": ["fuel","co_gas","burn","open_flame","glass","sharp"],
+  "combustion": {"indoor":"vented","fuels":["natural gas","propane"],"kw":[4.2,11],"note":"Direct-vent (sealed) and B-vent units send exhaust outside (NRCan gas fireplaces). Vent-free logs and heaters, sold in the US but not approved in Canada, put it all in the room: CO alarm, open a window. Figures are gas input; millivolt units need no power, blowers and electronic ignition do."},
+  "comps": [
+    {"key":"thermopile","fn":"thermocouple","spec":"Thermopile in the pilot flame: makes the millivolts that run the gas valve, wall switch, remote or thermostat with no house power (millivolt models)","qty":1,"ext":2,"obs":5,"loc":"Beside the pilot, under the logs at the burner","p":0.5},
+    {"key":"thermocouple","fn":"thermocouple","spec":"Thermocouple: holds the pilot gas valve open only while the pilot burns","qty":1,"ext":2,"obs":5,"loc":"Beside the pilot, next to the thermopile","p":0.5},
+    {"key":"gas_valve","fn":"valve_solenoid","spec":"Gas control valve with OFF/PILOT/ON knob and regulator (millivolt) or an electronic valve. Stays on the gas line: taking it off means breaking gas joints","qty":1,"ext":4,"obs":4,"loc":"Behind the lower grille or louvre, in the valve compartment"},
+    {"key":"igniter","fn":"igniter","spec":"Piezo push-button igniter on millivolt models; spark electrode and ignition module on electronic models","qty":1,"ext":2,"obs":4,"loc":"Valve compartment, wired to the pilot"},
+    {"key":"glass_pane","fn":"glass_pane","spec":"Heat-resistant glass front in a gasketed frame (ceramic on some models). Can reach 260–540 °C (500–1,000 °F) in use. Never run the fireplace without it","qty":1,"ext":2,"obs":2,"loc":"Front, held by latches or a frame"},
+    {"key":"fan","fn":"fan","spec":"Convection blower on many models, runs on mains power so it doesn't run in a power cut (Travis 864 ST)","qty":1,"ext":3,"obs":3,"loc":"Under the firebox, behind the lower grille","p":0.5},
+    {"key":"thermostat","fn":"thermostat","spec":"Snap-disc heat switch that turns the blower on once the firebox is warm","qty":1,"ext":2,"obs":5,"loc":"On the firebox near the blower","p":0.5},
+    {"key":"refractory","fn":"refractory","spec":"Ceramic logs, cast brick panels or ceramic firebacks lining the firebox. Placed to the maker's diagram: moved logs can block the burner","qty":1,"ext":1,"obs":3,"loc":"Inside the firebox, behind the glass"},
+    {"key":"chimney_pipe","fn":"chimney_pipe","spec":"Vent pipe to outside: direct-vent units have an exhaust pipe and a combustion-air intake (3 in each on the Regency Gi25LE); B-vent units use a single vent","qty":1,"ext":4,"obs":4,"loc":"Behind or above the firebox, through the wall or roof","p":0.95},
+    {"key":"sheet_metal","fn":"sheet_metal","spec":"Steel firebox, outer case and surround","qty":1,"ext":3,"obs":3,"loc":"The body of the unit"},
+    {"key":"controller_board","fn":"controller_board","spec":"Electronic ignition module and remote receiver, some with a battery backup (electronic-ignition models)","qty":1,"ext":2,"obs":4,"loc":"Valve compartment","p":0.5},
+    {"key":"sensor_misc","fn":"sensor_misc","spec":"Oxygen-depletion sensor at the pilot: shuts the gas off if oxygen falls. On vent-free units, which aren't approved in Canada (Regency ventless). Not a CO alarm","qty":1,"ext":3,"obs":5,"loc":"Pilot assembly","p":0.05}
+  ],
+  "boards": [],
+  "buildings": [
+    {"b":"house","l":5,"loc":"Living room, family room, basement rec room"},
+    {"b":"apartment","l":4,"loc":"Condo living rooms"},
+    {"b":"hotel","l":4,"loc":"Lobby, lounge and suites"},
+    {"b":"restaurant","l":3,"loc":"Dining room"},
+    {"b":"nursing_home","l":2,"loc":"Lounges"},
+    {"b":"church","l":2,"loc":"Hall or lounge"},
+    {"b":"office","l":2,"loc":"Reception area"},
+    {"b":"hardware","l":2,"loc":"Display models and boxed stock"}
+  ],
+  "notes": "A standing-pilot (millivolt) gas fireplace keeps heating in a power cut: the pilot makes its own power for the valve and switch, and only the blower stops. Electronic-ignition units need mains power or a battery pack (Heatilator battery backup). Leave the gas valve and pipes connected: a removed fireplace leaves an open gas line that must be capped by someone qualified. Don't rearrange the logs or add stones or glass: material on the burner caused a delayed ignition that blew a fireplace's glass into a room in BC (TSBC fireplace incident). The glass front can burn a child badly, so keep children back or fit a barrier, and never run it with the glass cracked or removed (CPSC glass 2013; Travis 864 ST).",
+  "sources": [
+    {"title":"Travis 864 ST: Travis Industries, 864 ST Fireplace Owner's Manual, 100-01196_000 (2007), archive.org copy","url":"https://archive.org/download/manualsonline-id-fe1e0243-2716-f5a4-6d36-dd451093eff0/fe1e0243-2716-f5a4-6d36-dd451093eff0.pdf"},
+    {"title":"Regency Gi25LE: Regency, Atmosphere Gi25LE gas insert product page (input, venting, ceramic glass)","url":"https://www.regency-fire.com/en/Products/Gas/Gas-Inserts/Gi25LE"},
+    {"title":"Regency ventless: Regency Fireplace Products (FPI), Ventless Fireplaces Explained - How Safe are Vent Free Fireplaces (21 March 2025)","url":"https://regency-fire.com/en/Blog/ventless-fireplaces-explained"},
+    {"title":"TSBC fireplace incident: Technical Safety BC, Incident Summary II-727632-2018 (#8165), delayed ignition shattered direct vent fireplace glass","url":"https://files.technicalsafetybc.ca/v3/assets/bltdec2ded849740f4d/blt75004feed5691b4f/63326fd0cb8f2b57f1fd21c6/I_8165-727632.pdf"},
+    {"title":"CPSC glass 2012: US CPSC, Statement of Chairman Inez M. Tenenbaum on the decision to defer the petition on safeguards for glass fronts of vented gas fireplaces (2 April 2012)","url":"https://www.cpsc.gov/s3fs-public/pdfs/tenenbaum04022012.pdf"},
+    {"title":"CPSC glass 2013: US CPSC, Record of Commission Action and Statement of Chairman Tenenbaum denying petition CP 11-1, gas fireplaces with glass fronts (April 2013)","url":"https://www.cpsc.gov/s3fs-public/pdfs/foia_RCAPetitionGlassGasFireplaces.pdf"},
+    {"title":"Energir fireplace: Énergir, Natural gas fireplace information sheet (updated 2011)","url":"https://energir.com/files/energir_common/foyer_ang.pdf"},
+    {"title":"PERC safety guide: Propane Education & Research Council, Safety Guide for Propane Users (PRC-101063D)","url":"https://cloudinary.propane.com/images/v1756137316/website-media/PRC-101063D-Propane-Safety-Booklet_digital-1_144644b80f7/PRC-101063D-Propane-Safety-Booklet_digital-1_144644b80f7.pdf"},
+    {"title":"NRCan gas fireplaces: Natural Resources Canada, Office of Energy Efficiency, All About Gas Fireplaces (Home Heating and Cooling Series, rev. March 2004)","url":"https://natural-resources.canada.ca/sites/www.nrcan.gc.ca/files/energy/pdf/energystar/all_about_gas_fireplaces.pdf"},
+    {"title":"CPSC glass blog 2014: US CPSC OnSafety, Protect Young Children from Burns on Glass Fronts of Gas Fireplaces: Use Protective Barriers (19 December 2014)","url":"https://onsafety.cpsc.gov/blog/2014/12/19/protect-young-children-from-burns-on-glass-fronts-of-gas-fireplaces-use-protective-barriers/"},
+    {"title":"Heatilator battery backup: Heatilator (Hearth & Home Technologies), Battery Backup Systems for Gas Fireplaces","url":"https://www.heatilator.com/shopping-tools/articles/battery-backup-systems-for-gas-fireplaces"}
+  ]
+}
