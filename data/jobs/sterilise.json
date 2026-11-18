@@ -9,6 +9,6 @@
     {"fn":"heating_element","why":"Electric boiling and steaming where power allows"},
     {"fn":"propane","why":"Fuel for boiling and pressure cooking"}
   ],
-  "guides": ["skill_solar_disinfection"],
-  "tips": ["Boil tools for 10 minutes. A pressure cooker at full pressure for 15–30 minutes sterilises.","Never mix bleach with ammonia, vinegar or other cleaners. It makes toxic gas.","Never look at a lit UV-C lamp, and keep skin out of its light.","Bleach loses strength over months. Old bottles need a stronger mix."]
+  "guides": ["skill_solar_disinfection","reference_chemicals","reference_sanitation"],
+  "tips": ["Boil tools for 10 minutes. A pressure cooker at full pressure for 15–30 minutes sterilises.","Never mix bleach with ammonia, vinegar or other cleaners. It makes toxic gas.","Never look at a lit UV-C lamp, and keep skin out of its light.","Bleach weakens with age and heat. Clorox says it keeps a year in a cool, dry place out of the sun, then is too weak to disinfect. Don't guess a stronger mix for old bleach: use a fresh bottle.","Check chlorinated drinking water with a pool or spa test kit that reads free chlorine (a DPD kit). Aim for at least 0.2 mg/L after 30 minutes. Smell alone is a rough check."]
 }

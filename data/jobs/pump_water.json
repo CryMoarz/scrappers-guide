@@ -13,5 +13,5 @@
     {"fn":"valve_solenoid","why":"A check valve keeps the pipe primed when the pump stops"}
   ],
   "guides": ["build_solar_water_pump","skill_dc_wiring","build_solar_12v_system"],
-  "tips": ["Bilge pumps move lots of water but lose flow fast above a couple of metres of lift.","RV and boat diaphragm pumps lift higher and prime themselves; most other small pumps don’t.","Pump by day into a raised tank. A tank 3 m up gives gentle pressure all night.","Screen the intake: one leaf or pebble can wreck a small pump."]
+  "tips": ["Bilge pumps move lots of water but lose flow fast above a couple of metres of lift.","RV and boat diaphragm pumps lift higher and prime themselves; most other small pumps don’t.","Pump by day into a raised tank. A tank 3 m up gives gentle pressure all night.","Screen the intake: one leaf or pebble can wreck a small pump.","Don't pipe drinking water through ordinary garden hose: the vinyl and brass fittings can hold lead. Use hose marked \"drinking water safe\" or NSF/ANSI 61 (sold for RVs and boats), and run it a few seconds first."]
 }

@@ -7,8 +7,12 @@
   "substitutes": [],
   "summary": "Hoses, tubing and pipe: garden hose, PVC, PEX, silicone, copper and fuel line.",
   "uses": ["Moving water from tanks, gutters and creeks","Siphoning and fuel transfer","Plumbing repairs","Coils for solar water heaters"],
-  "identify": "Garden hoses, washer and dishwasher hoses, fridge water lines, aquarium tubing, car coolant and fuel hoses, and plumbing pipe in every building. Copper tubing comes from plumbing, AC line sets and fridges; charged AC and fridge lines still hold refrigerant, so don’t cut them.",
+  "identify": "Garden hoses, washer and dishwasher hoses, fridge water lines, aquarium tubing, car coolant and fuel hoses, and plumbing pipe in every building. Copper tubing comes from plumbing, AC line sets and fridges; charged AC and fridge lines still hold refrigerant, so don’t cut them. Don't use ordinary garden hose for drinking water: the vinyl and brass fittings can hold lead, and water left in it can pick up lead and other chemicals (Ecology Center hose study). Use hose marked \"drinking water safe\" or NSF/ANSI 61, such as drinking-water hose sold for RVs and boats, and run it a few seconds first (Ecology Center hose study, Cleveland Water hose). A label lowers the risk but is no guarantee: 3 of 10 labelled hoses in one test still held phthalates (Ecology Center hose study).",
   "test": "Run water through and look for cracks, bulges and kinks. Rubber that is hard or cracks when bent will leak.",
   "decay": {"halfLifeMonths":120,"note":"Rubber and PVC hose harden and crack with age; copper and PEX last."},
-  "hazards": ["refrigerant"]
+  "hazards": ["refrigerant"],
+  "sources": [
+    {"title":"Ecology Center hose study: Ecology Center, Garden Hose Study (20 June 2016)","url":"https://www.ecocenter.org/sites/default/files/healthy-stuff/images/Garden%20Hose%20Report%20June%2020%202016.pdf"},
+    {"title":"Cleveland Water hose: Cleveland Water, Why you shouldn’t drink water from a garden hose and when you can","url":"https://www.clevelandwater.com/who-we-are/news/why-you-shouldnt-drink-water-garden-hose-and-when-you-can"}
+  ]
 }
