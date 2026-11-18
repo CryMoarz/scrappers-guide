@@ -407,6 +407,18 @@ function repairsHTML(rp) {
   const faults = (rp.faults || []).map(f => `${esc(f.what)} ${esc(pct(f.share))}%`).join(' · ');
   return `<p class="where">At repair events (${esc(rp.records.toLocaleString('en'))} recorded): <b>${esc(pct(rp.fixed || 0))}%</b> fixed, <b>${esc(pct(rp.end_of_life || 0))}%</b> beyond repair.${faults ? ` What had failed: ${faults}. In a dead one, suspect those first; the rest is probably still good.` : ''}</p>`;
 }
+// Fuel burners say up front whether they may burn in a room: outdoor-only ones get the danger box.
+const INDOOR = {
+  outdoor_only: '<b>Outdoor only.</b> All its exhaust, carbon monoxide included, goes into the air around it. Never burn it in a room, tent, garage or vehicle, even with a window open.',
+  vented: '<b>Indoors only with a flue to outside.</b> Its exhaust must leave through a sound pipe or vent; without one it fills the room with carbon monoxide.',
+  unvented_rated: '<b>Rated to burn in a room, with fresh air.</b> Its exhaust stays in the room: keep a window cracked and a working CO alarm near it.'
+};
+function combustionHTML(c) {
+  if (!c || !INDOOR[c.indoor]) return '';
+  const kw = Array.isArray(c.kw) ? `${c.kw[0]}–${c.kw[1]}` : c.kw;
+  const facts = [(c.fuels || []).length ? `Burns ${esc(c.fuels.join(', '))}` : '', kw != null ? `about <b>${esc(kw)} kW</b> of heat` : '', c.power_w != null ? (c.power_w ? `needs about <b>${esc(c.power_w)} W</b> of power to run` : '<b>runs with no power</b>') : ''].filter(Boolean);
+  return `<div class="note${c.indoor === 'outdoor_only' ? ' danger' : ''}">${INDOOR[c.indoor]}${c.note ? ` ${esc(c.note)}` : ''}${facts.length ? `<br>${facts.join('; ')}.` : ''}</div>`;
+}
 // Each cell carries its column's name, so on a phone a row can show as a small card.
 const table = (head, rows) => `<div class="tbl stack"><table><thead><tr>${head.map(h => `<th>${esc(h)}</th>`).join('')}</tr></thead><tbody>${rows.map(r => { let i = 0; return r.replace(/<td>/g, () => `<td data-l="${esc(head[i++] || '')}">`); }).join('')}</tbody></table></div>`;
 function localNote(coll, id) {
@@ -427,7 +439,7 @@ function detailHTML(coll, id) {
     const guides = ctx.ds.guides.filter(g => (g.devices || []).includes(id) || (r.variantOf && (g.devices || []).includes(r.variantOf)));
     const td = guides.filter(g => g.kind === 'teardown'), other = guides.filter(g => g.kind !== 'teardown');
     return `${common}<h2>${esc(r.name)} <span class="badge assumed" title="${esc(SDG.db.GENERIC_NOTE)}">Generic</span></h2><p class="sub-h">${r.parentName ? `Variant of ${link('devices', r.variantOf)}. ` : ''}${r.era ? esc(r.era) + '. ' : ''}${r.abstract ? 'Parent template: search uses its variants.' : ''}</p>
-    <div class="facts" style="margin-top:0"><span>Common <b>${esc(r.prev)}/5</b></span><span>About <b>${esc(r.mins)} min</b></span>${r.kg ? `<span>Weight <b>${esc(r.kg)} kg</b></span>` : ''}<span>Tools: <b>${esc((r.tools || []).map(ctx.toolLabel).join(', '))}</b></span></div>${madeOfHTML(r.materials)}${repairsHTML(r.repairs)}${hazButtons(r.hazards)}
+    <div class="facts" style="margin-top:0"><span>Common <b>${esc(r.prev)}/5</b></span><span>About <b>${esc(r.mins)} min</b></span>${r.kg ? `<span>Weight <b>${esc(r.kg)} kg</b></span>` : ''}<span>Tools: <b>${esc((r.tools || []).map(ctx.toolLabel).join(', '))}</b></span></div>${madeOfHTML(r.materials)}${repairsHTML(r.repairs)}${hazButtons(r.hazards)}${combustionHTML(r.combustion)}
     <div class="actions primary">${td.map(g => `<a class="btn" href="#guides/${u(g.id)}">Teardown guide</a>`).join('')}${r.abstract ? '' : `<button class="btn ok" data-strip="${esc(id)}" title="Adds its major parts to your stash">Stripped one</button><button class="btn ghost" data-logmodel="${esc(id)}">Log a model of this</button>`}</div>
     ${r.notes ? `<p>${esc(r.notes)}</p>` : ''}${confSummary(r)}
     <p class="hint">${(r.aliases || []).length ? 'Also called ' + esc(r.aliases.join(', ')) + '. ' : ''}${(r.brands || []).length ? 'Common brands: ' + esc(r.brands.join(', ')) + '. ' : ''}${esc(SDG.db.GENERIC_NOTE)}</p>

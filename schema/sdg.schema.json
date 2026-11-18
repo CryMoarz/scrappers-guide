@@ -562,6 +562,24 @@
           },
           "title": "Hazards"
         },
+        "combustion": {
+          "type": "object",
+          "title": "Burns fuel",
+          "description": "For heaters, stoves, lanterns and anything else with a flame: whether it may burn indoors, what it burns, how much heat it gives and what power it needs to run.",
+          "additionalProperties": false,
+          "required": ["indoor"],
+          "properties": {
+            "indoor": {
+              "enum": ["outdoor_only", "vented", "unvented_rated"],
+              "title": "Indoors",
+              "description": "outdoor_only: all its exhaust goes into the air around it and it isn't rated for a room. vented: indoors only with a flue or vent to outside. unvented_rated: built and certified to burn in a room, which still needs fresh air and a CO alarm."
+            },
+            "fuels": { "$ref": "#/$defs/lines", "title": "Fuels it burns" },
+            "kw": { "$ref": "#/$defs/amount", "title": "Heat output (kW)" },
+            "power_w": { "type": "number", "minimum": 0, "title": "Electric power to run (W)", "description": "0 if it runs with no power at all." },
+            "note": { "$ref": "#/$defs/line", "title": "What makes it safe or unsafe indoors" }
+          }
+        },
         "comps": {
           "type": "array",
           "items": {

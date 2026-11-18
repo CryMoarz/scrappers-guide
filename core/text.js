@@ -20,6 +20,14 @@ module.exports = function (SDG) {
 
   // Any record as Markdown: for exports, printing, and AI knowledge bases (NOMAD's among them).
   const nameOf = r => r.name || r.title || r.label || r.id;
+  // Fuel burners: whether they may burn in a room, what they burn, heat and power to run.
+  const INDOOR = { outdoor_only: 'Outdoor only: all its exhaust, carbon monoxide included, goes into the air around it.', vented: 'Indoors only with a flue or vent to outside.', unvented_rated: 'Rated to burn in a room: keep fresh air coming in and a working CO alarm near it.' };
+  function burns(c) {
+    if (!c || !INDOOR[c.indoor]) return '';
+    const kw = Array.isArray(c.kw) ? `${c.kw[0]}–${c.kw[1]}` : c.kw;
+    const facts = [(c.fuels || []).length && `burns ${c.fuels.join(', ')}`, kw != null && `about ${kw} kW of heat`, c.power_w != null && (c.power_w ? `needs about ${c.power_w} W of power to run` : 'runs with no power')].filter(Boolean);
+    return `\n\n**Burns fuel:** ${INDOOR[c.indoor]}${c.note ? ` ${c.note}` : ''}${facts.length ? ` It ${facts.join('; ')}.` : ''}`;
+  }
   function recordMarkdown(ctx, coll, r, link = plainName) {
     const ds = ctx.ds;
     const pname = id => link('parts', id, nameOf(ctx.get('parts', id) || { id }));
@@ -30,7 +38,7 @@ module.exports = function (SDG) {
       const places = (d.buildings || []).map(b => `${link('buildings', b.b, nameOf(ctx.get('buildings', b.b) || { id: b.b }))} ${b.l}/5`).join(', ');
       const guides = ds.guides.filter(g => (g.devices || []).includes(r.id)).map(g => `${KIND[g.kind]}: ${link('guides', g.id, g.title)}`);
       const models = (ctx.modelsByDevice.get(r.id) || []).map(m => `${link('models', m.id, ctx.modelName(m))}${m.years ? ` (${m.years})` : ''}`);
-      return `# ${d.name} (generic)\n\n${SDG.db.GENERIC_NOTE}\n\n${[d.parentName && `Variant of ${d.parentName}.`, d.era, (d.aliases || []).length && `Also called ${d.aliases.join(', ')}.`, (d.brands || []).length && `Common brands: ${d.brands.join(', ')}.`, d.notes].filter(Boolean).join(' ')}\n\nHow common ${d.prev}/5 · about ${d.mins} min · tools: ${(d.tools || []).map(ctx.toolLabel).join(', ')}${d.kg ? ` · about ${d.kg} kg` : ''}${(d.hazards || []).length ? `\n\n**Hazards:** ${hz(d.hazards)}` : ''}\n\n| Part | Spec | Where | Difficulty | Overlooked | Confidence |\n|---|---|---|---|---|---|\n${rows.join('\n')}\n\n**Found in:** ${places}\n${list('Guides', guides)}${list('Logged models', models)}`;
+      return `# ${d.name} (generic)\n\n${SDG.db.GENERIC_NOTE}\n\n${[d.parentName && `Variant of ${d.parentName}.`, d.era, (d.aliases || []).length && `Also called ${d.aliases.join(', ')}.`, (d.brands || []).length && `Common brands: ${d.brands.join(', ')}.`, d.notes].filter(Boolean).join(' ')}\n\nHow common ${d.prev}/5 · about ${d.mins} min · tools: ${(d.tools || []).map(ctx.toolLabel).join(', ')}${d.kg ? ` · about ${d.kg} kg` : ''}${(d.hazards || []).length ? `\n\n**Hazards:** ${hz(d.hazards)}` : ''}${burns(d.combustion)}\n\n| Part | Spec | Where | Difficulty | Overlooked | Confidence |\n|---|---|---|---|---|---|\n${rows.join('\n')}\n\n**Found in:** ${places}\n${list('Guides', guides)}${list('Logged models', models)}`;
     }
     if (coll === 'models') {
       const research = res => (res && (res.checked || (res.gaps || []).length || (res.method || []).length) ? `\n## How this was researched\n\n${res.checked ? `Fact-checked against its sources on ${res.checked}. ` : ''}Difficulty and overlooked ratings are editorial.\n${list('Left out or unclear', res.gaps || [])}${list('How the sources were read', res.method || [])}` : '');

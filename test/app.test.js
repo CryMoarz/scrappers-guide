@@ -137,6 +137,22 @@ test('app: the calculator reads SI prefixes and parallel, and rejects anything e
   assert.deepEqual([Calc.airtime(11, 250e3, 1, 60, 16).de, Calc.airtime(12, 125e3, 4, 60, 16).de], [0, 1]);
 });
 
+test('app: a fuel burner says whether it may burn indoors, escaped', async () => {
+  const app = await loadApp();
+  const d = app.S.ctx.get('devices', 'patio_heater');
+  d.combustion = { indoor: 'outdoor_only', fuels: ['<img src=x onerror=alert(1)>'], kw: [10, 14], power_w: 0, note: '<b>bold' };
+  const html = app.detailHTML('devices', 'patio_heater');
+  assert.ok(html.includes('class="note danger"><b>Outdoor only.</b>'), 'outdoor-only burners get the danger box');
+  assert.ok(html.includes('about <b>10–14 kW</b> of heat') && html.includes('<b>runs with no power</b>'));
+  assert.ok(!/<img|<b>bold/.test(html), 'fuel names and notes are escaped');
+  const vented = app.S.ctx.get('devices', 'furnace');
+  vented.combustion = { indoor: 'vented', power_w: 500 };
+  assert.ok(app.detailHTML('devices', 'furnace').includes('<div class="note"><b>Indoors only with a flue to outside.</b>'));
+  const odd = app.S.ctx.get('devices', 'space_heater');
+  odd.combustion = { indoor: 'sometimes' };
+  assert.ok(!app.detailHTML('devices', 'space_heater').includes('Indoors only'), 'an unknown value shows nothing');
+});
+
 test('app: library links only to web addresses, inside their book', () => {
   const ctx = SDG.db.open(F.plain(F.load()));
   const libs = ctx.ds.vocab.libraries;
