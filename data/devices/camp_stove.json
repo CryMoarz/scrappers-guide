@@ -1,0 +1,50 @@
+{
+  "id": "camp_stove",
+  "name": "Camp stove (propane, white-gas, multi-fuel and butane)",
+  "group": "Kitchen and appliances",
+  "aliases": ["camping stove","coleman stove","propane camp stove","two-burner stove","white gas stove","naphtha stove","dual fuel stove","multi-fuel stove","backpacking stove","whisperlite","butane stove","cassette stove","tabletop butane burner","canister stove"],
+  "brands": ["Coleman","Camp Chef","MSR","Primus","Optimus","Jetboil","Iwatani","Gas One","Ozark Trail","Snow Peak"],
+  "prev": 4,
+  "tools": ["hands","wrench","screwdriver"],
+  "mins": 15,
+  "kg": 5,
+  "hazards": ["compressed_gas","fuel","co_gas","burn","open_flame"],
+  "combustion": {"indoor":"outdoor_only","fuels":["propane","white gas (naphtha, Coleman fuel)","unleaded petrol (Dual Fuel and multi-fuel models)","kerosene (multi-fuel models)","butane and isobutane-propane canisters"],"kw":[2,2.4],"power_w":0,"note":"All exhaust goes into the room; makers say outdoor use only. Some butane tabletop stoves are made for indoor restaurant tables (CPSC), still with ventilation and never for heat. The kW figure is from two single-burner stoves; others differ."},
+  "comps": [
+    {"key":"propane","fn":"propane","spec":"1 lb (16.4 oz) disposable propane cylinders, often part-full spares stored with the stove; butane cassette cans (227 g) for tabletop stoves. Never refill a disposable cylinder, and never puncture or burn a used one","qty":2,"ext":1,"obs":2,"loc":"Screwed into the regulator, or in the stove case or gear bin"},
+    {"key":"fuel_liquid","fn":"fuel_liquid","spec":"White gas (Coleman fuel, naphtha) in the tank or a spare can; Dual Fuel models also run on unleaded petrol, multi-fuel stoves on kerosene. Never kerosene or leaded fuel in a Coleman stove","qty":1,"ext":1,"obs":3,"loc":"Stove tank or fuel bottle, and cans on the shelf nearby","p":0.3},
+    {"key":"regulator","fn":"valve_solenoid","spec":"Preset propane regulator (10 psi on one Coleman propane stove) that the cylinder screws into; makers say don't adjust it. Keep it with its own stove","qty":1,"ext":1,"obs":4,"loc":"Side of the stove, between cylinder and burner","p":0.6},
+    {"key":"valves","fn":"valve_solenoid","spec":"Burner control valves turned by the knobs, one per burner, plus a lighting lever on Coleman white-gas stoves","qty":2,"ext":2,"obs":5,"loc":"Behind the control knobs"},
+    {"key":"generator","fn":"hose_tubing","spec":"Generator tube on white-gas stoves: carries fuel from the tank valve into the mixing chamber above the burner. A wear part, sold as a spare; don't bend it","qty":1,"ext":2,"obs":4,"loc":"From the tank valve into the burner box","p":0.3},
+    {"key":"pump","fn":"pump_water","spec":"Hand air pump in the fuel tank or bottle: plunger, pump cup and one-way check valve. About 30 strokes pressurises a Coleman tank. Keep the cup oiled","qty":1,"ext":2,"obs":4,"loc":"Front of the fuel tank, or the top of an MSR fuel bottle","p":0.3},
+    {"key":"tank","fn":"tank","spec":"Detachable fuel tank on Coleman white-gas stoves, or a separate fuel bottle with a pump on MSR-type stoves; holds fuel under pump pressure. Fill outdoors with the tank off the stove","qty":1,"ext":1,"obs":3,"loc":"Clipped to the front or end of the stove","p":0.3},
+    {"key":"igniter","fn":"igniter","spec":"Piezo spark igniter on butane cassette and Jetboil-type stoves, and a rotary ignitor knob on electronic-ignition Coleman Dual Fuel models. Some stoves have none and are lit with a match","qty":1,"ext":2,"obs":5,"loc":"Beside the control knob; electrode at the burner","p":0.6},
+    {"key":"grate","fn":"sheet_metal","spec":"Cooking grate, case and fold-out wind baffles; a cassette stove's grate must sit right way up","qty":1,"ext":1,"obs":4,"loc":"Top and sides of the stove"},
+    {"key":"o_rings","fn":"foam_rubber","spec":"O-rings and pump seals in the pump, fuel line and canister socket; they stiffen and leak below freezing","qty":3,"ext":2,"obs":5,"loc":"Pump, fuel line joints and canister socket"}
+  ],
+  "boards": [],
+  "buildings": [
+    {"b":"garage_res","l":5,"loc":"Shelves, rafters and camping bins"},
+    {"b":"self_storage","l":4,"loc":"Camping gear bins"},
+    {"b":"campground","l":4,"loc":"Store, office and left at sites"},
+    {"b":"department","l":4,"loc":"Camping aisle"},
+    {"b":"hardware","l":3,"loc":"Seasonal and camping aisle"},
+    {"b":"restaurant","l":3,"loc":"Butane tabletop stoves for buffets and table cooking"},
+    {"b":"house","l":3,"loc":"Basement storage and closets"},
+    {"b":"marina","l":2,"loc":"Butane stoves on boats"},
+    {"b":"rv_dealer","l":2,"loc":"Accessories shelves"},
+    {"b":"church","l":2,"loc":"Kitchen and camp-trip storage"},
+    {"b":"farm","l":2,"loc":"Workshop and hunting gear"}
+  ],
+  "notes": "Built for outdoors: propane, white-gas and multi-fuel camp stoves make carbon monoxide and their makers forbid using them in a house, camper or tent, or for heat. Butane cassette stoves are a separate tabletop design whose canister bay can explode if a big pan, a griddle or a second stove heats it. Take the cylinder off, or depressurise the fuel bottle, before storing (Coleman propane stove, MSR WhisperLite), keep spare fuel outside the living space, and never puncture or burn a used can or cylinder (EMSD hot pot).",
+  "sources": [
+    {"title":"Coleman propane stove: Coleman, Propane Stove Model 2000000117 (5434A700) Instructions for Use (archive.org copy)","url":"https://archive.org/download/manualsonline-id-b0870aed-4025-a484-696b-cb4746b2fbe9/b0870aed-4025-a484-696b-cb4746b2fbe9.pdf"},
+    {"title":"Coleman dual fuel: Coleman, Dual Fuel Stoves 414, 424, 428 Instructions for Use (414B050T, May 2005; archive.org copy)","url":"https://archive.org/download/manualsonline-id-6779ba13-9cb6-44b4-3d61-81f29a7044cf/6779ba13-9cb6-44b4-3d61-81f29a7044cf.pdf"},
+    {"title":"MSR WhisperLite: Cascade Designs (MSR), WhisperLite Universal stove instructions (2022)","url":"https://cascadedesigns.com/cdn/shop/files/WhisperLiteUniversal_WebInstructions_EN.pdf"},
+    {"title":"Jetboil Flash: Jetboil, Flash Cooking System Instructions (V6, 2022)","url":"https://jetboil.johnsonoutdoors.com/sites/default/files/2023-02/JB_productmanual_Flash_Cooking_System_V6_0.pdf"},
+    {"title":"CPSC butane report: US Consumer Product Safety Commission, Butane Fueled Table Top Cooking Appliances, Staff Project Report (W. Rowe, May 2003)","url":"https://www.cpsc.gov/s3fs-public/pdfs/cooking.pdf"},
+    {"title":"Health Canada butane: Health Canada advisory RA-76109, Health Canada cautions campers about portable butane stoves (26 July 2021)","url":"https://recalls-rappels.canada.ca/en/alert-recall/health-canada-cautions-campers-about-portable-butane-stoves"},
+    {"title":"CDC power outage: US CDC, What to do to protect yourself during a power outage","url":"https://www.cdc.gov/natural-disasters/response/what-to-do-protect-yourself-during-a-power-outage.html"},
+    {"title":"EMSD hot pot: Hong Kong Electrical and Mechanical Services Department, Safe Use of Gas Appliances (Hot Pots) leaflet (October 2014 update)","url":"https://www.emsd.gov.hk/filemanager/common/gas_safety/publications/general/gas_gen_hot.pdf"}
+  ]
+}

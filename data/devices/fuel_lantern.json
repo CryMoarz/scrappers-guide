@@ -1,0 +1,47 @@
+{
+  "id": "fuel_lantern",
+  "name": "Fuel lantern (white-gas, propane, kerosene and wick)",
+  "group": "Farm and outdoor",
+  "aliases": ["coleman lantern","gas lantern","camping lantern","white gas lantern","naphtha lantern","propane lantern","kerosene lantern","paraffin lantern","pressure lantern","mantle lantern","hurricane lantern","storm lantern","tilley lamp","petromax"],
+  "brands": ["Coleman","Petromax","Feuerhand","Dietz","Ozark Trail","Tilley"],
+  "prev": 3,
+  "tools": ["hands","screwdriver","wrench"],
+  "mins": 10,
+  "kg": 1.5,
+  "hazards": ["fuel","open_flame","burn","co_gas","glass","radiation"],
+  "combustion": {"indoor":"outdoor_only","fuels":["white gas (naphtha, Coleman fuel)","other fuels only as the lantern's own label names them (unleaded petrol on Dual Fuel models, propane, kerosene, lamp oil)"],"power_w":0,"note":"Coleman says its pressure lanterns are for outdoor use only: they use up oxygen and are not heaters. For wick lanterns check the maker's label: Health Canada says not to use oil lamps in enclosed areas unless designed for indoor use."},
+  "comps": [
+    {"key":"glass_pane","fn":"glass_pane","spec":"Glass globe round the mantle, under the ventilator; Coleman says to wrap it separately when a lantern is sent for service","qty":1,"ext":1,"obs":3,"loc":"Between the ventilator and the base"},
+    {"key":"tank","fn":"tank","spec":"Fuel tank (fount) with filler cap: holds the fuel under pump pressure on pressure lanterns; on wick lanterns an unpressurised oil tank in the base","qty":1,"ext":2,"obs":3,"loc":"Base of the lantern"},
+    {"key":"fuel_liquid","fn":"fuel_liquid","spec":"White gas, kerosene or lamp oil left in the tank, and spare cans nearby. White-gas-only Coleman lanterns: never kerosene or car fuel","qty":1,"ext":1,"obs":3,"loc":"Tank and nearby shelf"},
+    {"key":"generator","fn":"hose_tubing","spec":"Generator tube from the fuel valve up to the burner on pressure lanterns; part of the brightness control is inside it, so it is replaced when the lantern won't turn down","qty":1,"ext":2,"obs":5,"loc":"Inside the globe, under the burner","p":0.6},
+    {"key":"pump","fn":"pump_water","spec":"Hand air pump in the tank: plunger, pump cup, check valve and air stem. About 30 strokes; oil the cup now and then","qty":1,"ext":2,"obs":4,"loc":"Side of the fuel tank","p":0.6},
+    {"key":"valve","fn":"valve_solenoid","spec":"Fuel valve with a knob that sets brightness; propane lanterns have a regulator valve instead","qty":1,"ext":2,"obs":5,"loc":"Top of the tank, under the globe"},
+    {"key":"ventilator","fn":"sheet_metal","spec":"Ventilator hood with bail handle, and a heat shield; the top of the lantern gets hot","qty":1,"ext":1,"obs":4,"loc":"Top of the lantern, held by a ball nut"},
+    {"key":"propane","fn":"propane","spec":"Disposable propane cylinder on propane lanterns, often part full. Never refill a disposable cylinder","qty":1,"ext":1,"obs":2,"loc":"Under the lantern","p":0.3}
+  ],
+  "boards": [],
+  "buildings": [
+    {"b":"garage_res","l":5,"loc":"Shelves, rafters and camping bins"},
+    {"b":"self_storage","l":4,"loc":"Camping gear bins"},
+    {"b":"farm","l":4,"loc":"Barn, workshop and kitchen drawers"},
+    {"b":"campground","l":4,"loc":"Store and office"},
+    {"b":"farm_supply","l":3,"loc":"Lighting and seasonal aisles"},
+    {"b":"hardware","l":3,"loc":"Camping and emergency aisle"},
+    {"b":"department","l":3,"loc":"Camping aisle"},
+    {"b":"house","l":3,"loc":"Basement, cottage storage"},
+    {"b":"marina","l":2,"loc":"Chandlery"},
+    {"b":"church","l":2,"loc":"Basement storage"}
+  ],
+  "notes": "Coleman's white-gas lanterns are for outdoor use only: they burn up oxygen, make carbon monoxide, and are not space heaters. Spare mantles in old boxes, and some imported ones, may contain radioactive thorium; the risk is from breathing in or swallowing the ash, so wash your hands after changing one (JSP 392). A burned mantle is very fragile and breaks if touched, and a mantle with a hole lets the lantern overheat.",
+  "sources": [
+    {"title":"Coleman fuel lantern: Coleman, Fuel Lantern Model 3000000101 Instructions for Use (4010001112, 2007; archive.org copy)","url":"https://archive.org/download/manualsonline-id-e169c6f1-f881-7db4-cd4a-b27a7806874d/e169c6f1-f881-7db4-cd4a-b27a7806874d.pdf"},
+    {"title":"Coleman dual fuel: Coleman, Dual Fuel Stoves 414, 424, 428 Instructions for Use (414B050T, May 2005; archive.org copy)","url":"https://archive.org/download/manualsonline-id-6779ba13-9cb6-44b4-3d61-81f29a7044cf/6779ba13-9cb6-44b4-3d61-81f29a7044cf.pdf"},
+    {"title":"Coleman propane stove: Coleman, Propane Stove Model 2000000117 (5434A700) Instructions for Use (archive.org copy)","url":"https://archive.org/download/manualsonline-id-b0870aed-4025-a484-696b-cb4746b2fbe9/b0870aed-4025-a484-696b-cb4746b2fbe9.pdf"},
+    {"title":"ORAU mantles: Oak Ridge Associated Universities Health Physics Museum, Incandescent gas lantern mantles","url":"https://orau.org/health-physics-museum/collection/consumer/products-containing-thorium/gas-lantern-mantles.html"},
+    {"title":"EPA consumer products: US EPA (January 2021 archive), What kinds of consumer products contain radioactive materials?","url":"https://19january2021snapshot.epa.gov/radiation/what-kinds-consumer-products-contain-radioactive-materials_.html"},
+    {"title":"CDC power outage: US CDC, What to do to protect yourself during a power outage","url":"https://www.cdc.gov/natural-disasters/response/what-to-do-protect-yourself-during-a-power-outage.html"},
+    {"title":"Health Canada CO: Health Canada, Carbon monoxide: Preventing exposure","url":"https://www.canada.ca/en/health-canada/services/air-quality/pollutants/carbon-monoxide/preventing-exposure.html"},
+    {"title":"JSP 392: UK Ministry of Defence, JSP 392 Part 2 Chapter 29, Items and components containing thorium (V1.1, December 2020)","url":"https://assets.publishing.service.gov.uk/media/5fdcc357d3bf7f3a340c689c/JSP_392_Chapter_29_-_THORIUM__Alt_Text_.pdf"}
+  ]
+}
