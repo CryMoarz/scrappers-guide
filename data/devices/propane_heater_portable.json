@@ -1,0 +1,47 @@
+{
+  "id": "propane_heater_portable",
+  "name": "Portable propane heater (Buddy type and catalytic)",
+  "group": "Heating, cooling and water",
+  "aliases": ["Buddy heater","Mr. Heater Buddy","Portable Buddy","Big Buddy","Little Buddy","propane radiant heater","ice fishing heater","ice hut heater","catalytic heater","catalytic propane heater","tent heater","Olympian Wave","emergency propane heater"],
+  "brands": ["Mr. Heater","Camco Olympian"],
+  "prev": 4,
+  "tools": ["hands","screwdriver"],
+  "mins": 15,
+  "kg": 4,
+  "hazards": ["co_gas","open_flame","compressed_gas","fuel","burn"],
+  "combustion": {"indoor":"outdoor_only","fuels":["propane (1 lb disposable cylinders, or a 20 lb cylinder kept outdoors on a hose with filter)"],"kw":[1.2,5.3],"power_w":0,"note":"Outdoor only in Canada: the Canada-sale Buddy manual says never in a home, camper, tent or car. US-sale manuals allow indoor use only in the enclosures and with the fresh-air opening on their label, never while sleeping, and emergency indoor use only on a 1 lb cylinder. Read the label."},
+  "comps": [
+    {"key":"propane","fn":"propane","spec":"1 lb (16.4 oz) disposable propane cylinders, often several part-used ones nearby; a Buddy runs 3-6 h on one, and run times fall significantly below about -7 °C (20 °F)","qty":2,"ext":1,"obs":2,"loc":"Screwed into the side or back, and in the box or bag with it"},
+    {"key":"gas_cylinder","fn":"gas_cylinder","spec":"Disposable 1 lb cylinders with the No. 600 valve thread; a refillable cylinder (20 lb at most) on a hose has to stay outdoors, and the US manual allows that set-up only for recreational or temporary construction work enclosures","qty":2,"ext":1,"obs":2,"loc":"On the heater or nearby"},
+    {"key":"hose_tubing","fn":"hose_tubing","spec":"Hose to a cylinder of 20 lb at most, usually with a disposable inline fuel filter (Mr. Heater F273699) that traps oil from the hose and is replaced annually; the Buddy-series hose F273704 needs no filter","qty":1,"ext":1,"obs":3,"loc":"Coiled with the heater","p":0.4},
+    {"key":"thermocouple","fn":"thermocouple","spec":"Thermocouple of the ODS pilot (Buddy) or of the catalytic pad (Olympian: at least 15 mV when hot)","qty":1,"ext":2,"obs":5,"loc":"At the pilot beside the burner tile, or on the pad"},
+    {"key":"igniter","fn":"igniter","spec":"Piezo spark igniter and electrode at the pilot","qty":1,"ext":2,"obs":5,"loc":"Under the control knob"},
+    {"key":"valve_solenoid","fn":"valve_solenoid","spec":"Gas control valve held open by the thermocouple, with a built-in regulator fixed at 11 in water column (about 2.7 kPa)","qty":1,"ext":2,"obs":5,"loc":"Behind the knob"},
+    {"key":"switch","fn":"switch","spec":"Tip-over switch that shuts the gas off when the heater is knocked or tipped","qty":1,"ext":2,"obs":5,"loc":"Inside the base","p":0.7},
+    {"key":"sheet_metal","fn":"sheet_metal","spec":"Polished reflector behind the burner, and the front wire guard","qty":1,"ext":2,"obs":4,"loc":"Behind and in front of the burner tile"}
+  ],
+  "boards": [],
+  "buildings": [
+    {"b":"hardware","l":5,"loc":"Heating and camping aisles; cylinders in the cage outside"},
+    {"b":"garage_res","l":4,"loc":"Shelves with camping and ice-fishing gear"},
+    {"b":"department","l":4,"loc":"Camping and seasonal aisles"},
+    {"b":"house","l":3,"loc":"Basement or closet emergency kit"},
+    {"b":"campground","l":3,"loc":"Trailers, cabins and the camp store"},
+    {"b":"farm_supply","l":3,"loc":"Heating aisle"},
+    {"b":"rv_dealer","l":3,"loc":"Parts counter; catalytic heaters fitted in trailers"},
+    {"b":"marina","l":2,"loc":"Ice-fishing huts and boat lockers"},
+    {"b":"construction","l":2,"loc":"Site trailers"},
+    {"b":"self_storage","l":2,"loc":"Camping and hunting gear"}
+  ],
+  "notes": "In Canada treat every Buddy-type heater as outdoor only: Mr. Heater's Canada-sale manual says outdoor use only and never in a home, camper, tent or car, and its FAQ says Canada does not allow propane heaters indoors (Mr. Heater MH9BX CAN, Mr. Heater FAQ). The US-sale Portable Buddy manual allows emergency indoor use only on a 1 lb cylinder, and recreational or commercial enclosures with a window or roof vent, with a 58 cm² (9 sq in) vent opening (116 cm², 18 sq in, for the Big Buddy), never while sleeping and not in a California dwelling (Mr. Heater MH9BX, Mr. Heater MH18B). A 20 lb cylinder on a hose stays outdoors and is allowed only for recreational or temporary work enclosures; Mr. Heater recommends one for continuous running below about -7 °C (20 °F) (Mr. Heater MH9BX). The heater can shut itself off when the room is short of fresh air and above about 2,100 m (7,000 ft), and catalytic pads are ruined by sprays, dust and cooking fumes (Mr. Heater MH9BX, Camco Wave). The maker manuals say not to subject a cylinder to excessive heat (Remington GFA, Deere HR-18R).",
+  "sources": [
+    {"title":"Mr. Heater MH9BX: Mr. Heater, Portable Buddy MH9BX operating instructions and owner's manual (US sale except Massachusetts, form 32045, 01/15; copy hosted by Lowe's)","url":"https://pdf.lowes.com/productdocuments/c439d2c0-a691-4d15-84a2-0b3b8a5838ce/61732006.pdf"},
+    {"title":"Mr. Heater Canada Buddy: Mr. Heater, Portable Buddy heater, Massachusetts and Canada version (product page)","url":"https://mrheater.com/portable-buddy-heater-massachusetts-and-canada-version.html"},
+    {"title":"Mr. Heater FAQ: Mr. Heater, General product info (indoor safe, tip-over switch, ODS, fuel filter)","url":"https://mrheater.com/pages/general-product-info"},
+    {"title":"Camco Wave: Camco, Olympian Wave catalytic safety heater installation and operating instructions (Jan. 2009; copy hosted by InspectApedia)","url":"https://inspectapedia.com/plumbing/Camco-Olympian-Wave-Heater-Manual.pdf"},
+    {"title":"Remington GFA: Pinnacle Climate Technologies, Remington propane forced air heater user's manual (REM-40/60V/125V/150V-GFA-O, 2017; copy hosted by Lowe's)","url":"https://pdf.lowes.com/productdocuments/813f5767-51bb-4711-b729-987761f5b445/60809789.pdf"},
+    {"title":"Deere HR-18R: John Deere, HR-18R space heater operator's manual (propane construction heater)","url":"https://www.deere.com/assets/pdfs/common/products/home-workshop/heaters/37-1351-JD-SPACE-HEATER-HR-18R-E-F-S-120315.pdf"},
+    {"title":"Mr. Heater MH9BX CAN: Mr. Heater, Portable Buddy MH9BX operating instructions and owner's manual, for Canada sale (form 32035-CAN, 2017; copy hosted on Wayfair's CDN)","url":"https://secure.img1-fg.wfcdn.com/docresources/2195/69/692584.pdf"},
+    {"title":"Mr. Heater MH18B: Mr. Heater, Big Buddy/Tough Buddy MH18B operating instructions and owner's manual (California sale, 05/06, form 78438CAL; archive.org copy)","url":"https://archive.org/download/manualsonline-id-e1d5a2c4-b4a7-4ea5-ab29-bd543cb8f82e/e1d5a2c4-b4a7-4ea5-ab29-bd543cb8f82e.pdf"}
+  ]
+}

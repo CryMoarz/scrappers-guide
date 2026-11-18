@@ -1,0 +1,43 @@
+{
+  "id": "kerosene_heater",
+  "name": "Kerosene wick heater",
+  "group": "Heating, cooling and water",
+  "aliases": ["kerosene heater","paraffin heater","wick heater","convection kerosene heater","radiant kerosene heater","portable kerosene heater","K-1 heater","oil heater (kerosene)"],
+  "brands": ["Dyna-Glo","Sengoku","HeatMate","KeroSun","Toyotomi","Corona","Kero World","Zibro","Aladdin"],
+  "prev": 3,
+  "tools": ["hands","screwdriver","pliers"],
+  "mins": 20,
+  "kg": 9,
+  "hazards": ["co_gas","open_flame","fuel","burn"],
+  "combustion": {"indoor":"unvented_rated","fuels":["kerosene (1-K, water-clear)"],"kw":[2.9,6.7],"power_w":0,"note":"Rated to burn in a room only with the door open to the rest of the house (plus a window cracked if the door must shut or the house is tight), 1-K fuel and the wick at the maker's height; add a CO alarm. Petrol or petrol-tainted kerosene can turn it into an uncontrollable fire."},
+  "comps": [
+    {"key":"fuel_liquid","fn":"fuel_liquid","spec":"Kerosene left in the tank (5.9 L tank on the Toyotomi KS-27A, 7.5 L on the Omni 230). Check it before you burn it: water-clear only, never yellow, cloudy or sour-smelling","qty":1,"ext":1,"obs":3,"loc":"Fuel tank in the base, or a lift-out cartridge tank on some models"},
+    {"key":"tank","fn":"tank","spec":"Fuel tank with a gauge and screw cap: 5.9 L on the Toyotomi KS-27A, 7.5 L on the Omni 230","qty":1,"ext":2,"obs":3,"loc":"Base of the heater"},
+    {"key":"hose_tubing","fn":"hose_tubing","spec":"Squeeze-bulb siphon pump with a vent knob, packed with the KS-27A: moves kerosene from the can into the tank without mouth siphoning","qty":1,"ext":1,"obs":2,"loc":"Taped to the heater or in the box","p":0.6},
+    {"key":"igniter","fn":"igniter","spec":"Battery igniter on many models (the Toyotomi Omni 230's is automatic, on four C cells); others, such as the Toyotomi KS-27A, are lit with a match","qty":1,"ext":2,"obs":4,"loc":"Beside the wick, behind the lower guard","p":0.5},
+    {"key":"battery_primary","fn":"battery_primary","spec":"Cells for the igniter (four C cells in the Omni 230)","qty":4,"ext":1,"obs":4,"loc":"Battery box on the side or base","p":0.5},
+    {"key":"sheet_metal","fn":"sheet_metal","spec":"Painted steel cabinet, wire guard and (radiant models) a polished reflector","qty":1,"ext":2,"obs":4,"loc":"Outer shell and back of radiant models"},
+    {"key":"fasteners","fn":"fasteners","spec":"Wing nuts and small screws holding the wick adjuster and cover","qty":10,"ext":1,"obs":4,"loc":"Around the wick adjuster and cover"}
+  ],
+  "boards": [],
+  "buildings": [
+    {"b":"house","l":4,"loc":"Basement, garage or storage room, often with a can of kerosene nearby"},
+    {"b":"garage_res","l":4,"loc":"Shelves and corners, with the blue fuel can"},
+    {"b":"hardware","l":4,"loc":"Seasonal heating aisle; spare wicks and siphon pumps in the same bay"},
+    {"b":"farm_supply","l":4,"loc":"Heating aisle; kerosene sometimes sold from a pump outside"},
+    {"b":"farm","l":3,"loc":"Workshop, milk house or barn office"},
+    {"b":"department","l":2,"loc":"Seasonal aisle"},
+    {"b":"self_storage","l":2,"loc":"Units packed for the cottage or camp"},
+    {"b":"campground","l":2,"loc":"Cabins and maintenance sheds"},
+    {"b":"church","l":1,"loc":"Basement storage from outage kits"}
+  ],
+  "notes": "An unvented heater certified to burn indoors (CSA B140.9.3 in Canada, UL 647 in the US) on water-clear 1-K kerosene only, with a door open to the rest of the house, plus a window open about 2.5 cm (1 in) if the door must be shut or the house is tight (CPSC 5052). Even working right it puts carbon monoxide, nitrogen dioxide and sulphur dioxide into the room (MSU E-1669). Toyotomi says substitute wicks can severely reduce performance and safety, and that heater kerosene should be no more than 6 months old (Toyotomi KS-27A).",
+  "sources": [
+    {"title":"CPSC 5052: US Consumer Product Safety Commission, CPSC Stresses Kerosene Heater Safety (Pub. 5052, rev. 4/2011)","url":"https://www.cpsc.gov/s3fs-public/5052.pdf"},
+    {"title":"Toyotomi KS-27A: Toyotomi, KS-27A portable kerosene heater operation and maintenance instructions (rev. 07/03)","url":"https://www.toyotomi.jp/manual/ownersmanual/KS-27A.pdf"},
+    {"title":"Toyotomi Omni 230: Toyotomi, Omni 230 (Type C) portable kerosene heater operation and maintenance instructions","url":"https://www.toyotomi.jp/manual/ownersmanual/Omni230.pdf"},
+    {"title":"MSU E-1669: Michigan State University Extension, Some considerations about portable kerosene heaters (Bulletin E-1669, Nov. 1982; archive copy)","url":"https://archive.lib.msu.edu/DMC/extension_publications/e1669/e1669-1982.pdf"},
+    {"title":"CSA B140.9.3: CSA B140.9.3:M86 (R2020), Portable kerosine-fired heaters (scope as listed in the Nimonik standards catalogue)","url":"https://standards.nimonik.com/products/csa/b140pt9pt3/"},
+    {"title":"UL 647: UL 647, Standard for Unvented Kerosene-Fired Room Heaters and Portable Heaters (2nd ed., catalogue listing)","url":"https://shop.standards.ie/en-ie/standards/ul-647-2ed-1993-05-03-1070334_saig_ul_ul_2487837"}
+  ]
+}
