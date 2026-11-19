@@ -10,7 +10,7 @@
   "kg": 8,
   "hazards": ["uv","mains"],
   "comps": [
-    {"key":"filter_water_membrane","fn":"filter_water","spec":"RO membrane, about 190–380 litres (50–100 gallons) a day — removes dissolved salts and most microbes; needs 3–4 bar feed pressure","qty":1,"ext":1,"obs":5,"loc":"Horizontal housing on top"},
+    {"key":"filter_water_membrane","fn":"filter_water","spec":"RO membrane. Holds back most dissolved salt, but makers don't promise it stops germs, so boil what it makes (Pentair RO-2550, DuPont TW30). Feed 2.75–6.9 bar (Pentair RO-2550); DuPont tests at 3.4 bar, where a 50 GPD membrane makes about 190 L a day, and allows 10 bar max (DuPont TW30)","qty":1,"ext":1,"obs":5,"loc":"Horizontal housing on top"},
     {"key":"filter_water","fn":"filter_water","spec":"Sediment and carbon-block pre-filters in standard 10 in (25 cm) housings","qty":3,"ext":1,"obs":4,"loc":"Row of vertical housings"},
     {"key":"carbon","fn":"carbon","spec":"Granular activated carbon in the inline post-filter","qty":1,"ext":1,"obs":5,"loc":"Small inline cartridge before the faucet"},
     {"key":"tank","fn":"tank","spec":"Pressurised storage tank with a bladder, 8–15 litres","qty":1,"ext":1,"obs":4,"loc":"Under the sink beside the filters","kg":4},
@@ -36,5 +36,9 @@
     {"b":"hospital","l":2},
     {"b":"supermarket","l":2}
   ],
-  "notes": "A header tank gives far too little pressure for the membrane; feed it with the 24V booster pump or another pressure pump. Change used pre-filters: old cartridges grow bacteria. A membrane left to dry out after use loses much of its performance."
+  "notes": "A header tank gives far too little pressure for the membrane; feed it with the 24V booster pump or another pressure pump. Change used pre-filters: old cartridges grow bacteria. A membrane left to dry out after use loses much of its performance. Don't count on the membrane for germs: Pentair says not to use its unit on unsafe water without disinfection before or after, and DuPont doesn't guarantee its membrane removes cysts and pathogens (Pentair RO-2550, DuPont TW30). Boil the water it makes. Pentair also says to protect the filter from freezing, which can crack it and cause leaks (Pentair RO-2550), so look a unit from a cold building over for cracks.",
+  "sources": [
+    {"title":"Pentair RO-2550: Pentair Residential Filtration, LLC, RO-2550 4-Stage Reverse Osmosis Water Filtration System, Installation and Operation Manual (2026)","url":"https://www.pentair.com/content/dam/extranet/nam/filtration/pentair/manuals/sh247113-ro-2550-man.pdf"},
+    {"title":"DuPont TW30: DuPont Water Solutions, FilmTec TW30-1812-50HR Element, Product Data Sheet, Form No. 45-D01750-en Rev. 5 (January 2021)","url":"https://www.dupont.com/content/dam/water/amer/us/en/water/public/documents/en/RO-FilmTec-TW30-1812-50HR-PDS-45-D01750-en.pdf"}
+  ]
 }
