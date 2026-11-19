@@ -10,7 +10,7 @@
   "kg": 40,
   "hazards": ["mains","chemical"],
   "comps": [
-    {"key":"water_stored","fn":"water_stored","spec":"The pool: 20,000–100,000 litres — filter, then boil or disinfect before drinking","qty":1,"ext":1,"obs":3,"loc":"In the pool"},
+    {"key":"water_stored","fn":"water_stored","spec":"The pool: about 51,000 litres in an average above-ground pool, 116,000 in an in-ground one (Kincardine water facts). For washing, cleaning and flushing, never drinking (CDC emergency water, Alberta emergency water, Alberta water shortage); boiling or bleach won't remove chemicals (Ready.gov water).","qty":1,"ext":1,"obs":3,"loc":"In the pool"},
     {"key":"pump_water","fn":"pump_water","spec":"Self-priming centrifugal pump, 0.75–3 hp, 120/240V — moves 150–400 litres a minute for transfer and irrigation","v":240,"qty":1,"ext":2,"obs":4,"loc":"Equipment pad beside the pool","kg":15},
     {"key":"motor_ac","fn":"motor_ac","spec":"The pump's induction motor, about 3,450 RPM, unbolts from the wet end","v":[120,240],"w":[560,2240],"ac":true,"qty":1,"ext":2,"obs":4,"loc":"Back half of the pump","kg":10},
     {"key":"filter_water","fn":"filter_water","spec":"Sand, cartridge or DE filter in a pressure tank — a good pre-filter for creek or rain water, not drinking-safe on its own","qty":1,"ext":2,"obs":4,"loc":"Equipment pad","kg":20},
@@ -33,5 +33,12 @@
     {"b":"school","l":3},
     {"b":"golf","l":3},
     {"b":"hardware","l":2}
+  ],
+  "sources": [
+    {"title":"CDC emergency water: CDC, How to Find Clean Water in an Emergency","url":"https://www.cdc.gov/water-emergency/about/how-to-find-clean-water-in-an-emergency.html"},
+    {"title":"Alberta emergency water: MyHealth Alberta, Emergency Water Storage (EPHWad-11-010, 2011)","url":"https://myhealth.alberta.ca/alberta/Alberta%20Images/abflood2013/Emergency_Water_Storage.pdf"},
+    {"title":"Ready.gov water: Ready.gov (FEMA), Water (treatment methods table)","url":"https://www.ready.gov/water"},
+    {"title":"Kincardine water facts: Municipality of Kincardine (Ontario), 2026 Water Consumption Facts","url":"https://www.kincardine.ca/media/mglptwil/2026-water-consumption-fact-sheet.pdf"},
+    {"title":"Alberta water shortage: Government of Alberta, Water shortage preparedness (Ministry of Public Safety and Emergency Services, 2024)","url":"https://open.alberta.ca/dataset/d21d686a-88a4-4598-926c-0b192868c723/resource/331115e5-04bd-44f7-83f3-58d4803eb029/download/pses-aema-water-shortage-preparedness-2024-05.pdf"}
   ]
 }

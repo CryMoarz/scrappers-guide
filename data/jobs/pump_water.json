@@ -2,7 +2,7 @@
   "id": "pump_water",
   "name": "Pump water",
   "keywords": ["pump water","move water","water from the creek","water from a well","water from the river","lift water","move water uphill","get water uphill","draw water","transfer water"],
-  "summary": "Use 12V pumps made to run off a battery: RV water pumps, boat bilge pumps and car washer pumps. A small solar panel can drive a 12V pump directly while the sun shines, filling a raised tank that then feeds by gravity. Put the pump down by the water and push uphill: in practice no pump sucks water up more than about 7 m. If the source is above you, a siphon needs no pump at all.",
+  "summary": "Use 12V pumps made to run off a battery: RV water pumps, boat bilge pumps and car washer pumps. A small solar panel can drive a 12V pump directly while the sun shines, filling a raised tank that then feeds by gravity. Put the pump down by the water and push uphill, because suction lifts water only so far: about 6 m (20 ft) for a shallow-well pump (Wisconsin DNR DG-022), and one jet-pump maker caps total suction lift, pipe losses included, at 7.6 m (25 ft) at sea level and less at altitude (A.Y. McDonald jet pumps). If the source is above you, a siphon needs no pump at all.",
   "parts": [
     {"fn":"pump_water","why":"The pump itself: RV, bilge, washer and sump pumps","core":true,"only":["12v","24v","bilge","submersible","sump","jet pump","self-priming","booster","drop pipe","freshwater","transfer","well"]},
     {"fn":"hose_tubing","why":"Pipe from the source to the tank; wider pipe loses less flow","core":true,"only":["pvc","pe ","drip","garden","drain hose","inlet hose","drop pipe","poly"]},
@@ -13,5 +13,9 @@
     {"fn":"valve_solenoid","why":"A check valve keeps the pipe primed when the pump stops"}
   ],
   "guides": ["build_solar_water_pump","skill_dc_wiring","build_solar_12v_system"],
-  "tips": ["Bilge pumps move lots of water but lose flow fast above a couple of metres of lift.","RV and boat diaphragm pumps lift higher and prime themselves; most other small pumps don’t.","Pump by day into a raised tank. A tank 3 m up gives gentle pressure all night.","Screen the intake: one leaf or pebble can wreck a small pump.","Don't pipe drinking water through ordinary garden hose: the vinyl and brass fittings can hold lead. Use hose marked \"drinking water safe\" or NSF/ANSI 61 (sold for RVs and boats), and run it a few seconds first."]
+  "tips": ["Bilge pumps move lots of water but lose flow fast above a couple of metres of lift.","RV and boat diaphragm pumps lift higher and prime themselves; most other small pumps don’t.","Pump by day into a raised tank. A tank 3 m up gives gentle pressure all night.","Screen the intake: one leaf or pebble can wreck a small pump.","Don't pipe drinking water through ordinary garden hose: the vinyl and brass fittings can hold lead. Use hose marked \"drinking water safe\" or NSF/ANSI 61 (sold for RVs and boats), and run it a few seconds first."],
+  "sources": [
+    {"title":"Wisconsin DNR DG-022: Wisconsin Department of Natural Resources, Driven Point (Sand Point) Wells (PUB-DG-022, 2024)","url":"https://dnr.wisconsin.gov/sites/default/files/topic/DrinkingWater/Publications/DG022.pdf"},
+    {"title":"A.Y. McDonald jet pumps: A.Y. McDonald Mfg. Co., Jet Pumps Installation Instructions (8100 and 8500 shallow-well series)","url":"https://aymcdonald.com/Image/GetDocument/en/241"}
+  ]
 }

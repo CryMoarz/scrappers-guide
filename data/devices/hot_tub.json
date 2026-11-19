@@ -14,7 +14,7 @@
     {"key":"pump_water","fn":"pump_water","spec":"Jet pumps, 1–5 hp, 240V — strong centrifugal pumps","v":240,"qty":2,"ext":2,"obs":5,"loc":"Equipment bay behind a side panel","kg":15},
     {"key":"pump_water_circ","fn":"pump_water","spec":"Small circulation pump, about 1/15–1/8 hp","v":[120,240],"w":[50,90],"ac":true,"qty":1,"ext":2,"obs":5,"loc":"Equipment bay"},
     {"key":"heating_element","fn":"heating_element","spec":"Stainless heater tube, 4–5.5 kW at 240V (1–1.5 kW on 120V plug-in models)","v":[120,240],"w":[1000,5500],"ac":true,"qty":1,"ext":2,"obs":5,"loc":"Equipment bay, inside a steel tube"},
-    {"key":"water_stored","fn":"water_stored","spec":"1,000–2,000 litres of water when full — treat before drinking","qty":1,"ext":1,"obs":4,"loc":"The tub"},
+    {"key":"water_stored","fn":"water_stored","spec":"About 870 litres in a 3-seat spa (Hot Spring SX), 1,990 in a 7-seat one (Hot Spring Prism). For washing, cleaning and flushing, never drinking (CDC emergency water, FEMA water fact sheet, Alberta water shortage); boiling or bleach won't remove chemicals (Ready.gov water).","qty":1,"ext":1,"obs":4,"loc":"The tub"},
     {"key":"filter_water","fn":"filter_water","spec":"Pleated cartridge filters","qty":2,"ext":1,"obs":4,"loc":"Under the skimmer lid"},
     {"key":"fan","fn":"fan","spec":"Air blower, about 1 hp (some models)","v":[120,240],"w":750,"ac":true,"qty":1,"ext":2,"obs":5,"loc":"Equipment bay","p":0.5},
     {"key":"gas_spring","fn":"gas_spring","spec":"Gas struts on the cover lifter (some)","qty":2,"ext":1,"obs":5,"loc":"Cover lifter arms","p":0.5},
@@ -35,5 +35,13 @@
     {"b":"gym","l":3},
     {"b":"apartment","l":2},
     {"b":"campground","l":2}
+  ],
+  "sources": [
+    {"title":"CDC emergency water: CDC, How to Find Clean Water in an Emergency","url":"https://www.cdc.gov/water-emergency/about/how-to-find-clean-water-in-an-emergency.html"},
+    {"title":"FEMA water fact sheet: FEMA, Fact Sheet: How to Make Your Water Safe to Drink (2017)","url":"https://www.fema.gov/press-release/20250121/fact-sheet-how-make-your-water-safe-drink"},
+    {"title":"Ready.gov water: Ready.gov (FEMA), Water (treatment methods table)","url":"https://www.ready.gov/water"},
+    {"title":"Hot Spring SX: Hot Spring (Watkins Wellness), Hot Spot Collection SX spec sheet (Rev. A)","url":"https://hotspring.com/sx-specsheet"},
+    {"title":"Hot Spring Prism: Hot Spring (Watkins Wellness), Limelight Collection Prism spec sheet (Rev. A)","url":"https://www.hotspring.com/prism-specsheet"},
+    {"title":"Alberta water shortage: Government of Alberta, Water shortage preparedness (Ministry of Public Safety and Emergency Services, 2024)","url":"https://open.alberta.ca/dataset/d21d686a-88a4-4598-926c-0b192868c723/resource/331115e5-04bd-44f7-83f3-58d4803eb029/download/pses-aema-water-shortage-preparedness-2024-05.pdf"}
   ]
 }

@@ -7,8 +7,17 @@
   "substitutes": [],
   "summary": "Water already stored somewhere: bottles and jugs, water heaters, pipes, header tanks and toilet cisterns.",
   "uses": ["Drinking, after treatment if you’re unsure of it","Cooking and washing","Hygiene and flushing"],
-  "identify": "Bottled water and 19-litre cooler jugs in offices and shops; 150–300 litres in every tank water heater (cut power or gas and let it cool before draining); water in the pipes of tall buildings, loft header tanks and toilet cisterns (not bowls). Pools and hot tubs hold tonnes for washing and filtering.",
-  "test": "Look and smell: clear and odourless is a good start. Treat anything not from a sealed bottle by boiling, chlorine or filtering.",
+  "identify": "Bottled water and 19-litre cooler jugs in offices and shops; tank water heaters (a 40 or 50 US gallon tank holds about 150 or 190 litres: A.O. Smith gas; cut power or gas and let it cool before draining); water in the pipes of tall buildings, loft header tanks and toilet cisterns (not bowls). Pools and hot tubs hold tonnes of water for washing, cleaning and flushing toilets, never drinking: pool and spa water is for hygiene and cleaning (CDC emergency water, FEMA water fact sheet), and Alberta lists outdoor pools and hot tubs as water to flush toilets with (Alberta water shortage). Pool water can hold high levels of chemicals (Alberta emergency water), and boiling or bleach won't remove chemicals (Ready.gov water).",
+  "test": "Look and smell: clear and odourless is a good start. Boil or disinfect anything not from a sealed bottle; a filter alone doesn't remove every germ, so disinfect after filtering (CDC make water safe).",
   "decay": {"halfLifeMonths":null,"note":"Sealed bottles keep for years; open tanks grow algae and bacteria."},
-  "hazards": []
+  "hazards": [],
+  "sources": [
+    {"title":"CDC emergency water: CDC, How to Find Clean Water in an Emergency","url":"https://www.cdc.gov/water-emergency/about/how-to-find-clean-water-in-an-emergency.html"},
+    {"title":"FEMA water fact sheet: FEMA, Fact Sheet: How to Make Your Water Safe to Drink (2017)","url":"https://www.fema.gov/press-release/20250121/fact-sheet-how-make-your-water-safe-drink"},
+    {"title":"Alberta emergency water: MyHealth Alberta, Emergency Water Storage (EPHWad-11-010, 2011)","url":"https://myhealth.alberta.ca/alberta/Alberta%20Images/abflood2013/Emergency_Water_Storage.pdf"},
+    {"title":"Ready.gov water: Ready.gov (FEMA), Water (treatment methods table)","url":"https://www.ready.gov/water"},
+    {"title":"Alberta water shortage: Government of Alberta, Water shortage preparedness (Ministry of Public Safety and Emergency Services, 2024)","url":"https://open.alberta.ca/dataset/d21d686a-88a4-4598-926c-0b192868c723/resource/331115e5-04bd-44f7-83f3-58d4803eb029/download/pses-aema-water-shortage-preparedness-2024-05.pdf"},
+    {"title":"A.O. Smith gas: A.O. Smith, Installation and Operating Manual, Residential Gas Water Heaters, Power Direct Vent Ultra Low NOx Models with Hot Surface Ignition (100366712, rev. A, 2023)","url":"https://assets.hotwater.com/damroot/Original/10005/100366712.pdf"},
+    {"title":"CDC make water safe: CDC, How to Make Water Safe in an Emergency","url":"https://www.cdc.gov/water-emergency/about/index.html"}
+  ]
 }
