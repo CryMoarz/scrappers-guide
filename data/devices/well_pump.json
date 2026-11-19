@@ -10,7 +10,7 @@
   "kg": 40,
   "hazards": ["mains","heavy"],
   "comps": [
-    {"key":"pump_water","fn":"pump_water","spec":"Submersible pump, 1/2–2 hp at 230V (some 120V), lifts from 30–150 m — pulling it needs two people and a plan so the pipe isn't dropped","v":[120,230],"w":[370,1490],"ac":true,"qty":1,"ext":4,"obs":4,"loc":"Down the well on the drop pipe","kg":12,"p":0.5},
+    {"key":"pump_water","fn":"pump_water","spec":"Submersible pump: Franklin's FPS 4-inch complete pumps run 1/2–1.5 hp on 230 V, with 115 V only at 1/2 hp; the 1.5 hp one tops out at 187 m (615 ft) of head with the flow shut off (Franklin FPS). Pulling it needs two people and a plan so the pipe isn't dropped","v":[120,230],"w":[370,1120],"ac":true,"qty":1,"ext":4,"obs":4,"loc":"Down the well on the drop pipe","kg":12,"p":0.5},
     {"key":"pump_water_jet","fn":"pump_water","spec":"Above-ground jet pump, 1/2–1 hp. A shallow-well jet draws from about 6 m (20 ft) down at most, a deep-well one about 30 m (100 ft) (Wisconsin DNR DG-022). A.Y. McDonald: 7.6 m (25 ft) total suction lift, pipe losses included, at sea level, 0.3 m less per 300 m of altitude (A.Y. McDonald jet pumps).","v":[120,240],"w":[370,750],"ac":true,"qty":1,"ext":2,"obs":4,"loc":"Basement or pump house","kg":15},
     {"key":"tank","fn":"tank","spec":"Pressure tank with a rubber bladder, 20–120 litres","qty":1,"ext":2,"obs":4,"loc":"Basement, garage or pump house","kg":15},
     {"key":"switch","fn":"switch","spec":"Pressure switch, about 30/50 or 40/60 psi, with heavy contacts","qty":1,"ext":1,"obs":5,"loc":"On the pipe by the tank"},
@@ -38,6 +38,7 @@
   "notes": "The well itself is the real prize. A submersible needs a large generator or inverter to start; once pump and pipe are out, a narrow bucket on a rope still lifts water.",
   "sources": [
     {"title":"Wisconsin DNR DG-022: Wisconsin Department of Natural Resources, Driven Point (Sand Point) Wells (PUB-DG-022, 2024)","url":"https://dnr.wisconsin.gov/sites/default/files/topic/DrinkingWater/Publications/DG022.pdf"},
-    {"title":"A.Y. McDonald jet pumps: A.Y. McDonald Mfg. Co., Jet Pumps Installation Instructions (8100 and 8500 shallow-well series)","url":"https://aymcdonald.com/Image/GetDocument/en/241"}
+    {"title":"A.Y. McDonald jet pumps: A.Y. McDonald Mfg. Co., Jet Pumps Installation Instructions (8100 and 8500 shallow-well series)","url":"https://aymcdonald.com/Image/GetDocument/en/241"},
+    {"title":"Franklin FPS: Franklin Electric, FPS TRI-SEAL 4-inch submersible well pumps, residential duty (product page and model list)","url":"https://www.franklinwater.com/products/submersible-well-pumps/residential-duty-submersible-well-pumps/tri-seal-4-inch-submersible-well-pumps/fps-tri-seal-submersible-well-pump/"}
   ]
 }

@@ -13,9 +13,10 @@
     {"fn":"valve_solenoid","why":"A check valve keeps the pipe primed when the pump stops"}
   ],
   "guides": ["build_solar_water_pump","skill_dc_wiring","build_solar_12v_system"],
-  "tips": ["Bilge pumps move lots of water but lose flow fast above a couple of metres of lift.","RV and boat diaphragm pumps lift higher and prime themselves; most other small pumps don’t.","Pump by day into a raised tank. A tank 3 m up gives gentle pressure all night.","Screen the intake: one leaf or pebble can wreck a small pump.","Don't pipe drinking water through ordinary garden hose: the vinyl and brass fittings can hold lead. Use hose marked \"drinking water safe\" or NSF/ANSI 61 (sold for RVs and boats), and run it a few seconds first."],
+  "tips": ["Bilge pumps move lots of water at low lift but lose flow as the lift grows: Rule's 1500 model moves about 3,980 L an hour with no lift, 3,600 at 1 m and 1,950 at 2 m, where its chart stops; its bigger models keep about two-thirds to three-quarters at 2 m (Rule bilge 1500-4000).","RV and boat diaphragm pumps lift higher and prime themselves; most other small pumps don’t.","Pump by day into a raised tank. A tank 3 m up gives gentle pressure all night.","Screen the intake: one leaf or pebble can wreck a small pump.","Don't pipe drinking water through ordinary garden hose: the vinyl and brass fittings can hold lead. Use hose marked \"drinking water safe\" or NSF/ANSI 61 (sold for RVs and boats), and run it a few seconds first."],
   "sources": [
     {"title":"Wisconsin DNR DG-022: Wisconsin Department of Natural Resources, Driven Point (Sand Point) Wells (PUB-DG-022, 2024)","url":"https://dnr.wisconsin.gov/sites/default/files/topic/DrinkingWater/Publications/DG022.pdf"},
-    {"title":"A.Y. McDonald jet pumps: A.Y. McDonald Mfg. Co., Jet Pumps Installation Instructions (8100 and 8500 shallow-well series)","url":"https://aymcdonald.com/Image/GetDocument/en/241"}
+    {"title":"A.Y. McDonald jet pumps: A.Y. McDonald Mfg. Co., Jet Pumps Installation Instructions (8100 and 8500 shallow-well series)","url":"https://aymcdonald.com/Image/GetDocument/en/241"},
+    {"title":"Rule bilge 1500-4000: Rule (Xylem), Standard Bilge Pump 1500–4000 Instruction Manual, 950-0584A rev D (flow at 0, 1 and 2 m)","url":"https://prod.xylem.com/siteassets/brand/rule/resources/manual/rule-standard-bilge-1500-4000-iom-950-0584a_rev_d.pdf"}
   ]
 }

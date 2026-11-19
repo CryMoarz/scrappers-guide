@@ -11,9 +11,9 @@
   "hazards": ["mains","heavy","chemical","uv"],
   "comps": [
     {"key":"insulation","fn":"insulation","spec":"Hard foam cover, 7–12 cm thick, vinyl-wrapped — insulated panels for a cold box or shelter","qty":1,"ext":1,"obs":5,"loc":"On top of the tub","kg":20},
-    {"key":"pump_water","fn":"pump_water","spec":"Jet pumps, 1–5 hp, 240V — strong centrifugal pumps","v":240,"qty":2,"ext":2,"obs":5,"loc":"Equipment bay behind a side panel","kg":15},
+    {"key":"pump_water","fn":"pump_water","spec":"Jet pumps: one 1.5 hp (continuous duty) on Hot Spring's 3-seat SX, which runs on 115 or 230 V, and three 2.5 hp on its 7-seat Prism, 230 V only (Hot Spring SX, Hot Spring Prism). Strong pumps worth taking","v":[120,240],"qty":2,"ext":2,"obs":5,"loc":"Equipment bay behind a side panel","kg":15},
     {"key":"pump_water_circ","fn":"pump_water","spec":"Small circulation pump, about 1/15–1/8 hp","v":[120,240],"w":[50,90],"ac":true,"qty":1,"ext":2,"obs":5,"loc":"Equipment bay"},
-    {"key":"heating_element","fn":"heating_element","spec":"Stainless heater tube, 4–5.5 kW at 240V (1–1.5 kW on 120V plug-in models)","v":[120,240],"w":[1000,5500],"ac":true,"qty":1,"ext":2,"obs":5,"loc":"Equipment bay, inside a steel tube"},
+    {"key":"heating_element","fn":"heating_element","spec":"Heater: 4 kW at 230 V on Hot Spring's SX and Prism, 1 kW at 115 V on the plug-in SX (Hot Spring SX, Hot Spring Prism)","v":[120,240],"w":[1000,4000],"ac":true,"qty":1,"ext":2,"obs":5,"loc":"Equipment bay, inside a steel tube"},
     {"key":"water_stored","fn":"water_stored","spec":"About 870 litres in a 3-seat spa (Hot Spring SX), 1,990 in a 7-seat one (Hot Spring Prism). For washing, cleaning and flushing, never drinking (CDC emergency water, FEMA water fact sheet, Alberta water shortage); boiling or bleach won't remove chemicals (Ready.gov water).","qty":1,"ext":1,"obs":4,"loc":"The tub"},
     {"key":"filter_water","fn":"filter_water","spec":"Pleated cartridge filters","qty":2,"ext":1,"obs":4,"loc":"Under the skimmer lid"},
     {"key":"fan","fn":"fan","spec":"Air blower, about 1 hp (some models)","v":[120,240],"w":750,"ac":true,"qty":1,"ext":2,"obs":5,"loc":"Equipment bay","p":0.5},
