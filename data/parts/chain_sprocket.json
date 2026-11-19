@@ -3,12 +3,16 @@
   "name": "Chains and sprockets",
   "group": "Mechanical",
   "demand": 1,
-  "keywords": ["chain","sprocket","roller chain","bike chain","bicycle chain","chain drive","motorcycle chain","#25 chain","#35 chain","#40 chain","420 chain","chainring","freewheel"],
+  "keywords": ["chain","sprocket","roller chain","bike chain","bicycle chain","chain drive","motorcycle chain","#25 chain","#35 chain","#40 chain","420 chain","chainring","freewheel","saw chain","chainsaw chain","guide bar","chainsaw bar","bar and chain","drive sprocket","rim sprocket","spur sprocket"],
   "substitutes": ["belt_pulley","gearbox"],
-  "summary": "Roller chain and toothed sprockets that pass power without slipping: bikes, motorbikes, go-karts and machines.",
-  "uses": ["Pedal generators and bike-powered machines","Gearing a motor down to drive a pump or winch drum","Replacing a worn drive on a mower or cart"],
-  "identify": "Bike chain is everywhere; motorbikes, go-karts, garage door openers, conveyors and farm machines use heavier sizes like #35, #40 and #420, often stamped on the side plates. A sprocket must match the chain’s pitch and width.",
-  "test": "Lay the chain flat and look for stiff links, rust and stretch: a worn chain lifts off the back of the sprocket. Sprocket teeth should be even, not hooked.",
+  "summary": "Roller chain and toothed sprockets that pass power without slipping: bikes, motorbikes, go-karts and machines. Also saw chain, guide bars and drive sprockets from chainsaws, a separate kind, sized to the saw it fits.",
+  "uses": ["Pedal generators and bike-powered machines","Gearing a motor down to drive a pump or winch drum","Replacing a worn drive on a mower or cart","Spare saw chain, guide bars and drive sprockets for chainsaws, only where pitch and gauge match the saw's bar and sprocket and the drive-link count matches the bar (STIHL MS 162/172, Oregon M&S 2004)"],
+  "identify": "Bike chain is everywhere; motorbikes, go-karts, garage door openers, conveyors and farm machines use heavier sizes like #35, #40 and #420, often stamped on the side plates. A sprocket must match the chain’s pitch and width. Saw chain is a different kind, made to cut wood (Oregon M&S 2004): cutters, tie straps and drive links riding in the groove of a guide bar, driven by a spur or rim sprocket on the saw's clutch drum. Its pitch is the distance across three rivets divided by two, its gauge is the drive-link thickness that fits the bar groove, and a replacement loop is ordered by chain type and drive-link count (Oregon M&S 2004). Makers list which chain, bar and sprocket go together on each saw (STIHL MS 162/172).",
+  "test": "Lay the chain flat and look for stiff links, rust and stretch: a worn chain lifts off the back of the sprocket. Sprocket teeth should be even, not hooked. Saw chain: replace it if cutters, top plates or tie straps are cracked or broken, drive links are bent, cracked or burred, or rivets turn under your fingers; Oregon replaces its rim and spur sprockets once wear is 1/64 in (0.4 mm) deep (Oregon M&S 2004), while STIHL has the sprocket on its MS 162/172 replaced once wear marks are deeper than 0.5 mm (0.020 in) (STIHL MS 162/172), so use your saw maker's figure if you have it. Don't run a new chain on a worn sprocket or an old chain on a new one (Oregon M&S 2004).",
   "decay": {"halfLifeMonths":null,"note":"Lasts if oiled; dry chain rusts stiff but often frees up with oil."},
-  "hazards": []
+  "hazards": [],
+  "sources": [
+    {"title":"Oregon M&S 2004: Oregon (Blount), Maintenance & Safety Manual for Saw Chain, Guide Bars, and Drive Sprockets (F/N A106971 AG 0904), Oregon's own PDF, pp. 4-5 (chain terms), 22-23 (inspection), 88-93 (sprockets), 95-96 (ordering, wood only)","url":"https://apps.oregonproducts.com/pro/pdf/maintenance_manual/ms_manual.pdf"},
+    {"title":"STIHL MS 162/172: STIHL, MS 162, 172 Instruction Manual, Canadian edition (0458-200-8221-A, 2025), chapters 21.3 (sprocket wear) and 25 (combinations of guide bars and saw chains)","url":"https://ssc.stihl.com/tsa/techdoc-documents/DVS_STIHL%2FZBA%2FZBA%2F0458-200-8221-A_ZBA_02_01.pdf"}
+  ]
 }

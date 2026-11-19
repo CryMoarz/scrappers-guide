@@ -8,11 +8,19 @@
   "hazards": ["li_fire","mains"],
   "comps": [
     {"key":"motor_universal","fn":"motor_universal","spec":"Universal motor, 1.5–2.4 kW, mains (corded models)","w":[1500,2400],"qty":1,"ext":2,"obs":4,"loc":"Body","p":0.5},
-    {"key":"motor_bldc","fn":"motor_bldc","spec":"Brushless motor, 36–80V (cordless models)","v":[36,80],"qty":1,"ext":2,"obs":4,"loc":"Body","p":0.5},
+    {"key":"motor_bldc","fn":"motor_bldc","spec":"DC motor, 36–80 V (cordless models; brushless or brushed: check the motor's label)","v":[36,80],"qty":1,"ext":2,"obs":4,"loc":"Body","p":0.5},
     {"key":"battery_li","fn":"battery_li","spec":"36–80V tool battery packs (cordless models; often taken with the saw)","v":[36,80],"qty":1,"ext":1,"obs":2,"loc":"Battery slot or charger on the shelf"}
   ],
   "boards": [
     {"id":"bldc_controller","qty":1,"loc":"Motor controller (cordless models)","p":0.6},
     {"id":"battery_bms","qty":1,"loc":"Inside the battery pack (cordless models)","p":0.6}
+  ],
+  "notes": "Salvage: a corded saw gives a mains motor and its cord (2,400 W on the 230 V Oregon CS1500); a battery saw gives a motor and the battery pack, 36 V on STIHL's AK saws and 80 V on the Greenworks Pro (Oregon CS1500, STIHL MSA 60/70, Greenworks Pro 80V). The saws checked carry the same kind of bar, chain, drive sprocket and oil tank as a petrol saw and can kick back (Oregon CS1500, Greenworks Pro 80V, Oregon M&S 2004); chaps may not stop them as surely, because the motor keeps its torque (UW Extension chainsaw). Quieter than petrol but not quiet: sound pressure levels of 83 dB(A) on the STIHL MSA 60 and 96 dB(A) on the Oregon CS1500, and all three makers call for hearing protection (STIHL MSA 60/70, Oregon CS1500, Greenworks Pro 80V). STIHL recommends charging its packs at 5–40 °C, so warm a cold pack indoors before charging it, and warns that one charged or used below −20 °C or above +50 °C may catch fire or explode (STIHL MSA 60/70).",
+  "sources": [
+    {"title":"Oregon CS1500: Oregon Tool, Original Instruction Manual, Chainsaw Model CS1500-093 (corded, 230 V), safety and specifications pages","url":"https://www.oregonproducts.com/medias/CS1500-Chainsaw-Manual.pdf?context=bWFzdGVyfHJvb3R8NDQ3ODYzNnxhcHBsaWNhdGlvbi9wZGZ8aDZlL2g4Ny84ODA4OTM4MzA3NjE0LnBkZnw5YmQ1MmI5M2FjMDc0MTk2ODNlZjVkNmFkMzljYjg4Y2I0YWNmYTVjNmRjYjVlMzc2NjgyN2NlNmIzN2Q1MzIw&attachment=true"},
+    {"title":"STIHL MSA 60/70: STIHL, MSA 60.0 C, 70.0 C Instruction Manual (0458-022-9601-A, 2025), sections 20.4 and 20.7-20.9","url":"https://ssc.stihl.com/tsa/techdoc-documents/DVS_STIHL%2FZBA%2FZBA%2F0458-022-9601-A_ZBA_03_01.pdf"},
+    {"title":"Greenworks Pro 80V: Greenworks Canada, Chainsaw CSB401 (2000002) Operator Manual, 80 V, safety and technical data","url":"https://greenworkstools.ca/cdn/shop/files/80V_Chainsaw_Manual_En_Fr.pdf"},
+    {"title":"UW Extension chainsaw: Kovacs O, Hershberger S, Buying and Maintaining a Chainsaw (UW-Madison Division of Extension, Forestry and Wildlife)","url":"https://forestry.extension.wisc.edu/learn/chainsaw/buying-and-maintaining"},
+    {"title":"Oregon M&S 2004: Oregon (Blount), Maintenance & Safety Manual for Saw Chain, Guide Bars, and Drive Sprockets (F/N A106971 AG 0904), Oregon's own PDF, pp. 4-5 (chain terms) and 88-91 (sprockets)","url":"https://apps.oregonproducts.com/pro/pdf/maintenance_manual/ms_manual.pdf"}
   ]
 }

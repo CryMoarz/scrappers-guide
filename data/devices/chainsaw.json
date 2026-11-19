@@ -9,10 +9,10 @@
   "tools": ["screwdriver","socket"],
   "mins": 15,
   "kg": 6,
-  "hazards": ["sharp"],
+  "hazards": ["sharp","noise"],
   "comps": [
     {"key":"chain_sprocket","fn":"chain_sprocket","spec":"Saw chain, guide bar and drive sprocket; spare chains are often in a drawer nearby","qty":1,"ext":1,"obs":2,"loc":"Bar and clutch cover"},
-    {"key":"oil_lube","fn":"oil_lube","spec":"Bar and chain oil, about 0.2 L in the tank; often a jug nearby","qty":1,"ext":1,"obs":4,"loc":"Oil tank in the body"}
+    {"key":"oil_lube","fn":"oil_lube","spec":"Bar and chain oil, 0.14–0.28 L in the tank on the saws checked (Oregon CS1500, Husqvarna 450 II, STIHL MS 162/172); often a jug nearby","qty":1,"ext":1,"obs":4,"loc":"Oil tank in the body"}
   ],
   "buildings": [
     {"b":"garage_res","l":5},
@@ -27,5 +27,12 @@
     {"b":"self_storage","l":2},
     {"b":"campground","l":2}
   ],
-  "notes": "Pick a variant: petrol or electric. Whole working saws get taken; spare chains and bars are often left behind."
+  "notes": "Pick a variant: petrol or electric. Whole working saws get taken; spare chains and bars are often left behind. A spare chain fits only if its pitch matches the drive sprocket (and the bar's nose sprocket, if it has one), its gauge fits the bar groove and its drive-link count suits the bar (STIHL MS 162/172, Oregon M&S 2004). Chainsaws are loud: CCOHS puts them at up to 95–115 dBA, so wear muffs or plugs (CCOHS chainsaw PPE).",
+  "sources": [
+    {"title":"Oregon M&S 2004: Oregon (Blount), Maintenance & Safety Manual for Saw Chain, Guide Bars, and Drive Sprockets (F/N A106971 AG 0904), Oregon's own PDF, pp. 4-5 (chain terms), 21 (oil), 88-91 (sprockets) and 95 (ordering chain)","url":"https://apps.oregonproducts.com/pro/pdf/maintenance_manual/ms_manual.pdf"},
+    {"title":"STIHL MS 162/172: STIHL, MS 162, 172 Instruction Manual, Canadian edition (0458-200-8221-A, 2025), chapters 3, 5, 23 and 25","url":"https://ssc.stihl.com/tsa/techdoc-documents/DVS_STIHL%2FZBA%2FZBA%2F0458-200-8221-A_ZBA_02_01.pdf"},
+    {"title":"Husqvarna 450 II: Husqvarna, Operator's manual 445 II, 445e II, 450 II, 450e II chainsaws (2024-02), safety and technical data","url":"https://content.tdr.dss.husqvarnagroup.net/pub000091115/doc000221208"},
+    {"title":"Oregon CS1500: Oregon Tool, Original Instruction Manual, Chainsaw Model CS1500-093 (corded, 230 V), safety and specifications pages","url":"https://www.oregonproducts.com/medias/CS1500-Chainsaw-Manual.pdf?context=bWFzdGVyfHJvb3R8NDQ3ODYzNnxhcHBsaWNhdGlvbi9wZGZ8aDZlL2g4Ny84ODA4OTM4MzA3NjE0LnBkZnw5YmQ1MmI5M2FjMDc0MTk2ODNlZjVkNmFkMzljYjg4Y2I0YWNmYTVjNmRjYjVlMzc2NjgyN2NlNmIzN2Q1MzIw&attachment=true"},
+    {"title":"CCOHS chainsaw PPE: CCOHS, Chainsaws - Personal Protective Equipment and Clothing (OSH Answers)","url":"https://www.ccohs.ca/oshanswers/safety_haz/chainsaws/ppe.html"}
+  ]
 }

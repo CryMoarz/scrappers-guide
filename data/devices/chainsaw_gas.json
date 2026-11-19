@@ -11,5 +11,13 @@
     {"key":"fuel_liquid","fn":"fuel_liquid","spec":"2-stroke petrol-oil mix, under 1 L; jerry cans of mix often nearby","qty":1,"ext":1,"obs":3,"loc":"Fuel tank in the body"},
     {"key":"igniter","fn":"igniter","spec":"Magneto ignition coil and spark plug","qty":1,"ext":2,"obs":5,"loc":"Beside the flywheel under the top cover"},
     {"key":"spring","fn":"spring","spec":"Recoil starter spring — springs out when the housing is opened","qty":1,"ext":3,"obs":5,"loc":"Starter housing"}
+  ],
+  "notes": "Salvage: a two-stroke engine (30.1 cm³ and 1.2 kW on a STIHL MS 162, 50.2 cm³ and 2.4 kW on a Husqvarna 450 II, 72.2 cm³ and 4.4 kW on a STIHL MS 462), a clutch that couples it to the chain sprocket above idle, the drive sprocket on the clutch drum, the bar and chain, and fuel and chain-oil tanks, 0.40 L and 0.28 L on the STIHL MS 162/172 and 0.45 L and 0.26 L on the Husqvarna 450 II (STIHL MS 162/172, Husqvarna 450 II, STIHL MS 462, USFS chain saw course ch3, Oregon M&S 2004). It is loud, 104 dB(A) at the operator's ear on the Husqvarna 450 II, so wear muffs or plugs (Husqvarna 450 II). Run it outdoors only: the exhaust carries carbon monoxide (Husqvarna 450 II). A hot fuel tank can be under pressure and spray fuel when opened, so let the saw cool and open the cap slowly (STIHL MS 162/172).",
+  "sources": [
+    {"title":"STIHL MS 162/172: STIHL, MS 162, 172 Instruction Manual, Canadian edition (0458-200-8221-A, 2025), chapters 3, 5, 23 and 25","url":"https://ssc.stihl.com/tsa/techdoc-documents/DVS_STIHL%2FZBA%2FZBA%2F0458-200-8221-A_ZBA_02_01.pdf"},
+    {"title":"Husqvarna 450 II: Husqvarna, Operator's manual 445 II, 445e II, 450 II, 450e II chainsaws (2024-02), safety and technical data","url":"https://content.tdr.dss.husqvarnagroup.net/pub000091115/doc000221208"},
+    {"title":"STIHL MS 462: STIHL Canada, MS 462 C-M gas chainsaw, technical data","url":"https://www.stihl.ca/en/p/chainsaws-ms-462-79876"},
+    {"title":"USFS chain saw course ch3: USDA Forest Service, Chain Saw and Crosscut Saw Training Course, Student's Guidebook 0667-2805-MTDC (2006), chapter 3, Chain Saw Use and Maintenance","url":"https://www.fs.usda.gov/t-d/pubs/htmlpubs/htm06672805/page03.htm"},
+    {"title":"Oregon M&S 2004: Oregon (Blount), Maintenance & Safety Manual for Saw Chain, Guide Bars, and Drive Sprockets (F/N A106971 AG 0904), Oregon's own PDF, pp. 88-91 (drive sprockets and clutch drums)","url":"https://apps.oregonproducts.com/pro/pdf/maintenance_manual/ms_manual.pdf"}
   ]
 }
