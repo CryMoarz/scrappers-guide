@@ -2,6 +2,18 @@
 
 Plain notes for people using the guide. The app shows the latest few under "What's new" on its front page. Details for developers are in the commits.
 
+## 4.6.0 (19 November 2026)
+
+- Water through a Canadian winter: melting snow and ice (old snow and ice give far more water per pot), keeping water from freezing, getting water through lake ice safely, and what boiling a litre costs in wood, gas, alcohol or electricity.
+- The house: draining a house you can't heat without losing its water, which water in a building you can drink and which you never can (heating loops, antifreeze, pools, hot tubs, waterbeds), and what to do when sewage backs up into the basement because the town's pumps stopped.
+- Finding and treating water: what each kind of surface water tends to carry, testing water with found pool, aquarium and lead kits, testing how strong old bleach still is, clearing muddy water with alum, a biosand filter, a stovetop still, an RO unit on 12 or 24 V, chlorine from salt for experienced people, and checking a filter that may have frozen.
+- Wells: a bucket for a drilled well with no power, shock-chlorinating a well or cistern, driving a sandpoint well, a rope pump, and repairing hand pumps, jet pumps and cracked containers. Hauling water by cart, sled or roller.
+- Toilets: toilets when the ground is frozen, a compost toilet, a ventilated pit latrine and a tippy-tap hand-washing station. New jobs for finding water, dealing with human waste and keeping clean, and the water refill machines outside supermarkets as a new device.
+- Safer water advice in older cards: pool and hot-tub water is for washing and flushing only, never drinking; water from an RO unit still needs disinfecting; cold or cloudy water needs double the bleach and 1 to 2 hours; chlorine doesn't stop Cryptosporidium, so boil surface water; one free-chlorine target of 0.5 mg/L after treating; and solar disinfection doesn't work in a Canadian winter.
+- The water heater teardown no longer has you undo a gas pipe, and the biohazard card's bleach mix is 1 part to 9 of water.
+- Quick reference has Water and toilets and Heat and winter groups, so the winter cards are easy to find.
+- Over 700 corrections from checking every new card against its sources.
+
 ## 4.5.0 (19 November 2026)
 
 - Staying warm through a Canadian winter: heating one room, hypothermia in a cold house, condensation and mould, warm clothes and where nobody else looks for them, an RV or mobile home through the winter, and a solar air heater for a south window.
