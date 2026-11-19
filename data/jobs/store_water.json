@@ -12,8 +12,17 @@
     {"fn":"filter_water","why":"Cleans water from doubtful stores"}
   ],
   "guides": ["teardown_water_heater","build_rainwater_collection","safety_entering_buildings"],
-  "tips": ["To drain a water heater: shut off its power or gas, open a hot tap to let air in, then open the drain valve at the bottom.","Use food-grade containers only (HDPE, recycling mark 2). Never ones that held chemicals or fuel.","Keep stored water dark and cool, and re-treat it every 6 months.","Toilet cisterns (the tank, not the bowl) are fine to treat and drink, unless there’s a cleaning tablet in them.","Plan on about 4 litres a day per person for drinking and cooking."],
+  "tips": ["To drain a water heater: shut off its power or gas, open a hot tap to let air in, then open the drain valve at the bottom.","Use containers made for food or water (USU water). Recycling mark 2 only means HDPE, which also makes bleach and laundry jugs, so it doesn't prove a container is food-safe (USU plastics). Never reuse ones that held chemicals or fuel (Washington DOH).","Keep stored water dark and cool, and use it up and replace it every 6 months (Washington DOH, USU water).","Toilet tank water (never the bowl) is a last resort: CDC says it can be used if it is clear and has no toilet cleaner in it (CDC find water), while Washington DOH says not to use it (Washington DOH). If you do, boil or disinfect it first.","Health Canada's emergency kit lists 2 litres of water a person a day and suggests adding 2 more for cooking and cleaning, to cover at least 72 hours (Health Canada emergency).","Sphere's daily budget per person: 2.5 to 3 L to drink (with food), 2 to 6 L for basic hygiene and 3 to 6 L for cooking, 7.5 to 15 L in all; 15 L is the usual minimum (Sphere). Very hot weather and hard work can double a person's needs (Washington DOH).","Don't pour used water away: Alberta says to use non-potable water to flush a toilet, by filling a bucket and pouring it straight into the bowl (Alberta water shortages)."],
   "refs": [
     {"lib":"water_lib","q":"storage"}
+  ],
+  "sources": [
+    {"title":"Health Canada emergency: Health Canada, Food and drinking water safety in an emergency","url":"https://www.canada.ca/en/health-canada/services/food-drinking-water-safe-emergency.html"},
+    {"title":"Sphere: The Sphere Handbook, Humanitarian Charter and Minimum Standards in Humanitarian Response, fourth edition (Sphere Association, 2018), WASH chapter (copy hosted by UNICEF)","url":"https://www.unicef.org/media/61556/file"},
+    {"title":"Washington DOH: Washington State Department of Health, Office of Drinking Water, Treating Drinking Water for Emergency Use (DOH 331-115, revised July 2022)","url":"https://doh.wa.gov/sites/default/files/legacy/Documents/Pubs/331-115.pdf"},
+    {"title":"Alberta water shortages: Government of Alberta, Water shortages (how to prepare and what to do)","url":"https://www.alberta.ca/water-shortages"},
+    {"title":"USU water: Washburn C, Storing Water for an Emergency (Utah State University Extension, 7 February 2009)","url":"https://extension.usu.edu/preparedness/articles-and-research/storing-water-for-an-emergency"},
+    {"title":"USU plastics: Riggs K, Which Plastics Are Safe for Food Storage? (Utah State University Extension, 23 July 2009; archived)","url":"https://extension.usu.edu/archive/plastics-for-storage"},
+    {"title":"CDC find water: CDC, How to Find Clean Water in an Emergency","url":"https://www.cdc.gov/water-emergency/about/how-to-find-clean-water-in-an-emergency.html"}
   ]
 }

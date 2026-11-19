@@ -7,8 +7,15 @@
   "substitutes": ["cooler_box"],
   "summary": "Drums, barrels, IBC totes, jerry cans, buckets and tanks for storing water, fuel and grain.",
   "uses": ["Storing drinking water and rainwater","Fuel storage (in fuel-rated cans and tanks)","Rain barrels and gravity-fed water systems","Rodent-proof grain and feed storage"],
-  "identify": "Blue food-grade drums at food plants and car washes, white IBC totes in steel cages at farms and factories, buckets behind restaurants and bakeries, pressure tanks at wells, and RV and boat water tanks. Food-safe plastic is usually marked HDPE 2 or food grade.",
+  "identify": "Blue food-grade drums at food plants, white IBC totes in steel cages at farms and factories, buckets behind restaurants and bakeries, pressure tanks at wells, and RV and boat water tanks. For drinking water, use containers made to hold food or water (USU water). The recycling mark names the plastic: HDPE 2 (milk and juice jugs), PET 1 (pop and water bottles) and PP 5 (tubs, medicine bottles) are the usual food plastics, but HDPE 2 also makes bleach and laundry jugs (USU plastics). Milk jugs are hard to clean and break down over time (USU plastics), and MSU Extension says it's best not to use them for water. Never use a jug, can or drum that held antifreeze, washer fluid, bleach, fuel, pesticide or any other poison or chemical (MSU Extension, Washington DOH). Fuel cans are usually colour-coded: red for gasoline, yellow for diesel, blue for kerosene. OSHA requires red cans for highly flammable liquids at US workplaces, and the other colours are not regulated (Justrite). Colour proves nothing, so read the label and smell the can: if it held fuel, or you can't tell, don't use it for water. Label every container as drinking water, with the date (MSU Extension, Washington DOH).",
   "test": "Fill with water and leave it on a dry surface for an hour to spot leaks. Smell inside: if it held fuel or chemicals, don’t use it for drinking water, and never cut or weld it, as vapour inside can explode.",
   "decay": {"halfLifeMonths":null,"note":"Lasts. Plastic left in the sun turns brittle over years."},
-  "hazards": ["fuel","chemical"]
+  "hazards": ["fuel","chemical"],
+  "sources": [
+    {"title":"USU water: Washburn C, Storing Water for an Emergency (Utah State University Extension, 7 February 2009)","url":"https://extension.usu.edu/preparedness/articles-and-research/storing-water-for-an-emergency"},
+    {"title":"USU plastics: Riggs K, Which Plastics Are Safe for Food Storage? (Utah State University Extension, 23 July 2009; archived)","url":"https://extension.usu.edu/archive/plastics-for-storage"},
+    {"title":"MSU Extension: Mississippi State University Extension, Disaster Relief: Drinking Water Emergency","url":"https://extension.msstate.edu/publications/disaster-relief-drinking-water-emergency"},
+    {"title":"Washington DOH: Washington State Department of Health, Office of Drinking Water, Treating Drinking Water for Emergency Use (DOH 331-115, revised July 2022)","url":"https://doh.wa.gov/sites/default/files/legacy/Documents/Pubs/331-115.pdf"},
+    {"title":"Justrite: Justrite, Safety can color guide (gasoline, diesel, kerosene, oil)","url":"https://www.justrite.com/safety-cans-containers/color-guide"}
+  ]
 }
