@@ -1,0 +1,44 @@
+{
+  "id": "pellet_stove",
+  "name": "Pellet stove",
+  "group": "Heating, cooling and water",
+  "aliases": ["pellet heater","wood pellet stove","pellet insert","pellet fireplace insert","pellet burner","corn stove","biomass stove"],
+  "brands": ["Harman","Englander","Drolet","Enviro","Quadra-Fire","St. Croix","Breckwell","US Stove","Ashley","Castle","Napoleon","Comfortbilt"],
+  "prev": 2,
+  "tools": ["screwdriver","socket","wrench","multimeter","heavy"],
+  "mins": 60,
+  "kg": 130,
+  "hazards": ["co_gas","burn","mains","heavy","sharp","open_flame"],
+  "combustion": {"indoor":"vented","fuels":["wood pellets (PFI-certified, Premium grade or better)"],"kw":[2,15.7],"power_w":350,"note":"Fan-forced through a listed pellet vent to outside; with no power the exhaust blower stops and exhaust, including carbon monoxide, can seep into the room, so keep a working CO alarm."},
+  "comps": [
+    {"key":"combustion_blower","fn":"fan","spec":"Combustion (exhaust) blower: pulls air through the burn pot and pushes the smoke out the vent. If it stops, a vacuum or draft switch shuts the stove down; with the power off, smoke can seep into the room","v":120,"ac":true,"qty":1,"ext":2,"obs":3,"loc":"At the vent outlet, screwed to the steel exhaust tube"},
+    {"key":"room_blower","fn":"fan","spec":"Room-air (distribution or convection) blower that pushes heated air out the front; starts once the stove is hot","v":120,"ac":true,"qty":1,"ext":2,"obs":3,"loc":"Inside the cabinet; on the left side of an Englander"},
+    {"key":"auger_motor","fn":"motor_sync","spec":"Slow feed gear motor that turns the auger: 1 rpm on an Englander, which has two augers with a motor each, and 4 rpm on a Harman","v":120,"ac":true,"qty":1,"ext":2,"obs":4,"loc":"On the end of the auger shaft, below the hopper"},
+    {"key":"auger","fn":"rod_shaft","spec":"Steel auger screw in a tube that carries pellets from the hopper to the burn pot","qty":1,"ext":3,"obs":4,"loc":"Inside the auger tube below the hopper"},
+    {"key":"igniter","fn":"heating_element","spec":"Cartridge heater at the burn pot (Englander) that lights the pellets on stoves with automatic ignition. Lighting is the heaviest draw: a Drolet Eco-65R averages 3.7 A (360 W) over its whole ignition cycle against 258–348 W running; Harman's label says 4.2 A to start, 2.8 A to run","v":120,"ac":true,"qty":1,"ext":2,"obs":4,"loc":"In a holder behind or under the burn pot"},
+    {"key":"controller_board","fn":"controller_board","spec":"Control board that runs the feed, blowers and igniter from the sensors, with a 5 A (Harman) or 6 A (Englander) fuse","v":120,"ac":true,"qty":1,"ext":2,"obs":4,"loc":"Behind a side or back panel"},
+    {"key":"sensors","fn":"sensor_misc","spec":"Exhaust temperature probe (Harman's ESP), room temperature sensor and a vacuum or low-draft pressure switch that stops the feed if the draft fails","qty":3,"ext":2,"obs":5,"loc":"Probe just inside the exhaust passage (Harman); vacuum-switch port beside the burn pot (Englander)"},
+    {"key":"switches","fn":"switch","spec":"Hopper-lid switch that stops the feed when the lid is open (Englander, Harman). Over-temperature shutdown comes from the control board and exhaust probe (Harman) and shows as error E-3 on an Englander","qty":1,"ext":1,"obs":5,"loc":"Lid switch at the hopper, wired to the top auger motor on an Englander"},
+    {"key":"glass_pane","fn":"glass_pane","spec":"Ceramic door glass, 5 mm on a Harman P-series; replace only with ceramic glass","qty":1,"ext":2,"obs":3,"loc":"In the front door"},
+    {"key":"chimney_pipe","fn":"chimney_pipe","spec":"Listed pellet vent: 75 mm (3 in) on Harman and Englander, 100 mm (4 in) on the Drolet Eco-65R and on long runs (Englander: over 15 ft); type L or PL (Harman), ULC-listed in Canada (Englander, Drolet); twist-lock, or screwed and sealed joints. Englander says never B-vent or galvanised pipe","qty":1,"ext":1,"obs":2,"loc":"From the exhaust outlet at the back, out through the wall or up through the roof","p":0.6},
+    {"key":"sheet_metal","fn":"sheet_metal","spec":"Steel body, hopper and panels; edges can be sharp (Harman advises gloves on steel surfaces). The hopper holds 18 kg (40 lb) on an Englander, 23–34 kg (50–76 lb) on a Harman P-series and 57 kg (125 lb) on a Drolet Eco-65R, and its lid is warm in use (Englander)","qty":1,"ext":3,"obs":2,"loc":"The cabinet"}
+  ],
+  "boards": [],
+  "buildings": [
+    {"b":"hardware","l":3,"loc":"Stove display; pallets of pellet bags in autumn"},
+    {"b":"farm_supply","l":3,"loc":"Stove and chimney aisle; pellets in the yard or warehouse"},
+    {"b":"house","l":2,"loc":"Living room or basement, vent through the outside wall; bags of pellets in the garage or basement"},
+    {"b":"farm","l":2,"loc":"Farmhouse or heated shop"},
+    {"b":"garage_res","l":2,"loc":"Workshop heater"},
+    {"b":"self_storage","l":1,"loc":"Units holding household contents"}
+  ],
+  "notes": "Most pellet stoves need electricity for the auger, both blowers, the igniter and the controls; EPA notes that some gravity-fed models heat without power (EPA Burn Wise pellet, Englander 25-PDVC). A Drolet Eco-65R averages 360 W through its lighting cycle and 258–348 W running; the Harman P-series label says 4.2 A to start and 2.8 A to run at 120 V (Drolet Eco-65R, Harman P-series). When the power fails the exhaust blower stops and exhaust can seep into the room (Harman P-series), and the Drolet Eco-65R manual says the stove cannot run on natural draught alone. Keep the door and hopper lid shut and latched, and open an outside door and a window (Harman P-series, Englander 25-PDVC; the Drolet Eco-65R manual says an open window prevents negative pressure and smoke spillage). A vertical rise in the vent may give some natural draught but is no guarantee (Harman P-series), and Englander wants at least 91 cm (3 ft) of it (Englander 25-PDVC). On a battery and inverter it runs only while the battery and the pellets last: Harman's approved inverter/charger on a 12 V deep-cycle battery runs its stove for up to 8 hours. A computer-type UPS only gives a safe shut-down, not continued running. If the outage outlasts the battery, smoke can still leak unless the stove has been shut down safely, and other backup units may not work with the controls or can create unsafe conditions (Harman P-series). Burn only wood pellets with no additives: other fuels make extra carbon monoxide (Englander 25-PDVC) and additives can cause a hopper fire (Harman P-series). Fit a CO alarm and smoke alarms (Englander recommends both, and says a smoke detector directly above the stove can false-alarm). Don't put it in a bedroom (Drolet Eco-65R manual), and don't count on it as your only heat: Englander does not recommend that and Drolet says to have another heating system as well (Englander 25-PDVC, Drolet Eco-65R manual).",
+  "sources": [
+    {"title":"EPA Burn Wise pellet: US EPA, Burn Wise, Pellet Stoves","url":"https://www.epa.gov/burnwise/pellet-stoves"},
+    {"title":"Harman P-series: Harman (Hearth & Home Technologies), P43, P61A & P68 Freestanding Pellet Stove Owner's Manual, Care and Operation (3-90-436168, R24, 11/19)","url":"https://downloads.hearthnhome.com/installManuals/P43_61A_68_O.pdf"},
+    {"title":"Englander 25-PDVC: England's Stove Works, Installation & Operation Manual, Pellet Stove Models 25-PDVC / 55-SHP10 / 55-TRP10 (Rev. 7/2017)","url":"https://cdn.shopify.com/s/files/1/2071/6041/files/25-PDVC_USandCANADA.pdf","note":"Maker's manual; CDN copy, not confirmed as the maker's own store"},
+    {"title":"Drolet Eco-65R: Drolet, Pellet Stove ECO-65R (DP00061) product page and specifications","url":"https://drolet.ca/us/en/pellet-stoves/dp00061"},
+    {"title":"Drolet Eco-65R manual: Drolet (Stove Builder International), ECO-65R (DP00061) Installation and Operation Manual (46384A, 2025-02-04)","url":"https://www.drolet.ca/file/46384A_2025-02-04.pdf"},
+    {"title":"StatCan HES 2019: Statistics Canada, Households and the Environment Survey, 2019 (The Daily, 1 June 2021)","url":"https://www150.statcan.gc.ca/n1/daily-quotidien/210601/dq210601c-eng.pdf"}
+  ]
+}
