@@ -1,0 +1,26 @@
+{
+  "id": "keep_clean",
+  "name": "Keep clean",
+  "keywords": ["keep clean","wash","washing","hygiene","wash hands","hand washing","sponge bath","bathe without water","wash dishes","soap","no soap","greywater","grey water","hand sanitiser"],
+  "summary": "Hands matter most: soap and a little running water before food and after the toilet help keep stomach bugs from spreading when the taps stop. A tippy tap or a jug with a tap makes a few litres go a long way. Wash bodies a part at a time from a basin, wash dishes in a line of tubs (wash, rinse, sanitise), and soak clothes in a bucket. When soap runs out, ash is one stand-in, though nobody knows how well it works. Soap can be made from wood-ash lye and fat, but lye burns skin and eyes: read the chemicals reference first. Use clean or treated water for dishes, food and teeth, and use the dirty wash water to flush toilets the same day. In the cold, warm the room and the water first (warm, not scalding) and dry off fast: wet skin and clothes lose heat quickly.",
+  "parts": [
+    {"fn":"tank","why":"Basins, pails and jugs for washing, and a tippy tap","core":true},
+    {"fn":"chlorine","why":"Plain bleach to sanitise dishes, surfaces and toilets","core":true},
+    {"fn":"water_stored","why":"Clean water for hands, dishes and teeth"},
+    {"fn":"ppe_gloves_disposable","why":"Cleaning up vomit and faeces, and caring for the sick"},
+    {"fn":"rope_webbing","why":"Tippy tap string and clothes lines"}
+  ],
+  "guides": ["build_tippy_tap","reference_sanitation","reference_chemicals","reference_food_safety","build_stove_water_coil","skill_toilets_in_winter"],
+  "tips": ["Wash hands with soap for at least 20 seconds before food and eating, and after the toilet, nappies, caring for someone sick or touching garbage (CDC handwashing).","Running water beats a shared basin, which holds germs from earlier use. Warm and cold water clean hands equally well (CDC hand FAQ). A tippy tap gives running water from a few litres.","No soap? Sphere lists ash as an alternative to soap, but a Cochrane review couldn't tell whether ash works as well as soap (Sphere, Cochrane ash review). Hand sanitiser with at least 60 % alcohol is for when soap and water can't be had, not for dirty or greasy hands (CDC hand FAQ).","Dishes and kitchen surfaces: wash, rinse, then sanitise with 5 mL (1 tsp) of unscented bleach poured into 750 mL (3 cups) of water, let it stand a few minutes and rinse well (Health Canada emergency). Mix it fresh each time (Health Canada chemicals).","Never wash skin with bleach or diluted bleach, and never mix bleach with other cleaners (Health Canada chemicals).","Plan on about 2 to 6 L a person a day for basic hygiene, and about 250 g of bathing soap and 200 g of laundry soap a month (Sphere).","Use only boiled or disinfected water for dishes and brushing teeth (EPA). Wash water can flush toilets the same day, but don't store it: stored greywater turns septic (WHO EMRO).","Wet clothing pulls heat from the body faster than dry (TC 21-3): keep wet time short, dry off fast, and keep wash water warm, not scalding.","A stove water coil is an experienced build: with no open vent or working relief valve it can burst as steam. For washing, heat water in a pot."],
+  "sources": [
+    {"title":"CDC handwashing: CDC, Clean Hands, When and How to Wash Your Hands","url":"https://www.cdc.gov/clean-hands/about/index.html"},
+    {"title":"CDC hand FAQ: CDC, Clean Hands, Hand Hygiene Frequently Asked Questions","url":"https://www.cdc.gov/clean-hands/faq/index.html"},
+    {"title":"Sphere: The Sphere Handbook, Humanitarian Charter and Minimum Standards in Humanitarian Response, fourth edition (Sphere Association, 2018), WASH chapter (copy hosted by UNICEF)","url":"https://www.unicef.org/media/61556/file"},
+    {"title":"Health Canada emergency: Health Canada, Food and drinking water safety in an emergency","url":"https://www.canada.ca/en/health-canada/services/food-drinking-water-safe-emergency.html"},
+    {"title":"Health Canada chemicals: Health Canada, Household chemical safety (bleach)","url":"https://www.canada.ca/en/health-canada/services/home-safety/household-chemical-safety.html"},
+    {"title":"EPA: Emergency Disinfection of Drinking Water (EPA 816-F-15-003, September 2017; archived copy)","url":"https://19january2021snapshot.epa.gov/sites/static/files/2017-09/documents/emergency_disinfection_of_drinking_water_sept2017.pdf"},
+    {"title":"TC 21-3: US Army Training Circular 21-3, Soldier's Handbook for Individual Operations and Survival in Cold-Weather Areas (17 March 1986; archive.org copy)","url":"https://archive.org/download/MManuals/Tc21-3UsArmySurvivalInColdWeather1986.pdf"},
+    {"title":"WHO EMRO: World Health Organization, Regional Office for the Eastern Mediterranean, Overview of greywater management: health considerations (2006)","url":"https://applications.emro.who.int/dsaf/dsa1203.pdf"},
+    {"title":"Cochrane ash review: Cochrane, Hand cleaning with ash for reducing the spread of viral and bacterial infections compared with soap or other methods (rapid review), plain-language summary","url":"https://www.cochrane.org/CD013597/does-cleaning-hands-ash-stop-or-reduce-spread-viral-and-bacterial-infections-compared-soap-or-other"}
+  ]
+}
