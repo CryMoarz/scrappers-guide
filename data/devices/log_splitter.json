@@ -1,0 +1,43 @@
+{
+  "id": "log_splitter",
+  "name": "Log splitter",
+  "group": "Tools and yard",
+  "aliases": ["wood splitter","hydraulic log splitter","firewood splitter","gas log splitter","electric log splitter","towable log splitter","kinetic log splitter","splitter"],
+  "brands": ["Champion","Yardworks","Generac","DR","Swisher","Ariens","Southland","Huskee","Boss Industrial","Wallenstein","Troy-Bilt","WEN","Sun Joe"],
+  "prev": 3,
+  "tools": ["wrench","socket","screwdriver","pliers","heavy"],
+  "mins": 90,
+  "kg": 195,
+  "hazards": ["hydraulic","crush","heavy","sharp","fuel","co_gas","burn","mains","projectile","noise","entanglement"],
+  "combustion": {"indoor":"outdoor_only","fuels":["petrol (87 octane or better, under 10 % ethanol)"],"note":"Petrol models only: the engine exhaust contains carbon monoxide; run it outdoors, far from doors, windows and vents, and never inside any building, even with the doors open."},
+  "comps": [
+    {"key":"cylinder","fn":"hydraulic","spec":"Hydraulic cylinder that drives the wedge: 10 cm × 57.5 cm (4 × 22.6 in) with a 4 cm (1.6 in) rod on a 25-tonne Champion; up to 3,900 psi (269 bar). Before loosening a fitting: engine off, work the lever back and forth to relieve pressure","qty":1,"ext":2,"obs":1,"loc":"Along the beam, pinned between mounting plates at one end and to the wedge at the other"},
+    {"key":"pump","fn":"hydraulic","spec":"Two-stage gear pump on a 25-tonne Champion: maximum flow 41.6 L/min (11 US gal/min), maximum pressure 3,900 psi","qty":1,"ext":2,"obs":3,"loc":"On the engine (or motor), fed from the tank by a clear suction hose"},
+    {"key":"valve","fn":"valve_solenoid","spec":"Hydraulic control valve with a lever and a detent that returns the wedge on its own (Champion). Champion and Yardworks say not to adjust the pressure setting; Yardworks seals its limiting screw with glue","qty":1,"ext":2,"obs":3,"loc":"Mounted on the cylinder next to the wedge, with the control lever on top"},
+    {"key":"oil_lube","fn":"oil_lube","spec":"Hydraulic oil: about 19 L (5 US gal) in a 25-tonne system, ISO 32 / SAE 10W above 0 °C or automatic transmission fluid below 0 °C (Champion); 3.2 L in a small 5-tonne electric one (Yardworks)","qty":1,"ext":1,"obs":3,"loc":"Tank, hoses and cylinder; drain plug on the tank"},
+    {"key":"hose_tubing","fn":"hose_tubing","spec":"On a towable petrol model (Champion): a black high-pressure hose from pump to control valve and a black low-pressure return hose, both with swivel-nut ends, plus a clear suction hose from the tank. A pinhole leak can inject oil through skin","qty":3,"ext":1,"obs":3,"loc":"Between tank, pump, valve and cylinder"},
+    {"key":"tank","fn":"tank","spec":"Hydraulic oil tank holding 15 L (4 US gal) of the 19 L (5 US gal) system on a 25-tonne model, with a sight glass and a drain plug on the bottom; drain it before cutting or heating it","qty":1,"ext":2,"obs":4,"loc":"Just beneath the engine on towable models","p":0.6},
+    {"key":"engine_small","fn":"engine_small","spec":"Four-stroke petrol engine, 224 cc OHV with recoil start, 3.1 L fuel tank and 0.5 L of 10W-30 oil on a 25-tonne Champion","qty":1,"ext":2,"obs":2,"loc":"On the engine mounting platform","p":0.7},
+    {"key":"motor_ac","fn":"motor_ac","spec":"Electric motor, 120 V 15 A, 1¾ hp, on a small 5-tonne splitter (Yardworks); its parts list includes a capacitor. Needs a grounded outlet with a residual-current (GFCI) device","v":120,"a":15,"ac":true,"qty":1,"ext":2,"obs":3,"loc":"One end of the body, driving the pump","p":0.3},
+    {"key":"beam","fn":"rod_shaft","spec":"Heavy splitting beam (Champion says it takes two or more people to handle one) with the wedge sliding under its rails; Yardworks says to touch up the wedge edge with a fine-toothed file","qty":1,"ext":3,"obs":2,"loc":"The main frame; the wedge is bolted to the cylinder rod end"},
+    {"key":"fasteners","fn":"fasteners","spec":"Cylinder pins with R-clips, M10 and M12 bolts, a 2 in (5.1 cm) ball coupler and safety chains on towable models","qty":20,"ext":1,"obs":4,"loc":"Cylinder mounts, wedge, log cradles, tongue"}
+  ],
+  "boards": [],
+  "buildings": [
+    {"b":"tool_rental","l":5,"loc":"Rental yard, towable splitters parked outside"},
+    {"b":"farm","l":4,"loc":"Machine shed or by the woodpile"},
+    {"b":"farm_supply","l":4,"loc":"Outdoor equipment display and the yard"},
+    {"b":"hardware","l":3,"loc":"Outdoor power equipment section; small electric ones boxed on shelves"},
+    {"b":"garage_res","l":3,"loc":"Back of the garage or the woodshed"},
+    {"b":"house","l":2,"loc":"Rural houses: shed or under a lean-to by the woodpile"},
+    {"b":"self_storage","l":2,"loc":"Units holding cottage and farm gear"},
+    {"b":"garden_centre","l":2,"loc":"Seasonal outdoor power equipment"},
+    {"b":"campground","l":2,"loc":"Maintenance yard where campsite firewood is split"}
+  ],
+  "notes": "Only one person works the controls of a splitter, hydraulic or flywheel: Generac includes placing the log on the beam, Champion's label says one person operates it and loads the logs, and Champion says many accidents happen when more than one person operates it (if a helper loads, leave the controls alone until they are clear). Yardworks says never to ask anyone to help free a jammed log. Hold logs by their sides, never the ends, and never put a hand or any part of your body between the log and any part of the machine (Champion); splits in a log can close suddenly and crush or amputate fingers, so never free a jammed log by hand (Yardworks). Champion's label says keep everyone else 3 m (10 ft) away; Generac says 15 m (50 ft) for bystanders, children and pets. A 25-tonne unit runs its oil at up to 3,900 psi (269 bar), so a pinhole leak can jet oil through the skin: look for leaks with cardboard or wood, never a hand, and anyone hit needs a doctor at once (Champion). Before touching a fitting or hose, stop the engine (or unplug an electric one), work the control lever back and forth to relieve pressure, and leave the pressure setting alone; don't run it with frayed, kinked or cracked hoses (Champion, Yardworks). The hydraulic parts and oil get very hot (Champion). A petrol engine runs outdoors only, far from windows, doors and vents and never inside any building, even with the doors open: the exhaust contains carbon monoxide (Champion). Wear safety glasses, heavy boots and ear protection, split one log at a time along the grain, and work in daylight on dry, level ground, not ice, snow or mud (Champion, Yardworks). Champion caps towing at 72 km/h (45 mph), says to check local towing, licence and lighting rules, and to unhitch, block the wheels and set the support leg before splitting.",
+  "sources": [
+    {"title":"Champion: Champion Power Equipment, Operator's Manual, Model 100251 25 Ton Full Beam Log Splitter (rev. 2022-05-06)","url":"https://www.championpowerequipment.com/wp-content/uploads/2017/08/100251-om-english.pdf"},
+    {"title":"Yardworks: Yardworks Canada (Canadian Tire), Electric Log Splitter model 060-3895-8, instruction manual","url":"https://media-www.canadiantire.ca/manual/product/0603895/060-3895-en-cb8084eb-75b5-4aff-816b-7cf6f5443052.pdf"},
+    {"title":"Generac G10: Generac Power Systems, Operator's Manual, Generac G10 Kinetic Log Splitter","url":"https://dam.generac.com/ImConvServlet/imconv/5d824d1a4dea06926b539a7c70e46a0b1f8cd795/original"}
+  ]
+}
