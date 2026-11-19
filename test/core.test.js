@@ -246,7 +246,9 @@ test('signatures, tampering and work stamps', async () => {
   assert.ok(await SDG.sign.verify(p));
   assert.ok(await SDG.sign.checkStamp(p, 8));
   assert.equal(await SDG.sign.verify(Object.assign({}, p, { reason: 'other' })), false);
-  assert.equal(await SDG.sign.checkStamp(Object.assign({}, p, { pow: '0' }), 8), false);
+  // Any one swapped stamp meets 8 bits by luck 1 time in 256, so try several: one must fail.
+  const swapped = await Promise.all(['0', '1', '2', '3', '4'].map(pow => SDG.sign.checkStamp(Object.assign({}, p, { pow }), 8)));
+  assert.ok(swapped.includes(false));
   await assert.rejects(() => SDG.changes.makeProposal({ coll: 'models', rid: 'Bad Id', op: 'put', data: {} }, me));
 });
 
