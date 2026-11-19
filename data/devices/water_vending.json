@@ -1,0 +1,43 @@
+{
+  "id": "water_vending",
+  "name": "Water vending and refill machine",
+  "group": "Retail and public",
+  "aliases": ["water refill machine","water vending machine","self-serve water refill","water refill station","purified water machine","reverse osmosis water machine","jug refill machine","water kiosk","bulk water dispenser"],
+  "brands": ["Primo Water","Glacier Water","American Dispensing Company (ADC)"],
+  "prev": 3,
+  "tools": ["screwdriver","wrench","socket","pry"],
+  "mins": 60,
+  "hazards": ["mains","uv","mercury","chemical","heavy","crush"],
+  "comps": [
+    {"key":"filter_water","fn":"filter_water","spec":"Sediment pre-filter (10 micron on the ADC AD-840) and a sediment/carbon polishing filter in screw-on housings. ADC says idle time lets bacteria foul filters: treat fitted cartridges as dirty, look for sealed spares. Full housings are heavy: shut off the water and release pressure before unscrewing","qty":2,"ext":1,"obs":3,"loc":"Filter housings on the inlet line and before the dispensing nozzle, inside the cabinet"},
+    {"key":"carbon","fn":"carbon","spec":"Carbon-block cartridge that takes chlorine, tastes and some organic chemicals out of the feed water so they don't ruin the membrane. It does not kill germs","qty":1,"ext":1,"obs":4,"loc":"Second filter housing on the inlet line"},
+    {"key":"filter_water_membrane","fn":"filter_water","spec":"RO membrane in a pressure housing, run at about 160 psi (11 bar). ADC says to add preservative if idle five days or more, to keep it moist and free of bacteria; a dried-out one may lose flow for good (FilmTec). Spares ship in sodium bisulfite: gloves and goggles, flush well before use","qty":1,"ext":2,"obs":4,"loc":"Long tube-shaped housing at the back of the cabinet, beside the sediment and carbon filters"},
+    {"key":"pump_water","fn":"pump_water","spec":"RO booster pump, 3/4 hp (0.55 kW) on the ADC machine, which runs on a 120 to 240 V supply; it pushes water through the membrane at about 160 psi. Lines after it hold that pressure: shut the inlet, open a sampling valve to release it, and wear eye protection","w":550,"ac":true,"qty":1,"ext":2,"obs":4,"loc":"Base of the cabinet, with a pressure gauge"},
+    {"key":"pump_water_dispense","fn":"pump_water","spec":"Dispensing pump and drain pump, about 11 litres (3 US gal) a minute each on the ADC machine","qty":2,"ext":2,"obs":5,"loc":"Lower cabinet, by the storage tank and the drain basin"},
+    {"key":"tank","fn":"tank","spec":"Storage tank, 95 litres (25 US gal) on the ADC machine, vented through a small air filter. ADC recirculates its water through the polishing filter and UV lamp from time to time; in a stopped machine, treat it as untreated water: boil or disinfect it","qty":1,"ext":2,"obs":4,"loc":"Large horizontal tank low in the cabinet"},
+    {"key":"uv_lamp","fn":"uv_lamp","spec":"UV-C lamp in a quartz sleeve inside its chamber; ADC puts a lamp's life at about a year of continuous use. Burns eyes and skin when lit: unplug it before working on it. Contains mercury, so keep it whole and never vacuum up a broken one (Viqua PUV manual)","qty":1,"ext":2,"obs":5,"loc":"UV chamber on the dispensing line near the polishing filter, with a UV sensor probe and an indicator LED"},
+    {"key":"valve_solenoid","fn":"valve_solenoid","spec":"Inlet solenoid valve and dispensing and recirculation solenoid valves, plus manual ball valves at the water inlet and the tank, PVC sampling valves and an adjustable back-pressure valve","qty":3,"ext":1,"obs":5,"loc":"Water lines throughout the cabinet"},
+    {"key":"switch","fn":"switch","spec":"Float and level switches: refill level and tank-full in the storage tank, overflow cut-outs at the tank top, the cabinet base and the reservoir tank, and a float switch in the reservoir tank that runs the drain pump","qty":6,"ext":1,"obs":5,"loc":"Inside the storage tank, the reservoir tank by the drain pump, and the cabinet base"},
+    {"key":"sensor_misc","fn":"sensor_misc","spec":"Pressure gauge, dissolved-solids (TDS) probes before and after the membrane, a UV sensor probe and leak sensors","qty":4,"ext":2,"obs":5,"loc":"Pump, membrane lines, UV chamber, cabinet floor and drain basin"},
+    {"key":"hose_tubing","fn":"hose_tubing","spec":"Push-fit plastic tubing, 3/8 and 1/2 in outside diameter, with fittings","qty":1,"ext":1,"obs":4,"loc":"Throughout"}
+  ],
+  "boards": [
+    {"id":"mcu_board","qty":1,"loc":"Controller behind the door, with LED displays, keypad and coin acceptor"}
+  ],
+  "buildings": [
+    {"b":"supermarket","l":5,"loc":"Coin-operated machines outside the store; machines that don't take coins in the water aisle or on an outer wall"},
+    {"b":"department","l":3,"loc":"Outside the store, or inside in the water aisle"},
+    {"b":"hardware","l":2,"loc":"Outside the store, at home centres"},
+    {"b":"convenience","l":2,"loc":"Outside the store"},
+    {"b":"pharmacy","l":1,"loc":"Outside the store"}
+  ],
+  "notes": "Most refill machines sit outside supermarkets and big stores, with the retailer supplying the town water and the power (Primo 10-K 2018). The part details here come from the manual for ADC's AD-840, an indoor model, and Primo or Glacier machines may differ. Primo describes carbon filtration plus reverse osmosis; ADC's machine needs germ-free feed water and puts a UV lamp after the membrane, so reverse osmosis alone is not what keeps its water safe. Once the power is off, the stored water stops circulating past the UV lamp, so treat anything left inside as untreated and boil or disinfect it. Working machines can carry bacteria too: a 1999 study of 30 machines found coliforms in 20% of water samples (Chaidez 1999), and a 2020 California study found bacteria above EPA limits in about a fifth of samples (CHJ vending machines). Often the best finds are sealed spare cartridges, lamps and membranes, the pumps, the tank and the tubing. A machine left unpowered through a Canadian winter may have frozen: ADC says freezing irreparably damages the machine, so expect broken parts and leaks and treat frozen filter cartridges as broken (a sealed membrane in its preservative is the exception: FilmTec says freezing does not harm it if thawed before use). Cut the power, close the water inlet and release the pressure before opening it up.",
+  "sources": [
+    {"title":"ADC AD-840: American Dispensing Company, AD-840 Water Vending Machine Installation/Operator's Manual (ADC Part No. 182730)","url":"https://parts.alliancelaundry.com/files/manuals/commercial/adc/Installation/182730_R4.pdf"},
+    {"title":"Primo 10-K 2018: Primo Water Corporation, Annual Report on Form 10-K for the year ended 31 December 2018 (US SEC)","url":"https://www.sec.gov/Archives/edgar/data/1365101/000143774919004167/prmw20181231_10k.htm"},
+    {"title":"FilmTec manual: DuPont Water Solutions, FilmTec Reverse Osmosis Membranes Technical Manual (Form 45-D01504-en, Rev. 20, August 2026), chapter 7 Handling, Preservation and Storage","url":"https://www.dupont.com/content/dam/dupont/amer/us/en/water-solutions/public/documents/en/RO-NF-FilmTec-Manual-45-D01504-en.pdf"},
+    {"title":"Viqua PUV manual: Pentair (VIQUA, Guelph, Ontario), PUV-8-P and PUV-16-P UV disinfection systems owner's manual","url":"https://www.pentair.com/content/dam/extranet/web/nam/pentair-water-solutions/manuals/puv8-p-puv16-p-uv-systems-manual.pdf"},
+    {"title":"Chaidez 1999: Chaidez C, Rusin P, Naranjo J, Gerba CP, Microbiological quality of water vending machines (International Journal of Environmental Health Research 9(3):197-206, 1999), abstract","url":"https://experts.arizona.edu/en/publications/microbiological-quality-of-water-vending-machines/"},
+    {"title":"CHJ vending machines: Amy DiPierro, Everything You Need to Know About Water Vending Machines (USC Center for Health Journalism, 13 December 2024)","url":"https://centerforhealthjournalism.org/our-work/reporting/everything-you-need-know-about-water-vending-machines"}
+  ]
+}
