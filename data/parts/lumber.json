@@ -7,8 +7,13 @@
   "substitutes": ["tube_frame","sheet_metal"],
   "summary": "Boards, beams, plywood and pallets for building, repairs and fuel.",
   "uses": ["Framing shelters, sheds and raised beds","Boarding up windows and doors","Building carts, shelves and workbenches","Clean untreated offcuts for cooking fires"],
-  "identify": "Lumber yards, hardware stores, building sites, pallets behind every warehouse and shop, fences, decks and furniture. Treated lumber is often green or brown-tinged with a stamped tag. Pallets stamped HT are heat-treated; MB means chemically fumigated.",
-  "test": "Push a knife point in: sound wood resists, rotten wood is soft and crumbly. Sight along boards for warping. Never burn treated wood or MB pallets: the smoke is toxic.",
+  "identify": "Lumber yards, hardware stores, building sites, pallets behind every warehouse and shop, fences, decks and furniture. Treated lumber is light green (CCA) or brown when new, but aged treated wood can look like plain wood (Health Canada treated wood). Pallets stamped HT are heat-treated; MB means fumigated with methyl bromide, a pesticide (CFIA D-98-08, Penn State pallets).",
+  "test": "Push a knife point in: sound wood resists, rotten wood is soft and crumbly. Sight along boards for warping. Never burn treated wood, indoors or out: its chemicals go into the smoke and ash (Health Canada treated wood). MB means fumigated with methyl bromide (CFIA D-98-08): leave it, and never burn it (Penn State pallets).",
   "decay": {"halfLifeMonths":null,"note":"Lasts if dry. Wood left wet rots in a few years, faster in heat."},
-  "hazards": ["chemical"]
+  "hazards": ["chemical"],
+  "sources": [
+    {"title":"CFIA D-98-08: Canadian Food Inspection Agency, D-98-08: Entry requirements for wood packaging material into Canada (treatment codes HT, DH, MB, SF; modified 2026-05-25)","url":"https://inspection.canada.ca/en/plant-health/invasive-pests-and-plants/directives/forest-products/98-08"},
+    {"title":"Penn State pallets: Penn State Extension, Be Safe Around Wooden Pallets (updated 12 February 2024)","url":"https://extension.psu.edu/be-safe-around-wooden-pallets"},
+    {"title":"Health Canada treated wood: Health Canada, Staying safe around treated wood","url":"https://www.canada.ca/en/health-canada/services/consumer-product-safety/reports-publications/pesticides-pest-management/fact-sheets-other-resources/staying-safe-around-treated-wood.html"}
+  ]
 }

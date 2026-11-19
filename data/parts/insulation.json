@@ -7,8 +7,14 @@
   "substitutes": ["foam_rubber"],
   "summary": "Materials that slow heat loss: glass and mineral wool, foam board, spray foam and reflective foil.",
   "uses": ["Insulating a shelter, room or sleeping area","Building a cooler, hay-box cooker or solar oven","Wrapping pipes and tanks against freezing"],
-  "identify": "Lofts and wall cavities, foam boards on building sites, foam inside fridges, freezers, coolers and water heaters, and foil on HVAC ducts. In old buildings, grey-brown granular loose fill (vermiculite) and old pipe lagging may contain asbestos: leave them alone. Plastic foam burns fast with thick, toxic smoke: cover it and keep it away from stoves and heaters.",
-  "test": "Dry, fluffy and clean is good; wet, squashed or mouldy insulation has lost most of its value. Wear gloves, long sleeves and a mask for glass wool.",
+  "identify": "Lofts and wall cavities, foam boards on building sites, foam inside fridges, freezers, coolers and water heaters, and foil on HVAC ducts. In old buildings, silver-gold to grey-brown loose-fill vermiculite may contain asbestos (CCOHS vermiculite), and so may old insulation wrapped round pipes (CCOHS asbestos home): leave them alone. Plastic foam left uncovered can let a fire grow fast, its smoke and toxic gases are a serious hazard to people inside, and it needs a covering that limits the heat reaching it (NRC CBD-178): keep it covered and away from stoves and heaters.",
+  "test": "Dry, fluffy and clean is good; wet, squashed or mouldy insulation has lost most of its value. Wear gloves, long sleeves, eye protection and an N95 mask for glass wool (IDPH fiberglass).",
   "decay": {"halfLifeMonths":null,"note":"Lasts if dry. Wet insulation is useless and grows mould."},
-  "hazards": ["fiberglass","asbestos","burn"]
+  "hazards": ["fiberglass","asbestos","burn"],
+  "sources": [
+    {"title":"NRC CBD-178: Shorter GW and McGuire JH, Fire and Plastic Foam Insulation Material, Canadian Building Digest 178 (National Research Council Canada, Division of Building Research, June 1976; NRC Publications Archive, a discontinued series kept as a historical reference)","url":"https://nrc-publications.canada.ca/eng/view/object/?id=a89d3f54-d1a7-4536-97cd-ae2161e610ca"},
+    {"title":"CCOHS vermiculite: Vermiculite Insulation Containing Asbestos (CCOHS OSH Answers)","url":"https://www.ccohs.ca/oshanswers/diseases/vermiculite.html"},
+    {"title":"IDPH fiberglass: Illinois Department of Public Health, Fiberglass","url":"https://dph.illinois.gov/topics-services/environmental-health-protection/toxicology/hazardous-substances/fiberglass.html"},
+    {"title":"CCOHS asbestos home: Asbestos - In the Home (CCOHS OSH Answers)","url":"https://ccohs.ca/oshanswers/chemicals/asbestos/home.html"}
+  ]
 }
