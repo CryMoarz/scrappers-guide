@@ -13,8 +13,16 @@
     {"fn":"pump_water","why":"Pushes water through an RO membrane, which needs pressure"}
   ],
   "guides": ["build_gravity_water_filter","skill_solar_disinfection","reference_water_filters","reference_chemicals"],
-  "tips": ["Boiling always works: a rolling boil for 1 minute, or 3 minutes above 2000 m.","Plain unscented bleach: about 2 drops per litre of clear water, then wait 30 minutes. It should smell faintly of chlorine.","Use only plain chlorine. Pool tablets with stabiliser or algaecide are not for drinking water.","Clear plastic bottles in full sun for 6 hours kill most germs (SODIS). Leave them 2 days if it’s cloudy.","Filter cloudy water before using chlorine or UV: dirt shields germs."],
+  "tips": ["Boiling always works on germs: a rolling boil for 1 minute, or at least 2 minutes above 2,000 m (Health Canada BWA).","Plain unscented bleach: about 2 drops per litre of clear water, then wait 30 minutes (CDC). If the water is still cloudy or colder than 10 °C (50 °F), use 4 drops and wait 1 to 2 hours, covered (HealthLinkBC 49b). It should smell faintly of chlorine.","Use only plain chlorine. Pool tablets with stabiliser or algaecide are not for drinking water.","Chlorine does not kill Cryptosporidium (Health Canada protozoa) and is generally not effective against Giardia (HealthLinkBC 10). For lake, river and pond water, boil it or use a cyst-rated filter, absolute 1 micron or finer (HealthLinkBC 10), then add chlorine to protect it in storage (Sphere).","Clear plastic bottles in full sun for 6 hours kill most germs (SODIS). Leave them 2 days if it’s cloudy.","Filter cloudy water before using chlorine or UV: dirt shields germs."],
   "refs": [
     {"lib":"water_lib","q":"purification"}
+  ],
+  "sources": [
+    {"title":"Health Canada BWA: Health Canada, Guidance for Issuing and Rescinding Boil Water Advisories in Canadian Drinking Water Supplies (2015), boiling","url":"https://www.canada.ca/en/health-canada/services/publications/healthy-living/guidance-issuing-rescinding-boil-water-advisories-canadian-drinking-water-supplies.html"},
+    {"title":"CDC: How to Make Water Safe in an Emergency","url":"https://www.cdc.gov/water-emergency/about/index.html"},
+    {"title":"HealthLinkBC 49b: HealthLink BC File #49b, Disinfecting drinking water (updated July 2025)","url":"https://www.healthlinkbc.ca/healthlinkbc-files/disinfecting-drinking-water"},
+    {"title":"HealthLinkBC 10: HealthLink BC File #10, Giardia infection (updated July 2026)","url":"https://www.healthlinkbc.ca/healthlinkbc-files/giardia-infection"},
+    {"title":"Health Canada protozoa: Health Canada, Guidelines for Canadian Drinking Water Quality, Guideline Technical Document: Enteric Protozoa, Giardia and Cryptosporidium, Part II, section 7 (treatment technology)","url":"https://www.canada.ca/en/health-canada/services/publications/healthy-living/guidelines-canadian-drinking-water-quality-guideline-technical-document-enteric-protozoa-giardia-cryptosporidium/page-6-guidelines-canadian-drinking-water-quality-guideline-technical-document-enteric-protozoa-giardia-cryptosporidium.html"},
+    {"title":"Sphere: The Sphere Handbook, Humanitarian Charter and Minimum Standards in Humanitarian Response, fourth edition (Sphere Association, 2018), WASH chapter (copy hosted by UNICEF)","url":"https://www.unicef.org/media/61556/file"}
   ]
 }
