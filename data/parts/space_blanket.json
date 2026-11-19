@@ -1,0 +1,38 @@
+{
+  "id": "space_blanket",
+  "name": "Space blankets and emergency bivvy bags",
+  "group": "Warmth and light",
+  "demand": 3,
+  "keywords": ["space blanket","emergency blanket","mylar blanket","foil blanket","rescue blanket","survival blanket","thermal blanket","heatsheet","heatsheets","sol blanket","emergency bivvy","bivy bag","bivvy bag","survival bag","marathon blanket","reflective blanket","first aid blanket"],
+  "substitutes": ["plastic_sheet","fabric_tarp","insulation"],
+  "summary": "Thin metallised plastic sheets and bags that stop wind and water and hold in vapour; best as an outer or vapour layer over real insulation; a review found no clear evidence that they work well on their own.",
+  "uses": ["Windproof, waterproof outer cover over blankets or a sleeping bag: the foil is watertight and windproof (Wallner commentary), and a review says that in cold, windy conditions a foil probably serves best as a waterproof outer covering (Kosinski foils)","Not settled: a review found no clear evidence that foils are effective, says warmth comes mostly from trapped air and layers, and says one foil may help in low wind and moderate cold (Kosinski foils)","In a heated-manikin bed test, an emergency blanket under the bedding had a measurable warming effect; extra bedding alone gave nearly 4 °C, and clothing, bedding, blanket and a curled posture together close to 6 °C (Aijazi 2024)","A vapour barrier over wet clothes, with dry insulation outside, cut heat production by about 14 W/m² at -18.5 °C (Henriksson vapour barrier); plastic over insulation was the best of three wraps in cold wind (Thomassen wrapping). Neither says foil was the barrier","A rain shield, wind shield or stopgap bivouac sack (Wallner commentary)"],
+  "identify": "Crinkly film, silver on one or both sides, with gold or white on the other in some (Kosinski foils, Heatsheets SDS). Despite the 'Mylar' name, many are aluminium-coated polyethylene rather than Mylar polyester; the same film is sold as event (race finish) blankets, rescue blankets and bivvy bags (Heatsheets SDS). Bivvy bags are the film made into a sack. How they work: insulation comes mainly from trapped air, and the film holds almost none, so warmth depends on what is inside it (Kosinski foils). The reflective coat cuts radiant loss, but a clothed body radiates little, and condensation, frost or a tight fit against other layers spoil the reflection (Kosinski foils). In still air, foil blankets did better than their thickness suggests; in wind, windproof wraps kept 60–80% of their insulation and wind-permeable or light ones fell to 30–50% (Henriksson wind). Which side faces out doesn't matter for hypothermia (Kosinski foils).",
+  "test": "Unfold it somewhere still and hold it to the light: look for pinholes, splits at the folds and places where the silver has worn off; a sheet that lets a lot of light through has probably lost much of its coating, which the maker says can degrade with heat, water and corrosives (Heatsheets SDS). Tape small tears on both sides. A bivvy bag's head opening should stay clear of your nose and mouth; the maker warns of suffocation if children are left unattended in the film (Heatsheets SDS). Old packs that were stored wet or hot may be stuck together: peel slowly.",
+  "decay": {"halfLifeMonths":null,"note":"Estimate: sealed packs probably keep for years. The coating can degrade with heat, water and corrosives (Heatsheets SDS). Used outdoors, a sheet may split along its folds."},
+  "hazards": ["mains","open_flame"],
+  "protects": ["cold"],
+  "improvise": "A plastic sheet or tarp can do the vapour-barrier and windproof job: the best wrap in the Thomassen study was a plastic outer layer over dry insulation, and bubble wrap was the worst of the three wraps tested (Thomassen wrapping). Real warmth comes from trapped air: blankets, quilts, sleeping bags, coats, dry leaves or crumpled paper in a bag, and a pad under you. Keep foil away from stoves, stovepipe, heaters, lamps and candles: it is polyethylene film that can burn (the maker's estimate is above 340 °C (645 °F)), it gives off toxic gas when it does, and molten film causes burns (Heatsheets SDS). It is not a heat shield for a stove: shields need an air gap on non-combustible spacers. The coating conducts electricity: keep it off outlets, motors and anything near a downed power line (Heatsheets SDS). The maker also says to keep it away from fuel and solvent vapour, broken gas mains and explosive dust, because the film can store and discharge static (Heatsheets SDS). Don't leave children alone in it: the maker warns of suffocation (Heatsheets SDS), so keep the film off a child's face. Moisture condenses and can freeze on the inside of the film (Kosinski foils), so open and dry it and the bedding each day.",
+  "buildings": [
+    {"b":"pharmacy","l":3,"loc":"First-aid aisle and emergency-kit shelf"},
+    {"b":"hardware","l":3,"loc":"Emergency-preparedness shelf and first-aid kits"},
+    {"b":"shop_small","l":3,"loc":"Outdoor, sports and surplus shops: camping and survival wall"},
+    {"b":"department","l":2,"loc":"Dollar stores: camping and seasonal aisles"},
+    {"b":"fire_station","l":3,"loc":"Rescue and medical kits on the trucks and in stores"},
+    {"b":"school","l":2,"loc":"Office first-aid kit and emergency lockdown bins"},
+    {"b":"office","l":2,"loc":"First-aid kits and floor emergency kits"},
+    {"b":"gym","l":2,"loc":"First-aid room; race-day leftovers at running clubs"},
+    {"b":"stadium","l":2,"loc":"First-aid room"},
+    {"b":"house","l":2,"loc":"Car emergency kit, first-aid kit, camping bin"},
+    {"b":"car_dealer","l":1,"loc":"Vehicle first-aid and roadside kits"}
+  ],
+  "sources": [
+    {"title":"Kosinski foils: Kosinski S et al., Prehospital use of ultrathin reflective foils, Wilderness & Environmental Medicine 33(1) (2022) 134-139; Europe PMC record with abstract","url":"https://doi.org/10.1016/j.wem.2021.11.006"},
+    {"title":"Henriksson wind: Henriksson O et al., Protection against cold in prehospital care: thermal insulation properties of blankets and rescue bags in different wind conditions, Prehospital and Disaster Medicine 24(5) (2009) 408-415 (Lund University record)","url":"https://www.lunduniversity.lu.se/lup/publication/4630901a-2dac-4306-8724-ddd01bc4f6c7"},
+    {"title":"Henriksson vapour barrier: Henriksson O et al., Protection against cold in prehospital care: wet clothing removal or addition of a vapor barrier, Wilderness & Environmental Medicine 26(1) (2015) 11-20; Europe PMC record with abstract","url":"https://doi.org/10.1016/j.wem.2014.07.001"},
+    {"title":"Thomassen wrapping: Thomassen O et al., Comparison of three different prehospital wrapping methods for preventing hypothermia, a crossover study in humans, Scand J Trauma Resusc Emerg Med 19:41 (2011)","url":"https://pmc.ncbi.nlm.nih.gov/articles/PMC3142217"},
+    {"title":"Heatsheets SDS: Heatsheets (AFM LLC), Material safety data sheet, reflective-insulating emergency blankets and bivvys (rev. April 2015)","url":"https://www.heatsheets.com/wp-content/uploads/2017/01/Heatsheets_MSDS_2015.pdf"},
+    {"title":"Wallner commentary: Wallner B et al., Rescue blankets as multifunctional rescue equipment in alpine and wilderness emergencies: a commentary, Scand J Trauma Resusc Emerg Med 30:17 (2022)","url":"https://pmc.ncbi.nlm.nih.gov/articles/PMC8908563"},
+    {"title":"Aijazi 2024: Aijazi A, Parkinson T, Zhang H, Schiavon S, Passive and low-energy strategies to improve sleep thermal comfort and energy resilience during heat waves and cold snaps, Scientific Reports 14:12568 (2024)","url":"https://pmc.ncbi.nlm.nih.gov/articles/PMC11143215/"}
+  ]
+}

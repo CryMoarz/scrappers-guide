@@ -1,0 +1,41 @@
+{
+  "id": "lighter",
+  "name": "Lighters, matches and ferro rods",
+  "group": "Warmth and light",
+  "demand": 5,
+  "keywords": ["lighter","bic","disposable lighter","butane lighter","refillable lighter","torch lighter","utility lighter","bbq lighter","zippo","windproof lighter","lighter fluid","lighter flint","matches","strike anywhere matches","safety matches","waterproof matches","ferro rod","ferrocerium","fire steel","firesteel"],
+  "substitutes": ["igniter","magnesium"],
+  "summary": "Anything that makes a flame or a hot spark on demand: disposable and refillable butane lighters, Zippo-type fluid lighters, matches and ferrocerium rods.",
+  "uses": ["Lighting stoves, lamps, candles and fires; each light used up is one fewer for later, so light the next one from a stove's coals or a standing pilot rather than striking again (but put lamps and candles out before you sleep)","Disposable and refillable gas lighters: the easiest flame, but weak or dead below freezing (MSR fuels): carry one in an inside pocket","Zippo-type fluid lighters: refuel, re-flint and re-wick with spares, so one lasts for years (Zippo fill, Zippo flint, Zippo wick)","Strike-anywhere matches ignite by friction on any solid surface, so keep them in a closed box apart from other things (US rules pack them that way, 49 CFR 173.186). Safety matches ignite only on a prepared surface like the box's striker, so keep the striker (RSC matches)","A spent gas lighter's flint wheel still throws sparks onto very fine tinder: see the fire starting guide"],
+  "identify": "Gas lighters burn liquefied n-butane or isobutane; Canada requires child resistance on every lighter except luxury ones (refillable, over $2.50, not utility), and caps a basic gas lighter's flame at 50 mm (2 in) (Lighters Regulations). Disposables have no fill valve. Refillable gas lighters have a small fill valve on the bottom and usually a flame adjuster; torch lighters give a hard blue jet from a push-button piezo. Utility (long-reach, BBQ) lighters are 100 mm (4 in) or longer (Lighters Regulations). Wick lighters (Zippo type) burn a low-pressure liquid hydrocarbon such as hexane, soaked into packing, with a wick and a flint under a spring screw (Lighters Regulations, Zippo fill, Zippo flint). Strike-anywhere match heads hold tetraphosphorus trisulfide (P4S3) and potassium chlorate and ignite by friction on any solid surface; safety matches keep the red phosphorus on the box's striker and ignite only on a prepared surface (RSC matches, 49 CFR 173.186). A ferro rod is ferrocerium, a rare-earth alloy; a hard steel striker with a sharp edge shaves off particles that burn as hot sparks (Wikipedia ferrocerium).",
+  "test": "Gas lighter: look at the fuel level through a clear body, then try it. A spark with no flame means empty, too cold or air in the tank; warm it in your hand or an inside pocket and try again, since n-butane boils at about -1 °C (30 °F) and isobutane at about -12 °C (11 °F), and a cold one has little pressure (MSR fuels). A wheel that turns with no spark has a worn flint (Zippo not lighting). Hissing or a gas smell when it is off means a leaking valve: keep it away from flame and pockets. Zippo type: a wheel that spins without sparking needs a new flint; a wick that won't feed fuel needs pulling up and trimming, and after two or three trims it needs replacing (Zippo not lighting, Zippo wick); an empty lighter needs fuel (Zippo not lighting). Matches: strike one from each box. Ferro rod: scrape it hard with the back of a knife or the striker: you should get a shower of sparks.",
+  "decay": {"halfLifeMonths":null,"note":"Estimate, with no maker figure found: gas lighters can lose fuel over the years, fluid lighters dry out when unused, and matches keep if dry. Demand, not decay, empties the shelves."},
+  "hazards": ["open_flame","burn","fuel","compressed_gas"],
+  "protects": [],
+  "improvise": "Refilling a gas lighter: use only the fuel its instructions name (Lighters Regulations). Do it outdoors or somewhere well ventilated with no open flame near, so not beside a lit stove, lamp or candle (Zippo butane). Zippo's method for its butane inserts is upside down with the valve aimed away from your face, 5–6 seconds of fuel, a quick press of the valve to release trapped air, 5–6 seconds more, then at least 2 minutes before lighting (Zippo butane). Escaping butane is very cold and extremely flammable (Zippo butane). Disposable lighters have no valve and aren't made to be refilled; drilling or forcing one is a burn and frostbite risk, so use the gas in it and keep the flint wheel. Zippo type: lighter fluid only, filled slowly into the packing, not overfilled, and the lighter and your hands dried before lighting (Zippo fill). It is flammable fluid: close the can and check nothing has spilled before you light, and don't put a lighter with fuel on its outside into a pocket or next to skin (Zippo fill). Spare flints and wicks are tiny: take them with the lighter. Without any lighter or match: a grill or heater piezo clicker, steel wool on a 9 V battery, magnesium shavings or a lens; see the fire starting guide. Save every light: light a lamp or candle from the stove or a standing pilot instead of striking a new match, and put lamps and candles out before you sleep. Bank coals only in a stove or fireplace vented to the outside and leave its damper open until the ashes are cold, with a working CO alarm: the CPSC warns of poisonous gas building up while people sleep if the damper is closed on warm ashes (CPSC fireplaces).",
+  "buildings": [
+    {"b":"convenience","l":5,"loc":"Behind the counter by the tobacco and on the checkout rack"},
+    {"b":"gas_station","l":5,"loc":"Checkout counter and impulse racks; lighter butane and fluid by the counter"},
+    {"b":"house","l":4,"loc":"Kitchen drawer, beside the fireplace or stove, BBQ shelf, emergency kit"},
+    {"b":"supermarket","l":4,"loc":"Checkout racks, household aisle (matches, utility lighters), BBQ season aisle"},
+    {"b":"department","l":3,"loc":"Dollar stores: household and camping aisles"},
+    {"b":"hardware","l":3,"loc":"BBQ and fireplace aisle; camping section"},
+    {"b":"restaurant","l":3,"loc":"Kitchen by the range and server stations"},
+    {"b":"shop_small","l":2,"loc":"Outdoor, surplus and tobacco-gift shops: counters and camping walls"},
+    {"b":"church","l":2,"loc":"Sacristy: matches and candle lighters"},
+    {"b":"farm","l":2,"loc":"Workshop bench and truck cab"}
+  ],
+  "sources": [
+    {"title":"Lighters Regulations: Lighters Regulations (SOR/2016-187), Canada Consumer Product Safety Act","url":"https://laws-lois.justice.gc.ca/eng/regulations/SOR-2016-187/FullText.html"},
+    {"title":"MSR fuels: MSR (Cascade Designs), The ins and outs of canister fuels","url":"https://cascadedesigns.com/blogs/msr-gear-guides/ins-outs-canister-fuels"},
+    {"title":"RSC matches: Royal Society of Chemistry, Education in Chemistry, Strike a light (Peter Borrows, 2021)","url":"https://edu.rsc.org/opinion/strike-a-light/2021061.article"},
+    {"title":"Zippo fill: Zippo knowledge base, Windproof lighter: fill with fuel","url":"https://kb.zippo.com/zippo-lighter/fill"},
+    {"title":"Zippo flint: Zippo knowledge base, Windproof lighter: replace flint","url":"https://kb.zippo.com/zippo-lighter/flint"},
+    {"title":"Zippo wick: Zippo knowledge base, Windproof lighter: trim or replace wick","url":"https://kb.zippo.com/zippo-lighter/wick"},
+    {"title":"Zippo not lighting: Zippo knowledge base, Windproof lighter: not lighting","url":"https://kb.zippo.com/zippo-lighter/not-lighting"},
+    {"title":"Zippo butane: Zippo knowledge base, Butane torch lighter inserts (filling and purging)","url":"https://kb.zippo.com/butane-lighter-inserts"},
+    {"title":"49 CFR 173.186: US Code of Federal Regulations, Matches (49 CFR 173.186), Legal Information Institute","url":"https://www.law.cornell.edu/cfr/text/49/173.186"},
+    {"title":"Wikipedia ferrocerium: Ferrocerium (composition, spark temperature, striker)","url":"https://en.wikipedia.org/wiki/Ferrocerium"},
+    {"title":"CPSC fireplaces: US CPSC, CPSC warns of hazards from heaters and fireplaces (2005)","url":"https://www.cpsc.gov/Newsroom/News-Releases/2005/CPSC-Warns-Of-Hazards-from-Heaters-and-Fireplaces"}
+  ]
+}
