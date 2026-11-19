@@ -16,7 +16,7 @@ Three steps in the Command Center, with nothing to type in a terminal:
 1. Open **Supply Depot** and click **Add a custom app**.
 2. Fill in:
    - **Name:** `Scrapper's Guide`
-   - **Image:** `ghcr.io/crymoarz/scrappers-guide:4.4.0` (use the newest version number from the project page)
+   - **Image:** `ghcr.io/crymoarz/scrappers-guide:4.5.0` (use the newest version number from the project page)
    - **Port:** container `8787`, host `8787` (or the free port NOMAD suggests)
    - **Volume:** host `/opt/project-nomad/storage/scrappers-guide`, container `/guide`
    - Optional: category **Education**, icon **Tool**
@@ -43,7 +43,7 @@ That’s all. The guide finds NOMAD by itself, with no addresses to enter: it li
 The same image runs on any machine with Docker, next to NOMAD or not:
 
 ```bash
-docker run -d --name scrappers-guide --restart unless-stopped -p 8787:8787 -v /srv/scrappers-guide:/guide ghcr.io/crymoarz/scrappers-guide:4.4.0
+docker run -d --name scrappers-guide --restart unless-stopped -p 8787:8787 -v /srv/scrappers-guide:/guide ghcr.io/crymoarz/scrappers-guide:4.5.0
 ```
 
 To build the image yourself from the project folder:
