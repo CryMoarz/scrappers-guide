@@ -9,6 +9,7 @@
   "mins": 90,
   "kg": 250,
   "hazards": ["fuel","co_gas","mains","heavy","acid"],
+  "combustion": {"indoor":"outdoor_only","fuels":["natural gas","propane","diesel (larger and commercial sets)"],"kw":[65,99],"note":"Run it only outdoors, never in a garage, shed or other closed space: the exhaust carries carbon monoxide. kW is the gas a 22 kW Generac burns, natural gas at half load up to propane at full load; larger and diesel sets burn more."},
   "comps": [
     {"key":"alternator","fn":"alternator","spec":"Generator head, 10–25 kW on home units, hundreds of kW on commercial sets","w":[10000,25000],"qty":1,"ext":4,"obs":3,"loc":"Inside the enclosure","kg":80},
     {"key":"engine_small","fn":"engine_small","spec":"Air-cooled V-twin on home units; large liquid-cooled engines on commercial sets","w":[13000,500000],"qty":1,"ext":4,"obs":3,"loc":"Inside the enclosure","kg":60},
@@ -45,5 +46,9 @@
     {"b":"house","l":2},
     {"b":"substation","l":2}
   ],
-  "notes": "Too heavy to move, but it runs where it stands: the fuel, transfer switch and battery are the quick wins. Open the main breaker to the grid before running it so it can't backfeed the lines."
+  "notes": "Too heavy to move, but it runs where it stands: the fuel, transfer switch and battery are the quick wins. Open the main breaker to the grid before running it so it can't backfeed the lines.\n\nA 22 kW Generac home unit (21 kW on natural gas) burns about 6.3–9.3 m³ of natural gas an hour at half to full load and turns only about 16–22% of it into electricity (Generac 22 kW; NRCan Heating with Gas): run the furnace and well pump from it, not electric heaters.\n",
+  "sources": [
+    {"title":"Generac 22 kW: Generac, Guardian 22kW home standby generator (model 7042), product page and specifications","url":"https://www.generac.com/residential-products/standby-generators/gaseous/22kw-standby-generator-wifi-enabled-7042/"},
+    {"title":"NRCan Heating with Gas: Natural Resources Canada, Heating with Gas (cat. M143-2/9-2012E, revised October 2012)","url":"https://prod-natural-resources.azure.cloud.nrcan-rncan.gc.ca/sites/nrcan/files/energy/pdf/energystar/Heating_With_Gas.pdf"}
+  ]
 }

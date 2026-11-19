@@ -8,6 +8,7 @@
   "tools": ["screwdriver","socket"],
   "mins": 30,
   "hazards": ["mains","fuel","co_gas","sharp"],
+  "combustion": {"indoor":"vented","fuels":["natural gas","propane (with the maker's conversion kit)"],"kw":[12.9,45.1],"power_w":1540,"note":"Gas models: exhaust goes out by chimney or vent pipe; cracks or a vent blocked by snow put CO in the house (Health Canada CO). Blower, inducer and controls run on 115 V, so no heat in an outage. kW is gas input; W is max unit amps x 115 V, a ceiling (Bryant 800SA, 5.6-13.4 A)."},
   "comps": [
     {"key":"motor_ac","fn":"motor_ac","spec":"Blower motor (PSC or variable-speed ECM)","v":[120,240],"w":[250,750],"ac":true,"qty":1,"ext":2,"obs":3,"loc":"Bottom compartment"},
     {"key":"transformer_lv","fn":"transformer_lv","spec":"24V AC control transformer","v":24,"ac":true,"qty":1,"ext":1,"obs":4,"loc":"Junction box near the controls"},
@@ -32,5 +33,10 @@
     {"b":"warehouse","l":3},
     {"b":"hardware","l":2},
     {"b":"childcare","l":3}
+  ],
+  "notes": "A gas furnace needs mains power for its blower, inducer and controls, so it stops in a power cut even with gas in the pipe (Bryant 800SA). Check gas appliances for cracks and blocked vents, and clear the outside vents of snow and ice after every storm: a blocked vent sends carbon monoxide into the house (Health Canada CO).",
+  "sources": [
+    {"title":"Bryant 800SA: Bryant (Carrier), 800SA/801SA Legacy 80 gas furnace product data (PDS800SA-10)","url":"https://econtent.adhq.com/dam/Original/10000/Bryant_800SA36045E17_Specification_Sheet.pdf"},
+    {"title":"Health Canada CO: Health Canada, Carbon monoxide: Preventing exposure","url":"https://www.canada.ca/en/health-canada/services/air-quality/pollutants/carbon-monoxide/preventing-exposure.html"}
   ]
 }

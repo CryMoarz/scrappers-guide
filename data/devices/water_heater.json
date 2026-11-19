@@ -2,12 +2,13 @@
   "id": "water_heater",
   "name": "Water heater (tank)",
   "group": "Building systems",
-  "aliases": ["hot water heater","gas water heater"],
+  "aliases": ["hot water heater","gas water heater","propane water heater","oil-fired water heater","electric water heater","hot water tank"],
   "brands": ["Rheem","A.O. Smith","Bradford White","GE","State Industries","Ruud"],
   "prev": 5,
   "tools": ["screwdriver","socket","pliers"],
   "mins": 40,
   "hazards": ["heavy","mains","burn"],
+  "combustion": {"indoor":"vented","fuels":["natural gas","propane","fuel oil (oil-fired models)"],"kw":11.7,"note":"Gas and oil models only: electric tanks burn nothing. Vented to a chimney or wall vent; a blocked or loose flue spills CO. Standing-pilot gas tanks need no mains power (Resideo WT8840); power-vent and oil-fired ones do, so check for a cord or wiring. kW: one 40 US gal gas tank (A.O. Smith ProLine)."},
   "comps": [
     {"key":"heating_element","fn":"heating_element","spec":"Screw-in heating elements, about 4.5 kW (electric models)","w":4500,"qty":2,"ext":2,"obs":4,"loc":"Behind the front access panels","p":0.5},
     {"key":"thermostat","fn":"thermostat","spec":"Adjustable thermostats","qty":2,"ext":2,"obs":4,"loc":"Behind the same panels"},
@@ -25,5 +26,11 @@
     {"b":"hardware","l":3},
     {"b":"salon","l":4},
     {"b":"childcare","l":4}
+  ],
+  "notes": "A gas tank with a standing pilot keeps heating water in a power cut: a thermopile in the pilot flame powers the gas control (Resideo WT8840). Gas and oil tanks vent their exhaust through a flue; keep it connected and clear.",
+  "sources": [
+    {"title":"A.O. Smith ProLine: A.O. Smith, ProLine 40-gallon ultra-low NOx atmospheric vent natural gas water heater (GUC-40 410), product page","url":"https://www.hotwater.com/products/ultra-low-nox-atmospheric-vent-proline/guc-40-410/100330694.html"},
+    {"title":"Resideo WT8840: Resideo, WT8840 water heater gas control (standing pilot, thermopile powered), product page","url":"https://www.resideo.com/us/en/pro/products/gcs/water-heater-controls/water-heater-valves/gas-control-trade-replacement-valve-wt8840b1000-u/"},
+    {"title":"Bock: Bock Water Heaters home page (fuel types: gas, oil, dual fuel)","url":"https://www.bockwaterheaters.com/"}
   ]
 }

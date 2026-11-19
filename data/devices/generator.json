@@ -8,6 +8,7 @@
   "tools": ["socket"],
   "mins": 30,
   "hazards": ["fuel","heavy","mains","co_gas","noise","burn"],
+  "combustion": {"indoor":"outdoor_only","fuels":["petrol (gasoline)"],"kw":[3.9,10],"note":"Never indoors, in a garage or a shed: run it at least 6 m (20 ft) from buildings with the exhaust pointed away from doors and windows (Health Canada CO). A CO shut-off doesn't replace CO alarms. kW is the fuel a 2.2 kW Honda burns from 1/4 to full load."},
   "comps": [
     {"key":"engine_small","fn":"engine_small","spec":"Small gas engine","w":[2000,12000],"qty":1,"ext":1,"obs":1,"loc":"Frame"},
     {"key":"alternator","fn":"alternator","spec":"120/240V alternator head","v":240,"qty":1,"ext":3,"obs":2,"loc":"Coupled to the engine"},
@@ -26,5 +27,10 @@
     {"b":"construction","l":5},
     {"b":"rv_dealer","l":3},
     {"b":"campground","l":3}
+  ],
+  "notes": "A Honda EU2200i inverter generator turns only about 11–18% of its petrol's energy into electricity (Honda EU2200i run times; AFDC fuel properties); other models differ. Use it for the furnace blower, pumps, lights and the fridge, and burn fuel for heat in a heater made for it.",
+  "sources": [
+    {"title":"Honda EU2200i: Honda Power Equipment, EU2200i Super Quiet Series generator technical specifications (Honda news)","url":"https://hondanews.com/en-US/power-equipment/releases/release-60f8b86b82a14607a3e13e208c572efc-honda-eu2200i-super-quiet-series-generator-technical-specifications"},
+    {"title":"AFDC fuel properties: US DOE Alternative Fuels Data Center, Fuel properties comparison","url":"https://afdc.energy.gov/fuels/properties"}
   ]
 }

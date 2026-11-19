@@ -9,6 +9,7 @@
   "mins": 15,
   "kg": 45,
   "hazards": ["compressed_gas","fuel","co_gas","sharp"],
+  "combustion": {"indoor":"outdoor_only","fuels":["propane"],"power_w":0,"note":"Weber: use it only outdoors in a well-ventilated area, never in a garage, building, breezeway, tent, other enclosed area or vehicle, and keep propane cylinders outdoors. That rules out cooking on it or heating a room with it indoors."},
   "comps": [
     {"key":"propane","fn":"propane","spec":"Propane in a 20 lb (9 kg) cylinder, often part full — judge what is left by weighing it against an empty one","qty":1,"ext":1,"obs":2,"loc":"Under or beside the grill","kg":17},
     {"key":"gas_cylinder","fn":"gas_cylinder","spec":"Refillable propane cylinder (the 20 lb tank in North America) with an overfill-protection valve — keep it even when empty","qty":1,"ext":1,"obs":3,"loc":"Under the grill"},
@@ -37,5 +38,8 @@
     {"b":"rv_dealer","l":2},
     {"b":"pool_supply","l":2}
   ],
-  "notes": "Store cylinders outdoors, upright and in the shade. Never run a grill indoors or in a tent: carbon monoxide kills."
+  "notes": "Store cylinders outdoors, upright and in the shade. Never run a grill indoors or in a tent: carbon monoxide kills.",
+  "sources": [
+    {"title":"Weber Spirit manual: Weber, Spirit E-210/E-310/S-210/S-310 LP gas grill owner's manual (document 59502)","url":"https://digital-assets.weber.com/documents/59502_121418.pdf?fm=pdf"}
+  ]
 }
