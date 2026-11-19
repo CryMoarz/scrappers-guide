@@ -41,7 +41,7 @@ async function loadApp() {
     crypto: globalThis.crypto, TextEncoder, TextDecoder, atob, btoa, URL, URLSearchParams, AbortController, Blob, Response, fetch,
     setTimeout: (f, ms, ...a) => { const x = setTimeout(f, ms, ...a); x.unref(); return x; }, clearTimeout, console, CSS: { escape: s => s }, confirm: () => false, prompt: () => null,
   });
-  vm.runInContext((await source()).SCRIPT + '\n;globalThis.__app = { S, Sync, Ref, Calc, Pinouts, renderReview, renderPlan, renderRef, guideNotes, detailHTML, rebuild, updateBanner, TRUST, RELEASE, BUILD };', ctx);
+  vm.runInContext((await source()).SCRIPT + '\n;globalThis.__app = { S, Sync, Ref, Calc, Pinouts, renderReview, renderPlan, renderRef, renderGuides, Simple, guideNotes, detailHTML, rebuild, updateBanner, TRUST, RELEASE, BUILD };', ctx);
   for (let i = 0; i < 50 && !ctx.__app.S.ctx; i++) await new Promise(r => setTimeout(r, 10));
   return Object.assign(ctx.__app, { $ });
 }
@@ -151,6 +151,20 @@ test('app: a fuel burner says whether it may burn indoors, escaped', async () =>
   const odd = app.S.ctx.get('devices', 'space_heater');
   odd.combustion = { indoor: 'sometimes' };
   assert.ok(!app.detailHTML('devices', 'space_heater').includes('Indoors only'), 'an unknown value shows nothing');
+});
+
+test('app: links in guide steps work in both modes, and the rest is escaped', async () => {
+  const app = await loadApp();
+  const g = app.S.ctx.get('guides', 'test_chimney');
+  g.steps = [{ text: 'See [Sweeping](#guides/skill_chimney_sweeping) <img src=x onerror=alert(1)>', warn: 'Read [Fuel](#browse/hazards/fuel) and [bad](javascript:alert(1))' }];
+  app.renderGuides('test_chimney');
+  const full = app.$('#gdetail').innerHTML;
+  assert.ok(full.includes('See <a href="#guides/skill_chimney_sweeping">Sweeping</a>') && full.includes('<a href="#browse/hazards/fuel">Fuel</a>'));
+  assert.ok(!/<img|href="javascript/.test(full), 'tags and script links stay text');
+  app.Simple.render(['simple', 'g', 'test_chimney']);
+  const simple = app.$('#v-simple').innerHTML;
+  assert.ok(simple.includes('<a href="#simple/g/skill_chimney_sweeping">Sweeping</a>'), 'guide links stay in simple mode');
+  assert.ok(simple.includes('Read Fuel and') && !/<img|href="javascript|#browse/.test(simple), 'full-app links become plain text');
 });
 
 test('app: library links only to web addresses, inside their book', () => {

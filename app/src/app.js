@@ -333,7 +333,7 @@ function renderGuides(id) {
   d.innerHTML = `<p class="sub-h" style="margin:0">${esc(KIND[g.kind] || g.kind)} · difficulty ${esc(g.difficulty)}/5${g.mins ? ` · about ${esc(g.mins)} min` : ''}</p><h2>${esc(g.title)}</h2><p>${esc(g.summary)}</p>
     ${(g.tools || []).length ? `<div class="facts" style="margin-top:0"><span>Tools: <b>${esc(g.tools.map(S.ctx.toolLabel).join(', '))}</b></span></div>` : ''}${hazButtons(g.hazards)}${guideNotes(g)}
     ${(g.materials || []).length ? `<h3>Materials</h3><ul class="mats">${g.materials.map(m => `<li class="${m.fn ? (have.has(m.fn) ? 'have' : 'miss') : ''}">${esc(m.item)}${m.qty ? ` <span class="where">(${esc(m.qty)})</span>` : ''}${m.optional ? ' <span class="where">optional</span>' : ''}${m.fn ? ` · <a href="#" data-scrapfor="${esc(m.fn)}">where to scrap it</a>${have.has(m.fn) ? ' ✓ you have this' : ''}` : ''}</li>`).join('')}</ul>` : ''}${(g.materials || []).some(m => m.fn && !m.optional && !have.has(m.fn)) ? `<p class="hint"><a href="#" data-needmiss="${esc(g.id)}">Add what I’m missing to my shopping list</a></p>` : ''}
-    <h3>Steps</h3><ol class="steps">${g.steps.map(s => `<li>${esc(s.text)}${s.warn ? `<span class="warn">⚠ ${esc(s.warn)}</span>` : ''}</li>`).join('')}</ol>
+    <h3>Steps</h3><ol class="steps">${g.steps.map(s => `<li>${MD.inline(s.text)}${s.warn ? `<span class="warn">⚠ ${MD.inline(s.warn)}</span>` : ''}</li>`).join('')}</ol>
     ${g.notes ? MD.render(g.notes) : ''}
     ${(g.devices || []).length ? `<p class="hint">Devices: ${g.devices.filter(x => S.ctx.get('devices', x)).map(x => link('devices', x)).join(' · ')}</p>` : ''}
     ${(g.parts || []).length ? `<p class="hint">Part types: ${g.parts.filter(x => S.ctx.get('parts', x)).map(x => link('parts', x)).join(' · ')}</p>` : ''}
@@ -372,7 +372,7 @@ function renderRef(id) {
   const drawn = Object.prototype.hasOwnProperty.call(DRAWN, id) ? DRAWN[id] : null;
   const g = drawn ? null : S.ctx.get('guides', id);
   if (!drawn && !g) { v.innerHTML = `${guideSwitch('ref')}<p class="hint">No such card. <a href="#ref">All quick reference</a></p>`; return; }
-  const body = g ? `${guideNotes(g)}${g.notes ? MD.render(g.notes) : ''}${(g.steps || []).length ? `<h3>Using it</h3><ol class="steps">${g.steps.map(s => `<li>${esc(s.text)}${s.warn ? `<span class="warn">⚠ ${esc(s.warn)}</span>` : ''}</li>`).join('')}</ol>` : ''}${(g.sources || []).length ? `<h3>Sources</h3><ul>${g.sources.map(s => `<li>${sourceHTML(s)}</li>`).join('')}</ul>` : ''}` : drawn[1]();
+  const body = g ? `${guideNotes(g)}${g.notes ? MD.render(g.notes) : ''}${(g.steps || []).length ? `<h3>Using it</h3><ol class="steps">${g.steps.map(s => `<li>${MD.inline(s.text)}${s.warn ? `<span class="warn">⚠ ${MD.inline(s.warn)}</span>` : ''}</li>`).join('')}</ol>` : ''}${(g.sources || []).length ? `<h3>Sources</h3><ul>${g.sources.map(s => `<li>${sourceHTML(s)}</li>`).join('')}</ul>` : ''}` : drawn[1]();
   v.innerHTML = `${guideSwitch('ref')}<div class="detail refdetail"><a class="back" href="#ref">‹ Quick reference</a><h2>${esc(g ? g.title : drawn[0].title)}</h2>${g ? `<p class="sub-h">${esc(g.summary)}</p>` : ''}${body}
     <div class="actions">${g ? `<button class="btn ghost" data-edit="guides/${esc(g.id)}">Suggest an edit</button>` : ''}<button class="btn ghost" data-print>Print</button></div>${g ? commentsHTML('guides/' + g.id) : ''}</div>`;
 }

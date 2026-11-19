@@ -7,6 +7,8 @@ const Simple = (() => {
   const ctx = () => S.ctx;
   const hz = ids => (ids && ids.length ? `<span class="s-haz">⚠ ${ids.map(h => esc(ctx().hazard(h).label)).join(', ')}</span>` : '');
   const back = () => `<p><a href="#simple">← Find something else</a></p>`;
+  // Steps may link other guides: keep those inside simple mode, and drop links to full-app pages.
+  const step = t => MD.inline(String(t).replace(/\[([^\]]+)\]\(#guides\/([a-z0-9_]+)\)/g, '[$1](#simple/g/$2)').replace(/\[([^\]]+)\]\(#(?!simple\/)[^)]*\)/g, '$1'));
 
   function results() {
     const box = $('#sres');
@@ -54,7 +56,7 @@ const Simple = (() => {
     const mats = (g.materials || []).filter(m => !m.optional).map(m => m.item);
     v.innerHTML = `${back()}<h1 class="s-title">${esc(g.title)}</h1>${hz(g.hazards)}${guideNotes(g)}${lookupsHTML('guides', g)}
       ${mats.length ? `<p><b>You need:</b> ${esc(mats.join('; '))}</p>` : ''}
-      <ol class="s-steps">${g.steps.map(s => `<li>${esc(s.text)}${s.warn ? `<br><span class="s-haz">⚠ ${esc(s.warn)}</span>` : ''}</li>`).join('')}</ol>`;
+      <ol class="s-steps">${g.steps.map(s => `<li>${step(s.text)}${s.warn ? `<br><span class="s-haz">⚠ ${step(s.warn)}</span>` : ''}</li>`).join('')}</ol>`;
   }
 
   function list(v) {
