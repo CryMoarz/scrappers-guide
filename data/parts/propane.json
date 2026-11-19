@@ -8,12 +8,14 @@
   "summary": "Liquefied petroleum gas (propane and butane) for cooking, heating, lights, gas fridges and converted engines. Burning it indoors without airflow makes carbon monoxide; leaked gas sinks and pools in low spots.",
   "uses": ["Cooking on grills and camp stoves","Space and water heating","Gas fridges in campers and cabins","Running engines converted to LPG"],
   "identify": "Grill bottles, forklift tanks, camper tanks, big tanks at rural homes and farms, exchange cages at shops, and butane canisters in camping and hardware stores. Butane stops working near 0 °C. Propane boils at about −42 °C (NIOSH propane, ELGAS LPG), so it still works below freezing, but the pressure in the cylinder falls as it gets colder, because the liquid needs heat from the air to boil (Emerson LP-27). In deep cold a small cylinder may not keep a burner fed (ELGAS LPG). A fuller cylinder copes better, and frost on its shell makes it worse (Emerson LP-27). Forklift tanks usually feed liquid propane, not gas: never connect one to a grill, heater, stove or lamp, where liquid can flood the burner and start a fire.",
-  "test": "Weigh the cylinder and subtract the stamped empty weight (TW). Shake gently to hear liquid, and check joints with soapy water for leaks.",
+  "test": "Weigh the cylinder and subtract the empty weight stamped on the collar as the tare weight (TW). Shake gently to hear liquid, and check joints for leaks with a chloride-free soap solution or a leak-test liquid, then rinse: some soaps corrode some metals (Goodman IO-359J, Lennox EL297UHV).",
   "decay": {"halfLifeMonths":null,"note":"Keeps indefinitely in a sound cylinder."},
   "hazards": ["fuel","compressed_gas","co_gas"],
   "sources": [
     {"title":"NIOSH propane: CDC NIOSH Pocket Guide to Chemical Hazards, Propane","url":"https://www.cdc.gov/niosh/npg/npgd0524.html"},
     {"title":"ELGAS LPG: ELGAS (Australia), Can LPG freeze? LPG freezing point","url":"https://www.elgas.com.au/elgas-knowledge-hub/residential-lpg/lpg-freezing-point/"},
-    {"title":"Emerson LP-27: Emerson/Fisher Regulators Bulletin LP-27, How Cold Weather Affects Tank Capacity (March 2010)","url":"https://www.emerson.com/documents/automation/how-cold-weather-affects-tank-capacity-bulletin-lp-27-en-11751596.pdf"}
+    {"title":"Emerson LP-27: Emerson/Fisher Regulators Bulletin LP-27, How Cold Weather Affects Tank Capacity (March 2010)","url":"https://www.emerson.com/documents/automation/how-cold-weather-affects-tank-capacity-bulletin-lp-27-en-11751596.pdf"},
+    {"title":"Goodman IO-359J: Goodman Installation Instructions for *M(H,S)8 / *D(H,S)8 / *HS8 / GME8 Gas Furnace, IO-359J","url":"https://mobile.goodmanmfg.com/mobileapp/stellent/pdf/infoPdf/Lit/IO-359J.pdf"},
+    {"title":"Lennox EL297UHV: Lennox EL297UHV Elite Series Gas Furnace Installation Instructions, 508358-01 (04/2024)","url":"https://www.lennox.com/dA/739067f354/508358-01b.pdf"}
   ]
 }

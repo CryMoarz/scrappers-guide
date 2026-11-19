@@ -8,10 +8,12 @@
   "summary": "Petrol (gasoline), diesel and kerosene for engines, generators, heaters and lamps. The vapour explodes: no flames, sparks or phones nearby, and never siphon by mouth.",
   "uses": ["Running generators, vehicles and small engines","Diesel and kerosene for heaters and lamps. Keep lamp oil and other liquid fuels out of young children's reach or locked away: swallowed or inhaled, they can reach the lungs with severe effects, even death (Health Canada oil lamps). See the guide Keep lamp oil and torch fuel away from children","Petrol for chainsaws and garden tools"],
   "identify": "Underground tanks at fuel stations (need a hand pump), vehicle tanks, farm diesel tanks, generator day tanks at hospitals, phone sites and data centres, boat tanks, and cans in garages and sheds. Diesel is oily and yellowish (farm and off-road diesel is often dyed red); petrol is thin and sharp-smelling.",
-  "test": "Look in a clear jar: good petrol is clear and sharp-smelling; dark, varnish-smelling or layered fuel is stale. Water settles at the bottom as beads or a layer.",
-  "decay": {"halfLifeMonths":9,"note":"Petrol goes stale in about 6 months, sooner in heat; diesel lasts a year or more if sealed and dry."},
+  "test": "Look in a clear jar: Water settles at the bottom as beads or a layer; sludge or separate layers mean leave it. Date every can when you fill it (Alberta farm fuel).",
+  "decay": {"halfLifeMonths":4,"note":"Estimate. Alberta's farm-fuel guide says use petrol within a month of buying, 6 months at best, and diesel within 6–12 months; heater kerosene no more than 6 months (Toyotomi KS-27A)."},
   "hazards": ["fuel","chemical","co_gas"],
   "sources": [
-    {"title":"Health Canada oil lamps: Health Canada, Safety precautions for decorative and other oil lamps (2024-02-15)","url":"https://www.canada.ca/en/health-canada/services/household-products/safety-precautions-decorative-other-oil-lamps.html"}
+    {"title":"Health Canada oil lamps: Health Canada, Safety precautions for decorative and other oil lamps (2024-02-15)","url":"https://www.canada.ca/en/health-canada/services/household-products/safety-precautions-decorative-other-oil-lamps.html"},
+    {"title":"Alberta farm fuel: Alberta Agriculture and Rural Development, Farm Fuel Storage and Handling (2008)","url":"https://www1.agriculture.alberta.ca/$department/deptdocs.nsf/all/agdex15198/$file/farm-fuel-storage.pdf"},
+    {"title":"Toyotomi KS-27A: Toyotomi, KS-27A portable kerosene heater operation and maintenance instructions (rev. 07/03)","url":"https://www.toyotomi.jp/manual/ownersmanual/KS-27A.pdf"}
   ]
 }
