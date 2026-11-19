@@ -3,7 +3,7 @@
   "kind": "teardown",
   "title": "Air compressor: get the motor, pump head, tank and pressure switch",
   "keywords": ["air compressor teardown","compressor motor","compressor pump head","air tank","pressure switch","pancake compressor","drain air tank","compressor capacitor"],
-  "summary": "An air compressor gives a strong motor, a piston pump head, a steel air tank, a pressure switch, gauges, valves, hose and often a start capacitor. Allow about an hour, and a helper for the heavy parts. The main danger is stored pressure: empty the tank and prove it is empty before you loosen anything, and never cut, weld or drill the tank.",
+  "summary": "An air compressor gives a strong motor, a piston pump head, a steel air tank, a pressure switch, gauges, valves, hose and often a start capacitor. Allow about an hour, and a helper for the heavy parts. The main danger is stored pressure: empty the tank and prove it is empty before you loosen anything, and never cut, weld or drill the tank to use it for air again; for any other use, the guide Hot work on drums, tanks and cylinders comes first.",
   "difficulty": 3,
   "mins": 60,
   "tools": ["socket","wrench","screwdriver","hex","pliers","cutters","multimeter","tape","heavy"],
