@@ -36,8 +36,10 @@
     {"b":"pool_supply","l":2},
     {"b":"furniture","l":2}
   ],
-  "notes": "Restaurants often keep a row of heaters, each hiding a cylinder in its base. Check the shed or cage out back for spares.",
+  "notes": "Restaurants often keep a row of heaters, each hiding a cylinder in its base. Check the shed or cage out back for spares.\n\nGas ones are outdoors only. They give off carbon monoxide that can kill in a camper, tent, car or home (Master Forge DG48PMHMF), and Quebec's building authority says never to bring one indoors for heat in a power cut (RBQ propane). For one 48,000 BTU/h model the maker allows use under a roof only in a partial enclosure of no more than two walls, with open wall area as its manual sets out, and keeps combustible material at least 66 cm (26 in) from the sides and back and 81 cm (32 in) from the ceiling (Master Forge DG48PMHMF). CSA 2.37 / ANSI Z83.26 is the joint standard for gas-fired outdoor infrared patio heaters; the 2007 edition the SCC lists is cancelled and was replaced by the 2014 one (SCC Z83.26).\n",
   "sources": [
-    {"title":"Master Forge DG48PMHMF: Master Forge (LF, LLC), 48,000-BTU propane patio heater DG48PMHMF, owner's manual","url":"https://pdf.lowes.com/productdocuments/71b5149c-31a6-4ee9-b6a0-3b5435c341bd/93581264.pdf"}
+    {"title":"Master Forge DG48PMHMF: Master Forge (LF, LLC), 48,000-BTU propane patio heater DG48PMHMF, owner's manual","url":"https://pdf.lowes.com/productdocuments/71b5149c-31a6-4ee9-b6a0-3b5435c341bd/93581264.pdf"},
+    {"title":"RBQ propane: Régie du bâtiment du Québec, Safety advice: propane use","url":"https://www.rbq.gouv.qc.ca/en/you-are/citizen/safety-advice/at-home/propane-use/"},
+    {"title":"SCC Z83.26: Standards Council of Canada standards database, ANSI Z83.26-2007/CSA 2.37-2007 (R2012), Gas-fired outdoor infrared patio heaters (scope; this edition cancelled, superseded by the 2014 edition)","url":"https://ccn-scc.ca/standardsdb/standards/4023643"}
   ]
 }

@@ -5,10 +5,16 @@
   "demand": 4,
   "keywords": ["gas cylinder","gas bottle","propane tank","propane bottle","propane cylinder","lpg cylinder","lpg bottle","lpg tank","co2 cylinder","co2 tank","co2 bottle","air tank","scuba tank","compressed air tank","oxygen cylinder","forklift tank","20 lb tank","helium tank","nitrogen tank","welding gas"],
   "substitutes": [],
-  "summary": "Pressure cylinders for propane, butane, CO2, air and welding gases. Keep them upright and away from heat, and never cut or drill one, even when empty.",
+  "summary": "Pressure cylinders for propane, butane, CO2, air and welding gases. Keep them upright, outdoors and away from heat, and never cut or drill one, even when empty: a used propane cylinder still holds some gas, and a tank under pressure may explode if it is altered (CT DEEP propane).",
   "uses": ["Propane for cooking, heating and lights","CO2 and air for tyres and air tools","Running a generator converted to propane"],
-  "identify": "Propane bottles on grills, patio heaters, campers and forklifts (horizontal tanks), and in exchange cages outside shops; CO2 at bars, restaurants and paintball shops; air tanks at dive shops and fire stations. The collar is stamped with the gas, test date and empty weight (TW). Forklift tanks usually feed liquid propane, not gas: never connect one to a grill, heater, stove or lamp, where liquid can flood the burner and start a fire.",
-  "test": "Weigh it and subtract the stamped empty weight to see what’s left. Check the valve and threads, and brush soapy water on joints: bubbles mean a leak.",
-  "decay": {"halfLifeMonths":null,"note":"Cylinders hold gas for years; rusted or out-of-date ones may be unsafe to refill."},
-  "hazards": ["compressed_gas","fuel"]
+  "identify": "Propane bottles on grills, patio heaters, campers and forklifts (horizontal tanks), and in exchange cages outside shops; CO2 at bars, restaurants and paintball shops; air tanks at dive shops and fire stations. The collar is stamped with the gas, the test date and the empty weight, marked TW for tare weight. Don't try to take the valve out of a propane cylinder: that needs special equipment and training (CT DEEP propane). An air-compressor tank is a different case: see the guide Hot work on drums, tanks and cylinders. Forklift tanks usually feed liquid propane, not gas: never connect one to a grill, heater, stove or lamp, where liquid can flood the burner and start a fire.",
+  "test": "Weigh it and subtract the stamped empty weight to see what’s left. Check the valve and threads, and brush a leak-detection solution or chloride-free soapy water on joints: bubbles mean a leak (Goodman IO-359J). Rinse it off afterwards, because some soaps corrode some metals (Lennox EL297UHV).",
+  "decay": {"halfLifeMonths":null,"note":"Cylinders hold gas for years. BC says to replace or have re-qualified a propane cylinder that is damaged or more than 10 years old, and stations can't refill one past its inspection date stamp (BC propane). Connecticut counts a 12-year life from the manufacture date (CT DEEP propane)."},
+  "hazards": ["compressed_gas","fuel"],
+  "sources": [
+    {"title":"CT DEEP propane: Recycling Propane Grill Tanks (Connecticut Department of Energy and Environmental Protection)","url":"https://portal.ct.gov/deep/reduce-reuse-recycle/recycling-propane-grill-tanks"},
+    {"title":"Goodman IO-359J: Goodman Installation Instructions for *M(H,S)8 / *D(H,S)8 / *HS8 / GME8 Gas Furnace, IO-359J","url":"https://mobile.goodmanmfg.com/mobileapp/stellent/pdf/infoPdf/Lit/IO-359J.pdf"},
+    {"title":"BC propane: Government of British Columbia, Office of the Fire Commissioner, Propane safety brochure (with Technical Safety BC)","url":"https://www2.gov.bc.ca/assets/gov/public-safety-and-emergency-services/public-safety/fire-safety/fire-prevention-and-education/propane_safety-brochure.pdf"},
+    {"title":"Lennox EL297UHV: Lennox EL297UHV Elite Series Gas Furnace Installation Instructions, 508358-01 (04/2024)","url":"https://www.lennox.com/dA/739067f354/508358-01b.pdf"}
+  ]
 }
