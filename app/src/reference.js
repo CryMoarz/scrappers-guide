@@ -152,7 +152,9 @@ const Ref = (() => {
   // Cheat sheets in groups, the built-in labels card first; a reference guide not named here goes
   // under More, so new ones from contributors still show.
   const GROUPS = [
-    ['Safety and survival', ['labels', 'reference_first_aid', 'reference_water_filters', 'reference_sanitation', 'reference_food_safety', 'reference_fire_heat']],
+    ['Safety and survival', ['labels', 'reference_first_aid', 'reference_food_safety', 'reference_fire_heat']],
+    ['Water and toilets', ['reference_water_sources', 'reference_water_filters', 'reference_building_water', 'reference_sanitation']],
+    ['Heat and winter', ['reference_indoor_cold', 'reference_heater_labels', 'reference_gas_without_power', 'reference_what_to_burn', 'reference_cooking_indoors', 'reference_cooking_fuel', 'reference_condensation', 'reference_where_warm_clothing']],
     ['Electrical and electronics', ['reference_electronics_codes', 'reference_wiring_colours', 'reference_connectors', 'pinouts', 'reference_microcontrollers', 'reference_mcu_code', 'reference_battery_chemistry', 'reference_power_budget', 'reference_power_draw', 'reference_wire_gauge', 'reference_date_codes']],
     ['Workshop and vehicles', ['reference_what_fits', 'reference_fasteners_threads', 'reference_building_materials', 'reference_chemicals', 'reference_welding_cutting', 'reference_knots_lifting', 'reference_vehicles', 'reference_shop_math', 'reference_units']],
     ['Outdoors and signals', ['reference_radio_signals', 'reference_lora_bands', 'reference_navigation', 'reference_weather']],
