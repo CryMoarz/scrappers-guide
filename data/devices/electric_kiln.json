@@ -1,0 +1,51 @@
+{
+  "id": "electric_kiln",
+  "name": "Electric kiln (pottery kiln)",
+  "group": "Industrial and construction",
+  "aliases": ["kiln","pottery kiln","ceramic kiln","electric pottery kiln","top-loading kiln","front-loading kiln","glass kiln","enamelling kiln","school kiln"],
+  "brands": ["L&L","Skutt","Paragon","Cone Art","Evenheat","Olympic","Duncan","Amaco","Nabertherm"],
+  "prev": 2,
+  "tools": ["screwdriver","socket","pliers","multimeter","heavy","hands"],
+  "mins": 90,
+  "kg": 150,
+  "hazards": ["mains","burn","heavy","co_gas","asbestos","fiberglass","silica"],
+  "comps": [
+    {"key":"refractory","fn":"refractory","spec":"Soft insulating firebrick (K23), 64 or 76 mm (2½ or 3 in) thick, in a kiln rated for cone 10, 1,290 °C (2,350 °F) (L&L e23). Light (about 513 kg/m³) with low thermal conductivity but weak: cold crushing strength about 1 MPa (Morgan K IFB). L&L coats the surface to cut dusting (L&L e23)","qty":1,"ext":3,"obs":2,"loc":"Walls, floor and lid, wrapped in the steel jacket"},
+    {"key":"heating_element","fn":"heating_element","spec":"Coiled iron-chrome-aluminium (Kanthal A-1 type) wire elements in grooves: 6 elements totalling 11,520 W on a 240 V L&L e23T. Live whenever the kiln is powered: they shock if touched (Skutt kiln safety). Resistance rises with use; L&L says change one once it is up 8 to 10 % (L&L elements)","v":240,"w":1920,"ac":true,"qty":6,"ext":2,"obs":2,"loc":"Grooves or ceramic holders round the inside walls, ends running to the terminal box"},
+    {"key":"thermocouple","fn":"thermocouple","spec":"Type K thermocouple, 8 or 14 AWG wire in a ceramic protection tube, reads 0 to 1,372 °C; one per zone, three on an e23T. A platinum Type S is an option on some controllers (L&L thermocouples, L&L e23)","qty":3,"ext":1,"obs":4,"loc":"Poking through the wall into the firing chamber, wired back to the controller"},
+    {"key":"relay","fn":"relay","spec":"Power relays that switch the elements on and off many times a firing: 25 A enclosed relays with 12 V coils, two or three per kiln, on the Easy-Fire series (L&L parts). L&L says they last about 200,000 cycles, roughly 18 months or more of use (L&L relays)","v":240,"qty":3,"ext":2,"obs":4,"loc":"Inside the control box on the side of the kiln"},
+    {"key":"controller_board","fn":"controller_board","spec":"Electronic kiln controller with a keypad and programs (L&L DynaTrol on older e23s; current ones have the Genesis touch screen), plus an on/off toggle switch and a control fuse (L&L e23, L&L e23T-3)","qty":1,"ext":2,"obs":3,"loc":"Front of the control box"},
+    {"key":"wire_heavy","fn":"wire_heavy","spec":"Cord with a NEMA 6-50 plug (marked 50 A) on single phase, 15-50 on three phase, 1.8 m (6 ft). L&L sizes the circuit at 125% of the kiln's amps: a 48 A kiln needs 6-gauge copper on a 60 A breaker. Never aluminium wire or an extension cord; keep the cord off the hot case (L&L electrical and install)","v":240,"a":50,"ac":true,"qty":1,"ext":1,"obs":3,"loc":"From the control box to a wall outlet or a hard-wired disconnect"},
+    {"key":"shelves","fn":"refractory","spec":"High-alumina or cordierite shelves and cordierite posts (a full e23T kit is two full and four half shelves), coated on top with kiln wash, often kaolin and silica. Keep wash flakes off the elements: silica attacks them (L&L e23, Digitalfire kiln wash, L&L elements)","qty":6,"ext":1,"obs":2,"loc":"Stacked inside the kiln or on a rack beside it"},
+    {"key":"fibre","fn":"refractory","spec":"Ceramic fibre in many modern kilns, asbestos possibly in old ones (HSE kilns). Dust can cause serious lung disease, including cancer; heated fibre may have become silica. Wet it first, never dry-brush or blow it; wear a respirator (protection factor 40+), hooded overalls and gloves (HSE FD14)","qty":1,"ext":3,"obs":5,"loc":"Insulation layers in the walls and lid; varies by maker and age","p":0.5},
+    {"key":"sheet_metal","fn":"sheet_metal","spec":"Stainless steel jacket wrapped round each brick section, held by clamps; hinged control and terminal boxes","qty":1,"ext":2,"obs":2,"loc":"Outside of each section"},
+    {"key":"fuse","fn":"fuse","spec":"Control-circuit fuse protecting the controller: ½ A, 250 V, in a panel-mounted holder beside the on/off switch, reachable from outside the panel on an Easy-Fire (L&L parts)","qty":1,"ext":1,"obs":5,"loc":"Panel-mounted beside the on/off switch"}
+  ],
+  "boards": [],
+  "buildings": [
+    {"b":"school","l":4,"loc":"Art room or a kiln room off it; shelves, posts and spare brick nearby"},
+    {"b":"makerspace","l":3,"loc":"Ceramics area with its own vented kiln room"},
+    {"b":"shop_small","l":2,"loc":"Pottery studios and paint-your-own-pottery shops, in the back room"},
+    {"b":"garage_res","l":2,"loc":"Home potters' kilns on a concrete garage floor"},
+    {"b":"house","l":1,"loc":"Basement studio"},
+    {"b":"self_storage","l":1,"loc":"Units holding a retired potter's gear"}
+  ],
+  "notes": "A big kiln draws about 48 A at 240 V (L&L e23) and its elements are live whenever it is powered, so unplug it (or, if it is wired in, switch off its breaker or disconnect) before opening the control or terminal box or reaching into the chamber (Skutt kiln safety, L&L install). The stainless jacket and nearby fittings get hot enough to burn skin when the kiln is heated (Skutt kiln safety). Its walls are K23 soft insulating firebrick: light with low thermal conductivity but weak, at about 1 MPa crushing strength, so lift the bricks out gently (L&L e23, Morgan K IFB). Used kiln linings contain silica dust, so wear a fitted respirator when you cut or break them (HSE FD14; see the silica card). Old kilns may be insulated with asbestos, so don't break, cut or crumble the lining of one you can't date (HSE kilns; see the asbestos card). Modern ones often have refractory ceramic fibre: wet it before you move it, never dry-brush or blow it, and wear a fitted respirator, disposable hooded overalls and gloves (HSE kilns, HSE FD14). Firing gives off carbon monoxide, sulfur oxides, hydrogen fluoride and metal vapours, so L&L says vent the kiln to the outside, never run it in a closed room, and keep a carbon monoxide monitor in the kiln room (L&L ventilation, L&L install). L&L's own minimum is 30 cm (12 in) from the kiln to room walls and ideally 46 cm (18 in) from its hot surface to anything combustible, but its guide also quotes the Uniform Mechanical Code (2000): 18 in (457 mm) from non-combustible walls, 3 ft (914 mm) from combustible walls, and a non-combustible floor with air under the kiln, so plan on the code figure (L&L location, L&L e23, L&L install). HSE says most kiln fires have started at night, from overheated wood in the roof, ceiling or floor above (HSE kilns). Keep an extinguisher rated for electrical fires near it (L&L install).",
+  "sources": [
+    {"title":"L&L e23: L&L Kiln Mfg, Easy-Fire e23S, e23T, e23S-3, e23T-3 specification bulletin (Spec-e23-4-10)","url":"https://hotkilns.com/sites/default/files/pdf/Spec-Easy-Fire-e23.pdf"},
+    {"title":"L&L e23T-3: L&L Kiln Mfg, Easy-Fire e23T-3 specification bulletin BL-e23T-3 rev. A (2025)","url":"https://hotkilns.com/sites/default/files/2025-06/Spec-Easy-Fire-2023_V3_e23T-3_REV_A.pdf"},
+    {"title":"L&L install: L&L Kiln Mfg, Installation instructions for L&L Easy-Fire and School-Master kilns (rev. 4/15/2012)","url":"https://hotkilns.com/hk-pdfs/:sites:default:files:pdf:easy-school-install_3"},
+    {"title":"L&L parts: L&L Kiln Mfg, Parts for L&L Easy-Fire and School-Master kilns (easy-school-parts.pdf)","url":"https://hotkilns.com/hk-pdfs/:sites:default:files:pdf:easy-school-parts"},
+    {"title":"L&L elements: L&L Kiln Mfg, Elements: How can I extend ceramic kiln element life?","url":"https://hotkilns.com/support/pottery-kiln-knowledgebase/elements-how-can-i-extend-ceramic-kiln-element-life"},
+    {"title":"L&L thermocouples: L&L Kiln Mfg, Thermocouples: What are Thermocouples?","url":"https://hotkilns.com/support/pottery-kiln-knowledgebase/thermocouples-what-are-thermocouples"},
+    {"title":"L&L relays: L&L Kiln Mfg, Relays: How long do relays last?","url":"https://hotkilns.com/support/pottery-kiln-knowledgebase/relays-how-long-do-relays-last"},
+    {"title":"L&L electrical: L&L Kiln Mfg, Electrical: How to size the circuit breaker, fuses, cord and/or power supply of your kiln","url":"https://hotkilns.com/support/pottery-kiln-knowledgebase/electrical-how-size-circuit-breaker-fuses-cord-andor-power"},
+    {"title":"L&L ventilation: L&L Kiln Mfg, What should I do to ventilate my kiln?","url":"https://hotkilns.com/support/pottery-kiln-knowledgebase/what-should-i-do-ventilate-my-kiln"},
+    {"title":"L&L location: L&L Kiln Mfg, Location: Where should I put my kiln?","url":"https://hotkilns.com/support/pottery-kiln-faqs/location-where-should-i-put-my-kiln"},
+    {"title":"Skutt kiln safety: Skutt Ceramic Products, Kiln Safety","url":"https://skutt.com/?p=5044"},
+    {"title":"HSE kilns: Health and Safety Executive (UK), Kilns in schools and craft studios","url":"https://www.hse.gov.uk/non-metallic-minerals/kilns-in-schools.htm"},
+    {"title":"HSE FD14: Health and Safety Executive (UK), COSHH essentials for foundries FD14, Furnace relining","url":"https://www.hse.gov.uk/PUBNS/guidance/fd14.pdf"},
+    {"title":"Morgan K IFB: K Insulating Firebrick Series product data sheet (Morgan Advanced Materials, 2025)","url":"https://www.morganthermalceramics.com/media/9429/k-ifb-series_eng.pdf"},
+    {"title":"Digitalfire kiln wash: Kiln Wash (Digitalfire glossary, Tony Hansen)","url":"https://digitalfire.com/glossary/kiln+wash"}
+  ]
+}
