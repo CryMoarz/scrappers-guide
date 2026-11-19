@@ -2,6 +2,19 @@
 
 Plain notes for people using the guide. The app shows the latest few under "What's new" on its front page. Details for developers are in the commits.
 
+## 4.5.0 (19 November 2026)
+
+- Staying warm through a Canadian winter: heating one room, hypothermia in a cold house, condensation and mould, warm clothes and where nobody else looks for them, an RV or mobile home through the winter, and a solar air heater for a south window.
+- Wood heat from start to finish: checking and fixing a found wood stove, installing it with firebrick and chimney pipe, checking and sweeping a chimney, heating with an open fireplace, what to burn and what never to, cooking on a wood stove, heating water with a stove coil, and storing heat for the night in water, brick and masonry. Also a barrel stove from a steel drum, and hot work on drums, tanks and cylinders before you cut one.
+- Firewood: getting a winter's worth in town, telling dry wood from wet without a meter, splitting safely, clearing fallen trees (spring poles, hung trees and power lines), chainsaw chain filing and upkeep, bow saws, axe care and re-handling, and checking a found hammer or axe. Chainsaw chaps are a new kind of protective gear.
+- Fuel heat and light: kerosene heaters, diesel air heaters, construction heaters, portable propane heaters, gas fireplaces, camp stoves, lanterns, wick lamps and candles. Reading a heater's label, gas at a damaged house, gas appliances that work with no power, running a furnace from a generator, cooking indoors in an outage, and keeping lamp oil away from children.
+- Every device that burns fuel now says whether it may burn indoors (outdoors only, vented, or rated for unvented indoor use), what it burns, how much heat it gives and whether it needs power. 14 new devices, among them wood and pellet stoves, boilers, oil furnaces, heat recovery ventilators and log splitters, and new part types for candles, lighters, hand warmers, space blankets, firebrick and chimney pipe.
+- Detectors and meters: 15 kinds, from CO and smoke alarms to gas monitors, Geiger counters, radon kits, voltage testers, IR thermometers, thermal cameras and water test kits. Each says what it can and can't tell you, how to prove a found one works, and where they're kept.
+- 22 new hazard cards: cold, thin ice, wildlife, stinging insects, confined spaces, grain bins, sour gas, radon, silica dust, lime and lye, blue-green algae, machinery that catches clothing, lines that snap, flying fragments, falling ice, molten metal, open flames, self-heating materials, heating sealed containers, treated seed, ammonia refrigeration plants, and found ammunition, fireworks and flares. Older cards gained sourced advice on raccoon latrines and bat droppings, dating old paint, where asbestos hides, and pet poisons.
+- Over 750 corrections from checking every new card against its sources, and older cards brought into line: a CO alarm's test button checks the electronics, not the sensor; propane falters in deep cold; forklift tanks feed liquid and can flood a burner; foam insulation burns fast with toxic smoke; red kidney beans must boil hard before slow cooking; garden hose can hold lead.
+- Guide steps can link to other guides, in the full app and in simple mode.
+- The map sorts buildings more carefully: an industrial building is a factory and an industrial area is warehouses, ice rinks are arenas, tall residential buildings are apartments, and shelters and food banks no longer show as nursing homes.
+
 ## 4.4.0 (18 November 2026)
 
 - Protective gear: 25 kinds, from dust masks and respirators to safety glasses, gloves, earplugs, hard hats, boots, coveralls and fall harnesses. Each says what it protects against and what it doesn't, how to read its markings and spot fakes, how to tell a found one is still good, what to use without one, and which places keep it on hand and where inside.
