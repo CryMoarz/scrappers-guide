@@ -10,6 +10,10 @@
   "hazards": ["fuel","mains","co_gas","compressed_gas"],
   "comps": [
     {"key":"battery_pb","fn":"battery_pb","spec":"12V deep-cycle house batteries","v":12,"qty":2,"ext":1,"obs":3,"loc":"Tongue box or compartment"},
+    {"key":"furnace_blower","fn":"motor_dc_small","spec":"Ducted propane furnace: 12 V DC blower, electronic ignition and a control board. A Dometic AFM draws 4.2–11.1 A (50–132 W) at 16,000–34,000 Btu/h (4.7–10 kW) input. No 12 V, no heat. Air in and exhaust out through the outside wall (Dometic AFM)","v":12,"a":[4.2,11.1],"qty":1,"ext":3,"obs":4,"loc":"In its own closed compartment, with its vent on the outside wall"},
+    {"key":"lp_co_alarm","fn":"det_co_alarm","spec":"Combination propane and CO alarm, 12 V DC, about 0.1 A day and night; works only down to 7 V; rated −40 to +66 °C. Replace after 5 years. The test button checks the circuit, not the sensors, and the alarm may not sound at low CO levels (MTI 25-741)","v":12,"a":0.108,"qty":1,"ext":1,"obs":3,"loc":"Low on an inside wall, 10–50 cm (4–20 in) off the floor"},
+    {"key":"fridge_cabinet","fn":"cooler_box","spec":"Absorption fridge on propane or 120 V (12 V on three-way models): an insulated cabinet with a cooling unit at the back that holds ammonia and sodium chromate under pressure. Don't fracture or puncture it; an ammonia smell means switch the fridge off, if safe, and leave (Dometic DM2672)","qty":1,"ext":3,"obs":2,"loc":"Kitchen; the cooling unit, burner and controls are in the vented space at the back"},
+    {"key":"fridge_heater","fn":"heating_element","spec":"Heater cartridges that drive the fridge's cooling unit: a 120 V AC one on a 5 A fuse and, on three-way models, a 12 V one on a 30 A fuse. Running it on 12 V drains the battery fast (Dometic DM2672)","v":[12,120],"qty":1,"ext":3,"obs":5,"loc":"Boiler casing at the back of the fridge, in the vented space"},
     {"key":"solar_panel","fn":"solar_panel","spec":"Roof solar panels (many units)","w":[100,200],"qty":2,"ext":3,"obs":2,"loc":"Roof","p":0.75},
     {"key":"charge_controller","fn":"charge_controller","spec":"Solar charge controller","qty":1,"ext":2,"obs":3,"loc":"Near the batteries"},
     {"key":"inverter","fn":"inverter","spec":"Inverter or converter/charger","v":12,"w":[1000,3000],"ac":true,"qty":1,"ext":2,"obs":4,"loc":"Under a bench or bed"},
@@ -29,5 +33,13 @@
     {"b":"house","l":3},
     {"b":"farm","l":3},
     {"b":"parking","l":2}
+  ],
+  "notes": "The propane furnace, the fridge's controls and the propane and CO alarm all run on the 12 V house battery, so a flat battery means no heat and no alarm: a Dometic AFM furnace draws 4.2–11.1 A (Dometic AFM), and an MTI alarm about 0.1 A day and night and works only down to 7 V (MTI 25-741). The furnace and the fridge burn propane in compartments sealed from the living space, taking air from outside and venting outside, and nothing may block those vents (Dometic AFM, Dometic fridge install). The 2008 edition of the CSA Z240 RV standard requires a smoke alarm and a CO alarm in every RV (QAI Z240 2008); MTI says to replace its alarm after five years (MTI 25-741). The fridge's cooling unit holds ammonia and sodium chromate under pressure: don't fracture or puncture it, and if you smell ammonia switch the fridge off, if it is safe to, and leave the area (Dometic DM2672).",
+  "sources": [
+    {"title":"Dometic AFM: Dometic hydro flame AFM series furnaces AFMD16 to AFMD35, technical installation manual (literature 32471, revision A, 3/15/19)","url":"https://media.dometic.com/externalassets/afm_66618.pdf"},
+    {"title":"MTI 25-741: MTI Industries, Safe-T-Alert 25 series RV carbon monoxide/propane alarm user's manual, model 25-741 (2013; copy hosted by Forest River)","url":"https://forestriverinc.com/files/Component-Manuals/Safety/Safe%20T%20Alert%20-%20LPCO%20Alarm%20Model%2025-741%20User's%20Manual.pdf"},
+    {"title":"Dometic DM2672: Dometic, DM and DMA absorption refrigerators operating manual, DM2672 to DMA4087 (form 3317001.000, revision B, 3/21)","url":"https://media.dometic.com/externalassets/dm2672_9600007193_81829.pdf"},
+    {"title":"Dometic fridge install: Dometic, absorption refrigerator installation instructions, RM2351 to NDA1402 including DM2652 (form 3315546.000, revision B, 8/19)","url":"https://media.dometic.com/externalassets/dometic-americana-rm-2351_9105306315_74240.pdf"},
+    {"title":"QAI Z240 2008: QAI Laboratories, Certification notice 0001: publication of CSA Z240 RV Series 2008, Recreational Vehicles (31 May 2008), table of changes","url":"https://qai.org/wp-content/uploads/2015/08/Certification-Notice-0001-Z240-jul-11-08.pdf"}
   ]
 }

@@ -2,7 +2,7 @@
   "id": "hydraulic",
   "label": "Hydraulic pressure",
   "severity": 4,
-  "summary": "Forklifts, car lifts, jacks, scissor lifts, tractors, log splitters and diggers use oil at very high pressure, often over 100 bar (1,500 psi). A pinhole leak can inject oil under the skin: it looks like a small prick but can cost a finger or a hand. Cutting a line or opening a valve can drop a raised load instantly.",
+  "summary": "Forklifts, car lifts, jacks, scissor lifts, tractors, log splitters and diggers use oil at very high pressure, often over 100 bar (1,500 psi); a 25-ton log splitter runs at up to 269 bar (3,900 psi). A pinhole leak can inject oil under the skin: it looks like a small prick but can cost a finger or a hand. Cutting a line or opening a valve can drop a raised load instantly.",
   "signs": ["Rubber hoses with crimped steel fittings running to rams and cylinders","Oily film, drips or puddles around hoses and joints","Raised forks, buckets, platforms or tipper beds","Round or cylinder-shaped accumulator tanks on bigger machines","A fine mist or jet of oil from a fitting"],
   "do": ["Lower every load to the ground or onto solid blocks before working","Turn the engine off and work the controls to release pressure","Look for leaks with a piece of cardboard or wood, never your hand","Block raised parts with stands or timber; don't rely on the hydraulics","Let hot oil cool before opening anything"],
   "dont": ["Don't run a hand or finger along a hose to find a leak","Don't loosen fittings on a system under pressure","Don't stand or reach under a load held up only by hydraulics","Don't cut hoses on a machine with anything raised","Don't open, drill or cut an accumulator tank or its fittings: it stays charged with gas and oil pressure after the engine stops"],
@@ -13,6 +13,7 @@
     {"lib":"wikipedia","q":"High pressure injection injury"}
   ],
   "sources": [
-    {"title":"OSHA 3151: Personal Protective Equipment (OSHA 3151-02R 2023)","url":"https://www.osha.gov/sites/default/files/publications/osha3151.pdf"}
+    {"title":"OSHA 3151: Personal Protective Equipment (OSHA 3151-02R 2023)","url":"https://www.osha.gov/sites/default/files/publications/osha3151.pdf"},
+    {"title":"Champion: Champion Power Equipment, Operator's Manual, Model 100251 25 Ton Full Beam Log Splitter (rev. 2022-05-06)","url":"https://www.championpowerequipment.com/wp-content/uploads/2017/08/100251-om-english.pdf"}
   ]
 }

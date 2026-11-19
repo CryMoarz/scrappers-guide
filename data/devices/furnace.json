@@ -10,7 +10,7 @@
   "hazards": ["mains","fuel","co_gas","sharp"],
   "combustion": {"indoor":"vented","fuels":["natural gas","propane (with the maker's conversion kit)"],"kw":[12.9,45.1],"power_w":1540,"note":"Gas models: exhaust goes out by chimney or vent pipe; cracks or a vent blocked by snow put CO in the house (Health Canada CO). Blower, inducer and controls run on 115 V, so no heat in an outage. kW is gas input; W is max unit amps x 115 V, a ceiling (Bryant 800SA, 5.6-13.4 A)."},
   "comps": [
-    {"key":"motor_ac","fn":"motor_ac","spec":"Blower motor (PSC or variable-speed ECM)","v":[120,240],"w":[250,750],"ac":true,"qty":1,"ext":2,"obs":3,"loc":"Bottom compartment"},
+    {"key":"motor_ac","fn":"motor_ac","spec":"Blower motor (PSC or variable-speed ECM), 1/3–1 hp, about 250–750 W output. On the gas furnaces checked it draws 4.4–11.5 A at 115–120 V on full load (Bryant 800SA, Lennox ML180UHE), so size backup power from the amps, not the hp","v":[120,240],"w":[250,750],"ac":true,"qty":1,"ext":2,"obs":3,"loc":"Bottom compartment","a":[4.4,11.5]},
     {"key":"transformer_lv","fn":"transformer_lv","spec":"24V AC control transformer","v":24,"ac":true,"qty":1,"ext":1,"obs":4,"loc":"Junction box near the controls"},
     {"key":"fan","fn":"fan","spec":"Squirrel-cage blower wheel","qty":1,"ext":2,"obs":3,"loc":"On the blower motor"},
     {"key":"relay","fn":"relay","spec":"Control relays","v":24,"a":[10,20],"qty":2,"ext":2,"obs":4,"loc":"Control board"},
@@ -37,6 +37,7 @@
   "notes": "A gas furnace needs mains power for its blower, inducer and controls, so it stops in a power cut even with gas in the pipe (Bryant 800SA). Check gas appliances for cracks and blocked vents, and clear the outside vents of snow and ice after every storm: a blocked vent sends carbon monoxide into the house (Health Canada CO).",
   "sources": [
     {"title":"Bryant 800SA: Bryant (Carrier), 800SA/801SA Legacy 80 gas furnace product data (PDS800SA-10)","url":"https://econtent.adhq.com/dam/Original/10000/Bryant_800SA36045E17_Specification_Sheet.pdf"},
-    {"title":"Health Canada CO: Health Canada, Carbon monoxide: Preventing exposure","url":"https://www.canada.ca/en/health-canada/services/air-quality/pollutants/carbon-monoxide/preventing-exposure.html"}
+    {"title":"Health Canada CO: Health Canada, Carbon monoxide: Preventing exposure","url":"https://www.canada.ca/en/health-canada/services/air-quality/pollutants/carbon-monoxide/preventing-exposure.html"},
+    {"title":"Lennox ML180UHE: Lennox, Merit ML180UHE(K) gas furnace product specifications (EHB, May 2025)","url":"https://www.lennox.com/dA/35e8943a63/ehb_ml180uhe_k_2505.pdf"}
   ]
 }
