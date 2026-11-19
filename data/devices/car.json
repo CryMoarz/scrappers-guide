@@ -7,12 +7,13 @@
   "prev": 5,
   "tools": ["socket","screwdriver","cutters"],
   "mins": 60,
-  "hazards": ["acid","fuel"],
+  "hazards": ["acid","fuel","burn"],
   "comps": [
     {"key":"battery_pb","fn":"battery_pb","spec":"12V starting battery","v":12,"qty":1,"ext":1,"obs":2,"loc":"Engine bay or trunk"},
     {"key":"alternator","fn":"alternator","spec":"12–14V alternator, 60–150A","v":[12,14],"a":[60,150],"qty":1,"ext":3,"obs":3,"loc":"Front of the engine, belt-driven"},
     {"key":"motor_dc_small","fn":"motor_dc_small","spec":"12V motors: windows, wipers, seats, blower","v":12,"qty":8,"ext":3,"obs":4,"loc":"Doors, cowl, seats, dash"},
     {"key":"starter","fn":"motor_dc_small","spec":"Starter motor (large 12V motor)","v":12,"qty":1,"ext":3,"obs":4,"loc":"Side of the engine"},
+    {"key":"seat_heater","fn":"heating_element","spec":"Heated-seat pads (cushion and back), 12 V, 10–70 W a seat in three steps (Dometic MSH300). The car's controller regulates them (Autopian heated seat): a loose pad needs a fuse and a thermostat or timer. Made to sit on uncovered, not a bed warmer; burns skin that can't feel it","v":12,"w":[10,70],"qty":2,"ext":3,"obs":4,"loc":"Under the cover of each heated front seat, taped to the foam of cushion and backrest; wiring under the seat","p":0.5},
     {"key":"pump_water","fn":"pump_water","spec":"12V fuel pump and washer pump","v":12,"qty":2,"ext":3,"obs":4,"loc":"Fuel tank; washer reservoir"},
     {"key":"fan","fn":"fan","spec":"12V radiator cooling fan (high power)","v":12,"qty":1,"ext":2,"obs":4,"loc":"Behind the grille"},
     {"key":"relay","fn":"relay","spec":"12V automotive relays","v":12,"qty":8,"ext":1,"obs":4,"loc":"Fuse boxes"},
@@ -31,5 +32,11 @@
     {"b":"apartment","l":4},
     {"b":"gas_station","l":3},
     {"b":"auto_parts","l":2}
+  ],
+  "notes": "Heated-seat pads run on 12 V at 10–70 W a seat (Dometic MSH300), far less than a plug-in heater, so a salvaged pair can warm a chair from a battery. In the car a thermistor in the seat feeds a controller that regulates the heat (Autopian heated seat); a loose pad has no control of its own, so give it a fuse and a thermostat or timer. Dometic's rules for its seat pads: level 1 only for people who feel heat poorly, and no blankets or coats over a switched-on seat, so don't use one as a bed warmer under covers. A paraplegic driver was burned on the hip after about 30 minutes on high (Benjamin 2011).",
+  "sources": [
+    {"title":"Dometic MSH300: Dometic (Waeco) MagicComfort MSH300/MSH301 seat heater, installation and operating manual (12 V, 10-70 W per seat)","url":"https://media.dometic.com/externalassets/msh301_72171.pdf"},
+    {"title":"Autopian heated seat: The Autopian, Here's what the inside of a heated seat looks like and how it works","url":"https://www.theautopian.com/heres-what-the-inside-of-a-heated-seat-looks-like-and-how-it-works/"},
+    {"title":"Benjamin 2011: Benjamin C, Gittler M, Lee R, Burn from car seat heater in a man with paraplegia: case report, J Spinal Cord Med 34(3) (2011) 332-334 (PMC3127368)","url":"https://pmc.ncbi.nlm.nih.gov/articles/PMC3127368/"}
   ]
 }

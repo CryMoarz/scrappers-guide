@@ -33,8 +33,9 @@
     {"b":"rv_dealer","l":2},
     {"b":"furniture","l":2}
   ],
-  "notes": "A 12V blanket warms a person for a fraction of the power a space heater uses on the whole room.",
+  "notes": "A 12V blanket warms a person for a fraction of the power a space heater uses on the whole room.\n\nMeasured: a heated blanket on its highest setting averaged 41 W in a 16 °C room and warmed a sleeping manikin as much as making the room about 4.5 °C warmer (Aijazi sleep). Plan on about 40–60 W a person, but read your blanket's label: the one measured drew 41 W.\n",
   "sources": [
-    {"title":"Open Repair Alliance, Open Repair Data v0.3 (community repair events, 2012 to July 2026; CC BY-SA 4.0): 1,028 repairs recorded as Small home electrical (electric blanket subset)","url":"https://github.com/openrepair/data"}
+    {"title":"Open Repair Alliance, Open Repair Data v0.3 (community repair events, 2012 to July 2026; CC BY-SA 4.0): 1,028 repairs recorded as Small home electrical (electric blanket subset)","url":"https://github.com/openrepair/data"},
+    {"title":"Aijazi sleep: Aijazi A, Parkinson T, Zhang H, Schiavon S, Passive and low-energy strategies to improve sleep thermal comfort and energy resilience during heat waves and cold snaps, Scientific Reports 14 (2024), PMC11143215","url":"https://pmc.ncbi.nlm.nih.gov/articles/PMC11143215/"}
   ]
 }
